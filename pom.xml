@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>org.perfcake</groupId>
+   <artifactId>perfcake-user-guide</artifactId>
+   <version>0.2-SNAPSHOT</version>
+   <packaging>pom</packaging>
+   <name>PerfCake User Guide</name>
+   <url>http://perfcake.org</url>
+   <dependencies/>
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>com.agilejava.docbkx</groupId>
+            <artifactId>docbkx-maven-plugin</artifactId>
+            <version>2.0.14</version>
+            <dependencies>
+               <dependency>
+                  <groupId>net.sf.xslthl</groupId>
+                  <artifactId>xslthl</artifactId>
+                  <version>2.1.0</version>
+                  <!--scope>runtime</scope-->
+               </dependency>
+               <dependency>
+                  <groupId>net.sf.offo</groupId>
+                  <artifactId>fop-hyph</artifactId>
+                  <version>1.2</version>
+                  <!--scope>runtime</scope-->
+               </dependency>
+               <dependency>
+                  <groupId>net.sf.docbook</groupId>
+                  <artifactId>docbook-xml</artifactId>
+                  <version>5.0-all</version>
+                  <type>zip</type>
+                  <classifier>resources</classifier>
+               </dependency>
+            </dependencies>
+            <executions>
+               <execution>
+                  <id>generate-docs</id>
+                  <goals>
+                     <goal>generate-pdf</goal>
+                     <goal>generate-html</goal>
+                  </goals>
+                  <phase>generate-sources</phase>
+               </execution>
+            </executions>
+            <configuration>
+               <xincludeSupported>true</xincludeSupported>
+               <sectionAutolabel>true</sectionAutolabel>
+               <sectionLabelIncludesComponentLabel>true</sectionLabelIncludesComponentLabel>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+</project>
