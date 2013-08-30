@@ -6,7 +6,46 @@
    <version>0.2-SNAPSHOT</version>
    <packaging>pom</packaging>
    <name>PerfCake User Guide</name>
-   <url>http://perfcake.org</url>
+   <organization>
+      <name>PerfCake Community</name>
+      <url>https://www.perfcake.org</url>
+   </organization>
+   <description>A Lightweight Performance Testing Framework - Documentation</description>
+   <url>https://www.perfcake.org</url>
+   <inceptionYear>2010</inceptionYear>
+   <scm>
+      <url>https://github.com/PerfCake/Docs</url>
+      <connection>scm:git:git://github.com/PerfCake/Docs.git</connection>
+      <developerConnection>scm:git:git@github.com:PerfCake/Docs.git</developerConnection>
+   </scm>
+   <developers>
+      <developer>
+         <name>Martin Večeřa</name>
+         <email>marvenec@gmail.com</email>
+      </developer>
+      <developer>
+         <name>Pavel Macík</name>
+         <email>pavel.macik@gmail.com</email>
+      </developer>
+      <developer>
+         <name>Jiří Sedláček</name>
+         <email>jiri@sedlackovi.cz</email>
+      </developer>
+   </developers>
+   <contributors>
+   </contributors>
+   <issueManagement>
+      <system>GitHub</system>
+      <url>https://github.com/PerfCake/PerfCake/issues/</url>
+   </issueManagement>
+   <licenses>
+      <license>
+         <name>Creative Commons, Attribution 3.0 Unported</name>
+         <url>http://creativecommons.org/licenses/by/3.0/</url>
+         <distribution>repo</distribution>
+         <comments>CC BY 3.0</comments>
+      </license>
+   </licenses>
    <dependencies/>
    <build>
       <plugins>
