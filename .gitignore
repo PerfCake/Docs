@@ -1,1 +1,17 @@
+# Generated files
 target
+*.class
+logs
+*.log
+test-output
+
+# Eclipse stuff
+bin
+.settings
+.project
+.classpath
+
+# Package Files
+*.jar
+*.war
+*.ear
