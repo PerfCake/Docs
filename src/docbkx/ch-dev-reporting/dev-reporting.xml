@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-dev-reporting" status="draft">
+   <title>Developing Reporters, Destinations and Accumulators</title>
+   <para>TODO: Where are reporters registered, AbstractReporter, how to inherit from it, what methods to override, how are destinations managed, when are called, developing accumulators.</para>
+   <xi:include href="reporters.xml"/>
+   <xi:include href="destinations.xml"/>
+   <xi:include href="accumulators.xml"/>
+</chapter>
