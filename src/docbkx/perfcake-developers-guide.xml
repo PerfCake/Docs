@@ -16,7 +16,7 @@
    <toc/>
    <xi:include href="ch-acknowledgements/acknowledgements.xml"/>
    <xi:include href="ch-introduction/introduction.xml"/>
-   <xi:include href="ch-architecture/dev-developing.xml"/>
+   <xi:include href="ch-dev-developing/dev-developing.xml"/>
    <xi:include href="ch-architecture/architecture.xml"/>
    <xi:include href="ch-dev-generator/dev-generator.xml"/>
    <xi:include href="ch-dev-sender/dev-sender.xml"/>

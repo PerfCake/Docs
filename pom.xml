@@ -79,18 +79,48 @@
                      <goal>generate-pdf</goal>
                      <goal>generate-html</goal>
                   </goals>
-                  <phase>generate-sources</phase>
+                  <phase>package</phase>
                </execution>
             </executions>
             <configuration>
+               <bodyFontFamily>FreeSerif</bodyFontFamily>
+               <titleFontFamily>FreeSans</titleFontFamily>
                <xincludeSupported>true</xincludeSupported>
                <sectionAutolabel>true</sectionAutolabel>
                <sectionLabelIncludesComponentLabel>true</sectionLabelIncludesComponentLabel>
                <fonts>
-                 <font>
-                 <name>FreeSans</name>
-                 </font>
+                  <font>
+                     <name>FreeSans</name>
+                     <style>normal</style>
+                     <weight>bold</weight>
+                     <embedFile>${basedir}/src/fonts/FreeSans.ttf</embedFile>
+                     <metricsFile>${basedir}/src/fonts/FreeSans-metrics.xml</metricsFile>
+                  </font>
+                  <font>
+                     <name>FreeSerif</name>
+                     <style>normal</style>
+                     <weight>normal</weight>
+                     <embedFile>${basedir}/src/fonts/FreeSerif.ttf</embedFile>
+                     <metricsFile>${basedir}/src/fonts/FreeSerif-metrics.xml</metricsFile>
+                  </font>
                </fonts>
+            </configuration>
+         </plugin>
+         <plugin>
+            <groupId>com.agilejava.docbkx</groupId>
+            <artifactId>docbkx-fop-support</artifactId>
+            <version>2.0.14</version>
+            <executions>
+               <execution>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>generate</goal>
+                  </goals>
+               </execution>
+            </executions>
+            <configuration>
+               <ansi>true</ansi>
+               <targetDirectory>${basedir}/src/fonts</targetDirectory>
             </configuration>
          </plugin>
       </plugins>
