@@ -2,4 +2,14 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-architecture" status="draft">
    <title>Architecture</title>
    <para>TODO: PerfCake architecture.</para>
+   <para>In this chapter we describe the inner architecture of PerfCake. First we inspect the overall design and then we dvelve
+   deeper into the individual parts.</para>
+   <sect1>
+      <title>PerfCake Architecture Overview</title>
+      <para>Let's start with a Figure that is worth a thousand words.</para>
+      <figure>
+         <graphic fileref="../images/architecture/overall.png"></graphic>
+         <title>Architecture Overview</title>
+      </figure>
+   </sect1>
 </chapter>
