@@ -14,12 +14,12 @@
       </authorgroup>
    </info>
    <toc/>
-   <xi:include href="ch-introduction/introduction.xml"/>
-   <xi:include href="ch-configuration/configuration.xml"/>
-   <xi:include href="ch-scenario/scenario.xml"/>
-   <xi:include href="ch-generator/generator.xml"/>
-   <xi:include href="ch-sender/sender.xml"/>
-   <xi:include href="ch-reporting/reporting.xml"/>
-   <xi:include href="ch-validation/validation.xml"/>
-   <xi:include href="ch-references/references.xml"/>
+   <xi:include href="chapters/introduction.xml"/>
+   <xi:include href="chapters/configuration.xml"/>
+   <xi:include href="chapters/ug-scenario.xml"/>
+   <xi:include href="chapters/ug-generator.xml"/>
+   <xi:include href="chapters/ug-sender.xml"/>
+   <xi:include href="chapters/ug-reporting.xml"/>
+   <xi:include href="chapters/ug-validation.xml"/>
+   <xi:include href="chapters/ug-references.xml"/>
 </book>

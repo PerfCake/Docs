@@ -14,13 +14,13 @@
       </authorgroup>
    </info>
    <toc/>
-   <xi:include href="ch-acknowledgements/acknowledgements.xml"/>
-   <xi:include href="ch-introduction/introduction.xml"/>
-   <xi:include href="ch-dev-developing/dev-developing.xml"/>
-   <xi:include href="ch-architecture/architecture.xml"/>
-   <xi:include href="ch-dev-generator/dev-generator.xml"/>
-   <xi:include href="ch-dev-sender/dev-sender.xml"/>
-   <xi:include href="ch-dev-reporting/dev-reporting.xml"/>
-   <xi:include href="ch-dev-validation/dev-validation.xml"/>
-   <xi:include href="ch-dev-practice/dev-practice.xml"/>
+   <xi:include href="chapters/acknowledgements.xml"/>
+   <xi:include href="chapters/introduction.xml"/>
+   <xi:include href="chapters/dev-developing.xml"/>
+   <xi:include href="chapters/architecture.xml"/>
+   <xi:include href="chapters/dev-generator.xml"/>
+   <xi:include href="chapters/dev-sender.xml"/>
+   <xi:include href="chapters/dev-reporting.xml"/>
+   <xi:include href="chapters/dev-validation.xml"/>
+   <xi:include href="chapters/dev-practice.xml"/>
 </book>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-sender.JDBCSender">
+   <title>JDBCSender</title>
+   <para>As the name of the sender clues JDBCSender is meant to be used to send JDBC queries. It can handle any query the JDBC is capable of.</para>
+   <table frame="all">
+      <title>JDBCSender properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="1*"/>
+         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="1*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>target</entry>
+               <entry>JDBC URL of the target, where the query is send.</entry>
+               <entry>Yes</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>driverClass</entry>
+               <entry>Fully qualified JDBC Driver class.</entry>
+               <entry>Yes</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>username</entry>
+               <entry>DB user</entry>
+               <entry>no</entry>
+               <entry>""</entry>
+            </row>
+            <row>
+               <entry>password</entry>
+               <entry>DB password</entry>
+               <entry>no</entry>
+               <entry>""</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+</sect2>
