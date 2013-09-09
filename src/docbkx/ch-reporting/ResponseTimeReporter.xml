@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-reporting.ResponseTimeReporter">
+   <title>ResponseTimeReporter</title>
+   <para>
+      The reporter is able to report the current average response time (in milliseconds) from the beginning of the measuring to the moment when the results are published.
+   </para>
+   <para>The reporter has no properties to be configured.</para>
+   <simplesect>
+      <title>Example of ResponseTimeReporter configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[
+...
+<reporter class="ResponseTimeReporter">
+   ...
+   (destinations)
+   ...
+</reporter>
+...
+]]></programlisting>
+   </simplesect>
+</sect2>

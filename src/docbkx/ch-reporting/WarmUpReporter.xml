@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-reporting.WarmUpReporter">
+   <title>WarmUpReporter</title>
+   <para>
+      The reporter is able to determine when the tested system is warmed up.
+      The warming is enabled/disabled by the presence of the WarmUpReporter in the scenario.
+      The minimal iteration count and the warm-up period duration can be tweaked by the respective properties
+      <code>minimalWarmUpCount</code>
+      with the default value of 10,000 and
+      <code>minimalWarmUpDuration</code>
+      with the default value of
+      15,000 ms).
+   </para>
+   <para>The system is considered warmed up when all of the following conditions are satisfied: The current throughput is not changing much over the time, the minimal iteration count has been executed and the
+      minimal duration from the very start has exceeded.
+   </para>
+   <table frame="all">
+      <title>WarmUpReporter properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="1*"/>
+         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="1*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>minimalWarmUpDuration</entry>
+               <entry>Minimal amount of time (in milliseconds) of the warm-up period.</entry>
+               <entry>No</entry>
+               <entry>"15000"</entry>
+            </row>
+            <row>
+               <entry>minimalWarmUpCount</entry>
+               <entry>Minimal number of iteration in the warm-up period.</entry>
+               <entry>No</entry>
+               <entry>"10000"</entry>
+            </row>
+            <row>
+               <entry>relativeThreshold</entry>
+               <entry>The relative difference threshold to determine whether the throughput is not changing much.</entry>
+               <entry>No</entry>
+               <entry>"0.002"</entry>
+            </row>
+            <row>
+               <entry>absoluteThreshold</entry>
+               <entry>The absolute difference threshold to determine whether the throughput is not changing much.</entry>
+               <entry>No</entry>
+               <entry>"0.2"</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <simplesect>
+      <title>Example of WarmUpReporter configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[
+...
+<reporter class="WarmUpReporter" enabled="true">
+   <property name="minimalWarmUpCount" value="1000"/>
+   <property name="minimalWarmUpDuration" value="10000"/>
+   <property name="relativeThreshold" value="0.005"/> <!-- 0.5% -->
+   <property name="absoluteThreshold" value="0.5"/>
+   ...
+   (destinations)
+   ...
+</reporter>
+...
+]]></programlisting>
+   </simplesect>
+</sect2>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xmlns="http://docbook.org/ns/docbook" xml:id="ch-reporting" status="draft">
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="ch-reporting" status="draft">
    <title>Reporting</title>
    <sect1>
       <title>Overview</title>
@@ -14,9 +14,6 @@ definition.</para>
          <listitem>
             <para>Configure Reporter's destinations</para>
          </listitem>
-         <listitem>
-            <para>Set common uniqueId and tags</para>
-         </listitem>
       </itemizedlist>
       <para>The reporter class represents a different types of the
 reports such as average throughput or memory usage. By configuring the
@@ -25,57 +22,43 @@ destinations you tell where output should be directed by the reporter
       <simplesect>
          <title>Example reporting configuration:</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<reporting>
-   <property name="tags" value=""/>
-   <property name="uniqueId" value="http_gw"/>
-
-   <reporter class="ATReporter">
-      <property name="label_type" value="iteration"/>
-      <destination class="ConsoleDestination"/>
-      <destination class="CsvDestination">
-         <property name="outputPath" value="./logs"/>
+   <reporter class="AverageThroughputReporter">
+      <destination class="ConsoleDestination">
+      	<period type="time" value="1000"/>
+      </destination>
+      <destination class="CSVDestination">
+      	<period type="time" value="2000"/>
+        <property name="path" value="test-average-throughput.csv"/>
       </destination>
    </reporter>
 
-   <reporter class="KPIReporter">
-      <property name="label_type" value="time"/>
-      <destination class="ConsoleDestination">
-         <property name="periodicity" value="2s"/>
+   <reporter class="MemoryUsageReporter">
+      <property name="agentHostname" value="localhost"/>
+      <property name="agentPort" value="8849"/>
+      <destination class="CSVDestination">
+         <period type="time" value="2000"/>
+         <property name="path" value="test-memory-usage.csv"/>
       </destination>
    </reporter>
 </reporting>]]></programlisting>
       </simplesect>
       <para>
-With this configuration the 2 reporters are specified. Average
-throughput reporter
-<varname>ATReporter</varname>
+With this configuration the 2 reporters are specified -
+
 and
-<varname>KPIReporter</varname>
-. First one will report to console after the test finishes and to
-<varname>CsvDestination</varname>
-into current folder, the reporting will be done with iteration label.
-The KPIReporter will periodically every 2 seconds report into console
-the current Key Performance Indicaters of the server with time label.
-That means that each measuremnet in console will be reported with passed
-iterations label.
+<varname>MemoryUsageReporter</varname>
+. First one will report to console each 1 second and to CSV file each 2
+seconds, The memory usage reporter will report memory usage of the
+tested system into CSV file each 2 seconds.
 </para>
    </sect1>
    <sect1>
-      <title>Adding new Destination</title>
-      <para>
-To add new destination extend
-<varname>org.perfcake.reporting.destinations.Destination</varname>
-class. Take a look into existing implementations which will give you an
-idea how to implement it.
-</para>
-   </sect1>
-   <sect1>
-      <title>How to use</title>
-      <para>To use reporters in PerfCake test the test has to have
-{@link org.jboss.soa.esb.qa.perfcake.reporting.ReportManager}
-accessible. You can call .report* methods to report various events. It
-should be safe to call those events (provided ReporterManager is not
-null :-) ) and implementors should bear in mind that programmer may not
-specify the reporter in scenario xml file even though it is being called
-in the test.</para>
+      <title>Reporters</title>
+      <para>TODO: this section describes reporters that can be used.</para>
+      <xi:include href="AverageThroughputReporter.xml"/>
+      <xi:include href="MemoryUsageReporter.xml"/>
+      <xi:include href="ResponseTimeReporter.xml"/>
+      <xi:include href="WarmUpReporter.xml"/>
+      <xi:include href="WindowResponseTimeReporter.xml"/>
    </sect1>
 </chapter>

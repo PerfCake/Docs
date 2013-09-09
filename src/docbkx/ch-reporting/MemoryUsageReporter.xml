@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-reporting.MemoryUsageReporter">
+   <title>MemoryUsageReporter</title>
+   <para>
+      The reporter is able to report the current memory usage of the tested system at the moment when the results are published.
+      It requires PerfCake agent to be installed in the tested system's JVM.
+   </para>
+   <para>
+      To be able to use MemoryUsageReporter you need to attach PerfCake agent to the tested system's JVM. The PerfCake agent is a part of binary distribution (PerfCake's JAR archive).
+      The agent is configurable by following properties:
+   </para>
+   <table frame="all">
+      <title>PerfCake agent properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="1*"/>
+         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="1*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>hostname</entry>
+               <entry>IP address of hostname where PerfCake agent is listening.</entry>
+               <entry>No</entry>
+               <entry>"localhost"</entry>
+            </row>
+            <row>
+               <entry>port</entry>
+               <entry>A port number where PerfCake agent is listening.</entry>
+               <entry>No</entry>
+               <entry>"8849"</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <para>
+      To attach the agent to the tested system's JVM append following JVM argument to executing java command or using JAVA_OPTS environment properties.
+   </para>
+   <simplesect>
+      <title>JVM argument to attach PerfCake agent to the tested JVM</title>
+      <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA["... -javaagent:<perfcake_jar_path>=hostname=<hostname>,port=<port>"]]></programlisting>
+   </simplesect>
+   <simplesect>
+      <title>PerfCake JVM argument example</title>
+      <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA[JAVA_OPTS="$JAVA_OPTS -javaagent:$PERFCAKE_HOME/lib/perfcake-1.0.jar=hostname=localhost,port=8850"]]></programlisting>
+   </simplesect>
+   <para>
+      Now, once you start the tested system up, you should see the following line in the system's console output:
+      <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+PerfCakeAgent > Listening at localhost on port 8850
+...]]></programlisting>
+   </para>
+   <para>Once you have the PerfCake agent attached and the tested system is up and running you can use the MemoryUsageReporter to measure the memory usage of the tested system.
+      The reporter has following properties to determine the PerfCake agent location.
+   </para>
+   <table frame="all">
+      <title>MemoryUsageReporter properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="1*"/>
+         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="1*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>agentHostname</entry>
+               <entry>IP address of hostname where PerfCake agent is listening.</entry>
+               <entry>No</entry>
+               <entry>"localhost"</entry>
+            </row>
+            <row>
+               <entry>agentPort</entry>
+               <entry>A port number where PerfCake agent is listening.</entry>
+               <entry>No</entry>
+               <entry>"8849"</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <simplesect>
+      <title>Example of MemoryUsageReporter configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[
+...
+<reporter class="MemoryUsageReporter">
+   <property name="agentHostname" value="localhost"/>
+   <property name="agentPort" value="8849"/>
+   ...
+   (destinations)
+   ...
+</reporter>
+...
+]]></programlisting>
+   </simplesect>
+</sect2>

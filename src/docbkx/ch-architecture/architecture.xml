@@ -8,7 +8,7 @@
       <title>PerfCake Architecture Overview</title>
       <para>Let's start with a Figure that is worth a thousand words.</para>
       <figure>
-         <graphic fileref="../images/architecture/overall.png"></graphic>
+         <graphic fileref="../images/architecture/overall.png"/>
          <title>Architecture Overview</title>
       </figure>
    </sect1>
