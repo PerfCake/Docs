@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-sender.GroovySender">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sender.GroovySender">
    <title>GroovySender</title>
-   <para>Groovy sender can be used to do a message sending in a Groovy script. To do this it uses a groovy installed on the system, where the PerfCake is executed.</para>
-   <para>The message configured in scenario is passed to the Groovy script through standard input so it can be accessd via System.in</para>
+   <para>
+      Groovy sender can be used to implement the message sending in a Groovy script. To achieve the goal the sender uses a
+      <code>groovy</code>
+      installed on the system, where the PerfCake is executed.
+   </para>
+   <para>
+      The message configured in scenario is passed to the Groovy script through standard input so it can be accessed via
+      <code>System.in</code>.
+   </para>
    <table frame="all">
       <title>GroovySender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -28,4 +35,12 @@
          </tbody>
       </tgroup>
    </table>
+   <simplesect>
+      <title>Example of GroovySender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<sender class="GroovySender">
+   <property name="target" value="/tmp/script.groovy"/>
+</sender>
+...]]></programlisting>
+   </simplesect>
 </sect2>

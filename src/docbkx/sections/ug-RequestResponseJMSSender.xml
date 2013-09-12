@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-sender.RequestResponseJMSSender">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sender.RequestResponseJMSSender">
    <title>RequestResponseJMSSender</title>
-   <para>The RequestResponseJMSSender is supposed to be used in request-response scenarios. First it sends a JMS message to the target destination (specified by the 'target' property) and then waits to receive the response message from the response destination (specified by 'responseTarget' property).</para>
+   <para>
+      The RequestResponseJMSSender is supposed to be used in request-response scenarios. First it sends a JMS message to the target destination (specified by the
+      <code>target</code>
+      property) and then waits to receive the response message from the response destination (specified by
+      <code>responseTarget</code>
+      property).
+   </para>
    <para>
       It is based on JMSSender (see
-      <xref linkend="ch-sender.JMSSender"/>
+      <xref linkend="ch-ug-sender.JMSSender"/>
       ) so it inherits its properties.
    </para>
    <table frame="all">
@@ -44,4 +50,24 @@
          </tbody>
       </tgroup>
    </table>
+   <simplesect>
+      <title>Example of RequestResponseJMSSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<sender class="RequestResponseJMSSender">
+   <property name="target" value="jms/queue/RequestQueue"/>
+   <property name="responseTarget" value="jms/queue/ResponseQueue"/>
+   <property name="receivingTimeout" value="30000"/>
+   <property name="receiveAttempts" value="1"/>
+   <property name="connectionFactory" value="jms/RemoteConnectionFactory"/>
+   <property name="username" value="KingRoland"/>
+   <property name="password" value="12345"/>
+   <!-- JNDI properties-->
+   <property name="jndiContextFactory" value="org.jboss.naming.remote.client.InitialContextFactory"/>
+   <property name="jndiUrl" value="remote://${server.host}:4447"/>
+   <property name="jndiSecurityPrincipal" value="KingRoland"/>
+   <property name="jndiSecurityCredentials" value="12345"/>
+   ...
+</sender>
+...]]></programlisting>
+   </simplesect>
 </sect2>

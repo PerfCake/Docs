@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-reporting.MemoryUsageReporter">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.MemoryUsageReporter">
    <title>MemoryUsageReporter</title>
    <para>
       The reporter is able to report the current memory usage of the tested system at the moment when the results are published.
@@ -49,7 +49,7 @@
    </simplesect>
    <simplesect>
       <title>PerfCake JVM argument example</title>
-      <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA[JAVA_OPTS="$JAVA_OPTS -javaagent:$PERFCAKE_HOME/lib/perfcake-1.0.jar=hostname=localhost,port=8850"]]></programlisting>
+      <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA[JAVA_OPTS="... -javaagent:$PERFCAKE_HOME/lib/perfcake-1.0.jar=port=8850"]]></programlisting>
    </simplesect>
    <para>
       Now, once you start the tested system up, you should see the following line in the system's console output:

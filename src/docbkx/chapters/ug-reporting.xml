@@ -4,8 +4,9 @@
    <sect1>
       <title>Overview</title>
       <para>Reporting is a module that provides a reporting abilities.
-It is configured using &lt;reporting&gt; element in the scenario
-definition.</para>
+         It is configured using &lt;reporting&gt; element in the scenario
+         definition.
+      </para>
       <para>The configuration consists of following steps:</para>
       <itemizedlist>
          <listitem>
@@ -16,19 +17,20 @@ definition.</para>
          </listitem>
       </itemizedlist>
       <para>The reporter class represents a different types of the
-reports such as average throughput or memory usage. By configuring the
-destinations you tell where output should be directed by the reporter
-(e.g. console, CSV file, etc.). </para>
+         reports such as average throughput or memory usage. By configuring the
+         destinations you tell where output should be directed by the reporter
+         (e.g. console, CSV file, etc.).
+      </para>
       <simplesect>
          <title>Example reporting configuration:</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<reporting>
    <reporter class="AverageThroughputReporter">
       <destination class="ConsoleDestination">
-       <period type="time" value="1000"/>
+         <period type="time" value="1000"/>
       </destination>
       <destination class="CSVDestination">
-       <period type="time" value="2000"/>
-        <property name="path" value="test-average-throughput.csv"/>
+         <period type="time" value="2000"/>
+         <property name="path" value="test-average-throughput.csv"/>
       </destination>
    </reporter>
 
@@ -43,18 +45,20 @@ destinations you tell where output should be directed by the reporter
 </reporting>]]></programlisting>
       </simplesect>
       <para>
-With this configuration the 2 reporters are specified -
-
-and
-<varname>MemoryUsageReporter</varname>
-. First one will report to console each 1 second and to CSV file each 2
-seconds, The memory usage reporter will report memory usage of the
-tested system into CSV file each 2 seconds.
-</para>
+         With this configuration the 2 reporters are specified -
+         <code>AverageThroughputReporter</code>
+         and
+         <code>MemoryUsageReporter</code>
+         . First one will report to console each 1 second and to CSV file each 2
+         seconds, while the second one will report memory usage of the
+         tested system into CSV file each 2 seconds.
+      </para>
    </sect1>
    <sect1>
       <title>Reporters</title>
-      <para>TODO: this section describes reporters that can be used.</para>
+      <para>In the following sections you can find the description of the reporters that
+         can be used in scenarios.
+      </para>
       <xi:include href="../sections/ug-AverageThroughputReporter.xml"/>
       <xi:include href="../sections/ug-MemoryUsageReporter.xml"/>
       <xi:include href="../sections/ug-ResponseTimeReporter.xml"/>

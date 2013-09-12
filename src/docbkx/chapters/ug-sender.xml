@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sender" status="draft">
    <title>Senders</title>
-   <para>TODO: this chapter describes senders that can be used.</para>
+   <para>In this chapter you can find a complete description of all
+      senders that can be used by PerfCake including all of their properties.
+   </para>
    <sect1>
       <title>Available senders</title>
       <xi:include href="../sections/ug-CommandSender.xml"/>
@@ -9,16 +11,16 @@
       <xi:include href="../sections/ug-GroovySender.xml"/>
       <xi:include href="../sections/ug-HTTPSender.xml"/>
       <xi:include href="../sections/ug-HTTPSSender.xml"/>
-      <xi:include href="../sections/ug-ChannelDatagramSender.xml"/>
-      <xi:include href="../sections/ug-ChannelFileSender.xml"/>
-      <xi:include href="../sections/ug-ChannelSender.xml"/>
-      <xi:include href="../sections/ug-ChannelSocketSender.xml"/>
+      <!-- <xi:include href="../sections/ug-ChannelDatagramSender.xml"/> -->
+      <!-- <xi:include href="../sections/ug-ChannelFileSender.xml"/> -->
+      <!-- <xi:include href="../sections/ug-ChannelSender.xml"/> -->
+      <!-- <xi:include href="../sections/ug-ChannelSocketSender.xml"/> -->
       <xi:include href="../sections/ug-JDBCSender.xml"/>
       <xi:include href="../sections/ug-JMSSender.xml"/>
-      <xi:include href="../sections/ug-LDAPSender.xml"/>
+      <!-- <xi:include href="../sections/ug-LDAPSender.xml"/> -->
       <xi:include href="../sections/ug-PlainSocketSender.xml"/>
       <xi:include href="../sections/ug-RequestResponseJMSSender.xml"/>
-      <xi:include href="../sections/ug-SOAPSender.xml"/>
+      <!-- <xi:include href="../sections/ug-SOAPSender.xml"/> -->
       <xi:include href="../sections/ug-SSLSocketSender.xml"/>
    </sect1>
 </chapter>

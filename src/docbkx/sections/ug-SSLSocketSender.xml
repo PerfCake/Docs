@@ -1,30 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-sender.SSLSocketSender">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sender.SSLSocketSender">
    <title>SSLSocketSender</title>
-   <para>TODO: description</para>
-   <table frame="all">
-      <title>SSLSocketSender properties</title>
-      <tgroup cols="4" align="left" colsep="1" rowsep="1">
-         <colspec colname="property-name" colwidth="1*"/>
-         <colspec colname="description" colwidth="1*"/>
-         <colspec colname="required" colwidth="1*"/>
-         <colspec colname="default-value" colwidth="1*"/>
-         <thead>
-            <row>
-               <entry>Property name</entry>
-               <entry>Description</entry>
-               <entry>Required</entry>
-               <entry>Default value</entry>
-            </row>
-         </thead>
-         <tbody>
-            <row>
-               <entry>target</entry>
-               <entry>URL of the target, where the message is send.</entry>
-               <entry>Yes</entry>
-               <entry>-</entry>
-            </row>
-         </tbody>
-      </tgroup>
-   </table>
+   <para>
+      SSLSocketSender is similar to the PlainSocketSender (see
+      <xref linkend="ch-ug-sender.PlainSocketSender"/>
+      ) and so it shares the same properties. The difference is that the SSLSocketSender uses a SSL socket.
+   </para>
+   <simplesect>
+      <title>Example of SSLSocketSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<sender class="SSLSocketSender">
+   <property name="target" value="127.0.0.1:12345"/>
+</sender>
+...]]></programlisting>
+   </simplesect>
 </sect2>

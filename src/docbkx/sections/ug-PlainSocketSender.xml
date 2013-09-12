@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-sender.PlainSocketSender">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sender.PlainSocketSender">
    <title>PlainSocketSender</title>
-   <para>TODO: description</para>
+   <para>The sender uses a socket to send the message to and receive a response from.</para>
    <table frame="all">
       <title>PlainSocketSender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -20,11 +20,19 @@
          <tbody>
             <row>
                <entry>target</entry>
-               <entry>URL of the target, where the message is send.</entry>
+               <entry>The target socket in a form of "&lt;host&gt;:&lt;port&gt;"</entry>
                <entry>Yes</entry>
                <entry>-</entry>
             </row>
          </tbody>
       </tgroup>
    </table>
+   <simplesect>
+      <title>Example of PlainSocketSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<sender class="PlainSocketSender">
+   <property name="target" value="127.0.0.1:12345"/>
+</sender>
+...]]></programlisting>
+   </simplesect>
 </sect2>

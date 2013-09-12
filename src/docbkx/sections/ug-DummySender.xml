@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-sender.DummySender">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sender.DummySender">
    <title>DummySender</title>
-   <para>This sender is intended to work as a dummy sender and to be used for scenario testing and developing purposes. It does not actually send any message. It can simulate a synchronous waiting for a reply by setting the 'delay' property.</para>
+   <para>
+      This sender is intended to work as a dummy sender and to be used for scenario testing and developing purposes. It does not actually send any message. It can simulate a synchronous waiting for a reply by setting the
+      <code>delay</code>
+      property.
+   </para>
    <table frame="all">
       <title>DummySender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -33,4 +37,13 @@
          </tbody>
       </tgroup>
    </table>
+   <simplesect>
+      <title>Example of DummySender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<sender class="DummySender">
+   <property name="target" value="out there!"/>
+   <property name="delay" value="500"/>
+</sender>
+...]]></programlisting>
+   </simplesect>
 </sect2>
