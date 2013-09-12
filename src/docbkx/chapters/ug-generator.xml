@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xmlns="http://docbook.org/ns/docbook" xml:id="ch-ug-generator" status="draft">
-   <title>Generator</title>
-   <para>TODO: this chapter describes load generators that can be used.</para>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-ug-generator" status="draft">
+   <title>Generators</title>
+   <para>Generator is an object that uses Sender objects to send and
+      receive messages. Each generator represents a method or technique of how
+      the load (sending the messages) is handled.
+   </para>
+   <sect1>
+      <title>Available generators</title>
+      <para>The following section describes the generator that can be
+         used in PerfCake to generate the load.
+      </para>
+      <xi:include href="../sections/ug-DefaultMessageGenerator.xml"/>
+   </sect1>
 </chapter>

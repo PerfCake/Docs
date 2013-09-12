@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-generator.DefaultMessageGenerator">
+   <title>DefaultMessageGenerator</title>
+   <para>
+      The generator is able to generate a load using multiple threads for long period of time (matter of days, weeks,...).
+      It is capable of generating the load for a specified duration which can be an amount of time or a number of iterations. To
+      define the duration and its length you have to configure a generator
+      <code>run</code>
+      of the specified type in the scenario. Following table shows the generator
+      <code>run</code>
+      options:
+      <table frame="all">
+         <title>
+            Generator
+            <code>run</code>
+            options
+         </title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="run type" colwidth="1*"/>
+            <colspec colname="description" colwidth="1*"/>
+            <thead>
+               <row>
+                  <entry>
+                     <code>run</code>
+                     type
+                  </entry>
+                  <entry>Value description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>time</entry>
+                  <entry>Time duration in milliseconds</entry>
+               </row>
+               <row>
+                  <entry>iterations</entry>
+                  <entry>Number of iterations</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <para>
+      The generator uses a thread pool of a fixed size that stores threads that execute performance iterations.
+      The thread pool uses an internal queue where tasks implementing the iterations are buffered and scheduled for execution.
+      The size of the thread queue can be specified by
+      <code>threadQueueSize</code>
+      property. The generator periodically checks the thread queue and fill the queue with new tasks. The period in which it checks
+      the thread queue (and fills with new tasks) can be specified by
+      <code>monitoringPeriod</code>
+      property.
+   </para>
+   <para>
+      This approach guarantees that maximum number of thread instances (that is equal to the value of the
+      <code>threadQueueSize</code>
+      property) exists in the memory during all the time the generator
+      is working. In addition it is even possible to specify the maximum generating rate (iterations per time period)
+      that can be quantified by
+      <code>threadQueueSize</code>
+      /
+      <code>monitoringPeriod</code>
+      .
+   </para>
+   <para>
+      To configure the generator we need to specify number of concurrent threads (using
+      <code>threads</code>
+      attribute), size of the thread queue (via
+      <code>threadQueueSize</code>
+      property) and a
+      duration (using the
+      <code>run</code>
+      discussed above).
+   </para>
+   <para>
+      Following table shows the properties of the DefaultMessageGenerator:
+      <table frame="all">
+         <title>DefaultMessageGenerator properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="1*"/>
+            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="1*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>monitoringPeriod</entry>
+                  <entry>The period in milliseconds in which the task queue is filled with new tasks</entry>
+                  <entry>No</entry>
+                  <entry>1000</entry>
+               </row>
+               <row>
+                  <entry>threadQueueSize</entry>
+                  <entry>The size on the task queue.</entry>
+                  <entry>No</entry>
+                  <entry>1000</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <simplesect>
+      <title>Example of DefaultMessageGenerator configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<generator class="DefaultMessageGenerator" threads="100">
+   <run type="time" value="60000"/>
+   <property name="threadQueueSize" value="50000"/>
+   ...
+</generator>
+...]]></programlisting>
+   </simplesect>
+</sect2>
