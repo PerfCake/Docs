@@ -8,7 +8,31 @@
    </para>
    <para>
       The WindowResponseTimeReporter's properties are described in the following table:
-      <table frame="all"><title>WindowResponseTimeReporter properties</title><tgroup cols="4" align="left" colsep="1" rowsep="1"><colspec colname="property-name" colwidth="1*"/><colspec colname="description" colwidth="1*"/><colspec colname="required" colwidth="1*"/><colspec colname="default-value" colwidth="1*"/><thead><row><entry>Property name</entry><entry>Description</entry><entry>Required</entry><entry>Default value</entry></row></thead><tbody><row><entry>windowSize</entry><entry>The size of the sliding window.</entry><entry>No</entry><entry>"16"</entry></row></tbody></tgroup></table>
+      <table frame="all">
+         <title>WindowResponseTimeReporter properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="1*"/>
+            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="1*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>windowSize</entry>
+                  <entry>The size of the sliding window.</entry>
+                  <entry>No</entry>
+                  <entry>"16"</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
    </para>
    <simplesect>
       <title>Example of WindowResponseTimeReporter configuration</title>

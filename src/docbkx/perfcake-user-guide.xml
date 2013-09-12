@@ -14,12 +14,11 @@
       </authorgroup>
    </info>
    <toc/>
-   <xi:include href="chapters/introduction.xml"/>
-   <xi:include href="chapters/configuration.xml"/>
+   <xi:include href="chapters/acknowledgements.xml"/>
+   <xi:include href="chapters/ug-introduction.xml"/>
    <xi:include href="chapters/ug-scenario.xml"/>
    <xi:include href="chapters/ug-generator.xml"/>
    <xi:include href="chapters/ug-sender.xml"/>
    <xi:include href="chapters/ug-reporting.xml"/>
    <xi:include href="chapters/ug-validation.xml"/>
-   <xi:include href="chapters/ug-references.xml"/>
 </book>

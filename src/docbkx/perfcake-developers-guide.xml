@@ -22,7 +22,7 @@
          <para>This part contains general information suitable for all project contributors and developers. It is a great starting point for anybody with the aspiration to contribute to PerfCake, which we really love.</para>
       </partinfo>
       <xi:include href="chapters/dev-developing.xml"/>
-      <xi:include href="chapters/architecture.xml"/>
+      <xi:include href="chapters/dev-architecture.xml"/>
    </part>
    <part label="II">
       <title>Core Developers' Guide</title>

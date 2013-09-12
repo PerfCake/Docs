@@ -8,7 +8,8 @@
    </para>
    <para>
       The message configured in scenario is passed to the Groovy script through standard input so it can be accessed via
-      <code>System.in</code>.
+      <code>System.in</code>
+      .
    </para>
    <table frame="all">
       <title>GroovySender properties</title>

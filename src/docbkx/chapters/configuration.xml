@@ -2,5 +2,5 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xml:id="ch-configuration" status="draft">
    <title>Configuration</title>
    <para>TODO: this chapter describes installation and configuration of
-PerfCake framework.</para>
+      PerfCake framework.</para>
 </chapter>
