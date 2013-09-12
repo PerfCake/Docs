@@ -1,52 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-generator.DefaultMessageGenerator">
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-generator.DefaultMessageGenerator">
    <title>DefaultMessageGenerator</title>
    <para>
       The generator is able to generate a load using multiple threads for long period of time (matter of days, weeks,...).
-      It is capable of generating the load for a specified duration which can be an amount of time or a number of iterations. To
-      define the duration and its length you have to configure a generator
-      <code>run</code>
-      of the specified type in the scenario. Following table shows the generator
-      <code>run</code>
-      options:
-      <table frame="all">
-         <title>
-            Generator
-            <code>run</code>
-            options
-         </title>
-         <tgroup cols="2" align="left" colsep="1" rowsep="1">
-            <colspec colname="run type" colwidth="1*"/>
-            <colspec colname="description" colwidth="1*"/>
-            <thead>
-               <row>
-                  <entry>
-                     <code>run</code>
-                     type
-                  </entry>
-                  <entry>Value description</entry>
-               </row>
-            </thead>
-            <tbody>
-               <row>
-                  <entry>time</entry>
-                  <entry>Time duration in milliseconds</entry>
-               </row>
-               <row>
-                  <entry>iterations</entry>
-                  <entry>Number of iterations</entry>
-               </row>
-            </tbody>
-         </tgroup>
-      </table>
-   </para>
-   <para>
-      The generator uses a thread pool of a fixed size that stores threads that execute performance iterations.
+      It uses a thread pool of a fixed size that stores threads that execute performance iterations.
       The thread pool uses an internal queue where tasks implementing the iterations are buffered and scheduled for execution.
       The size of the thread queue can be specified by
       <code>threadQueueSize</code>
-      property. The generator periodically checks the thread queue and fill the queue with new tasks. The period in which it checks
-      the thread queue (and fills with new tasks) can be specified by
+      property. The generator periodically checks the thread queue and fills the queue with new tasks. The period in which the generator checks
+      the thread queue (and fills with new tasks) can be specified by the
       <code>monitoringPeriod</code>
       property.
    </para>
@@ -115,4 +77,4 @@
 </generator>
 ...]]></programlisting>
    </simplesect>
-</sect2>
+</sect1>

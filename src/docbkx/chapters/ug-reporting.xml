@@ -10,13 +10,13 @@
       <para>The configuration consists of following steps:</para>
       <itemizedlist>
          <listitem>
-            <para>Configure Reporter class</para>
+            <para>Configure a reporter</para>
          </listitem>
          <listitem>
-            <para>Configure Reporter's destinations</para>
+            <para>Configure the reporter's destinations</para>
          </listitem>
       </itemizedlist>
-      <para>The reporter class represents a different types of the
+      <para>A reporter represents a different type of the
          reports such as average throughput or memory usage. By configuring the
          destinations you tell where output should be directed by the reporter
          (e.g. console, CSV file, etc.).
@@ -53,16 +53,85 @@
          seconds, while the second one will report memory usage of the
          tested system into CSV file each 2 seconds.
       </para>
+      <para>Following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
    </sect1>
    <sect1>
       <title>Reporters</title>
-      <para>In the following sections you can find the description of the reporters that
-         can be used in scenarios.
-      </para>
       <xi:include href="../sections/ug-AverageThroughputReporter.xml"/>
       <xi:include href="../sections/ug-MemoryUsageReporter.xml"/>
       <xi:include href="../sections/ug-ResponseTimeReporter.xml"/>
       <xi:include href="../sections/ug-WarmUpReporter.xml"/>
       <xi:include href="../sections/ug-WindowResponseTimeReporter.xml"/>
+   </sect1>
+   <sect1>
+      <title>Destinations</title>
+      <para>
+         The destinations are a representation of places where the measurements from the reporters are published.
+         Each destination is configured to publish the report measurements during the scenario execution periodically with a period
+         specified by the
+         <code>period</code>
+         element in the scenario definition. Destination can have multiple periods but each destination
+         has to have at least one period configured.
+      </para>
+      <para>
+         Following table shows the destination
+         <code>period</code>
+         options:
+         <table frame="all">
+            <title>
+               Destination
+               <code>period</code>
+               options
+            </title>
+            <tgroup cols="2" align="left" colsep="1" rowsep="1">
+               <colspec colname="run type" colwidth="1*"/>
+               <colspec colname="description" colwidth="1*"/>
+               <thead>
+                  <row>
+                     <entry>
+                        Destination
+                        <code>period</code>
+                        type
+                     </entry>
+                     <entry>Value description</entry>
+                  </row>
+               </thead>
+               <tbody>
+                  <row>
+                     <entry>time</entry>
+                     <entry>Time period in milliseconds</entry>
+                  </row>
+                  <row>
+                     <entry>iteration</entry>
+                     <entry>Number of iterations</entry>
+                  </row>
+                  <row>
+                     <entry>percentage</entry>
+                     <entry>The relative percentage of the scenario run</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </para>
+      <simplesect>
+         <title>
+            Example of the
+            <code>period</code>
+            configuration in a destination:
+         </title>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<destination class="...">
+   <period type="time" value="1000"/>
+   ...
+   (properties)
+   ...
+</destination>
+...]]></programlisting>
+      </simplesect>
+      <para>Following sections are about the destinations that can be configured by reporters.
+      </para>
+      <xi:include href="../sections/ug-ConsoleDestination.xml"/>
+      <xi:include href="../sections/ug-CSVDestination.xml"/>
+      <xi:include href="../sections/ug-Log4jDestination.xml"/>
    </sect1>
 </chapter>

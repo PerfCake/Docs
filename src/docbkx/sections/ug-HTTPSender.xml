@@ -27,17 +27,55 @@
    </para>
    <para>
       Following table shows the properties of the HTTPSender:
-      <table frame="all"><title>HTTPSender properties</title><tgroup cols="4" align="left" colsep="1" rowsep="1"><colspec colname="property-name" colwidth="1*"/><colspec colname="description" colwidth="1*"/><colspec colname="required" colwidth="1*"/><colspec colname="default-value" colwidth="1*"/><thead><row><entry>Property name</entry><entry>Description</entry><entry>Required</entry><entry>Default value</entry></row></thead><tbody><row><entry>target</entry><entry>URL of the target, where the message is send.</entry><entry>Yes</entry><entry>-</entry></row><row><entry>expectedResponseCodes</entry><entry>A comma separated list of HTTP response code(s) that is
+      <table frame="all">
+         <title>HTTPSender properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="1*"/>
+            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="1*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>target</entry>
+                  <entry>URL of the target, where the message is send.</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>expectedResponseCodes</entry>
+                  <entry>A comma separated list of HTTP response code(s) that is
                      expected to be returned.
-                  </entry><entry>No</entry><entry>"200"</entry></row><row><entry>method</entry><entry>
+                  </entry>
+                  <entry>No</entry>
+                  <entry>"200"</entry>
+               </row>
+               <row>
+                  <entry>method</entry>
+                  <entry>
                      HTTP method to be used.
-                     <footnote><para>
+                     <footnote>
+                        <para>
                            See
                            <ulink url="http://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html#setRequestMethod(java.lang.String)"/>
                            for a complete list of
                            available methods.
-                        </para></footnote>
-                  </entry><entry>No</entry><entry>"POST"</entry></row></tbody></tgroup></table>
+                        </para>
+                     </footnote>
+                  </entry>
+                  <entry>No</entry>
+                  <entry>"POST"</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
    </para>
    <simplesect>
       <title>Example of HTTPSender configuration</title>
