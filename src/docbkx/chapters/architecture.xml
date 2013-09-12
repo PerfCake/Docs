@@ -19,7 +19,7 @@
          <title>Architecture Overview</title>
       </figure>
       <para>
-         In the <link linkend="overall-architecture" />, we can see the high level overview of PerfCake's architecture.
+         In the <link linkend="overall-architecture"/>, we can see the high level overview of PerfCake's architecture.
          There is always a single <indexterm>Generator</indexterm>. The main purpose of the Generator is to specify how the
          messages are generated. The easiest case would be to send a message to the target system, wait for the response and measure
          the response time. However, this would not tell us anything about performance of the target system. What is more interesting
@@ -51,8 +51,8 @@
          More details about individual parts of the application can be found in later sections.
       </para>
    </sect1>
-   <xi:include href="sections/dev-generator.xml"/>
-   <xi:include href="sections/dev-sender.xml"/>
-   <xi:include href="sections/dev-reporting.xml"/>
-   <xi:include href="sections/dev-validation.xml"/>
+   <xi:include href="../sections/dev-generator.xml"/>
+   <xi:include href="../sections/dev-sender.xml"/>
+   <xi:include href="../sections/dev-reporting.xml"/>
+   <xi:include href="../sections/dev-validation.xml"/>
 </chapter>

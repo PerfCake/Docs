@@ -17,22 +17,18 @@
    <xi:include href="chapters/acknowledgements.xml"/>
    <xi:include href="chapters/dev-introduction.xml"/>
    <part label="I">
-   	  <title>General Contributors' and Developers' Guide</title>
+      <title>General Contributors' and Developers' Guide</title>
       <partinfo>
-   	     <para>
-   	  	    This part contains general information suitable for all project contributors and developers. It is a great starting point for anybody with the aspiration to contribute to PerfCake, which we really love.
-         </para>
+         <para>This part contains general information suitable for all project contributors and developers. It is a great starting point for anybody with the aspiration to contribute to PerfCake, which we really love.</para>
       </partinfo>
       <xi:include href="chapters/dev-developing.xml"/>
       <xi:include href="chapters/architecture.xml"/>
    </part>
    <part label="II">
-   	  <title>Core Developers' Guide</title>
-   	  <partinfo>
-   	  	 <para>
-   	  	 	This part is intended purely to core developers who control the project releases, configuration of 3rd party tools etc.
-   	  	 </para>
-   	  </partinfo>
+      <title>Core Developers' Guide</title>
+      <partinfo>
+         <para>This part is intended purely to core developers who control the project releases, configuration of 3rd party tools etc.</para>
+      </partinfo>
       <xi:include href="chapters/dev-release.xml"/>
    </part>
 </book>
