@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-dev-developing.code-standards">
+   <title>Coding Standards</title>
+   <para>
+      This section describes coding standards used for the PerfCake project. This is just a draft so here are some advices from our web page. So please
+      make sure to:
+   </para>
+   <itemizedlist>
+      <listitem>
+         <para>
+            Develop tests for your features/fixes (keep the high level of test coverage),
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            Use the appropriate code style and formatting ( Eclipse configuration file is present in the repo),
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            Avoid introducing new FindBugs warnings (see Developers' Guide to find out how to generate the site report),
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            Keep backward compatibility unless previously discussed with the developers,
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            Write/update the JavaDoc comments,
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            You do not keep unused imports, FIXME comments, unused variables, cryptic code or anything ugly,
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            Submit only a masterpiece code that you could be proud of.
+         </para>
+      </listitem>
+   </itemizedlist>
+   <para>TODO: Complete the coding standards including formatting, variable names, javadoc language style etc.</para>
+</sect2>
