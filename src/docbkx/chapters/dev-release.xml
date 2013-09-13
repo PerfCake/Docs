@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-dev-release" status="draft">
    <title>Release Procedure</title>
+   <para>
+      This chapter describes details about the release procedure. The target audience are core developers with appropriate access rights.
+      The content will be filled in base on the experiences with the release 1.0.
+   </para>
    <para>TODO: How to perform a release, prepare release branch, publish artifacts...</para>
 </chapter>

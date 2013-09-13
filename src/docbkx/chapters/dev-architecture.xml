@@ -7,11 +7,12 @@
    </para>
    <para>
       There is an easy concept that is good to bear in mind while working with PerfCake -- a single communication unit
-      called a
-      <indexterm>Message</indexterm>
-      . PerfCake usually sends the message to the target system and measures the response
+      called a <indexterm>Message</indexterm>. PerfCake usually sends the message to the target system and measures the response
       time needed by the system being measured to provide a valid response. It is also the basic unit of load that can be generated
       for the target system.
+   </para>
+   <para>
+     Let's investigate the architecture in more details.
    </para>
    <xi:include href="../sections/architecture.xml"/>
    <xi:include href="../sections/dev-generator.xml"/>

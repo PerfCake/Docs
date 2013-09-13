@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-dev-developing.maven">
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-dev-developing.maven">
    <title>Using PerfCake from a Maven project</title>
-   <para>TODO: How to use PerfCake as an artifact in your own Maven project.</para>
-</sect2>
+   <para>
+      In this section, you can find information on using PerfCake in your own Maven project in case you do not want to or you cannot
+      contribute directly to PerfCake repository, or you just want to its API.
+   </para>
+   <para>
+     For inclusion into your project, you can search for PerfCake artifacts at
+     <ulink url="http://search.maven.org" />. In the results click at the version number and you will see snippets for various build systems.
+     For Mave and version 1.0 you just include the following XML piece into your project dependencies.
+   </para>
+   <programlisting language="xml" linenumbering="numbered" startinglinenumber="1">
+   <![CDATA[
+<dependency>
+   <groupId>org.perfcake</groupId>
+   <artifactId>perfcake</artifactId>
+   <version>1.0</version>
+</dependency>
+   ]]>
+   </programlisting>
+</sect1>
