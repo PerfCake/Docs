@@ -49,7 +49,7 @@
       <title>Example of JDBCSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <sender class="JDBCSender">
-   <property name="target" value="jdbc:postgresql://127.0.0.1:5432/database"/>
+   <property name="target" value="jdbc:postgresql://127.0.0.1:5432/db"/>
    <property name="username" value="me-the-first"/>
    <property name="password" value="guess_me"/>
    <property name="driverClass" value="org.postgresql.Driver"/>

@@ -58,11 +58,11 @@
    <property name="responseTarget" value="jms/queue/ResponseQueue"/>
    <property name="receivingTimeout" value="30000"/>
    <property name="receiveAttempts" value="1"/>
-   <property name="connectionFactory" value="jms/RemoteConnectionFactory"/>
+   <property name="connectionFactory" value="jms/ConnectionFactory"/>
    <property name="username" value="KingRoland"/>
    <property name="password" value="12345"/>
    <!-- JNDI properties-->
-   <property name="jndiContextFactory" value="org.jboss.naming.remote.client.InitialContextFactory"/>
+   <property name="jndiContextFactory" value="some.package.InitialContextFactory"/>
    <property name="jndiUrl" value="remote://${server.host}:4447"/>
    <property name="jndiSecurityPrincipal" value="KingRoland"/>
    <property name="jndiSecurityCredentials" value="12345"/>

@@ -89,7 +89,8 @@
                <highlightSource>1</highlightSource>
                <sectionAutolabel>true</sectionAutolabel>
                <sectionLabelIncludesComponentLabel>true</sectionLabelIncludesComponentLabel>
-               <formalTitlePlacement>figure after
+               <formalTitlePlacement>
+                  figure after
                   table after
                </formalTitlePlacement>
                <fonts>

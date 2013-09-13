@@ -81,7 +81,7 @@
       <title>Example of HTTPSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <sender class="HTTPSender">
-   <property name="target" value="http://domain.com/the/most-cool/url"/>
+   <property name="target" value="http://domain.com/cool-url"/>
    <property name="method" value="GET"/>
    <property name="expectedResponseCodes" value="200,202"/>
 </sender>
