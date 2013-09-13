@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending" status="draft">
-   <title>Sending messages</title>
+   <title>Sending Messages</title>
    <simplesect>
       <para>In this chapter you can find a complete description of all
          senders that can be used by PerfCake including all of their properties.

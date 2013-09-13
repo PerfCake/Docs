@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-ug-generating" status="draft">
-   <title>Generatring a load</title>
+   <title>Generating Load</title>
    <simplesect>
       <para>
          Generator is an object that uses Sender objects to send and
@@ -9,7 +9,10 @@
          It is capable of generating the load for a specified duration which can be an amount of time or a number of iterations. To
          define the duration and its length you have to configure a generator
          <code>run</code>
-         of the specified type in the scenario. Following table shows the generator
+         of the specified type in the scenario.
+      </para>
+      <para>
+         Following table shows the generator
          <code>run</code>
          options:
          <table frame="all">
