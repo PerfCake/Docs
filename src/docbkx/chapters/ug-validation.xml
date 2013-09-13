@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xmlns="http://docbook.org/ns/docbook" xml:id="ch-ug-validation" status="draft">
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-ug-validation" status="draft">
    <title>Validation</title>
-   <para>TODO: this chapter describes message validation.</para>
+   <simplesect>
+      <para>TODO: Validation is optional, it is performed only on returned messages and in a gently way (once in a 0.5 sec)
+         so it does not add any significant overhead and so it does not affect the measuring.
+      </para>
+      <simplesect>
+         <title>Example of validation configuration:</title>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<messages>
+   ...
+   <message uri="...">
+      <validatorRef id="validator1"/>
+      ...
+   </message>
+   <message uri="...">
+      <validatorRef id="validator1"/>
+      <validatorRef id="validator2"/>
+      ...
+   </message>
+   ...
+</messages>
+      ...
+<validation>
+   <validator id="validator1" class="..."> 
+      ...
+   </validator>
+   <validator id="validator2" class="..."> 
+      ...
+   </validator>
+</validation>
+...]]></programlisting>
+      </simplesect>
+   </simplesect>
+   <sect1>
+      <title>Validators</title>
+      <xi:include href="../sections/ug-TextMessageValidator.xml"/>
+      <xi:include href="../sections/ug-RulesMessageValidator.xml"/>
+   </sect1>
 </chapter>

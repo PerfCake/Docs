@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-validation.RulesMessageValidator">
+   <title>RulesMessageValidator</title>
+   <para></para>
+   <simplesect>
+      <title>Example of RulesMessageValidator configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+   <validator id="validator1" class="TextMessageValidator"><![CDATA[
+      Message body contains "Farewell World!".
+      ...
+   ]]]]><![CDATA[></validator>
+...]]></programlisting>
+   </simplesect>
+</sect2>

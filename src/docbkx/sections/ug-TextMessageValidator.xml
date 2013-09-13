@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-validation.TextMessageValidator">
+   <title>TextMessageValidator</title>
+   <para>...</para>
+   <simplesect>
+      <title>Example of JDBCSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<sender class="JDBCSender">
+   <property name="target" value="jdbc:postgresql://127.0.0.1:5432/database"/>
+   <property name="username" value="me-the-first"/>
+   <property name="password" value="guess_me"/>
+   <property name="driverClass" value="org.postgresql.Driver"/>
+   ...
+</sender>
+...]]></programlisting>
+   </simplesect>
+</sect2>

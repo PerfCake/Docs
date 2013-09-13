@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sender.RequestResponseJMSSender">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.RequestResponseJMSSender">
    <title>RequestResponseJMSSender</title>
    <para>
       The RequestResponseJMSSender is supposed to be used in request-response scenarios. First it sends a JMS message to the target destination (specified by the
@@ -10,7 +10,7 @@
    </para>
    <para>
       It is based on JMSSender (see
-      <xref linkend="ch-ug-sender.JMSSender"/>
+      <xref linkend="ch-ug-sending.JMSSender"/>
       ) so it inherits its properties.
    </para>
    <table frame="all">
