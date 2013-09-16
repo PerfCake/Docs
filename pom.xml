@@ -87,6 +87,8 @@
                <titleFontFamily>FreeSans</titleFontFamily>
                <xincludeSupported>true</xincludeSupported>
                <highlightSource>1</highlightSource>
+               <foCustomization>src/docbkx/docbook-fo.xsl</foCustomization>
+               <useExtensions>1</useExtensions>
                <sectionAutolabel>true</sectionAutolabel>
                <sectionLabelIncludesComponentLabel>true</sectionLabelIncludesComponentLabel>
                <formalTitlePlacement>
