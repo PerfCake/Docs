@@ -45,11 +45,11 @@
    </para>
    <simplesect>
       <title>JVM argument to attach PerfCake agent to the tested JVM</title>
-      <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA["... -javaagent:<perfcake_jar_path>=hostname=<hostname>,port=<port>"]]></programlisting>
+      <programlisting><![CDATA["... -javaagent:<perfcake_jar_path>=hostname=<hostname>,port=<port>"]]></programlisting>
    </simplesect>
    <simplesect>
       <title>PerfCake JVM argument example</title>
-      <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA[JAVA_OPTS="... -javaagent:$PERFCAKE_HOME/lib/perfcake-1.0.jar=port=8850"]]></programlisting>
+      <programlisting><![CDATA[JAVA_OPTS="... -javaagent:$PERFCAKE_HOME/lib/perfcake-1.0.jar=port=8850"]]></programlisting>
    </simplesect>
    <para>
       Now, once you start the tested system up, you should see the following line in the system's console output:
