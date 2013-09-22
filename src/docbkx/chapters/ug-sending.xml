@@ -2,12 +2,18 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending" status="draft">
    <title>Sending Messages</title>
    <simplesect>
-      <para>In this chapter you can find a complete description of all
+      This chapter is divided in two parts. First describes the senders that are used
+      to send messages to a specified target using various ways of transport. The second part
+      is about messages that represents the actual payload that is send by senders.
+   </simplesect>
+   <sect1 xml:id="ch-ug-sending.senders">
+      <title>Senders</title>
+      <para>As mentioned before a sender is an object responsible for sending a message to the tested system and receiving the response
+         in a specific way via specific transport.
+      </para>
+      <para>In the following sections you can find a complete description of all
          senders that can be used by PerfCake including all of their properties.
       </para>
-   </simplesect>
-   <sect1>
-      <title>Senders</title>
       <xi:include href="../sections/ug-CommandSender.xml"/>
       <xi:include href="../sections/ug-DummySender.xml"/>
       <xi:include href="../sections/ug-GroovySender.xml"/>
@@ -24,5 +30,52 @@
       <xi:include href="../sections/ug-RequestResponseJMSSender.xml"/>
       <!-- <xi:include href="../sections/ug-SOAPSender.xml"/> -->
       <xi:include href="../sections/ug-SSLSocketSender.xml"/>
+   </sect1>
+   <sect1 xml:id="ch-ug-sending.messages">
+      <title>Messages</title>
+      <para>
+         A message is an actual payload that is send by a sender. To specify what will be send you should use the
+         <code>uri</code>
+         attribute of the particular message element in the scenario configuration. The <code>uri</code> can be an absolute file path
+         in a form of <code>file://...</code> URL or just a file name in which case PerfCake will look for the file
+         in the messages directory (See <ulink url="https://www.perfcake.org/quickstart/"/>). 
+      </para>
+      <para>
+         The scenario can be configured to
+         send more that one message or to send a message more than once in a single iteration. To specify multiple
+         different messages you just need to add more
+         <code>message</code>
+         elements in the
+         <code>messages</code>
+         configuration. To send a particular message more than once use
+         <code>multiplicity</code>
+         attribute of the respective
+         <code>message</code>
+         element.
+      </para>
+      <simplesect>
+         <title>Example of messages configuration:</title>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<messages>
+   ...
+   <message uri="message1.txt">
+      <header name="header.name" value="header.value"/>
+      <header name="header2" value="you-know"/>
+      <property name="Empire.State.Building" value="A lot of $"/>
+   </message>
+   <message uri="message2.xml" multiplicity="2"/>
+   ...
+</messages>
+...]]></programlisting>
+         <para>
+            In the example above there are 2 messages defined. First with the payload taken from the file
+            <code>message1.txt</code>
+            and with two headers and one property specified.
+            The second message is taken from the file
+            <code>message2.xml</code>
+            and will be send two times in
+            each iteration.
+         </para>
+      </simplesect>
    </sect1>
 </chapter>

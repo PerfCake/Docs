@@ -2,8 +2,28 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-ug-validation" status="draft">
    <title>Validation</title>
    <simplesect>
-      <para>TODO: Validation is optional, it is performed only on returned messages and in a gently way (once in a 0.5 sec)
-         so it does not add any significant overhead and so it does not affect the measuring.
+      <para>Validation can be used to check if the response received by a sender is
+         just as it should be. It is optional and if it is used, it is performed in a gently way
+         (only once in a 0.5 sec) so it does not add any significant overhead and so it does not
+         affect the measuring.
+      </para>
+      <para>
+         The validation is configured in a scenario at two places. First there is a kind of validator
+         pool where all validators available in the scenario are placed. The validator pool is configured
+         in
+         <code>validation</code>
+         section of the scenario. Each validator has a unique ID by which it
+         can be referenced. Once at lease one of the validator is configured it can be referenced by
+         a
+         <code>message</code>
+         's sub-element
+         <code>validatorRef</code>
+         , which is the second place the validation
+         is configured. By adding a validator refecence to the messages we tell PerfCake that the response
+         to that particular messages should be validated by that particular validator. Any message can
+         have multiple validators referenced and each validator must passed the validation in order to
+         set the response valid. Any validator can be referenced from more
+         than one message.
       </para>
       <simplesect>
          <title>Example of validation configuration:</title>
@@ -31,21 +51,21 @@
    </validator>
 </validation>
 ...]]></programlisting>
+         <para>
+            In the example above there two validators (
+            <code>validator1</code>
+            and
+            <code>validator2</code>
+            ) and two messages configured. First message has just the
+            <code>validator1</code>
+            attached so the response message received to
+            the first message will be validated just by the
+            <code>validator1</code>
+            . On the other hand there is a second
+            message that has both validators attached. So the response message received to the second message will be validated
+            by both of the validators.
+         </para>
       </simplesect>
-      <para>
-         In the example above there two validators (
-         <code>validator1</code>
-         and
-         <code>validator2</code>
-         ) and two messages configured. First message has just the
-         <code>validator1</code>
-         attached so the response message received to
-         the first message will be validated just by the
-         <code>validator1</code>
-         . On the other hand there is a second
-         message that has both validators attached. So the response message received to the second message will be validated
-         by both of the validators.
-      </para>
       <para>The rest of the chapter will present all the available validators that can be used in PerfCake.</para>
    </simplesect>
    <sect1>

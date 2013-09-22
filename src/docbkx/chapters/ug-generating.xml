@@ -6,8 +6,8 @@
          Generator is an object that uses Sender objects to send and
          receive messages. Each generator represents a method or technique of how
          the load (sending the messages) is handled.
-         It is capable of generating the load for a specified duration which can be an amount of time or a number of iterations. To
-         define the duration and its length you have to configure a generator
+         It is capable of generating the load for a specified duration which can be an amount of time or a number of iterations using a specified
+         number of concurrent threads. To define the duration and its length you have to configure a generator
          <code>run</code>
          of the specified type in the scenario.
       </para>
@@ -47,6 +47,11 @@
             </tgroup>
          </table>
       </para>
+      <para>
+         The generating is performed in so called iterations. In a single iteration generator takes a sender from sender pool use it to send
+         all messages specified in a scenario (See <xref linkend="ch-ug-sending.messages"/>) and after that it returns the sender back to the
+         sender pool. The reporting module (See <xref linkend="ch-ug-reporing"/>) treats this as a single iteration.
+      </para>
       <simplesect>
          <title>
             Example of the
@@ -62,7 +67,7 @@
 </generator>
 ...]]></programlisting>
       </simplesect>
-      <para>The following section describes the generator that can be
+      <para>The following section describe the generator that can be
          used in PerfCake to generate the load.
       </para>
    </simplesect>

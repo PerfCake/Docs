@@ -5,7 +5,7 @@
       This validator uses Drools
       <footnote>
          <para>
-            <ulink url="http://TODO-link-to-Drools-engine"/>
+            <ulink url="http://www.jboss.org/drools/"/>
          </para>
       </footnote>
       engine to assert the validator rules. The rules for this validator have their own DSL

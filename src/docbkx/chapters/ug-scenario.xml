@@ -1,5 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-scenario" status="draft">
    <title>Defining Scenario</title>
-   <para>TODO: this chapter describes performance scenarios.... include a hand drawn picture of the Scenario configuration.</para>
+   <para>
+      Scenario is a receipt for telling PerfCake what to do. You can specify how PerfCake would
+      generate load by configuring a generator, where and what to send by defining a sender and messages.
+      To get any measured results such as average throughput or memory usage you can define the reporting. To check that the
+      responses are correct the validation is available for you to set
+      in the scenario. You
+      can also specify the scenario's properties.
+   </para>
+   <para>Following section describes the scenario's structure.</para>
+   <sect1 xml:id="ch-ug-scenario.scenario-xml-structure">
+      <title>Scenario XML structure</title>
+      <para>
+         As you can see from the following listing the scenario is defined by an XML file defined by
+         <code>urn:perfcake:scenario:1.0</code>
+         namespace
+         <footnote>
+            <para>
+               Schema can be found at
+               <ulink url="http://schema.perfcake.org/perfcake-scenario-1.0.xsd"/>
+            </para>
+         </footnote>
+         .
+         The scenario is divided into several sections: Properties, Generator, Sender, Reporting, Messages and Validation.
+      </para>
+      <simplesect>
+         <title>Scenario structure</title>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<scenario xmlns="urn:perfcake:scenario:1.0">
+
+   <!-- Scenario properties (optional) -->
+   <properties>
+      <property name="..." value="..."/>
+      ...
+   </properties>
+   
+   <!-- Generator section (required) -->
+   <generator ... >
+      ...
+   </generator>
+   
+   <!-- Sender section (required) -->
+   <sender ... >
+      ...
+   </sender>
+   
+   <!-- Reporting section (optional) -->
+   <reporting>
+      ...
+   </reporting>
+   
+   <!-- Messages section (optional) -->
+   <messages>
+      ...
+   </messages>
+   
+   <!-- Validation section (optional) -->
+   <validation>
+      ...
+   </validation>
+</scenario>]]></programlisting>
+      </simplesect>
+      <sect2>
+         <title>Sections of the scenario</title>
+         <para>Let's take a look at particular sections of the scenario.</para>
+         <simplesect>
+            <title>Scenario Properties</title>
+            <para>This optional section allows you to add some meta-data about your scenario. It can contain multiple properties.</para>
+         </simplesect>
+         <simplesect>
+            <title>Generator</title>
+            <para>Generator section specifies the way how the load is generated. It is mandatory since PerfCake needs to know how to generate.</para>
+            <para>
+               The generators are described in more details in
+               <xref linkend="ch-ug-generating"/>
+               .
+            </para>
+         </simplesect>
+         <simplesect>
+            <title>Sender</title>
+            <para>Sender section is about the transport (e.g. HTTP, JMS, ...) and the target where the load is directed.
+               It is required to be specified in the scenario.
+            </para>
+            <para>
+               More information about the senders can be found in
+               <xref linkend="ch-ug-sending.senders"/>
+               .
+            </para>
+         </simplesect>
+         <simplesect>
+            <title>Reporting</title>
+            <para>Reporting module is responsible for gathering metrics and reporting the results to various places in specified moments.
+               It is not required to configure the reporting in the scenario but without it the PerfCake has no way of measuring and reporting
+               results.
+            </para>
+            <para>
+               The reporting abilities are described in
+               <xref linkend="ch-ug-reporting"/>
+               .
+            </para>
+         </simplesect>
+         <simplesect>
+            <title>Messages</title>
+            <para>The messages represents the payload that is transfered by senders to the tested system. It is optional since
+               there can be situations where there is no actual message being send.
+            </para>
+            <para>
+               The
+               <xref linkend="ch-ug-sending.messages"/>
+               describes the messages in more details.
+            </para>
+         </simplesect>
+         <simplesect>
+            <title>Validation</title>
+            <para>Validation module can be used to check that the responses received by senders are just as they should be.</para>
+            <para>
+               The validation capabilities are described in
+               <xref linkend="ch-ug-validation"/>
+               .
+            </para>
+         </simplesect>
+      </sect2>
+   </sect1>
 </chapter>
