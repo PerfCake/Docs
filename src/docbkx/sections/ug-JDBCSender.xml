@@ -20,25 +20,25 @@
          <tbody>
             <row>
                <entry>target</entry>
-               <entry>JDBC URL of the target, where the query is send.</entry>
+               <entry>A JDBC URL of the target, where the query is send.</entry>
                <entry>Yes</entry>
                <entry>-</entry>
             </row>
             <row>
                <entry>driverClass</entry>
-               <entry>Fully qualified JDBC Driver class.</entry>
+               <entry>A fully qualified JDBC Driver class.</entry>
                <entry>Yes</entry>
                <entry>-</entry>
             </row>
             <row>
                <entry>username</entry>
-               <entry>DB user</entry>
+               <entry>A database user</entry>
                <entry>no</entry>
                <entry>""</entry>
             </row>
             <row>
                <entry>password</entry>
-               <entry>DB password</entry>
+               <entry>A database password</entry>
                <entry>no</entry>
                <entry>""</entry>
             </row>
@@ -46,10 +46,10 @@
       </tgroup>
    </table>
    <simplesect>
-      <title>Example of JDBCSender configuration</title>
+      <title>An example of JDBCSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <sender class="JDBCSender">
-   <property name="target" value="jdbc:postgresql://127.0.0.1:5432/db"/>
+   <property name="target" value="jdbc:postgresql://${PG}:5432/db"/>
    <property name="username" value="me-the-first"/>
    <property name="password" value="guess_me"/>
    <property name="driverClass" value="org.postgresql.Driver"/>

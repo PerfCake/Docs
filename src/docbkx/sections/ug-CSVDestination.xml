@@ -2,11 +2,11 @@
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.CSVDestination">
    <title>CSVDestination</title>
    <para>
-      This destination can be used to publish the measurement into a CSV file. Each result in the measurement is treated
+      This destination can be used to publish the measurements into a CSV file. Each result in the measurement is treated
       as a column in the file and the name of the result is used to name the column.
    </para>
    <para>
-      Following table describes the CSVDestination's properties
+      The following table describes the CSVDestination's properties
       <table frame="all">
          <title>CSVDestination properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -40,7 +40,7 @@
       </table>
    </para>
    <simplesect>
-      <title>Example of CSVDestination configuration</title>
+      <title>An example of CSVDestination configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <destination class="CSVDestination">
    <period type="time" value="1000"/>

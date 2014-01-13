@@ -2,13 +2,13 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending" status="draft">
    <title>Sending Messages</title>
    <simplesect>
-      This chapter is divided in two parts. First describes the senders that are used
+      This chapter is divided into two parts. The first part describes the senders that are used
       to send messages to a specified target using various ways of transport. The second part
-      is about messages that represents the actual payload that is send by senders.
+      is about messages that represent the actual payload that is sent by senders.
    </simplesect>
    <sect1 xml:id="ch-ug-sending.senders">
       <title>Senders</title>
-      <para>As mentioned before a sender is an object responsible for sending a message to the tested system and receiving the response
+      <para>As it was mentioned before a sender is an object responsible for sending a message to the tested system and receiving the response
          in a specific way via specific transport.
       </para>
       <para>In the following sections you can find a complete description of all
@@ -34,10 +34,10 @@
    <sect1 xml:id="ch-ug-sending.messages">
       <title>Messages</title>
       <para>
-         A message is an actual payload that is send by a sender. To specify what will be send you should use the
+         A message is an actual payload that is sent by a sender. To specify what will be sent you should use the
          <code>uri</code>
          attribute of the particular message element in the scenario configuration. The <code>uri</code> can be an absolute file path
-         in a form of <code>file://...</code> URL or just a file name in which case PerfCake will look for the file
+         in a form of <code>file://...</code>, URL or just a file name in which case PerfCake will look for the file
          in the messages directory (See <ulink url="https://www.perfcake.org/quickstart/"/>). 
       </para>
       <para>
@@ -47,14 +47,14 @@
          <code>message</code>
          elements in the
          <code>messages</code>
-         configuration. To send a particular message more than once use
+         configuration. To send a particular message more than once use the
          <code>multiplicity</code>
          attribute of the respective
          <code>message</code>
          element.
       </para>
       <simplesect>
-         <title>Example of messages configuration:</title>
+         <title>An example of messages configuration:</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <messages>
    ...
@@ -68,12 +68,12 @@
 </messages>
 ...]]></programlisting>
          <para>
-            In the example above there are 2 messages defined. First with the payload taken from the file
+            In the example above there are 2 messages defined. In the case of the first message the payload is taken from the file
             <code>message1.txt</code>
-            and with two headers and one property specified.
+            and the message has two headers and one property specified.
             The second message is taken from the file
             <code>message2.xml</code>
-            and will be send two times in
+            and will be sent two times in
             each iteration.
          </para>
       </simplesect>

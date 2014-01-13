@@ -4,7 +4,7 @@
    <para>
       HTTPSSender is similar to the HTTPSender (see
       <xref linkend="ch-ug-sending.HTTPSender"/>
-      ) and so it shares the same properties. The difference is that the HTTPSSender uses HTTPS instead of plain HTTP protocol to send the messages.
+      ), thus it shares the same properties. The difference is that the HTTPSSender uses HTTPS instead of plain HTTP protocol to send messages.
    </para>
    <para>
       The HTTPSSender's properties are described in the following table:
@@ -53,10 +53,10 @@
       </table>
    </para>
    <simplesect>
-      <title>Example of HTTPSSender configuration</title>
+      <title>An example of HTTPSSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <sender class="HTTPSSender">
-   <property name="target" value="http://domain.com/cool-secured_url"/>
+   <property name="target" value="http://domain.com/secured_url"/>
    <property name="method" value="POST"/>
    <property name="trustStore" value="${my.keystores}/cacert.jks"/>
    <property name="trustStorePassword" value="ts_passsword"/>

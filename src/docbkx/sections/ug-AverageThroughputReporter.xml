@@ -6,7 +6,7 @@
    </para>
    <para>The reporter has no properties to be configured.</para>
    <simplesect>
-      <title>Example of AverageThroughputReporter configuration</title>
+      <title>An example of AverageThroughputReporter configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <reporter class="AverageThroughputReporter">
    ...

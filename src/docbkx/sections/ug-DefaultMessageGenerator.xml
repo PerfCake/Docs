@@ -2,18 +2,18 @@
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-generating.DefaultMessageGenerator">
    <title>DefaultMessageGenerator</title>
    <para>
-      The generator is able to generate a load using multiple threads for long period of time (matter of days, weeks,...).
-      It uses a thread pool of a fixed size that stores threads that execute performance iterations.
+      A generator is able to generate a load using multiple threads for a long period of time (matter of days, weeks,...).
+      The generator uses a thread pool of a fixed size that stores threads executing performance iterations.
       The thread pool uses an internal queue where tasks implementing the iterations are buffered and scheduled for execution.
-      The size of the thread queue can be specified by
+      The size of the thread queue can be specified by the
       <code>threadQueueSize</code>
-      property. The generator periodically checks the thread queue and fills the queue with new tasks. The period in which the generator checks
+      property. The generator periodically checks the thread queue and fills the queue with new tasks. The period through which the generator checks
       the thread queue (and fills with new tasks) can be specified by the
       <code>monitoringPeriod</code>
       property.
    </para>
    <para>
-      This approach guarantees that maximum number of thread instances (that is equal to the value of the
+      This approach guarantees that the maximum number of thread instances (that is equal to the value of the
       <code>threadQueueSize</code>
       property) exists in the memory during all the time the generator
       is working. In addition it is even possible to specify the maximum generating rate (iterations per time period)
@@ -24,9 +24,9 @@
       .
    </para>
    <para>
-      To configure the generator we need to specify number of concurrent threads (using
+      To configure the generator we need to specify a number of concurrent threads (using the
       <code>threads</code>
-      attribute), size of the thread queue (via
+      attribute), size of the thread queue (via the
       <code>threadQueueSize</code>
       property) and a
       duration (using the
@@ -34,7 +34,7 @@
       discussed above).
    </para>
    <para>
-      Following table shows the properties of the DefaultMessageGenerator:
+      The following table shows the properties of the DefaultMessageGenerator:
       <table frame="all">
          <title>DefaultMessageGenerator properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -59,7 +59,7 @@
                </row>
                <row>
                   <entry>threadQueueSize</entry>
-                  <entry>The size on the task queue.</entry>
+                  <entry>The size of the task queue.</entry>
                   <entry>No</entry>
                   <entry>1000</entry>
                </row>
@@ -68,7 +68,7 @@
       </table>
    </para>
    <simplesect>
-      <title>Example of DefaultMessageGenerator configuration</title>
+      <title>An example of DefaultMessageGenerator configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <generator class="DefaultMessageGenerator" threads="100">
    <run type="time" value="60000"/>

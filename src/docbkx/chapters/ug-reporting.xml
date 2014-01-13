@@ -6,7 +6,7 @@
          It is configured using &lt;reporting&gt; element in the scenario
          definition.
       </para>
-      <para>The configuration consists of following steps:</para>
+      <para>The configuration consists of the following steps:</para>
       <itemizedlist>
          <listitem>
             <para>Configure a reporter</para>
@@ -21,8 +21,9 @@
          (e.g. console, CSV file, etc.).
       </para>
       <simplesect>
-         <title>Example reporting configuration:</title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<reporting>
+         <title>An example reporting configuration:</title>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<reporting>
    <reporter class="AverageThroughputReporter">
       <destination class="ConsoleDestination">
          <period type="time" value="1000"/>
@@ -41,7 +42,8 @@
          <property name="path" value="test-memory-usage.csv"/>
       </destination>
    </reporter>
-</reporting>]]></programlisting>
+</reporting>
+...]]></programlisting>
       </simplesect>
       <para>
          With this configuration the 2 reporters are specified -
@@ -52,7 +54,7 @@
          seconds, while the second one will report memory usage of the
          tested system into CSV file each 2 seconds.
       </para>
-      <para>Following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
+      <para>The following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
    </simplesect>
    <sect1>
       <title>Reporters</title>
@@ -65,7 +67,7 @@
    <sect1>
       <title>Destinations</title>
       <para>
-         The destinations are a representation of places where the measurements from the reporters are published.
+         A destination is a representation of places where the measurements from the reporters are published.
          Each destination is configured to publish the report measurements during the scenario execution periodically with a period
          specified by the
          <code>period</code>
@@ -73,7 +75,7 @@
          has to have at least one period configured.
       </para>
       <para>
-         Following table shows the destination
+         The following table shows the destination
          <code>period</code>
          options:
          <table frame="all">
@@ -114,7 +116,7 @@
       </para>
       <simplesect>
          <title>
-            Example of the
+            An example of the
             <code>period</code>
             configuration in a destination:
          </title>
@@ -127,7 +129,7 @@
 </destination>
 ...]]></programlisting>
       </simplesect>
-      <para>Following sections are about the destinations that can be configured by reporters.
+      <para>The following sections describe the destinations that can be used by reporters.
       </para>
       <xi:include href="../sections/ug-ConsoleDestination.xml"/>
       <xi:include href="../sections/ug-CSVDestination.xml"/>

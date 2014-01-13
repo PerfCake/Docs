@@ -7,7 +7,7 @@
       ) and so it shares the same properties. The difference is that the SSLSocketSender uses a SSL socket.
    </para>
    <simplesect>
-      <title>Example of SSLSocketSender configuration</title>
+      <title>An example of SSLSocketSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <sender class="SSLSocketSender">
    <property name="target" value="127.0.0.1:12345"/>

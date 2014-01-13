@@ -12,7 +12,7 @@
       property.
    </para>
    <para>
-      Following table describes the Log4jDestination's properties
+      The following table describes the Log4jDestination's properties
       <table frame="all">
          <title>Log4jDestination properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -40,7 +40,7 @@
       </table>
    </para>
    <simplesect>
-      <title>Example of Log4jDestination configuration</title>
+      <title>An example of Log4jDestination configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <destination class="Log4jDestination">
    <period type="time" value="1000"/>

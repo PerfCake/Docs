@@ -4,8 +4,8 @@
    <para>
       The RequestResponseJMSSender is supposed to be used in request-response scenarios. First it sends a JMS message to the target destination (specified by the
       <code>target</code>
-      property) and then waits to receive the response message from the response destination (specified by
-      <code>responseTarget</code>
+      property) and then waits to receive the response message from the response destination (specified by the
+      <code>responseTarget</code> 
       property).
    </para>
    <para>
@@ -31,19 +31,19 @@
          <tbody>
             <row>
                <entry>responseTarget</entry>
-               <entry>JMS destination where the sender will wait and receive a response message from.</entry>
+               <entry>A JMS destination where the sender will wait and receive a response message from.</entry>
                <entry>Yes</entry>
                <entry>-</entry>
             </row>
             <row>
                <entry>receivingTimeout</entry>
-               <entry>Time duration in ms of how long the sender will wait to receive the response message.</entry>
+               <entry>A time duration in ms of specifying how long the sender will wait to receive the response message.</entry>
                <entry>No</entry>
                <entry>"1000"</entry>
             </row>
             <row>
                <entry>receiveAttempts</entry>
-               <entry>Number of attempts to receive the message.</entry>
+               <entry>A Number of attempts to receive the message.</entry>
                <entry>No</entry>
                <entry>"5"</entry>
             </row>
@@ -51,18 +51,18 @@
       </tgroup>
    </table>
    <simplesect>
-      <title>Example of RequestResponseJMSSender configuration</title>
+      <title>An example of RequestResponseJMSSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <sender class="RequestResponseJMSSender">
    <property name="target" value="jms/queue/RequestQueue"/>
    <property name="responseTarget" value="jms/queue/ResponseQueue"/>
    <property name="receivingTimeout" value="30000"/>
    <property name="receiveAttempts" value="1"/>
-   <property name="connectionFactory" value="jms/ConnectionFactory"/>
+   <property name="connectionFactory" value="jms/ConnFactory"/>
    <property name="username" value="KingRoland"/>
    <property name="password" value="12345"/>
    <!-- JNDI properties-->
-   <property name="jndiContextFactory" value="some.package.InitialContextFactory"/>
+   <property name="jndiContextFactory" value="pkg.InitCtxFactory"/>
    <property name="jndiUrl" value="remote://${server.host}:4447"/>
    <property name="jndiSecurityPrincipal" value="KingRoland"/>
    <property name="jndiSecurityCredentials" value="12345"/>

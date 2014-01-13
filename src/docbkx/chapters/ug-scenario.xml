@@ -4,12 +4,11 @@
    <para>
       Scenario is a receipt for telling PerfCake what to do. You can specify how PerfCake would
       generate load by configuring a generator, where and what to send by defining a sender and messages.
-      To get any measured results such as average throughput or memory usage you can define the reporting. To check that the
-      responses are correct the validation is available for you to set
-      in the scenario. You
-      can also specify the scenario's properties.
+      To get any measured results such as an average throughput or a memory usage you can define a reporting. To check that the
+      responses are correct a validation is available for you to set
+      in the scenario. There is also a possibility to specify scenario meta-data by setting the scenario's properties.
    </para>
-   <para>Following section describes the scenario's structure.</para>
+   <para>The following section describes the scenario's structure.</para>
    <sect1 xml:id="ch-ug-scenario.scenario-xml-structure">
       <title>Scenario XML structure</title>
       <para>
@@ -71,7 +70,7 @@
          </simplesect>
          <simplesect>
             <title>Generator</title>
-            <para>Generator section specifies the way how the load is generated. It is mandatory since PerfCake needs to know how to generate.</para>
+            <para>Generator section specifies the way how the load is generated. It is mandatory since PerfCake needs to know how to generate load.</para>
             <para>
                The generators are described in more details in
                <xref linkend="ch-ug-generating"/>
@@ -103,7 +102,7 @@
          </simplesect>
          <simplesect>
             <title>Messages</title>
-            <para>The messages represents the payload that is transfered by senders to the tested system. It is optional since
+            <para>The messages represent the payload that is transfered by senders to the tested system. It is optional since
                there can be situations where there is no actual message being send.
             </para>
             <para>
@@ -114,7 +113,7 @@
          </simplesect>
          <simplesect>
             <title>Validation</title>
-            <para>Validation module can be used to check that the responses received by senders are just as they should be.</para>
+            <para>Validation module allows to validate the response messages.</para>
             <para>
                The validation capabilities are described in
                <xref linkend="ch-ug-validation"/>

@@ -28,7 +28,7 @@
       </tgroup>
    </table>
    <simplesect>
-      <title>Example of PlainSocketSender configuration</title>
+      <title>An example of PlainSocketSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <sender class="PlainSocketSender">
    <property name="target" value="127.0.0.1:12345"/>

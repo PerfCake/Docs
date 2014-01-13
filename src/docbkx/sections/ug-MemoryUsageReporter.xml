@@ -41,7 +41,7 @@
       </tgroup>
    </table>
    <para>
-      To attach the agent to the tested system's JVM append following JVM argument to executing java command or using JAVA_OPTS environment properties.
+      To attach the agent to the tested system's JVM, append the following JVM argument to the executing java command or use JAVA_OPTS environment variable.
    </para>
    <simplesect>
       <title>JVM argument to attach PerfCake agent to the tested JVM</title>
@@ -52,7 +52,7 @@
       <programlisting><![CDATA[JAVA_OPTS="... -javaagent:$PERFCAKE_HOME/lib/perfcake-1.0.jar=port=8850"]]></programlisting>
    </simplesect>
    <para>
-      Now, once you start the tested system up, you should see the following line in the system's console output:
+      Once you have started the tested system up, you should see the following line in the system's console output:
       <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 PerfCakeAgent > Listening at localhost on port 8850
 ...]]></programlisting>
@@ -78,13 +78,13 @@ PerfCakeAgent > Listening at localhost on port 8850
          <tbody>
             <row>
                <entry>agentHostname</entry>
-               <entry>IP address of hostname where PerfCake agent is listening.</entry>
+               <entry>An IP address of hostname where the PerfCake agent is listening.</entry>
                <entry>No</entry>
                <entry>"localhost"</entry>
             </row>
             <row>
                <entry>agentPort</entry>
-               <entry>A port number where PerfCake agent is listening.</entry>
+               <entry>A port number where the PerfCake agent is listening.</entry>
                <entry>No</entry>
                <entry>"8849"</entry>
             </row>
@@ -92,7 +92,7 @@ PerfCakeAgent > Listening at localhost on port 8850
       </tgroup>
    </table>
    <simplesect>
-      <title>Example of MemoryUsageReporter configuration</title>
+      <title>An example of MemoryUsageReporter configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[
 ...
 <reporter class="MemoryUsageReporter">

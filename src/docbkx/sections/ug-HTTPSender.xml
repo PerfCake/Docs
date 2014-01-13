@@ -10,8 +10,8 @@
       property.
    </para>
    <para>
-      The various scenarios can lead to a different HTTP response codes that are expected. The scenario can be set to expect
-      one or more response codes. It can be set via
+      Various scenarios can lead to different HTTP response codes that are expected. The scenario can be set to expect
+      one or more response codes. It can be set via the
       <code>expectedResponseCodes</code>
       property.
       Default expected response code is 200.
@@ -45,7 +45,7 @@
             <tbody>
                <row>
                   <entry>target</entry>
-                  <entry>URL of the target, where the message is send.</entry>
+                  <entry>An URL of the target, where the message is send.</entry>
                   <entry>Yes</entry>
                   <entry>-</entry>
                </row>
@@ -60,7 +60,7 @@
                <row>
                   <entry>method</entry>
                   <entry>
-                     HTTP method to be used.
+                     An HTTP method to be used.
                      <footnote>
                         <para>
                            See
@@ -78,7 +78,7 @@
       </table>
    </para>
    <simplesect>
-      <title>Example of HTTPSender configuration</title>
+      <title>An example of HTTPSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <sender class="HTTPSender">
    <property name="target" value="http://domain.com/cool-url"/>

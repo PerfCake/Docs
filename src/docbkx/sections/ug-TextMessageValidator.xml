@@ -6,11 +6,11 @@
       The response message must match all lines in order to be successfully validated.
    </para>
    <simplesect>
-      <title>Example of TextMessageValidator configuration</title>
+      <title>An example of TextMessageValidator configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<validator id="rimmerIsAFishValidator" class="TextMessageValidator"><![CDATA[
-.*"I'm a [Ff]ish", Rimmer Arnold J\.*
-]]]]><![CDATA[></validator>
+<validator id="rimmerValidator" class="TextMessageValidator">
+   <![CDATA[.*"I'm a [Ff]ish"!\.*]]]]><![CDATA[>
+</validator>
 ...]]></programlisting>
    </simplesect>
 </sect2>

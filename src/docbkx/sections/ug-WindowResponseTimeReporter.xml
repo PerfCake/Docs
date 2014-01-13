@@ -35,7 +35,7 @@
       </table>
    </para>
    <simplesect>
-      <title>Example of WindowResponseTimeReporter configuration</title>
+      <title>An example of WindowResponseTimeReporter configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <reporter class="WindowResponseTimeReporter">
    <property name="windowSize" value="32"/>

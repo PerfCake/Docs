@@ -3,7 +3,7 @@
    <title>JMSSender</title>
    <para>The JMSSender can be used to send a single JMS message.</para>
    <para>
-      Following table describes the JMSSender's properties:
+      The following table describes the JMSSender's properties:
       <table frame="all">
          <title>JMSSender properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -22,37 +22,37 @@
             <tbody>
                <row>
                   <entry>target</entry>
-                  <entry>JMS destination where the message is send.</entry>
+                  <entry>A JMS destination where the message is send.</entry>
                   <entry>Yes</entry>
                   <entry>-</entry>
                </row>
                <row>
                   <entry>connectionFactory</entry>
-                  <entry>Name of a JMS Connection factory.</entry>
+                  <entry>A name of a JMS Connection factory.</entry>
                   <entry>Yes</entry>
                   <entry>-</entry>
                </row>
                <row>
                   <entry>jndiContextFactory</entry>
-                  <entry>Fully qualified name of the JNDI ContextFactory class.</entry>
+                  <entry>A fully qualified name of the JNDI ContextFactory class.</entry>
                   <entry>Yes</entry>
                   <entry>-</entry>
                </row>
                <row>
                   <entry>jndiUrl</entry>
-                  <entry>JNDI location URL.</entry>
+                  <entry>A JNDI location URL.</entry>
                   <entry>Yes</entry>
                   <entry>-</entry>
                </row>
                <row>
                   <entry>jndiSecurityPrincipal</entry>
-                  <entry>JNDI username</entry>
+                  <entry>A JNDI username</entry>
                   <entry>Yes</entry>
                   <entry/>
                </row>
                <row>
                   <entry>jndiSecurityCredentials</entry>
-                  <entry>JNDI password</entry>
+                  <entry>A JNDI password</entry>
                   <entry>Yes</entry>
                   <entry/>
                </row>
@@ -64,37 +64,37 @@
                </row>
                <row>
                   <entry>replyTo</entry>
-                  <entry>The destination where the reply is supposed to be send by server. JMS 'replyTo' header.</entry>
+                  <entry>The destination where the reply is supposed to be sent by server. JMS 'replyTo' header.</entry>
                   <entry>No</entry>
                   <entry>""</entry>
                </row>
                <row>
                   <entry>persistent</entry>
-                  <entry>Indicated whether the message is to be persisted by JMS provider.</entry>
+                  <entry>Indicate whether the message is to be persisted by JMS provider.</entry>
                   <entry>No</entry>
                   <entry>true</entry>
                </row>
                <row>
                   <entry>transacted</entry>
-                  <entry>Indicated whether the message transport is to be transacted.</entry>
+                  <entry>Indicate whether the message transport is to be transacted.</entry>
                   <entry>No</entry>
                   <entry>false</entry>
                </row>
                <row>
                   <entry>sendAsObject</entry>
-                  <entry>Indicated whether the message is send as an ObjectMessage instance or a TextMessage (default) instance.</entry>
+                  <entry>Indicate whether the message is send as an ObjectMessage instance or a TextMessage (default) instance.</entry>
                   <entry>No</entry>
                   <entry>false</entry>
                </row>
                <row>
                   <entry>username</entry>
-                  <entry>JMS security username. If not provided - JMS transport will be performed unsecured.</entry>
+                  <entry>A JMS security username. If not provided - JMS transport will be performed unsecured.</entry>
                   <entry>No</entry>
                   <entry>""</entry>
                </row>
                <row>
                   <entry>password</entry>
-                  <entry>JMS security password. If not provided - JMS transport will be performed unsecured.</entry>
+                  <entry>A JMS security password. If not provided - JMS transport will be performed unsecured.</entry>
                   <entry>No</entry>
                   <entry>""</entry>
                </row>
@@ -103,17 +103,17 @@
       </table>
    </para>
    <simplesect>
-      <title>Example of JMSSender configuration</title>
+      <title>An example of JMSSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <sender class="JMSSender">
    <property name="target" value="jms/queue/YourQueue"/>
    <property name="receivingTimeout" value="30000"/>
    <property name="receiveAttempts" value="1"/>
-   <property name="connectionFactory" value="jms/ConnectionFactory"/>
+   <property name="connectionFactory" value="jms/ConnFactory"/>
    <property name="username" value="KingRoland"/>
    <property name="password" value="12345"/>
    <!-- JNDI properties-->
-   <property name="jndiContextFactory" value="some.package.InitialContextFactory"/>
+   <property name="jndiContextFactory" value="pkg.InitCtxFactory"/>
    <property name="jndiUrl" value="remote://${server.host}:4447"/>
    <property name="jndiSecurityPrincipal" value="KingRoland"/>
    <property name="jndiSecurityCredentials" value="12345"/>
