@@ -56,7 +56,7 @@
       <title>An example of HTTPSSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <sender class="HTTPSSender">
-   <property name="target" value="http://domain.com/secured_url"/>
+   <property name="target" value="https://domain.com/secured_url"/>
    <property name="method" value="POST"/>
    <property name="trustStore" value="${my.keystores}/cacert.jks"/>
    <property name="trustStorePassword" value="ts_passsword"/>
