@@ -54,6 +54,34 @@
          seconds, while the second one will report memory usage of the
          tested system into CSV file each 2 seconds.
       </para>
+      <para>
+         Each reporter can be enabled/disabled by the optional boolean attribute called
+         <code>enabled</code>
+         . The disabled reporter is just ignored by PerfCake just like it wouldn't be there at all.
+         If not specified the reporter is enabled by default.
+      </para>
+      <simplesect>
+         <title>An example of a disabled reporter:</title>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<reporting>
+   <reporter class="AverageThroughputReporter">
+      ...
+   </reporter>
+
+   <reporter class="MemoryUsageReporter" enabled="false">
+      ...
+   </reporter>
+</reporting>
+...]]></programlisting>
+         <para>
+            In the example above there are two reporters configured,
+            <code>AverageThroughputReporter</code>
+            which is enabled
+            and
+            <code>MemoryUsageReporter</code>
+            which is disabled.
+         </para>
+      </simplesect>
       <para>The following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
    </simplesect>
    <sect1>
