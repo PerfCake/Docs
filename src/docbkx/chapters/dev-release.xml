@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-dev-release" status="draft">
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+   xml:id="ch-dev-release" status="draft" version="1">
    <title>Release Procedure</title>
-   <para>
-      This chapter describes details about the release procedure. The target audience are core developers with appropriate access rights.
-      The content will be filled in base on the experiences with the release 1.0.
-   </para>
+   <para> This chapter describes details about the release procedure using Maven and following the
+      git flow principles. The target audience are core developers with appropriate access rights.
+      The content will be filled in base on the experiences with the release 1.0. </para>
    <para>TODO: How to perform a release, prepare release branch, publish artifacts...</para>
+   <para>First, start off with a new release branch:</para>
+   <para>git checkout -b release/v{VERSION} devel</para>
+   <para>Let Maven prepare the release for us:</para>
+   <para>mvn release:prepare &amp;&amp; mvn release:perform</para>
+   <para>The rest is about getting git into a good shape. This starts by getting the updated pom.xml
+      into the devel branch.</para>
+   <para>git checkout devel</para>
+   <para>git merge --no-ff release/v{VERSION}</para>
+   <para>We need to get the correct pom.xml to the master branch as well. For this, we will use the
+      commit prior to the head in the release branch.</para>
+   <para>git checkout master</para>
+   <para>git merge --no-ff release/v{VERSION}~1</para>
+   <para>Let's clean it up and go public:</para>
+   <para>git branch -D release/v{VERSION}</para>
+   <para>git push --all &amp;&amp; git push --tags </para>
+   <para>The Sonatype JIRA with account request:
+      https://issues.sonatype.org/browse/OSSRH-7134</para>
+   <para>Follow the rules here to deploy the artifacts:
+      https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-7b.StageExistingArtifacts</para>
+   <para/>
 </chapter>

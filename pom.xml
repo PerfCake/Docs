@@ -86,6 +86,7 @@
                <bodyFontFamily>FreeSerif</bodyFontFamily>
                <titleFontFamily>FreeSans</titleFontFamily>
                <xincludeSupported>true</xincludeSupported>
+               <generatedSourceDirectory>${project.build.directory}/xinclude</generatedSourceDirectory>
                <highlightSource>1</highlightSource>
                <foCustomization>src/docbkx/docbook-fo.xsl</foCustomization>
                <useExtensions>1</useExtensions>

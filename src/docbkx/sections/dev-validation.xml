@@ -10,7 +10,7 @@
       <title>Validators Architecture</title>
       <figure id="validator-architecture">
          <title>Validators Architecture</title>
-         <graphic format="PNG" fileref="../../images/architecture/validation.png"/>
+         <graphic format="PNG" fileref="../images/architecture/validation.png"/>
       </figure>
 
       <para>TODO: Describe the architecture.</para>

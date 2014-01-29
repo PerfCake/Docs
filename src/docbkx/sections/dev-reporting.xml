@@ -11,7 +11,7 @@
       <title>Reporting Architecture</title>
       <figure id="reporting-architecture">
          <title>Reporting Architecture</title>
-         <graphic format="PNG" fileref="../../images/architecture/reporting.png"/>
+         <graphic format="PNG" fileref="../images/architecture/reporting.png"/>
       </figure>
 
       <para>TODO: Describe the architecture.</para>
