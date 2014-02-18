@@ -78,11 +78,20 @@
                   <goals>
                      <goal>generate-pdf</goal>
                      <goal>generate-html</goal>
-                  </goals>
+                  </goals>                  
                   <phase>package</phase>
                </execution>
             </executions>
             <configuration>
+               <htmlStylesheet>../guides/a.css</htmlStylesheet>
+               <preProcess>
+                  <copy todir="target/docbkx/images">
+                     <fileset dir="src/docbkx/images"/>
+                  </copy>
+                  <copy todir="target/docbkx/css">
+                      <fileset dir="src/docbkx/css"/>
+                  </copy>
+               </preProcess>
                <bodyFontFamily>FreeSerif</bodyFontFamily>
                <titleFontFamily>FreeSans</titleFontFamily>
                <xincludeSupported>true</xincludeSupported>
