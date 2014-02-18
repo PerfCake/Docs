@@ -11,12 +11,10 @@
      For Mave and version 1.0 you just include the following XML piece into your project dependencies.
    </para>
    <programlisting language="xml" linenumbering="numbered" startinglinenumber="1">
-   <![CDATA[
-<dependency>
+<![CDATA[<dependency>
    <groupId>org.perfcake</groupId>
    <artifactId>perfcake</artifactId>
    <version>1.0</version>
-</dependency>
-   ]]>
+</dependency>]]>
    </programlisting>
 </sect1>
