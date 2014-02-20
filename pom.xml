@@ -53,6 +53,25 @@
             <groupId>com.agilejava.docbkx</groupId>
             <artifactId>docbkx-maven-plugin</artifactId>
             <version>2.0.14</version>
+            <dependencies>
+               <dependency>
+                  <groupId>net.sf.xslthl</groupId>
+                  <artifactId>xslthl</artifactId>
+                  <version>2.1.0</version>
+               </dependency>
+               <dependency>
+                  <groupId>net.sf.offo</groupId>
+                  <artifactId>fop-hyph</artifactId>
+                  <version>1.2</version>
+               </dependency>
+               <dependency>
+                  <groupId>net.sf.docbook</groupId>
+                  <artifactId>docbook-xml</artifactId>
+                  <version>5.0-all</version>
+                  <type>zip</type>
+                  <classifier>resources</classifier>
+               </dependency>
+            </dependencies>
             <executions>
                <execution>
                   <id>generate-docs</id>
