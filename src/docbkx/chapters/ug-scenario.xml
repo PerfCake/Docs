@@ -145,7 +145,7 @@
 </scenario>]]></programlisting>
          </simplesect>
          <para>
-            The property filtering process is performed in a moment when a scenario file (or a message file) is loaded
+            The property filtering process is performed in a moment, when a scenario file (or a message file) is loaded
             by PerfCake, before it is parsed.
          </para>
          <para>
@@ -180,6 +180,14 @@
                   <row>
                      <entry>perfcake.messages.dir</entry>
                      <entry>Messages directory</entry>
+                  </row>
+                  <row>
+                     <entry>perfcake.plugins.dir</entry>
+                     <entry>Plugins directory</entry>
+                  </row>
+                  <row>
+                     <entry>perfcake.properties.file</entry>
+                     <entry>Custom properties file</entry>
                   </row>
                   <row>
                      <entry>perfcake.run.timestamp</entry>

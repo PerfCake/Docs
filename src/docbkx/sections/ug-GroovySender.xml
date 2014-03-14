@@ -4,11 +4,25 @@
    <para>
       Groovy sender can be used to implement the message sending in a Groovy script. To achieve this goal the sender uses the
       <code>groovy</code>
-      installed on the system, where the PerfCake is executed.
+      installed on the system, where the PerfCake is executed. PerfCake would try to find it at the following path:
+      <code>$GROOVY_HOME/bin/groovy</code>
+      on UNIX systems or
+      <code>%GROOVY_HOME%\bin\groovy</code>
+      in case of Windows, where
+      <code>GROOVY_HOME</code>
+      is an environment variable.
+   </para>
+   <para>
+      The Groovy binary doesn't have to be the one, that is
+      installed on the system. There is a possibility to use
+      <code>groovyExecutable</code>
+      property to specify, what Groovy binaries would be used to execute the target script.
    </para>
    <para>
       The message configured in the scenario is passed to the Groovy script through standard input so it can be accessed via
       <code>System.in</code>
+      . The response is supposed to be passed back through a standard output via
+      <code>System.out</code>
       .
    </para>
    <table frame="all">
@@ -32,6 +46,12 @@
                <entry>Path to the Groovy script that is to be executed.</entry>
                <entry>Yes</entry>
                <entry>-</entry>
+            </row>
+            <row>
+               <entry>groovyExecutable</entry>
+               <entry>Path to the Groovy binary, that would be used to execute the script.</entry>
+               <entry>No</entry>
+               <entry>$GROOVY_HOME/bin/groovy</entry>
             </row>
          </tbody>
       </tgroup>

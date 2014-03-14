@@ -7,29 +7,18 @@
       The thread pool uses an internal queue where tasks implementing the iterations are buffered and scheduled for execution.
       The size of the thread queue can be specified by the
       <code>threadQueueSize</code>
-      property. The generator periodically checks the thread queue and fills the queue with new tasks. The period through which the generator checks
-      the thread queue (and fills with new tasks) can be specified by the
-      <code>monitoringPeriod</code>
       property.
    </para>
    <para>
       This approach guarantees that the maximum number of thread instances (that is equal to the value of the
       <code>threadQueueSize</code>
       property) exists in the memory during all the time the generator
-      is working. In addition it is even possible to specify the maximum generating rate (iterations per time period)
-      that can be quantified by
-      <code>threadQueueSize</code>
-      /
-      <code>monitoringPeriod</code>
-      .
+      is working.
    </para>
    <para>
       To configure the generator we need to specify a number of concurrent threads (using the
       <code>threads</code>
-      attribute), size of the thread queue (via the
-      <code>threadQueueSize</code>
-      property) and a
-      duration (using the
+      attribute) and a duration (using the
       <code>run</code>
       discussed above).
    </para>
@@ -51,12 +40,6 @@
                </row>
             </thead>
             <tbody>
-               <row>
-                  <entry>monitoringPeriod</entry>
-                  <entry>The period in milliseconds in which the task queue is filled with new tasks</entry>
-                  <entry>No</entry>
-                  <entry>1000</entry>
-               </row>
                <row>
                   <entry>threadQueueSize</entry>
                   <entry>The size of the task queue.</entry>

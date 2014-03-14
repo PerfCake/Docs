@@ -26,8 +26,8 @@
                <row>
                   <entry>path</entry>
                   <entry>A path to the output CSV file.</entry>
-                  <entry>Yes</entry>
-                  <entry>-</entry>
+                  <entry>No</entry>
+                  <entry>perfcake-results-&lt;timestamp&gt;.csv</entry>
                </row>
                <row>
                   <entry>delimiter</entry>

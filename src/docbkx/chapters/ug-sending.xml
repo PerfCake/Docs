@@ -2,17 +2,17 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending" status="draft">
    <title>Sending Messages</title>
    <simplesect>
-      This chapter is divided into two parts. The first part describes the senders that are used
+      This chapter is divided into two parts. The first part describes the senders, that are used
       to send messages to a specified target using various ways of transport. The second part
-      is about messages that represent the actual payload that is sent by senders.
+      is about messages, that represent the actual payload, that is sent by senders.
    </simplesect>
    <sect1 xml:id="ch-ug-sending.senders">
       <title>Senders</title>
-      <para>As it was mentioned before a sender is an object responsible for sending a message to the tested system and receiving the response
-         in a specific way via specific transport.
+      <para>As it was mentioned before, a sender is an object responsible for sending a message to the tested system and receiving the response
+         in a specific way via a specific transport.
       </para>
       <para>In the following sections you can find a complete description of all
-         senders that can be used by PerfCake including all of their properties.
+         senders, that can be used by PerfCake including all of their properties.
       </para>
       <xi:include href="../sections/ug-CommandSender.xml"/>
       <xi:include href="../sections/ug-DummySender.xml"/>
@@ -34,11 +34,17 @@
    <sect1 xml:id="ch-ug-sending.messages">
       <title>Messages</title>
       <para>
-         A message is an actual payload that is sent by a sender. To specify what will be sent you should use the
+         A message is an actual payload, that is sent by a sender. To specify what will be sent, you should use the
          <code>uri</code>
-         attribute of the particular message element in the scenario configuration. The <code>uri</code> can be an absolute file path
-         in a form of <code>file://...</code>, URL or just a file name in which case PerfCake will look for the file
-         in the messages directory (See <ulink url="https://www.perfcake.org/quickstart/"/>). 
+         attribute of the particular message element in the scenario configuration. The
+         <code>uri</code>
+         can be an absolute file path
+         in a form of
+         <code>file://...</code>
+         , URL or just a file name, in which case PerfCake will look for the file
+         in the messages directory (See
+         <ulink url="https://www.perfcake.org/quickstart/"/>
+         ).
       </para>
       <para>
          The scenario can be configured to
