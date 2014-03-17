@@ -2,7 +2,7 @@
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.GroovySender">
    <title>GroovySender</title>
    <para>
-      Groovy sender can be used to implement the message sending in a Groovy script. To achieve this goal the sender uses the
+      Groovy sender can be used to implement the message sending in a Groovy script. By default the sender uses the
       <code>groovy</code>
       installed on the system, where the PerfCake is executed. PerfCake would try to find it at the following path:
       <code>$GROOVY_HOME/bin/groovy</code>
@@ -19,12 +19,13 @@
       property to specify, what Groovy binaries would be used to execute the target script.
    </para>
    <para>
-      The message configured in the scenario is passed to the Groovy script through standard input so it can be accessed via
+      The message configured in the scenario is passed to the Groovy script through standard input, so it can be accessed via
       <code>System.in</code>
       . The response is supposed to be passed back through a standard output via
       <code>System.out</code>
       .
    </para>
+   <para>The following table describes all the GroovySender's properties.</para>
    <table frame="all">
       <title>GroovySender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">

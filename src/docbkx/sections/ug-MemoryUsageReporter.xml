@@ -58,8 +58,16 @@ PerfCakeAgent > Listening at localhost on port 8850
 ...]]></programlisting>
    </para>
    <para>Once you have the PerfCake agent attached and the tested system is up and running you can use the MemoryUsageReporter to measure the memory usage of the tested system.
-      The reporter has following properties to determine the PerfCake agent location.
    </para>
+   <para>
+      Possible memory leak detection mechanism was added to the MemoryUsageReporter in PerfCake v2.0. It is disabled by default. Once enabled,
+      the reporter periodically gathers memory usage from the tested system using via an ordinary way (using the PerfCakeAgent) and remembers
+      a window of N last measured values. Once the window is filled, the reporter uses a linear regression analysis over the
+      data from the
+      time window to compute an used memory trend. The possible memory leak is considered detected when the slope of the memory trend exceeds
+      the specified slope threshold. All The period, the window size and the slope threshold are configurable via particular reporter's properties.
+   </para>
+   <para>The reporter has the following properties:</para>
    <table frame="all">
       <title>MemoryUsageReporter properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -87,6 +95,30 @@ PerfCakeAgent > Listening at localhost on port 8850
                <entry>A port number where the PerfCake agent is listening.</entry>
                <entry>No</entry>
                <entry>"8849"</entry>
+            </row>
+            <row>
+               <entry>memoryLeakDetectionEnabled</entry>
+               <entry>Enables or disables the memory leak detection.</entry>
+               <entry>No</entry>
+               <entry>"false"</entry>
+            </row>
+            <row>
+               <entry>memoryLeakDetectionMonitoringPeriod</entry>
+               <entry>A time period in ms in which the memory leak detection mechanism gathers memory usage data.</entry>
+               <entry>No</entry>
+               <entry>"500"</entry>
+            </row>
+            <row>
+               <entry>memoryLeakSlopeThreshold</entry>
+               <entry>The used memory trend slope threshold. The slope's unit is a byte per second.</entry>
+               <entry>No</entry>
+               <entry>"1024"</entry>
+            </row>
+            <row>
+               <entry>usedMemoryTimeWindowSize</entry>
+               <entry>The used memory time window size. (Number of records in the memory data set used for the statistical analysis).</entry>
+               <entry>No</entry>
+               <entry>"100"</entry>
             </row>
          </tbody>
       </tgroup>

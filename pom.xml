@@ -101,6 +101,8 @@
                <useExtensions>1</useExtensions>
                <sectionAutolabel>true</sectionAutolabel>
                <sectionLabelIncludesComponentLabel>true</sectionLabelIncludesComponentLabel>
+               <tableFrameBorderThickness>2px</tableFrameBorderThickness>
+               <tableCellBorderThickness>1px</tableCellBorderThickness>
                <formalTitlePlacement>
                   figure after
                   table after

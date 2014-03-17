@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-extending" status="draft">
    <title>Extending PerfCake</title>
-   <para>PerfCake has the extension mechanism that allows user to add a server-side specific client libraries or a new functionality. The following sections describes those possibilities.</para>
+   <para>PerfCake has the extension mechanism, that allows user to add specific client libraries or a new functionality. The following sections describes those possibilities.</para>
    <sect1 xml:id="ch-ug-extending.client-libraries">
       <title>Client libraries</title>
       <para>
@@ -20,17 +20,17 @@
    <sect1 xml:id="ch-ug-extending.custom-components">
       <title>Custom components</title>
       <para>
-         PerfCake has the ability extend its functionality by adding new custom components such as senders, generators, reporters, destinations or validators.
+         PerfCake has the ability to extend its functionality by adding plugins - new custom components such as senders, generators, reporters, destinations or validators.
          <footnote>
-            <para>To get the details about creating custom components, see the PerfCake Developers' Guide.</para>
+            <para>To get the details about creating custom components (plugins), see the PerfCake Developers' Guide.</para>
          </footnote>
          .
       </para>
       <para>
-         If you want to add a new component to be used by PerfCake, all you need to take the jar file,
+         If you want to add a new component to be used by PerfCake, all you need to do is to take the jar file,
          where the component is packaged (along with the jar files on which the component depends on),
          and place it all under the
-         <code>$PERFCAKE_HOME/lib/ext</code>
+         <code>$PERFCAKE_HOME/lib/plugins</code>
          directory.
       </para>
    </sect1>
