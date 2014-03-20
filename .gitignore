@@ -11,6 +11,10 @@ bin
 .project
 .classpath
 
+# Idea stuff
+.idea
+*.iml
+
 # Package Files
 *.jar
 *.war

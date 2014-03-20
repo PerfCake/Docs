@@ -30,6 +30,7 @@
       <xi:include href="../sections/ug-RequestResponseJMSSender.xml"/>
       <!-- <xi:include href="../sections/ug-SOAPSender.xml"/> -->
       <xi:include href="../sections/ug-SSLSocketSender.xml"/>
+      <xi:include href="../sections/ug-WebSocketSender.xml"/>
    </sect1>
    <sect1 xml:id="ch-ug-sending.messages">
       <title>Messages</title>
