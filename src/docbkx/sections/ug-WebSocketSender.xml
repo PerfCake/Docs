@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.WebSocketSender">
+   <title>WebSocketSender</title>
+   <para>
+      The WebSocketSender can be used to send simple messages via web socket protocol to a remote web socket
+      server end point. The web socket technology creates a full duplex connection over TCP and is suitable
+      for applications requiring fast responses. It was standardized as RFC 6455 and it is a part of Java EE 7
+      (JSR-356). Connections are initiated by sending an HTTP upgrade header. It is event driven on both client
+      and server. Load of requests is generated after the connection session is successfully established.
+   </para>
+   <para>
+      There are two forms of remote end points, which can be set - basic and async. To set content of message payload,
+      set the
+      <code>message</code>
+      element in the
+      <code>messages</code>
+      section of the scenario definition. Payload can be set text, binary and ping. In PerfCake 2.0 only text messages
+      are supported.
+   </para>
+   <para>
+      Following table shows the properties of the HTTPSender:
+      <table frame="all">
+         <title>HTTPSender properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="1*"/>
+            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="1*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>target</entry>
+                  <entry>An URL of the target, where the message is send.</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>remoteEndpointType</entry>
+                  <entry>basic, async</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>payloadType</entry>
+                  <entry>
+                     text, binary, ping
+                     <footnote>
+                        <para>
+                           Only text messages are supported in PerfCake 2.0.
+                        </para>
+                     </footnote>
+                  </entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <simplesect>
+      <title>An example of WebSocketSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<sender class="WebSocketSender">
+   <property name="target"
+   value="ws://domain.com/web-socket-app-context/web-socket-endpoint"/>
+   <property name="remoteEndpointType" value="basic"/>
+   <property name="payloadType" value="text"/>
+</sender>
+...]]></programlisting>
+   </simplesect>
+</sect2>
