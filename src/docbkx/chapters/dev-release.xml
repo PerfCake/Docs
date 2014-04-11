@@ -5,26 +5,55 @@
    <title>Release Procedure</title>
    <para> This chapter describes details about the release procedure using Maven and following the
       git flow principles. The target audience are core developers with appropriate access rights.
-      The content will be filled in base on the experiences with the release 1.0. </para>
-   <para>TODO: How to perform a release, prepare release branch, publish artifacts...</para>
-   <para>First, start off with a new release branch:</para>
-   <para>git checkout -b release/v{VERSION} devel</para>
-   <para>Let Maven prepare the release for us:</para>
-   <para>mvn release:prepare &amp;&amp; mvn release:perform</para>
-   <para>The rest is about getting git into a good shape. This starts by getting the updated pom.xml
+   </para>
+   <para>First, start off with a new release branch and let Maven prepare the release for us <xref linkend="fig-release-prepare"/>.</para>
+   <figure id="fig-release-prepare">
+      <title>Prepare a release branch</title>
+      <programlisting language="xml" linenumbering="unnumbered">
+<![CDATA[$ git checkout -b release/v{VERSION} devel
+$ mvn release:prepare]]>
+      </programlisting>
+   </figure>
+   <para>At this point, you should get the artifacts from the <code>target</code> directory for later publishing <xref linkend="fig-release-branches-devel"/>.</para>
+   <para>Never ever try to perform the release using the Maven release plugin. It cannot be configured to publish the artifacts and
+      breaks the git-flow branching/tagging.</para>
+   <para>The rest is about getting git into a good shape. This starts by getting the updated <code>pom.xml</code>
       into the devel branch.</para>
-   <para>git checkout devel</para>
-   <para>git merge --no-ff release/v{VERSION}</para>
-   <para>We need to get the correct pom.xml to the master branch as well. For this, we will use the
-      commit prior to the head in the release branch.</para>
-   <para>git checkout master</para>
-   <para>git merge --no-ff release/v{VERSION}~1</para>
-   <para>Let's clean it up and go public:</para>
-   <para>git branch -D release/v{VERSION}</para>
-   <para>git push --all &amp;&amp; git push --tags </para>
-   <para>The Sonatype JIRA with account request:
-      https://issues.sonatype.org/browse/OSSRH-7134</para>
-   <para>Follow the rules here to deploy the artifacts:
-      https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-7b.StageExistingArtifacts</para>
-   <para/>
+   <figure id="fig-release-branches-devel">
+      <title>Merge the changes to the devel branch</title>
+      <programlisting language="xml" linenumbering="unnumbered">
+<![CDATA[$ git checkout devel
+$ git merge --no-ff release/v{VERSION}]]>
+      </programlisting>
+   </figure>
+   <para>We need to get the correct <code>pom.xml</code> to the master branch as well. For this, we will use the
+      commit prior to the head in the release branch <xref linkend="fig-release-branches-master"/>.</para>
+   <figure id="fig-release-branches-master">
+      <title>Merge the changes to the master branch as well</title>
+      <programlisting language="xml" linenumbering="unnumbered">
+<![CDATA[$ git checkout master
+$ git merge --no-ff release/v{VERSION}~1]]>
+      </programlisting>
+   </figure>
+   <para>The last step is to clean everything up and go public<xref linkend="fig-release-branches-cleanup"/>.</para>
+   <figure id="fig-release-branches-cleanup">
+      <title>Merge the changes to the master branch as well</title>
+      <programlisting language="xml" linenumbering="unnumbered">
+<![CDATA[$ git branch -D release/v{VERSION}
+$ git push --all && git push --tags]]>
+      </programlisting>
+   </figure>
+   <para>Only users the approved account in the Sonatype JIRA
+      <footnote>
+         <para>
+            <ulink url="https://issues.sonatype.org/browse/OSSRH-7134" />
+         </para>
+      </footnote> 
+      can upload the artifacts. Then follow the rules specified in the Sonatype OSS Maven Repository Usage Guide
+      <footnote>
+         <para>
+            <ulink url="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-7b.StageExistingArtifacts" />      
+         </para>
+      </footnote>.
+   </para>
 </chapter>
