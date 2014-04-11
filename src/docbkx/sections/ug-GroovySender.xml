@@ -44,7 +44,7 @@
          <tbody>
             <row>
                <entry>target</entry>
-               <entry>Path to the Groovy script that is to be executed.</entry>
+               <entry>Path or URL to the Groovy script that is to be executed.</entry>
                <entry>Yes</entry>
                <entry>-</entry>
             </row>
