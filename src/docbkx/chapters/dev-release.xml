@@ -35,7 +35,7 @@ $ git merge --no-ff release/v{VERSION}]]>
 $ git merge --no-ff release/v{VERSION}~1]]>
       </programlisting>
    </figure>
-   <para>The last step is to clean everything up and go public<xref linkend="fig-release-branches-cleanup"/>.</para>
+   <para>The last step is to clean everything up and go public <xref linkend="fig-release-branches-cleanup"/>.</para>
    <figure id="fig-release-branches-cleanup">
       <title>Merge the changes to the master branch as well</title>
       <programlisting language="xml" linenumbering="unnumbered">
@@ -43,16 +43,16 @@ $ git merge --no-ff release/v{VERSION}~1]]>
 $ git push --all && git push --tags]]>
       </programlisting>
    </figure>
-   <para>Only users the approved account in the Sonatype JIRA
-      <footnote>
+   <para>Only users the approved account in the Sonatype
+      JIRA<footnote>
          <para>
             <ulink url="https://issues.sonatype.org/browse/OSSRH-7134" />
          </para>
       </footnote> 
-      can upload the artifacts. Then follow the rules specified in the Sonatype OSS Maven Repository Usage Guide
-      <footnote>
+      can upload the artifacts. Then follow the rules specified in the Sonatype OSS Maven Repository Usage
+      Guide<footnote>
          <para>
-            <ulink url="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-7b.StageExistingArtifacts" />      
+            <ulink url="http://goo.gl/xBSm4" />      
          </para>
       </footnote>.
    </para>
