@@ -4,22 +4,21 @@
    <para>
       Scenario is a receipt for telling PerfCake what to do. You can specify how PerfCake would
       generate load by configuring a generator, where and what to send by defining a sender and messages.
-      To get any measured results such as an average throughput or a memory usage you can define a reporting. To check that the
-      responses are correct a validation is available for you to set
-      in the scenario.
-      There is also a possibility to specify scenario meta-data by setting the scenario's properties.
+      To get any measured results such as an average throughput or a memory usage you can use reporting capabilities.
+      To check that the responses are correct a validation is available for you to set in the
+      scenario. There is also a possibility to specify scenario meta-data by setting the scenario's properties.
    </para>
    <para>The following section describes the scenario's structure.</para>
    <sect1 xml:id="ch-ug-scenario.scenario-xml-structure">
       <title>Scenario XML structure</title>
       <para>
          As you can see from the following listing the scenario is defined by an XML file defined by
-         <code>urn:perfcake:scenario:1.0</code>
+         <code>urn:perfcake:scenario:2.0</code>
          namespace
          <footnote>
             <para>
                Schema can be found at
-               <ulink url="http://schema.perfcake.org/perfcake-scenario-1.0.xsd"/>
+               <ulink url="http://schema.perfcake.org/perfcake-scenario-2.0.xsd"/>
             </para>
          </footnote>
          .
@@ -28,7 +27,7 @@
       <simplesect>
          <title>Scenario structure</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:1.0">
+<scenario xmlns="urn:perfcake:scenario:2.0">
 
    <!-- Scenario properties (optional) -->
    <properties>
@@ -141,7 +140,7 @@
       <simplesect>
          <title>An example of a scenario with a property placeholder with the default value of "1.0":</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:${perfcake.version:1.0}">
+<scenario xmlns="urn:perfcake:scenario:${perfcake.version:2.0}">
    ...
 </scenario>]]></programlisting>
       </simplesect>
