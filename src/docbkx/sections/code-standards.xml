@@ -6,7 +6,7 @@
       Google Java Coding 
       Standard<footnote id="foot-google-code">
          <para>
-            <ulink url="http://google-styleguide.googlecode.com/svn/trunk/javaguide.html" />
+            <ulink url="http://google-styleguide.googlecode.com/svn/trunk/javaguide.html"/>
          </para>
       </footnote> with some changes applied. For a brief overview, please make sure to:
    </para>
@@ -40,7 +40,7 @@
          <para>
             Avoid bad practices<footnote>
                <para>
-                  <ulink url="http://blog.codinghorror.com/new-programming-jargon/" />
+                  <ulink url="http://blog.codinghorror.com/new-programming-jargon/"/>
                </para>
             </footnote>,
          </para>
@@ -136,91 +136,189 @@
          <simplesect>
             <title>Non-ASCII characters</title>
             <para>
-               For the remaining non-ASCII characters, either the actual Unicode character (e.g. ∞) or the equivalent Unicode escape (e.g. \u221e) is used, depending only on which makes the code easier to read and understand.
-               
-               Tip: In the Unicode escape case, and occasionally even when actual Unicode characters are used, an explanatory comment can be very helpful.
-               
-               Examples:
-               Example	Discussion
-               String unitAbbrev = "μs";	Best: perfectly clear even without a comment.
-               String unitAbbrev = "\u03bcs"; // "μs"	Allowed, but there's no reason to do this.
-               String unitAbbrev = "\u03bcs"; // Greek letter mu, "s"	Allowed, but awkward and prone to mistakes.
-               String unitAbbrev = "\u03bcs";	Poor: the reader has no idea what this is.
-               return '\ufeff' + content; // byte order mark	Good: use escapes for non-printable characters, and comment if necessary.
-               
-               Tip: Never make your code less readable simply out of fear that some programs might not handle non-ASCII characters properly. If that should happen, those programs are broken and they must be fixed.               
+               For the remaining non-ASCII characters, either the actual Unicode character (e.g. ∞) or the equivalent Unicode escape (e.g. \u221e) is used, depending only on which makes the code <emphasis role="strong">easier to read and understand</emphasis>.
+            </para>
+            <tip>
+               <para>
+                  In the Unicode escape case, and occasionally even when actual Unicode characters are used, an explanatory comment can be very helpful.
+               </para>
+            </tip>
+            <table frame="all">The package statement is not line-wrapped. The column limit (Section 4.4, Column limit: 80 or 100) does not apply to package statements.
+
+               <title>Special characters examples</title>
+               <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                  <colspec colname="c1" colwidth="1*"/>
+                  <colspec colname="c2" colwidth="1*"/>
+                  <thead>
+                     <row>
+                        <entry>Example</entry>
+                        <entry>Discussion</entry>
+                     </row>
+                  </thead>
+                  <tbody>
+                     <row>
+                        <entry><programlisting language="java" linenumbering="unnumbered">String unitAbbrev = "μs";</programlisting></entry>
+                        <entry>Best: perfectly clear even without a comment.</entry>
+                     </row>
+                     <row>
+                        <entry><programlisting language="java" linenumbering="unnumbered">String unitAbbrev = "\u03bcs"; // "μs"</programlisting></entry>
+                        <entry>Allowed, but there's no reason to do this.</entry>
+                     </row>
+                     <row>
+                        <entry><programlisting language="java" linenumbering="unnumbered">String unitAbbrev = "\u03bcs"; // Greek letter mu, "s"</programlisting></entry>
+                        <entry>Allowed, but awkward and prone to mistakes.</entry>
+                     </row>
+                     <row>
+                        <entry><programlisting language="java" linenumbering="unnumbered">String unitAbbrev = "\u03bcs";</programlisting></entry>
+                        <entry>Poor: the reader has no idea what this is.</entry>
+                     </row>
+                     <row>
+                        <entry><programlisting language="java" linenumbering="unnumbered">return '\ufeff' + content; // byte order mark</programlisting></entry>
+                        <entry>Good: use escapes for non-printable characters, and comment if necessary.</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+            <tip>
+               <para>
+                  Never make your code less readable simply out of fear that some programs might not handle non-ASCII characters properly. If that should happen, 
+                  those programs are <emphasis role="strong">broken</emphasis> and they must be <emphasis role="strong">fixed</emphasis>.
+               </para>
+            </tip>               
+         </simplesect>
+      </sect3>
+   </sect2>      
+      
+   <sect2>
+      <title>Source file structure</title>
+      <para>
+         A source file consists of, <emphasis role="strong">in order</emphasis>:         
+      </para>
+      <orderedlist>
+         <listitem>
+            <para>License or copyright information, if present,</para>
+         </listitem>
+         <listitem>
+            <para>Package statement,</para>
+         </listitem>
+         <listitem>
+            <para>Import statements,</para>
+         </listitem>
+         <listitem>
+            <para>Exactly one top-level class.</para>
+         </listitem>
+      </orderedlist>
+      <para>
+         <emphasis role="strong">Exactly one blank line</emphasis> separates each section that is present.
+      </para>
+      <sect3>
+         <title>License or copyright information, if present</title>
+         <para>
+            If license or copyright information belongs in a file, it belongs here.            
+         </para>
+      </sect3>
+      <sect3>
+         <title>Package statement</title>
+         <para>
+            The package statement is <emphasis role="strong">not line-wrapped</emphasis>. The column limit (<xref linkend="sec-column-limit"/>) does not apply to package statements.            
+         </para>
+      </sect3>
+      <sect3>
+         <title>Import statements</title>
+         <simplesect>
+            <title>No wildcard imports</title>
+            <para>
+               <emphasis role="strong">Wildcard imports</emphasis>, static or otherwise, 
+               <emphasis role="strong">are not used</emphasis>.               
+            </para>
+         </simplesect>
+         <simplesect>
+            <title>No line-wrapping</title>
+            <para>
+               Import statements are <emphasis role="strong">not line-wrapped</emphasis>. The column limit (<xref linkend="sec-column-limit"/>) does not apply to import statements.            
+            </para>
+         </simplesect>
+         <simplesect>
+            <title>Ordering and spacing</title>
+            <para>
+               Import statements are divided into groups by the start of the package name. Typically, two first parts of the 
+               package name separated by dots specify a group. The groups and their content appear in ASCII sort order.
             </para>
          </simplesect>
       </sect3>
-      
-      
-   <para>
-3 Source file structure 
-
-A source file consists of, in order:
-
-    License or copyright information, if present
-    Package statement
-    Import statements
-    Exactly one top-level class
-
-Exactly one blank line separates each section that is present.
-3.1 License or copyright information, if present 
-
-If license or copyright information belongs in a file, it belongs here.
-3.2 Package statement 
-
-The package statement is not line-wrapped. The column limit (Section 4.4, Column limit: 80 or 100) does not apply to package statements.
-3.3 Import statements 
-3.3.1 No wildcard imports 
-
-Wildcard imports, static or otherwise, are not used.
-3.3.2 No line-wrapping 
-
-Import statements are not line-wrapped. The column limit (Section 4.4, Column limit: 80 or 100) does not apply to import statements.
-3.3.3 Ordering and spacing 
-
-Import statements are divided into the following groups, in this order, with each group separated by a single blank line:
-
-    All static imports in a single group
-    com.google imports (only if this source file is in the com.google package space)
-    Third-party imports, one group per top-level package, in ASCII sort order
-        for example: android, com, junit, org, sun
-    java imports
-    javax imports
-
-Within a group there are no blank lines, and the imported names appear in ASCII sort order. (Note: this is not the same as the import statements being in ASCII sort order; the presence of semicolons warps the result.)
-3.4 Class declaration 
-3.4.1 Exactly one top-level class declaration 
-
-Each top-level class resides in a source file of its own.
-3.4.2 Class member ordering 
-
-The ordering of the members of a class can have a great effect on learnability, but there is no single correct recipe for how to do it. Different classes may order their members differently.
-
-What is important is that each class order its members in some logical order, which its maintainer could explain if asked. For example, new methods are not just habitually added to the end of the class, as that would yield "chronological by date added" ordering, which is not a logical ordering.
-3.4.2.1 Overloads: never split 
-
-When a class has multiple constructors, or multiple methods with the same name, these appear sequentially, with no intervening members.
-4 Formatting 
-
-Terminology Note: block-like construct refers to the body of a class, method or constructor. Note that, by Section 4.8.3.1 on array initializers, any array initializer may optionally be treated as if it were a block-like construct.
-4.1 Braces 
-4.1.1 Braces are used where optional 
-
-Braces are used with if, else, for, do and while statements, even when the body is empty or contains only a single statement.
-4.1.2 Nonempty blocks: K &amp; R style 
-
-Braces follow the Kernighan and Ritchie style ("Egyptian brackets") for nonempty blocks and block-like constructs:
-
-    No line break before the opening brace.
-    Line break after the opening brace.
-    Line break before the closing brace.
-    Line break after the closing brace if that brace terminates a statement or the body of a method, constructor or named class. For example, there is no line break after the brace if it is followed by else or a comma.
-
-Example:
-
-return new MyClass() {
+      <sect3>
+         <title>Class declaration</title>
+         <simplesect>
+            <title>Exactly one top-level class declaration</title>
+            <para>
+               Each top-level class resides in a source file of its own.               
+            </para>
+         </simplesect>
+         <simplesect>
+            <title>Class member ordering</title>
+            <para>
+               The ordering of the members of a class can have a great effect on learnability, but there is no single correct recipe for how to do it. Different classes may order their members differently.
+            </para>
+            <para>
+               What is important is that each class order its members in <emphasis role="strong">some logical order</emphasis>, which its maintainer could 
+               explain if asked. For example, new methods are not just habitually added to the end of the class, as 
+               that would yield "chronological by date added" ordering, which is not a logical ordering.
+            </para>
+         </simplesect>
+         <simplesect>
+            <title>Overloads: never split</title>
+            <para>
+               When a class has multiple constructors, or multiple methods with the same name, these appear sequentially, 
+               with no intervening members.               
+            </para>
+         </simplesect>
+      </sect3>      
+   </sect2>
+   <sect2>
+      <title>Formatting</title>
+      <note>
+         <para>
+            <emphasis role="strong">Terminology Note:</emphasis> 
+            <emphasis>block-like construct</emphasis> refers to the body of a class, method or constructor. Note that, by 
+            <xref linkend="sec-array-init"/>, any array initializer 
+            <emphasis>may</emphasis> optionally be treated as if it were a block-like construct.
+         </para>
+      </note>
+      <sect3>
+         <title>Braces</title>
+         <simplesect>
+            <title>Braces are used where optional</title>
+            <para>
+               Braces are used with <code>if</code>, <code>else</code>, <code>for</code>, <code>do</code> and
+               <code>while</code> statements, even when the body is empty or contains only a single statement.               
+            </para>
+         </simplesect>
+         <simplesect xml:id="sec-nonempty-blocks">
+            <title>Nonempty blocks: K &amp; R style</title>
+            <para>
+               Braces follow the Kernighan and Ritchie style ("Egyptian brackets") for 
+               <emphasis>nonempty</emphasis> blocks and block-like constructs:               
+            </para>
+            <itemizedlist>
+               <listitem>
+                  <para>No line break before the opening brace,</para>
+               </listitem>
+               <listitem>
+                  <para>Line break after the opening brace,</para>
+               </listitem>
+               <listitem>
+                  <para>Line break before the closing brace</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     Line break after the closing brace <emphasis>if</emphasis> that brace terminates a statement or the body of a method, 
+                     constructor or <emphasis>named</emphasis> class. For example, there is 
+                     <emphasis>no</emphasis> line break after the brace if it is followed by <code>else</code> or a comma.</para>
+               </listitem>
+            </itemizedlist>
+            <para>Example:</para>
+            <programlisting language="java" linenumbering="unnumbered">
+<![CDATA[return new MyClass() {
   @Override public void method() {
     if (condition()) {
       try {
@@ -230,9 +328,50 @@ return new MyClass() {
       }
     }
   }
-};
-
-A few exceptions for enum classes are given in Section 4.8.1, Enum classes.
+};]]>
+               
+            </programlisting>
+            <para>
+               A few exceptions for enum classes are given in <xref linkend="sec-enum-classes"/>.               
+            </para>
+         </simplesect>
+         <simplesect>
+            <title>Empty blocks: may be concise</title>
+            <para>
+               An empty block or block-like construct <emphasis role="italics">may</emphasis> be closed immediately after it is opened, 
+               with no characters or line break in between (<code>{}</code>), 
+               <emphasis role="strong">unless</emphasis> it is part of a 
+               <emphasis>multi-block statement</emphasis> (one that directly contains multiple blocks: 
+               <code>if/else-if/else</code> or <code>try/catch/finally</code>).
+            </para>
+            <para>Example:</para>
+            <programlisting language="java" linenumbering="unnumbered">
+<![CDATA[void doNothing() {}]]>
+            </programlisting>
+         </simplesect>
+      </sect3>
+      <sect3>
+         <title>Block indentation: +3 spaces</title>
+         <para>
+            Each time a new block or block-like construct is opened, the indent increases by two spaces. 
+            When the block ends, the indent returns to the previous indent level. The indent level applies to both code 
+            and comments throughout the block. (See the example in <xref linkend="sec-nonempty-blocks" />.)
+         </para>
+      </sect3>
+      <sect3>
+         <title>One statement per line</title>
+         <para>
+            Each statement is followed by a line-break.            
+         </para>
+      </sect3>
+      <sect3 xml:id="sec-column-limit">
+         <title>Column limit: 400</title>
+         <para> PerfCake uses a column limit of 400 characters. Except as noted below, any line that would exceed this limit must be
+            line-wrapped, as explained in <xref linkend="sec-line-wrap"/>. </para>
+      </sect3>
+      <para>
+         
+4 Formatting 
 4.1.3 Empty blocks: may be concise 
 
 An empty block or block-like construct may be closed immediately after it is opened, with no characters or line break in between ({}), unless it is part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else or try/catch/finally).
@@ -247,9 +386,10 @@ Each time a new block or block-like construct is opened, the indent increases by
 4.3 One statement per line 
 
 Each statement is followed by a line-break.
-4.4 Column limit: 80 or 100 
+4.4 Column limit: 80 or 100 id="sec-column-limit" 
 
-Projects are free to choose a column limit of either 80 or 100 characters. Except as noted below, any line that would exceed this limit must be line-wrapped, as explained in Section 4.5, Line-wrapping.
+Projects are free to choose a column limit of either 80 or 100 characters. 
+Except as noted below, any line that would exceed this limit must be line-wrapped, as explained in Section 4.5, Line-wrapping.
 
 Exceptions:
 
@@ -257,7 +397,7 @@ Exceptions:
     package and import statements (see Sections 3.2 Package statement and 3.3 Import statements).
     Command lines in a comment that may be cut-and-pasted into a shell.
 
-4.5 Line-wrapping 
+4.5 Line-wrapping id="sec-line-wrap"
 
 Terminology Note: When code that might otherwise legally occupy a single line is divided into multiple lines, typically to avoid overflowing the column limit, this activity is called line-wrapping.
 
@@ -333,7 +473,7 @@ Tip: Alignment can aid readability, but it creates problems for future maintenan
 
 Optional grouping parentheses are omitted only when author and reviewer agree that there is no reasonable chance the code will be misinterpreted without them, nor would they have made the code easier to read. It is not reasonable to assume that every reader has the entire Java operator precedence table memorized.
 4.8 Specific constructs 
-4.8.1 Enum classes 
+4.8.1 Enum classes id="sec-enum-classes"
 
 After each comma that follows an enum constant, a line-break is optional.
 
@@ -350,7 +490,7 @@ Every variable declaration (field or local) declares only one variable: declarat
 
 Local variables are not habitually declared at the start of their containing block or block-like construct. Instead, local variables are declared close to the point they are first used (within reason), to minimize their scope. Local variable declarations typically have initializers, or are initialized immediately after declaration.
 4.8.3 Arrays 
-4.8.3.1 Array initializers: can be "block-like" 
+4.8.3.1 Array initializers: can be "block-like" id="sec-array-init"
 
 Any array initializer may optionally be formatted as if it were a "block-like construct." For example, the following are all valid (not an exhaustive list):
 
