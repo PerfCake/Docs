@@ -369,6 +369,16 @@
          <para> PerfCake uses a column limit of 400 characters. Except as noted below, any line that would exceed this limit must be
             line-wrapped, as explained in <xref linkend="sec-line-wrap"/>. </para>
       </sect3>
+      <sect3>
+         <title>Empty blocks: may be concise</title>
+         <para>An empty block or block-like construct <emphasis role="italic">may</emphasis> be
+            closed immediately after it is opened, with no characters or line break in between
+               (<code>{}</code>), unless it is part of a <emphasis role="italic">multi-block
+               statement</emphasis> (one that directly contains multiple blocks:
+               <code>if/else-if/else</code> or <code>try/catch/finally</code>).</para>
+         <para>Example:</para>
+         <programlisting language="java" linenumbering="unnumbered"><![CDATA[void doNothing() {}]]></programlisting>
+      </sect3>
       <para>
          
 4 Formatting 
