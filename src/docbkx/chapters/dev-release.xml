@@ -7,7 +7,7 @@
       git flow principles. The target audience are core developers with appropriate access rights.
    </para>
    <para>First, start off with a new release branch and let Maven prepare the release for us <xref linkend="fig-release-prepare"/>.</para>
-   <figure id="fig-release-prepare">
+   <figure xml:id="fig-release-prepare">
       <title>Prepare a release branch</title>
       <programlisting language="xml" linenumbering="unnumbered">
 <![CDATA[$ git checkout -b release/v{VERSION} devel
@@ -19,7 +19,7 @@ $ mvn release:prepare]]>
       breaks the git-flow branching/tagging.</para>
    <para>The rest is about getting git into a good shape. This starts by getting the updated <code>pom.xml</code>
       into the devel branch.</para>
-   <figure id="fig-release-branches-devel">
+   <figure xml:id="fig-release-branches-devel">
       <title>Merge the changes to the devel branch</title>
       <programlisting language="xml" linenumbering="unnumbered">
 <![CDATA[$ git checkout devel
@@ -28,7 +28,7 @@ $ git merge --no-ff release/v{VERSION}]]>
    </figure>
    <para>We need to get the correct <code>pom.xml</code> to the master branch as well. For this, we will use the
       commit prior to the head in the release branch <xref linkend="fig-release-branches-master"/>.</para>
-   <figure id="fig-release-branches-master">
+   <figure xml:id="fig-release-branches-master">
       <title>Merge the changes to the master branch as well</title>
       <programlisting language="xml" linenumbering="unnumbered">
 <![CDATA[$ git checkout master
@@ -36,7 +36,7 @@ $ git merge --no-ff release/v{VERSION}~1]]>
       </programlisting>
    </figure>
    <para>The last step is to clean everything up and go public <xref linkend="fig-release-branches-cleanup"/>.</para>
-   <figure id="fig-release-branches-cleanup">
+   <figure xml:id="fig-release-branches-cleanup">
       <title>Merge the changes to the master branch as well</title>
       <programlisting language="xml" linenumbering="unnumbered">
 <![CDATA[$ git branch -D release/v{VERSION}
@@ -46,13 +46,13 @@ $ git push --all && git push --tags]]>
    <para>Only users the approved account in the Sonatype
       JIRA<footnote>
          <para>
-            <ulink url="https://issues.sonatype.org/browse/OSSRH-7134" />
+            <link xlink:href="https://issues.sonatype.org/browse/OSSRH-7134" />
          </para>
       </footnote> 
       can upload the artifacts. Then follow the rules specified in the Sonatype OSS Maven Repository Usage
       Guide<footnote>
          <para>
-            <ulink url="http://goo.gl/xBSm4" />      
+            <link xlink:href="http://goo.gl/xBSm4" />      
          </para>
       </footnote>.
    </para>
