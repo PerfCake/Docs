@@ -64,7 +64,7 @@
                      <footnote>
                         <para>
                            See
-                           <ulink url="http://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html#setRequestMethod(java.lang.String)"/>
+                           <link xlink:href="http://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html#setRequestMethod(java.lang.String)"/>
                            for a complete list of
                            available methods.
                         </para>

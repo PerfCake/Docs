@@ -18,7 +18,7 @@
          <footnote>
             <para>
                Schema can be found at
-               <ulink url="http://schema.perfcake.org/perfcake-scenario-2.0.xsd"/>
+               <link xlink:href="http://schema.perfcake.org/perfcake-scenario-2.0.xsd"/>
             </para>
          </footnote>
          .

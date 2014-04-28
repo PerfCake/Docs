@@ -44,7 +44,7 @@
          <code>file://...</code>
          , URL or just a file name, in which case PerfCake will look for the file
          in the messages directory (See
-         <ulink url="https://www.perfcake.org/quickstart/"/>
+         <link xlink:href="https://www.perfcake.org/quickstart/"/>
          ).
       </para>
       <para>

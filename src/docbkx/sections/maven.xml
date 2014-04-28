@@ -7,7 +7,7 @@
    </para>
    <para>
      For inclusion into your project, you can search for PerfCake artifacts at
-     <ulink url="http://search.maven.org" />. In the results click at the version number and you will see snippets for various build systems.
+     <link xlink:href="http://search.maven.org" />. In the results click at the version number and you will see snippets for various build systems.
      For Mave and version 1.0 you just include the following XML piece into your project dependencies.
    </para>
    <programlisting language="xml" linenumbering="numbered" startinglinenumber="1">
