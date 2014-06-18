@@ -30,4 +30,4 @@ The documentation releases are likely to be tagged.
 Bug reporting
 -------------
 
-Please report bugs d irectly to the issues in this repository.
+Please report bugs to https://github.com/PerfCake/PerfCake/issues
