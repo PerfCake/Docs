@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.ResponseTimeStatsReporter">
+	<title>ResponseTimeStatsReporter</title>
+	<para>
+		The reporter is able to report the statistics - current, minimal, maximal and average value of a response time (in miliseconds) from the beginning of the measuring to the moment when the results are published (default) or in a specified window.
+		The default result of this reporter is the current response time.
+	</para>
+	<table frame="all">
+		<title>ResponseTimeStatsReporter properties</title>
+		<tgroup cols="4" align="left" colsep="1" rowsep="1">
+			<colspec colname="property-name" colwidth="1*" />
+			<colspec colname="description" colwidth="1*" />
+			<colspec colname="required" colwidth="1*" />
+			<colspec colname="default-value" colwidth="1*" />
+			<thead>
+				<row>
+					<entry>Property name</entry>
+					<entry>Description</entry>
+					<entry>Required</entry>
+					<entry>Default value</entry>
+				</row>
+			</thead>
+			<tbody>
+				<row>
+					<entry>minimumEnabled</entry>
+					<entry>Enables minimal value measuring.</entry>
+					<entry>No</entry>
+					<entry>true</entry>
+				</row>
+				<row>
+					<entry>maximumEnabled</entry>
+					<entry>Enables maximal value measuring.</entry>
+					<entry>No</entry>
+					<entry>true</entry>
+				</row>
+				<row>
+					<entry>averageEnabled</entry>
+					<entry>Enables average value measuring.</entry>
+					<entry>No</entry>
+					<entry>true</entry>
+				</row>
+				<row>
+					<entry>windowSize</entry>
+					<entry>A window where the data for the statistics are taken from.</entry>
+					<entry>No</entry>
+					<entry>Infinity</entry>
+				</row>
+			</tbody>
+		</tgroup>
+	</table>
+	<simplesect>
+		<title>An example of ResponseTimeStatsReporter configuration</title>
+		<programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<reporter class="ResponseTimeStatsReporter">
+	<property name="minimumEnabled" value="false"/>
+	<property name="maximumEnabled" value="false"/>
+   ...
+   (destinations)
+   ...
+</reporter>
+...]]></programlisting>
+	</simplesect>
+</sect2>

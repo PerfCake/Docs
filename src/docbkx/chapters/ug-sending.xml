@@ -35,7 +35,7 @@
    <sect1 xml:id="ch-ug-sending.messages">
       <title>Messages</title>
       <para>
-         A message is an actual payload, that is sent by a sender. To specify what will be sent, you should use the
+         A message is an actual payload, that is sent by a sender. To specify what will be sent, you can use the
          <code>uri</code>
          attribute of the particular message element in the scenario configuration. The
          <code>uri</code>
@@ -47,6 +47,7 @@
          <link xlink:href="https://www.perfcake.org/quickstart/"/>
          ).
       </para>
+      <para>The simple payload of the message can be specified directly in the scenario by using <code>content</code> attribute instead of the <code>uri</code>. The value of the <code>content</code> attribute will be the actual message payload.</para>
       <para>
          The scenario can be configured to
          send more that one message or to send a message more than once in a single iteration. To specify multiple
@@ -61,7 +62,18 @@
          element.
       </para>
       <simplesect>
-         <title>An example of messages configuration:</title>
+         <title>An example of a simple message configuration:</title>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<messages>
+   ...
+   <message content="Greetings stranger!"/>
+   ...
+</messages>
+...]]></programlisting>
+         <para>In the example above there is a single message defined. The payload of the message is the value of the <code>content</code> attribute .</para>
+      </simplesect>
+      <simplesect>
+         <title>An example of multiple messages configuration:</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <messages>
    ...
