@@ -16,6 +16,7 @@
    <toc/>
    <xi:include href="chapters/acknowledgements.xml"/>
    <xi:include href="chapters/ug-introduction.xml"/>
+   <xi:include href="chapters/ug-running.xml"/>
    <xi:include href="chapters/ug-scenario.xml"/>
    <xi:include href="chapters/ug-generating.xml"/>
    <xi:include href="chapters/ug-sending.xml"/>

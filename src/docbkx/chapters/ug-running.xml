@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-running" status="draft">
+   <title>Running PerfCake</title>
+   <para>This chapter describes various ways to run PerfCake in
+      order to execute a performance test - scenario.
+   </para>
+   <sect1 xml:id="ch-ug-running.cli">
+      <title>Command line</title>
+      <para>TODO: describe use of CLI ($PERFCAKE_HOME/bin/perfcake.sh).</para>
+   </sect1>
+   <sect1 xml:id="ch-ug-running.perfclipse">
+      <title>Eclipse plugin - PerfClipse</title>
+      <para>TODO: describe use of PerfClipse plugin.</para>
+   </sect1>
+   <sect1 xml:id="ch-ug-running.maven">
+      <title>Maven - perfcake-maven-plugin</title>
+      <para>TODO: describe use of perfcake-maven-plugin.</para>
+   </sect1>
+</chapter>

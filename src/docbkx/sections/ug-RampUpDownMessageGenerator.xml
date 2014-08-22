@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-generating.RampUpDownMessageGenerator">
+   <title>RampUpDownMessageGenerator</title>
+   <para>
+      TODO: describe RUDMG
+   </para>
+   <figure id="RampUpDownMessageGenerator-time-chart">
+      <title>RampUpDownMessageGenerator time chart</title>
+      <graphic format="SVG" fileref="../images/RampUpDownMessageGenerator-chart.svg" scalefit="1" width="100%" align="center"/>
+   </figure>
+   <para>
+      The following table shows the properties of the RampUpDownMessageGenerator:
+      <table frame="all">
+         <title>RampUpDownMessageGenerator properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="1*"/>
+            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="1*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>threadQueueSize</entry>
+                  <entry>The size of the task queue.</entry>
+                  <entry>No</entry>
+                  <entry>1000</entry>
+               </row>
+               <row>
+                  <entry>preThreadCount</entry>
+                  <entry>Initial number of threads.</entry>
+                  <entry>No</entry>
+                  <entry>Generator's <code>threads</code> value.</entry>
+               </row>
+               <row>
+                  <entry>preDuration</entry>
+                  <entry>A duration period in milliseconds of "PRE" phase.</entry>
+                  <entry>No</entry>
+                  <entry>Long.MAX_VALUE</entry>
+               </row>
+               <row>
+                  <entry>rampUpStep</entry>
+                  <entry>A number by which the number of threads is changed in the "RAMP UP" phase.</entry>
+                  <entry>No</entry>
+                  <entry>"0"</entry>
+               </row>
+               <row>
+                  <entry>rampUpStepPeriod</entry>
+                  <entry>A period in milliseconds after which the number of threads is changed by <code>rampUpStep</code> value.</entry>
+                  <entry>No</entry>
+                  <entry>Long.MAX_VALUE</entry>
+               </row>
+               <row>
+                  <entry>mainThreadCount</entry>
+                  <entry>A number of threads in the main phase.</entry>
+                  <entry>No</entry>
+                  <entry>Generator's <code>threads</code> value.</entry>
+               </row>
+               <row>
+                  <entry>mainDuration</entry>
+                  <entry>A duration for which the main phase lasts.</entry>
+                  <entry>No</entry>
+                  <entry>"0"</entry>
+               </row>
+               <row>
+                  <entry>rampDownStep</entry>
+                  <entry>A number by which the number of threads is changed in the "RAMP DOWN" phase.</entry>
+                  <entry>No</entry>
+                  <entry>"0"</entry>
+               </row>
+               <row>
+                  <entry>rampDownStepPeriod</entry>
+                  <entry>A period after which the number of threads is changed by <code>rampDownStep</code> value.</entry>
+                  <entry>No</entry>
+                  <entry>Long.MAX_VALUE</entry>
+               </row>
+               <row>
+                  <entry>postThreadCount</entry>
+                  <entry>Final number of threads.</entry>
+                  <entry>No</entry>
+                  <entry>Generator's <code>threads</code> value.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <simplesect>
+      <title>An example of RampUpDownMessageGenerator configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<generator class="RampUpDownMessageGenerator" threads="100">
+   <run type="time" value="60000"/>
+   <property name="preThreadCount" value="10"/>
+   <property name="preDuration" value="10000"/>
+   <property name="rampUpStep" value="2"/>
+   <property name="rampUpStepPeriod" value="1000"/>
+   <property name="mainThreadCount" value="20"/>
+   <property name="mainDuration" value="20000"/>
+   <property name="rampDownStep" value="1"/>
+   <property name="rampDownStepPeriod" value="1000"/>
+   <property name="postThreadCount" value="15"/>
+   ...
+</generator>
+...]]></programlisting>
+   <para>In the example above... The scenario starts with 10 threads (<code>preThreadCount</code>). After 10s (<code>preDuration</code>) the number of threads starts to increase by number of 2 (<code>rampUpStep</code>) each second (<code>rampUpStepPeriod</code>) until 
+   the number of threads reaches 20 (<code>mainThreadCount</code>). Than after another 20 (<code>mainDuration</code>) seconds the number of threads starts to decrease by 1 (<code>rampDownStep</code>) each second (<code>rampDownStepPeriod</code>) until the number reaches
+   15 (<code>postThreadCount</code>) which remains until the end of the scenario.</para>
+   </simplesect>
+</sect2>

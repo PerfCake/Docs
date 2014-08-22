@@ -74,5 +74,6 @@
    <sect1>
       <title>Generators</title>
       <xi:include href="../sections/ug-DefaultMessageGenerator.xml"/>
+      <xi:include href="../sections/ug-RampUpDownMessageGenerator.xml"/>
    </sect1>
 </chapter>
