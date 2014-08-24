@@ -138,7 +138,86 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
    </sect1>
    <sect1 xml:id="ch-ug-running.maven">
       <title>Maven - perfcake-maven-plugin</title>
-      <para>TODO: describe use of perfcake-maven-plugin.</para>
+      <para>Maven plugin allows to run PerfCake scenario within a Maven build.
+         This makes performance test automation more easy and encourage you to run performance tests on a regular basis,
+         e.g. in within your favorite CI server. Running performance test on a regular basis
+         allows you to spot performance drops very soon and thus make much more easy to identify,
+         which commit has caused performance
+         regression.
+      </para>
+      <simplesect>
+         <title>Configuration</title>
+         <para>
+            Currently plugin has only one goal
+            <code>scenario-run</code>
+            , which runs specified PerfCake scenario.
+            By default, this goal is executed in
+            <code>integration-test</code>
+            phase
+            (i.e. assumes, that you deploy/start your application in
+            <code>pre-integration-test</code>
+            phase and shut it down
+            in
+            <code>post-integration-test</code>
+            phase).
+         </para>
+         <para>
+            The only mandatory parameter is
+            <code>&lt;scenario&gt;</code>
+            , which specifies the name of the scenario to be run.
+            Optionally, you can also specify
+            <code>scenarios-dir</code>
+            ,
+            <code>messages-dir</code>
+            and
+            <code>plugins-dir</code>
+            ,
+            which specify paths to directory containing scenarios, messages and plugins, respectively.
+         </para>
+         <para>
+            If you don't setup these parameters, pluing assumes, that appropriate directories (scenarios, messages, plugins)
+            are in
+            <code>src/test/resources/perfcake</code>
+            . If any of them doesn't exists, plugin will use
+            <code>src/test/resources</code>
+            as a fallback value for missing parameter. You can also speficy PerfCake version which should be used for scenario execution.
+            It can be set up by adding
+            <code>&lt;perfcake-version&gt;</code>
+            element into plugin configuration.
+         </para>
+         <para>
+            Appropriate PerfCake jar file is obtained via Maven, so you can use any PerfCake version
+            which is available in your Maven repository. If the version is not specified
+            or appropriate artifact cannot be resolved, PerfCake on the class path is used - if not changed by other set up,
+            there should be PerfCake which this plugin depends on.
+         </para>
+      </simplesect>
+      <simplesect>
+         <title>Example configuration</title>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<build>
+   <plugins>
+      <plugin>
+        <groupId>org.perfcake.maven</groupId>
+        <artifactId>perfcake-maven-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+          <scenario>my_perfcake_scenario</scenario>
+          <perfcake-version>3.0</perfcake-version>
+        </configuration>
+        <executions>
+          <execution>
+            <id>perfcake-scenario-run</id>
+            <goals>
+              <goal>scenario-run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+   </plugins>
+</build>
+...]]></programlisting>
+      </simplesect>
    </sect1>
    <sect1 xml:id="ch-ug-running.perfclipse">
       <title>Eclipse plugin - PerfClipse</title>
