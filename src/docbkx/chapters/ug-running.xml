@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-running" status="draft">
    <title>Running PerfCake</title>
-   <para>This chapter describes various ways to run PerfCake in
-      order to execute a performance test - scenario.
+   <para>
+      This chapter describes various ways to run PerfCake in
+      order to execute a performance test - scenario:
+      <itemizedlist>
+         <listitem>PerfCake command line interface (CLI)</listitem>
+         <listitem>Maven plugin</listitem>
+         <listitem>Eclipse plugin - Perfclipse</listitem>
+      </itemizedlist>
    </para>
+   <para>The following sections will take a look at each of them.</para>
    <sect1 xml:id="ch-ug-running.cli">
       <title>Command line</title>
       <para>
@@ -221,6 +228,32 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
    </sect1>
    <sect1 xml:id="ch-ug-running.perfclipse">
       <title>Eclipse plugin - PerfClipse</title>
-      <para>TODO: describe use of PerfClipse plugin.</para>
+      <para>
+         There is an Eclipse plugin for managing, editing and running PerfCake scenarios called PerfClipse
+         <footnote>
+            <para>
+               <!-- TODO: change to the link about the project instead of github. -->
+               <link xlink:href="https://github.com/PerfCake/PerfClipse"/>
+            </para>
+         </footnote>
+         .
+      </para>
+      <para>
+         To run the scenario you need to have a PerfCake project with the scenario included. Then the scenario can
+         be run by selecting it in Package Explorer and running as "PerfCake Scenario" (see
+         <xref linkend="ch-ug-running.perfclipse.run-as"/>
+         ). The output from PerfCake will
+         be printed into Console view (See
+         <xref linkend="ch-ug-running.perfclipse.console"/>
+         ).
+      </para>
+      <figure id="ch-ug-running.perfclipse.run-as">
+         <title>Run as PerfCake scenario</title>
+         <graphic format="PNG" fileref="../images/perfclipse-run-as.png" scalefit="1" width="100%" align="center"/>
+      </figure>
+      <figure id="ch-ug-running.perfclipse.console">
+         <title>PerfClipse Console</title>
+         <graphic format="PNG" fileref="../images/perfclipse-console.png" scalefit="1" width="100%" align="center"/>
+      </figure>
    </sect1>
 </chapter>
