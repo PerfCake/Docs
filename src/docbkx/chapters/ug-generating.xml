@@ -7,7 +7,8 @@
          receive messages. Each generator represents a method or technique how
          the load (sending the messages) is handled.
          It is capable of generating the load for a specified duration which can be an amount of time or a number of iterations using a specified
-         number of concurrent threads. To define the duration and its length you have to configure a generator
+         number of concurrent threads. To define the duration and its length you have to
+         configure a generator
          <code>run</code>
          of the specified type in the scenario.
       </para>
@@ -49,8 +50,12 @@
       </para>
       <para>
          The generating is performed in so called iterations. In a single iteration generator takes a sender from the sender pool, uses it to send
-         all the messages specified in the scenario (See <xref linkend="ch-ug-sending.messages"/>) and after that it returns the sender back to the
-         sender pool. The reporting module (See <xref linkend="ch-ug-reporting"/>) treats this as a single iteration.
+         all the messages specified in the scenario (See
+         <xref linkend="ch-ug-sending.messages"/>
+         ) and after that it returns the sender back to the
+         sender pool. The reporting module (See
+         <xref linkend="ch-ug-reporting"/>
+         ) treats this as a single iteration.
       </para>
       <simplesect>
          <title>
@@ -66,8 +71,9 @@
    ...
 </generator>
 ...]]></programlisting>
+         <para>In the example above a generator is defined to run for 10 seconds.</para>
       </simplesect>
-      <para>The following section describes the generator which can be
+      <para>The following section describes the generators that can be
          used in PerfCake to generate the load.
       </para>
    </simplesect>

@@ -5,7 +5,7 @@
       The generator is based on the
       <code>DefaultMessageGenerator</code>
       but is able to change the number of threads during the execution.
-      The number of thread evolution during execution is illustrated in
+      The number of threads evolution during execution is illustrated in
       <xref linkend="ch-ug-generating.RampUpDownGenerator.time-chart"/>
       .
    </para>
@@ -16,7 +16,7 @@
    <para>
       The scenario starts
       <emphasis role="strong">(A)</emphasis>
-      with the number of threads set to the value of
+      with the number of threads set to the value of the
       <code>preThreadCount</code>
       property
       <emphasis role="strong">(1)</emphasis>
@@ -43,8 +43,8 @@
       <code>rampUpStep</code>
       property each
       period set by the
-      <code>rampUpDownStepPeriod</code>
-      until it reaches the number of threads set by value of the
+      <code>rampUpStepPeriod</code>
+      until it reaches the number of threads set by the value of the
       <code>mainThreadCount</code>
       property
       <emphasis role="strong">(2)</emphasis>
@@ -74,7 +74,7 @@
       the number of threads is again changed but this time in the opposite direction than in the
       <emphasis>RAMP UP</emphasis>
       phase.
-      It changes by the value of
+      It changes by the value of the
       <code>rampDownStep</code>
       property each period specified by the
       <code>rampDownStepPeriod</code>
@@ -175,7 +175,11 @@
                </row>
                <row>
                   <entry>mainDuration</entry>
-                  <entry>A duration for which the main phase lasts.</entry>
+                  <entry>
+                     A duration in the units of
+                     <code>run</code>
+                     type for which the main phase lasts.
+                  </entry>
                   <entry>No</entry>
                   <entry>"0"</entry>
                </row>
@@ -188,7 +192,9 @@
                <row>
                   <entry>rampDownStepPeriod</entry>
                   <entry>
-                     A period after which the number of threads is changed by
+                     A period in the units of
+                     <code>run</code>
+                     type after which the number of threads is changed by
                      <code>rampDownStep</code>
                      value.
                   </entry>

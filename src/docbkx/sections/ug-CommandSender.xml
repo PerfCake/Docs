@@ -6,7 +6,9 @@
       <code>target</code>
       property)
       in a separate process to send a message payload. The payload can be passed to the standard input of
-      the process (default behavior) or as the command argument. That is configurable via <code>messageFrom</code> proerty.
+      the process (default behavior) or as the command argument. That is configurable via
+      <code>messageFrom</code>
+      proerty.
    </para>
    <para>Message properties and headers are passed to the process as the environmental variables.</para>
    <table frame="all">
@@ -33,7 +35,12 @@
             </row>
             <row>
                <entry>messageFrom</entry>
-               <entry>Specifies where the message is taken from by the sender. The supported values are <code>stdin</code> or <code>arguments</code></entry>
+               <entry>
+                  Specifies where the message is taken from by the sender. The supported values are
+                  <code>stdin</code>
+                  or
+                  <code>arguments</code>
+               </entry>
                <entry>No</entry>
                <entry>"stdin"</entry>
             </row>
@@ -55,7 +62,17 @@
    ...
 </messages>
 ...]]></programlisting>
-   <para>In the example above there is a <code>CommandSender</code> configured that executes a script located in <code>/tmp/script.sh</code> file.
-   The environmental variable <code>GREETINGS</code> is set with the value of "<code>Be well!</code>".</para>
+      <para>
+         In the example above there is a
+         <code>CommandSender</code>
+         configured to execute a script located in
+         <code>/tmp/script.sh</code>
+         file.
+         The environmental variable
+         <code>GREETINGS</code>
+         is set to the value of "
+         <code>Be well!</code>
+         ".
+      </para>
    </simplesect>
 </sect2>

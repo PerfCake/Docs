@@ -35,7 +35,7 @@
                <entry>port</entry>
                <entry>A port number where PerfCake agent is listening.</entry>
                <entry>No</entry>
-               <entry>"8849"</entry>
+               <entry>"8850"</entry>
             </row>
          </tbody>
       </tgroup>
@@ -94,7 +94,7 @@ PerfCakeAgent > Listening at localhost on port 8850
                <entry>agentPort</entry>
                <entry>A port number where the PerfCake agent is listening.</entry>
                <entry>No</entry>
-               <entry>"8849"</entry>
+               <entry>"8850"</entry>
             </row>
             <row>
                <entry>memoryLeakDetectionEnabled</entry>
@@ -129,7 +129,7 @@ PerfCakeAgent > Listening at localhost on port 8850
 ...
 <reporter class="MemoryUsageReporter">
    <property name="agentHostname" value="localhost"/>
-   <property name="agentPort" value="8849"/>
+   <property name="agentPort" value="8850"/>
    ...
    (destinations)
    ...

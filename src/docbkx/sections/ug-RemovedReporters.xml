@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.RemovedReporters">
-	<title>Removed reporters</title>
-	<para>
-		The reporter is able to report the statistics - current, minimal, maximal and average value of a throughput (in the means of the number of iterations per second) from the beginning of the measuring to the moment when the results are published.
-		The default result of this reporter is the current throughput.
-	</para>
-	<table frame="all">
-		<title>Removed reporters</title>
-		<tgroup cols="2" align="left" colsep="1" rowsep="1">
-			<colspec colname="removed-reporter" colwidth="1*" />
-			<colspec colname="replacement" colwidth="1*" />
-			<thead>
-				<row>
-					<entry>Removed reporter</entry>
-					<entry>Replacement</entry>
-				</row>
-			</thead>
-			<tbody>
-				<row>
-					<entry>AverageThroughputReporter</entry>
-					<entry>ThroughputStatsReporter</entry>
-				</row>
-				<row>
-					<entry>ResponseTimeReporter</entry>
-					<entry>ResponseTimeStatsReporter</entry>
-				</row>
-				<row>
-					<entry>WindowResponseTimeReporter</entry>
-					<entry>ResponseTimeStatsReporter</entry>
-				</row>
-			</tbody>
-		</tgroup>
-	</table>
-	<para>Following sections describe the migration guides for the replaced reporters.</para>
-	<simplesect>
-		<title>AverageThroughputReporter -> ThroughputStatsReporter</title>
-		<programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+   <title>Removed reporters</title>
+   <para>
+      There are several reporters that has been removed from PerfCake and has been replaced by others in order
+      to improve that particular reporting feature. The following table
+      lists the removed reporters and the ones that replaces them.
+   </para>
+   <table frame="all">
+      <title>Removed reporters</title>
+      <tgroup cols="2" align="left" colsep="1" rowsep="1">
+         <colspec colname="removed-reporter" colwidth="1*"/>
+         <colspec colname="replacement" colwidth="1*"/>
+         <thead>
+            <row>
+               <entry>Removed reporter</entry>
+               <entry>Replacement</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>AverageThroughputReporter</entry>
+               <entry>ThroughputStatsReporter</entry>
+            </row>
+            <row>
+               <entry>ResponseTimeReporter</entry>
+               <entry>ResponseTimeStatsReporter</entry>
+            </row>
+            <row>
+               <entry>WindowResponseTimeReporter</entry>
+               <entry>ResponseTimeStatsReporter</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <para>The following sections describe the migration guides for the replaced reporters.</para>
+   <simplesect>
+      <title>AverageThroughputReporter -> ThroughputStatsReporter</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <reporter class="AverageThroughputReporter">
    ...
    (destinations)
    ...
 </reporter>
 ...]]></programlisting>
-		<para>is replaced by</para>
-		<programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+      <para>is replaced by</para>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <reporter class="ThroughputStatsReporter">
 	<property name="minimumEnabled" value="false"/>
 	<property name="maximumEnabled" value="false"/>
@@ -52,18 +53,18 @@
    ...
 </reporter>
 ...]]></programlisting>
-	</simplesect>
-	<simplesect>
-		<title>ResponseTimeReporter -> ResponseTimeStatsReporter</title>
-		<programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+   </simplesect>
+   <simplesect>
+      <title>ResponseTimeReporter -> ResponseTimeStatsReporter</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <reporter class="ResponseTimeReporter">
    ...
    (destinations)
    ...
 </reporter>
 ...]]></programlisting>
-		<para>is replaced by</para>
-		<programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+      <para>is replaced by</para>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <reporter class="ResponseTimeStatsReporter">
 	<property name="minimumEnabled" value="false"/>
 	<property name="maximumEnabled" value="false"/>
@@ -72,10 +73,10 @@
    ...
 </reporter>
 ...]]></programlisting>
-	</simplesect>
-	<simplesect>
-		<title>WindowResponseTimeReporter -> ResponseTimeStatsReporter</title>
-		<programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+   </simplesect>
+   <simplesect>
+      <title>WindowResponseTimeReporter -> ResponseTimeStatsReporter</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <reporter class="WindowResponseTimeReporter">
 	<property name="windowSize" value="10"/>
    ...
@@ -83,8 +84,8 @@
    ...
 </reporter>
 ...]]></programlisting>
-		<para>is replaced by</para>
-		<programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+      <para>is replaced by</para>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
 <reporter class="ResponseTimeStatsReporter">
 	<property name="windowSize" value="10"/>
 	<property name="minimumEnabled" value="false"/>
@@ -94,5 +95,5 @@
    ...
 </reporter>
 ...]]></programlisting>
-	</simplesect>
+   </simplesect>
 </sect2>

@@ -23,7 +23,7 @@
          <code>%PERFCAKE_HOME%\bin\perfcake.bat</code>
          in case of Windows OS.
       </para>
-      <para>If the script is run without arguments from the
+      <para>If the script is run without arguments, from the
          following help that is printed you can see the arguments that can be
          used to control the scenario execution.
       </para>
@@ -73,7 +73,7 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
          ), there are two ways.
          You can either use
          <code>-Dproperty=value</code>
-         like arguments or specify a path to the property file using
+         like arguments or specify a path to the property file using the
          <code>-pf</code>
          (or
          <code>--properties-file</code>

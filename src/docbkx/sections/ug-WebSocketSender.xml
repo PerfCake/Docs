@@ -44,17 +44,29 @@
                </row>
                <row>
                   <entry>remoteEndpointType</entry>
-                  <entry>One of {basic, async}.</entry>
+                  <entry>
+                     One of
+                     <code>basic</code>
+                     or
+                     <code>async</code>
+                     .
+                  </entry>
                   <entry>No</entry>
                   <entry>"basic"</entry>
                </row>
                <row>
                   <entry>payloadType</entry>
                   <entry>
-                     One of {text, binary, ping}.
+                     One of
+                     <code>text</code>
+                     ,
+                     <code>binary</code>
+                     or
+                     <code>ping</code>
+                     .
                      <footnote>
                         <para>
-                           Only text messages are supported in PerfCake 2.0.
+                           Only text messages are supported in PerfCake 3.0.
                         </para>
                      </footnote>
                   </entry>
