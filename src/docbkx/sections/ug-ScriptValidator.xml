@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-validation.ScriptValidator">
+   <title>ScriptValidator (TODO: describe)</title>
+   <para>...
+   </para>
+   <simplesect>
+      <title>An example of ScriptValidator configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<validator id="rimmerValidator" class="ScriptValidator">
+   <![CDATA[.*"I'm a [Ff]ish"!\.*]]]]><![CDATA[>
+</validator>
+...]]></programlisting>
+   </simplesect>
+</sect2>

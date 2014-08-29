@@ -70,7 +70,9 @@
    </simplesect>
    <sect1>
       <title>Validators</title>
-      <xi:include href="../sections/ug-TextMessageValidator.xml"/>
-      <xi:include href="../sections/ug-RulesMessageValidator.xml"/>
+      <xi:include href="../sections/ug-DictionaryValidator.xml"/>
+      <xi:include href="../sections/ug-RegExpValidator.xml"/>
+      <xi:include href="../sections/ug-RulesValidator.xml"/>
+      <xi:include href="../sections/ug-ScriptValidator.xml"/>
    </sect1>
 </chapter>
