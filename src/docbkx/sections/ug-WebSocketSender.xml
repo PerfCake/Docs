@@ -15,7 +15,7 @@
       <code>message</code>
       element in the
       <code>messages</code>
-      section of the scenario definition. Payload can be set text, binary and ping. In PerfCake 2.0 only text messages
+      section of the scenario definition. Payload can be set text, binary and ping. In PerfCake 2.x only text messages
       are supported.
    </para>
    <para>
@@ -54,7 +54,7 @@
                      One of {text, binary, ping}.
                      <footnote>
                         <para>
-                           Only text messages are supported in PerfCake 2.0.
+                           Only text messages are supported in PerfCake 2.x.
                         </para>
                      </footnote>
                   </entry>
