@@ -133,14 +133,14 @@
       <simplesect>
          <title>An example of a scenario with a property placeholder without the default value:</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:${perfcake.version}">
+<scenario xmlns="urn:perfcake:scenario:${perfcake.scenario.version}">
    ...
 </scenario>]]></programlisting>
       </simplesect>
       <simplesect>
-         <title>An example of a scenario with a property placeholder with the default value of "1.0":</title>
+         <title>An example of a scenario with a property placeholder with the default value of "2.0":</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:${perfcake.version:2.0}">
+<scenario xmlns="urn:perfcake:scenario:${perfcake.scenario.version:2.0}">
    ...
 </scenario>]]></programlisting>
       </simplesect>
