@@ -256,4 +256,33 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
          <graphic format="PNG" fileref="../images/perfclipse-console.png" scalefit="1" width="100%" align="center"/>
       </figure>
    </sect1>
+   <sect1 xml:id="ch-ug-running-logging">
+      <title>Logging configuration</title>
+      <para>PerfCake uses Log4j<footnote>
+            <para><link xlink:href="http://logging.apache.org/log4j/1.2/"/></para>
+         </footnote> as a logging framework. All messages sent to the user interface are passed
+         through the loggers. The main configuration file for Log4j can be found in the root
+         directory of the binary installation or in <code>src/main/resources/</code> in the source
+         code and its name is <code>log4j.xml</code>.</para>
+      <para>In the default configuration, there is an asynchronous appender to write log messages to
+         the log file (<code>perfcake.log</code>), and a synchronous appender to write messages
+         directly to the console. The synchronous adapter can cause a significant performance
+         degradation and can influence the performance measurement accuracy. Normally, this is not
+         likely to happen as only a few messages are logged. Should your test write significant
+         output to console (e.g. exceptions, error messages), then consider switching it to the
+         asynchronous appender.</para>
+      <note>
+         <para>Please note that this is not the case of ConsoleDestination as this uses direct
+            console output. On the other hand, you should be careful about the Log4jDestination as
+            this relies on the same configuration file (so far it was not possible to have 2
+            different log4j configurations in the same application).</para>
+      </note>
+      <para>Having console appender asynchronous can cause some messages to be lost especially
+         during PerfCake termination. This can be the case when an user provides an invalid scenario
+         file, PerfCake terminates immediately and the error messages is not shown as the
+         asynchronous buffer did not get filled and written anywhere.</para>
+      <para>To switch console logging to asynchronous, in log4j.xml move the line
+            <code>&lt;appender-ref ref="CONSOLE"/></code> from the <code>root</code> section to be
+         inside of the <code>&lt;appender name="ASYNC" ...></code> section.</para>
+   </sect1>
 </chapter>

@@ -156,15 +156,17 @@
                   </thead>
                   <tbody>
                      <row>
-                        <entry><programlisting language="java" linenumbering="unnumbered">String unitAbbrev = "μs";</programlisting></entry>
+                        <entry><programlisting language="java" linenumbering="unnumbered"><![CDATA[String unitAbbrev = "μs";]]></programlisting></entry>
                         <entry>Best: perfectly clear even without a comment.</entry>
                      </row>
                      <row>
-                        <entry><programlisting language="java" linenumbering="unnumbered">String unitAbbrev = "\u03bcs"; // "μs"</programlisting></entry>
+                        <entry><programlisting language="java" linenumbering="unnumbered"><![CDATA[// "μs"
+String unitAbbrev = "\u03bcs";]]></programlisting></entry>
                         <entry>Allowed, but there's no reason to do this.</entry>
                      </row>
                      <row>
-                        <entry><programlisting language="java" linenumbering="unnumbered">String unitAbbrev = "\u03bcs"; // Greek letter mu, "s"</programlisting></entry>
+                        <entry><programlisting language="java" linenumbering="unnumbered"><![CDATA[// Greek letter mu, "s"
+String unitAbbrev = "\u03bcs";]]></programlisting></entry>
                         <entry>Allowed, but awkward and prone to mistakes.</entry>
                      </row>
                      <row>
@@ -172,7 +174,8 @@
                         <entry>Poor: the reader has no idea what this is.</entry>
                      </row>
                      <row>
-                        <entry><programlisting language="java" linenumbering="unnumbered">return '\ufeff' + content; // byte order mark</programlisting></entry>
+                        <entry><programlisting language="java" linenumbering="unnumbered"><![CDATA[// byte order mark
+return '\ufeff' + content;]]></programlisting></entry>
                         <entry>Good: use escapes for non-printable characters, and comment if necessary.</entry>
                      </row>
                   </tbody>
