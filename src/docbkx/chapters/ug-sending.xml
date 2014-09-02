@@ -25,7 +25,7 @@
       <!-- <xi:include href="../sections/ug-ChannelSocketSender.xml"/> -->
       <xi:include href="../sections/ug-JDBCSender.xml"/>
       <xi:include href="../sections/ug-JMSSender.xml"/>
-      <!-- <xi:include href="../sections/ug-LDAPSender.xml"/> -->
+      <xi:include href="../sections/ug-LDAPSender.xml"/>
       <xi:include href="../sections/ug-PlainSocketSender.xml"/>
       <xi:include href="../sections/ug-RequestResponseJMSSender.xml"/>
       <!-- <xi:include href="../sections/ug-SOAPSender.xml"/> -->
