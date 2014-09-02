@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.JMSSender">
-   <title>JMSSender</title>
-   <para>The JMSSender can be used to send a single JMS message.</para>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.JmsSender">
+   <title>JmsSender</title>
+   <para>The JmsSender can be used to send a single JMS message.</para>
    <para>
-      The following table describes the JMSSender's properties:
+      The following table describes the JmsSender's properties:
       <table frame="all">
-         <title>JMSSender properties</title>
+         <title>JmsSender properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="1*"/>
             <colspec colname="description" colwidth="1*"/>
@@ -103,9 +103,9 @@
       </table>
    </para>
    <simplesect>
-      <title>An example of JMSSender configuration</title>
+      <title>An example of JmsSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="JMSSender">
+<sender class="JmsSender">
    <property name="target" value="jms/queue/YourQueue"/>
    <property name="receivingTimeout" value="30000"/>
    <property name="receiveAttempts" value="1"/>

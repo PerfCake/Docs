@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.RequestResponseJMSSender">
-   <title>RequestResponseJMSSender</title>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.RequestResponseJmsSender">
+   <title>RequestResponseJmsSender</title>
    <para>
-      The RequestResponseJMSSender is supposed to be used in request-response scenarios. First it sends a JMS message to the target destination (specified by the
+      The RequestResponseJmsSender is supposed to be used in request-response scenarios. First it sends a JMS message to the target destination (specified by the
       <code>target</code>
       property) and then waits to receive the response message from the response destination (specified by the
       <code>responseTarget</code> 
       property).
    </para>
    <para>
-      It is based on JMSSender (see
-      <xref linkend="ch-ug-sending.JMSSender"/>
+      It is based on JmsSender (see
+      <xref linkend="ch-ug-sending.JmsSender"/>
       ) so it inherits its properties.
    </para>
    <table frame="all">
-      <title>RequestResponseJMSSender properties</title>
+      <title>RequestResponseJmsSender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
          <colspec colname="property-name" colwidth="1*"/>
          <colspec colname="description" colwidth="1*"/>
@@ -51,9 +51,9 @@
       </tgroup>
    </table>
    <simplesect>
-      <title>An example of RequestResponseJMSSender configuration</title>
+      <title>An example of RequestResponseJmsSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="RequestResponseJMSSender">
+<sender class="RequestResponseJmsSender">
    <property name="target" value="jms/queue/RequestQueue"/>
    <property name="responseTarget" value="jms/queue/ResponseQueue"/>
    <property name="receivingTimeout" value="30000"/>

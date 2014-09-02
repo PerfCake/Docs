@@ -17,19 +17,19 @@
       <xi:include href="../sections/ug-CommandSender.xml"/>
       <xi:include href="../sections/ug-DummySender.xml"/>
       <xi:include href="../sections/ug-GroovySender.xml"/>
-      <xi:include href="../sections/ug-HTTPSender.xml"/>
-      <xi:include href="../sections/ug-HTTPSSender.xml"/>
+      <xi:include href="../sections/ug-HttpSender.xml"/>
+      <xi:include href="../sections/ug-HttpsSender.xml"/>
       <!-- <xi:include href="../sections/ug-ChannelDatagramSender.xml"/> -->
       <!-- <xi:include href="../sections/ug-ChannelFileSender.xml"/> -->
       <!-- <xi:include href="../sections/ug-ChannelSender.xml"/> -->
       <!-- <xi:include href="../sections/ug-ChannelSocketSender.xml"/> -->
-      <xi:include href="../sections/ug-JDBCSender.xml"/>
-      <xi:include href="../sections/ug-JMSSender.xml"/>
-      <xi:include href="../sections/ug-LDAPSender.xml"/>
+      <xi:include href="../sections/ug-JdbcSender.xml"/>
+      <xi:include href="../sections/ug-JmsSender.xml"/>
+      <xi:include href="../sections/ug-LdapSender.xml"/>
       <xi:include href="../sections/ug-PlainSocketSender.xml"/>
-      <xi:include href="../sections/ug-RequestResponseJMSSender.xml"/>
+      <xi:include href="../sections/ug-RequestResponseJmsSender.xml"/>
       <!-- <xi:include href="../sections/ug-SOAPSender.xml"/> -->
-      <xi:include href="../sections/ug-SSLSocketSender.xml"/>
+      <xi:include href="../sections/ug-SslSocketSender.xml"/>
       <xi:include href="../sections/ug-WebSocketSender.xml"/>
    </sect1>
    <sect1 xml:id="ch-ug-sending.messages">

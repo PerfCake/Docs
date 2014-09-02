@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.HTTPSender">
-   <title>HTTPSender</title>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.HttpSender">
+   <title>HttpSender</title>
    <para>
-      The HTTPSender can be used to send messages via HTTP protocol using POST method as
+      The HttpSender can be used to send messages via HTTP protocol using POST method as
       default to the URL specified by
       the 'target' property. The HTTP method
       can be changed using the
@@ -26,9 +26,9 @@
       section of the scenario definition.
    </para>
    <para>
-      Following table shows the properties of the HTTPSender:
+      Following table shows the properties of the HttpSender:
       <table frame="all">
-         <title>HTTPSender properties</title>
+         <title>HttpSender properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="1*"/>
             <colspec colname="description" colwidth="1*"/>
@@ -78,9 +78,9 @@
       </table>
    </para>
    <simplesect>
-      <title>An example of HTTPSender configuration</title>
+      <title>An example of HttpSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="HTTPSender">
+<sender class="HttpSender">
    <property name="target" value="http://domain.com/cool-url"/>
    <property name="method" value="GET"/>
    <property name="expectedResponseCodes" value="200,202"/>
