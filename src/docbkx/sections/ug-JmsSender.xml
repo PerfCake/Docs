@@ -81,10 +81,18 @@
                   <entry>false</entry>
                </row>
                <row>
-                  <entry>sendAsObject</entry>
-                  <entry>Indicate whether the message is send as an ObjectMessage instance or a TextMessage (default) instance.</entry>
+                  <entry>messageType</entry>
+                  <entry>
+                     Indicate the type of the message. The supported values are
+                     <code>object</code>
+                     ,
+                     <code>string</code>
+                     and
+                     <code>bytearray</code>
+                     .
+                  </entry>
                   <entry>No</entry>
-                  <entry>false</entry>
+                  <entry>string</entry>
                </row>
                <row>
                   <entry>username</entry>
