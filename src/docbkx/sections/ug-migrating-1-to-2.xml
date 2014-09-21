@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-migrating.1-to-2">
+   <title>From v1.0 to v2.x</title>
+   <para>
+      The following list shows the steps that are needed to migrate from PerfCake version 1.0 to 2.x:
+      <itemizedlist>
+         <listitem>
+            <simpara>Rename scenario XML schema namespace</simpara>
+         </listitem>
+         <listitem>
+            <simpara>Rename message number constant name</simpara>
+         </listitem>
+      </itemizedlist>
+      The following sections describe each step in detail.
+   </para>
+   <sect2>
+      <title>Migration steps</title>
+      <simplesect xml:id="ch-ug-migrating.1-to-2.xml-namespace">
+         <title>Rename XML schema namespace</title>
+         <para>
+            The namespace of the XML schema for scenarios has been renamed from
+            <code>urn:perfcake:scenario:1.0</code>
+            to
+            <code>urn:perfcake:scenario:2.0</code>
+            so it must be updated in the scenario XML files.
+         </para>
+      </simplesect>
+      <simplesect xml:id="ch-ug-migrating.1-to-2.message-number">
+         <title>Rename Message Number Constant Name</title>
+         <para>
+            If your sender depends on message ordinal number you need to change the name of the particular
+            constant from
+            <code>PerfCakeConst.MESSAGE_NUMBER_PROPERTY</code>
+            to
+            <code>PerfCakeConst.MESSAGE_NUMBER_HEADER</code>
+         </para>
+      </simplesect>
+   </sect2>
+</sect1>

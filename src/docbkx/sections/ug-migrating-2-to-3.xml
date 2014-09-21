@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-migrating.2-to-3">
+   <title>From v2.x to v3.0</title>
+   <para>
+      There are several steps that are needed to migrate scenarios from PerfCake version 2.x to 3.0. The following list shows them:
+      <itemizedlist>
+         <listitem>
+            <simpara>Rename scenario XML schema namespace</simpara>
+         </listitem>
+         <listitem>
+            <simpara>Rename class names</simpara>
+         </listitem>
+         <listitem>
+            <simpara>Replace reporters</simpara>
+         </listitem>
+      </itemizedlist>
+      The following sections take a look at each step in detail.
+   </para>
+   <sect2>
+      <title>Migration steps</title>
+      <simplesect xml:id="ch-ug-migrating.2-to-3.xml-namespace">
+         <title>Rename XML schema namespace</title>
+         <para>
+            The namespace of the XML schema for scenarios has been renamed from
+            <code>urn:perfcake:scenario:2.0</code>
+            to
+            <code>urn:perfcake:scenario:3.0</code>
+            so it must be updated in the scenario XML files.
+         </para>
+      </simplesect>
+      <simplesect xml:id="ch-ug-migrating.2-to-3.class-names">
+         <title>Rename class names</title>
+         <para>Following classes has been renamed to follow the naming conventions (See Developers' Guide).</para>
+         <table frame="all">
+            <title>Renamed classes in PerfCake v 3.0</title>
+            <tgroup cols="2" align="left" colsep="1" rowsep="1">
+               <colspec colname="v2.x" colwidth="1*"/>
+               <colspec colname="v3.0" colwidth="1*"/>
+               <thead>
+                  <row>
+                     <entry>Class name in version 2.x</entry>
+                     <entry>Class name in version 3.0</entry>
+                  </row>
+               </thead>
+               <tbody>
+                  <row>
+                     <entry>HTTPSender</entry>
+                     <entry>HttpSender</entry>
+                  </row>
+                  <row>
+                     <entry>HTTPSSender</entry>
+                     <entry>HttpsSender</entry>
+                  </row>
+                  <row>
+                     <entry>JDBCSender</entry>
+                     <entry>JdbcSender</entry>
+                  </row>
+                  <row>
+                     <entry>JMSSender</entry>
+                     <entry>JmsSender</entry>
+                  </row>
+                  <row>
+                     <entry>RequestResponseJMSSender</entry>
+                     <entry>RequestResponseJmsSender</entry>
+                  </row>
+                  <row>
+                     <entry>SOAPSocketSender</entry>
+                     <entry>SoapSocketSender</entry>
+                  </row>
+                  <row>
+                     <entry>SSLSocketSender</entry>
+                     <entry>SslSocketSender</entry>
+                  </row>
+                  <row>
+                     <entry>CSVDestination</entry>
+                     <entry>CsvDestination</entry>
+                  </row>
+                  <row>
+                     <entry>TextValidator</entry>
+                     <entry>RegExpValidator</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </simplesect>
+      <simplesect xml:id="ch-ug-migrating.2-to-3.reporters">
+         <title>Replace reporters</title>
+         <para>
+            As it has been mentioned in
+            <xref linkend="ch-ug-reporting.RemovedReporters"/>
+            there are several reporters that has been removed from PerfCake and has been replaced by others.
+            The following sections illustrate that change and how to perform the migration at the same time.
+         </para>
+         <simplesect>
+            <title>AverageThroughputReporter -> ThroughputStatsReporter</title>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<reporter class="AverageThroughputReporter">
+   ...
+   (destinations)
+   ...
+</reporter>
+...]]></programlisting>
+            <para>is replaced by</para>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<reporter class="ThroughputStatsReporter">
+   <property name="minimumEnabled" value="false"/>
+   <property name="maximumEnabled" value="false"/>
+   ...
+   (destinations)
+   ...
+</reporter>
+...]]></programlisting>
+         </simplesect>
+         <simplesect>
+            <title>ResponseTimeReporter -> ResponseTimeStatsReporter</title>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<reporter class="ResponseTimeReporter">
+   ...
+   (destinations)
+   ...
+</reporter>
+...]]></programlisting>
+            <para>is replaced by</para>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<reporter class="ResponseTimeStatsReporter">
+   <property name="minimumEnabled" value="false"/>
+   <property name="maximumEnabled" value="false"/>
+   ...
+   (destinations)
+   ...
+</reporter>
+...]]></programlisting>
+         </simplesect>
+         <simplesect>
+            <title>WindowResponseTimeReporter -> ResponseTimeStatsReporter</title>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<reporter class="WindowResponseTimeReporter">
+   <property name="windowSize" value="10"/>
+   ...
+   (destinations)
+   ...
+</reporter>
+...]]></programlisting>
+            <para>is replaced by</para>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+<reporter class="ResponseTimeStatsReporter">
+   <property name="windowSize" value="10"/>
+   <property name="minimumEnabled" value="false"/>
+   <property name="maximumEnabled" value="false"/>
+   ...
+   (destinations)
+   ...
+</reporter>
+...]]></programlisting>
+         </simplesect>
+      </simplesect>
+   </sect2>
+   <sect2>
+      <title>Scenario conversion using XSLT</title>
+      <para>
+         After understanding the all the steps needed to migrate PerfCake scenarios
+         from version 2.x to version 3.0 we can take a look at an option to make the migration automatically
+         using XSL transformation
+         <footnote>
+            <simpara>
+               <link xlink:href="http://www.w3.org/TR/xslt"/>
+            </simpara>
+         </footnote>
+         .
+         The particular XSLT is available as a part of the PerfCake distribution and it can be found at
+         <code>$PERFCAKE_HOME/resources/xslt/scenario-2.0-to-3.0.xsl</code>
+         .
+      </para>
+   </sect2>
+</sect1>

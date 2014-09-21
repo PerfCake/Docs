@@ -23,5 +23,6 @@
    <xi:include href="chapters/ug-reporting.xml"/>
    <xi:include href="chapters/ug-validation.xml"/>
    <xi:include href="chapters/ug-extending.xml"/>
+   <xi:include href="chapters/ug-migrating.xml"/>
    <xi:include href="chapters/ug-troubleshooting.xml"/>
 </book>
