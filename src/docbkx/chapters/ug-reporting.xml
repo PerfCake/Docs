@@ -22,8 +22,7 @@
       </para>
       <simplesect>
          <title>An example reporting configuration:</title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporting>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
    <reporter class="ThroughputStatsReporter">
       <property name="minimumEnabled" value="false"/>
       <property name="maximumEnabled" value="false"/>
@@ -44,8 +43,7 @@
          <property name="path" value="test-memory-usage.csv"/>
       </destination>
    </reporter>
-</reporting>
-...]]></programlisting>
+ </reporting>]]></programlisting>
       </simplesect>
       <para>
          With this configuration the 2 reporters are specified -
@@ -64,8 +62,7 @@
       </para>
       <simplesect>
          <title>An example of a disabled reporter:</title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporting>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
    <reporter class="ThroughputStatsReporter">
       ...
    </reporter>
@@ -73,8 +70,7 @@
    <reporter class="MemoryUsageReporter" enabled="false">
       ...
    </reporter>
-</reporting>
-...]]></programlisting>
+ </reporting>]]></programlisting>
          <para>
             In the example above there are two reporters configured,
             <code>ThroughputStatsReporter</code>
@@ -150,14 +146,12 @@
             <code>period</code>
             configuration in a destination:
          </title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<destination class="...">
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <destination class="...">
    <period type="time" value="1000"/>
    ...
    (properties)
    ...
-</destination>
-...]]></programlisting>
+ </destination>]]></programlisting>
       </simplesect>
       <para>The following sections describe the destinations that can be used by reporters.
       </para>

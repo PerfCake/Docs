@@ -32,7 +32,7 @@
          <title>Rename class names</title>
          <para>Following classes has been renamed to follow the naming conventions (See Developers' Guide).</para>
          <table frame="all">
-            <title>Renamed classes in PerfCake v 3.0</title>
+            <title>Renamed classes in PerfCake v3.0</title>
             <tgroup cols="2" align="left" colsep="1" rowsep="1">
                <colspec colname="v2.x" colwidth="1*"/>
                <colspec colname="v3.0" colwidth="1*"/>
@@ -97,65 +97,53 @@
          </para>
          <simplesect>
             <title>AverageThroughputReporter -> ThroughputStatsReporter</title>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporter class="AverageThroughputReporter">
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="AverageThroughputReporter">
    ...
    (destinations)
    ...
-</reporter>
-...]]></programlisting>
+ </reporter>]]></programlisting>
             <para>is replaced by</para>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporter class="ThroughputStatsReporter">
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ThroughputStatsReporter">
    <property name="minimumEnabled" value="false"/>
    <property name="maximumEnabled" value="false"/>
    ...
    (destinations)
    ...
-</reporter>
-...]]></programlisting>
+ </reporter>]]></programlisting>
          </simplesect>
          <simplesect>
             <title>ResponseTimeReporter -> ResponseTimeStatsReporter</title>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporter class="ResponseTimeReporter">
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeReporter">
    ...
    (destinations)
    ...
-</reporter>
-...]]></programlisting>
+ </reporter>]]></programlisting>
             <para>is replaced by</para>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporter class="ResponseTimeStatsReporter">
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeStatsReporter">
    <property name="minimumEnabled" value="false"/>
    <property name="maximumEnabled" value="false"/>
    ...
    (destinations)
    ...
-</reporter>
-...]]></programlisting>
+ </reporter>]]></programlisting>
          </simplesect>
          <simplesect>
             <title>WindowResponseTimeReporter -> ResponseTimeStatsReporter</title>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporter class="WindowResponseTimeReporter">
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="WindowResponseTimeReporter">
    <property name="windowSize" value="10"/>
    ...
    (destinations)
    ...
-</reporter>
-...]]></programlisting>
+ </reporter>]]></programlisting>
             <para>is replaced by</para>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporter class="ResponseTimeStatsReporter">
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeStatsReporter">
    <property name="windowSize" value="10"/>
    <property name="minimumEnabled" value="false"/>
    <property name="maximumEnabled" value="false"/>
    ...
    (destinations)
    ...
-</reporter>
-...]]></programlisting>
+ </reporter>]]></programlisting>
          </simplesect>
       </simplesect>
    </sect2>

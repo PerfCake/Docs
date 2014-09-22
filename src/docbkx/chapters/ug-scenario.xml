@@ -18,7 +18,7 @@
          <footnote>
             <para>
                Schema can be found at
-               <link xlink:href="http://schema.perfcake.org/perfcake-scenario-2.0.xsd"/>
+               <link xlink:href="http://schema.perfcake.org/perfcake-scenario-3.0.xsd"/>
             </para>
          </footnote>
          .
@@ -59,7 +59,7 @@
    <validation>
       ...
    </validation>
-</scenario>]]></programlisting>
+ </scenario>]]></programlisting>
       </simplesect>
       <sect2>
          <title>Sections of the scenario</title>

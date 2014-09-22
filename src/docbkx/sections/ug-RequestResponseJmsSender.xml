@@ -5,7 +5,7 @@
       The RequestResponseJmsSender is supposed to be used in request-response scenarios. First it sends a JMS message to the target destination (specified by the
       <code>target</code>
       property) and then waits to receive the response message from the response destination (specified by the
-      <code>responseTarget</code> 
+      <code>responseTarget</code>
       property).
    </para>
    <para>
@@ -16,10 +16,10 @@
    <table frame="all">
       <title>RequestResponseJmsSender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
-         <colspec colname="property-name" colwidth="1*"/>
-         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
          <colspec colname="required" colwidth="1*"/>
-         <colspec colname="default-value" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
          <thead>
             <row>
                <entry>Property name</entry>
@@ -52,8 +52,7 @@
    </table>
    <simplesect>
       <title>An example of RequestResponseJmsSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="RequestResponseJmsSender">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="RequestResponseJmsSender">
    <property name="target" value="jms/queue/RequestQueue"/>
    <property name="responseTarget" value="jms/queue/ResponseQueue"/>
    <property name="receivingTimeout" value="30000"/>
@@ -66,8 +65,6 @@
    <property name="jndiUrl" value="remote://${server.host}:4447"/>
    <property name="jndiSecurityPrincipal" value="KingRoland"/>
    <property name="jndiSecurityCredentials" value="12345"/>
-   ...
-</sender>
-...]]></programlisting>
+ </sender>]]></programlisting>
    </simplesect>
 </sect2>

@@ -7,10 +7,10 @@
       <table frame="all">
          <title>JmsSender properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
-            <colspec colname="property-name" colwidth="1*"/>
-            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
             <colspec colname="required" colwidth="1*"/>
-            <colspec colname="default-value" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
             <thead>
                <row>
                   <entry>Property name</entry>
@@ -112,8 +112,7 @@
    </para>
    <simplesect>
       <title>An example of JmsSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="JmsSender">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="JmsSender">
    <property name="target" value="jms/queue/YourQueue"/>
    <property name="receivingTimeout" value="30000"/>
    <property name="receiveAttempts" value="1"/>
@@ -125,8 +124,6 @@
    <property name="jndiUrl" value="remote://${server.host}:4447"/>
    <property name="jndiSecurityPrincipal" value="KingRoland"/>
    <property name="jndiSecurityCredentials" value="12345"/>
-   ...
-</sender>
-...]]></programlisting>
+ </sender>]]></programlisting>
    </simplesect>
 </sect2>

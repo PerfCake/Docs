@@ -27,10 +27,10 @@
       <table frame="all">
          <title>DefaultMessageGenerator properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
-            <colspec colname="property-name" colwidth="1*"/>
-            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
             <colspec colname="required" colwidth="1*"/>
-            <colspec colname="default-value" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
             <thead>
                <row>
                   <entry>Property name</entry>
@@ -52,13 +52,10 @@
    </para>
    <simplesect>
       <title>An example of DefaultMessageGenerator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<generator class="DefaultMessageGenerator" threads="100">
-   <run type="time" value="60000"/>
-   <property name="threadQueueSize" value="5000"/>
-   ...
-</generator>
-...]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="DefaultMessageGenerator" threads="100">
+    <run type="time" value="60000"/>
+    <property name="threadQueueSize" value="5000"/>
+ </generator>]]></programlisting>
       <para>
          In the example above a
          <code>DefaultMessageGenerator</code>

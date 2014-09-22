@@ -5,10 +5,10 @@
    <table frame="all">
       <title>JdbcSender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
-         <colspec colname="property-name" colwidth="1*"/>
-         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
          <colspec colname="required" colwidth="1*"/>
-         <colspec colname="default-value" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
          <thead>
             <row>
                <entry>Property name</entry>
@@ -47,14 +47,11 @@
    </table>
    <simplesect>
       <title>An example of JdbcSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="JdbcSender">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="JdbcSender">
    <property name="target" value="jdbc:postgresql://${PG}:5432/db"/>
    <property name="username" value="me-the-first"/>
    <property name="password" value="guess_me"/>
    <property name="driverClass" value="org.postgresql.Driver"/>
-   ...
-</sender>
-...]]></programlisting>
+ </sender>]]></programlisting>
    </simplesect>
 </sect2>

@@ -106,10 +106,10 @@
       <table frame="all">
          <title>RampUpDownGenerator properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
-            <colspec colname="property-name" colwidth="1*"/>
-            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
             <colspec colname="required" colwidth="1*"/>
-            <colspec colname="default-value" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
             <thead>
                <row>
                   <entry>Property name</entry>
@@ -217,8 +217,7 @@
    </para>
    <simplesect>
       <title>An example of RampUpDownGenerator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<generator class="RampUpDownGenerator" threads="20">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="RampUpDownGenerator" threads="20">
    <run type="time" value="60000"/>
    <property name="preThreadCount" value="10"/>
    <property name="preDuration" value="10000"/>
@@ -229,9 +228,7 @@
    <property name="rampDownStep" value="1"/>
    <property name="rampDownStepPeriod" value="1000"/>
    <property name="postThreadCount" value="15"/>
-   ...
-</generator>
-...]]></programlisting>
+ </generator>]]></programlisting>
       <para>
          In the example above the scenario starts with 10 threads (
          <code>preThreadCount</code>

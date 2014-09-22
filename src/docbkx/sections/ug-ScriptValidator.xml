@@ -5,10 +5,8 @@
    </para>
    <simplesect>
       <title>An example of ScriptValidator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<validator id="rimmerValidator" class="ScriptValidator">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <validator id="rimmerValidator" class="ScriptValidator">
    <![CDATA[.*"I'm a [Ff]ish"!\.*]]]]><![CDATA[>
-</validator>
-...]]></programlisting>
+ </validator>]]></programlisting>
    </simplesect>
 </sect2>

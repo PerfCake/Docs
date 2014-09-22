@@ -63,14 +63,12 @@
             <code>run</code>
             configuration in a generator:
          </title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<generator class="..." threads="...">
-   <run type="time" value="10000"/>
-   ...
-   (properties)
-   ...
-</generator>
-...]]></programlisting>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="..." threads="...">
+    <run type="time" value="10000"/>
+    ...
+    (properties)
+    ...
+ </generator>]]></programlisting>
          <para>In the example above a generator is defined to run for 10 seconds.</para>
       </simplesect>
       <para>The following section describes the generators that can be

@@ -12,10 +12,10 @@
    <table frame="all">
       <title>PerfCake agent properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
-         <colspec colname="property-name" colwidth="1*"/>
-         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
          <colspec colname="required" colwidth="1*"/>
-         <colspec colname="default-value" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
          <thead>
             <row>
                <entry>Property name</entry>
@@ -53,7 +53,7 @@
    </simplesect>
    <para>
       Once you have started the tested system up, you should see the following line in the system's console output:
-      <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA[...
+      <programlisting><![CDATA[...
 PerfCakeAgent > Listening at localhost on port 8850
 ...]]></programlisting>
    </para>
@@ -71,10 +71,10 @@ PerfCakeAgent > Listening at localhost on port 8850
    <table frame="all">
       <title>MemoryUsageReporter properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
-         <colspec colname="property-name" colwidth="1*"/>
-         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
          <colspec colname="required" colwidth="1*"/>
-         <colspec colname="default-value" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
          <thead>
             <row>
                <entry>Property name</entry>
@@ -125,16 +125,12 @@ PerfCakeAgent > Listening at localhost on port 8850
    </table>
    <simplesect>
       <title>An example of MemoryUsageReporter configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[
-...
-<reporter class="MemoryUsageReporter">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="MemoryUsageReporter">
    <property name="agentHostname" value="localhost"/>
    <property name="agentPort" value="8850"/>
    ...
    (destinations)
    ...
-</reporter>
-...
-]]></programlisting>
+ </reporter>]]></programlisting>
    </simplesect>
 </sect2>

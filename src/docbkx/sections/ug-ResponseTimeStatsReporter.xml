@@ -8,10 +8,10 @@
    <table frame="all">
       <title>ResponseTimeStatsReporter properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
-         <colspec colname="property-name" colwidth="1*"/>
-         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
          <colspec colname="required" colwidth="1*"/>
-         <colspec colname="default-value" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
          <thead>
             <row>
                <entry>Property name</entry>
@@ -50,14 +50,12 @@
    </table>
    <simplesect>
       <title>An example of ResponseTimeStatsReporter configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporter class="ResponseTimeStatsReporter">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeStatsReporter">
 	<property name="minimumEnabled" value="false"/>
 	<property name="maximumEnabled" value="false"/>
    ...
    (destinations)
    ...
-</reporter>
-...]]></programlisting>
+ </reporter>]]></programlisting>
    </simplesect>
 </sect2>
