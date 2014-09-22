@@ -22,13 +22,14 @@
       </para>
       <simplesect>
          <title>An example reporting configuration:</title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporting>
-   <reporter class="AverageThroughputReporter">
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
+   <reporter class="ThroughputStatsReporter">
+      <property name="minimumEnabled" value="false"/>
+      <property name="maximumEnabled" value="false"/>
       <destination class="ConsoleDestination">
          <period type="time" value="1000"/>
       </destination>
-      <destination class="CSVDestination">
+      <destination class="CsvDestination">
          <period type="time" value="2000"/>
          <property name="path" value="test-average-throughput.csv"/>
       </destination>
@@ -37,17 +38,16 @@
    <reporter class="MemoryUsageReporter">
       <property name="agentHostname" value="localhost"/>
       <property name="agentPort" value="8849"/>
-      <destination class="CSVDestination">
+      <destination class="CsvDestination">
          <period type="time" value="2000"/>
          <property name="path" value="test-memory-usage.csv"/>
       </destination>
    </reporter>
-</reporting>
-...]]></programlisting>
+ </reporting>]]></programlisting>
       </simplesect>
       <para>
          With this configuration the 2 reporters are specified -
-         <code>AverageThroughputReporter</code>
+         <code>ThroughputStatsReporter</code>
          and
          <code>MemoryUsageReporter</code>
          . First one will report to console each 1 second and to CSV file each 2
@@ -62,20 +62,18 @@
       </para>
       <simplesect>
          <title>An example of a disabled reporter:</title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<reporting>
-   <reporter class="AverageThroughputReporter">
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
+   <reporter class="ThroughputStatsReporter">
       ...
    </reporter>
 
    <reporter class="MemoryUsageReporter" enabled="false">
       ...
    </reporter>
-</reporting>
-...]]></programlisting>
+ </reporting>]]></programlisting>
          <para>
             In the example above there are two reporters configured,
-            <code>AverageThroughputReporter</code>
+            <code>ThroughputStatsReporter</code>
             which is enabled
             and
             <code>MemoryUsageReporter</code>
@@ -86,11 +84,11 @@
    </simplesect>
    <sect1>
       <title>Reporters</title>
-      <xi:include href="../sections/ug-AverageThroughputReporter.xml"/>
+      <xi:include href="../sections/ug-ThroughputStatsReporter.xml"/>
       <xi:include href="../sections/ug-MemoryUsageReporter.xml"/>
-      <xi:include href="../sections/ug-ResponseTimeReporter.xml"/>
+      <xi:include href="../sections/ug-ResponseTimeStatsReporter.xml"/>
       <xi:include href="../sections/ug-WarmUpReporter.xml"/>
-      <xi:include href="../sections/ug-WindowResponseTimeReporter.xml"/>
+      <xi:include href="../sections/ug-RemovedReporters.xml"/>
    </sect1>
    <sect1>
       <title>Destinations</title>
@@ -148,19 +146,17 @@
             <code>period</code>
             configuration in a destination:
          </title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<destination class="...">
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <destination class="...">
    <period type="time" value="1000"/>
    ...
    (properties)
    ...
-</destination>
-...]]></programlisting>
+ </destination>]]></programlisting>
       </simplesect>
       <para>The following sections describe the destinations that can be used by reporters.
       </para>
       <xi:include href="../sections/ug-ConsoleDestination.xml"/>
-      <xi:include href="../sections/ug-CSVDestination.xml"/>
+      <xi:include href="../sections/ug-CsvDestination.xml"/>
       <xi:include href="../sections/ug-Log4jDestination.xml"/>
    </sect1>
 </chapter>

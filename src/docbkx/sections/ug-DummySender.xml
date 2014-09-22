@@ -9,10 +9,10 @@
    <table frame="all">
       <title>DummySender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
-         <colspec colname="property-name" colwidth="1*"/>
-         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
          <colspec colname="required" colwidth="1*"/>
-         <colspec colname="default-value" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
          <thead>
             <row>
                <entry>Property name</entry>
@@ -39,11 +39,9 @@
    </table>
    <simplesect>
       <title>An example of DummySender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="DummySender">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="DummySender">
    <property name="target" value="out there!"/>
    <property name="delay" value="500"/>
-</sender>
-...]]></programlisting>
+ </sender>]]></programlisting>
    </simplesect>
 </sect2>

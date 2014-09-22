@@ -23,10 +23,10 @@
       <table frame="all">
          <title>WebSocketSender properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
-            <colspec colname="property-name" colwidth="1*"/>
-            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
             <colspec colname="required" colwidth="1*"/>
-            <colspec colname="default-value" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
             <thead>
                <row>
                   <entry>Property name</entry>
@@ -44,17 +44,29 @@
                </row>
                <row>
                   <entry>remoteEndpointType</entry>
-                  <entry>One of {basic, async}.</entry>
+                  <entry>
+                     One of
+                     <code>basic</code>
+                     or
+                     <code>async</code>
+                     .
+                  </entry>
                   <entry>No</entry>
                   <entry>"basic"</entry>
                </row>
                <row>
                   <entry>payloadType</entry>
                   <entry>
-                     One of {text, binary, ping}.
+                     One of
+                     <code>text</code>
+                     ,
+                     <code>binary</code>
+                     or
+                     <code>ping</code>
+                     .
                      <footnote>
                         <para>
-                           Only text messages are supported in PerfCake 2.x.
+                           Only text messages are supported in PerfCake 3.x.
                         </para>
                      </footnote>
                   </entry>
@@ -67,12 +79,10 @@
    </para>
    <simplesect>
       <title>An example of WebSocketSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="WebSocketSender">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="WebSocketSender">
    <property name="target" value="ws://domain.com/ws-ctx/ws-ep"/>
    <property name="remoteEndpointType" value="basic"/>
    <property name="payloadType" value="text"/>
-</sender>
-...]]></programlisting>
+ </sender>]]></programlisting>
    </simplesect>
 </sect2>

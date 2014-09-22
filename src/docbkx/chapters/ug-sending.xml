@@ -17,25 +17,25 @@
       <xi:include href="../sections/ug-CommandSender.xml"/>
       <xi:include href="../sections/ug-DummySender.xml"/>
       <xi:include href="../sections/ug-GroovySender.xml"/>
-      <xi:include href="../sections/ug-HTTPSender.xml"/>
-      <xi:include href="../sections/ug-HTTPSSender.xml"/>
+      <xi:include href="../sections/ug-HttpSender.xml"/>
+      <xi:include href="../sections/ug-HttpsSender.xml"/>
       <!-- <xi:include href="../sections/ug-ChannelDatagramSender.xml"/> -->
       <!-- <xi:include href="../sections/ug-ChannelFileSender.xml"/> -->
       <!-- <xi:include href="../sections/ug-ChannelSender.xml"/> -->
       <!-- <xi:include href="../sections/ug-ChannelSocketSender.xml"/> -->
-      <xi:include href="../sections/ug-JDBCSender.xml"/>
-      <xi:include href="../sections/ug-JMSSender.xml"/>
-      <!-- <xi:include href="../sections/ug-LDAPSender.xml"/> -->
+      <xi:include href="../sections/ug-JdbcSender.xml"/>
+      <xi:include href="../sections/ug-JmsSender.xml"/>
+      <xi:include href="../sections/ug-LdapSender.xml"/>
       <xi:include href="../sections/ug-PlainSocketSender.xml"/>
-      <xi:include href="../sections/ug-RequestResponseJMSSender.xml"/>
-      <!-- <xi:include href="../sections/ug-SOAPSender.xml"/> -->
-      <xi:include href="../sections/ug-SSLSocketSender.xml"/>
+      <xi:include href="../sections/ug-RequestResponseJmsSender.xml"/>
+      <!-- <xi:include href="../sections/ug-SoapSender.xml"/> -->
+      <xi:include href="../sections/ug-SslSocketSender.xml"/>
       <xi:include href="../sections/ug-WebSocketSender.xml"/>
    </sect1>
    <sect1 xml:id="ch-ug-sending.messages">
       <title>Messages</title>
       <para>
-         A message is an actual payload, that is sent by a sender. To specify what will be sent, you should use the
+         A message is an actual payload, that is sent by a sender. To specify what will be sent, you can use the
          <code>uri</code>
          attribute of the particular message element in the scenario configuration. The
          <code>uri</code>
@@ -47,6 +47,7 @@
          <link xlink:href="https://www.perfcake.org/quickstart/"/>
          ).
       </para>
+      <para>The simple payload of the message can be specified directly in the scenario by using <code>content</code> attribute instead of the <code>uri</code>. The value of the <code>content</code> attribute will be the actual message payload.</para>
       <para>
          The scenario can be configured to
          send more that one message or to send a message more than once in a single iteration. To specify multiple
@@ -61,19 +62,24 @@
          element.
       </para>
       <simplesect>
-         <title>An example of messages configuration:</title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<messages>
+         <title>An example of a simple message configuration:</title>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <messages>
    ...
+   <message content="Greetings stranger!"/>
+   ...
+ </messages>]]></programlisting>
+         <para>In the example above there is a single message defined. The payload of the message is the value of the <code>content</code> attribute .</para>
+      </simplesect>
+      <simplesect>
+         <title>An example of multiple messages configuration:</title>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <messages>
    <message uri="message1.txt">
       <header name="header.name" value="header.value"/>
       <header name="header2" value="you-know"/>
       <property name="Empire.State.Building" value="A lot of $"/>
    </message>
    <message uri="message2.xml" multiplicity="2"/>
-   ...
-</messages>
-...]]></programlisting>
+ </messages>]]></programlisting>
          <para>
             In the example above there are 2 messages defined. In the case of the first message the payload is taken from the file
             <code>message1.txt</code>

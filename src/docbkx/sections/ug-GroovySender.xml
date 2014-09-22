@@ -29,10 +29,10 @@
    <table frame="all">
       <title>GroovySender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
-         <colspec colname="property-name" colwidth="1*"/>
-         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
          <colspec colname="required" colwidth="1*"/>
-         <colspec colname="default-value" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
          <thead>
             <row>
                <entry>Property name</entry>
@@ -59,10 +59,8 @@
    </table>
    <simplesect>
       <title>An example of GroovySender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="GroovySender">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="GroovySender">
    <property name="target" value="/tmp/script.groovy"/>
-</sender>
-...]]></programlisting>
+ </sender>]]></programlisting>
    </simplesect>
 </sect2>

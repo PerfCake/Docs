@@ -13,12 +13,12 @@
       <title>Scenario XML structure</title>
       <para>
          As you can see from the following listing the scenario is defined by an XML file defined by
-         <code>urn:perfcake:scenario:2.0</code>
+         <code>urn:perfcake:scenario:3.0</code>
          namespace
          <footnote>
             <para>
                Schema can be found at
-               <link xlink:href="http://schema.perfcake.org/perfcake-scenario-2.0.xsd"/>
+               <link xlink:href="http://schema.perfcake.org/perfcake-scenario-3.0.xsd"/>
             </para>
          </footnote>
          .
@@ -27,7 +27,7 @@
       <simplesect>
          <title>Scenario structure</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:2.0">
+<scenario xmlns="urn:perfcake:scenario:3.0">
 
    <!-- Scenario properties (optional) -->
    <properties>
@@ -59,7 +59,7 @@
    <validation>
       ...
    </validation>
-</scenario>]]></programlisting>
+ </scenario>]]></programlisting>
       </simplesect>
       <sect2>
          <title>Sections of the scenario</title>
@@ -125,7 +125,7 @@
    <sect1 xml:id="ch-ug-scenario.filtering-properties">
       <title>Filtering properties</title>
       <para>It is possible to use property placeholders in scenarios (and in messages, too).
-         The placeholders are replaced at the by the actual value of the particular property or by the default value if specified in a process
+         The placeholders are replaced by the actual value of the particular property or by the default value if specified in a process
          called property filtering.
       </para>
       <para>A placeholder has the following format:</para>
@@ -138,9 +138,9 @@
 </scenario>]]></programlisting>
       </simplesect>
       <simplesect>
-         <title>An example of a scenario with a property placeholder with the default value of "2.0":</title>
+         <title>An example of a scenario with a property placeholder with the default value of "3.0":</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:${perfcake.scenario.version:2.0}">
+<scenario xmlns="urn:perfcake:scenario:${perfcake.version:3.0}">
    ...
 </scenario>]]></programlisting>
       </simplesect>

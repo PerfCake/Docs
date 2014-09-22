@@ -10,11 +10,9 @@
      <link xlink:href="http://search.maven.org" />. In the results click at the version number and you will see snippets for various build systems.
      For Mave and version 1.0 you just include the following XML piece into your project dependencies.
    </para>
-   <programlisting language="xml" linenumbering="numbered" startinglinenumber="1">
-<![CDATA[<dependency>
+   <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<dependency>
    <groupId>org.perfcake</groupId>
    <artifactId>perfcake</artifactId>
-   <version>1.0</version>
-</dependency>]]>
-   </programlisting>
+   <version>3.2</version>
+</dependency>]]>   </programlisting>
 </sect1>

@@ -7,10 +7,8 @@
    <para>The destination has no properties to be configured.</para>
    <simplesect>
       <title>An example of ConsoleDestination configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<destination class="ConsoleDestination">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <destination class="ConsoleDestination">
    <period type="time" value="1000"/>
-</destination>
-...]]></programlisting>
+ </destination>]]></programlisting>
    </simplesect>
 </sect2>

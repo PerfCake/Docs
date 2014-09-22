@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-migrating" status="draft">
+   <title>Migrating PerfCake</title>
+   <para>
+      This chapter describes all you need to do in order to migrate PerfCake to a newer version.
+   </para>
+   <xi:include href="../sections/ug-migrating-1-to-2.xml"/>
+   <xi:include href="../sections/ug-migrating-2-to-3.xml"/>
+</chapter>

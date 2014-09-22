@@ -18,7 +18,7 @@
       </para>
    </sect1>
    <sect1 xml:id="ch-ug-extending.custom-components">
-      <title>Custom components</title>
+      <title>Custom components - Plugins</title>
       <para>
          PerfCake has the ability to extend its functionality by adding plugins - new custom components such as senders, generators, reporters, destinations or validators.
          <footnote>

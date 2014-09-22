@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.HTTPSSender">
-   <title>HTTPSSender</title>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.HttpsSender">
+   <title>HttpsSender</title>
    <para>
-      HTTPSSender is similar to the HTTPSender (see
-      <xref linkend="ch-ug-sending.HTTPSender"/>
-      ), thus it shares the same properties. The difference is that the HTTPSSender uses HTTPS instead of plain HTTP protocol to send messages.
+      HttpsSender is similar to the HttpSender (see
+      <xref linkend="ch-ug-sending.HttpSender"/>
+      ), thus it shares the same properties. The difference is that the HttpsSender uses HTTPS instead of plain HTTP protocol to send messages.
    </para>
    <para>
-      The HTTPSSender's properties are described in the following table:
+      The HttpsSender's properties are described in the following table:
       <table frame="all">
-         <title>HTTPSSender properties</title>
+         <title>HttpsSender properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
-            <colspec colname="property-name" colwidth="1*"/>
-            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
             <colspec colname="required" colwidth="1*"/>
-            <colspec colname="default-value" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
             <thead>
                <row>
                   <entry>Property name</entry>
@@ -53,15 +53,12 @@
       </table>
    </para>
    <simplesect>
-      <title>An example of HTTPSSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="HTTPSSender">
+      <title>An example of HttpsSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="HttpsSender">
    <property name="target" value="https://domain.com/secured_url"/>
    <property name="method" value="POST"/>
    <property name="trustStore" value="${my.keystores}/cacert.jks"/>
    <property name="trustStorePassword" value="ts_passsword"/>
-   ...
-</sender>
-...]]></programlisting>
+ </sender>]]></programlisting>
    </simplesect>
 </sect2>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.JMSSender">
-   <title>JMSSender</title>
-   <para>The JMSSender can be used to send a single JMS message.</para>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.JmsSender">
+   <title>JmsSender</title>
+   <para>The JmsSender can be used to send a single JMS message.</para>
    <para>
-      The following table describes the JMSSender's properties:
+      The following table describes the JmsSender's properties:
       <table frame="all">
-         <title>JMSSender properties</title>
+         <title>JmsSender properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
-            <colspec colname="property-name" colwidth="1*"/>
-            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
             <colspec colname="required" colwidth="1*"/>
-            <colspec colname="default-value" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
             <thead>
                <row>
                   <entry>Property name</entry>
@@ -92,9 +92,7 @@
                      .
                   </entry>
                   <entry>No</entry>
-                  <entry>
-                     <code>string</code>
-                  </entry>
+                  <entry>string</entry>
                </row>
                <row>
                   <entry>username</entry>
@@ -113,9 +111,8 @@
       </table>
    </para>
    <simplesect>
-      <title>An example of JMSSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<sender class="JMSSender">
+      <title>An example of JmsSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="JmsSender">
    <property name="target" value="jms/queue/YourQueue"/>
    <property name="receivingTimeout" value="30000"/>
    <property name="receiveAttempts" value="1"/>
@@ -127,8 +124,6 @@
    <property name="jndiUrl" value="remote://${server.host}:4447"/>
    <property name="jndiSecurityPrincipal" value="KingRoland"/>
    <property name="jndiSecurityCredentials" value="12345"/>
-   ...
-</sender>
-...]]></programlisting>
+ </sender>]]></programlisting>
    </simplesect>
 </sect2>

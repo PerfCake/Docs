@@ -16,10 +16,10 @@
       <table frame="all">
          <title>Log4jDestination properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
-            <colspec colname="property-name" colwidth="1*"/>
-            <colspec colname="description" colwidth="1*"/>
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
             <colspec colname="required" colwidth="1*"/>
-            <colspec colname="default-value" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
             <thead>
                <row>
                   <entry>Property name</entry>
@@ -41,11 +41,9 @@
    </para>
    <simplesect>
       <title>An example of Log4jDestination configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[...
-<destination class="Log4jDestination">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <destination class="Log4jDestination">
    <period type="time" value="1000"/>
    <property name="level" value="INFO"/>
-</destination>
-...]]></programlisting>
+ </destination>]]></programlisting>
    </simplesect>
 </sect2>

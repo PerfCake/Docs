@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="maven-goals">
+   <title>Maven Goals</title>
+   <para>The following Maven plugins and their goals can be used with PerfCake project.</para>
+   <sect2>
+      <title>Standard Maven Goals</title>
+      <para>We try to minimalize the necessity for running standard Maven goals in a different
+         manner or in a way they are not originally intended to. So far we use the following
+         goals.
+      </para>
+      <itemizedlist>
+         <listitem>
+            <para>
+               <emphasis>clean</emphasis>
+               Cleans the compiled artifacts and reports. Basically
+               deletes the
+               <varname>target</varname>
+               directory.
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <emphasis>compile</emphasis>
+               Compiles the whole project including tests.
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <emphasis>test</emphasis>
+               Executes all the tests.
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <emphasis>package</emphasis>
+               Packages the distribution
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <emphasis>exec:exec</emphasis>
+               Runs PerfCake, parameters are passed using
+               <emphasis>-Dparam=value</emphasis>
+               . Never use
+               <emphasis>exec:java</emphasis>
+               directly as Maven will comply about missing configuration (the configuration is
+               passed in from
+               <emphasis>exec:exec</emphasis>
+               ).
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <emphasis>site</emphasis>
+               Generates the Maven HTML site. Consumes output of other
+               plugins like JaCoCo. If the other consumables should be part of the generated site,
+               they must be ready before calling this goal.
+            </para>
+         </listitem>
+      </itemizedlist>
+   </sect2>
+   <sect2>
+      <title>License</title>
+      <para>PerfCake is licensed under Apache License 2.0 and the license text can be found in
+         LICENSE.txt file. license-maven-plugin is used to check that each file has the appropriate
+         header.
+      </para>
+      <itemizedlist>
+         <listitem>
+            <para>
+               <emphasis>license:check-file-header</emphasis>
+               Checks the current status of the
+               license header in project files. This goals claims to modify the files but noothing
+               is done in fact. The output is a bit misleading.
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <emphasis>license:update-file-header</emphasis>
+               Performs the actual update of file
+               headers. Note that we recognize the true license by two hard space characters at the
+               end of some blank lines. Carefully configure your IDE to preserve these.
+            </para>
+         </listitem>
+      </itemizedlist>
+   </sect2>
+   <sect2>
+      <title>JaCoCo Code Coverage</title>
+      <para>JaCoCo is configured to use a Java Agent so no class instrumentation is neede. The agent
+         is automatically switched on for running tests. The only goal needed is report generation
+         (jacoco:report) which must be done together or after test execution.
+      </para>
+      <para>
+         The resulting report can be found in the
+         <varname>target/site/jacoco</varname>
+         directory.
+      </para>
+   </sect2>
+   <sect2>
+      <title>FindBugs Report</title>
+      <para>
+         We use FindBugs to warn us about bad code practices. To obtain the report execute the
+         <emphasis>findbugs:findbugs</emphasis>
+         goal. FindBugs works with the compiled classes,
+         so for a fresh report, the
+         <varname>compile</varname>
+         target must be invoked.
+      </para>
+      <para>
+         To inspect the code on the fly, run the
+         <emphasis>findbugs:gui</emphasis>
+         tool. Please
+         note that it only shows the data from the previous analysis run.
+      </para>
+   </sect2>
+   <sect2>
+      <title>Digital Signatures</title>
+      <para>
+         To sign the artifacts created by the
+         <emphasis>package</emphasis>
+         goal, one need to run
+         the
+         <emphasis>gpg:sign</emphasis>
+         goal. The resulting signatures accompany the files in the
+         <varname>target</varname>
+         directory.
+      </para>
+   </sect2>
+   <sect2>
+      <title>Distribution</title>
+      <para>
+         To create the archived distributions we offer for download at our website, simply run
+         the
+         <emphasis>assembly:single</emphasis>
+         goal. Its output can be found in the
+         <varname>target</varname>
+         directory as usually.
+      </para>
+   </sect2>
+   <sect2>
+      <title>Transformation of Scenarios</title>
+      <para>
+         It is possible to automatically transform scenarios from previous versions of PerfCake
+         into the newest one. There are XSTL stylesheets included and they can be used by invoking
+         the
+         <emphasis>xml:transform</emphasis>
+         goal.
+      </para>
+      <para>There are properties that can be used to control the transformation. They are described in the following table.</para>
+      <table frame="all">
+         <title>XML plugin properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="4*"/>
+            <colspec colname="description" colwidth="3*"/>
+            <colspec colname="required" colwidth="2*"/>
+            <colspec colname="default-value" colwidth="4*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>transform.scenarios.dir</entry>
+                  <entry>An input directory where the XML plugin will look for the scenarios to transform.</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>transform.scenarios.outputDir</entry>
+                  <entry>An output directory where the transformed scenarios will be placed.</entry>
+                  <entry>No</entry>
+                  <entry>${project.build.directory}/scenarios</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </sect2>
+</sect1>

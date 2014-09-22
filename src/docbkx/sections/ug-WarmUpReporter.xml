@@ -3,7 +3,7 @@
    <title>WarmUpReporter</title>
    <para>
       The reporter is able to determine when the tested system is warmed up.
-      The warming is enabled/disabled by the presence of the WarmUpReporter in the scenario.
+      The warming is enabled/disabled by the presence of enabled WarmUpReporter in the scenario.
       The minimal iterations count and the warm-up period duration can be tweaked by the respective properties
       <code>minimalWarmUpCount</code>
       with the default value of 10,000 and
@@ -17,10 +17,10 @@
    <table frame="all">
       <title>WarmUpReporter properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
-         <colspec colname="property-name" colwidth="1*"/>
-         <colspec colname="description" colwidth="1*"/>
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
          <colspec colname="required" colwidth="1*"/>
-         <colspec colname="default-value" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
          <thead>
             <row>
                <entry>Property name</entry>
@@ -59,15 +59,11 @@
    </table>
    <simplesect>
       <title>An example of WarmUpReporter configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[
-...
-<reporter class="WarmUpReporter" enabled="true">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="WarmUpReporter" enabled="true">
    <property name="minimalWarmUpCount" value="1000"/>
    <property name="minimalWarmUpDuration" value="10000"/>
    <property name="relativeThreshold" value="0.005"/> <!-- 0.5% -->
    <property name="absoluteThreshold" value="0.5"/>
-</reporter>
-...
-]]></programlisting>
+ </reporter>]]></programlisting>
    </simplesect>
 </sect2>
