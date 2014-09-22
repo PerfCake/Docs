@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-migrating.2-to-3">
-   <title>From v2.x to v3.0</title>
+   <title>From v2.x to v3.x</title>
    <para>
-      There are several steps that are needed to migrate scenarios from PerfCake version 2.x to 3.0. The following list shows them:
+      There are several steps that are needed to migrate scenarios from PerfCake version 2.x to 3.x. The following list shows them:
       <itemizedlist>
          <listitem>
             <simpara>Rename scenario XML schema namespace</simpara>
@@ -32,14 +32,14 @@
          <title>Rename class names</title>
          <para>Following classes has been renamed to follow the naming conventions (See Developers' Guide).</para>
          <table frame="all">
-            <title>Renamed classes in PerfCake v3.0</title>
+            <title>Renamed classes in PerfCake v3.x</title>
             <tgroup cols="2" align="left" colsep="1" rowsep="1">
                <colspec colname="v2.x" colwidth="1*"/>
-               <colspec colname="v3.0" colwidth="1*"/>
+               <colspec colname="v3.x" colwidth="1*"/>
                <thead>
                   <row>
                      <entry>Class name in version 2.x</entry>
-                     <entry>Class name in version 3.0</entry>
+                     <entry>Class name in version 3.x</entry>
                   </row>
                </thead>
                <tbody>
@@ -151,7 +151,7 @@
       <title>Scenario conversion using XSLT</title>
       <para>
          After understanding the all the steps needed to migrate PerfCake scenarios
-         from version 2.x to version 3.0 we can take a look at an option to make the migration automatically
+         from version 2.x to version 3.x we can take a look at an option to make the migration automatically
          using XSL transformation
          <footnote>
             <simpara>

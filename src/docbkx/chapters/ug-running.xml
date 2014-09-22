@@ -214,7 +214,7 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
         <version>1.0</version>
         <configuration>
           <scenario>my_perfcake_scenario</scenario>
-          <perfcake-version>3.0</perfcake-version>
+          <perfcake-version>3.2</perfcake-version>
         </configuration>
         <executions>
           <execution>
