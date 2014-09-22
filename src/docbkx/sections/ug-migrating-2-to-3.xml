@@ -76,8 +76,12 @@
                      <entry>CsvDestination</entry>
                   </row>
                   <row>
-                     <entry>TextValidator</entry>
+                     <entry>TextMessageValidator</entry>
                      <entry>RegExpValidator</entry>
+                  </row>
+                  <row>
+                     <entry>RulesMessageValidator</entry>
+                     <entry>RulesValidator</entry>
                   </row>
                </tbody>
             </tgroup>
