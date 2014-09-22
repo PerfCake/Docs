@@ -43,7 +43,7 @@
                <entry>windowSize</entry>
                <entry>A window where the data for the statistics are taken from.</entry>
                <entry>No</entry>
-               <entry>Infinity</entry>
+               <entry>Integer.MAX_VALUE</entry>
             </row>
          </tbody>
       </tgroup>
