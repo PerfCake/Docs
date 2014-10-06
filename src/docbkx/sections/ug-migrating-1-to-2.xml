@@ -15,7 +15,7 @@
    </para>
    <sect2>
       <title>Migration steps</title>
-      <simplesect xml:id="ch-ug-migrating.1-to-2.xml-namespace">
+      <sect3 xml:id="ch-ug-migrating.1-to-2.xml-namespace">
          <title>Rename XML schema namespace</title>
          <para>
             The namespace of the XML schema for scenarios has been renamed from
@@ -24,8 +24,8 @@
             <code>urn:perfcake:scenario:2.0</code>
             so it must be updated in the scenario XML files.
          </para>
-      </simplesect>
-      <simplesect xml:id="ch-ug-migrating.1-to-2.message-number">
+      </sect3>
+      <sect3 xml:id="ch-ug-migrating.1-to-2.message-number">
          <title>Rename Message Number Constant Name</title>
          <para>
             If your sender depends on message ordinal number you need to change the name of the particular
@@ -34,6 +34,6 @@
             to
             <code>PerfCakeConst.MESSAGE_NUMBER_HEADER</code>
          </para>
-      </simplesect>
+      </sect3>
    </sect2>
 </sect1>

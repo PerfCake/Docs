@@ -13,6 +13,9 @@
          <listitem>
             <simpara>Replace reporters</simpara>
          </listitem>
+         <listitem>
+            <simpara>Update RequestResponseJmsSender</simpara>
+         </listitem>
       </itemizedlist>
       The following sections take a look at each step in detail.
    </para>
@@ -147,7 +150,7 @@
          </simplesect>
       </sect3>
       <sect3 xml:id="ch-ug-migrating.2-to-3.RequestResponseJmsSender">
-         <title>RequestResponseJmsSender</title>
+         <title>Update RequestResponseJmsSender</title>
          <para>
             The
             <code>RequestResponseJmsSender</code>
