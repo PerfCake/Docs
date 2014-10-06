@@ -36,6 +36,63 @@
                <entry>-</entry>
             </row>
             <row>
+               <entry>responseConnectionFactory</entry>
+               <entry>A name of a JMS Connection factory for response.</entry>
+               <entry>No</entry>
+               <entry>
+                  Value of
+                  <code>connectionFactory</code>
+                  of
+                  <code>JmsSender</code>
+               </entry>
+            </row>
+            <row>
+               <entry>responseJndiContextFactory</entry>
+               <entry>A fully qualified name of the JNDI ContextFactory class for response.</entry>
+               <entry>No</entry>
+               <entry>
+                  Value of
+                  <code>jndiContextFactory</code>
+                  of
+                  <code>JmsSender</code>
+               </entry>
+            </row>
+            <row>
+               <entry>responseJndiUrl</entry>
+               <entry>A JNDI location URL for response.</entry>
+               <entry>No</entry>
+               <entry>
+                  Value of
+                  <code>jndiUrl</code>
+                  of
+                  <code>JmsSender</code>
+               </entry>
+            </row>
+            <row>
+               <entry>responseJndiSecurityPrincipal</entry>
+               <entry>A JNDI username for response</entry>
+               <entry>No</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>responseJndiSecurityCredentials</entry>
+               <entry>A JNDI password for response</entry>
+               <entry>No</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>responseUsername</entry>
+               <entry>A JMS security username for response. If not provided - JMS transport will be performed unsecured.</entry>
+               <entry>No</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>responsePassword</entry>
+               <entry>A JMS security password for response. If not provided - JMS transport will be performed unsecured.</entry>
+               <entry>No</entry>
+               <entry>-</entry>
+            </row>
+            <row>
                <entry>receivingTimeout</entry>
                <entry>A time duration in ms of specifying how long the sender will wait to receive the response message.</entry>
                <entry>No</entry>
@@ -60,11 +117,28 @@
    <property name="connectionFactory" value="jms/ConnFactory"/>
    <property name="username" value="KingRoland"/>
    <property name="password" value="12345"/>
+   <property name="responseUsername" value="KingRoland"/>
+   <property name="responsePassword" value="12345"/>
    <!-- JNDI properties-->
    <property name="jndiContextFactory" value="pkg.InitCtxFactory"/>
    <property name="jndiUrl" value="remote://${server.host}:4447"/>
    <property name="jndiSecurityPrincipal" value="KingRoland"/>
    <property name="jndiSecurityCredentials" value="12345"/>
+   <property name="responseJndiSecurityPrincipal" value="KingRoland"/>
+   <property name="responseJndiSecurityCredentials" value="12345"/>
  </sender>]]></programlisting>
+      <para>
+         In the example above there is a
+         <code>RequestResponseJmsSender</code>
+         configured to send messages to the queue
+         <code>jms/queue/RequestQueue</code>
+         using a connection factory found at
+         <code>jms/ConnFactory</code>
+         in JNDI. After sending a JMS message the sender waits for the response from
+         the response queue
+         <code>jms/queue/ResponseQueue</code>
+         for at most 30s. It uses the same JMS provider for both request and response, so the request and response credentials
+         (both JMS and JNDI) are the same. Connection factory, JNDI context factory and JNDI URL for the response are inherited from the respective request properties.
+      </para>
    </simplesect>
 </sect2>
