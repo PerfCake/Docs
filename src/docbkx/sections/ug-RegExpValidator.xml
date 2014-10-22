@@ -8,7 +8,9 @@
    <simplesect>
       <title>An example of RegExpValidator configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <validator id="rimmerValidator" class="RegExpValidator">
-   <![CDATA[.*"I'm a [Ff]ish"!\.*]]]]><![CDATA[>
+   <property name="pattern">
+      <text><![CDATA[.*"I'm a [Ff]ish"!\.*]]]]><![CDATA[></text>
+   </property>
  </validator>]]></programlisting>
    </simplesect>
 </sect2>

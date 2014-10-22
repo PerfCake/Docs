@@ -22,8 +22,9 @@ Message body equals "{string}".]]></programlisting>
    <simplesect>
       <title>An example of RulesValidator configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <validator id="fareWellValidator" class="RulesValidator">
-   <![CDATA[Message body contains "Farewell World!".
-   ...]]]]><![CDATA[>
+   <property name="pattern">
+      <text><![CDATA[Message body contains "Farewell World!".]]]]><![CDATA[></text>
+   </property>
  </validator>]]></programlisting>
    </simplesect>
 </sect2>
