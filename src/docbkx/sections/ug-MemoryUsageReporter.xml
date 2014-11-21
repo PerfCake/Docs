@@ -64,7 +64,7 @@ PerfCakeAgent > Listening at localhost on port 8850
       the reporter periodically gathers memory usage from the tested system using via an ordinary way (using the PerfCakeAgent) and remembers
       a window of N last measured values. Once the window is filled, the reporter uses a linear regression analysis over the
       data from the time window to compute an used memory trend. The possible memory leak is considered detected when the slope of the memory trend exceeds
-      the specified slope threshold. All The period, the window size and the slope threshold are configurable via particular reporter's properties.
+      the specified slope threshold. All the period, the window size and the slope threshold are configurable via particular reporter's properties.
    </para>
    <para>
       The reporter is also able to dump memory when a possible memory leak is detected. The feature can be enabled by the
