@@ -63,9 +63,24 @@ PerfCakeAgent > Listening at localhost on port 8850
       Possible memory leak detection mechanism was added to the MemoryUsageReporter in PerfCake v2.0. It is disabled by default. Once enabled,
       the reporter periodically gathers memory usage from the tested system using via an ordinary way (using the PerfCakeAgent) and remembers
       a window of N last measured values. Once the window is filled, the reporter uses a linear regression analysis over the
-      data from the
-      time window to compute an used memory trend. The possible memory leak is considered detected when the slope of the memory trend exceeds
+      data from the time window to compute an used memory trend. The possible memory leak is considered detected when the slope of the memory trend exceeds
       the specified slope threshold. All The period, the window size and the slope threshold are configurable via particular reporter's properties.
+   </para>
+   <para>
+      The reporter is also able to dump memory when a possible memory leak is detected. The feature can be enabled by the
+      <code>memoryDumpOnLeak</code>
+      property and the memory dump is then saved in a file which can be specified by the
+      <code>memoryDumpFile</code>
+      property. If not specified the dump name will be generated as
+      <code>"dump-" + System.currentTimeMillis() + ".bin"</code>
+      in case of the Java agent that is part of PerfCake.
+   </para>
+   <para>
+      The reporter can ask the agent to perform a garbage collection each time the memory usage of the
+      tested system is measured and published.
+      Since the garbage collection is CPU intensive operation be careful to enable it and to how often
+      the memory usage is measured because it will have a significant impact on the measured system and naturally the
+      measured results too.
    </para>
    <para>The reporter has the following properties:</para>
    <table frame="all">
@@ -97,6 +112,21 @@ PerfCakeAgent > Listening at localhost on port 8850
                <entry>"8850"</entry>
             </row>
             <row>
+               <entry>memoryDumpOnLeak</entry>
+               <entry>The property to make a memory dump, when possible memory leak is detected.
+                  The MemoryUsageReporter will send a command to PerfCake agent that will create a heap dump.
+               </entry>
+               <entry>No</entry>
+               <entry>"false"</entry>
+            </row>
+            <row>
+               <entry>memoryDumpFile</entry>
+               <entry>The property specifying the name of the memory dump file. The full "file:" URI is supported.
+               </entry>
+               <entry>No</entry>
+               <entry>-</entry>
+            </row>
+            <row>
                <entry>memoryLeakDetectionEnabled</entry>
                <entry>Enables or disables the memory leak detection.</entry>
                <entry>No</entry>
@@ -113,6 +143,16 @@ PerfCakeAgent > Listening at localhost on port 8850
                <entry>The used memory trend slope threshold. The slope's unit is a byte per second.</entry>
                <entry>No</entry>
                <entry>"1024"</entry>
+            </row>
+            <row>
+               <entry>performGcOnMemoryUsage</entry>
+               <entry>The property is used to enable/disable performing garbage collection each time the memory usage of the
+                  tested system is measured and published. Since the garbage collection is CPU intensive operation be careful to enable it and to how often
+                  the memory usage is measured because it will have a significant impact on the measured system and naturally the
+                  measured results too.
+               </entry>
+               <entry>No</entry>
+               <entry>"false"</entry>
             </row>
             <row>
                <entry>usedMemoryTimeWindowSize</entry>
