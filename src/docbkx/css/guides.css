@@ -170,4 +170,50 @@ h2 {
 	font-weight: bold;
 }
 
+.programlisting {
+	font-size: 13px;
+}
 
+.hl-keyword {
+	font-weight: bold;
+	color: purple;
+}
+
+.hl-string {
+	font-weight: bold;
+	font-style: italic;
+	color: green;
+}
+
+.hl-comment {
+	font-style: italic;
+	color: gray;
+}
+
+.hl-tag {
+	font-weight: bold;
+	color: purple;
+}
+
+.hl-attribute {
+	font-weight: bold;
+	color: navy;
+}
+
+.hl-value {
+	font-weight: bold;
+	color: green;
+}
+
+.hl-number {
+	font-weight: bold;
+	font-style: italic;
+	color: blue;
+}
+
+.hl-directive {
+}
+
+.hl-doctype {
+	font-weight: bold;
+}
