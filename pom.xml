@@ -83,7 +83,7 @@
                </execution>
             </executions>
             <configuration>
-               <htmlStylesheet>../guides/a.css</htmlStylesheet>
+               <htmlStylesheet>../css/guides.css</htmlStylesheet>
                <preProcess>
                   <copy todir="target/docbkx/images">
                      <fileset dir="src/docbkx/images"/>
@@ -98,6 +98,8 @@
                <generatedSourceDirectory>${project.build.directory}/xinclude</generatedSourceDirectory>
                <highlightSource>1</highlightSource>
                <foCustomization>src/docbkx/docbook-fo.xsl</foCustomization>
+               <htmlCustomization>src/docbkx/docbook-html.xsl</htmlCustomization>
+               <chunkedOutput>true</chunkedOutput>
                <useExtensions>1</useExtensions>
                <sectionAutolabel>true</sectionAutolabel>
                <sectionLabelIncludesComponentLabel>true</sectionLabelIncludesComponentLabel>
