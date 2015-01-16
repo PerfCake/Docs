@@ -161,7 +161,7 @@
                      </execution>
                   </executions>
                   <configuration>
-                     <targetDirectory>${project.build.directory}/docbkx/user-guide-html</targetDirectory>
+                     <targetDirectory>${project.build.directory}/docbkx/user-guide</targetDirectory>
                      <htmlStylesheet>../css/guides.css</htmlStylesheet>
                      <preProcess>
                         <move file="src/docbkx/${developer.guide.src}" toFile="src/docbkx/${developer.guide.src}.bak"/>
@@ -193,7 +193,7 @@
                      </execution>
                   </executions>
                   <configuration>
-                     <targetDirectory>${project.build.directory}/docbkx/developers-guide-html</targetDirectory>
+                     <targetDirectory>${project.build.directory}/docbkx/developers-guide</targetDirectory>
                      <htmlStylesheet>../css/guides.css</htmlStylesheet>
                      <preProcess>
                         <move file="src/docbkx/${user.guide.src}" toFile="src/docbkx/${user.guide.src}.bak"/>
