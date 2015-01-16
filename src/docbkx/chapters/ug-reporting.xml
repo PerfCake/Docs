@@ -82,7 +82,7 @@
       </simplesect>
       <para>The following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
    </simplesect>
-   <sect1>
+   <sect1 xml:id="ch-ug-reporting.reporters">
       <title>Reporters</title>
       <xi:include href="../sections/ug-ThroughputStatsReporter.xml"/>
       <xi:include href="../sections/ug-MemoryUsageReporter.xml"/>
@@ -90,7 +90,7 @@
       <xi:include href="../sections/ug-WarmUpReporter.xml"/>
       <xi:include href="../sections/ug-RemovedReporters.xml"/>
    </sect1>
-   <sect1>
+   <sect1 xml:id="ch-ug-reporting.destinations">
       <title>Destinations</title>
       <para>
          A destination is a representation of places where the measurements from the reporters are published.
