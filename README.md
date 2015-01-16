@@ -6,17 +6,13 @@ To generate a human readable forms of the documents (such as PDF, HTML, EPUB, ..
 
 To generate the documents in PDF format use following:
 ```
-$ mvn (clean) docbkx:generate-pdf
+$ mvn package -P pdf
 ```
 
 To generate the documents in HTML format use following:
 ```
-$ mvn (clean) docbkx:generate-html
-```
-
-To generate the documents in EPUB format use following:
-```
-$ mvn (clean) docbkx:generate-epub
+$ mvn package ug-html
+$ mvn package dev-html
 ```
 
 You can use any other goal of docbkx-maven-plugin to generate the documents in other formats.
