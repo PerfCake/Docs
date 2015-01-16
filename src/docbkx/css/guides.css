@@ -39,7 +39,14 @@ h2 {
 
 h3 {
 	font-family: inherit;
-	font-size: 27.5px;
+	font-size: 26px;
+	font-weight: bold;
+	color: black;
+}
+
+h4 {
+	font-family: inherit;
+	font-size: 21px;
 	font-weight: bold;
 	color: black;
 }
