@@ -61,7 +61,7 @@
    </validation>
  </scenario>]]></programlisting>
       </simplesect>
-      <sect2>
+      <sect2 xml:id="ch-ug-scenario.scenario-xml-structure.sections">
          <title>Sections of the scenario</title>
          <para>Let's take a look at particular sections of the scenario.</para>
          <simplesect>
@@ -212,7 +212,7 @@
             </tbody>
          </tgroup>
       </table>
-      <sect2>
+      <sect2 xml:id="ch-ug-scenario.filtering-properties.filtering-messages">
         <title>Filtering Messages</title>
         <para>
            Messages stored in separate files can take an advantage of more complex filtering than those with body specified directly in the scenario file.

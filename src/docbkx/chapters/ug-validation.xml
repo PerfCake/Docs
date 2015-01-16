@@ -93,7 +93,7 @@
       </simplesect>
       <para>The rest of the chapter will present all the available validators that can be used in PerfCake.</para>
    </simplesect>
-   <sect1>
+   <sect1 xml:id="ch-ug-validation.validators">
       <title>Validators</title>
       <xi:include href="../sections/ug-DictionaryValidator.xml"/>
       <xi:include href="../sections/ug-RegExpValidator.xml"/>

@@ -88,7 +88,7 @@
       <xi:include href="../sections/ug-MemoryUsageReporter.xml"/>
       <xi:include href="../sections/ug-ResponseTimeStatsReporter.xml"/>
       <xi:include href="../sections/ug-WarmUpReporter.xml"/>
-      <xi:include href="../sections/ug-RemovedReporters.xml"/>
+      <xi:include href="../sections/ug-removed-reporters.xml"/>
    </sect1>
    <sect1 xml:id="ch-ug-reporting.destinations">
       <title>Destinations</title>

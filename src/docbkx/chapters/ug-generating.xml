@@ -75,7 +75,7 @@
          used in PerfCake to generate the load.
       </para>
    </simplesect>
-   <sect1>
+   <sect1 xml:id="ch-ug-generating.generators">
       <title>Generators</title>
       <xi:include href="../sections/ug-DefaultMessageGenerator.xml"/>
       <xi:include href="../sections/ug-RampUpDownGenerator.xml"/>

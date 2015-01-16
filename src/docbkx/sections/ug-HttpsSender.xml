@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.HttpsSender">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.senders.HttpsSender">
    <title>HttpsSender</title>
    <para>
       HttpsSender is similar to the HttpSender (see
-      <xref linkend="ch-ug-sending.HttpSender"/>
+      <xref linkend="ch-ug-sending.senders.HttpSender"/>
       ), thus it shares the same properties. The difference is that the HttpsSender uses HTTPS instead of plain HTTP protocol to send messages.
    </para>
    <para>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-generating.RampUpDownGenerator">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-generating.generators.RampUpDownGenerator">
    <title>RampUpDownGenerator</title>
    <para>
       The generator is based on the
       <code>DefaultMessageGenerator</code>
       but is able to change the number of threads during the execution.
       The number of threads evolution during execution is illustrated in
-      <xref linkend="ch-ug-generating.RampUpDownGenerator.time-chart"/>
+      <xref linkend="ch-ug-generating.generators.generators.RampUpDownGenerator.time-chart"/>
       .
    </para>
-   <figure id="ch-ug-generating.RampUpDownGenerator.time-chart">
+   <figure id="ch-ug-generating.generators.RampUpDownGenerator.time-chart">
       <title>RampUpDownGenerator time chart</title>
       <graphic format="SVG" fileref="../images/RampUpDownGenerator-chart.svg" scalefit="1" width="100%" align="center"/>
    </figure>
