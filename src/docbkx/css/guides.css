@@ -37,6 +37,20 @@ h2 {
 	color: black;
 }
 
+h3 {
+	font-family: inherit;
+	font-size: 26px;
+	font-weight: bold;
+	color: black;
+}
+
+h4 {
+	font-family: inherit;
+	font-size: 21px;
+	font-weight: bold;
+	color: black;
+}
+
 .table table {
 	width: 100%;
 	border: 1px solid #d3d3d3;
@@ -65,7 +79,7 @@ h2 {
 
 .navheader {
 	width: 100%;
-	height: 40px;
+	height: 45px;
 	padding: 0 0 0 0;
 	margin-left: auto;
 	margin-right: auto;
@@ -95,12 +109,13 @@ h2 {
 	display: none;
 }
 
-.book {
+.book,.chapter,.sect1,.sect2,.preface {
 	width: 1000px;
-	margin-left: auto;
+	margin-top: 70px;
 	margin-right: auto;
-	padding-top: 21px;
-	padding-bottom: 30px;
+	margin-bottom: 70px;
+	margin-left: auto;
+	padding: 0;
 	text-decoration: none;
 }
 
@@ -111,24 +126,6 @@ h2 {
 
 .toc a {
 	display: block;
-}
-
-.chapter {
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 21px;
-	padding-bottom: 30px;
-	text-decoration: none;
-}
-
-.sect1 {
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 21px;
-	padding-bottom: 30px;
-	text-decoration: none;
 }
 
 .navfooter {
