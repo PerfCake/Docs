@@ -20,6 +20,9 @@
          destinations you tell where output should be directed by the reporter
          (e.g. console, CSV file, etc.).
       </para>
+      <para>A reporter can publish multiple results (e.g. current value, average value, etc.) each with a particular name.
+         The actual names of the results are described with the particular reporter.
+      </para>
       <simplesect>
          <title>An example reporting configuration:</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
@@ -37,7 +40,7 @@
 
    <reporter class="MemoryUsageReporter">
       <property name="agentHostname" value="localhost"/>
-      <property name="agentPort" value="8849"/>
+      <property name="agentPort" value="8850"/>
       <destination class="CsvDestination">
          <period type="time" value="2000"/>
          <property name="path" value="test-memory-usage.csv"/>
@@ -84,9 +87,9 @@
    </simplesect>
    <sect1 xml:id="ch-ug-reporting.reporters">
       <title>Reporters</title>
-      <xi:include href="../sections/ug-ThroughputStatsReporter.xml"/>
       <xi:include href="../sections/ug-MemoryUsageReporter.xml"/>
       <xi:include href="../sections/ug-ResponseTimeStatsReporter.xml"/>
+      <xi:include href="../sections/ug-ThroughputStatsReporter.xml"/>
       <xi:include href="../sections/ug-WarmUpReporter.xml"/>
       <xi:include href="../sections/ug-removed-reporters.xml"/>
    </sect1>
@@ -94,7 +97,7 @@
       <title>Destinations</title>
       <para>
          A destination is a representation of places where the measurements from the reporters are published.
-         Each destination is configured to publish the report measurements during the scenario execution periodically with a period
+         Each destination is configured to publish the results of reporter's measurements during the scenario execution periodically with a period
          specified by the
          <code>period</code>
          element in the scenario definition. Destination can have multiple periods but each destination
@@ -155,6 +158,7 @@
       </simplesect>
       <para>The following sections describe the destinations that can be used by reporters.
       </para>
+      <xi:include href="../sections/ug-ChartDestination.xml"/>
       <xi:include href="../sections/ug-ConsoleDestination.xml"/>
       <xi:include href="../sections/ug-CsvDestination.xml"/>
       <xi:include href="../sections/ug-Log4jDestination.xml"/>

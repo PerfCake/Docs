@@ -1,0 +1,1448 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="800"
+   height="354"
+   aria-label="A chart."
+   aria-hidden="true"
+   style="overflow: hidden;"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="ChartDestination-example.svg">
+  <metadata
+     id="metadata464">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1145"
+     id="namedview462"
+     showgrid="false"
+     inkscape:zoom="0.6225"
+     inkscape:cx="400"
+     inkscape:cy="163.34538"
+     inkscape:window-x="1677"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs">
+    <clipPath
+       id="_ABSTRACT_RENDERER_ID_2">
+      <rect
+         x="124"
+         y="68"
+         width="552"
+         height="219"
+         id="rect6" />
+    </clipPath>
+  </defs>
+  <g
+     id="g3662">
+    <rect
+       id="rect8"
+       fill="#ffffff"
+       stroke-width="0"
+       stroke="none"
+       height="354"
+       width="800"
+       y="0"
+       x="0" />
+    <text
+       x="124"
+       y="45.049999"
+       font-size="13"
+       font-weight="bold"
+       id="text12"
+       style="font-size:13px;font-weight:bold;text-anchor:start;fill:#000000;stroke:none;font-family:Arial">Memory Usage</text>
+    <rect
+       x="689"
+       y="68"
+       width="98"
+       height="34"
+       id="rect16"
+       style="fill:#ffffff;fill-opacity:0;stroke:none" />
+    <g
+       id="g18">
+      <rect
+         x="689"
+         y="68"
+         width="98"
+         height="13"
+         id="rect20"
+         style="fill:#ffffff;fill-opacity:0;stroke:none" />
+      <g
+         id="g22">
+        <text
+           x="707"
+           y="79.050003"
+           font-size="13"
+           id="text24"
+           style="font-size:13px;text-anchor:start;fill:#222222;stroke:none;font-family:Arial">Used</text>
+      </g>
+      <rect
+         x="689"
+         y="68"
+         width="13"
+         height="13"
+         id="rect26"
+         style="fill:#3366cc;stroke:none" />
+    </g>
+    <g
+       id="g28">
+      <rect
+         x="689"
+         y="89"
+         width="98"
+         height="13"
+         id="rect30"
+         style="fill:#ffffff;fill-opacity:0;stroke:none" />
+      <g
+         id="g32">
+        <text
+           x="707"
+           y="100.05"
+           font-size="13"
+           id="text34"
+           style="font-size:13px;text-anchor:start;fill:#222222;stroke:none;font-family:Arial">Total</text>
+      </g>
+      <rect
+         x="689"
+         y="89"
+         width="13"
+         height="13"
+         id="rect36"
+         style="fill:#dc3912;stroke:none" />
+    </g>
+    <rect
+       x="124"
+       y="68"
+       width="552"
+       height="219"
+       id="rect40"
+       style="fill:#ffffff;fill-opacity:0;stroke:none" />
+    <g
+       clip-path="url(#_ABSTRACT_RENDERER_ID_2)"
+       id="g42">
+      <g
+         id="g44">
+        <rect
+           x="124"
+           y="68"
+           width="1"
+           height="219"
+           id="rect46"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="179"
+           y="68"
+           width="1"
+           height="219"
+           id="rect48"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="234"
+           y="68"
+           width="1"
+           height="219"
+           id="rect50"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="289"
+           y="68"
+           width="1"
+           height="219"
+           id="rect52"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="344"
+           y="68"
+           width="1"
+           height="219"
+           id="rect54"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="399"
+           y="68"
+           width="1"
+           height="219"
+           id="rect56"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="454"
+           y="68"
+           width="1"
+           height="219"
+           id="rect58"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="509"
+           y="68"
+           width="1"
+           height="219"
+           id="rect60"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="564"
+           y="68"
+           width="1"
+           height="219"
+           id="rect62"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="620"
+           y="68"
+           width="1"
+           height="219"
+           id="rect64"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="675"
+           y="68"
+           width="1"
+           height="219"
+           id="rect66"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="129"
+           y="68"
+           width="1"
+           height="219"
+           id="rect68"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="133"
+           y="68"
+           width="1"
+           height="219"
+           id="rect70"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="138"
+           y="68"
+           width="1"
+           height="219"
+           id="rect72"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="142"
+           y="68"
+           width="1"
+           height="219"
+           id="rect74"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="147"
+           y="68"
+           width="1"
+           height="219"
+           id="rect76"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="152"
+           y="68"
+           width="1"
+           height="219"
+           id="rect78"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="156"
+           y="68"
+           width="1"
+           height="219"
+           id="rect80"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="161"
+           y="68"
+           width="1"
+           height="219"
+           id="rect82"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="165"
+           y="68"
+           width="1"
+           height="219"
+           id="rect84"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="170"
+           y="68"
+           width="1"
+           height="219"
+           id="rect86"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="174"
+           y="68"
+           width="1"
+           height="219"
+           id="rect88"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="184"
+           y="68"
+           width="1"
+           height="219"
+           id="rect90"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="188"
+           y="68"
+           width="1"
+           height="219"
+           id="rect92"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="193"
+           y="68"
+           width="1"
+           height="219"
+           id="rect94"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="197"
+           y="68"
+           width="1"
+           height="219"
+           id="rect96"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="202"
+           y="68"
+           width="1"
+           height="219"
+           id="rect98"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="207"
+           y="68"
+           width="1"
+           height="219"
+           id="rect100"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="211"
+           y="68"
+           width="1"
+           height="219"
+           id="rect102"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="216"
+           y="68"
+           width="1"
+           height="219"
+           id="rect104"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="220"
+           y="68"
+           width="1"
+           height="219"
+           id="rect106"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="225"
+           y="68"
+           width="1"
+           height="219"
+           id="rect108"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="230"
+           y="68"
+           width="1"
+           height="219"
+           id="rect110"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="239"
+           y="68"
+           width="1"
+           height="219"
+           id="rect112"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="243"
+           y="68"
+           width="1"
+           height="219"
+           id="rect114"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="248"
+           y="68"
+           width="1"
+           height="219"
+           id="rect116"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="252"
+           y="68"
+           width="1"
+           height="219"
+           id="rect118"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="257"
+           y="68"
+           width="1"
+           height="219"
+           id="rect120"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="262"
+           y="68"
+           width="1"
+           height="219"
+           id="rect122"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="266"
+           y="68"
+           width="1"
+           height="219"
+           id="rect124"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="271"
+           y="68"
+           width="1"
+           height="219"
+           id="rect126"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="275"
+           y="68"
+           width="1"
+           height="219"
+           id="rect128"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="280"
+           y="68"
+           width="1"
+           height="219"
+           id="rect130"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="285"
+           y="68"
+           width="1"
+           height="219"
+           id="rect132"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="294"
+           y="68"
+           width="1"
+           height="219"
+           id="rect134"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="298"
+           y="68"
+           width="1"
+           height="219"
+           id="rect136"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="303"
+           y="68"
+           width="1"
+           height="219"
+           id="rect138"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="308"
+           y="68"
+           width="1"
+           height="219"
+           id="rect140"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="312"
+           y="68"
+           width="1"
+           height="219"
+           id="rect142"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="317"
+           y="68"
+           width="1"
+           height="219"
+           id="rect144"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="321"
+           y="68"
+           width="1"
+           height="219"
+           id="rect146"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="326"
+           y="68"
+           width="1"
+           height="219"
+           id="rect148"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="330"
+           y="68"
+           width="1"
+           height="219"
+           id="rect150"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="335"
+           y="68"
+           width="1"
+           height="219"
+           id="rect152"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="340"
+           y="68"
+           width="1"
+           height="219"
+           id="rect154"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="349"
+           y="68"
+           width="1"
+           height="219"
+           id="rect156"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="353"
+           y="68"
+           width="1"
+           height="219"
+           id="rect158"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="358"
+           y="68"
+           width="1"
+           height="219"
+           id="rect160"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="363"
+           y="68"
+           width="1"
+           height="219"
+           id="rect162"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="367"
+           y="68"
+           width="1"
+           height="219"
+           id="rect164"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="372"
+           y="68"
+           width="1"
+           height="219"
+           id="rect166"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="376"
+           y="68"
+           width="1"
+           height="219"
+           id="rect168"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="381"
+           y="68"
+           width="1"
+           height="219"
+           id="rect170"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="386"
+           y="68"
+           width="1"
+           height="219"
+           id="rect172"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="390"
+           y="68"
+           width="1"
+           height="219"
+           id="rect174"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="395"
+           y="68"
+           width="1"
+           height="219"
+           id="rect176"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="404"
+           y="68"
+           width="1"
+           height="219"
+           id="rect178"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="408"
+           y="68"
+           width="1"
+           height="219"
+           id="rect180"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="413"
+           y="68"
+           width="1"
+           height="219"
+           id="rect182"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="418"
+           y="68"
+           width="1"
+           height="219"
+           id="rect184"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="422"
+           y="68"
+           width="1"
+           height="219"
+           id="rect186"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="427"
+           y="68"
+           width="1"
+           height="219"
+           id="rect188"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="431"
+           y="68"
+           width="1"
+           height="219"
+           id="rect190"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="436"
+           y="68"
+           width="1"
+           height="219"
+           id="rect192"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="441"
+           y="68"
+           width="1"
+           height="219"
+           id="rect194"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="445"
+           y="68"
+           width="1"
+           height="219"
+           id="rect196"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="450"
+           y="68"
+           width="1"
+           height="219"
+           id="rect198"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="459"
+           y="68"
+           width="1"
+           height="219"
+           id="rect200"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="464"
+           y="68"
+           width="1"
+           height="219"
+           id="rect202"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="468"
+           y="68"
+           width="1"
+           height="219"
+           id="rect204"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="473"
+           y="68"
+           width="1"
+           height="219"
+           id="rect206"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="477"
+           y="68"
+           width="1"
+           height="219"
+           id="rect208"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="482"
+           y="68"
+           width="1"
+           height="219"
+           id="rect210"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="486"
+           y="68"
+           width="1"
+           height="219"
+           id="rect212"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="491"
+           y="68"
+           width="1"
+           height="219"
+           id="rect214"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="496"
+           y="68"
+           width="1"
+           height="219"
+           id="rect216"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="500"
+           y="68"
+           width="1"
+           height="219"
+           id="rect218"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="505"
+           y="68"
+           width="1"
+           height="219"
+           id="rect220"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="514"
+           y="68"
+           width="1"
+           height="219"
+           id="rect222"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="519"
+           y="68"
+           width="1"
+           height="219"
+           id="rect224"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="523"
+           y="68"
+           width="1"
+           height="219"
+           id="rect226"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="528"
+           y="68"
+           width="1"
+           height="219"
+           id="rect228"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="532"
+           y="68"
+           width="1"
+           height="219"
+           id="rect230"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="537"
+           y="68"
+           width="1"
+           height="219"
+           id="rect232"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="542"
+           y="68"
+           width="1"
+           height="219"
+           id="rect234"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="546"
+           y="68"
+           width="1"
+           height="219"
+           id="rect236"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="551"
+           y="68"
+           width="1"
+           height="219"
+           id="rect238"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="555"
+           y="68"
+           width="1"
+           height="219"
+           id="rect240"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="560"
+           y="68"
+           width="1"
+           height="219"
+           id="rect242"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="569"
+           y="68"
+           width="1"
+           height="219"
+           id="rect244"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="574"
+           y="68"
+           width="1"
+           height="219"
+           id="rect246"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="578"
+           y="68"
+           width="1"
+           height="219"
+           id="rect248"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="583"
+           y="68"
+           width="1"
+           height="219"
+           id="rect250"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="587"
+           y="68"
+           width="1"
+           height="219"
+           id="rect252"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="592"
+           y="68"
+           width="1"
+           height="219"
+           id="rect254"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="597"
+           y="68"
+           width="1"
+           height="219"
+           id="rect256"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="601"
+           y="68"
+           width="1"
+           height="219"
+           id="rect258"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="606"
+           y="68"
+           width="1"
+           height="219"
+           id="rect260"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="610"
+           y="68"
+           width="1"
+           height="219"
+           id="rect262"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="615"
+           y="68"
+           width="1"
+           height="219"
+           id="rect264"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="624"
+           y="68"
+           width="1"
+           height="219"
+           id="rect266"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="629"
+           y="68"
+           width="1"
+           height="219"
+           id="rect268"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="633"
+           y="68"
+           width="1"
+           height="219"
+           id="rect270"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="638"
+           y="68"
+           width="1"
+           height="219"
+           id="rect272"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="642"
+           y="68"
+           width="1"
+           height="219"
+           id="rect274"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="647"
+           y="68"
+           width="1"
+           height="219"
+           id="rect276"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="652"
+           y="68"
+           width="1"
+           height="219"
+           id="rect278"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="656"
+           y="68"
+           width="1"
+           height="219"
+           id="rect280"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="661"
+           y="68"
+           width="1"
+           height="219"
+           id="rect282"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="665"
+           y="68"
+           width="1"
+           height="219"
+           id="rect284"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="670"
+           y="68"
+           width="1"
+           height="219"
+           id="rect286"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="286"
+           width="552"
+           height="1"
+           id="rect288"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="268"
+           width="552"
+           height="1"
+           id="rect290"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="250"
+           width="552"
+           height="1"
+           id="rect292"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="232"
+           width="552"
+           height="1"
+           id="rect294"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="213"
+           width="552"
+           height="1"
+           id="rect296"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="195"
+           width="552"
+           height="1"
+           id="rect298"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="177"
+           width="552"
+           height="1"
+           id="rect300"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="159"
+           width="552"
+           height="1"
+           id="rect302"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="141"
+           width="552"
+           height="1"
+           id="rect304"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="123"
+           width="552"
+           height="1"
+           id="rect306"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="104"
+           width="552"
+           height="1"
+           id="rect308"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="86"
+           width="552"
+           height="1"
+           id="rect310"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="68"
+           width="552"
+           height="1"
+           id="rect312"
+           style="fill:#cccccc;stroke:none" />
+        <rect
+           x="124"
+           y="277"
+           width="552"
+           height="1"
+           id="rect314"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="259"
+           width="552"
+           height="1"
+           id="rect316"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="241"
+           width="552"
+           height="1"
+           id="rect318"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="222"
+           width="552"
+           height="1"
+           id="rect320"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="204"
+           width="552"
+           height="1"
+           id="rect322"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="186"
+           width="552"
+           height="1"
+           id="rect324"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="168"
+           width="552"
+           height="1"
+           id="rect326"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="150"
+           width="552"
+           height="1"
+           id="rect328"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="132"
+           width="552"
+           height="1"
+           id="rect330"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="113"
+           width="552"
+           height="1"
+           id="rect332"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="95"
+           width="552"
+           height="1"
+           id="rect334"
+           style="fill:#ebebeb;stroke:none" />
+        <rect
+           x="124"
+           y="77"
+           width="552"
+           height="1"
+           id="rect336"
+           style="fill:#ebebeb;stroke:none" />
+      </g>
+      <g
+         id="g338">
+        <rect
+           x="124"
+           y="68"
+           width="1"
+           height="219"
+           id="rect340"
+           style="fill:#333333;stroke:none" />
+        <rect
+           x="124"
+           y="286"
+           width="552"
+           height="1"
+           id="rect342"
+           style="fill:#333333;stroke:none" />
+      </g>
+      <g
+         id="g344">
+        <path
+           d="m 135.31407,245.32814 9.1971,-10.45422 9.41551,11.37028 9.24482,-2.94867 9.36412,-26.55881 9.26317,59.16785 9.28519,-1.00832 9.19343,-7.60859 9.23748,5.36729 9.24482,-3.26876 11.69138,-58.24131 7.41311,29.49779 9.27969,4.01759 9.23931,-5.48006 9.24115,10.51404 9.23381,3.48554 9.25032,3.44152 9.62841,-8.78493 9.23932,3.99246 9.25766,-3.0085 9.64493,-23.72225 9.20261,-0.5045 9.23748,-5.43964 9.51829,-7.22935 9.6229,58.55845 9.254,8.20525 9.23564,-5.68264 9.5862,-22.23515 9.19894,10.11993 9.24298,5.48037 9.23197,5.06957 9.35861,-5.04601 9.23748,3.92652 9.29437,-0.45506 9.35311,-8.23407 9.19526,10.09896 9.28704,0.45585 9.28519,5.77959 9.26868,3.11304 9.43019,-8.73984 9.68898,-20.82399 9.23381,-0.20974 9.21178,2.06054 9.29254,7.73477 9.24849,2.9736 9.24849,-9.37601 9.98264,-39.9398 9.69449,56.37471 9.19526,8.5378 9.43937,-10.25784 9.27969,10.78321 9.26868,-67.87056 9.27051,69.3763 9.24299,-56.15835 9.23564,-14.57451 9.1971,41.75492 9.24482,-28.32018 9.23564,28.16176 8.36934,16.64182"
+           id="path346"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#3366cc;stroke-width:2" />
+        <path
+           d="m 135.31407,74.613782 9.1971,0.244551 9.41551,-0.06987 9.24482,-0.558975 9.36412,-0.524038 9.26317,-0.733654 9.28519,-0.524039 9.19343,-0.174679 9.23748,-0.17468 9.24482,-0.03494 11.69138,-0.06987 7.41311,0 9.27969,0 9.23931,0 9.24115,-0.03494 9.23381,0 9.25032,0 9.62841,0 9.23932,0.03494 9.25766,0 9.64493,0 9.20261,0 9.23748,-0.03494 9.51829,0 9.6229,0 9.254,0 9.23564,0 9.5862,0 9.19894,0 9.24298,0 9.23197,0 9.35861,0 9.23748,0 9.29437,0 9.35311,0 9.19526,0 9.28704,0 9.28519,0 9.26868,0 9.43019,0 9.68898,0 9.23381,0 9.21178,0 9.29254,0.06987 9.24849,-0.03494 9.24849,0 9.98264,0 9.69449,-0.03494 9.19526,0 9.43937,0 9.27969,0 9.26868,0 9.27051,0 9.24299,0 9.23564,0 9.1971,0 9.24482,0 9.23564,0 8.36934,0"
+           id="path348"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#dc3912;stroke-width:2" />
+      </g>
+    </g>
+    <g
+       id="g350" />
+    <g
+       id="g352">
+      <g
+         id="g354">
+        <text
+           x="124.5"
+           y="306.04999"
+           font-size="13"
+           id="text356"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:00:00</text>
+      </g>
+      <g
+         id="g358">
+        <text
+           x="179.56146"
+           y="323.04999"
+           font-size="13"
+           id="text360"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:00:30</text>
+      </g>
+      <g
+         id="g362">
+        <text
+           x="234.62291"
+           y="306.04999"
+           font-size="13"
+           id="text364"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:01:00</text>
+      </g>
+      <g
+         id="g366">
+        <text
+           x="289.68436"
+           y="323.04999"
+           font-size="13"
+           id="text368"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:01:30</text>
+      </g>
+      <g
+         id="g370">
+        <text
+           x="344.74582"
+           y="306.04999"
+           font-size="13"
+           id="text372"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:02:00</text>
+      </g>
+      <g
+         id="g374">
+        <text
+           x="399.80728"
+           y="323.04999"
+           font-size="13"
+           id="text376"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:02:30</text>
+      </g>
+      <g
+         id="g378">
+        <text
+           x="454.86874"
+           y="306.04999"
+           font-size="13"
+           id="text380"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:03:00</text>
+      </g>
+      <g
+         id="g382">
+        <text
+           x="509.93021"
+           y="323.04999"
+           font-size="13"
+           id="text384"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:03:30</text>
+      </g>
+      <g
+         id="g386">
+        <text
+           x="564.99164"
+           y="306.04999"
+           font-size="13"
+           id="text388"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:04:00</text>
+      </g>
+      <g
+         id="g390">
+        <text
+           x="620.0531"
+           y="323.04999"
+           font-size="13"
+           id="text392"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:04:30</text>
+      </g>
+      <g
+         id="g394">
+        <text
+           x="675.11456"
+           y="306.04999"
+           font-size="13"
+           id="text396"
+           style="font-size:13px;text-anchor:middle;fill:#444444;stroke:none;font-family:Arial">00:05:00</text>
+      </g>
+      <g
+         id="g398">
+        <text
+           x="111"
+           y="291.04999"
+           font-size="13"
+           id="text400"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">0</text>
+      </g>
+      <g
+         id="g402">
+        <text
+           x="111"
+           y="272.88333"
+           font-size="13"
+           id="text404"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">260</text>
+      </g>
+      <g
+         id="g406">
+        <text
+           x="111"
+           y="254.71666"
+           font-size="13"
+           id="text408"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">520</text>
+      </g>
+      <g
+         id="g410">
+        <text
+           x="111"
+           y="236.55"
+           font-size="13"
+           id="text412"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">780</text>
+      </g>
+      <g
+         id="g414">
+        <text
+           x="111"
+           y="218.38333"
+           font-size="13"
+           id="text416"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">1040</text>
+      </g>
+      <g
+         id="g418">
+        <text
+           x="111"
+           y="200.21666"
+           font-size="13"
+           id="text420"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">1300</text>
+      </g>
+      <g
+         id="g422">
+        <text
+           x="111"
+           y="182.05"
+           font-size="13"
+           id="text424"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">1560</text>
+      </g>
+      <g
+         id="g426">
+        <text
+           x="111"
+           y="163.88333"
+           font-size="13"
+           id="text428"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">1820</text>
+      </g>
+      <g
+         id="g430">
+        <text
+           x="111"
+           y="145.71666"
+           font-size="13"
+           id="text432"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">2080</text>
+      </g>
+      <g
+         id="g434">
+        <text
+           x="111"
+           y="127.55"
+           font-size="13"
+           id="text436"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">2340</text>
+      </g>
+      <g
+         id="g438">
+        <text
+           x="111"
+           y="109.38333"
+           font-size="13"
+           id="text440"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">2600</text>
+      </g>
+      <g
+         id="g442">
+        <text
+           x="111"
+           y="91.216667"
+           font-size="13"
+           id="text444"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">2860</text>
+      </g>
+      <g
+         id="g446">
+        <text
+           x="111"
+           y="73.050003"
+           font-size="13"
+           id="text448"
+           style="font-size:13px;text-anchor:end;fill:#444444;stroke:none;font-family:Arial">3120</text>
+      </g>
+    </g>
+    <g
+       id="g452">
+      <text
+         x="400"
+         y="344.04999"
+         font-size="13"
+         font-style="italic"
+         id="text454"
+         style="font-size:13px;font-style:italic;text-anchor:middle;fill:#222222;stroke:none;font-family:Arial">Time</text>
+    </g>
+    <g
+       id="g456">
+      <text
+         x="46.049999"
+         y="177.5"
+         font-size="13"
+         font-style="italic"
+         transform="matrix(0,-1,1,0,-131.45,223.55)"
+         id="text458"
+         style="font-size:13px;font-style:italic;text-anchor:middle;fill:#222222;stroke:none;font-family:Arial">Memory Usage [MiB]</text>
+    </g>
+  </g>
+</svg>

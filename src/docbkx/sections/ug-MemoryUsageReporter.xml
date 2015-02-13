@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.reporters.MemoryUsageReporter">
+<sect2 xmlns="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.reporters.MemoryUsageReporter">
    <title>MemoryUsageReporter</title>
    <para>
       The reporter is able to report the current memory usage of the tested system at the moment when the results are published.
@@ -159,6 +159,42 @@ PerfCakeAgent > Listening at localhost on port 8850
                <entry>The used memory time window size. (Number of records in the memory data set used for the statistical analysis).</entry>
                <entry>No</entry>
                <entry>"100"</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <para>The following table describes result names of MemoryUsageRepoter:</para>
+   <table frame="all">
+      <title>MemoryUsageReporter result names</title>
+      <tgroup cols="2" align="left" colsep="1" rowsep="1">
+         <colspec colname="result-name" colwidth="1*"/>
+         <colspec colname="description" colwidth="3*"/>
+         <thead>
+            <row>
+               <entry>Result name</entry>
+               <entry>Description</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>Used</entry>
+               <entry>The amount of currently used memory in the Java Virtual Machine.</entry>
+            </row>
+            <row>
+               <entry>Total</entry>
+               <entry>The total amount of memory in the Java virtual machine in MiB.</entry>
+            </row>
+            <row>
+               <entry>Max</entry>
+               <entry>The maximum amount of memory that the Java virtual machine will attempt to use in MiB</entry>
+            </row>
+            <row>
+               <entry>UsedTrend</entry>
+               <entry>The memory usage regression line slope in B/s.</entry>
+            </row>
+            <row>
+               <entry>MemoryLeak</entry>
+               <entry>A boolean value indicating whether a possible memory leak has been detected yet.</entry>
             </row>
          </tbody>
       </tgroup>

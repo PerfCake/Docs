@@ -48,6 +48,38 @@
          </tbody>
       </tgroup>
    </table>
+   <para>The following table describes result names of ResponseTimeStatsReporter:</para>
+   <table frame="all">
+      <title>ResponseTimeStatsReporter result names</title>
+      <tgroup cols="2" align="left" colsep="1" rowsep="1">
+         <colspec colname="result-name" colwidth="1*"/>
+         <colspec colname="description" colwidth="3*"/>
+         <thead>
+            <row>
+               <entry>Result name</entry>
+               <entry>Description</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>Result</entry>
+               <entry>The current response time in ms - of the latest iteration.</entry>
+            </row>
+            <row>
+               <entry>Minimum</entry>
+               <entry>The minimal response time in ms measured so far (in a given time window).</entry>
+            </row>
+            <row>
+               <entry>Maximum</entry>
+               <entry>The minimal response time in ms measured so far (in a given time window).</entry>
+            </row>
+            <row>
+               <entry>Average</entry>
+               <entry>The average response time in ms measured so far (in a given time window).</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
    <simplesect>
       <title>An example of ResponseTimeStatsReporter configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeStatsReporter">
