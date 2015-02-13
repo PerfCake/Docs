@@ -6,4 +6,5 @@
    </para>
    <xi:include href="../sections/ug-migrating-1-to-2.xml"/>
    <xi:include href="../sections/ug-migrating-2-to-3.xml"/>
+   <xi:include href="../sections/ug-migrating-3-to-4.xml"/>
 </chapter>
