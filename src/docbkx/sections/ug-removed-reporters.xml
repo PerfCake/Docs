@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.RemovedReporters">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.reporters.removed-reporters">
    <title>Removed reporters</title>
    <para>
       There are several reporters that has been removed from PerfCake and has been replaced by others in order
@@ -33,5 +33,5 @@
          </tbody>
       </tgroup>
    </table>
-   <para>For the details about the migration of the replaced reporters see <xref linkend="ch-ug-migrating.2-to-3.reporters"/>.</para>
+   <para>For the details about the migration of the replaced reporters see <xref linkend="ch-ug-migrating.2-to-3.steps.reporters"/>.</para>
 </sect2>

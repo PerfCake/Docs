@@ -15,13 +15,12 @@ body {
 	color: #333;
 }
 
-a {
-	
+.xref {
 	color: #dd4814;
 	text-decoration: none;
 }
 
-a:hover, a:focus {
+.xref:hover, .xref:focus {
 	color:#97310e;
 	text-decoration: underline;
 }
@@ -117,15 +116,28 @@ h4 {
 	margin-left: auto;
 	padding: 0;
 	text-decoration: none;
+	color: #333;
 }
 
-.toc dl {
+.toc dl, .list-of-figures dl, .list-of-tables dl {
 	padding: 0;
 	margin: 0;
 }
 
 .toc a {
 	display: block;
+	color: #dd4814;
+	text-decoration: none;
+}
+
+.list-of-figures a, .list-of-tables a {
+	color: #dd4814;
+	text-decoration: none;
+}
+
+.toc a:hover, .toc a:focus, .list-of-figures a:hover, .list-of-figures a:focus, .list-of-tables a:hover, .list-of-tables a:focus {
+	color:#97310e;
+	text-decoration: underline;
 }
 
 .navfooter {

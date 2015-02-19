@@ -19,9 +19,9 @@
       </itemizedlist>
       The following sections take a look at each step in detail.
    </para>
-   <sect2>
+   <sect2 xml:id="ch-ug-mirating.2-to-3.steps">
       <title>Migration steps</title>
-      <sect3 xml:id="ch-ug-migrating.2-to-3.xml-namespace">
+      <sect3 xml:id="ch-ug-migrating.2-to-3.steps.xml-namespace">
          <title>Rename XML schema namespace</title>
          <para>
             The namespace of the XML schema for scenarios has been renamed from
@@ -31,7 +31,7 @@
             so it must be updated in the scenario XML files.
          </para>
       </sect3>
-      <sect3 xml:id="ch-ug-migrating.2-to-3.class-names">
+      <sect3 xml:id="ch-ug-migrating.2-to-3.steps.class-names">
          <title>Rename class names</title>
          <para>Following classes has been renamed to follow the naming conventions (See Developers' Guide).</para>
          <table frame="all">
@@ -90,11 +90,11 @@
             </tgroup>
          </table>
       </sect3>
-      <sect3 xml:id="ch-ug-migrating.2-to-3.reporters">
+      <sect3 xml:id="ch-ug-migrating.2-to-3.steps.reporters">
          <title>Replace reporters</title>
          <para>
             As it has been mentioned in
-            <xref linkend="ch-ug-reporting.RemovedReporters"/>
+            <xref linkend="ch-ug-reporting.reporters.removed-reporters"/>
             there are several reporters that has been removed from PerfCake and has been replaced by others.
             The following sections illustrate that change and how to perform the migration at the same time.
          </para>
@@ -149,7 +149,7 @@
  </reporter>]]></programlisting>
          </simplesect>
       </sect3>
-      <sect3 xml:id="ch-ug-migrating.2-to-3.RequestResponseJmsSender">
+      <sect3 xml:id="ch-ug-migrating.2-to-3.steps.RequestResponseJmsSender">
          <title>Update RequestResponseJmsSender</title>
          <para>
             The
@@ -213,7 +213,7 @@
          </simplesect>
       </sect3>
    </sect2>
-   <sect2>
+   <sect2 xml:id="ch-ug-migrating.2-to-3.xslt">
       <title>Scenario conversion using XSLT</title>
       <para>
          After understanding the all the steps needed to migrate PerfCake scenarios

@@ -5,6 +5,7 @@
    <xsl:param name="saxon.linenumbering" select="1"/>
    <xsl:param name="linenumbering.everyNth">1</xsl:param>
    <xsl:param name="use.id.as.filename">true</xsl:param>
+   <xsl:param name="chunk.section.depth">1</xsl:param>
    <xsl:output method="xml" indent="no"/>
    <xsl:template match="xslthl:keyword" mode="xslthl">
       <span class="hl-keyword">

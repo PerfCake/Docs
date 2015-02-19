@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.ResponseTimeStatsReporter">
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.reporters.ResponseTimeStatsReporter">
    <title>ResponseTimeStatsReporter</title>
    <para>
       The reporter is able to report the statistics - current, minimal, maximal and average value of a response time (in miliseconds) from the beginning of the measuring to the moment when the results are published (default) or in a specified window.
@@ -44,6 +44,38 @@
                <entry>A window where the data for the statistics are taken from.</entry>
                <entry>No</entry>
                <entry>Integer.MAX_VALUE</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <para>The following table describes result names of ResponseTimeStatsReporter:</para>
+   <table frame="all">
+      <title>ResponseTimeStatsReporter result names</title>
+      <tgroup cols="2" align="left" colsep="1" rowsep="1">
+         <colspec colname="result-name" colwidth="1*"/>
+         <colspec colname="description" colwidth="3*"/>
+         <thead>
+            <row>
+               <entry>Result name</entry>
+               <entry>Description</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>Result</entry>
+               <entry>The current response time in ms - of the latest iteration.</entry>
+            </row>
+            <row>
+               <entry>Minimum</entry>
+               <entry>The minimal response time in ms measured so far (in a given time window).</entry>
+            </row>
+            <row>
+               <entry>Maximum</entry>
+               <entry>The minimal response time in ms measured so far (in a given time window).</entry>
+            </row>
+            <row>
+               <entry>Average</entry>
+               <entry>The average response time in ms measured so far (in a given time window).</entry>
             </row>
          </tbody>
       </tgroup>

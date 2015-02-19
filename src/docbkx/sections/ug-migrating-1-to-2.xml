@@ -13,9 +13,9 @@
       </itemizedlist>
       The following sections describe each step in detail.
    </para>
-   <sect2>
+   <sect2 xml:id="ch-ug-mirating.1-to-2.steps">
       <title>Migration steps</title>
-      <sect3 xml:id="ch-ug-migrating.1-to-2.xml-namespace">
+      <sect3 xml:id="ch-ug-migrating.1-to-2.steps.xml-namespace">
          <title>Rename XML schema namespace</title>
          <para>
             The namespace of the XML schema for scenarios has been renamed from
@@ -25,7 +25,7 @@
             so it must be updated in the scenario XML files.
          </para>
       </sect3>
-      <sect3 xml:id="ch-ug-migrating.1-to-2.message-number">
+      <sect3 xml:id="ch-ug-migrating.1-to-2.steps.message-number">
          <title>Rename Message Number Constant Name</title>
          <para>
             If your sender depends on message ordinal number you need to change the name of the particular
