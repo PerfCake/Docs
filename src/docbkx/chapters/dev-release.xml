@@ -9,7 +9,7 @@
    <para>First, start off with a new release branch and let Maven prepare the release for us <xref linkend="fig-release-prepare"/>.</para>
    <figure xml:id="fig-release-prepare">
       <title>Prepare a release branch</title>
-      <programlisting language="xml" linenumbering="unnumbered">
+      <programlisting language="bourne" linenumbering="unnumbered">
 <![CDATA[$ git checkout -b release/v{VERSION} devel
 $ mvn release:prepare]]>
       </programlisting>
@@ -21,7 +21,7 @@ $ mvn release:prepare]]>
       into the devel branch.</para>
    <figure xml:id="fig-release-branches-devel">
       <title>Merge the changes to the devel branch</title>
-      <programlisting language="xml" linenumbering="unnumbered">
+      <programlisting language="bourne" linenumbering="unnumbered">
 <![CDATA[$ git checkout devel
 $ git merge --no-ff release/v{VERSION}]]>
       </programlisting>
@@ -30,7 +30,7 @@ $ git merge --no-ff release/v{VERSION}]]>
       commit prior to the head in the release branch <xref linkend="fig-release-branches-master"/>.</para>
    <figure xml:id="fig-release-branches-master">
       <title>Merge the changes to the master branch as well</title>
-      <programlisting language="xml" linenumbering="unnumbered">
+      <programlisting language="bourne" linenumbering="unnumbered">
 <![CDATA[$ git checkout master
 $ git merge --no-ff release/v{VERSION}~1]]>
       </programlisting>
@@ -38,7 +38,7 @@ $ git merge --no-ff release/v{VERSION}~1]]>
    <para>The last step is to clean everything up and go public <xref linkend="fig-release-branches-cleanup"/>.</para>
    <figure xml:id="fig-release-branches-cleanup">
       <title>Merge the changes to the master branch as well</title>
-      <programlisting language="xml" linenumbering="unnumbered">
+      <programlisting language="bourne" linenumbering="unnumbered">
 <![CDATA[$ git branch -D release/v{VERSION}
 $ git push --all && git push --tags]]>
       </programlisting>
