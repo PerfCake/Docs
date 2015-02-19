@@ -52,7 +52,7 @@
                      characters and underscores and it is not allowed to begin with a number digit. If the group name does not follow the naming conventions, it would be converted to do so.
                   </entry>
                   <entry>No</entry>
-                  <entry>"results"</entry>
+                  <entry>"default"</entry>
                </row>
                <row>
                   <entry>xAxis</entry>
