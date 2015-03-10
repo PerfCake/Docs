@@ -1025,7 +1025,8 @@ somethingThatYieldsAFoo().aStaticMethod(); // very bad]]></programlisting>
             <para>
             <programlisting language="java" linenumbering="unnumbered"><![CDATA[/**
  * Multiple lines of Javadoc text are written here, 
- * wrapped normally... */ 
+ * wrapped normally...
+ */ 
 public int method(String p1) { ... }]]></programlisting>
             </para>
             <para>... or in this single-line example:</para>
@@ -1051,6 +1052,34 @@ public int method(String p1) { ... }]]></programlisting>
                description. When an at-clause doesn't fit on a single line, continuation lines are
                indented <emphasis role="bold">six</emphasis> (or more) spaces from the position of
                the <code language="java">@</code>.</para>
+         </simplesect>
+         <simplesect>
+            <title>Language</title>
+            <para>Use the third person in describing class purpose, method actions, parameters,
+               return types, exceptions and all others. Usually, present tense should be used. All
+               sentences including those describing parameters descriptions, thrown exceptions, and
+               return types start with an uppercase letter and end with a full stop.</para>
+            <para>Avoid using reference to the item being described like <citation>this
+                  class</citation>, <citation>the purpose of this method</citation>, <citation>it
+                  stores</citation> etc. All these references are very obvious in the resulting
+               JavaDoc. Simply describe the immediate actions, purpose and all tohers. The same
+               applies to exceptions being thrown.</para>
+            <para>Methods intended for fluent API returning <code language="java">this</code> should
+               describe the return value as <citation>Returns this instance for fluent
+                  API.</citation>. </para>
+            <para>Following is an example of JavaDoc with the proper language:</para>
+            <para>
+               <programlisting language="java" linenumbering="unnumbered"><![CDATA[/**
+ * Gets a value of an accumulated result.
+ *
+ * @param key
+ *       Key in the results hash map.
+ * @return The value associated with the given key.
+ */
+protected Object getAccumulatedResult(final String key) {
+   ...
+}]]></programlisting>
+            </para>
          </simplesect>
       </sect3>
       <sect3>
