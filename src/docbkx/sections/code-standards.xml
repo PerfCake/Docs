@@ -1015,7 +1015,7 @@ somethingThatYieldsAFoo().aStaticMethod(); // very bad]]></programlisting>
       </sect3>
    </sect2>
    <sect2>
-      <title>Javadoc</title>
+      <title>JavaDoc</title>
       <sect3>
          <title>Formatting</title>
          <simplesect>
