@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-migrating.3-to-4">
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-migrating.3-to-4" version="5.0">
    <title>From v3.x to v4.x</title>
    <para>
       The following list shows the steps that are needed to migrate from PerfCake version 3.x to 4.x:

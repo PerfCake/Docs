@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.destinations.ChartDestination">
+<sect2 xmlns="http://docbook.org/ns/docbook" xml:id="ch-ug-reporting.destinations.ChartDestination" version="5.0">
    <title>ChartDestination</title>
    <para>
       Creates nice charts from the results. The charts are generated under directory specified by the

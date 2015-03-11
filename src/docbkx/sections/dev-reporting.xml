@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="sec-dev-reporting"
-   status="draft">
+   status="draft" version="5.0">
    <title>Reporting</title>
    <para>
       In this section we will reveal as much details about reporting facilities as possible. First we describe the architecture and then we
