@@ -13,6 +13,6 @@
    <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<dependency>
    <groupId>org.perfcake</groupId>
    <artifactId>perfcake</artifactId>
-   <version>3.2</version>
+   <version>4.0</version>
 </dependency>]]>   </programlisting>
 </sect1>
