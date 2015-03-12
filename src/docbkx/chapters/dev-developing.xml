@@ -8,5 +8,6 @@
    <xi:include href="../sections/maven.xml"/>
    <xi:include href="../sections/maven-goals.xml"/>
    <xi:include href="../sections/code-standards.xml"/>
+   <xi:include href="../sections/test-development.xml"/>
    <xi:include href="../sections/writing-guides.xml"/>
 </chapter>
