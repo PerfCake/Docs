@@ -120,7 +120,7 @@
             </thead>
             <tbody>
                <row>
-                  <entry>threadQueueSize</entry>
+                  <entry>senderTaskQueueSize</entry>
                   <entry>The size of the task queue.</entry>
                   <entry>No</entry>
                   <entry>1000</entry>

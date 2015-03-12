@@ -41,7 +41,7 @@
             </thead>
             <tbody>
                <row>
-                  <entry>threadQueueSize</entry>
+                  <entry>senderTaskQueueSize</entry>
                   <entry>The size of the task queue.</entry>
                   <entry>No</entry>
                   <entry>1000</entry>
@@ -54,12 +54,11 @@
       <title>An example of DefaultMessageGenerator configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="DefaultMessageGenerator" threads="100">
     <run type="time" value="60000"/>
-    <property name="threadQueueSize" value="5000"/>
+    <property name="senderTaskQueueSize" value="5000"/>
  </generator>]]></programlisting>
-      <para>
-         In the example above a
-         <code>DefaultMessageGenerator</code>
-         is defined to run for 60 seconds using 100 concurrent threads with the thread queue with the size of 5000.
-      </para>
+      <para> In the example above a <code>DefaultMessageGenerator</code> is defined to run for 60
+         seconds using 100 concurrent threads with the sender task queue with the size of 5000. The
+         main goal of limiting the queue of sender tasks is to limit memory usage and improve
+         performance of PerfCake.</para>
    </simplesect>
 </sect2>
