@@ -1072,7 +1072,7 @@ public int method(String p1) { ... }]]></programlisting>
                obvious in the resulting JavaDoc. Simply describe the immediate actions, purpose and
                all tohers. The same applies to exceptions being thrown.</para>
             <para>Methods intended for fluent API returning <code language="java">this</code> should
-               describe the return value as <emphasis>Returns this instance for fluent
+               describe the return value as <emphasis>Instance of this to support fluent
                   API.</emphasis>. </para>
             <para>Following is an example of JavaDoc with the proper language:</para>
             <para>
