@@ -82,7 +82,7 @@
    ...
    <destination class="ChartDestination">
       <period type="time" value="5000"/>
-      <property name="name" value="Memory Usage}"/>
+      <property name="name" value="Memory Usage"/>
       <property name="group" value="${perfcake.scenario}_memory"/>
       <property name="yAxis" value="Memory Usage [MiB]"/>
       <property name="outputDir" value="${perfcake.scenario}-charts"/>
