@@ -6,7 +6,7 @@
       It requires PerfCake agent to be installed in the tested system's JVM.
    </para>
    <para>
-      To be able to use MemoryUsageReporter you need to attach PerfCake agent to the tested system's JVM. The PerfCake agent is a part of binary distribution (PerfCake's JAR archive).
+      To be able to use MemoryUsageReporter you need to attach PerfCake agent to the tested system's JVM. The PerfCake agent is a part of binary distribution (PerfCake Agent's JAR archive).
       The agent is configurable by following properties:
    </para>
    <table frame="all">
@@ -45,11 +45,11 @@
    </para>
    <simplesect>
       <title>JVM argument to attach PerfCake agent to the tested JVM</title>
-      <programlisting><![CDATA["... -javaagent:<perfcake_jar_path>=hostname=<hostname>,port=<port>"]]></programlisting>
+      <programlisting><![CDATA["... -javaagent:<perfcake_agent_jar_path>=hostname=<hostname>,port=<port>"]]></programlisting>
    </simplesect>
    <simplesect>
       <title>PerfCake JVM argument example</title>
-      <programlisting><![CDATA[JAVA_OPTS="... -javaagent:$PERFCAKE_HOME/lib/perfcake-4.0.jar=port=8850"]]></programlisting>
+      <programlisting><![CDATA[JAVA_OPTS="... -javaagent:$PERFCAKE_HOME/lib/perfcake-agent-4.0.jar=port=8850"]]></programlisting>
    </simplesect>
    <para>
       Once you have started the tested system up, you should see the following line in the system's console output:
