@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="maven-goals" version="5.0">
-   <title>Maven Goals</title>
+   <title>Maven Project</title>
    <para>The following Maven plugins and their goals can be used with PerfCake project.</para>
+   <sect2>
+      <title>Project Structure</title>
+      <para>There is a parent project composed of two child Maven modules. This is because PerfCake
+         Agent installs into the application under inspection and needs to be compiled with an older
+         Java version because of compatibility reasons.</para>
+      <para>Because of the split into multiple child modules, there is a need to run <emphasis>mvn
+            install -DskipTests</emphasis> to install the parent module into your local repository
+         when working on the <emphasis>devel</emphasis> Git branch.<itemizedlist>
+            <listitem>
+               <para><emphasis>parfcake</emphasis> Core PerfCake module, contains all the code
+                  needed to build the product.</para>
+            </listitem>
+            <listitem>
+               <para><emphasis>perfcake-agent</emphasis> JVM Agent to be used when running target
+                  application (application under inspection) with memory monitoring. This module is
+                  compiled with an older Java version (1.5).</para>
+            </listitem>
+         </itemizedlist></para>
+   </sect2>
+   <sect2>
+      <title>Maven Profiles</title>
+      <para>Use the following Maven profiles to achieve desired results.<itemizedlist>
+            <listitem>
+               <para><emphasis>production</emphasis> Generates output classes without debugging
+                  information. This produces smaller results and is intended for binary
+                  distributions. This must be used during the release procedure.</para>
+            </listitem>
+            <listitem>
+               <para><emphasis>sign</emphasis> Automatically adds digital signatures of build
+                  artifacts during the <emphasis>install</emphasis> phase. Needs properly configured
+                  GPG agent.</para>
+            </listitem>
+         </itemizedlist></para>
+      <para>Profiles for controlling test groups can be found in section <xref
+            linkend="ch-dev-developing.test-development"/>.</para>
+   </sect2>
    <sect2>
       <title>Standard Maven Goals</title>
       <para>We try to minimalize the necessity for running standard Maven goals in a different
@@ -10,54 +46,53 @@
       </para>
       <itemizedlist>
          <listitem>
-            <para>
-               <emphasis>clean</emphasis>
-               Cleans the compiled artifacts and reports. Basically
-               deletes the
-               <varname>target</varname>
-               directory.
-            </para>
+            <para><emphasis>clean</emphasis> Cleans the compiled artifacts and reports. Basically
+               deletes the <varname>target</varname> directory. </para>
+         </listitem>
+         <listitem>
+            <para><emphasis>compile</emphasis> Compiles the whole project including tests. </para>
+         </listitem>
+         <listitem>
+            <para><emphasis>test</emphasis> Executes all the tests. See section Profiles for controlling test groups can be found in section <xref
+               linkend="ch-dev-developing.test-development"/> for Maven profiles that control test groups.</para>
+         </listitem>
+         <listitem>
+            <para><emphasis>install</emphasis> Install project artifacts into the local Maven
+               repository. This is needed when working in the <emphasis>devel</emphasis> Git branch
+               with snapshot versions.</para>
+         </listitem>
+         <listitem>
+            <para><emphasis>package</emphasis> Packages the distribution </para>
+         </listitem>
+         <listitem>
+            <para><emphasis>exec:exec</emphasis> Works only in the <emphasis>perfcake</emphasis>
+               module. Runs PerfCake, parameters are passed using <emphasis>-Dparam=value</emphasis>
+               . Never use <emphasis>exec:java</emphasis> directly as Maven will comply about
+               missing configuration (the configuration is passed in from
+                  <emphasis>exec:exec</emphasis> ). </para>
          </listitem>
          <listitem>
             <para>
-               <emphasis>compile</emphasis>
-               Compiles the whole project including tests.
-            </para>
-         </listitem>
-         <listitem>
-            <para>
-               <emphasis>test</emphasis>
-               Executes all the tests.
-            </para>
-         </listitem>
-         <listitem>
-            <para>
-               <emphasis>package</emphasis>
-               Packages the distribution
-            </para>
-         </listitem>
-         <listitem>
-            <para>
-               <emphasis>exec:exec</emphasis>
-               Runs PerfCake, parameters are passed using
-               <emphasis>-Dparam=value</emphasis>
-               . Never use
-               <emphasis>exec:java</emphasis>
-               directly as Maven will comply about missing configuration (the configuration is
-               passed in from
-               <emphasis>exec:exec</emphasis>
-               ).
-            </para>
-         </listitem>
-         <listitem>
-            <para>
-               <emphasis>site</emphasis>
-               Generates the Maven HTML site. Consumes output of other
-               plugins like JaCoCo. If the other consumables should be part of the generated site,
-               they must be ready before calling this goal.
-            </para>
+               <emphasis>site</emphasis> Works only in the <emphasis>perfcake</emphasis> module.
+               Generates the Maven HTML site. Consumes output of other plugins like JaCoCo. If the
+               other consumables should be part of the generated site, they must be ready before
+               calling this goal. </para>
          </listitem>
       </itemizedlist>
+   </sect2>
+   <sect2>
+      <title>Documentation</title>
+      <para>It is possible to generate JavaDco for individual Maven modules as well as a single
+         aggregated package for all of them.<itemizedlist>
+            <listitem>
+               <para><emphasis>javadoc:javadoc</emphasis> Generates documentation for the current
+                  Maven module.</para>
+            </listitem>
+            <listitem>
+               <para><emphasis>javadoc:aggregate</emphasis> Generates aggregated documentation
+                  package when executed in the parent project.</para>
+            </listitem>
+         </itemizedlist></para>
    </sect2>
    <sect2>
       <title>License</title>
