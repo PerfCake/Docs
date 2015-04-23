@@ -11,7 +11,7 @@
       <title>Prepare a release branch</title>
       <programlisting language="bourne" linenumbering="unnumbered">
 <![CDATA[$ git checkout -b release/v{VERSION} devel
-$ mvn release:prepare]]>
+$ mvn release:prepare -Psign -Pproduction]]>
       </programlisting>
    </figure>
    <para>At this point, you should get the artifacts from the <code>target</code> directory for later publishing <xref linkend="fig-release-branches-devel"/>.</para>
