@@ -6,12 +6,12 @@
       The generator uses a thread pool of a fixed size that stores threads executing performance iterations.
       The thread pool uses an internal queue where tasks implementing the iterations are buffered and scheduled for execution.
       The size of the thread queue can be specified by the
-      <code>threadQueueSize</code>
+      <code>senderTaskQueueSize</code>
       property.
    </para>
    <para>
       This approach guarantees that the maximum number of thread instances (that is equal to the value of the
-      <code>threadQueueSize</code>
+      <code>senderTaskQueueSize</code>
       property) exists in the memory during all the time the generator
       is working.
    </para>
