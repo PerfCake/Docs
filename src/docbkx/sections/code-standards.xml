@@ -760,7 +760,7 @@ volatile synchronized native strictfp</programlisting>
          <title>Rules by identifier type</title>
          <simplesect>
             <title>Package names</title>
-            <para>Package names are all lowercase, with consecutive words simply concatenated
+            <para>Package names are all lowercase, singular, with consecutive words simply concatenated
                together (no underscores). For example, <code language="java"
                   >com.example.deepspace</code>, not <code language="java"
                   >com.example.deepSpace</code> or <code language="java"
