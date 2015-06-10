@@ -164,7 +164,7 @@
             <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="RequestResponseJMSSender">
    ...
    <property name="connectionFactory"
-             value="${jms.connection.factory"/>
+             value="${jms.connection.factory}"/>
    
    <property name="username" value="${username}"/>
    <property name="password" value="${password}"/>
