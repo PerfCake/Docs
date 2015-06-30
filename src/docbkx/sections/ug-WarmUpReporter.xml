@@ -12,7 +12,18 @@
       with the default value of
       15,000 ms).
    </para>
-   <para>The system is considered warmed up when all of the following conditions are satisfied: The current throughput is not changing much over the time, the minimal iterations count has been executed and the
+   <para>The reporter internally keeps track of current throughput - each second checks the number of processed
+      iterations and computes the current throughput as the difference in number of iterations per checking period (second).
+      It also remembers the current throughput from the previous checking period to calculate a difference in throughput.
+      The throughput is considered NOT changing in time "much" when the relative difference in current throughput
+      between the current checking period and the previous one is less than
+      <code>relativeThreshold</code>
+      value or the absolute difference in current throughput between the current checking period and the previous one is less than
+      <code>absoluteThreshold</code>
+      value.
+   </para>
+   <para>The system is considered warmed up when all of the following conditions are satisfied: The current throughput
+      is not changing much over the time, the minimal iterations count has been executed and the
       minimal duration from the very start has exceeded.
    </para>
    <table frame="all">
@@ -66,5 +77,8 @@
    <property name="relativeThreshold" value="0.005"/> <!-- 0.5% -->
    <property name="absoluteThreshold" value="0.5"/>
  </reporter>]]></programlisting>
+      <para>In the example above the system would be considered warmed up when at least 1000 iterations is processed AND the scenario is executed for at least
+         10 seconds AND, the relative change in the throughput is less then 0.5% or the absolute change in throughput is less than 0.5 iterations per second.
+      </para>
    </simplesect>
 </sect2>
