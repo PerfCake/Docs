@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.handling-issues" version="5.0">
+   <title>Handling issues during excution</title>
+   <para>PerfCake tries to overcome as many issues as it can. For a 100% validity of your performance test results,
+   always make sure there are no warning or errors in the log. Such issues can be a problem with message template
+   (the template isused without being parsed), a reporter with smaller reporting period than 500ms (the reporter is skipped) etc.
+   More critical issues are reported with a non-zero exit code. See section Exit codes.</para>
+</sect1>

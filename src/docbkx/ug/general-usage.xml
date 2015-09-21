@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.general-usage" status="draft" version="5.0">
+   <title>General Usage</title>
+   <xi:include href="./general-usage/sweet-spot.xml"/>
+   <xi:include href="./general-usage/sending-messages.xml"/>
+   <xi:include href="./general-usage/warmup.xml"/>
+   <xi:include href="./general-usage/monitoring-memory.xml"/>
+   <xi:include href="./general-usage/charts.xml"/>
+   <xi:include href="./general-usage/response-validation.xml"/>
+   <xi:include href="./general-usage/templates-sequences.xml"/>
+   <xi:include href="./general-usage/measurement-basics.xml"/>
+   <xi:include href="./general-usage/reporting-results.xml"/>
+   <xi:include href="./general-usage/aggregating-results.xml"/>
+   <xi:include href="./general-usage/adding-clients.xml"/>
+   <xi:include href="./general-usage/jdbc-jms.xml"/>
+   <xi:include href="./general-usage/perfcake-api.xml"/>
+   <xi:include href="./general-usage/perfcake-plugins.xml"/>
+   <xi:include href="./general-usage/groovy.xml"/>
+   <xi:include href="./general-usage/csv-to-spreadsheet.xml"/>
+   <xi:include href="./general-usage/enabling-destinations.xml"/>
+   <xi:include href="./general-usage/keep-connection.xml"/>
+   <xi:include href="./general-usage/ssl-http.xml"/>
+   <xi:include href="./general-usage/dummy-sender.xml"/>
+</chapter>

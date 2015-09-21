@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features" status="draft" version="5.0">
+   <title>PerfCake features</title>
+   <xi:include href="./perfcake-features/scenario-definition.xml"/>
+   <xi:include href="./perfcake-features/configuration.xml"/>
+   <xi:include href="./perfcake-features/handling-issues.xml"/>
+   <xi:include href="./perfcake-features/exit-codes.xml"/>
+   <xi:include href="./perfcake-features/migrating-scenarios.xml"/>
+</chapter>

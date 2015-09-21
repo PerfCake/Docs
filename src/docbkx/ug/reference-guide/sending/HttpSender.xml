@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.HttpSender" version="5.0">
+   <title>HttpSender</title>
+   <para>
+      The HttpSender can be used to send messages via HTTP protocol using POST method as
+      default to the URL specified by
+      the 'target' property. The HTTP method
+      can be changed using the
+      <code>method</code>
+      property.
+   </para>
+   <para>
+      Various scenarios can lead to different HTTP response codes that are expected. The scenario can be set to expect
+      one or more response codes. It can be set via the
+      <code>expectedResponseCodes</code>
+      property.
+      Default expected response code is 200.
+   </para>
+   <para>
+      To set headers of the HTTP request use the
+      <code>header</code>
+      element of the particular
+      <code>message</code>
+      element in the
+      <code>messages</code>
+      section of the scenario definition.
+   </para>
+   <para>
+      Following table shows the properties of the HttpSender:
+      <table frame="all">
+         <title>HttpSender properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>target</entry>
+                  <entry>An URL of the target, where the message is send.</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>expectedResponseCodes</entry>
+                  <entry>A comma separated list of HTTP response code(s) that is
+                     expected to be returned.
+                  </entry>
+                  <entry>No</entry>
+                  <entry>"200"</entry>
+               </row>
+               <row>
+                  <entry>method</entry>
+                  <entry>
+                     An HTTP method to be used.
+                     <footnote>
+                        <para>
+                           See
+                           <link xlink:href="http://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html#setRequestMethod(java.lang.String)"/>
+                           for a complete list of
+                           available methods.
+                        </para>
+                     </footnote>
+                  </entry>
+                  <entry>No</entry>
+                  <entry>"POST"</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <simplesect>
+      <title>An example of HttpSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="HttpSender">
+   <property name="target" value="http://domain.com/cool-url"/>
+   <property name="method" value="GET"/>
+   <property name="expectedResponseCodes" value="200,202"/>
+ </sender>]]></programlisting>
+   </simplesect>
+</sect2>

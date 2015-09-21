@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect3 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations.Log4jDestination" version="5.0">
+   <title>Log4jDestination</title>
+   <para>
+      The destination appends the measurements to Log4j to category
+      <code>prg.perfcake.reporting.destinations.Log4jDestination</code>
+      .
+      The appropriate configurations to customize its output should be done.
+      You can configure a separate appender only for this category for instance.
+      Logging level can be set through the
+      <code>level</code>
+      property.
+   </para>
+   <para>
+      The following table describes the Log4jDestination's properties
+      <table frame="all">
+         <title>Log4jDestination properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>level</entry>
+                  <entry>The logging level for the destination.</entry>
+                  <entry>No</entry>
+                  <entry>"INFO"</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <simplesect>
+      <title>An example of Log4jDestination configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <destination class="Log4jDestination">
+   <period type="time" value="1000"/>
+   <property name="level" value="INFO"/>
+ </destination>]]></programlisting>
+   </simplesect>
+</sect3>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake" version="5.0">
+   <title>Obtaining and Installing PerfCake</title>
+   <para>getting-perfcake</para>
+   <xi:include href="./getting-perfcake/downloading.xml"/>
+   <xi:include href="./getting-perfcake/building.xml"/>
+   <xi:include href="./getting-perfcake/minimal-requirements.xml"/>
+   <xi:include href="./getting-perfcake/installing.xml"/>
+   <xi:include href="./getting-perfcake/running.xml"/>
+</sect1>

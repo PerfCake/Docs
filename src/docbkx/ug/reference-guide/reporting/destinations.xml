@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations" version="5.0">
+   <title>Destinations</title>
+   <para>
+         A destination is a representation of places where the measurements from the reporters are published.
+         Each destination is configured to publish the results of reporter's measurements during the scenario execution periodically with a period
+         specified by the
+         <code>period</code>
+         element in the scenario definition. Destination can have multiple periods but each destination
+         has to have at least one period configured.
+      </para>
+   <para>
+         The following table shows the destination
+         <code>period</code>
+         options:
+         <table frame="all"><title> Destination <code>period</code> options</title><tgroup cols="2" align="left" colsep="1" rowsep="1"><colspec colname="run type" colwidth="1*"/><colspec colname="description" colwidth="1*"/><thead><row><entry>Destination <code>period</code> type</entry><entry>Value description</entry></row></thead><tbody><row><entry>time</entry><entry>Time period in milliseconds</entry></row><row><entry>iteration</entry><entry>Number of iterations</entry></row><row><entry>percentage</entry><entry>The relative percentage of the scenario run</entry></row></tbody></tgroup></table>
+      </para>
+   <simplesect>
+      <title>
+            An example of the
+            <code>period</code>
+            configuration in a destination:
+         </title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <destination class="...">
+   <period type="time" value="1000"/>
+   ...
+   (properties)
+   ...
+ </destination>]]></programlisting>
+   </simplesect>
+   <para>The following sections describe the destinations that can be used by reporters.</para>
+   <xi:include href="./destinations/ChartDestination.xml"/>
+   <xi:include href="./destinations/ConsoleDestination.xml"/>
+   <xi:include href="./destinations/CsvDestination.xml"/>
+   <xi:include href="./destinations/Log4jDestination.xml"/>
+</sect2>

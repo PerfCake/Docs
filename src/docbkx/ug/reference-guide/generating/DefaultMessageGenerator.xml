@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating.generators.DefaultMessageGenerator" version="5.0">
+   <title>DefaultMessageGenerator</title>
+   <para>
+      The generator is able to generate a load using multiple threads for a long period of time (matter of days, weeks,...).
+      The generator uses a thread pool of a fixed size that stores threads executing performance iterations.
+      The thread pool uses an internal queue where tasks implementing the iterations are buffered and scheduled for execution.
+      The size of the thread queue can be specified by the
+      <code>senderTaskQueueSize</code>
+      property.
+   </para>
+   <para>
+      This approach guarantees that the maximum number of thread instances (that is equal to the value of the
+      <code>senderTaskQueueSize</code>
+      property) exists in the memory during all the time the generator
+      is working.
+   </para>
+   <para>
+      To configure the generator we need to specify a number of concurrent threads (using the
+      <code>threads</code>
+      attribute) and a duration (using the
+      <code>run</code>
+      discussed above).
+   </para>
+   <para>
+      The following table shows the properties of the DefaultMessageGenerator:
+      <table frame="all">
+         <title>DefaultMessageGenerator properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>senderTaskQueueSize</entry>
+                  <entry>The size of the task queue.</entry>
+                  <entry>No</entry>
+                  <entry>1000</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <simplesect>
+      <title>An example of DefaultMessageGenerator configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="DefaultMessageGenerator" threads="100">
+    <run type="time" value="60000"/>
+    <property name="senderTaskQueueSize" value="5000"/>
+ </generator>]]></programlisting>
+      <para> In the example above a <code>DefaultMessageGenerator</code> is defined to run for 60
+         seconds using 100 concurrent threads with the sender task queue with the size of 5000. The
+         main goal of limiting the queue of sender tasks is to limit memory usage and improve
+         performance of PerfCake.</para>
+   </simplesect>
+</sect2>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect3 xmlns="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations.ChartDestination" version="5.0">
+   <title>ChartDestination</title>
+   <para>
+      Creates nice charts from the results. The charts are generated under directory specified by the
+      <code>outputDir</code>
+      property.
+      The charts in the same
+      <code>group</code>
+      can be later combined together based on the names of the columns (reporter's result names).
+      All previously generated charts in the
+      <code>outputDir</code>
+      directory are placed in the final report.
+   </para>
+   <para>
+      Use with caution as the big number of results can take too long to load in the browser. Each chart has a quick view file
+      where the results can be seen while the test is still running.
+   </para>
+   <para>
+      The following table describes the ChartDestination properties:
+      <table frame="all">
+         <title>ChartDestination properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>attributes</entry>
+                  <entry>Attributes that will be stored in the chart. Each attribute is a result name of the reporter from which the results are published.</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>name</entry>
+                  <entry>Name of the chart for this measurement.</entry>
+                  <entry>No</entry>
+                  <entry>"PerfCake Results"</entry>
+               </row>
+               <row>
+                  <entry>group</entry>
+                  <entry>Group of this chart. Charts in the same group can be later matched for the column names. The group name can contain only alphanumeric
+                     characters and underscores and it is not allowed to begin with a number digit. If the group name does not follow the naming conventions, it would be converted to do so.
+                  </entry>
+                  <entry>No</entry>
+                  <entry>"default"</entry>
+               </row>
+               <row>
+                  <entry>xAxis</entry>
+                  <entry>X axis legend.</entry>
+                  <entry>No</entry>
+                  <entry>"Time"</entry>
+               </row>
+               <row>
+                  <entry>yAxis</entry>
+                  <entry>Y axis legend.</entry>
+                  <entry>No</entry>
+                  <entry>"Iterations"</entry>
+               </row>
+               <row>
+                  <entry>outputDir</entry>
+                  <entry>A name of the directory where the charts are stored.</entry>
+                  <entry>No</entry>
+                  <entry>"perfcake-chart"</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <simplesect>
+      <title>An example of ChartDestination configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="MemoryUsageReporter">
+   ...
+   <destination class="ChartDestination">
+      <period type="time" value="5000"/>
+      <property name="name" value="Memory Usage"/>
+      <property name="group" value="${perfcake.scenario}_memory"/>
+      <property name="yAxis" value="Memory Usage [MiB]"/>
+      <property name="outputDir" value="${perfcake.scenario}-charts"/>
+      <property name="attributes" value="Used,Total"/>
+   </destination>
+ <reporter>]]></programlisting>
+      <figure id="ug.reference-guide.reporting.destinations.ChartDestination.example-chart">
+         <title>ChartDestination example chart</title>
+         <graphic format="SVG" fileref="./images/ChartDestination-example.svg" scalefit="1" width="100%" align="center"/>
+      </figure>
+   </simplesect>
+</sect3>

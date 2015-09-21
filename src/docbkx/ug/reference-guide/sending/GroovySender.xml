@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.GroovySender" version="5.0">
+   <title>GroovySender</title>
+   <para>
+      Groovy sender can be used to implement the message sending in a Groovy script. By default the sender uses the
+      <code>groovy</code>
+      installed on the system, where the PerfCake is executed. PerfCake would try to find it at the following path:
+      <code>$GROOVY_HOME/bin/groovy</code>
+      on UNIX systems or
+      <code>%GROOVY_HOME%\bin\groovy</code>
+      in case of Windows, where
+      <code>GROOVY_HOME</code>
+      is an environment variable.
+   </para>
+   <para>
+      The Groovy binary doesn't have to be the one, that is
+      installed on the system. There is a possibility to use
+      <code>groovyExecutable</code>
+      property to specify, what Groovy binaries would be used to execute the target script.
+   </para>
+   <para>
+      The message configured in the scenario is passed to the Groovy script through standard input, so it can be accessed via
+      <code>System.in</code>
+      . The response is supposed to be passed back through a standard output via
+      <code>System.out</code>
+      .
+   </para>
+   <para>The following table describes all the GroovySender's properties.</para>
+   <table frame="all">
+      <title>GroovySender properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>target</entry>
+               <entry>Path or URL to the Groovy script that is to be executed.</entry>
+               <entry>Yes</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>groovyExecutable</entry>
+               <entry>Path to the Groovy binary, that would be used to execute the script.</entry>
+               <entry>No</entry>
+               <entry>$GROOVY_HOME/bin/groovy</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <simplesect>
+      <title>An example of GroovySender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="GroovySender">
+   <property name="target" value="/tmp/script.groovy"/>
+ </sender>]]></programlisting>
+   </simplesect>
+</sect2>
