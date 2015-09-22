@@ -93,9 +93,7 @@
       <simplesect xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.reporters">
          <title>Replace reporters</title>
          <para>
-            As it has been mentioned in
-            <xref linkend="ug.perfcake-features.migrating-scenarios.reporting.reporters.removed-reporters"/>
-            there are several reporters that has been removed from PerfCake and has been replaced by others.
+            There are several reporters that has been removed from PerfCake and has been replaced by others.
             The following sections illustrate that change and how to perform the migration at the same time.
          </para>
          <simplesect>
