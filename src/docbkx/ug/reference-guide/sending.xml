@@ -27,7 +27,6 @@
    <xi:include href="./sending/HttpsSender.xml"/>
    <xi:include href="./sending/ChannelDatagramSender.xml"/>
    <xi:include href="./sending/ChannelFileSender.xml"/>
-   <xi:include href="./sending/ChannelSender.xml"/>
    <xi:include href="./sending/ChannelSocketSender.xml"/>
    <xi:include href="./sending/JdbcSender.xml"/>
    <xi:include href="./sending/JmsSender.xml"/>

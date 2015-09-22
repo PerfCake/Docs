@@ -4,13 +4,17 @@
    <para>
       The sender is capable to send MQTT
       <footnote>
-         <para>http://mqtt.org/</para>
+         <para>
+            <link xlink:href="http://mqtt.org/"/>
+         </para>
       </footnote>
       messages to a remote broker and receiving responses if needed. The response is expected only if
       <code>responseTarget</code>
       property is set.
    </para>
-   <para>The target of the sender is an URL of the remote broker with the topic name in a form of<code>&lt;protocol&gt;://&lt;host&gt;:&lt;port&gt;/&lt;topic name&gt;</code>, where the message is send.
+   <para>The target of the sender is an URL of the remote broker with the topic name in a form of
+      <code>&lt;protocol&gt;://&lt;host&gt;:&lt;port&gt;/&lt;topic name&gt;</code>
+      , where the message is send.
    </para>
    <para>
       Following table shows the properties of the MqttSender:
