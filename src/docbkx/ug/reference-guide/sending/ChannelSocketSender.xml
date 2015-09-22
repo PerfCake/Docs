@@ -2,11 +2,7 @@
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.ChannelSocketSender" version="5.0">
    <title>ChannelSocketSender</title>
    <para>Sends messages through NIO
-      <footnote>
-         <para>
-            <link xlink:href="http://docs.oracle.com/javase/8/docs/api/java/nio/package-summary.html#package.description"/>
-         </para>
-      </footnote>
+      <footnoteref linkend="ug.reference-guide.sending.ChannelDatagramSender.footnote-nio"/>>
       <code>SocketChannel</code>
       <footnote>
          <para>
