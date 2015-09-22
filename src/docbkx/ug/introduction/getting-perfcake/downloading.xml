@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.downloading" version="5.0">
    <title>Downloading distribution</title>
-   <para>(TODO: fill in)</para>
+   <para>The best way to obtain a complete distribution of PerfCake is at
+      www.perfcake.org/download/. There you can find the latest stable binary release in multiple
+      formats.</para>
+   <para>We assume that you already have Java installed. For the best performance of PerfCake, we
+      need to ask you to install Java Development Kit (JDK) as we compile some classes dynamically
+      during test execution. This cannot be done just with Java Runtime Environment (JRE). We also
+      do not provide distributions with Java included in them. There are two simple reasons - first,
+      you are likely to already have one, second, we do not have enough time to maintain and test
+      such distributions.</para>
+   <para>If you are brave enough, you can even try our nightly builds from
+      https://perfcake.ci.cloudbees.com/job/PerfCake-devel/lastSuccessfulBuild/artifact/perfcake/target/.</para>
+   <para>We try not to commit broken code and the nightly builds contain all the newest features.
+      However, there are no guarantees and the features are usually not yet documented. You would
+      need to have a look in the source code to be able to fully use them.</para>
+   <para>Once you have downloaded your favourite build file, you can just uncompress (unzip,
+      untar...) it in a directory you like. This is your complete installation and the location is
+      further referenced as $PERFCAKE_HOME.</para>
 </sect2>
