@@ -25,6 +25,7 @@
       <code>System.out</code>
       .
    </para>
+   <para>The target of the sender is a path or URL to the Groovy script that is to be executed.</para>
    <para>The following table describes all the GroovySender's properties.</para>
    <table frame="all">
       <title>GroovySender properties</title>
@@ -43,16 +44,16 @@
          </thead>
          <tbody>
             <row>
-               <entry>target</entry>
-               <entry>Path or URL to the Groovy script that is to be executed.</entry>
-               <entry>Yes</entry>
-               <entry>-</entry>
-            </row>
-            <row>
                <entry>groovyExecutable</entry>
                <entry>Path to the Groovy binary, that would be used to execute the script.</entry>
                <entry>No</entry>
                <entry>$GROOVY_HOME/bin/groovy</entry>
+            </row>
+            <row>
+               <entry>classpath</entry>
+               <entry>Classpath for groovy executable - specifies where to find the class or groovy files.</entry>
+               <entry>No</entry>
+               <entry>-</entry>
             </row>
          </tbody>
       </tgroup>
@@ -60,7 +61,8 @@
    <simplesect>
       <title>An example of GroovySender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="GroovySender">
-   <property name="target" value="/tmp/script.groovy"/>
+   <target>/tmp/script.groovy"</target>
+   <property name="classpath" value="~/common-classes"/>
  </sender>]]></programlisting>
    </simplesect>
 </sect2>

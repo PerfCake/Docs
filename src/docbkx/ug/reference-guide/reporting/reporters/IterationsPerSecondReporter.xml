@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sect3 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.IterationsPerSecondReporter" version="5.0">
-   <title>IterationsPerSecondReporter (TODO: ...)</title>
+   <title>IterationsPerSecondReporter</title>
    <para>
       The reporter reports a plain high-level throughput (in the means of the number of iterations per second) from the beginning of the measuring to the moment when the results are published.
       The result is computed from the current number of processed iterations at the moment of publishing result and the time duration from the beginning (or warmup).
    </para>
+   <para>The reporter does not have any specific properties.</para>
    <para>The following table describes result names of IterationsPerSecondReporter:</para>
    <table frame="all">
       <title>IterationsPerSecondReporter result names</title>

@@ -55,7 +55,7 @@
    <simplesect>
       <title>An example of HttpsSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="HttpsSender">
-   <property name="target" value="https://domain.com/secured_url"/>
+   <target>https://domain.com/secured_url</target>
    <property name="method" value="POST"/>
    <property name="trustStore" value="${my.keystores}/cacert.jks"/>
    <property name="trustStorePassword" value="ts_passsword"/>

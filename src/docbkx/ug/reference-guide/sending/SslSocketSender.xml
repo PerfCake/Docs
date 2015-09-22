@@ -9,7 +9,7 @@
    <simplesect>
       <title>An example of SslSocketSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="SslSocketSender">
-   <property name="target" value="127.0.0.1:12345"/>
+   <target>127.0.0.1:12345</target>
  </sender>]]></programlisting>
    </simplesect>
 </sect2>

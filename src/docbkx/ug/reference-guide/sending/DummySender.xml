@@ -6,6 +6,10 @@
       <code>delay</code>
       property.
    </para>
+   <para>While the target of the sender is mandatory for all senders, it is irrelevant for the
+      <code>DummySender</code>
+      so it can be anything.
+   </para>
    <table frame="all">
       <title>DummySender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -23,12 +27,6 @@
          </thead>
          <tbody>
             <row>
-               <entry>target</entry>
-               <entry>It is mandatory for all senders but it is irrelevant for the DummySender so it can be anything.</entry>
-               <entry>Yes</entry>
-               <entry>-</entry>
-            </row>
-            <row>
                <entry>delay</entry>
                <entry>Time duration in milliseconds that the sender will simulate waiting for a response. If set to 0 (default) it will not wait at all.</entry>
                <entry>No</entry>
@@ -40,7 +38,7 @@
    <simplesect>
       <title>An example of DummySender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="DummySender">
-   <property name="target" value="out there!"/>
+   <target>out there!</target>
    <property name="delay" value="500"/>
  </sender>]]></programlisting>
    </simplesect>

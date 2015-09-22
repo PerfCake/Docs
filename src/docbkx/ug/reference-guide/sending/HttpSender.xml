@@ -25,6 +25,7 @@
       <code>messages</code>
       section of the scenario definition.
    </para>
+   <para>The target of the sender is an URL, where the message is send.</para>
    <para>
       Following table shows the properties of the HttpSender:
       <table frame="all">
@@ -43,12 +44,6 @@
                </row>
             </thead>
             <tbody>
-               <row>
-                  <entry>target</entry>
-                  <entry>An URL of the target, where the message is send.</entry>
-                  <entry>Yes</entry>
-                  <entry>-</entry>
-               </row>
                <row>
                   <entry>expectedResponseCodes</entry>
                   <entry>A comma separated list of HTTP response code(s) that is
@@ -80,7 +75,7 @@
    <simplesect>
       <title>An example of HttpSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="HttpSender">
-   <property name="target" value="http://domain.com/cool-url"/>
+   <target>http://domain.com/cool-url</target>
    <property name="method" value="GET"/>
    <property name="expectedResponseCodes" value="200,202"/>
  </sender>]]></programlisting>

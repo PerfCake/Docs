@@ -8,6 +8,10 @@
       </footnote>
       .
    </para>
+   <para>The target of the sender is an URL of the LDAP server in the form of
+      <code>ldap://&lt;server-host&gt;:&lt;server-port&gt;</code>
+      .
+   </para>
    <para>
       Following table shows the properties of the HttpSender:
       <table frame="all">
@@ -26,16 +30,6 @@
                </row>
             </thead>
             <tbody>
-               <row>
-                  <entry>target</entry>
-                  <entry>
-                     An URL of the LDAP server in the form of
-                     <code>ldap://&lt;server-host&gt;:&lt;server-port&gt;</code>
-                     .
-                  </entry>
-                  <entry>Yes</entry>
-                  <entry>-</entry>
-               </row>
                <row>
                   <entry>searchBase</entry>
                   <entry>DN (distinguished name) to use as the search base</entry>
@@ -67,7 +61,7 @@
    <simplesect>
       <title>An example of LdapSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="LdapSender">
-   <property name="target" value="ldap://localhost:389"/>
+   <target>ldap://localhost:389</target>
    <property name="searchBase" value="dc=example,dc=org"/>
    <property name="filter" value="(objectclass=*)"/>
  </sender>]]></programlisting>

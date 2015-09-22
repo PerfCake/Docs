@@ -10,6 +10,7 @@
       <code>messageFrom</code>
       proerty.
    </para>
+   <para>The target of the sender is a path to the file containing the commands that are to be executed.</para>
    <para>Message properties and headers are passed to the process as the environmental variables.</para>
    <table frame="all">
       <title>CommandSender properties</title>
@@ -28,12 +29,6 @@
          </thead>
          <tbody>
             <row>
-               <entry>target</entry>
-               <entry>A path to the file containing the commands that are to be executed.</entry>
-               <entry>Yes</entry>
-               <entry>-</entry>
-            </row>
-            <row>
                <entry>messageFrom</entry>
                <entry>
                   Specifies where the message is taken from by the sender. The supported values are
@@ -50,7 +45,7 @@
    <simplesect>
       <title>An example of CommandSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="CommandSender">
-   <property name="target" value="/tmp/script.sh"/>
+   <target>/tmp/script.sh</target>
  </sender>
  ...
  <messages>

@@ -2,6 +2,7 @@
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.JmsSender" version="5.0">
    <title>JmsSender</title>
    <para>The JmsSender can be used to send a single JMS message.</para>
+   <para>The target of the sender is a JNDI name of the JMS destination where the JMS message is send.</para>
    <para>
       The following table describes the JmsSender's properties:
       <table frame="all">
@@ -20,12 +21,6 @@
                </row>
             </thead>
             <tbody>
-               <row>
-                  <entry>target</entry>
-                  <entry>A JMS destination where the message is send.</entry>
-                  <entry>Yes</entry>
-                  <entry>-</entry>
-               </row>
                <row>
                   <entry>connectionFactory</entry>
                   <entry>A name of a JMS Connection factory.</entry>
@@ -113,7 +108,7 @@
    <simplesect>
       <title>An example of JmsSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="JmsSender">
-   <property name="target" value="jms/queue/YourQueue"/>
+   <target>jms/queue/YourQueue</target>
    <property name="receivingTimeout" value="30000"/>
    <property name="receiveAttempts" value="1"/>
    <property name="connectionFactory" value="jms/ConnFactory"/>

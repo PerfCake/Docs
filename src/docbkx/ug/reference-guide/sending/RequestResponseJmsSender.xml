@@ -11,7 +11,8 @@
    <para>
       It is based on JmsSender (see
       <xref linkend="ug.reference-guide.sending.JmsSender"/>
-      ) so it inherits its properties.
+      ) so it inherits its properties. The following table contains additional properties of the
+      <code>RequestResponseJmsSender</code>:
    </para>
    <table frame="all">
       <title>RequestResponseJmsSender properties</title>
@@ -110,7 +111,7 @@
    <simplesect>
       <title>An example of RequestResponseJmsSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="RequestResponseJmsSender">
-   <property name="target" value="jms/queue/RequestQueue"/>
+   <target>jms/queue/RequestQueue</target>
    <property name="responseTarget" value="jms/queue/ResponseQueue"/>
    <property name="receivingTimeout" value="30000"/>
    <property name="receiveAttempts" value="1"/>
