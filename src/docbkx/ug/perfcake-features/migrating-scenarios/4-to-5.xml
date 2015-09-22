@@ -51,7 +51,7 @@
             to a dedicatd element.
          </para>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="...">
- <run type="..." value="..."/>
+   <run type="..." value="..."/>
    ...
    (properties)
    ...
