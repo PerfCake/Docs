@@ -89,6 +89,18 @@
       <property name="attributes" value="Used,Total"/>
    </destination>
  <reporter>]]></programlisting>
+      <para>
+         In the example above there is a
+         <code>MemoryUsageReporter</code>
+         configured to publish memory usage report into
+         a chart. The memory usage data is gathered each 5 seconds and the chart is supposed to be showing used and total memory
+         (results taken from
+         <code>Used</code>
+         and
+         <code>Total</code>
+         attributes of the<code>MemoryUsageReporter</code>.
+         The resulting chart is shown in<xref linkend="ug.reference-guide.reporting.destinations.ChartDestination.example-chart"/>.
+      </para>
       <figure id="ug.reference-guide.reporting.destinations.ChartDestination.example-chart">
          <title>ChartDestination example chart</title>
          <graphic format="SVG" fileref="./images/ChartDestination-example.svg" scalefit="1" width="100%" align="center"/>

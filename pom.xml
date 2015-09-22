@@ -50,7 +50,7 @@
    <properties>
       <user.guide.src>perfcake-user-guide.xml</user.guide.src>
       <developer.guide.src>perfcake-developers-guide.xml</developer.guide.src>
-      <version.docbkx>2.0.15</version.docbkx>
+      <version.docbkx>2.0.16</version.docbkx>
    </properties>
    <build>
       <pluginManagement>
@@ -100,6 +100,7 @@
                   <sectionLabelIncludesComponentLabel>true</sectionLabelIncludesComponentLabel>
                   <tableFrameBorderThickness>2px</tableFrameBorderThickness>
                   <tableCellBorderThickness>1px</tableCellBorderThickness>
+                  <tocSectionDepth>3</tocSectionDepth>
                   <formalTitlePlacement>
                      figure after
                      table after

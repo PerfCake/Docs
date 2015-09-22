@@ -52,13 +52,16 @@
    </para>
    <simplesect>
       <title>An example of DefaultMessageGenerator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="DefaultMessageGenerator" threads="100">
-    <run type="time" value="60000"/>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="time" value="60000"/>
+ <generator class="DefaultMessageGenerator" threads="100">
     <property name="senderTaskQueueSize" value="5000"/>
  </generator>]]></programlisting>
-      <para> In the example above a <code>DefaultMessageGenerator</code> is defined to run for 60
+      <para>In the example above a
+         <code>DefaultMessageGenerator</code>
+         is defined to run for 60
          seconds using 100 concurrent threads with the sender task queue with the size of 5000. The
          main goal of limiting the queue of sender tasks is to limit memory usage and improve
-         performance of PerfCake.</para>
+         performance of PerfCake.
+      </para>
    </simplesect>
 </sect2>

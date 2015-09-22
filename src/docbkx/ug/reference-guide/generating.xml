@@ -8,17 +8,16 @@
          the load (sending the messages) is handled.
          It is capable of generating the load for a specified duration which can be an amount of time or a number of iterations using a specified
          number of concurrent threads. To define the duration and its length you have to
-         configure a generator
+         configure a
          <code>run</code>
          of the specified type in the scenario.
       </para>
       <para>
-         Following table shows the generator
+         Following table shows the
          <code>run</code>
          options:
          <table frame="all">
             <title>
-               Generator
                <code>run</code>
                options
             </title>
@@ -28,7 +27,6 @@
                <thead>
                   <row>
                      <entry>
-                        Generator
                         <code>run</code>
                         type
                      </entry>
@@ -61,20 +59,21 @@
          <title>
             An example of the
             <code>run</code>
-            configuration in a generator:
+            configuration in a scenario:
          </title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="..." threads="...">
-    <run type="time" value="10000"/>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="time" value="10000"/>
+ <generator class="..." threads="...">
     ...
     (properties)
     ...
  </generator>]]></programlisting>
-         <para>In the example above a generator is defined to run for 10 seconds.</para>
+         <para>In the example above a scenario is defined to run for 10 seconds.</para>
       </simplesect>
       <para>The following sections describes the generators that can be
          used in PerfCake to generate the load.
       </para>
    </simplesect>
    <xi:include href="./generating/DefaultMessageGenerator.xml"/>
+   <xi:include href="./generating/ConstantSpeedMessageGenerator.xml"/>
    <xi:include href="./generating/RampUpDownGenerator.xml"/>
 </sect1>

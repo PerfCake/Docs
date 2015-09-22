@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.extending.client-libraries" version="5.0">
+<sect2 xmlns="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.extending.client-libraries" version="5.0">
    <title>Client libraries</title>
    <para>
-         Some of the PerfCake's components need additional stuff to work properly. For example:
-         <itemizedlist><listitem>JMS based senders need JMS provider's specific client jar files,</listitem><listitem>JDBC based sender needs database specific JDBC driver.</listitem></itemizedlist>
-      </para>
+      Some of the PerfCake's components need additional stuff to work properly. For example:
+      <itemizedlist>
+         <listitem>JMS based senders need JMS provider's specific client jar files,</listitem>
+         <listitem>JDBC based sender needs database specific JDBC driver.</listitem>
+      </itemizedlist>
+   </para>
    <para>
-         To add the necessary client libraries and the dependencies, place it all under the
-         <code>$PERFCAKE_HOME/lib/ext</code>
-         directory.
-      </para>
+      To add the necessary client libraries and the dependencies, place it all under the
+      <code>$PERFCAKE_HOME/lib/ext</code>
+      directory.
+   </para>
 </sect2>

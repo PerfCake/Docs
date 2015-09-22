@@ -4,6 +4,7 @@
    <para>
       The generator is based on the
       <code>DefaultMessageGenerator</code>
+      (See<xref linkend="ug.reference-guide.generating.generators.DefaultMessageGenerator"/>)
       but is able to change the number of threads during the execution.
       The number of threads evolution during execution is illustrated in
       <xref linkend="ug.reference-guide.generating.generators.RampUpDownGenerator.time-chart"/>
@@ -217,8 +218,8 @@
    </para>
    <simplesect>
       <title>An example of RampUpDownGenerator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="RampUpDownGenerator" threads="20">
-   <run type="time" value="60000"/>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="time" value="60000"/>
+ <generator class="RampUpDownGenerator" threads="20">
    <property name="preThreadCount" value="10"/>
    <property name="preDuration" value="10000"/>
    <property name="rampUpStep" value="2"/>

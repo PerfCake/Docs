@@ -8,7 +8,9 @@
    </para>
    <para>
       The validator creates an index file and a separate file for each response. A writable directory must
-      be specified using the <code>dictionaryDirectory</code> property. The default index file name can be redefined. The response file names are based on hash codes of
+      be specified using the
+      <code>dictionaryDirectory</code>
+      property. The default index file name can be redefined. The response file names are based on hash codes of
       he original messages. Empty, null or equal messages will overwrite the file but this is not the intended use
       of this validator. Index file is never overwritten, if you really insist on recreating it, please rename or
       delete the file manually (this is for safety reasons).

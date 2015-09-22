@@ -2,7 +2,7 @@
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending" status="draft" version="5.0">
    <title>Where - Sending messages</title>
    <para>As it was mentioned before, a sender is an object responsible for sending a message to the tested system and receiving the response
-     in a specific way via a specific transport.
+      in a specific way via a specific transport.
    </para>
    <para>In the following sections you can find a complete description of all
       senders, that can be used by PerfCake including all of their properties.

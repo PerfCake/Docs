@@ -33,5 +33,6 @@
          </tbody>
       </tgroup>
    </table>
-   <para>For the details about the migration of the replaced reporters see <xref linkend="ug.reference-guide.migrating.2-to-3.steps.reporters"/>.</para>
+   <para>For the details about the migration of the replaced reporters see<xref linkend="ug.reference-guide.migrating.2-to-3.steps.reporters"/>.
+   </para>
 </sect3>
