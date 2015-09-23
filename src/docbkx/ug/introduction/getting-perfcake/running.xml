@@ -5,21 +5,28 @@
       unpacked the binary distribution, you can find a shell script and a Windows bat script in the
       $PERFCAKE_HOME/bin directory. These are executables that can find your JDK and run PerfCake
       properly. The scripts were tested on Linux, Windows and MacOS (in this case, some command line
-      tweaking might be necessary).</para>
+      tweaking might be necessary).
+   </para>
    <para>In case of building from source code, please refer to the Developers' Guide for more
       instructions. Basically, the easiest way is to create the binary distribution from source code
       and follow the usual steps. It is also possible to run PerfCake directly by invoking the java
-      command but this needs to take care of the classpath configuration.</para>
+      command but this needs to take care of the classpath configuration.
+   </para>
    <para>It is also possible to run PerfCake using a Maven plugin or its API. These ways are
-      described either in the Developers' Guide or will be presented in the chapter with use
-      cases.</para>
+      described either in the Developers' Guide or will be presented in
+      <xref linkend="ug.general-usage"/>
+      .
+   </para>
    <para>You can verify your installation by invoking the following command in the $PERFCAKE_HOME
       directory. This uses a 3rd party HTTP test server, so try not to over-use it. Please note that
-      you need to be online for this to work.</para>
-   <para>./bin/perfcake.sh -s http -Dserver.host=httpbin.org</para>
+      you need to be online for this to work.
+   </para>
+   <para>
+      <code>$ ./bin/perfcake.sh -s http -Dserver.host=httpbin.org</code>
+   </para>
    <para>Typical output of this command is:</para>
    <para>
-      <programlisting>2015-09-22 18:35:51,709 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/mvecera/work/PerfCake/tmp/perfcake-5.0-SNAPSHOT/resources/scenarios/http.xml
+      <programlisting><![CDATA[2015-09-22 18:35:51,709 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:~/perfcake-5.0/resources/scenarios/http.xml
 2015-09-22 18:35:52,174 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 5.0 ===
 2015-09-22 18:35:52,175 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2015-09-22 18:35:52,176 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 296ns. A single thread is now able to measure maximum of 3378378 iterations/second.
@@ -51,7 +58,10 @@
 2015-09-22 18:36:22,256 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end.
 2015-09-22 18:36:22,257 INFO  {org.perfcake.reporting.ReportManager} Reporting final results:
 2015-09-22 18:36:22,258 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
-2015-09-22 18:36:22,421 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===
-</programlisting>
+2015-09-22 18:36:22,421 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===]]></programlisting>
+   </para>
+   <para>For more details on running perfcake from a command line see
+      <xref linkend="ug.perfcake-features.configuration.cli"/>
+      .
    </para>
 </sect2>

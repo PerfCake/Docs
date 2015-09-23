@@ -12,27 +12,27 @@
       want to measure/report. You can also ask PerfCake to validate your messages or use sequences
       to make each request uniqe. These advanced concepts are described later.</para>
    <para>The scenario specification is pretty self-explaining. You just need to know what are the
-      possibilities (see Reference Guide for hints on this).</para>
+      possibilities (see <xref linkend="ug.reference-guide"/> for hints on this).</para>
    <para>
-      <programlisting>&lt;?xml version="1.0" encoding="utf-8"?>
-&lt;scenario xmlns="urn:perfcake:scenario:5.0">
-   &lt;run type="${perfcake.run.type:time}" value="${perfcake.run.duration:30000}"/>
-   &lt;generator class="DefaultMessageGenerator" threads="${perfcake.thread.count:100}"/>
-   &lt;sender class="HttpSender">
-      &lt;target>http://${server.host}/post&lt;/target>
-      &lt;property name="method" value="POST"/>
-   &lt;/sender>
-   &lt;reporting>
-      &lt;reporter class="IterationsPerSecondReporter">
-         &lt;destination class="ConsoleDestination">
-            &lt;period type="time" value="1000" />
-         &lt;/destination>
-      &lt;/reporter>
-   &lt;/reporting>
-   &lt;messages>
-      &lt;message uri="plain.txt"/>
-   &lt;/messages>
-&lt;/scenario></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<scenario xmlns="urn:perfcake:scenario:5.0">
+  <run type="${perfcake.run.type:time}" value="${perfcake.run.duration:30000}"/>
+  <generator class="DefaultMessageGenerator" threads="${perfcake.thread.count:100}"/>
+  <sender class="HttpSender">
+     <target>http://${server.host}/post&lt;/target>
+     <property name="method" value="POST"/>
+  </sender>
+  <reporting>
+     <reporter class="IterationsPerSecondReporter">
+        <destination class="ConsoleDestination">
+           <period type="time" value="1000" />
+        </destination>
+     </reporter>
+  </reporting>
+  <messages>
+     <message uri="plain.txt"/>
+  </messages>
+</scenario>]]></programlisting>
    </para>
    <para>As you can see, the simplest scenario runs for 30000ms = 3 seconds. It generates
       messages/requests using 100 threads and sends them via HTTP to the server specified in a

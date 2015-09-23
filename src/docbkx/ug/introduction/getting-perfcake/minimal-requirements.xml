@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.minimal-requirements" version="5.0">
    <title>Minimal requirements</title>
-   <para>As was mentioned in Section 1.1 Downloading Distribution, the main requirement is having
+   <para>As was mentioned in
+      <xref linkend="ug.introduction.getting-perfcake.downloading"/>
+      , the main requirement is having
       Java Development Kit version 8 installed in your environment. Other requirements on the
       hardware depend on what you expect from PerfCake. The memory and CPU power demands depand
-      mainly on your performance scenario.</para>
+      mainly on your performance scenario.
+   </para>
    <para>Some components also work only with an active Internet connection. For example chart output
       is based on Google Charts and they do not work offline. We are considering to provide a
-      different solution and make ParfCake work completely offline in the future.</para>
+      different solution and make PerfCake work completely offline in the future.
+   </para>
 </sect2>
