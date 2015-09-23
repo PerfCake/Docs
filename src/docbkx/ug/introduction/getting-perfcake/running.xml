@@ -60,8 +60,5 @@
 2015-09-22 18:36:22,258 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
 2015-09-22 18:36:22,421 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===]]></programlisting>
    </para>
-   <para>For more details on running perfcake from a command line see
-      <xref linkend="ug.perfcake-features.configuration.cli"/>
-      .
-   </para>
+   <para>For more details on running perfcake from a command line see <xref linkend="ug.perfcake-features.configuration.cli"/></para>
 </sect2>

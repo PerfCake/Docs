@@ -16,10 +16,12 @@
    <para>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <scenario xmlns="urn:perfcake:scenario:5.0">
-  <run type="${perfcake.run.type:time}" value="${perfcake.run.duration:30000}"/>
-  <generator class="DefaultMessageGenerator" threads="${perfcake.thread.count:100}"/>
+  <run type="${perfcake.run.type:time}"
+       value="${perfcake.run.duration:30000}"/>
+  <generator class="DefaultMessageGenerator"
+       threads="${perfcake.thread.count:100}"/>
   <sender class="HttpSender">
-     <target>http://${server.host}/post&lt;/target>
+     <target>http://${server.host}/post</target>
      <property name="method" value="POST"/>
   </sender>
   <reporting>
