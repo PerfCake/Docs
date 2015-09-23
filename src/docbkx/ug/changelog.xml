@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.changelog" status="draft" version="5.0">
    <title>Changelog</title>
-   <para>(TODO: fill in)</para>
+   <xi:include href="./changelog/release-5.0.xml"/>
+   <xi:include href="./changelog/release-4.1.xml"/>
+   <xi:include href="./changelog/release-4.0.xml"/>
+   <xi:include href="./changelog/release-3.3.xml"/>
+   <xi:include href="./changelog/release-3.2.xml"/>
+   <xi:include href="./changelog/release-3.1.xml"/>
+   <xi:include href="./changelog/release-3.0.xml"/>
+   <xi:include href="./changelog/release-2.1.xml"/>
+   <xi:include href="./changelog/release-2.0.xml"/>
+   <xi:include href="./changelog/release-1.0.1.xml"/>
+   <xi:include href="./changelog/release-1.0.xml"/>
+   <xi:include href="./changelog/release-0.3.xml"/>
    <xi:include href="./changelog/scenario-format.xml"/>
 </chapter>

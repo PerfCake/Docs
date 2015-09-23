@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.changelog.release-1.0.1" version="5.0">
+   <title>Release 1.0.1</title>
+   <simplesect>
+      <title>Bug fixes</title>
+      <para>
+         <itemizedlist>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/82 "/>
+                  - GroovySender resolves default groovy path wrong.
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/83 "/>
+                  - Default scenarios and messages directories are resolved wrong in binary distribution.
+               </simpara>
+            </listitem>
+         </itemizedlist>
+      </para>
+   </simplesect>
+</sect1>

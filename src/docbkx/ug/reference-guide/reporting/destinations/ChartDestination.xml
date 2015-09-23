@@ -99,7 +99,9 @@
          and
          <code>Total</code>
          attributes of the<code>MemoryUsageReporter</code>.
-         The resulting chart is shown in<xref linkend="ug.reference-guide.reporting.destinations.ChartDestination.example-chart"/>.
+         The resulting chart is shown in
+         <xref linkend="ug.reference-guide.reporting.destinations.ChartDestination.example-chart"/>
+         .
       </para>
       <figure id="ug.reference-guide.reporting.destinations.ChartDestination.example-chart">
          <title>ChartDestination example chart</title>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.changelog.release-2.0" version="5.0">
+   <title>Release 2.0</title>
+   <simplesect>
+      <title>Features</title>
+      <para>
+         <itemizedlist>
+            <listitem>
+               <simpara>Scenario schema namespace changed to
+                  <code>"urn:perfcake:scenario:2.0"</code>.
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>Added
+                  <code>-pf</code>
+                  parameter to CLI for specifying a property file.
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>Added a possibility to add extra jars to the classpath (lib/ext directory).</simpara>
+            </listitem>
+            <listitem>
+               <simpara>Added a mechanism for extending PerfCake via plugins (lib/plugins directory).</simpara>
+            </listitem>
+            <listitem>
+               <simpara>Added
+                  <code>appendStrategy</code>
+                  property to
+                  <code>CSVDestination</code>
+                  .
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>Added a new generator -
+                  <code>RampUpDownGenerator</code>
+                  .
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>Added a new sender -
+                  <code>WebSocketSender</code>
+                  .
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>Implemented a memory leak detection feature into
+                  <code>MemoryUsageReporter</code>
+                  .
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>Improved sender pool implementation.</simpara>
+            </listitem>
+            <listitem>
+               <simpara>Improved performance.</simpara>
+            </listitem>
+            <listitem>
+               <simpara>Increased test coverage.</simpara>
+            </listitem>
+         </itemizedlist>
+      </para>
+   </simplesect>
+   <simplesect>
+      <title>Bug fixes</title>
+      <para>
+         <itemizedlist>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/77"/>
+                  - Exceptions thrown by senders are not processed by the logging subsystem.
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/84"/>
+                  - CSVDestination appends new records into the output file if the one exists and losts the warmUp column.
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/86"/>
+                  - MemoryUsageReporter collects data for memory leak detection analysis incorrectly.
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/87"/>
+                  - Bad maxIterations handling after warm up.
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/97"/>
+                  - Accumulating the results leads to NPE because of concurrency.
+               </simpara>
+            </listitem>
+         </itemizedlist>
+      </para>
+   </simplesect>
+</sect1>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.changelog.release-1.0" version="5.0">
+   <title>Release 1.0</title>
+   <simplesect>
+      <title>Features</title>
+      <para>
+         <itemizedlist>
+            <simpara>Basic performance testing functionality including Generators, Senders, Reporters, Destinations and Validators.</simpara>
+         </itemizedlist>
+      </para>
+   </simplesect>
+   <simplesect>
+      <title>Bug fixes</title>
+      <para>
+         <itemizedlist>
+            <simpara>Many bugs fixed</simpara>
+         </itemizedlist>
+      </para>
+   </simplesect>
+</sect1>
