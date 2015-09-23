@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-sending.validators.DummySender" version="5.0">
+   <title>DummySender</title>
+   <para>
+      This sender is intended to work as a dummy sender and to be used for testing scenarios and developing purposes. It does not actually send any message. It can simulate a synchronous waiting for a reply by setting the
+      <code>delay</code>
+      property.
+   </para>
+   <para>While the target of the sender is mandatory for all senders, it is irrelevant for the
+      <code>DummySender</code>
+      so it can be anything.
+   </para>
+   <table frame="all">
+      <title>DummySender properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>delay</entry>
+               <entry>Time duration in milliseconds that the sender will simulate waiting for a response. If set to 0 (default) it will not wait at all.</entry>
+               <entry>No</entry>
+               <entry>"0"</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <simplesect>
+      <title>An example of DummySender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="DummySender">
+   <target>out there!</target>
+   <property name="delay" value="500"/>
+ </sender>]]></programlisting>
+   </simplesect>
+</sect2>

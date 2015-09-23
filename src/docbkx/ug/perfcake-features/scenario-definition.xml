@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.scenario-definition" version="5.0">
+   <title>Performance scenario definition</title>
+   <para>
+      Scenario is a receipt for telling PerfCake what to do. You can specify how PerfCake would
+      generate load by configuring a generator, where and what to send by defining a sender and messages.
+      To get any measured results such as an average throughput or a memory usage you can use reporting capabilities.
+      To check that the responses are correct a validation is available for you to set in the
+      scenario. There is also a possibility to specify scenario meta-data by setting the scenario's properties.
+   </para>
+   <xi:include href="./scenario-definition/xml.xml"/>
+   <xi:include href="./scenario-definition/dsl.xml"/>
+   <xi:include href="./scenario-definition/ide-plugins.xml"/>
+   <xi:include href="scenario-definition/filtering-properties.xml"/>
+</sect1>

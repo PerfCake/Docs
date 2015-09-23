@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE book>
 <book xmlns="http://docbook.org/ns/docbook" xmlns:db="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0">
-   <title>PerfCake 4.x</title>
+   <title>PerfCake 5.x</title>
    <subtitle>User Guide</subtitle>
    <info>
       <authorgroup>
@@ -21,14 +21,12 @@
    </info>
    <toc/>
    <xi:include href="chapters/acknowledgements.xml"/>
-   <xi:include href="chapters/ug-introduction.xml"/>
-   <xi:include href="chapters/ug-running.xml"/>
-   <xi:include href="chapters/ug-scenario.xml"/>
-   <xi:include href="chapters/ug-generating.xml"/>
-   <xi:include href="chapters/ug-sending.xml"/>
-   <xi:include href="chapters/ug-reporting.xml"/>
-   <xi:include href="chapters/ug-validation.xml"/>
-   <xi:include href="chapters/ug-extending.xml"/>
-   <xi:include href="chapters/ug-migrating.xml"/>
-   <xi:include href="chapters/ug-troubleshooting.xml"/>
+   <xi:include href="./ug/introduction.xml"/>
+   <xi:include href="./ug/perfcake-features.xml"/>
+   <xi:include href="./ug/general-usage.xml"/>
+   <xi:include href="./ug/reference-guide.xml"/>
+   <xi:include href="./ug/result-repository.xml"/>
+   <xi:include href="./ug/extending.xml"/>
+   <xi:include href="./ug/troubleshooting.xml"/>
+   <xi:include href="./ug/changelog.xml"/>
 </book>

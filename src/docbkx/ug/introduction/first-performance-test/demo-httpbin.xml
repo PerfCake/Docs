@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance-test.demo-httpbin" version="5.0">
+   <title>First out-of-the box demo with httpbin.org</title>
+   <para>Performance test execution in PerfCake is driven by a so called scenario. Scenarios are by
+      default placed in $PERFCAKE_HOME/resources/scenarios. You can place them in any location you
+      want, or they can be even online. But just this location is searched automatically. You even
+      do not need to specify the file extension when running a scenario. There are couple of
+      supported formats (see Section 2.1 for a complete list) that are recognized
+      automatically.</para>
+   <para>The scenario simply specifies how the load should be generated, where the
+      load/requests/messages should be sent to, what the request should look like and what do you
+      want to measure/report. You can also ask PerfCake to validate your messages or use sequences
+      to make each request uniqe. These advanced concepts are described later.</para>
+   <para>The scenario specification is pretty self-explaining. You just need to know what are the
+      possibilities (see <xref linkend="ug.reference-guide"/> for hints on this).</para>
+   <para>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<scenario xmlns="urn:perfcake:scenario:5.0">
+  <run type="${perfcake.run.type:time}" value="${perfcake.run.duration:30000}"/>
+  <generator class="DefaultMessageGenerator" threads="${perfcake.thread.count:100}"/>
+  <sender class="HttpSender">
+     <target>http://${server.host}/post&lt;/target>
+     <property name="method" value="POST"/>
+  </sender>
+  <reporting>
+     <reporter class="IterationsPerSecondReporter">
+        <destination class="ConsoleDestination">
+           <period type="time" value="1000" />
+        </destination>
+     </reporter>
+  </reporting>
+  <messages>
+     <message uri="plain.txt"/>
+  </messages>
+</scenario>]]></programlisting>
+   </para>
+   <para>As you can see, the simplest scenario runs for 30000ms = 3 seconds. It generates
+      messages/requests using 100 threads and sends them via HTTP to the server specified in a
+      property (see below for explanation) using the POST method. Performance test results are
+      reported to the console every 1000ms or 1 second. The content of the messages that are being
+      send is specified in the plain.txt file.</para>
+   <para>As you can see, there are some strange construts at a few places in the scenario. These are
+      ${property:default}. These are replaced by real values specified at the command line. If they
+      are not specified, they are replaced by the default values (configured following the colon).
+      If there is no default value and you do not pass the value at the command line, an empty
+      string is used instead. These properties can be used to dynamically change the behavior of the
+      scenario without actually changing the file.</para>
+   <para>To run the scenario, we can simply invoke PerfCake via the shell/bat script as described
+      earlier. The only mandatory command line argument is -s &lt;scenario name>. To provide
+      property values we use -Dproperty=value. That's it. Try it once more.</para>
+   <para><code>./bin/perfcake.sh -s http -Dserver.host=httpbin.org</code></para>
+</sect2>

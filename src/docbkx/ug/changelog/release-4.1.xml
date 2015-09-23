@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.changelog.release-4.1" version="5.0">
+   <title>Release 4.1</title>
+   <simplesect>
+      <title>Features</title>
+      <para>
+         <itemizedlist>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/200"/>
+                  - Rename agent's artifact ID to "perfcake-agent" to increase lucidity
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/187"/>
+                  - Make sure PerfCakeAgent can be attached to various JDK versions.
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/186"/>
+                  - Introduce Generator interface
+               </simpara>
+            </listitem>
+         </itemizedlist>
+      </para>
+   </simplesect>
+   <simplesect>
+      <title>Bug fixes</title>
+      <para>
+         <itemizedlist>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/202"/>
+                  - Fix timezone handling in chart destination
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/199"/>
+                  - Useless test dependencies are present in PerfCake distro
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/193"/>
+                  - Sources JAR found in distro can cause main script to fail
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/192"/>
+                  - Source jars are part of binary distribution
+               </simpara>
+            </listitem>
+         </itemizedlist>
+      </para>
+   </simplesect>
+</sect1>

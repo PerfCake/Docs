@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect3 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.MemoryUsageReporter" version="5.0">
+   <title>MemoryUsageReporter</title>
+   <para>
+      The reporter is able to report the current memory usage of the tested system at the moment when the results are published.
+      It requires PerfCake agent to be installed in the tested system's JVM.
+   </para>
+   <para>
+      To be able to use MemoryUsageReporter you need to attach PerfCake agent to the tested system's JVM. The PerfCake agent is a part of binary distribution (PerfCake Agent's JAR archive).
+      The agent is configurable by following properties:
+   </para>
+   <table frame="all">
+      <title>PerfCake agent properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>hostname</entry>
+               <entry>IP address of hostname where PerfCake agent is listening.</entry>
+               <entry>No</entry>
+               <entry>"localhost"</entry>
+            </row>
+            <row>
+               <entry>port</entry>
+               <entry>A port number where PerfCake agent is listening.</entry>
+               <entry>No</entry>
+               <entry>"8850"</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <para>
+      To attach the agent to the tested system's JVM, append the following JVM argument to the executing java command or use JAVA_OPTS environment variable.
+   </para>
+   <simplesect>
+      <title>JVM argument to attach PerfCake agent to the tested JVM</title>
+      <programlisting><![CDATA["... -javaagent:<perfcake_agent_jar_path>=hostname=<hostname>,port=<port>"]]></programlisting>
+   </simplesect>
+   <simplesect>
+      <title>PerfCake JVM argument example</title>
+      <programlisting><![CDATA[JAVA_OPTS="... -javaagent:$PERFCAKE_HOME/lib/perfcake-agent-5.0.jar=port=8850"]]></programlisting>
+   </simplesect>
+   <para>
+      Once you have started the tested system up, you should see the following line in the system's console output:
+      <programlisting><![CDATA[...
+PerfCakeAgent > Listening at localhost on port 8850
+...]]></programlisting>
+   </para>
+   <para>Once you have the PerfCake agent attached and the tested system is up and running you can use the MemoryUsageReporter to measure the memory usage of the tested system.
+   </para>
+   <para>
+      MemoryUsageReporter is capable of possible memory leak detection. It is disabled by default. Once enabled,
+      the reporter periodically gathers memory usage from the tested system using via an ordinary way (using the PerfCakeAgent) and remembers
+      a window of N last measured values. Once the window is filled, the reporter uses a linear regression analysis over the
+      data from the time window to compute an used memory trend. The possible memory leak is considered detected when the slope of the memory trend exceeds
+      the specified slope threshold. All the period, the window size and the slope threshold are configurable via particular reporter's properties.
+   </para>
+   <para>
+      The reporter is also able to dump memory when a possible memory leak is detected. The feature can be enabled by the
+      <code>memoryDumpOnLeak</code>
+      property and the memory dump is then saved in a file which can be specified by the
+      <code>memoryDumpFile</code>
+      property. If not specified the dump name will be generated as
+      <code>"dump-" + System.currentTimeMillis() + ".bin"</code>
+      in case of the Java agent that is part of PerfCake.
+   </para>
+   <para>
+      The reporter can ask the agent to perform a garbage collection each time the memory usage of the
+      tested system is measured and published.
+      Since the garbage collection is CPU intensive operation be careful to enable it and to how often
+      the memory usage is measured because it will have a significant impact on the measured system and naturally the
+      measured results too.
+   </para>
+   <para>The reporter has the following properties:</para>
+   <table frame="all">
+      <title>MemoryUsageReporter properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>agentHostname</entry>
+               <entry>An IP address of hostname where the PerfCake agent is listening.</entry>
+               <entry>No</entry>
+               <entry>"localhost"</entry>
+            </row>
+            <row>
+               <entry>agentPort</entry>
+               <entry>A port number where the PerfCake agent is listening.</entry>
+               <entry>No</entry>
+               <entry>"8850"</entry>
+            </row>
+            <row>
+               <entry>memoryDumpOnLeak</entry>
+               <entry>The property to make a memory dump, when possible memory leak is detected.
+                  The MemoryUsageReporter will send a command to PerfCake agent that will create a heap dump.
+               </entry>
+               <entry>No</entry>
+               <entry>"false"</entry>
+            </row>
+            <row>
+               <entry>memoryDumpFile</entry>
+               <entry>The property specifying the name of the memory dump file. The full "file:" URI is supported.
+               </entry>
+               <entry>No</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>memoryLeakDetectionEnabled</entry>
+               <entry>Enables or disables the memory leak detection.</entry>
+               <entry>No</entry>
+               <entry>"false"</entry>
+            </row>
+            <row>
+               <entry>memoryLeakDetectionMonitoringPeriod</entry>
+               <entry>A time period in ms in which the memory leak detection mechanism gathers memory usage data.</entry>
+               <entry>No</entry>
+               <entry>"500"</entry>
+            </row>
+            <row>
+               <entry>memoryLeakSlopeThreshold</entry>
+               <entry>The used memory trend slope threshold. The slope's unit is a byte per second.</entry>
+               <entry>No</entry>
+               <entry>"1024"</entry>
+            </row>
+            <row>
+               <entry>performGcOnMemoryUsage</entry>
+               <entry>The property is used to enable/disable performing garbage collection each time the memory usage of the
+                  tested system is measured and published. Since the garbage collection is CPU intensive operation be careful to enable it and to how often
+                  the memory usage is measured because it will have a significant impact on the measured system and naturally the
+                  measured results too.
+               </entry>
+               <entry>No</entry>
+               <entry>"false"</entry>
+            </row>
+            <row>
+               <entry>usedMemoryTimeWindowSize</entry>
+               <entry>The used memory time window size. (Number of records in the memory data set used for the statistical analysis).</entry>
+               <entry>No</entry>
+               <entry>"100"</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <para>The following table describes result names of MemoryUsageRepoter:</para>
+   <table frame="all">
+      <title>MemoryUsageReporter result names</title>
+      <tgroup cols="2" align="left" colsep="1" rowsep="1">
+         <colspec colname="result-name" colwidth="1*"/>
+         <colspec colname="description" colwidth="3*"/>
+         <thead>
+            <row>
+               <entry>Result name</entry>
+               <entry>Description</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>Used</entry>
+               <entry>The amount of currently used memory in the Java Virtual Machine.</entry>
+            </row>
+            <row>
+               <entry>Total</entry>
+               <entry>The total amount of memory in the Java virtual machine in MiB.</entry>
+            </row>
+            <row>
+               <entry>Max</entry>
+               <entry>The maximum amount of memory that the Java virtual machine will attempt to use in MiB</entry>
+            </row>
+            <row>
+               <entry>UsedTrend</entry>
+               <entry>The memory usage regression line slope in B/s.</entry>
+            </row>
+            <row>
+               <entry>MemoryLeak</entry>
+               <entry>A boolean value indicating whether a possible memory leak has been detected yet.</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <simplesect>
+      <title>An example of MemoryUsageReporter configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="MemoryUsageReporter">
+   <property name="agentHostname" value="localhost"/>
+   <property name="agentPort" value="8850"/>
+   ...
+   (destinations)
+   ...
+ </reporter>]]></programlisting>
+   </simplesect>
+</sect3>

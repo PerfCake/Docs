@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating.generators.ConstantSpeedMessageGenerator" version="5.0">
+   <title>ConstantSpeedMessageGenerator</title>
+   <para>
+      This generator is based on
+      <code>DefaultMessageGenerator</code>
+      (See<xref linkend="ug.reference-guide.generating.generators.DefaultMessageGenerator"/>). It tries to achieve given
+      speed of messages per second. Uses the underlying buffer of sender tasks of<code>DefaultMessageGenerator</code>.
+      This buffer smoothens the changes in the speed. If you need the generator to change its speed
+      more aggressively, configure
+      <code>senderTaskQueueSize</code>
+      property.
+   </para>
+   <para>
+      The following table shows the properties of the ConstantSpeedMessageGenerator:
+      <table frame="all">
+         <title>ConstantSpeedMessageGenerator properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>speed</entry>
+                  <entry>Desired constant speed in messages per second.</entry>
+                  <entry>No</entry>
+                  <entry>5000</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <simplesect>
+      <title>An example of ConstantSpeedMessageGenerator configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="time" value="60000"/>
+ <generator class="ConstantSpeedMessageGenerator" threads="100">
+    <property name="speed" value="10000"/>
+ </generator>]]></programlisting>
+      <para>In the example above a
+         <code>ConstantSpeedMessageGenerator</code>
+         is defined to run for 60
+         seconds using 100 concurrent threads with the desired constant speed of 10000 messages per second.
+      </para>
+   </simplesect>
+</sect2>

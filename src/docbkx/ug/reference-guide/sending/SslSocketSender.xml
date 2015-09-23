@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.SslSocketSender" version="5.0">
+   <title>SslSocketSender</title>
+   <para>
+      SslSocketSender is similar to the PlainSocketSender (see
+      <xref linkend="ug.reference-guide.sending.PlainSocketSender"/>
+      ) and so it shares the same properties. The difference is that the SslSocketSender uses a SSL socket.
+   </para>
+   <simplesect>
+      <title>An example of SslSocketSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="SslSocketSender">
+   <target>127.0.0.1:12345</target>
+ </sender>]]></programlisting>
+   </simplesect>
+</sect2>

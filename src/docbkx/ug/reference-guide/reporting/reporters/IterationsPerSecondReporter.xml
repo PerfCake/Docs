@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect3 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.IterationsPerSecondReporter" version="5.0">
+   <title>IterationsPerSecondReporter</title>
+   <para>
+      The reporter reports a plain high-level throughput (in the means of the number of iterations per second) from the beginning of the measuring to the moment when the results are published.
+      The result is computed from the current number of processed iterations at the moment of publishing result and the time duration from the beginning (or warmup).
+   </para>
+   <para>The reporter does not have any specific properties.</para>
+   <para>The following table describes result names of IterationsPerSecondReporter:</para>
+   <table frame="all">
+      <title>IterationsPerSecondReporter result names</title>
+      <tgroup cols="2" align="left" colsep="1" rowsep="1">
+         <colspec colname="result-name" colwidth="1*"/>
+         <colspec colname="description" colwidth="3*"/>
+         <thead>
+            <row>
+               <entry>Result name</entry>
+               <entry>Description</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>Result</entry>
+               <entry>The current throughput in iterations/s</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <simplesect>
+      <title>An example of IterationsPerSecondReporter configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="IterationsPerSecondReporter">
+   ...
+   (destinations)
+   ...
+ </reporter>]]></programlisting>
+      <para>
+         In the example above there is a
+         <code>IterationsPerSecondReporter</code>
+         configured to report the current and the average value of the throughput.
+      </para>
+   </simplesect>
+</sect3>

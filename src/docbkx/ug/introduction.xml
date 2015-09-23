@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction" status="draft" version="5.0">
+   <title>Introduction</title>
+   <para>Here we would like to smoothly introduce you PerfCake - the lightweight performance testing
+      tool and a load generator with the aim to be minimalistic, easy to use, provide stable
+      results, have minimum influence on the measured system, be platform independent, use component
+      design, allow high throughput.</para>
+   <para>First, we show you how to obtain PerfCake, run it and create your first performance test. </para>
+   <para>Then we introduce some core features of PerfCake as an application and how to configure it.
+      This is useful for further integration in your testing environment.</para>
+   <para>More details and practical test scenarios and use cases will be described in a separate
+      chapter. Its content will be created over time, for now we can suggest you to follow us on
+      Twitter and see recordings of our talks.</para>
+   <para>The most comprehensive part for now is the Reference Guide where you can find details about
+      configuration of individual components of PerfCake.</para>
+   <xi:include href="./introduction/getting-perfcake.xml"/>
+   <xi:include href="./introduction/first-performance-test.xml"/>
+</chapter>

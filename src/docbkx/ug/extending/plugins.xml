@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xml:id="ug.extending.plugins" version="5.0">
+   <title>Custom components - Plugins</title>
+   <para>
+      PerfCake has the ability to extend its functionality by adding plugins - new custom components such as senders, generators, reporters, destinations or validators.
+      <footnote>
+         <para>To get the details about creating custom components (plugins), see the PerfCake Developers' Guide.</para>
+      </footnote>
+      .
+   </para>
+   <para>
+      If you want to add a new component to be used by PerfCake, all you need to do is to take the jar file,
+      where the component is packaged (along with the jar files on which the component depends on),
+      and place it all under the
+      <code>$PERFCAKE_HOME/lib/plugins</code>
+      directory.
+   </para>
+</sect2>

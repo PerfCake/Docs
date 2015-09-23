@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.JdbcSender" version="5.0">
+   <title>JdbcSender</title>
+   <para>As the name of the sender clues JdbcSender is meant to be used to send JDBC queries. It can handle any query the JDBC is capable of.</para>
+   <para>The target of the sender is a JDBC URL of the target, where the query is send.</para>
+   <table frame="all">
+      <title>JdbcSender properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>driverClass</entry>
+               <entry>A fully qualified JDBC Driver class.</entry>
+               <entry>Yes</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>username</entry>
+               <entry>A database user</entry>
+               <entry>no</entry>
+               <entry>""</entry>
+            </row>
+            <row>
+               <entry>password</entry>
+               <entry>A database password</entry>
+               <entry>no</entry>
+               <entry>""</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <simplesect>
+      <title>An example of JdbcSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="JdbcSender">
+   <target>jdbc:postgresql://localhost:5432/db</target>
+   <property name="username" value="me-the-first"/>
+   <property name="password" value="guess_me"/>
+   <property name="driverClass" value="org.postgresql.Driver"/>
+ </sender>]]></programlisting>
+   </simplesect>
+</sect2>

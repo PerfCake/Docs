@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.LdapSender" version="5.0">
+   <title>LdapSender</title>
+   <para>
+      The sender is able to query an LDAP server
+      <footnote>
+         <para>
+            <link xlink:href="http://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol"/>
+         </para>
+      </footnote>
+      .
+   </para>
+   <para>The target of the sender is an URL of the LDAP server in the form of
+      <code>ldap://&lt;server-host&gt;:&lt;server-port&gt;</code>
+      .
+   </para>
+   <para>
+      Following table shows the properties of the HttpSender:
+      <table frame="all">
+         <title>HttpSender properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>searchBase</entry>
+                  <entry>DN (distinguished name) to use as the search base</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>filter</entry>
+                  <entry>The search filter</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>ldapUsername</entry>
+                  <entry>LDAP server user</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>ldapPassword</entry>
+                  <entry>LDAP server password</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <simplesect>
+      <title>An example of LdapSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="LdapSender">
+   <target>ldap://localhost:389</target>
+   <property name="searchBase" value="dc=example,dc=org"/>
+   <property name="filter" value="(objectclass=*)"/>
+ </sender>]]></programlisting>
+   </simplesect>
+</sect2>

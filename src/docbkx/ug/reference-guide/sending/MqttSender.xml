@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.MqttSender" version="5.0">
+   <title>MqttSender</title>
+   <para>
+      The sender is capable to send MQTT
+      <footnote>
+         <para>
+            <link xlink:href="http://mqtt.org/"/>
+         </para>
+      </footnote>
+      messages to a remote broker and receiving responses if needed. The response is expected only if
+      <code>responseTarget</code>
+      property is set.
+   </para>
+   <para>The target of the sender is an URL of the remote broker with the topic name in a form of
+      <code>&lt;protocol&gt;://&lt;host&gt;:&lt;port&gt;/&lt;topic name&gt;</code>
+      , where the message is send.
+   </para>
+   <para>
+      Following table shows the properties of the MqttSender:
+      <table frame="all">
+         <title>MqttSender properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>qos</entry>
+                  <entry>Quality of Service level
+                     <footnote>
+                        <para>
+                           <link xlink:href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718099"/>
+                        </para>
+                     </footnote>
+                     - guarantee for the message delivery from the sender to the remote broker. Supported values are
+                     <code>EXACTLY_ONCE</code>,
+                     <code>AT_LEAST_ONCE</code>
+                     and
+                     <code>AT_MOST_ONCE</code>.
+                  </entry>
+                  <entry>No</entry>
+                  <entry>
+                     <code>EXACTLY_ONCE</code>
+                  </entry>
+               </row>
+               <row>
+                  <entry>responseTarget</entry>
+                  <entry>An URL of the remote broker and a topic name, from which the response is received. If ordinary string is presented (not in a form of an URL),
+                     the string as a whole is considered to be a response topic name in the same broker where the original message was sent.
+                  </entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>responseQos</entry>
+                  <entry>Quality of service level for receiving a response. (see
+                     <code>qos</code>
+                     property description for more details).
+                  </entry>
+                  <entry>No</entry>
+                  <entry>The value of
+                     <code>qos</code>
+                     property.
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <simplesect>
+      <title>An example of MqttSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="MqttSender">
+   <target>tcp://localhost:1883/request.topic</target>
+   <property name="responseTarget" value="response.topic"/>
+ </sender>]]></programlisting>
+      <para>I the example above there is a
+         <code>MqttSender</code>
+         configured to send messages to topic with the name of
+         <code>request.topic</code>
+         in a broker listening on
+         <code>tcp://localhost:1883</code>. The response is expected and received from the topic with the name of
+         <code>response.topic</code>
+         of the same broker. The quality of service level for both sending and receiving is default<code>EXACTLY_ONCE</code>.
+      </para>
+   </simplesect>
+</sect2>

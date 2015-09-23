@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.RequestResponseJmsSender" version="5.0">
+   <title>RequestResponseJmsSender</title>
+   <para>
+      The RequestResponseJmsSender is supposed to be used in request-response scenarios. First it sends a JMS message to the target destination (specified by the
+      <code>target</code>
+      property) and then waits to receive the response message from the response destination (specified by the
+      <code>responseTarget</code>
+      property).
+   </para>
+   <para>
+      It is based on JmsSender (see
+      <xref linkend="ug.reference-guide.sending.JmsSender"/>
+      ) so it inherits its properties. The following table contains additional properties of the
+      <code>RequestResponseJmsSender</code>:
+   </para>
+   <table frame="all">
+      <title>RequestResponseJmsSender properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>responseTarget</entry>
+               <entry>A JMS destination where the sender will wait and receive a response message from.</entry>
+               <entry>Yes</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>responseConnectionFactory</entry>
+               <entry>A name of a JMS Connection factory for response.</entry>
+               <entry>No</entry>
+               <entry>
+                  Value of
+                  <code>connectionFactory</code>
+                  of
+                  <code>JmsSender</code>
+               </entry>
+            </row>
+            <row>
+               <entry>responseJndiContextFactory</entry>
+               <entry>A fully qualified name of the JNDI ContextFactory class for response.</entry>
+               <entry>No</entry>
+               <entry>
+                  Value of
+                  <code>jndiContextFactory</code>
+                  of
+                  <code>JmsSender</code>
+               </entry>
+            </row>
+            <row>
+               <entry>responseJndiUrl</entry>
+               <entry>A JNDI location URL for response.</entry>
+               <entry>No</entry>
+               <entry>
+                  Value of
+                  <code>jndiUrl</code>
+                  of
+                  <code>JmsSender</code>
+               </entry>
+            </row>
+            <row>
+               <entry>responseJndiSecurityPrincipal</entry>
+               <entry>A JNDI username for response</entry>
+               <entry>No</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>responseJndiSecurityCredentials</entry>
+               <entry>A JNDI password for response</entry>
+               <entry>No</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>responseUsername</entry>
+               <entry>A JMS security username for response. If not provided - JMS transport will be performed unsecured.</entry>
+               <entry>No</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>responsePassword</entry>
+               <entry>A JMS security password for response. If not provided - JMS transport will be performed unsecured.</entry>
+               <entry>No</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>receivingTimeout</entry>
+               <entry>A time duration in ms of specifying how long the sender will wait to receive the response message.</entry>
+               <entry>No</entry>
+               <entry>"1000"</entry>
+            </row>
+            <row>
+               <entry>receiveAttempts</entry>
+               <entry>A Number of attempts to receive the message.</entry>
+               <entry>No</entry>
+               <entry>"5"</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <simplesect>
+      <title>An example of RequestResponseJmsSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="RequestResponseJmsSender">
+   <target>jms/queue/RequestQueue</target>
+   <property name="responseTarget" value="jms/queue/ResponseQueue"/>
+   <property name="receivingTimeout" value="30000"/>
+   <property name="receiveAttempts" value="1"/>
+   <property name="connectionFactory" value="jms/ConnFactory"/>
+   <property name="username" value="KingRoland"/>
+   <property name="password" value="12345"/>
+   <property name="responseUsername" value="KingRoland"/>
+   <property name="responsePassword" value="12345"/>
+   <!-- JNDI properties-->
+   <property name="jndiContextFactory" value="pkg.InitCtxFactory"/>
+   <property name="jndiUrl" value="remote://${server.host}:4447"/>
+   <property name="jndiSecurityPrincipal" value="KingRoland"/>
+   <property name="jndiSecurityCredentials" value="12345"/>
+   <property name="responseJndiSecurityPrincipal" value="KingRoland"/>
+   <property name="responseJndiSecurityCredentials" value="12345"/>
+ </sender>]]></programlisting>
+      <para>
+         In the example above there is a
+         <code>RequestResponseJmsSender</code>
+         configured to send messages to the queue
+         <code>jms/queue/RequestQueue</code>
+         using a connection factory found at
+         <code>jms/ConnFactory</code>
+         in JNDI. After sending a JMS message the sender waits for the response from
+         the response queue
+         <code>jms/queue/ResponseQueue</code>
+         for at most 30s. It uses the same JMS provider for both request and response, so the request and response credentials
+         (both JMS and JNDI) are the same. Connection factory, JNDI context factory and JNDI URL for the response are inherited from the respective request properties.
+      </para>
+   </simplesect>
+</sect2>

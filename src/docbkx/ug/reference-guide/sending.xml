@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending" status="draft" version="5.0">
+   <title>Where - Sending messages</title>
+   <para>As it was mentioned before, a sender is an object responsible for sending a message to the tested system and receiving the response
+      in a specific way via a specific transport.
+   </para>
+   <para>To tell the sender where to send the messages, there is a
+      <code>&lt;target&gt;</code>
+      element mandatory for all senders.
+   </para>
+   <simplesect>
+      <title>An example of a Sender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="...">
+   <target>...</target>
+   ...
+   sender properties
+   ...
+ </sender>]]></programlisting>
+   </simplesect>
+   <para>In the following sections you can find a complete description of all
+      senders, that can be used by PerfCake including all of their properties.
+   </para>
+   <xi:include href="./sending/CommandSender.xml"/>
+   <xi:include href="./sending/DummySender.xml"/>
+   <xi:include href="./sending/GroovySender.xml"/>
+   <xi:include href="./sending/HttpSender.xml"/>
+   <xi:include href="./sending/HttpsSender.xml"/>
+   <xi:include href="./sending/ChannelDatagramSender.xml"/>
+   <xi:include href="./sending/ChannelFileSender.xml"/>
+   <xi:include href="./sending/ChannelSocketSender.xml"/>
+   <xi:include href="./sending/JdbcSender.xml"/>
+   <xi:include href="./sending/JmsSender.xml"/>
+   <xi:include href="./sending/LdapSender.xml"/>
+   <xi:include href="./sending/MqttSender.xml"/>
+   <xi:include href="./sending/PlainSocketSender.xml"/>
+   <xi:include href="./sending/RequestResponseJmsSender.xml"/>
+   <xi:include href="./sending/SslSocketSender.xml"/>
+   <xi:include href="./sending/WebSocketSender.xml"/>
+</sect1>

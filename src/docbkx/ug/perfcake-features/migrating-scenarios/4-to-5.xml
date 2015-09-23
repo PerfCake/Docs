@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.migrating-scenarios.4-to-5" version="5.0">
+   <title>From v4.x to v5.x</title>
+   <para>
+      The following list shows the steps that are needed to migrate from PerfCake version 4.x to 5.x:
+      <itemizedlist>
+         <listitem>
+            <simpara>Rename scenario XML schema namespace</simpara>
+         </listitem>
+         <listitem>
+            <simpara>Move
+               <code>run</code>
+               element out of generator
+            </simpara>
+         </listitem>
+         <listitem>
+            <simpara>Change
+               <code>target</code>
+               property of senders to a dedicated
+               <code>&lt;target&gt;</code>
+               element.
+            </simpara>
+         </listitem>
+      </itemizedlist>
+      The following sections describe each step in detail.
+   </para>
+   <simplesect xml:id="ug.perfcake-features.migrating-scenarios.mirating.4-to-5.steps">
+      <title>Migration steps</title>
+      <simplesect xml:id="ug.perfcake-features.migrating-scenarios.4-to-5.steps.xml-namespace">
+         <title>Rename XML schema namespace</title>
+         <para>
+            The namespace of the XML schema for scenarios has been renamed from
+            <code>urn:perfcake:scenario:4.0</code>
+            to
+            <code>urn:perfcake:scenario:5.0</code>
+            so it must be updated in the scenario XML files.
+         </para>
+      </simplesect>
+      <simplesect xml:id="ug.perfcake-features.migrating-scenarios.4-to-5.steps.move-run">
+         <title>Move
+            <code>run</code>
+            element out of generator
+         </title>
+         <para>
+            The
+            <code>run</code>
+            element of
+            <code>generator</code>
+            has been moved out of
+            <code>generator</code>
+            to a dedicatd element.
+         </para>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="...">
+   <run type="..." value="..."/>
+   ...
+   (properties)
+   ...
+ </reporter>]]></programlisting>
+         <para>is replaced by</para>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="..." value="..."/>
+ <generator class="...">
+   ...
+   (properties)
+   ...
+ </reporter>]]></programlisting>
+      </simplesect>
+      <simplesect xml:id="ug.perfcake-features.migrating-scenarios.4-to-5.steps.sender-target">
+         <title>Change
+            <code>target</code>
+            property of senders to a dedicated
+            <code>&lt;target&gt;</code>
+            element.
+         </title>
+         <para>
+            The
+            <code>target</code>
+            property of senders was ascended from ordinary property to a dedicated element.
+         </para>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="...">
+   <property name="target" value="..."/>
+   ...
+   (properties)
+   ...
+ </sender>]]></programlisting>
+         <para>is replaced by</para>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="...">
+   <target>...</target>
+   ...
+   (properties)
+   ...
+ </sender>]]></programlisting>
+      </simplesect>
+   </simplesect>
+</sect2>

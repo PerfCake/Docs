@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.configuration.cli" version="5.0">
+   <title>Command line parameters</title>
+   <para>
+      PerfCake is a command line tool so it provides a CLI for executing a
+      PerfCake scenario (see
+      <xref linkend="ug.perfcake-features.scenario-definition"/>
+      ). The main script can be found in
+      <code>$PERFCAKE_HOME/bin/perfcake.sh</code>
+      for Linux OS or
+      <code>%PERFCAKE_HOME%\bin\perfcake.bat</code>
+      in case of Windows OS.
+   </para>
+   <para>If the script is run without arguments, from the
+      following help that is printed you can see the arguments that can be
+      used to control the scenario execution.
+   </para>
+   <programlisting><![CDATA[[PERFCAKE_HOME]$ ./bin/perfcake.sh
+usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>]
+                        [-md <MESSAGES_DIR>] [-D<property=value>]*
+ -D <property=value>                       system properties
+ -md,--messages-dir <MESSAGES_DIR>         directory for messages
+ -pd,--plugins-dir <PLUGINS_DIR>           directory for plugins
+ -pf,--properties-file <PROPERTIES_FILE>   custom system properties file
+ -s,--scenario <SCENARIO>                  scenario to be executed
+ -sd,--scenarios-dir <SCENARIOS_DIR>       directory for scenarios]]></programlisting>
+   <para>
+      The only mandatory argument is
+      <code>-s</code>
+      (or
+      <code>--scenario</code>
+      ), that specifies the name of the scenario to be executed. PerfCake will
+      look for the scenario definition in the file called
+      <code>&lt;SCENARIO&gt;.xml</code>
+      that is
+      placed under the directory that is located at
+      <code>$PERFCAKE_HOME/resources/scenarios</code>
+      . The path to the directory with scenarios
+      can be specified by the
+      <code>-sd</code>
+      (or
+      <code>--scenarios-dir</code>
+      ) argument.
+   </para>
+   <para>
+      If the scenario is configured to send any message (see
+      <xref linkend="ug.reference-guide.messages"/>
+      ), it will look under the directory that is by placed at
+      <code>$PERFCAKE_HOME/resources/messages</code>
+      . That location can be specified by the
+      <code>-md</code>
+      (or
+      <code>--messages-dir</code>
+      ) argument.
+   </para>
+   <para>
+      If you need to set one or more system properties for scenario (see
+      <xref linkend="ug.perfcake-features.scenario-definition.filtering-properties"/>
+      ), there are two ways.
+      You can either use
+      <code>-Dproperty=value</code>
+      like arguments or specify a path to the property file using the
+      <code>-pf</code>
+      (or
+      <code>--properties-file</code>
+      ) argument.
+   </para>
+   <para>
+      Following table describes all the PerfCake CLI arguments.
+      <table frame="all">
+         <title>PerfCake CLI arguments</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="argument-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Argument</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>-s, --scenario</entry>
+                  <entry>Name of the scenario to be executed.</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>-sd, --scenarios-dir</entry>
+                  <entry>Path to the directory where scenarios are located.</entry>
+                  <entry>No</entry>
+                  <entry>$PERFCAKE_HOME/resources/scenarios</entry>
+               </row>
+               <row>
+                  <entry>-md, --messages-dir</entry>
+                  <entry>Path to the directory where message files are located.</entry>
+                  <entry>No</entry>
+                  <entry>$PERFCAKE_HOME/resources/messages</entry>
+               </row>
+               <row>
+                  <entry>-pd, --plugins-dir</entry>
+                  <entry>
+                     Path to the directory where plugins are located (see
+                     <xref linkend="ug.extending.plugins"/>
+                     ).
+                  </entry>
+                  <entry>No</entry>
+                  <entry>$PERFCAKE_HOME/resources/plugins</entry>
+               </row>
+               <row>
+                  <entry>-D&lt;property&gt;=&lt;value&gt;</entry>
+                  <entry>Sets a single system property with a given name and value. Multiple property arguments are allowed.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>-pf, --properties-file</entry>
+                  <entry>Path to the file containing system properties.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+</sect2>

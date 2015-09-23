@@ -50,7 +50,7 @@
    <properties>
       <user.guide.src>perfcake-user-guide.xml</user.guide.src>
       <developer.guide.src>perfcake-developers-guide.xml</developer.guide.src>
-      <version.docbkx>2.0.15</version.docbkx>
+      <version.docbkx>2.0.16</version.docbkx>
    </properties>
    <build>
       <pluginManagement>
@@ -79,9 +79,12 @@
                   </dependency>
                </dependencies>
                <configuration>
+                  <targetDirectory>${project.build.directory}/docbkx/${docbkx.out.dir}</targetDirectory>
                   <preProcess>
-                     <copy todir="target/docbkx/images">
-                        <fileset dir="src/docbkx/images"/>
+                     <copy todir="target/docbkx/${docbkx.out.dir}/images" flatten="true">
+                        <fileset dir="src/docbkx">
+                           <include name="**/images/*"/>
+                        </fileset>
                      </copy>
                      <copy todir="target/docbkx/css">
                         <fileset dir="src/docbkx/css"/>
@@ -97,6 +100,7 @@
                   <sectionLabelIncludesComponentLabel>true</sectionLabelIncludesComponentLabel>
                   <tableFrameBorderThickness>2px</tableFrameBorderThickness>
                   <tableCellBorderThickness>1px</tableCellBorderThickness>
+                  <tocSectionDepth>3</tocSectionDepth>
                   <formalTitlePlacement>
                      figure after
                      table after
@@ -146,6 +150,9 @@
    <profiles>
       <profile>
          <id>ug-html</id>
+         <properties>
+            <docbkx.out.dir>user-guide</docbkx.out.dir>
+         </properties>
          <build>
             <plugins>
                <plugin>
@@ -161,7 +168,6 @@
                      </execution>
                   </executions>
                   <configuration>
-                     <targetDirectory>${project.build.directory}/docbkx/user-guide</targetDirectory>
                      <htmlStylesheet>../css/guides.css</htmlStylesheet>
                      <preProcess>
                         <move file="src/docbkx/${developer.guide.src}" toFile="src/docbkx/${developer.guide.src}.bak"/>
@@ -178,6 +184,9 @@
       </profile>
       <profile>
          <id>ug-html-single</id>
+         <properties>
+            <docbkx.out.dir>user-guide-single</docbkx.out.dir>
+         </properties>
          <build>
             <plugins>
                <plugin>
@@ -193,7 +202,6 @@
                      </execution>
                   </executions>
                   <configuration>
-                     <targetDirectory>${project.build.directory}/docbkx/user-guide-single</targetDirectory>
                      <htmlStylesheet>../css/guides.css</htmlStylesheet>
                      <preProcess>
                         <move file="src/docbkx/${developer.guide.src}" toFile="src/docbkx/${developer.guide.src}.bak"/>
@@ -210,6 +218,9 @@
       </profile>
       <profile>
          <id>dev-html</id>
+         <properties>
+            <docbkx.out.dir>developers-guide</docbkx.out.dir>
+         </properties>
          <build>
             <plugins>
                <plugin>
@@ -225,7 +236,6 @@
                      </execution>
                   </executions>
                   <configuration>
-                     <targetDirectory>${project.build.directory}/docbkx/developers-guide</targetDirectory>
                      <htmlStylesheet>../css/guides.css</htmlStylesheet>
                      <preProcess>
                         <move file="src/docbkx/${user.guide.src}" toFile="src/docbkx/${user.guide.src}.bak"/>
@@ -242,6 +252,9 @@
       </profile>
       <profile>
          <id>dev-html-single</id>
+         <properties>
+            <docbkx.out.dir>developers-guide-single</docbkx.out.dir>
+         </properties>
          <build>
             <plugins>
                <plugin>
@@ -257,7 +270,6 @@
                      </execution>
                   </executions>
                   <configuration>
-                     <targetDirectory>${project.build.directory}/docbkx/developers-guide-single</targetDirectory>
                      <htmlStylesheet>../css/guides.css</htmlStylesheet>
                      <preProcess>
                         <move file="src/docbkx/${user.guide.src}" toFile="src/docbkx/${user.guide.src}.bak"/>
@@ -274,6 +286,9 @@
       </profile>
       <profile>
          <id>pdf</id>
+         <properties>
+            <docbkx.out.dir>pdf</docbkx.out.dir>
+         </properties>
          <build>
             <plugins>
                <plugin>

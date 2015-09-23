@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect3 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.validation.validator.RulesValidator" version="5.0">
+   <title>RulesValidator</title>
+   <para>
+      This validator uses Drools
+      <footnote>
+         <para>
+            <link xlink:href="http://www.jboss.org/drools/"/>
+         </para>
+      </footnote>
+      engine to assert the validator rules. The rules for this validator have their own DSL
+      <footnote>
+         <para>Domain Specific Language</para>
+      </footnote>
+      in a form of human readable sentences. The rules are listed in a following listing:
+   </para>
+   <simplesect>
+      <title>RulesValidator rules</title>
+      <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA[Message body contains "{string}".
+Message body equals "{string}".]]></programlisting>
+   </simplesect>
+   <simplesect>
+      <title>An example of RulesValidator configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <validator id="fareWellValidator" class="RulesValidator">
+   <property name="pattern">
+      <text><![CDATA[Message body contains "Farewell World!".]]]]><![CDATA[></text>
+   </property>
+ </validator>]]></programlisting>
+   </simplesect>
+</sect3>

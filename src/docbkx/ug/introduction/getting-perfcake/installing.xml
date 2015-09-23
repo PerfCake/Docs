@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.installing" version="5.0">
+   <title>Installing PerfCake</title>
+   <para>There is no extra step required to install PerfCake. As long as you have unpacked the
+      downloaded distribution, the installation is complete.</para>
+</sect2>

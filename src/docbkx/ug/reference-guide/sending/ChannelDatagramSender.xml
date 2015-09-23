@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.ChannelDatagramSender" version="5.0">
+   <title>ChannelDatagramSender</title>
+   <para>Sends messages through NIO
+      <footnote id="ug.reference-guide.sending.ChannelDatagramSender.footnote-nio">
+         <para>
+            <link xlink:href="http://docs.oracle.com/javase/8/docs/api/java/nio/package-summary.html#package.description"/>
+         </para>
+      </footnote>
+      <code>DatagramChannel</code>
+      <footnote>
+         <para>
+            <link xlink:href="http://docs.oracle.com/javase/8/docs/api/java/nio/channels/DatagramChannel.html"/>
+         </para>
+      </footnote>
+      .
+   </para>
+   <para>The sender's target is an URL of a datagram socket in a form of
+      <code>&lt;host&gt;:&lt;port&gt;</code>.
+   </para>
+   <table frame="all">
+      <title>ChannelDatagramSender properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>awaitResponse</entry>
+               <entry>Determines whether we should wait for the response from the channel.
+               </entry>
+               <entry>No</entry>
+               <entry>"false"</entry>
+            </row>
+            <row>
+               <entry>maxResponseSize</entry>
+               <entry>Expected maximum response size. Defaults to -1 which means to instantiate the buffer of the same size as the request messages.
+               </entry>
+               <entry>No</entry>
+               <entry>"-1"</entry>
+            </row>
+            <row>
+               <entry>maxResponseSize</entry>
+               <entry>Expected maximum response size. Defaults to -1 which means to instantiate the buffer of the same size as the request messages.
+               </entry>
+               <entry>No</entry>
+               <entry>"-1"</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+</sect2>

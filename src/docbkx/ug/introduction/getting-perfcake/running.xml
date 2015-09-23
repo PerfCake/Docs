@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.running" version="5.0">
+   <title>Running PerfCake</title>
+   <para>There are multiple ways of running PerfCake. In the case you have just donwloaded and
+      unpacked the binary distribution, you can find a shell script and a Windows bat script in the
+      $PERFCAKE_HOME/bin directory. These are executables that can find your JDK and run PerfCake
+      properly. The scripts were tested on Linux, Windows and MacOS (in this case, some command line
+      tweaking might be necessary).
+   </para>
+   <para>In case of building from source code, please refer to the Developers' Guide for more
+      instructions. Basically, the easiest way is to create the binary distribution from source code
+      and follow the usual steps. It is also possible to run PerfCake directly by invoking the java
+      command but this needs to take care of the classpath configuration.
+   </para>
+   <para>It is also possible to run PerfCake using a Maven plugin or its API. These ways are
+      described either in the Developers' Guide or will be presented in
+      <xref linkend="ug.general-usage"/>
+      .
+   </para>
+   <para>You can verify your installation by invoking the following command in the $PERFCAKE_HOME
+      directory. This uses a 3rd party HTTP test server, so try not to over-use it. Please note that
+      you need to be online for this to work.
+   </para>
+   <para>
+      <code>$ ./bin/perfcake.sh -s http -Dserver.host=httpbin.org</code>
+   </para>
+   <para>Typical output of this command is:</para>
+   <para>
+      <programlisting><![CDATA[2015-09-22 18:35:51,709 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:~/perfcake-5.0/resources/scenarios/http.xml
+2015-09-22 18:35:52,174 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 5.0 ===
+2015-09-22 18:35:52,175 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
+2015-09-22 18:35:52,176 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 296ns. A single thread is now able to measure maximum of 3378378 iterations/second.
+2015-09-22 18:35:52,254 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
+[0:00:01][705 iterations][5%] [520.5570291777188 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:02][1274 iterations][8%] [543.4609250398724 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:03][1864 iterations][12%] [554.858934169279 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:05][2702 iterations][17%] [558.7941704931123 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:06][3259 iterations][20%] [556.9051580698836 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:07][4102 iterations][25%] [558.5885486018642 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:08][4640 iterations][28%] [555.9863705792504 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:10][5479 iterations][33%] [555.9884127459794 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:11][6056 iterations][37%] [557.3011260443153 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:12][6844 iterations][42%] [554.6675191815857 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:13][7422 iterations][45%] [555.9091245467328 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:15][8251 iterations][50%] [555.2521148338107 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:16][8794 iterations][53%] [554.5147995503934 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:17][9653 iterations][58%] [556.0123329907502 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:18][10187 iterations][62%] [555.1174723197407 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:20][11067 iterations][67%] [556.8823382463153 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:21][11646 iterations][70%] [558.2889227255424 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:22][12513 iterations][75%] [559.6908864807248 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:24][13377 iterations][80%] [560.5196319273848 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:25][13952 iterations][83%] [561.1783986888915 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:26][14795 iterations][88%] [561.2248746087415 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:27][15363 iterations][92%] [561.705065775129 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:29][16243 iterations][97%] [562.9609208077745 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:30][16812 iterations][100%] [562.8103856281039 iterations/s] [Threads => 100] [warmUp => false]
+2015-09-22 18:36:22,256 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end.
+2015-09-22 18:36:22,257 INFO  {org.perfcake.reporting.ReportManager} Reporting final results:
+2015-09-22 18:36:22,258 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
+2015-09-22 18:36:22,421 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===]]></programlisting>
+   </para>
+   <para>For more details on running perfcake from a command line see
+      <xref linkend="ug.perfcake-features.configuration.cli"/>
+      .
+   </para>
+</sect2>
