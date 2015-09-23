@@ -6,7 +6,22 @@
       <para>
          <itemizedlist>
             <listitem>
-               <simpara>TODO:</simpara>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/200"/>
+                  - Rename agent's artifact ID to "perfcake-agent" to increase lucidity
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/187"/>
+                  - Make sure PerfCakeAgent can be attached to various JDK versions.
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/186"/>
+                  - Introduce Generator interface
+               </simpara>
             </listitem>
          </itemizedlist>
       </para>
@@ -16,7 +31,28 @@
       <para>
          <itemizedlist>
             <listitem>
-               <simpara>TODO:</simpara>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/202"/>
+                  - Fix timezone handling in chart destination
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/199"/>
+                  - Useless test dependencies are present in PerfCake distro
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/193"/>
+                  - Sources JAR found in distro can cause main script to fail
+               </simpara>
+            </listitem>
+            <listitem>
+               <simpara>
+                  <link xlink:href="https://github.com/PerfCake/PerfCake/issues/192"/>
+                  - Source jars are part of binary distribution
+               </simpara>
             </listitem>
          </itemizedlist>
       </para>
