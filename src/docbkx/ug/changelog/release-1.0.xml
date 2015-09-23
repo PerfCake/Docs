@@ -5,7 +5,9 @@
       <title>Features</title>
       <para>
          <itemizedlist>
-            <simpara>Basic performance testing functionality including Generators, Senders, Reporters, Destinations and Validators.</simpara>
+            <listitem>
+               <simpara>Basic performance testing functionality including Generators, Senders, Reporters, Destinations and Validators.</simpara>
+            </listitem>
          </itemizedlist>
       </para>
    </simplesect>
@@ -13,7 +15,9 @@
       <title>Bug fixes</title>
       <para>
          <itemizedlist>
-            <simpara>Many bugs fixed</simpara>
+            <listitem>
+               <simpara>Many bugs fixed</simpara>
+            </listitem>
          </itemizedlist>
       </para>
    </simplesect>
