@@ -16,8 +16,8 @@
       used to control the scenario execution.
    </para>
    <programlisting><![CDATA[[PERFCAKE_HOME]$ ./bin/perfcake.sh
-usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
-                         <MESSAGES_DIR>] [-D<property=value>]*
+usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>]
+                        [-md <MESSAGES_DIR>] [-D<property=value>]*
  -D <property=value>                       system properties
  -md,--messages-dir <MESSAGES_DIR>         directory for messages
  -pd,--plugins-dir <PLUGINS_DIR>           directory for plugins

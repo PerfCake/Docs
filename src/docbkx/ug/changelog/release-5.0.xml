@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.changelog.release-5.0" version="5.0">
+   <title>Release 5.0</title>
+   <simplesect>
+      <title>Features</title>
+      <para>
+         <itemizedlist>
+            <listitem>
+               <simpara>TODO:</simpara>
+            </listitem>
+         </itemizedlist>
+      </para>
+   </simplesect>
+   <simplesect>
+      <title>Bug fixes</title>
+      <para>
+         <itemizedlist>
+            <listitem>
+               <simpara>TODO:</simpara>
+            </listitem>
+         </itemizedlist>
+      </para>
+   </simplesect>
+</sect1>
