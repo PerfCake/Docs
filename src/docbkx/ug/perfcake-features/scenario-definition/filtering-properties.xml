@@ -15,20 +15,18 @@
    </para>
    <para>A placeholder has the following format:</para>
    <programlisting><![CDATA['${' + <property name> + (':' + <default value>) + '}']]></programlisting>
-   <simplesect>
-      <title>An example of a scenario with a property placeholder without the default value:</title>
+      <para><emphasis role="bold">An example of a scenario with a property placeholder without the
+         default value</emphasis></para>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <scenario xmlns="urn:perfcake:scenario:${perfcake.scenario.version}">
    ...
 </scenario>]]></programlisting>
-   </simplesect>
-   <simplesect>
-      <title>An example of a scenario with a property placeholder with the default value of "5.0":</title>
+      <para><emphasis role="bold">An example of a scenario with a property placeholder with the
+         default value of "5.0"</emphasis></para>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <scenario xmlns="urn:perfcake:scenario:${perfcake.version:5.0}">
    ...
 </scenario>]]></programlisting>
-   </simplesect>
    <para>
       The property filtering process is performed in a moment, when a scenario file is loaded
       by PerfCake, before it is parsed. There are no advanced features, just a simmple string replacement for scenario files.

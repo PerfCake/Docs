@@ -19,6 +19,7 @@
       </itemizedlist>
       The following sections take a look at each step in detail.
    </para>
+   
    <simplesect xml:id="ug.perfcake-features.migrating-scenarios.mirating.2-to-3.steps">
       <title>Migration steps</title>
       <simplesect xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.xml-namespace">
@@ -228,4 +229,9 @@
          .
       </para>
    </simplesect>
+
+   <section xml:id="asdds">
+      <title>kukuk</title>
+      <para>adsas</para>
+   </section>
 </sect2>

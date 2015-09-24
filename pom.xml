@@ -92,6 +92,7 @@
                   </preProcess>
                   <bodyFontFamily>FreeSerif</bodyFontFamily>
                   <titleFontFamily>FreeSans</titleFontFamily>
+                  <monospaceFontFamily>FreeMono</monospaceFontFamily>
                   <xincludeSupported>true</xincludeSupported>
                   <generatedSourceDirectory>${project.build.directory}/xinclude</generatedSourceDirectory>
                   <highlightSource>1</highlightSource>
@@ -106,6 +107,34 @@
                      table after
                   </formalTitlePlacement>
                   <fonts>
+                     <font>
+                        <name>FreeMono</name>
+                        <style>normal</style>
+                        <weight>normal</weight>
+                        <embedFile>${basedir}/src/fonts/FreeMono.ttf</embedFile>
+                        <metricsFile>${basedir}/src/fonts/FreeMono-metrics.xml</metricsFile>
+                     </font>
+                     <font>
+                        <name>FreeMono</name>
+                        <style>normal</style>
+                        <weight>bold</weight>
+                        <embedFile>${basedir}/src/fonts/FreeMonoBold.ttf</embedFile>
+                        <metricsFile>${basedir}/src/fonts/FreeMonoBold-metrics.xml</metricsFile>
+                     </font>
+                     <font>
+                        <name>FreeMono</name>
+                        <style>italic</style>
+                        <weight>normal</weight>
+                        <embedFile>${basedir}/src/fonts/FreeMonoOblique.ttf</embedFile>
+                        <metricsFile>${basedir}/src/fonts/FreeMonoOblique-metrics.xml</metricsFile>
+                     </font>
+                     <font>
+                        <name>FreeMono</name>
+                        <style>italic</style>
+                        <weight>bold</weight>
+                        <embedFile>${basedir}/src/fonts/FreeMonoBoldOblique.ttf</embedFile>
+                        <metricsFile>${basedir}/src/fonts/FreeMonoBoldOblique-metrics.xml</metricsFile>
+                     </font>
                      <font>
                         <name>FreeSans</name>
                         <style>normal</style>

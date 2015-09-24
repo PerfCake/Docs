@@ -31,8 +31,8 @@
 2015-09-22 18:35:52,175 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2015-09-22 18:35:52,176 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 296ns. A single thread is now able to measure maximum of 3378378 iterations/second.
 2015-09-22 18:35:52,254 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
-[0:00:01][705 iterations][5%] [520.5570291777188 iterations/s] [Threads => 100] [warmUp => false]
-[0:00:02][1274 iterations][8%] [543.4609250398724 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:01][705 iterations][5%] [520.564841647836 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:02][1274 iterations][8%] [543.478973435464 iterations/s] [Threads => 100] [warmUp => false]
 [0:00:03][1864 iterations][12%] [554.858934169279 iterations/s] [Threads => 100] [warmUp => false]
 [0:00:05][2702 iterations][17%] [558.7941704931123 iterations/s] [Threads => 100] [warmUp => false]
 [0:00:06][3259 iterations][20%] [556.9051580698836 iterations/s] [Threads => 100] [warmUp => false]
@@ -45,7 +45,7 @@
 [0:00:15][8251 iterations][50%] [555.2521148338107 iterations/s] [Threads => 100] [warmUp => false]
 [0:00:16][8794 iterations][53%] [554.5147995503934 iterations/s] [Threads => 100] [warmUp => false]
 [0:00:17][9653 iterations][58%] [556.0123329907502 iterations/s] [Threads => 100] [warmUp => false]
-[0:00:18][10187 iterations][62%] [555.1174723197407 iterations/s] [Threads => 100] [warmUp => false]
+[0:00:18][10187 iterations][62%] [555.1464631365413 iterations/s] [Threads => 100] [warmUp => false]
 [0:00:20][11067 iterations][67%] [556.8823382463153 iterations/s] [Threads => 100] [warmUp => false]
 [0:00:21][11646 iterations][70%] [558.2889227255424 iterations/s] [Threads => 100] [warmUp => false]
 [0:00:22][12513 iterations][75%] [559.6908864807248 iterations/s] [Threads => 100] [warmUp => false]

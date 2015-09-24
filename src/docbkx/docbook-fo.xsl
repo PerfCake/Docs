@@ -9,6 +9,10 @@
    <xsl:param name="saxon.linenumbering" select="1"/>
    <xsl:param name="linenumbering.everyNth">1</xsl:param>
 
+   <xsl:attribute-set name="monospace.verbatim.properties">
+      <xsl:attribute name="wrap-option">wrap</xsl:attribute>
+      <!--xsl:attribute name="hyphenation-character"><![CDATA[&#x21B3;]]></xsl:attribute-->
+   </xsl:attribute-set>
 
    <xsl:template match='xslthl:keyword' mode="xslthl">
       <fo:inline font-weight="bold" color="purple">

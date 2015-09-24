@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.scenario-definition.dsl" version="5.0">
    <title>DSL scenario</title>
-   <para>dsl...</para>
+   <para>There is a possibility to specify scenarios in the form that resembles a natural language.
+      This is typically stored in a file with the .dsl suffix. It is useful to open these scenarios
+      in an editor that supports Groovy syntax as the DSL language is actually developed in
+      Groovy.</para>
+   <para>The DSL scenarios can use the same features, properties and constructs as the XML scenario.
+      The language is just different. Following is a sample DSL scenario.</para>
+   <para>
+      <programlisting language="java" linenumbering="numbered">scenario "my cool scenario"
+  qsName "test" propA "hello"
+  run 10.s with 4.threads
+  generator "DefaultMessageGenerator" senderTaskQueueSize 3000
+  sender "TestSender" target "httpbin.org" delay 12.s
+  reporter "WarmUpReporter"
+  reporter "ThroughputStatsReporter" minimumEnabled false
+    destination "CsvDestination" every 3.s path '${perfcake.scenario}-stats.csv' enabled
+    destination "ConsoleDestination" every 5.percent disabled
+  reporter "ResponseTimeStatsReporter"
+    destination "ConsoleDestination" every 10.percent
+  message file:"message1.xml" send 10.times
+  message content:"Hello World" values 1,2,3
+  message "file://message2.txt" validate "text1","text2"
+  message "Simple text" propA "kukuk" headers name:"Franta",count:10 validate "text1, text2"
+  validation fast disabled
+    validator "RegExpValidator" id "text1" pattern "I am a fish!"
+    validator "RegExpValidator" id "text2" pattern "I was a fish!"
+end</programlisting>
+   </para>
+   <para>The language format is typically in the form of <code>&lt;keyword> &lt;attribute></code>.
+      Mandatory keywords used are <code>scenario</code>, <code>run</code>, <code>generator</code>
+      and <code>sender</code>. </para>
+   <para>In general, strings are in quotes or apostrophes, an array and a map are specified by the
+      elements separated by commas. The map elements are specified by the pairs
+         <code>key:value</code> separated by a colon. There are some special units defined that can
+      be used with numbers. The format is a number followed by a dot and the unit name. Following is
+      the list of supported units, in the scenario source, they are represented by the abbreviations
+      shown in the parentheses: milliseconds (ms), seconds (s), minutes (m), hours (h), days (d),
+      iterations (iteration, iterations), percents (percent, percents), threads (thread, threads),
+      and times (times). </para>
+   <para><code>Scenario</code> is followed by the scenario name and mandatory properties and their
+      values. </para>
+   <para><code>Run</code> is followed by the time specification and the number of threads after the
+         <code>with</code> keyword.</para>
+   <para><code>Generator</code>, <code>sender</code>, <code>reporter</code>,
+         <code>destination</code>, <code>validator</code> and <code>sequence</code> are followed by
+      the class name implementing the component. Then there are properties and their values for the
+      given component. A single component configuration cannot be split to multiple lines. It must
+      all be present at a single line.</para>
+   <para><code>Message</code> is followed by the location of the message or its content. Either
+      there is a differentiator in the form <code>file:</code> or <code>content:</code>, or there is
+      a string with the protocol specification (<code>file://</code>, <code>http://</code>&#x2026;),
+      or a string with message content. Following are more configuration properties. </para>
 </sect2>
