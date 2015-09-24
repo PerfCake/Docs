@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance-test.quickstart" version="5.0">
    <title>Your own quickstart</title>
-   <para>Now you are quite ready to try your own quickstart. You can find it at
-      <link xlink:href="https://www.perfcake.org/quickstart/"/>, see you in 5 minutes :).
-   </para>
    <simplesect>
-      <title>Getting PerfCake</title>
+      <title>Preparing PerfCake</title>
       <para>
-         This is your first PerfCake example. You will learn to 1) get PerfCake and install it,
-         2) prepare your first simple scenario and run it, 3) evaluate results of your test. Let's start with the first step.
-      </para>
-      <para>
-         The simplest way how to start with PerfCake is to download
-         <footnote id="ug.introduction.first-performance-test.quickstart.footnote-download">
-            <para>
-               <link xlink:href="https://www.perfcake.org/download"/>
-            </para>
-         </footnote>
-         the binary distribution. You can unpack it wherever you want, just remember the directory (let’s call it
-         <code>$PERFCAKE_HOME</code>
-         )
-      </para>
-      <para>
-         After unpacking you will have your directory with the following structure:
+         After getting (see
+         <xref linkend="ug.introduction.getting-perfcake.downloading"/>
+         ) and unpacking PerfCake you will have your directory with the following structure:
          <programlisting><![CDATA[$PERFCAKE_HOME
 ├── bin/
 │ ├── perfcake.bat
 │ └── perfcake.sh
+├── docs/
+│ └── perfcake-5.0-javadoc.jar
 ├── lib/
 │ ├──ext/
 │ ├──plugins/
@@ -38,8 +24,7 @@
 │ ├── schemas/
 │ └── xslt/
 ├── LICENSE.txt
-├── log4j.xml
-└── README.md]]></programlisting>
+└── log4j2.xml]]></programlisting>
       </para>
       <para>
          You may try to run PerfCake, you should receive output like this:
@@ -78,7 +63,11 @@
       </para>
       <para>
          If you feel like going wild, you can download
-         <footnoteref linkend="ug.introduction.first-performance-test.quickstart.footnote-download"/>
+         <footnote id="ug.introduction.first-performance-test.quickstart.footnote-download">
+            <para>
+               <link xlink:href="https://www.perfcake.org/download"/>
+            </para>
+         </footnote>
          the source distribution and compile it by
          <programlisting>mvn clean package assembly:assembly</programlisting>
       </para>
@@ -149,34 +138,130 @@
     sender "HttpSender" target "http://your-app.com/cool-app" method "GET"
  end]]></programlisting>
       </para>
-      <para><code>http-echo.xml</code>: <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <?xml version="1.0" encoding="utf-8"?>
- <scenario xmlns="urn:perfcake:scenario:5.0">
-    <run type="time" value="10000"/>
-    <generator class="DefaultMessageGenerator" 
-               threads="${thread.count}"/>
-    <sender class="HttpSneder">
-       <target>http://your-app.com/cool-app</target>
-    </sener>
- </scenario>]]></programlisting>
+      <para>
+         <code>http-echo.xml</code>:
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<scenario xmlns="urn:perfcake:scenario:5.0">
+   <run type="time" value="10000"/>
+   <generator class="DefaultMessageGenerator" threads="${thread.count}"/>
+   <sender class="HttpSender">
+      <target>http://your-app.com/cool-app</target>
+   </sender>
+</scenario>]]></programlisting>
       </para>
-      <!--para>This is just a simple example, you may use different sender or generator, or specify different properties. Everything is described in the
-         = succeed "." do
-         %a{ :href => "#{site.base_url}/guide/user" } User Guide
-      </para>
-      <para>You can see
-         %tt
-         = preserve "${thread.count:10}"
+      <para>
+         You can see
+         <code>"${thread.count:10}"</code>
          in the generator’s definition. That is a system property
-         %tt
-         = preserve "thread.count"
+         <code>"thread.count"</code>
          that you may set and the actual value of the property will be used. If the property is not set, the default value (10) will be used.
       </para>
-      <para>Now, all you need to do is to execute your new test scenario by running the following command:
-         %pre
-         $PERFCAKE_HOME/bin/perfcake.sh -s http-echo
+      <para>
+         Now, all you need to do is to execute your new test scenario by running the following command:
+         <programlisting><![CDATA[$PERFCAKE_HOME/bin/perfcake.sh -s http-echo]]></programlisting>
       </para>
-      <para>Please note you do not need to specify the DSL (XML) extension. Only if you used both DSL and XML variants.
+      <para>
+         Please note you do not need to specify the DSL (XML) extension. Only if you used both DSL and XML variants.
       </para>
-      <para>Now you are running your fisrt stress test. Even if you cannot see what is going on, PerfCake sends requests to your application in many threads. The test should run aproximately for 10 seconds. If you want to see some numbers (e.g. how fast your system is), you have to add one more element to your scenario to evaluate the results - the reporting.</para-->
+      <para>
+         Now you are running your fisrt stress test. Even if you cannot see what is going on,
+         PerfCake sends requests to your application in many threads. The test should run approximately for 10 seconds.
+         If you want to see some numbers (e.g. how fast your system is),
+         you have to add one more element to your scenario to evaluate the results - the reporting.
+      </para>
+   </simplesect>
+   <simplesect>
+      <title>Evaluate Results</title>
+      <para>For reporting some results of your measurement, you have to configure a Reporter - an object that is capable of computing results in some way and outputing them wherever you can imagine.
+      </para>
+      <para>Copy your
+         <code>http-echo.dsl</code>
+         (
+         <code>http-echo.xml</code>
+         resp.) file to
+         <code>http-reporting.dsl</code>
+         (
+         <code>http-reporting.xml</code>
+         resp.) and have it look like the listing below.
+      </para>
+      <para><code>http-reporting.dsl</code>:
+         <programlisting language="java" linenumbering="numbered" startinglinenumber="1"><![CDATA[scenario "http-reporting"
+  run 10.s with ${thread.count:10}.threads
+  generator "DefaultMessageGenerator"
+  sender "HttpSender" target "http://your-app.com/cool-app" method "GET"
+  reporter "ResponseTimeStatsReporter" minimumEnabled "false" maximumEnabled "false"
+    destination "ChartDestination" every 1.s name "Response Time" group "rt" yAxis "Response Time [ms]" attributes "Result,Average"
+    destination "ConsoleDestination" every 1.s
+  end]]></programlisting>
+      </para>
+      <para><code>http-reporting.xml</code>:
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<scenario xmlns="urn:perfcake:scenario:5.0">
+   <run type="time" value="10000"/>
+   <generator class="DefaultMessageGenerator" threads="${thread.count:10}"/>
+   <sender class="HttpSender">
+      <target>http://your-app.com/cool-app</target>
+      <property name="method" value="GET"/>
+   </sender>
+   <reporting>
+      <reporter class="ResponseTimeStatsReporter">
+         <destination class="ChartDestination">
+            <period type="time" value="1000"/>
+            <property name="name" value="Response Time"/>
+            <property name="group" value="rt"/>
+            <property name="yAxis" value="Response Time [ms]"/>
+            <property name="attributes" value="Result,Average"/>
+         </destination>
+         <destination class="ConsoleDestination">
+            <period type="time" value="1000"/>
+         </destination>
+      </reporter>
+   </reporting>
+</scenario>]]></programlisting>
+      </para>
+      <para>
+         Adding the
+         <code>reporting</code>
+         section you let your scenario to log results to some destination - in our case to the PerfCake’s console.
+         Output will be provided every 2 seconds (2000 miliseconds).
+      </para>
+      <para>
+         Try to run the scenario again by the following command:
+         <programlisting><![CDATA[
+2015-09-23 13:30:11,310 INFO {org.perfcake.ScenarioExecution} === Welcome to PerfCake 5.0 ===
+2015-09-23 13:30:11,311 INFO {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
+2015-09-23 13:30:11,312 INFO {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 605ns.
+A single thread is now able to measure maximum of 1652892 iterations/second.
+2015-09-23 13:30:11,331 INFO {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
+2015-09-23 13:30:11,390 INFO {httl} Using slf4j logger for httl., httl: 1.0.11, jvm: 1.8.0_31, os: Linux 3.14.27-100.fc19.x86_64 amd64
+[0:00:02][1823 iterations][29%] [3.152025 ms] [Threads => 10] [Average => 6.367008149088894 ms] [warmUp => false]
+[0:00:03][5060 iterations][39%] [2.698051 ms] [Threads => 10] [Average => 4.245464461477511 ms] [warmUp => false]
+[0:00:04][9423 iterations][49%] [1.940839 ms] [Threads => 10] [Average => 3.323919806458463 ms] [warmUp => false]
+[0:00:05][14684 iterations][59%] [1.555495 ms] [Threads => 10] [Average => 2.805643889532502 ms] [warmUp => false]
+[0:00:07][23586 iterations][74%] [1.401873 ms] [Threads => 10] [Average => 2.373560429316712 ms] [warmUp => false]
+[0:00:08][32674 iterations][89%] [3.777534 ms] [Threads => 10] [Average => 2.1659369298922284 ms] [warmUp => false]
+[0:00:09][38948 iterations][99%] [1.776092 ms] [Threads => 10] [Average => 2.0701102116441534 ms] [warmUp => false]
+2015-09-23 13:30:21,332 INFO {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end.
+[0:00:10][39293 iterations][100%] [1.888512 ms] [Threads => 10] [Average => 2.067882293274619 ms] [warmUp => false]
+2015-09-23 13:30:21,332 INFO {org.perfcake.reporting.ReportManager} Reporting final results:
+2015-09-23 13:30:21,677 INFO {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
+2015-09-23 13:30:21,678 INFO {org.perfcake.ScenarioExecution} === Goodbye! ===]]>
+         </programlisting>
+      </para>
+      <para>
+         The
+         <code>warmUp</code>
+         attribute you can see in the results determines the mode of the test. In our example we do not wait
+         for the server to warm up so the attribute is set to false all the time.
+      </para>
+      <para>
+         ChartDestination specified in the scenario produces a chart report with the chart similar to the following that can be found under
+         <code>$PERFCAKE_HOME/perfcake-charts</code>
+         directory.
+      </para>
+      <figure id="ug.introduction.first-performance-test.quickstart.chart">
+         <title>RampUpDownGenerator time chart</title>
+         <graphic format="PNG" fileref="./images/quickstart-chart.png" scalefit="1" width="100%" align="center"/>
+      </figure>
    </simplesect>
 </sect2>
