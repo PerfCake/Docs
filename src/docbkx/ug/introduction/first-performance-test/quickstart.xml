@@ -143,7 +143,8 @@
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <scenario xmlns="urn:perfcake:scenario:5.0">
    <run type="time" value="10000"/>
-   <generator class="DefaultMessageGenerator" threads="${thread.count}"/>
+   <generator class="DefaultMessageGenerator" 
+              threads="${thread.count}"/>
    <sender class="HttpSender">
       <target>http://your-app.com/cool-app</target>
    </sender>
@@ -198,7 +199,8 @@
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <scenario xmlns="urn:perfcake:scenario:5.0">
    <run type="time" value="10000"/>
-   <generator class="DefaultMessageGenerator" threads="${thread.count:10}"/>
+   <generator class="DefaultMessageGenerator" 
+              threads="${thread.count:10}"/>
    <sender class="HttpSender">
       <target>http://your-app.com/cool-app</target>
       <property name="method" value="GET"/>
