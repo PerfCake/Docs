@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.troubleshooting.running-in-virtual-environment" version="5.0">
    <title>Running in Virtual Environment</title>
-   <para>(TODO: fill in)</para>
+   <para>In a virtual environment, the host might have some system level tweaks to optimize its
+      performance. Among others, some of the operating system real timer ticks or PIT/HPET timers
+      might be skipped. This can lead in a poor PerfCake time measurement resolution. Pay close
+      attention to the time benchmark executed during PerfCake startup. This reveals the maximal
+      performance PerfCake is able to measure. All faster systems will look like having an infinite
+      performance to PerfCake. PerfCake will also start displaying warning when such a speed is
+      achieved and the test results will be flawed.</para>
 </sect1>

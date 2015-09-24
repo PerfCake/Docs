@@ -19,11 +19,13 @@
 usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>]
                         [-md <MESSAGES_DIR>] [-D<property=value>]*
  -D <property=value>                       system properties
+ -log,--log-level <LOG_LEVEL>              logging level
  -md,--messages-dir <MESSAGES_DIR>         directory for messages
  -pd,--plugins-dir <PLUGINS_DIR>           directory for plugins
  -pf,--properties-file <PROPERTIES_FILE>   custom system properties file
  -s,--scenario <SCENARIO>                  scenario to be executed
- -sd,--scenarios-dir <SCENARIOS_DIR>       directory for scenarios]]></programlisting>
+ -sd,--scenarios-dir <SCENARIOS_DIR>       directory for scenarios
+ -skip,--skip-timer-benchmark              skip system timer benchmark]]></programlisting>
    <para>
       The only mandatory argument is
       <code>-s</code>
@@ -71,7 +73,7 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>]
          <title>PerfCake CLI arguments</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="argument-name" colwidth="2*"/>
-            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*" align="justify"/>
             <colspec colname="required" colwidth="1*"/>
             <colspec colname="default-value" colwidth="2*"/>
             <thead>
@@ -88,6 +90,12 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>]
                   <entry>Name of the scenario to be executed.</entry>
                   <entry>Yes</entry>
                   <entry>-</entry>
+               </row>
+               <row>
+                  <entry>-log, --log-level</entry>
+                  <entry>Default PerfCake logging level.</entry>
+                  <entry>No</entry>
+                  <entry>info</entry>
                </row>
                <row>
                   <entry>-sd, --scenarios-dir</entry>
@@ -123,8 +131,89 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>]
                   <entry>No</entry>
                   <entry>-</entry>
                </row>
+               <row>
+                  <entry>-skip, --skip-timer-benchmark</entry>
+                  <entry>Skip system timer benchmark during PerfCake startup. This can speedup the
+                     startup a little bit.</entry>
+                  <entry>No</entry>
+                  <entry>false</entry>
+               </row>
             </tbody>
          </tgroup>
       </table>
    </para>
+   <para>Some interesting properties can be configured using the <code>-Dproperty=value
+         parameter</code>. These are not so common so there is no dedicated short parameter variant.
+      The following table lists the other properties recognized by PerfCake. None of them is
+      required.</para>
+   <table frame="all">
+      <title>PerfCake recognized properties</title>
+      <tgroup cols="3">
+         <colspec colname="c1" colnum="1" colwidth="1.0*" align="left"/>
+         <colspec colname="c2" colnum="2" colwidth="1.0*" align="justify"/>
+         <colspec colname="c3" colnum="3" colwidth="1.0*" align="left"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>perfcake.scenario</entry>
+               <entry>An alternative way to specify the PerfCake scenario. It is equivalent to the
+                     <code>-s</code> parameter.</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>perfcake.encoding</entry>
+               <entry>The encoding used for all inputs and outputs.</entry>
+               <entry>UTF-8</entry>
+            </row>
+            <row>
+               <entry>perfcake.scenarios.dir</entry>
+               <entry>Equivalent of the <code>-sd</code> command line parameter.</entry>
+               <entry>$PERFCAKE_HOME/resources/scenarios</entry>
+            </row>
+            <row>
+               <entry>perfcake.messages.dir</entry>
+               <entry>Equivalent of the <code>-md</code> command line parameter.</entry>
+               <entry>$PERFCAKE_HOME/resources/messages</entry>
+            </row>
+            <row>
+               <entry>perfcake.plugins.dir</entry>
+               <entry>Equivalent of the <code>-pd</code> command line parameter.</entry>
+               <entry>$PERFCAKE_HOME/resources/plugins</entry>
+            </row>
+            <row>
+               <entry>perfcake.properties.file</entry>
+               <entry>Equivalent of the <code>-pf</code> command line parameter.</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>perfcake.logging.level</entry>
+               <entry>Equivalent of the <code>-log</code> command line parameter.</entry>
+               <entry>info</entry>
+            </row>
+            <row>
+               <entry>perfcake.fail.fast</entry>
+               <entry>Allows preliminary termination of PerfCake in the case there is a failure
+                  during sending a message. PerfCake needs to wait for all the threads to finish, so
+                  you might see an error to be shown multiple times actually. In case this is set to
+                  true, no more requests for sending a messages will be created.</entry>
+               <entry>false</entry>
+            </row>
+            <row>
+               <entry>perfcake.templates.disabled</entry>
+               <entry>Completely disables the templating engine, no placeholders will be replaced in
+                  scenarios and messages. Normally, it is sufficient just not to use the templates.
+                  Having the engine on and not using it does not bring any performance overhead. By
+                  setting this to true, PerfCake can also run in JRE (the templating is the only
+                  part of PerfCake depending on JDK).</entry>
+               <entry>false</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
 </sect2>
