@@ -1,0 +1,10 @@
+<part xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+      xml:id="dev.core-developer" version="5.0" label="II">
+   <title>Core Developers' Guide</title>
+   <partintro>
+      <para>This part is intended purely to core developers who control the project releases, configuration of 3rd party tools etc.</para>
+   </partintro>
+   <xi:include href="./core-developer/release.xml"/>
+   <xi:include href="./core-developer/continuous-integration.xml"/>
+</part>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.maven.scenario-transformation" version="5.0">
+   <title>Transformation of Scenarios</title>
+   <para>
+      It is possible to automatically transform scenarios from previous versions of PerfCake
+      into the newest one. There are XSTL stylesheets included and they can be used by invoking
+      the
+      <emphasis>xml:transform</emphasis>
+      goal.
+   </para>
+   <para>There are properties that can be used to control the transformation. They are described in the following table.</para>
+   <table frame="all">
+      <title>XML plugin properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="4*"/>
+         <colspec colname="description" colwidth="3*"/>
+         <colspec colname="required" colwidth="2*"/>
+         <colspec colname="default-value" colwidth="4*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>transform.scenarios.dir</entry>
+               <entry>An input directory where the XML plugin will look for the scenarios to transform.</entry>
+               <entry>Yes</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>transform.scenarios.outputDir</entry>
+               <entry>An output directory where the transformed scenarios will be placed.</entry>
+               <entry>No</entry>
+               <entry>${project.build.directory}/scenarios</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+</section>

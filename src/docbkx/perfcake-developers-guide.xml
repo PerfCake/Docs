@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE book>
 <book xmlns="http://docbook.org/ns/docbook" xmlns:db="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0">
-   <title>PerfCake 4.x</title>
+   <title>PerfCake 5.x</title>
    <subtitle>Developers' Guide</subtitle>
    <info>
       <authorgroup>
@@ -14,22 +14,8 @@
       </authorgroup>
    </info>
    <toc/>
-   <xi:include href="chapters/acknowledgements.xml"/>
-   <xi:include href="chapters/dev-introduction.xml"/>
-   <part label="I">
-      <title>General Contributors' and Developers' Guide</title>
-      <partintro>
-         <para>This part contains general information suitable for all project contributors and developers. It is a great starting point for anybody with the aspiration to contribute to PerfCake, which we really love.</para>
-      </partintro>
-      <xi:include href="chapters/dev-developing.xml"/>
-      <xi:include href="chapters/dev-architecture.xml"/>
-   </part>
-   <part label="II">
-      <title>Core Developers' Guide</title>
-      <partintro>
-         <para>This part is intended purely to core developers who control the project releases, configuration of 3rd party tools etc.</para>
-      </partintro>
-      <xi:include href="chapters/dev-release.xml"/>
-      <xi:include href="chapters/dev-jenkins.xml"/>
-   </part>
+   <xi:include href="./common/acknowledgements.xml"/>
+   <xi:include href="./dev/introduction.xml"/>
+   <xi:include href="./dev/contributor.xml"/>
+   <xi:include href="./dev/core-developer.xml"/>
 </book>

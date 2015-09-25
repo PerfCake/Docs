@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.code-standards.formating" version="5.0">
+   <title>Formating</title>
+   <note>
+      <para>
+         <emphasis role="strong">Terminology Note:</emphasis>
+         <emphasis>block-like construct</emphasis>
+         refers to the body of a class, method or
+         constructor. Note that, by
+         <xref linkend="sec-array-init"/>, any array initializer
+         <emphasis>may</emphasis>
+         optionally be treated as if it were a block-like construct.
+      </para>
+   </note>
+   <section>
+      <title>Braces</title>
+      <section>
+         <title>Braces are used where optional</title>
+         <para>Braces are used with<code language="java">if</code>,<code language="java"
+               >else</code>,<code language="java">for</code>,
+            <code language="java">do</code>
+            and
+            <code language="java">while</code>
+            statements, even when the body is empty or
+            contains only a single statement.
+         </para>
+      </section>
+      <section xml:id="sec-nonempty-blocks">
+         <title>Nonempty blocks: K &amp; R style</title>
+         <para>Braces follow the Kernighan and Ritchie style ("Egyptian brackets") for
+            <emphasis>nonempty</emphasis>
+            blocks and block-like constructs:
+         </para>
+         <itemizedlist>
+            <listitem>
+               <para>No line break before the opening brace,</para>
+            </listitem>
+            <listitem>
+               <para>Line break after the opening brace,</para>
+            </listitem>
+            <listitem>
+               <para>Line break before the closing brace</para>
+            </listitem>
+            <listitem>
+               <para>Line break after the closing brace
+                  <emphasis>if</emphasis>
+                  that brace
+                  terminates a statement or the body of a method, constructor or
+                  <emphasis>named</emphasis>
+                  class. For example, there is
+                  <emphasis>no</emphasis>
+                  line break after the brace if it is followed by
+                  <code language="java">else</code>
+                  or a comma.
+               </para>
+            </listitem>
+         </itemizedlist>
+         <para>Example:</para>
+         <programlisting language="java" linenumbering="unnumbered"><![CDATA[return new MyClass() {
+  @Override public void method() {
+    if (condition()) {
+      try {
+        something();
+      } catch (ProblemException e) {
+        recover();
+      }
+    }
+  }
+};]]>           </programlisting>
+         <para>A few exceptions for enum classes are given in
+            <xref linkend="sec-enum-classes"/>.
+         </para>
+      </section>
+      <section>
+         <title>Empty blocks: may be concise</title>
+         <para>An empty block or block-like construct
+            <emphasis role="italics">may</emphasis>
+            be
+            closed immediately after it is opened, with no characters or line break in between
+            (<code language="java">{}</code>),
+            <emphasis role="strong">unless</emphasis>
+            it is
+            part of a
+            <emphasis>multi-block statement</emphasis>
+            (one that directly contains
+            multiple blocks:
+            <code language="java">if/else-if/else</code>
+            or<code
+                  language="java">try/catch/finally</code>).
+         </para>
+         <para>Example:</para>
+         <programlisting language="java" linenumbering="unnumbered"><![CDATA[void doNothing() {}]]></programlisting>
+      </section>
+   </section>
+   <section>
+      <title>Block indentation: +3 spaces</title>
+      <para>Each time a new block or block-like construct is opened, the indent increases by two
+         spaces. When the block ends, the indent returns to the previous indent level. The indent
+         level applies to both code and comments throughout the block. (See the example in
+         <xref
+               linkend="sec-nonempty-blocks"/>.)
+      </para>
+   </section>
+   <section>
+      <title>One statement per line</title>
+      <para>Each statement is followed by a line-break.</para>
+   </section>
+   <section xml:id="sec-column-limit">
+      <title>Column limit: 400</title>
+      <para>PerfCake uses a column limit of 400 characters. Except as noted below, any line that
+         would exceed this limit must be line-wrapped, as explained in
+         <xref
+               linkend="sec-line-wrap"/>.
+      </para>
+   </section>
+   <section xml:id="sec-line-wrap">
+      <title>Line-wrapping</title>
+      <para>
+         <emphasis role="bold">Terminology Note:</emphasis>
+         When code that might otherwise
+         legally occupy a single line is divided into multiple lines, typically to avoid
+         overflowing the column limit, this activity is called<emphasis role="italic"
+            >line-wrapping</emphasis>.
+      </para>
+      <para>There is no comprehensive, deterministic formula showing
+         <emphasis role="italic"
+               >exactly
+         </emphasis>
+         how to line-wrap in every situation. Very often there are several
+         valid ways to line-wrap the same piece of code.
+      </para>
+      <tip>
+         <para>Extracting a method or local variable may solve the problem without the need to
+            line-wrap.
+         </para>
+      </tip>
+      <section>
+         <title>Where to break</title>
+         <para>The prime directive of line-wrapping is: prefer to break at a<emphasis
+               role="bold">higher syntactic level</emphasis>. Also:
+         </para>
+         <orderedlist>
+            <listitem>
+               <para>When a line is broken at a
+                  <emphasis role="italic">non-assignment</emphasis>
+                  operator the break comes
+                  <emphasis role="italic">before</emphasis>
+                  the symbol.
+                  (Note that this is not the same practice used in Google style for other
+                  languages, such as C++ and JavaScript.)
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>This also applies to the following "operator-like" symbols: the dot
+                        separator (<code language="java">.</code>), the ampersand in type bounds
+                        (<code language="java">&lt;T extends Foo &amp; Bar></code>), and the
+                        pipe in catch blocks (<code language="java">catch (FooException |
+                           BarException e)</code>).
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </listitem>
+            <listitem>
+               <para>When a line is broken at an
+                  <emphasis role="italic">assignment</emphasis>
+                  operator the break typically comes
+                  <emphasis role="italic">after</emphasis>
+                  the
+                  symbol, but either way is acceptable.
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>This also applies to the "assignment-operator-like" colon in an
+                        enhanced
+                        <code language="java">for</code>
+                        ("foreach") statement.
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </listitem>
+            <listitem>
+               <para>A method or constructor name stays attached to the open parenthesis (<code
+                     language="java">(</code>) that follows it.
+               </para>
+            </listitem>
+            <listitem>
+               <para>A comma (<code language="java">,</code>) stays attached to the token that
+                  precedes it.
+               </para>
+            </listitem>
+         </orderedlist>
+      </section>
+      <section>
+         <title>Indent continuation lines at least +6 spaces</title>
+         <para>When line-wrapping, each line after the first (each
+            <emphasis role="italic">continuation line</emphasis>
+            ) is indented at least +4 from the original
+            line.
+         </para>
+         <para>When there are multiple continuation lines, indentation may be varied beyond +4 as
+            desired. In general, two continuation lines use the same indentation level if and
+            only if they begin with syntactically parallel elements.
+         </para>
+         <para>
+            <xref linkend="sec-horiz-align"/>
+            addresses the discouraged practice of using a
+            variable number of spaces to align certain tokens with previous lines.
+         </para>
+      </section>
+   </section>
+   <section>
+      <title>Whitespace</title>
+      <section>
+         <title>Vertical whitespace</title>
+         <para>A single blank line appears:</para>
+         <orderedlist>
+            <listitem>
+               <para>
+                  <emphasis role="italic">Between</emphasis>
+                  consecutive members (or
+                  initializers) of a class: fields, constructors, methods, nested classes, static
+                  initializers, instance initializers.
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>
+                        <emphasis role="bold">Exception:</emphasis>
+                        A blank line between two
+                        consecutive fields (having no other code between them) is optional. Such
+                        blank lines are used as needed to create
+                        <emphasis role="italic">logical
+                           groupings
+                        </emphasis>
+                        of fields.
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </listitem>
+            <listitem>
+               <para>Within method bodies, as needed to create
+                  <emphasis role="italic">logical
+                     groupings
+                  </emphasis>
+                  of statements.
+               </para>
+            </listitem>
+            <listitem>
+               <para>
+                  <emphasis role="italic">Optionally</emphasis>
+                  before the first member or
+                  after the last member of the class (neither encouraged nor discouraged).
+               </para>
+            </listitem>
+            <listitem>
+               <para>As required by other sections of this document (such as
+                  <xref
+                        linkend="sec-import-stat"/>).
+               </para>
+            </listitem>
+         </orderedlist>
+         <para>
+            <emphasis role="italic">Multiple</emphasis>
+            consecutive blank lines are permitted,
+            but never required (or encouraged).
+         </para>
+      </section>
+      <section>
+         <title>Horizontal whitespace</title>
+         <para>Beyond where required by the language or other style rules, and apart from
+            literals, comments and Javadoc, a single ASCII space also appears in the following
+            places<emphasis role="bold">only</emphasis>.
+         </para>
+         <orderedlist>
+            <listitem>
+               <para>Separating any reserved word, such as<code language="java">if</code>,
+                  <code
+                        language="java">for
+                  </code>
+                  or<code language="java">catch</code>, from an
+                  open parenthesis (<code language="java">(</code>) that follows it on that
+                  line.
+               </para>
+            </listitem>
+            <listitem>
+               <para>Separating any reserved word, such as
+                  <code language="java">else</code>
+                  or
+                  <code language="java">catch</code>, from a closing curly brace (<code
+                        language="java">}</code>) that precedes it on that line.
+               </para>
+            </listitem>
+            <listitem>
+               <para>Before any open curly brace (<code language="java">{</code>), with two
+                  exceptions:
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>
+                        <code language="java">@SomeAnnotation({a, b})</code>
+                        (no space is
+                        used)
+                     </para>
+                  </listitem>
+                  <listitem>
+                     <para>
+                        <code language="java">String[][] x = {{"foo"}};</code>
+                        (no space is
+                        required between<code language="java">{{</code>, by item 8 below)
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </listitem>
+            <listitem>
+               <para>On both sides of any binary or ternary operator. This also applies to the
+                  following "operator-like" symbols:
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>the ampersand in a conjunctive type bound:
+                        <code language="java">&lt;T
+                           extends Foo &amp; Bar>
+                        </code>
+                     </para>
+                  </listitem>
+                  <listitem>
+                     <para>the pipe for a catch block that handles multiple exceptions:
+                        <code
+                              language="java">catch (FooException | BarException e)
+                        </code>
+                     </para>
+                  </listitem>
+                  <listitem>
+                     <para>the colon (<code language="java">:</code>) in an enhanced
+                        <code
+                              language="java">for
+                        </code>
+                        ("foreach") statement
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </listitem>
+            <listitem>
+               <para>After
+                  <code language="java">,:;</code>
+                  or the closing parenthesis (<code
+                        language="java">)</code>) of a cast
+               </para>
+            </listitem>
+            <listitem>
+               <para>On both sides of the double slash (<code language="java">//</code>) that
+                  begins an end-of-line comment. Here, multiple spaces are allowed, but not
+                  required
+               </para>
+            </listitem>
+            <listitem>
+               <para>Between the type and variable of a declaration:
+                  <code language="java"
+                        >List&lt;String> list
+                  </code>
+               </para>
+            </listitem>
+            <listitem>
+               <para>
+                  <emphasis role="italic">Optional</emphasis>
+                  just inside both braces of an
+                  array initializer
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>
+                        <code language="java">new int[] {5, 6}</code>
+                        and
+                        <code
+                              language="java">new int[] { 5, 6 }
+                        </code>
+                        are both valid
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </listitem>
+         </orderedlist>
+         <note>
+            <para>This rule never requires or forbids additional space at the start or end of a
+               line, only interior space.
+            </para>
+         </note>
+      </section>
+      <section xml:id="sec-horiz-align">
+         <title>Horizontal alignment: never required</title>
+         <para>
+            <emphasis role="bold">Terminology Note:</emphasis>
+            <emphasis role="italic">Horizontal alignment</emphasis>
+            is the practice of adding a
+            variable number of additional spaces in your code with the goal of making certain
+            tokens appear directly below certain other tokens on previous lines.
+         </para>
+         <para>This practice is permitted, but is
+            <emphasis role="bold">never required</emphasis>
+            by PerfCake Style. It is not even required to
+            <emphasis role="italic"
+                  >maintain
+            </emphasis>
+            horizontal alignment in places where it was already used.
+            Here is an example without alignment, then using alignment:
+         </para>
+         <programlisting language="java" linenumbering="unnumbered"><![CDATA[private int x; // this is fine
+private Color color; // this too
+
+private int   x;     // permitted, but future edits
+private Color color; // may leave it unaligned]]></programlisting>
+         <tip>
+            <para>Alignment can aid readability, but it creates problems for future maintenance.
+               Consider a future change that needs to touch just one line. This change may leave
+               the formerly-pleasing formatting mangled, and that is<emphasis role="bold"
+                     >allowed</emphasis>. More often it prompts the coder (perhaps you) to adjust
+               whitespace on nearby lines as well, possibly triggering a cascading series of
+               reformattings. That one-line change now has a "blast radius." This can at worst
+               result in pointless busywork, but at best it still corrupts version history
+               information, slows down reviewers and exacerbates merge conflicts.
+            </para>
+         </tip>
+      </section>
+   </section>
+   <section>
+      <title>Grouping parentheses: recommended</title>
+      <para>Optional grouping parentheses are omitted only when author and reviewer agree that
+         there is no reasonable chance the code will be misinterpreted without them, nor would
+         they have made the code easier to read. It is not reasonable to assume that every reader
+         has the entire Java operator precedence table memorized.
+      </para>
+   </section>
+   <section>
+      <title>Specific constructs</title>
+      <section xml:id="sec-enum-classes">
+         <title>Enum classes</title>
+         <para>After each comma that follows an enum constant, a line-break is optional.</para>
+         <para>An enum class with no methods and no documentation on its constants may optionally
+            be formatted as if it were an array initializer (see
+            <xref linkend="sec-array-init"
+                  />).
+         </para>
+         <programlisting language="java" linenumbering="unnumbered">private enum Suit { CLUBS, HEARTS, SPADES, DIAMONDS }</programlisting>
+         <para>Since enum classes<emphasis role="italic">are classes</emphasis>, all other rules
+            for formatting classes apply.
+         </para>
+      </section>
+      <section>
+         <title>Variable declarations</title>
+         <itemizedlist>
+            <listitem>
+               <para>
+                  <emphasis role="bold">One variable per declaration</emphasis>
+               </para>
+               <para>Every variable declaration (field or local) declares only one variable:
+                  declarations such as
+                  <code language="java">int a, b;</code>
+                  are not
+                  used.
+               </para>
+            </listitem>
+            <listitem>
+               <para>
+                  <emphasis role="bold">Declared when needed, initialized as soon as
+                     possible
+                  </emphasis>
+               </para>
+               <para>Local variables are
+                  <emphasis role="bold">not</emphasis>
+                  habitually declared
+                  at the start of their containing block or block-like construct. Instead, local
+                  variables are declared close to the point they are first used (within reason),
+                  to minimize their scope. Local variable declarations typically have
+                  initializers, or are initialized immediately after declaration.
+               </para>
+            </listitem>
+         </itemizedlist>
+      </section>
+      <section xml:id="sec-array-init">
+         <title>Arrays</title>
+         <itemizedlist>
+            <listitem>
+               <para>
+                  <emphasis role="bold">Array initializers: can be
+                     "block-like"
+                  </emphasis>
+               </para>
+               <para>Any array initializer may optionally be formatted as if it were a
+                  "block-like construct." For example, the following are all valid (not an
+                  exhaustive list):
+               </para>
+               <programlisting language="java" linenumbering="unnumbered"><![CDATA[new int[] {        new int[] {
+   0, 1, 2, 3          0,
+}                      1,
+                       2,
+new int[] {            3,
+   0, 1,            }
+   2, 3
+}                   new int[]
+                       {0, 1, 2, 3}]]></programlisting>
+            </listitem>
+            <listitem>
+               <para>
+                  <emphasis role="bold">No C-style array declarations</emphasis>
+               </para>
+               <para>The square brackets form a part of the type, not the variable:<code
+                     language="java">String[] args</code>, not<code language="java">String
+                  args[]</code>.
+               </para>
+            </listitem>
+         </itemizedlist>
+      </section>
+      <section>
+         <title>Switch statements</title>
+         <para><emphasis role="bold">Terminology Note</emphasis>: Inside the braces of a
+            <emphasis role="italic">switch block</emphasis>
+            are one or more<emphasis
+                  role="italic">statement groups</emphasis>. Each statement group consists of one or
+            more
+            <emphasis role="italic">switch labels</emphasis>
+            (either
+            <code language="java"
+                  >case FOO:
+            </code>
+            or<code language="java">default:</code>), followed by one or
+            more statements.
+         </para>
+         <itemizedlist>
+            <listitem>
+               <para>
+                  <emphasis role="bold">Indentation</emphasis>
+               </para>
+               <para>As with any other block, the contents of a switch block are indented
+                  +3.
+               </para>
+               <para>After a switch label, a newline appears, and the indentation level is
+                  increased +3, exactly as if a block were being opened. The following switch
+                  label returns to the previous indentation level, as if a block had been
+                  closed.
+               </para>
+            </listitem>
+            <listitem>
+               <para>
+                  <emphasis role="bold">Fall-through: commented</emphasis>
+               </para>
+               <para>Within a switch block, each statement group either terminates abruptly (with
+                  a<code language="java">break</code>,<code language="java">continue</code>,
+                  <code language="java">return</code>
+                  or thrown exception), or is marked with
+                  a comment to indicate that execution will or
+                  <emphasis role="italic"
+                        >might
+                  </emphasis>
+                  continue into the next statement group. Any comment that
+                  communicates the idea of fall-through is sufficient (typically<code
+                        language="java">// fall through</code>). This special comment is not
+                  required in the last statement group of the switch block. Example:
+               </para>
+               <programlisting language="java" linenumbering="unnumbered"><![CDATA[switch (input) {
+   case 1:
+   case 2:
+      prepareOneOrTwo();
+      // fall through
+   case 3:
+      handleOneTwoOrThree();
+      break;
+   default:
+      handleLargeNumber(input);
+}]]></programlisting>
+            </listitem>
+            <listitem>
+               <para>
+                  <emphasis role="bold">The default case is present</emphasis>
+               </para>
+               <para>Each switch statement includes a
+                  <code language="java">default</code>
+                  statement group, even if it contains no code.
+               </para>
+            </listitem>
+         </itemizedlist>
+      </section>
+      <section>
+         <title>Annotations</title>
+         <para>Annotations applying to a class, method or constructor appear immediately after
+            the documentation block, and each annotation is listed on a line of its own (that is,
+            one annotation per line). These line breaks do not constitute line-wrapping (
+            <xref
+                  linkend="sec-line-wrap"/>), so the indentation level is not increased.
+            Example:
+         </para>
+         <programlisting language="java" linenumbering="unnumbered"><![CDATA[@Override
+@Nullable
+public String getNameIfPresent() { ... }]]></programlisting>
+         <para>
+            <emphasis role="bold">Exception:</emphasis>
+            A single parameterless annotation may
+            instead appear together with the first line of the signature, for example:
+         </para>
+         <programlisting language="java" linenumbering="unnumbered"><![CDATA[@Override public int hashCode() { ... }]]></programlisting>
+         <para>Annotations applying to a field also appear immediately after the documentation
+            block, but in this case,
+            <emphasis role="italic">multiple</emphasis>
+            annotations
+            (possibly parameterized) may be listed on the same line; for example:
+         </para>
+         <programlisting language="java" linenumbering="unnumbered"><![CDATA[@Partial @Mock DataLoader loader;]]></programlisting>
+         <para>There are no specific rules for formatting parameter and local variable
+            annotations.
+         </para>
+      </section>
+      <section>
+         <title>Comments</title>
+         <itemizedlist>
+            <listitem>
+               <para>
+                  <emphasis role="bold">Block comment style</emphasis>
+               </para>
+               <para>Block comments are indented at the same level as the surrounding code. They
+                  may be in
+                  <code language="java">/* ... */</code>
+                  style or
+                  <code language="java"
+                        >// ...
+                  </code>
+                  style. For multi-line
+                  <code language="java">/* ... */</code>
+                  comments, subsequent lines must start with
+                  <code language="java">*</code>
+                  aligned with the
+                  <code language="java">*</code>
+                  on the previous line.<programlisting language="java" linenumbering="unnumbered"><![CDATA[/*
+ * This is          // And so          /* Or you can
+ * okay.            // is this.         * even do this. */
+ */]]></programlisting>Comments are not enclosed in boxes drawn with asterisks or other
+                  characters.
+               </para>
+               <tip>
+                  <para>When writing multi-line comments, use the
+                     <code language="java">/* ...
+                        */
+                     </code>
+                     style if you want automatic code formatters to re-wrap the
+                     lines when necessary (paragraph-style). Most formatters don't re-wrap lines
+                     in
+                     <code language="java">// ...</code>
+                     style comment blocks.
+                  </para>
+               </tip>
+            </listitem>
+         </itemizedlist>
+      </section>
+      <section>
+         <title>Modifiers</title>
+         <para>Class and member modifiers, when present, appear in the order recommended by the
+            Java Language Specification:
+         </para>
+         <para>
+            <programlisting language="java" linenumbering="unnumbered">public protected private abstract static final transient
+               volatile synchronized native strictfp
+            </programlisting>
+         </para>
+      </section>
+      <section>
+         <title>Numeric literals</title>
+         <para><code language="java">long</code>-valued integer literals use an uppercase
+            <code
+                  language="java">L
+            </code>
+            suffix, never lowercase (to avoid confusion with the
+            digit<code language="java">1</code>). For example,
+            <code language="java"
+                  >3000000000L
+            </code>
+            rather than<code language="java">3000000000l</code>.
+         </para>
+         <para>It is advised to use the numeric literal underscore separator (<code
+               language="java">_</code>) as it comes with Java 7. This is even better for
+            readability:<code language="java">3_000_000_000L</code>.
+         </para>
+      </section>
+   </section>
+
+</section>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.developing.maven" version="5.0">
+   <title>Maven Project</title>
+   <para>The following Maven plugins and their goals can be used with PerfCake project.</para>
+   <xi:include href="./maven/structure.xml"/>
+   <xi:include href="./maven/profiles.xml"/>
+   <xi:include href="./maven/maven-goals.xml"/>
+   <xi:include href="./maven/documentation.xml"/>
+   <xi:include href="./maven/license.xml"/>
+   <xi:include href="./maven/jacoco.xml"/>
+   <xi:include href="./maven/findbugs.xml"/>
+   <xi:include href="./maven/signatures.xml"/>
+   <xi:include href="./maven/distribution.xml"/>
+   <xi:include href="./maven/scenario-transformation.xml"/>
+</section>

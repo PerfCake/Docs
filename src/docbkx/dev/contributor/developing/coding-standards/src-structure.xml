@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.code-standards.src-structure" version="5.0">
+   <title>Source file structure</title>
+   <para>A source file consists of,<emphasis role="strong">in order</emphasis>:
+   </para>
+   <orderedlist>
+      <listitem>
+         <para>License or copyright information, if present,</para>
+      </listitem>
+      <listitem>
+         <para>Package statement,</para>
+      </listitem>
+      <listitem>
+         <para>Import statements,</para>
+      </listitem>
+      <listitem>
+         <para>Exactly one top-level class.</para>
+      </listitem>
+   </orderedlist>
+   <para>
+      <emphasis role="strong">Exactly one blank line</emphasis>
+      separates each section that is
+      present.
+   </para>
+   <section>
+      <title>License or copyright information, if present</title>
+      <para>If license or copyright information belongs in a file, it belongs here.</para>
+   </section>
+   <section>
+      <title>Package statement</title>
+      <para>The package statement is<emphasis role="strong">not line-wrapped</emphasis>. The
+         column limit (
+         <xref linkend="sec-column-limit"/>) does not apply to package statements.
+      </para>
+   </section>
+   <section xml:id="sec-import-stat">
+      <title>Import statements</title>
+      <section>
+         <title>No wildcard imports</title>
+         <para>
+            <emphasis role="strong">Wildcard imports</emphasis>, static or otherwise,<emphasis
+               role="strong">are not used</emphasis>.
+         </para>
+      </section>
+      <section>
+         <title>No line-wrapping</title>
+         <para>Import statements are<emphasis role="strong">not line-wrapped</emphasis>. The
+            column limit (
+            <xref linkend="sec-column-limit"/>) does not apply to import
+            statements.
+         </para>
+      </section>
+      <section>
+         <title>Ordering and spacing</title>
+         <para>Import statements are divided into the following groups, in this order, with each
+            group separated by a single blank line:
+            <orderedlist>
+               <listitem>
+                  <para>All static imports in a single group</para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code language="java">org.perfcake</code>
+                     imports (only if this source
+                     file is in the
+                     <code language="java">org.perfcake</code>
+                     package
+                     space)
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>Third-party imports, one group per top-level package, in ASCII sort
+                     order
+                  </para>
+                  <itemizedlist>
+                     <listitem>
+                        <para>for example: com, org, junit, sun</para>
+                     </listitem>
+                  </itemizedlist>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code language="java">java</code>
+                     imports
+                  </para>
+               </listitem>
+               <listitem>
+                  <para>
+                     <code language="java">javax</code>
+                     imports
+                  </para>
+               </listitem>
+            </orderedlist>
+         </para>
+         <para>Within a group there are no blank lines, and the imported names appear in ASCII
+            sort order. (
+            <emphasis role="bold">Note:</emphasis>
+            this is not the same as the
+            import
+            <emphasis role="italic">statements</emphasis>
+            being in ASCII sort order; the
+            presence of semicolons warps the result.)
+         </para>
+      </section>
+   </section>
+   <section>
+      <title>Class declaration</title>
+      <section>
+         <title>Exactly one top-level class declaration</title>
+         <para>Each top-level class resides in a source file of its own.</para>
+      </section>
+      <section>
+         <title>Class member ordering</title>
+         <para>The ordering of the members of a class can have a great effect on learnability,
+            but there is no single correct recipe for how to do it. Different classes may order
+            their members differently.
+         </para>
+         <para>What is important is that each class order its members in<emphasis role="strong"
+               >some logical order</emphasis>, which its maintainer could explain if asked. For
+            example, new methods are not just habitually added to the end of the class, as that
+            would yield "chronological by date added" ordering, which is not a logical ordering.
+         </para>
+      </section>
+      <section>
+         <title>Overloads: never split</title>
+         <para>When a class has multiple constructors, or multiple methods with the same name,
+            these appear sequentially, with no intervening members.
+         </para>
+      </section>
+   </section>
+</section>

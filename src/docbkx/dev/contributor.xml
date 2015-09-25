@@ -1,0 +1,10 @@
+<part xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+      xml:id="dev.contributor" version="5.0" label="I">
+   <title>General Contributors' and Developers' Guide</title>
+   <partintro>
+      <para>This part contains general information suitable for all project contributors and developers. It is a great starting point for anybody with the aspiration to contribute to PerfCake, which we really love.</para>
+   </partintro>
+   <xi:include href="./contributor/developing.xml"/>
+   <xi:include href="./contributor/architecture.xml"/>
+</part>

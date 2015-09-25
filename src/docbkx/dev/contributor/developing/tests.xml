@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.developing.tests" version="5.0">
+   <title>Test Development</title>
+   <para>All classes in PerfCake are supposed to have a good test coverage. This might not
+      currently be the situation for all of them but it definitely is our goal. When developing new
+      code, please make sure the tests are developed as well.
+   </para>
+   <para>There are the following test groups defined. Each of the test methods or classes should be
+      categorized at least into one of them.
+   </para>
+   <itemizedlist>
+      <listitem>
+         <para>
+            <emphasis>unit</emphasis>
+            - Test of a single component (class).
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>integration</emphasis>
+            - Tests of multiple components working well in the
+            complete context of PerfCake and in relation to other components.
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>performance</emphasis>
+            - Tests of a perfomance of a component or multiple
+            components to make sure they are not a bottle-neck.
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>stress</emphasis>
+            - Tests to verify that a component or multiple components
+            work correctly under a heavy load.
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>ueber</emphasis>
+            - Advanced integration/performance/stress tests that
+            verify components at larger scale than previous groups and take significant amount of
+            time. Tests in this group are not executed by default, unless a Maven profile
+            <emphasis>allTests</emphasis>
+            is used.
+         </para>
+      </listitem>
+   </itemizedlist>
+   <para>
+      To find out what is the current code coverage of tests, refer to the
+
+      <xref linkend="dev.contributor.developing.maven.jacoco"/>
+      .
+   </para>
+</section>

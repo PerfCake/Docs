@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.maven.distribution" version="5.0">
+   <title>Distribution</title>
+   <para>
+      To create the archived distributions we offer for download at our website, simply run
+      the
+      <emphasis>assembly:single</emphasis>
+      goal. Its output can be found in the
+      <varname>target</varname>
+      directory as usually.
+   </para>
+</section>

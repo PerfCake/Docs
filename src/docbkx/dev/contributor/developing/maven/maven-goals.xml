@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.maven.maven-goals" version="5.0">
+   <title>Standard Maven Goals</title>
+   <para>We try to minimalize the necessity for running standard Maven goals in a different
+      manner or in a way they are not originally intended to. So far we use the following
+      goals.
+   </para>
+   <itemizedlist>
+      <listitem>
+         <para>
+            <emphasis>clean</emphasis>
+            Cleans the compiled artifacts and reports. Basically
+            deletes the
+            <varname>target</varname>
+            directory.
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>compile</emphasis>
+            Compiles the whole project including tests.
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>test</emphasis>
+            Executes all the tests. See section Profiles for controlling test groups can be found in section
+
+            <xref
+                  linkend="dev.contributor.developing.tests"/>
+            for Maven profiles that control test groups.
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>install</emphasis>
+            Install project artifacts into the local Maven
+            repository. This is needed when working in the
+            <emphasis>devel</emphasis>
+            Git branch
+            with snapshot versions.
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>package</emphasis>
+            Packages the distribution
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>exec:exec</emphasis>
+            Works only in the
+            <emphasis>perfcake</emphasis>
+            module. Runs PerfCake, parameters are passed using
+            <emphasis>-Dparam=value</emphasis>
+            . Never use
+            <emphasis>exec:java</emphasis>
+            directly as Maven will comply about
+            missing configuration (the configuration is passed in from
+            <emphasis>exec:exec</emphasis>
+            ).
+         </para>
+      </listitem>
+      <listitem>
+         <para>
+            <emphasis>site</emphasis>
+            Works only in the
+            <emphasis>perfcake</emphasis>
+            module.
+            Generates the Maven HTML site. Consumes output of other plugins like JaCoCo. If the
+            other consumables should be part of the generated site, they must be ready before
+            calling this goal.
+         </para>
+      </listitem>
+   </itemizedlist>
+</section>

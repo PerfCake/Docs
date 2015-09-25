@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.code-standards.src-basics" version="5.0">
+   <title>Source file basics</title>
+   <section>
+      <title>File name</title>
+      <para>The source file name consists of the case-sensitive name of the top-level class it
+         contains, plus the
+         <code language="java">.java</code>
+         extension.
+      </para>
+   </section>
+   <section>
+      <title>File encoding: UTF-8</title>
+      <para>Source files are encoded in UTF-8.</para>
+   </section>
+   <section>
+      <title>Special characters</title>
+      <section>
+         <title>Whitespace characters</title>
+         <para>Aside from the line terminator sequence, the
+            <emphasis role="strong">ASCII
+               horizontal space character (0x20)
+            </emphasis>
+            is the only whitespace character that
+            appears anywhere in a source file. This implies that:
+         </para>
+         <orderedlist>
+            <listitem>
+               <para>All other whitespace characters in string and character literals are
+                  escaped,
+               </para>
+            </listitem>
+            <listitem>
+               <para>Tab characters are not used for indentation.</para>
+            </listitem>
+         </orderedlist>
+      </section>
+      <section>
+         <title>Special escape sequences</title>
+         <para>For any character that has a special escape sequence (<code language="java"
+               >\b</code>,<code language="java">\t</code>,<code language="java">\n</code>,
+            <code language="java">\f</code>,<code language="java">\r</code>,<code
+                  language="java">\"</code>,
+            <code language="java">\'</code>
+            and<code
+                  language="java">\\</code>), that sequence is used rather than the corresponding
+            octal (e.g.<code language="java">\012</code>) or Unicode (e.g.<code language="java"
+                  >\u000a</code>) escape.
+         </para>
+      </section>
+      <section>
+         <title>Non-ASCII characters</title>
+         <para>For the remaining non-ASCII characters, either the actual Unicode character (e.g.
+            ∞) or the equivalent Unicode escape (e.g. \u221e) is used, depending only on which
+            makes the code<emphasis role="strong">easier to read and understand</emphasis>.
+         </para>
+         <tip>
+            <para>In the Unicode escape case, and occasionally even when actual Unicode
+               characters are used, an explanatory comment can be very helpful.
+            </para>
+         </tip>
+         <table frame="all">
+            <title>Special characters examples</title>
+            <tgroup cols="2" align="left" colsep="1" rowsep="1">
+               <colspec colname="Example" colwidth="1*"/>
+               <colspec colname="Discussion" colwidth="1*"/>
+               <thead>
+                  <row>
+                     <entry>Example</entry>
+                     <entry>Discussion</entry>
+                  </row>
+               </thead>
+               <tbody>
+                  <row>
+                     <entry>
+                        <programlisting language="java" linenumbering="unnumbered"><![CDATA[String unitAbbrev = "μs";]]></programlisting>
+                     </entry>
+                     <entry>Best: perfectly clear even without a comment.</entry>
+                  </row>
+                  <row>
+                     <entry>
+                        <programlisting language="java" linenumbering="unnumbered"><![CDATA[// "μs"
+String unitAbbrev = "\u03bcs";]]></programlisting>
+                     </entry>
+                     <entry>Allowed, but there's no reason to do this.</entry>
+                  </row>
+                  <row>
+                     <entry>
+                        <programlisting language="java" linenumbering="unnumbered"><![CDATA[// Greek letter mu, "s"
+String unitAbbrev = "\u03bcs";]]></programlisting>
+                     </entry>
+                     <entry>Allowed, but awkward and prone to mistakes.</entry>
+                  </row>
+                  <row>
+                     <entry>
+                        <programlisting language="java" linenumbering="unnumbered">String unitAbbrev = "\u03bcs";</programlisting>
+                     </entry>
+                     <entry>Poor: the reader has no idea what this is.</entry>
+                  </row>
+                  <row>
+                     <entry>
+                        <programlisting language="java" linenumbering="unnumbered"><![CDATA[// byte order mark
+return '\ufeff' + content;]]></programlisting>
+                     </entry>
+                     <entry>Good: use escapes for non-printable characters, and comment if
+                        necessary.
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <tip>
+            <para>Never make your code less readable simply out of fear that some programs might
+               not handle non-ASCII characters properly. If that should happen, those programs
+               are
+               <emphasis role="strong">broken</emphasis>
+               and they must be<emphasis
+                     role="strong">fixed</emphasis>.
+            </para>
+         </tip>
+      </section>
+   </section>
+</section>

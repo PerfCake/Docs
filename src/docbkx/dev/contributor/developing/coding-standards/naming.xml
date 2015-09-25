@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.code-standards.naming" version="5.0">
+   <title>Naming</title>
+
+   <section>
+      <title>Rules common to all identifiers</title>
+      <para>Identifiers use only ASCII letters and digits, and in two cases noted below,
+         underscores. Thus each valid identifier name is matched by the regular expression<code
+               language="java">\w+</code>.
+      </para>
+      <para>In PerfCake Style special prefixes or suffixes, like those seen in the examples<code
+            language="java">name_</code>,<code language="java">mName</code>,
+         <code
+               language="java">s_name
+         </code>
+         and<code language="java">kName</code>, are
+         <emphasis
+               role="bold">not
+         </emphasis>
+         used.
+      </para>
+   </section>
+   <section>
+      <title>Rules by identifier type</title>
+      <section>
+         <title>Package names</title>
+         <para>Package names are all lowercase, singular, with consecutive words simply concatenated
+            together (no underscores). For example,<code language="java"
+                  >com.example.deepspace</code>, not
+            <code language="java"
+                  >com.example.deepSpace
+            </code>
+            or<code language="java"
+                  >com.example.deep_space</code>.
+         </para>
+      </section>
+      <section>
+         <title>Class names</title>
+         <para>Class names are written in UpperCamelCase (
+            <xref linkend="sec-camel-case"
+                  />).
+         </para>
+         <para>Class names are typically nouns or noun phrases. For example,
+            <code
+                  language="java">Character
+            </code>
+            or<code language="java">ImmutableList</code>.
+            Interface names may also be nouns or noun phrases (for example,<code language="java"
+                  >List</code>), but may sometimes be adjectives or adjective phrases instead (for
+            example,<code language="java">Readable</code>).
+         </para>
+         <para>There are no specific rules or even well-established conventions for naming
+            annotation types.
+         </para>
+         <para>
+            <emphasis role="italic">Test</emphasis>
+            classes are named starting with the name
+            of the class they are testing, and ending with<code language="java">Test</code>. For
+            example,
+            <code language="java">HashTest</code>
+            or<code language="java"
+               >HashIntegrationTest</code>.
+         </para>
+      </section>
+      <section>
+         <title>Method names</title>
+         <para>Method names are written in lowerCamelCase (
+            <xref linkend="sec-camel-case"
+                  />).
+         </para>
+         <para>Method names are typically verbs or verb phrases. For example,
+            <code
+                  language="java">sendMessage
+            </code>
+            or<code language="java">stop</code>.
+         </para>
+         <para>Underscores may appear in JUnit test method names to separate logical components
+            of the name. One typical pattern is<code language="java"
+                  >test&lt;MethodUnderTest>_&lt;state></code>, for example<code language="java"
+                  >testPop_emptyStack</code>. There is no
+            <emphasis role="bold">one correct
+               way
+            </emphasis>
+            to name test methods.
+         </para>
+      </section>
+      <section>
+         <title>Constant names</title>
+         <para>Constant names use<code language="java">CONSTANT_CASE</code>: all uppercase
+            letters, with words separated by underscores. But what
+            <emphasis role="italic"
+                  >is
+            </emphasis>
+            a constant, exactly?
+         </para>
+         <para>Every constant is a static final field, but not all static final fields are
+            constants. Before choosing constant case, consider whether the field
+            <emphasis
+                  role="italic">really feels
+            </emphasis>
+            like a constant. For example, if any of that
+            instance's observable state can change, it is almost certainly not a constant. Merely
+            <emphasis role="italic">intending</emphasis>
+            to never mutate the object is
+            generally not enough.
+         </para>
+         <para>Examples:</para>
+         <para><programlisting language="java" linenumbering="unnumbered"><![CDATA[// Constants
+static final int NUMBER = 5;
+static final ImmutableList<String> NAMES = ImmutableList.of("Ed", "Ann");
+
+// because Joiner is immutable
+static final Joiner COMMA_JOINER = Joiner.on(',');
+static final SomeMutableType[] EMPTY_ARRAY = {};
+enum SomeEnum { ENUM_CONSTANT }
+
+// Not constants
+static String nonFinal = "non-final";
+final String nonStatic = "non-static";
+static final Set<String> mutableCollection = new HashSet<String>();
+static final ImmutableSet<SomeMutableType> mutableElements =
+      ImmutableSet.of(mutable);
+static final Logger logger = Logger.getLogger(MyClass.getName());
+static final String[] nonEmptyArray = {"these", "can", "change"};]]></programlisting>These names are
+            typically nouns or noun phrases.
+         </para>
+      </section>
+      <section>
+         <title>Non-constant field names</title>
+         <para>Non-constant field names (static or otherwise) are written in lowerCamelCase
+            (
+            <xref linkend="sec-camel-case"/>).
+         </para>
+         <para>These names are typically nouns or noun phrases. For example,
+            <code
+                  language="java">computedValues
+            </code>
+            or<code language="java"
+                  >index</code>.
+         </para>
+      </section>
+      <section>
+         <title>Parameter names</title>
+         <para>Parameter names are written in lowerCamelCase (
+            <xref linkend="sec-camel-case"
+                  />).
+         </para>
+         <para>One-character parameter names should be avoided.</para>
+      </section>
+      <section>
+         <title>Local variable names</title>
+         <para>Local variable names are written in lowerCamelCase (
+            <xref linkend="sec-camel-case"
+                  />), and can be abbreviated more liberally than other types of names.
+         </para>
+         <para>However, one-character names should be avoided, except for temporary and looping
+            variables.
+         </para>
+         <para>Even when final and immutable, local variables are not considered to be constants,
+            and should not be styled as constants.
+         </para>
+      </section>
+      <section>
+         <title>Type variable names</title>
+         <para>Each type variable is named in one of two styles:</para>
+         <itemizedlist>
+            <listitem>
+               <para>A single capital letter, optionally followed by a single numeral (such as
+                  <code language="java">E</code>,<code language="java">T</code>,<code
+                        language="java">X</code>,<code language="java">T2</code>).
+               </para>
+            </listitem>
+            <listitem>
+               <para>A name in the form used for classes (see Class names above), followed by the
+                  capital letter
+                  <code language="java">T</code>
+                  (examples:<code language="java"
+                        >RequestT</code>,<code language="java">FooBarT</code>).
+               </para>
+            </listitem>
+         </itemizedlist>
+      </section>
+   </section>
+   <section xml:id="sec-camel-case">
+      <title>Camel case: defined</title>
+      <para>Sometimes there is more than one reasonable way to convert an English phrase into
+         camel case, such as when acronyms or unusual constructs like "IPv6" or "iOS" are
+         present. To improve predictability, Google Style specifies the following (nearly)
+         deterministic scheme.
+      </para>
+      <para>Beginning with the prose form of the name:</para>
+      <para>
+         <orderedlist>
+            <listitem>
+               <para>Convert the phrase to plain ASCII and remove any apostrophes. For example,
+                  "Müller's algorithm" might become "Muellers algorithm".
+               </para>
+            </listitem>
+            <listitem>
+               <para>Divide this result into words, splitting on spaces and any remaining
+                  punctuation (typically hyphens).
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>
+                        <emphasis role="italic">Recommended:</emphasis>
+                        if any word already
+                        has a conventional camel-case appearance in common usage, split this into
+                        its constituent parts (e.g., "AdWords" becomes "ad words"). Note that a
+                        word such as "iOS" is not really in camel case<emphasis role="italic"
+                           >per se</emphasis>; it defies
+                        <emphasis role="italic">any</emphasis>
+                        convention, so this recommendation does not apply.
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </listitem>
+            <listitem>
+               <para>Now lowercase
+                  <emphasis role="italic">everything</emphasis>
+                  (including
+                  acronyms), then uppercase only the first character of:
+               </para>
+               <itemizedlist>
+                  <listitem>
+                     <para>... each word, to yield upper camel case, or</para>
+                  </listitem>
+                  <listitem>
+                     <para>... each word except the first, to yield lower camel case.</para>
+                  </listitem>
+               </itemizedlist>
+            </listitem>
+            <listitem>
+               <para>Finally, join all the words into a single identifier.</para>
+            </listitem>
+         </orderedlist>
+         Note that the casing of the original words is almost entirely disregarded. Examples:
+         <table>
+            <title>Camel case examples</title>
+            <tgroup cols="3">
+               <colspec colname="Prose form" colwidth="1*"/>
+               <colspec colname="Correct" colwidth="1*"/>
+               <colspec colname="Incorrect" colwidth="1*"/>
+               <thead>
+                  <row>
+                     <entry>Prose form</entry>
+                     <entry>Correct</entry>
+                     <entry>Incorrect</entry>
+                  </row>
+               </thead>
+               <tbody>
+                  <row>
+                     <entry>"XML HTTP request"</entry>
+                     <entry>XmlHttpRequest</entry>
+                     <entry>XMLHTTPRequest</entry>
+                  </row>
+                  <row>
+                     <entry>"new customer ID"</entry>
+                     <entry>newCustomerId</entry>
+                     <entry>newCustomerID</entry>
+                  </row>
+                  <row>
+                     <entry>"inner stopwatch"</entry>
+                     <entry>innerStopwatch</entry>
+                     <entry>innerStopWatch</entry>
+                  </row>
+                  <row>
+                     <entry>"supports IPv6 on iOS?"</entry>
+                     <entry>supportsIpv6OnIos</entry>
+                     <entry>supportsIPv6OnIOS</entry>
+                  </row>
+                  <row>
+                     <entry>"YouTube importer"</entry>
+                     <entry>YouTubeImporter, YoutubeImporter*</entry>
+                     <entry/>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </para>
+      <para>*Acceptable, but not recommended.</para>
+      <note>
+         <para>Some words are ambiguously hyphenated in the English language: for example
+            "nonempty" and "non-empty" are both correct, so the method names
+            <code
+                  language="java">checkNonempty
+            </code>
+            and
+            <code language="java"
+                  >checkNonEmpty
+            </code>
+            are likewise both correct.
+         </para>
+      </note>
+   </section>
+</section>

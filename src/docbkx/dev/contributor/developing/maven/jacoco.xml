@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.maven.jacoco" version="5.0">
+   <title>JaCoCo Code Coverage</title>
+   <para>JaCoCo is configured to use a Java Agent so no class instrumentation is neede. The agent
+      is automatically switched on for running tests. The only goal needed is report generation
+      (jacoco:report) which must be done together or after test execution.
+   </para>
+   <para>
+      The resulting report can be found in the
+      <varname>target/site/jacoco</varname>
+      directory.
+   </para>
+</section>

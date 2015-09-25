@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.code-standards.javadoc" version="5.0">
+   <title>JavaDoc</title>
+   <section>
+      <title>Formatting</title>
+      <section>
+         <title>General form</title>
+         <para>The
+            <emphasis role="italic">basic</emphasis>
+            formatting of Javadoc blocks is as
+            seen in this example:
+         </para>
+         <para>
+            <programlisting language="java" linenumbering="unnumbered"><![CDATA[/**
+ * Multiple lines of Javadoc text are written here,
+ * wrapped normally...
+ */
+public int method(String p1) { ... }]]></programlisting>
+         </para>
+         <para>... or in this single-line example:</para>
+         <para>
+            <programlisting language="java" linenumbering="unnumbered"><![CDATA[/** An especially short bit of Javadoc. */]]></programlisting>
+         </para>
+         <para>The basic form is always acceptable. The single-line form may be substituted when
+            there are no at-clauses present, and the entirety of the Javadoc block (including
+            comment markers) can fit on a single line.
+         </para>
+      </section>
+      <section>
+         <title>Paragraphs</title>
+         <para>One blank line -- that is, a line containing only the aligned leading asterisk (*)
+            -- appears between paragraphs, and before the group of "at-clauses" if present. Each
+            paragraph but the first has
+            <code language="java"><![CDATA[<p>]]></code>
+            immediately
+            before the first word, with no space after.
+         </para>
+      </section>
+      <section>
+         <title>At-clauses</title>
+         <para>Any of the standard "at-clauses" that are used appear in the order<code
+               language="java">@param</code>,<code language="java">@return</code>,<code
+               language="java">@throws</code>,<code language="java">@deprecated</code>, and
+            these four types never appear with an empty description. When an at-clause doesn't
+            fit on a single line, continuation lines are indented
+            <emphasis role="bold"
+                  >six
+            </emphasis>
+            (or more) spaces from the position of the<code language="java"
+                  >@</code>.
+         </para>
+      </section>
+      <section>
+         <title>Language</title>
+         <para>Use the third person in describing class purpose, method actions, parameters,
+            return types, exceptions and all others. Usually, present tense should be used. All
+            sentences including those describing parameters descriptions, thrown exceptions, and
+            return types start with an uppercase letter and end with a full stop.
+         </para>
+         <para>Avoid using reference to the item being described like<emphasis>this
+            class</emphasis>,<emphasis>the purpose of this method</emphasis>,<emphasis>it
+            stores</emphasis>, etc. Also avoid obvious verbs including<emphasis>used
+            to</emphasis>,<emphasis>returns</emphasis>, etc. All these references are very
+            obvious in the resulting JavaDoc. Simply describe the immediate actions, purpose and
+            all tohers. The same applies to exceptions being thrown.
+         </para>
+         <para>Methods intended for fluent API returning
+            <code language="java">this</code>
+            should
+            describe the return value as<emphasis>Instance of this to support fluent
+               API.</emphasis>.
+         </para>
+         <para>Following is an example of JavaDoc with the proper language:</para>
+         <para>
+            <programlisting language="java" linenumbering="unnumbered"><![CDATA[/**
+ * Gets a value of an accumulated result.
+ *
+ * @param key
+ *       Key in the results hash map.
+ * @return The value associated with the given key.
+ */
+protected Object getAccumulatedResult(final String key) {
+   ...
+}]]></programlisting>
+         </para>
+      </section>
+   </section>
+   <section>
+      <title>The summary fragment</title>
+      <para>The Javadoc for each class and member begins with a brief<emphasis role="bold"
+            >summary fragment</emphasis>. This fragment is very important: it is the only part of
+         the text that appears in certain contexts such as class and method indexes.
+      </para>
+      <para>This is a fragment -- a noun phrase or verb phrase, not a complete sentence. It does
+         not begin with<code language="java">A {@code Foo} is a...</code>, or<code
+               language="java">This method returns...</code>, nor does it form a complete imperative
+         sentence like<code language="java">Save the record.</code>. However, the fragment is
+         capitalized and punctuated as if it were a complete sentence.
+      </para>
+      <tip>
+         <para>A common mistake is to write simple Javadoc in the form<code language="java">/**
+            @return the customer ID */</code>. This is incorrect, and should be changed
+            to
+         </para>
+         <para>
+            <programlisting language="java" linenumbering="unnumbered"><![CDATA[/**
+ * Gets the customer ID.
+ * @return The customer ID.
+ */]]></programlisting>
+         </para>
+      </tip>
+      <para>All of the sentences should be properly ended by a period including the sentences
+         following "at-clauses".
+      </para>
+   </section>
+   <section>
+      <title>Where JavaDoc is used</title>
+      <para>At the<emphasis role="italic">minimum</emphasis>, Javadoc is present for every
+         <code
+               language="java">public
+         </code>
+         class, and every
+         <code language="java">public</code>
+         or
+         <code language="java">protected</code>
+         member of such a class, with a few exceptions
+         noted below.
+      </para>
+      <para>Other classes and members still have Javadoc as<emphasis role="italic"
+            >needed</emphasis>. Whenever an implementation comment would be used to define the
+         overall purpose or behavior of a class, method or field, that comment is written as
+         Javadoc instead (it's more uniform, and more tool-friendly.)
+      </para>
+      <section>
+         <title>Exception: self-explanatory methods</title>
+         <para>Javadoc is optional for "simple, obvious" methods like<code language="java"
+               >getFoo</code>, in cases where there
+            <emphasis role="italic">really and
+               truly
+            </emphasis>
+            is nothing else worthwhile to say but "Returns the foo".
+         </para>
+         <important>
+            <para>It is not appropriate to cite this exception to justify omitting relevant
+               information that a typical reader might need to know. For example, for a method
+               named<code language="java">getCanonicalName</code>, don't omit its documentation
+               (with the rationale that it would say only<code language="java">/** Returns the
+                  canonical name. */</code>) if a typical reader may have no idea what the term
+               "canonical name" means!
+            </para>
+         </important>
+      </section>
+      <section>
+         <title>Exception: overrides</title>
+         <para>Javadoc is not always present on a method that overrides a supertype method.
+         </para>
+      </section>
+   </section>
+</section>

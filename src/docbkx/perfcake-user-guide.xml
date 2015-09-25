@@ -20,7 +20,7 @@
       </authorgroup>
    </info>
    <toc/>
-   <xi:include href="chapters/acknowledgements.xml"/>
+   <xi:include href="./common/acknowledgements.xml"/>
    <xi:include href="./ug/introduction.xml"/>
    <xi:include href="./ug/perfcake-features.xml"/>
    <xi:include href="./ug/general-usage.xml"/>

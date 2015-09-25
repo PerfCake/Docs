@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.code-standards.practices" version="5.0">
+   <title>Programming practices</title>
+   <section>
+      <title>@Override: always used</title>
+      <para>A method is marked with the
+         <code language="java">@Override</code>
+         annotation
+         whenever it is legal. This includes a class method overriding a superclass method, a
+         class method implementing an interface method, and an interface method respecifying a
+         superinterface method.
+      </para>
+      <para>
+         <emphasis role="bold">Exception:</emphasis>
+         <code language="java">@Override</code>
+         may be omitted when the parent method is<code
+            language="java">@Deprecated</code>.
+      </para>
+   </section>
+   <section>
+      <title>Caught exceptions: not ignored</title>
+      <para>Except as noted below, it is very rarely correct to do nothing in response to a
+         caught exception. Typical responses are to log it, or if it is considered "impossible",
+         rethrow it as an IllegalStateException.
+      </para>
+      <para>When it truly is appropriate to take no action whatsoever in a catch block, the
+         reason this is justified is explained in a comment.
+      </para>
+      <para>
+         <programlisting language="java" linenumbering="unnumbered"><![CDATA[try {
+   int i = Integer.parseInt(response);
+   return handleNumericResponse(i);
+} catch (NumberFormatException ok) {
+   // it's not numeric; that's fine, just continue
+}
+return handleTextResponse(response);]]></programlisting>
+      </para>
+      <para>
+         <emphasis role="bold">Exception:</emphasis>
+         In tests, a caught exception may be
+         ignored without comment if it is named expected. The following is a very common idiom
+         for ensuring that the method under test does throw an exception of the expected type, so
+         a comment is unnecessary here.
+      </para>
+      <para>
+         <programlisting language="java" linenumbering="unnumbered"><![CDATA[try {
+   emptyStack.pop();
+   fail();
+} catch (NoSuchElementException expected) {
+}]]></programlisting>
+      </para>
+   </section>
+   <section>
+      <title>Static members: qualified using class</title>
+      <para>When a reference to a static class member must be qualified, it is qualified with
+         that class's name, not with a reference or expression of that class's type.
+      </para>
+      <para>
+         <programlisting language="java" linenumbering="unnumbered"><![CDATA[Foo aFoo = ...;
+Foo.aStaticMethod(); // good
+aFoo.aStaticMethod(); // bad
+somethingThatYieldsAFoo().aStaticMethod(); // very bad]]></programlisting>
+      </para>
+   </section>
+   <section>
+      <title>Finalizers: not used</title>
+      <para>It is
+         <emphasis role="bold">extremely rare</emphasis>
+         to override<code
+               language="java">Object.finalize</code>.
+      </para>
+      <tip>
+         <para>Don't do it. If you absolutely must, first read and understand
+            <link
+                  xlink:href="http://books.google.com/books?isbn=8131726592">Effective Java
+            </link>
+            Item 7, "Avoid Finalizers," very carefully, and then don't do it.
+         </para>
+      </tip>
+   </section>
+</section>

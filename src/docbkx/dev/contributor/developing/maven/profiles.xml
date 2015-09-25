@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.maven.profiles" version="5.0">
+   <title>Maven Profiles</title>
+   <para>Use the following Maven profiles to achieve desired results.
+      <itemizedlist>
+         <listitem>
+            <para>
+               <emphasis>production</emphasis>
+               Generates output classes without debugging
+               information. This produces smaller results and is intended for binary
+               distributions. This must be used during the release procedure.
+            </para>
+         </listitem>
+         <listitem>
+            <para>
+               <emphasis>sign</emphasis>
+               Automatically adds digital signatures of build
+               artifacts during the
+               <emphasis>install</emphasis>
+               phase. Needs properly configured
+               GPG agent.
+            </para>
+         </listitem>
+      </itemizedlist>
+   </para>
+   <para>Profiles for controlling test groups can be found in section
+
+      <xref linkend="dev.contributor.developing.tests"/>
+      .
+   </para>
+</section>
