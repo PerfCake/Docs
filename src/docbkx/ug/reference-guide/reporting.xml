@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting" version="5.0">
    <title>Reporting</title>
-   <simplesect>
+   <section>
       <para>This chapter is about PerfCake's reporting abilities.
          It is configured using &lt;reporting&gt; element in the scenario
          definition.
@@ -23,7 +23,7 @@
       <para>A reporter can publish multiple results (e.g. current value, average value, etc.) each with a particular name.
          The actual names of the results are described with the particular reporter.
       </para>
-      <simplesect>
+      <section>
          <title>An example reporting configuration:</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
    <reporter class="ThroughputStatsReporter">
@@ -47,7 +47,7 @@
       </destination>
    </reporter>
  </reporting>]]></programlisting>
-      </simplesect>
+      </section>
       <para>
          With this configuration the 2 reporters are specified -
          <code>ThroughputStatsReporter</code>
@@ -63,7 +63,7 @@
          . The disabled reporter is just ignored by PerfCake just like it wouldn't be there at all.
          If not specified the reporter is enabled by default.
       </para>
-      <simplesect>
+      <section>
          <title>An example of a disabled reporter:</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
    <reporter class="ThroughputStatsReporter">
@@ -82,9 +82,9 @@
             <code>MemoryUsageReporter</code>
             which is disabled.
          </para>
-      </simplesect>
+      </section>
       <para>The following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
-   </simplesect>
+   </section>
    <xi:include href="./reporting/reporters.xml"/>
    <xi:include href="./reporting/destinations.xml"/>
-</sect1>
+</section>

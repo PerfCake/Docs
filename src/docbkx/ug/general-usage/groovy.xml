@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.general-usage.groovy" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.general-usage.groovy" version="5.0">
    <title>Universal and simple Groovy sender</title>
    <para>(TODO: fill in)</para>
-</sect1>
+</section>

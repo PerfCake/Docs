@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating" version="5.0">
    <title>How - Generating load</title>
-   <simplesect>
+   <section>
       <para>
          Generator is an object which uses Sender objects to send and
          receive messages. Each generator represents a method or technique how
@@ -55,7 +55,7 @@
          <xref linkend="ug.reference-guide.reporting"/>
          ) treats this as a single iteration.
       </para>
-      <simplesect>
+      <section>
          <title>
             An example of the
             <code>run</code>
@@ -68,12 +68,12 @@
     ...
  </generator>]]></programlisting>
          <para>In the example above a scenario is defined to run for 10 seconds.</para>
-      </simplesect>
+      </section>
       <para>The following sections describes the generators that can be
          used in PerfCake to generate the load.
       </para>
-   </simplesect>
+   </section>
    <xi:include href="./generating/DefaultMessageGenerator.xml"/>
    <xi:include href="./generating/ConstantSpeedMessageGenerator.xml"/>
    <xi:include href="./generating/RampUpDownGenerator.xml"/>
-</sect1>
+</section>

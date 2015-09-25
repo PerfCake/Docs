@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect3 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.WarmUpReporter" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.WarmUpReporter" version="5.0">
    <title>WarmUpReporter</title>
    <para>
       The reporter is able to determine when the tested system is warmed up.
@@ -69,7 +69,7 @@
          </tbody>
       </tgroup>
    </table>
-   <simplesect>
+   <section>
       <title>An example of WarmUpReporter configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="WarmUpReporter" enabled="true">
    <property name="minimalWarmUpCount" value="1000"/>
@@ -80,5 +80,5 @@
       <para>In the example above the system would be considered warmed up when at least 1000 iterations is processed AND the scenario is executed for at least
          10 seconds AND, the relative change in the throughput is less then 0.5% or the absolute change in throughput is less than 0.5 iterations per second.
       </para>
-   </simplesect>
-</sect3>
+   </section>
+</section>

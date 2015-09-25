@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect3 xmlns="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations.ChartDestination" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations.ChartDestination" version="5.0">
    <title>ChartDestination</title>
    <para>
       Creates nice charts from the results. The charts are generated under directory specified by the
@@ -76,7 +76,7 @@
          </tgroup>
       </table>
    </para>
-   <simplesect>
+   <section>
       <title>An example of ChartDestination configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="MemoryUsageReporter">
    ...
@@ -107,5 +107,5 @@
          <title>ChartDestination example chart</title>
          <graphic format="SVG" fileref="./images/ChartDestination-example.svg" scalefit="1" width="100%" align="center"/>
       </figure>
-   </simplesect>
-</sect3>
+   </section>
+</section>

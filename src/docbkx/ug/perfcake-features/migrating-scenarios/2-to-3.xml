@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.migrating-scenarios.2-to-3" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.migrating-scenarios.2-to-3" version="5.0">
    <title>From v2.x to v3.x</title>
    <para>
       There are several steps that are needed to migrate scenarios from PerfCake version 2.x to 3.x. The following list shows them:
@@ -20,9 +20,9 @@
       The following sections take a look at each step in detail.
    </para>
    
-   <simplesect xml:id="ug.perfcake-features.migrating-scenarios.mirating.2-to-3.steps">
+   <section xml:id="ug.perfcake-features.migrating-scenarios.mirating.2-to-3.steps">
       <title>Migration steps</title>
-      <simplesect xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.xml-namespace">
+      <section xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.xml-namespace">
          <title>Rename XML schema namespace</title>
          <para>
             The namespace of the XML schema for scenarios has been renamed from
@@ -31,8 +31,8 @@
             <code>urn:perfcake:scenario:3.0</code>
             so it must be updated in the scenario XML files.
          </para>
-      </simplesect>
-      <simplesect xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.class-names">
+      </section>
+      <section xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.class-names">
          <title>Rename class names</title>
          <para>Following classes has been renamed to follow the naming conventions (See Developers' Guide).</para>
          <table frame="all">
@@ -90,14 +90,14 @@
                </tbody>
             </tgroup>
          </table>
-      </simplesect>
-      <simplesect xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.reporters">
+      </section>
+      <section xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.reporters">
          <title>Replace reporters</title>
          <para>
             There are several reporters that has been removed from PerfCake and has been replaced by others.
             The following sections illustrate that change and how to perform the migration at the same time.
          </para>
-         <simplesect>
+         <section>
             <title>AverageThroughputReporter -> ThroughputStatsReporter</title>
             <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="AverageThroughputReporter">
    ...
@@ -112,8 +112,8 @@
    (destinations)
    ...
  </reporter>]]></programlisting>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>ResponseTimeReporter -> ResponseTimeStatsReporter</title>
             <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeReporter">
    ...
@@ -128,8 +128,8 @@
    (destinations)
    ...
  </reporter>]]></programlisting>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>WindowResponseTimeReporter -> ResponseTimeStatsReporter</title>
             <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="WindowResponseTimeReporter">
    <property name="windowSize" value="10"/>
@@ -146,9 +146,9 @@
    (destinations)
    ...
  </reporter>]]></programlisting>
-         </simplesect>
-      </simplesect>
-      <simplesect xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.RequestResponseJmsSender">
+         </section>
+      </section>
+      <section xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.RequestResponseJmsSender">
          <title>Update RequestResponseJmsSender</title>
          <para>
             The
@@ -158,7 +158,7 @@
             To ensure the original behavior is kept, the security properties for the response has to be added to keep request and
             response credentials the same.
          </para>
-         <simplesect>
+         <section>
             <title>RequestResponseJMSSender -> RequestResponseJmsSender</title>
             <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="RequestResponseJMSSender">
    ...
@@ -209,10 +209,10 @@
              value="${jndi.password}"/>
    ...
  </sender>]]></programlisting>
-         </simplesect>
-      </simplesect>
-   </simplesect>
-   <simplesect xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.xslt">
+         </section>
+      </section>
+   </section>
+   <section xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.xslt">
       <title>Scenario conversion using XSLT</title>
       <para>
          After understanding the all the steps needed to migrate PerfCake scenarios
@@ -228,5 +228,5 @@
          <code>$PERFCAKE_HOME/resources/xslt/scenario-2.0-to-3.0.xsl</code>
          .
       </para>
-   </simplesect>
-</sect2>
+   </section>
+</section>

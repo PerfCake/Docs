@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.PlainSocketSender" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.PlainSocketSender" version="5.0">
    <title>PlainSocketSender</title>
    <para>The sender uses a socket to send the message to and receive a response from.</para>
    <para>The target of the sender is a socket in a form of "&lt;host&gt;:&lt;port&gt;"</para>
-   <simplesect>
+   <section>
       <title>An example of PlainSocketSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="PlainSocketSender">
    <target>127.0.0.1:12345</target>
  </sender>]]></programlisting>
-   </simplesect>
-</sect2>
+   </section>
+</section>

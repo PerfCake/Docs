@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.messages" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.messages" version="5.0">
    <title>What - Messages</title>
    <para>
       A message is an actual payload, that is sent by a sender. To specify what will be sent, you can use the
@@ -33,7 +33,7 @@
       <code>message</code>
       element.
    </para>
-   <simplesect>
+   <section>
       <title>An example of a simple message configuration:</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <messages>
    ...
@@ -44,8 +44,8 @@
          <code>content</code>
          attribute .
       </para>
-   </simplesect>
-   <simplesect>
+   </section>
+   <section>
       <title>An example of multiple messages configuration:</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <messages>
    <message uri="message1.txt">
@@ -64,6 +64,6 @@
          and will be sent two times in
          each iteration.
       </para>
-   </simplesect>
+   </section>
    <xi:include href="./messages/filtering.xml/"/>
-</sect1>
+</section>

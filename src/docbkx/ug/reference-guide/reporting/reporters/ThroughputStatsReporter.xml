@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect3 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.ThroughputStatsReporter" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.ThroughputStatsReporter" version="5.0">
    <title>ThroughputStatsReporter</title>
    <para>
       The reporter is able to report the statistics - current, minimal, maximal and average value of a throughput (in the means of the number of iterations per second) from the beginning of the measuring to the moment when the results are published (default) or in a specified window.
@@ -80,7 +80,7 @@
          </tbody>
       </tgroup>
    </table>
-   <simplesect>
+   <section>
       <title>An example of ThroughputStatsReporter configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ThroughputStatsReporter">
 	<property name="minimumEnabled" value="false"/>
@@ -94,5 +94,5 @@
          <code>ThroughputStatsReporter</code>
          configured to report the current and the average value of the throughput.
       </para>
-   </simplesect>
-</sect3>
+   </section>
+</section>

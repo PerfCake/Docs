@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-dev-developing.writing-guides" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-dev-developing.writing-guides" version="5.0">
    <title>Writing Guides</title>
    <para>
       This section describes guidelines to writing PerfCake guides. It contains information on styles used, language, and good practices.
    </para>
    <para> TODO: This chapter will be completed based on the experiences with completing this guide. </para>
-</sect1>
+</section>

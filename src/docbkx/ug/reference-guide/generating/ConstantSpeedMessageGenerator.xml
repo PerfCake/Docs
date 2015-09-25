@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating.generators.ConstantSpeedMessageGenerator" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating.generators.ConstantSpeedMessageGenerator" version="5.0">
    <title>ConstantSpeedMessageGenerator</title>
    <para>
       This generator is based on
@@ -39,7 +39,7 @@
          </tgroup>
       </table>
    </para>
-   <simplesect>
+   <section>
       <title>An example of ConstantSpeedMessageGenerator configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="time" value="60000"/>
  <generator class="ConstantSpeedMessageGenerator" threads="100">
@@ -50,5 +50,5 @@
          is defined to run for 60
          seconds using 100 concurrent threads with the desired constant speed of 10000 messages per second.
       </para>
-   </simplesect>
-</sect2>
+   </section>
+</section>

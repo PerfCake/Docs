@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="sec-dev-reporting"
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="sec-dev-reporting"
    status="draft" version="5.0">
    <title>Reporting</title>
    <para>
@@ -7,7 +7,7 @@
       discuss an approach to develop new reporters, destinations
       and accumulators.
    </para>
-   <sect2>
+   <section>
       <title>Reporting Architecture</title>
       <figure id="reporting-architecture">
          <title>Reporting Architecture</title>
@@ -15,12 +15,12 @@
       </figure>
 
       <para>TODO: Describe the architecture.</para>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>Developing Reporters, Destinations and Accumulators</title>
       <para>TODO: Where are reporters registered, AbstractReporter, how to inherit from it, what methods to override, how are destinations managed, when are called, developing accumulators.</para>
       <xi:include href="../sections/reporters.xml"/>
       <xi:include href="../sections/destinations.xml"/>
       <xi:include href="../sections/accumulators.xml"/>
-   </sect2>
-</sect1>
+   </section>
+</section>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect3 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.scenario-definition.xml.sections" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.scenario-definition.xml.sections" version="5.0">
    <title>Sections of the scenario</title>
    <para>Let's take a look at particular sections of the scenario.</para>
-   <simplesect>
+   <section>
       <title>Scenario properties</title>
       <para>This optional section allows you to add some meta-data about your scenario. It can contain multiple properties.</para>
       <para>All the scenario properties are set as Java System properties so can be used further in scenario (See
          <xref linkend="ug.perfcake-features.scenario-definition.filtering-properties"/>
          for more details.).
       </para>
-   </simplesect>
-   <simplesect>
+   </section>
+   <section>
       <title>Run</title>
       <para>Run section specifies the duration for what the scenario will run. It is mandatory since PerfCake needs to know how long to generate load.</para>
       <para>
@@ -18,8 +18,8 @@
          <xref linkend="ug.reference-guide.generating"/>
          .
       </para>
-   </simplesect>
-   <simplesect>
+   </section>
+   <section>
       <title>Generator</title>
       <para>Generator section specifies the way how the load is generated. It is mandatory since PerfCake needs to know how to generate load.</para>
       <para>
@@ -27,8 +27,8 @@
          <xref linkend="ug.reference-guide.generating"/>
          .
       </para>
-   </simplesect>
-   <simplesect>
+   </section>
+   <section>
       <title>Sender</title>
       <para>Sender section is about the transport (e.g. HTTP, MQTT, JMS, ...) and the target where the load is directed.
          It is required to be specified in the scenario.
@@ -38,8 +38,8 @@
          <xref linkend="ug.reference-guide.sending"/>
          .
       </para>
-   </simplesect>
-   <simplesect>
+   </section>
+   <section>
       <title>Reporting</title>
       <para>Reporting module is responsible for gathering metrics and reporting the results to various places in specified moments.
          It is not required to configure the reporting in the scenario but without it the PerfCake has no way of measuring and reporting
@@ -50,8 +50,8 @@
          <xref linkend="ug.reference-guide.reporting"/>
          .
       </para>
-   </simplesect>
-   <simplesect>
+   </section>
+   <section>
       <title>Messages</title>
       <para>The messages represent the payload that is transferred by senders to the tested system. It is optional since
          there can be situations where there is no actual message being send.
@@ -61,8 +61,8 @@
          <xref linkend="ug.reference-guide.messages"/>
          describes the messages in more details.
       </para>
-   </simplesect>
-   <simplesect>
+   </section>
+   <section>
       <title>Validation</title>
       <para>Validation module allows to validate the response messages.</para>
       <para>
@@ -70,5 +70,5 @@
          <xref linkend="ug.reference-guide.validation"/>
          .
       </para>
-   </simplesect>
-</sect3>
+   </section>
+</section>

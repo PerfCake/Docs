@@ -4,6 +4,7 @@
    <xsl:import href="urn:docbkx:stylesheet/highlight.xsl"/>
    <xsl:param name="saxon.linenumbering" select="1"/>
    <xsl:param name="linenumbering.everyNth">1</xsl:param>
+   <xsl:param name="section.autolabel.max.depth">2</xsl:param>
    <xsl:param name="use.id.as.filename">true</xsl:param>
    <xsl:param name="chunk.section.depth">1</xsl:param>
    <xsl:output method="xml" indent="no"/>

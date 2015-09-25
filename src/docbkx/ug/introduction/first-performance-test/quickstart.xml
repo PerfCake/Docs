@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance-test.quickstart" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance-test.quickstart" version="5.0">
    <title>Your own quickstart</title>
-   <simplesect>
+   <section>
       <title>Preparing PerfCake</title>
       <para>
          After getting (see
@@ -76,8 +76,8 @@
          <code>target</code>
          directory and continue with this quickstart guide. You will also see the output of tests so you can be sure the project works fine on your system.
       </para>
-   </simplesect>
-   <simplesect>
+   </section>
+   <section>
       <title>Configure and run</title>
       <para>
          In these days, your only possibility to prepare your first scenario is an XML file.
@@ -170,8 +170,8 @@
          If you want to see some numbers (e.g. how fast your system is),
          you have to add one more element to your scenario to evaluate the results - the reporting.
       </para>
-   </simplesect>
-   <simplesect>
+   </section>
+   <section>
       <title>Evaluate Results</title>
       <para>For reporting some results of your measurement, you have to configure a Reporter - an object that is capable of computing results in some way and outputing them wherever you can imagine.
       </para>
@@ -265,5 +265,5 @@ A single thread is now able to measure maximum of 1652892 iterations/second.
          <title>RampUpDownGenerator time chart</title>
          <graphic format="PNG" fileref="./images/quickstart-chart.png" scalefit="1" width="100%" align="center"/>
       </figure>
-   </simplesect>
-</sect2>
+   </section>
+</section>

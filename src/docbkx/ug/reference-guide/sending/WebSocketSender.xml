@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.WebSocketSender" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.WebSocketSender" version="5.0">
    <title>WebSocketSender</title>
    <para>
       The WebSocketSender can be used to send a simple messages via websocket protocol to a remote websocket
@@ -72,12 +72,12 @@
          </tgroup>
       </table>
    </para>
-   <simplesect>
+   <section>
       <title>An example of WebSocketSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="WebSocketSender">
    <target>ws://domain.com/ws-ctx/ws-ep</target>
    <property name="remoteEndpointType" value="basic"/>
    <property name="payloadType" value="text"/>
  </sender>]]></programlisting>
-   </simplesect>
-</sect2>
+   </section>
+</section>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.configuration.llogging" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.configuration.llogging" version="5.0">
    <title>Logging</title>
    <para>By default, PerfCake comes configured for a production environment. Logging level is set to
          <emphasis>info</emphasis> and validation messages are logged in a separate file. You can
@@ -11,4 +11,4 @@
    <para>More tweaking can be done in the <code>log4j2.xml</code> file. It is out of the scope of
       this guide to describe this configuration as this is a standard Log4j2 configuration file and
       one can find its own documentation. </para>
-</sect2>
+</section>

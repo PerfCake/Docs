@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.GroovySender" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.GroovySender" version="5.0">
    <title>GroovySender</title>
    <para>
       Groovy sender can be used to implement the message sending in a Groovy script. By default the sender uses the
@@ -58,11 +58,11 @@
          </tbody>
       </tgroup>
    </table>
-   <simplesect>
+   <section>
       <title>An example of GroovySender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="GroovySender">
    <target>/tmp/script.groovy"</target>
    <property name="classpath" value="~/common-classes"/>
  </sender>]]></programlisting>
-   </simplesect>
-</sect2>
+   </section>
+</section>

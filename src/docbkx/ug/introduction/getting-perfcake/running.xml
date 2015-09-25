@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.running" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.running" version="5.0">
    <title>Running PerfCake</title>
    <para>There are multiple ways of running PerfCake. In the case you have just donwloaded and
       unpacked the binary distribution, you can find a shell script and a Windows bat script in the
@@ -61,4 +61,4 @@
 2015-09-22 18:36:22,421 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===]]></programlisting>
    </para>
    <para>For more details on running perfcake from a command line see <xref linkend="ug.perfcake-features.configuration.cli"/></para>
-</sect2>
+</section>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.validation" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.validation" version="5.0">
    <title>Validation</title>
-   <simplesect>
+   <section>
       <para>Validation can be used to check if the response received by a sender is
          valid. It is optional and if it is used, it is performed in a gentle way
          (only once in a 0.5 sec) not to add any significant overhead and not
@@ -49,7 +49,7 @@
          <code>false</code>
          .
       </para>
-      <simplesect>
+      <section>
          <title>An example of validation configuration:</title>
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <messages>
    ...
@@ -90,8 +90,8 @@
             by both of the validators.
          </para>
          <para>The validation is enabled and the</para>
-      </simplesect>
+      </section>
       <para>The rest of the chapter will present all the available validators that can be used in PerfCake.</para>
-   </simplesect>
+   </section>
    <xi:include href="./validation/validators.xml"/>
-</sect1>
+</section>

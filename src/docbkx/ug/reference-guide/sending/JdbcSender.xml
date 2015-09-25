@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.JdbcSender" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.JdbcSender" version="5.0">
    <title>JdbcSender</title>
    <para>As the name of the sender clues JdbcSender is meant to be used to send JDBC queries. It can handle any query the JDBC is capable of.</para>
    <para>The target of the sender is a JDBC URL of the target, where the query is send.</para>
@@ -40,7 +40,7 @@
          </tbody>
       </tgroup>
    </table>
-   <simplesect>
+   <section>
       <title>An example of JdbcSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="JdbcSender">
    <target>jdbc:postgresql://localhost:5432/db</target>
@@ -48,5 +48,5 @@
    <property name="password" value="guess_me"/>
    <property name="driverClass" value="org.postgresql.Driver"/>
  </sender>]]></programlisting>
-   </simplesect>
-</sect2>
+   </section>
+</section>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.RequestResponseJmsSender" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.RequestResponseJmsSender" version="5.0">
    <title>RequestResponseJmsSender</title>
    <para>
       The RequestResponseJmsSender is supposed to be used in request-response scenarios. First it sends a JMS message to the target destination (specified by the
@@ -108,7 +108,7 @@
          </tbody>
       </tgroup>
    </table>
-   <simplesect>
+   <section>
       <title>An example of RequestResponseJmsSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="RequestResponseJmsSender">
    <target>jms/queue/RequestQueue</target>
@@ -141,5 +141,5 @@
          for at most 30s. It uses the same JMS provider for both request and response, so the request and response credentials
          (both JMS and JNDI) are the same. Connection factory, JNDI context factory and JNDI URL for the response are inherited from the respective request properties.
       </para>
-   </simplesect>
-</sect2>
+   </section>
+</section>

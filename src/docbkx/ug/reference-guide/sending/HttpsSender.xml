@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.HttpsSender" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.HttpsSender" version="5.0">
    <title>HttpsSender</title>
    <para>
       HttpsSender is similar to the HttpSender (see
@@ -52,7 +52,7 @@
          </tgroup>
       </table>
    </para>
-   <simplesect>
+   <section>
       <title>An example of HttpsSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="HttpsSender">
    <target>https://domain.com/secured_url</target>
@@ -60,5 +60,5 @@
    <property name="trustStore" value="${my.keystores}/cacert.jks"/>
    <property name="trustStorePassword" value="ts_passsword"/>
  </sender>]]></programlisting>
-   </simplesect>
-</sect2>
+   </section>
+</section>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xml:id="ug.extending.client-libraries" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xml:id="ug.extending.client-libraries" version="5.0">
    <title>Client libraries</title>
    <para>
       Some of the PerfCake's components need additional stuff to work properly. For example:
@@ -13,4 +13,4 @@
       <code>$PERFCAKE_HOME/lib/ext</code>
       directory.
    </para>
-</sect2>
+</section>

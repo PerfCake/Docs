@@ -8,6 +8,7 @@
 
    <xsl:param name="saxon.linenumbering" select="1"/>
    <xsl:param name="linenumbering.everyNth">1</xsl:param>
+   <xsl:param name="section.autolabel.max.depth">2</xsl:param>
 
    <xsl:attribute-set name="monospace.verbatim.properties">
       <xsl:attribute name="wrap-option">wrap</xsl:attribute>

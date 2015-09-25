@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance.test" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance.test" version="5.0">
    <title>Your first performance test</title>
    <para>We have actually executed a performance test while validating our installation. Let's take
       a look on it in more detail. Then we will walk through a quickstart example taken from our web
       pages.</para>
    <xi:include href="./first-performance-test/demo-httpbin.xml"/>
    <xi:include href="./first-performance-test/quickstart.xml"/>
-</sect1>
+</section>

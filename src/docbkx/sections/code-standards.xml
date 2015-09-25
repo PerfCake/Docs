@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
    xml:id="ch-dev-developing.code-standards" version="5.0">
    <title>Coding Standards</title>
@@ -68,20 +68,20 @@
       formatting choices made in examples should not be enforced as rules. </para>
    <para>Previous four paragraphs are copied from the Google Java Coding Standard<footnoteref
          linkend="foot-google-code"/> as well as the rest of this section. </para>
-   <sect2>
+   <section>
       <title>Source file basics</title>
-      <sect3>
+      <section>
          <title>File name</title>
          <para> The source file name consists of the case-sensitive name of the top-level class it
             contains, plus the <code language="java">.java</code> extension. </para>
-      </sect3>
-      <sect3>
+      </section>
+      <section>
          <title>File encoding: UTF-8</title>
          <para> Source files are encoded in UTF-8. </para>
-      </sect3>
-      <sect3>
+      </section>
+      <section>
          <title>Special characters</title>
-         <simplesect>
+         <section>
             <title>Whitespace characters</title>
             <para> Aside from the line terminator sequence, the <emphasis role="strong">ASCII
                   horizontal space character (0x20)</emphasis> is the only whitespace character that
@@ -95,8 +95,8 @@
                   <para> Tab characters are not used for indentation. </para>
                </listitem>
             </orderedlist>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Special escape sequences</title>
             <para> For any character that has a special escape sequence (<code language="java"
                   >\b</code>, <code language="java">\t</code>, <code language="java">\n</code>,
@@ -105,8 +105,8 @@
                   language="java">\\</code>), that sequence is used rather than the corresponding
                octal (e.g. <code language="java">\012</code>) or Unicode (e.g. <code language="java"
                   >\u000a</code>) escape. </para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Non-ASCII characters</title>
             <para> For the remaining non-ASCII characters, either the actual Unicode character (e.g.
                ∞) or the equivalent Unicode escape (e.g. \u221e) is used, depending only on which
@@ -170,10 +170,10 @@ return '\ufeff' + content;]]></programlisting>
                   are <emphasis role="strong">broken</emphasis> and they must be <emphasis
                      role="strong">fixed</emphasis>. </para>
             </tip>
-         </simplesect>
-      </sect3>
-   </sect2>
-   <sect2>
+         </section>
+      </section>
+   </section>
+   <section>
       <title>Source file structure</title>
       <para> A source file consists of, <emphasis role="strong">in order</emphasis>: </para>
       <orderedlist>
@@ -193,31 +193,31 @@ return '\ufeff' + content;]]></programlisting>
       <para>
          <emphasis role="strong">Exactly one blank line</emphasis> separates each section that is
          present. </para>
-      <sect3>
+      <section>
          <title>License or copyright information, if present</title>
          <para>If license or copyright information belongs in a file, it belongs here. </para>
-      </sect3>
-      <sect3>
+      </section>
+      <section>
          <title>Package statement</title>
          <para>The package statement is <emphasis role="strong">not line-wrapped</emphasis>. The
             column limit (<xref linkend="sec-column-limit"/>) does not apply to package statements.
          </para>
-      </sect3>
-      <sect3 xml:id="sec-import-stat">
+      </section>
+      <section xml:id="sec-import-stat">
          <title>Import statements</title>
-         <simplesect>
+         <section>
             <title>No wildcard imports</title>
             <para>
                <emphasis role="strong">Wildcard imports</emphasis>, static or otherwise, <emphasis
                   role="strong">are not used</emphasis>. </para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>No line-wrapping</title>
             <para>Import statements are <emphasis role="strong">not line-wrapped</emphasis>. The
                column limit (<xref linkend="sec-column-limit"/>) does not apply to import
                statements. </para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Ordering and spacing</title>
             <para>Import statements are divided into the following groups, in this order, with each
                group separated by a single blank line:<orderedlist>
@@ -249,15 +249,15 @@ return '\ufeff' + content;]]></programlisting>
                sort order. (<emphasis role="bold">Note:</emphasis> this is not the same as the
                import <emphasis role="italic">statements</emphasis> being in ASCII sort order; the
                presence of semicolons warps the result.) </para>
-         </simplesect>
-      </sect3>
-      <sect3>
+         </section>
+      </section>
+      <section>
          <title>Class declaration</title>
-         <simplesect>
+         <section>
             <title>Exactly one top-level class declaration</title>
             <para>Each top-level class resides in a source file of its own. </para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Class member ordering</title>
             <para>The ordering of the members of a class can have a great effect on learnability,
                but there is no single correct recipe for how to do it. Different classes may order
@@ -267,15 +267,15 @@ return '\ufeff' + content;]]></programlisting>
                example, new methods are not just habitually added to the end of the class, as that
                would yield "chronological by date added" ordering, which is not a logical ordering.
             </para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Overloads: never split</title>
             <para>When a class has multiple constructors, or multiple methods with the same name,
                these appear sequentially, with no intervening members. </para>
-         </simplesect>
-      </sect3>
-   </sect2>
-   <sect2>
+         </section>
+      </section>
+   </section>
+   <section>
       <title>Formatting</title>
       <note>
          <para>
@@ -285,16 +285,16 @@ return '\ufeff' + content;]]></programlisting>
                <emphasis>may</emphasis> optionally be treated as if it were a block-like construct.
          </para>
       </note>
-      <sect3>
+      <section>
          <title>Braces</title>
-         <simplesect>
+         <section>
             <title>Braces are used where optional</title>
             <para>Braces are used with <code language="java">if</code>, <code language="java"
                   >else</code>, <code language="java">for</code>, <code language="java">do</code>
                and <code language="java">while</code> statements, even when the body is empty or
                contains only a single statement. </para>
-         </simplesect>
-         <simplesect xml:id="sec-nonempty-blocks">
+         </section>
+         <section xml:id="sec-nonempty-blocks">
             <title>Nonempty blocks: K &amp; R style</title>
             <para>Braces follow the Kernighan and Ritchie style ("Egyptian brackets") for
                   <emphasis>nonempty</emphasis> blocks and block-like constructs: </para>
@@ -330,8 +330,8 @@ return '\ufeff' + content;]]></programlisting>
 };]]>           </programlisting>
             <para>A few exceptions for enum classes are given in <xref linkend="sec-enum-classes"/>.
             </para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Empty blocks: may be concise</title>
             <para>An empty block or block-like construct <emphasis role="italics">may</emphasis> be
                closed immediately after it is opened, with no characters or line break in between
@@ -341,26 +341,26 @@ return '\ufeff' + content;]]></programlisting>
                   language="java">try/catch/finally</code>). </para>
             <para>Example:</para>
             <programlisting language="java" linenumbering="unnumbered"><![CDATA[void doNothing() {}]]></programlisting>
-         </simplesect>
-      </sect3>
-      <sect3>
+         </section>
+      </section>
+      <section>
          <title>Block indentation: +3 spaces</title>
          <para>Each time a new block or block-like construct is opened, the indent increases by two
             spaces. When the block ends, the indent returns to the previous indent level. The indent
             level applies to both code and comments throughout the block. (See the example in <xref
                linkend="sec-nonempty-blocks"/>.) </para>
-      </sect3>
-      <sect3>
+      </section>
+      <section>
          <title>One statement per line</title>
          <para> Each statement is followed by a line-break. </para>
-      </sect3>
-      <sect3 xml:id="sec-column-limit">
+      </section>
+      <section xml:id="sec-column-limit">
          <title>Column limit: 400</title>
          <para>PerfCake uses a column limit of 400 characters. Except as noted below, any line that
             would exceed this limit must be line-wrapped, as explained in <xref
                linkend="sec-line-wrap"/>. </para>
-      </sect3>
-      <sect3 xml:id="sec-line-wrap">
+      </section>
+      <section xml:id="sec-line-wrap">
          <title>Line-wrapping</title>
          <para><emphasis role="bold">Terminology Note:</emphasis> When code that might otherwise
             legally occupy a single line is divided into multiple lines, typically to avoid
@@ -373,7 +373,7 @@ return '\ufeff' + content;]]></programlisting>
             <para>Extracting a method or local variable may solve the problem without the need to
                line-wrap. </para>
          </tip>
-         <simplesect>
+         <section>
             <title>Where to break</title>
             <para>The prime directive of line-wrapping is: prefer to break at a <emphasis
                   role="bold">higher syntactic level</emphasis>. Also: </para>
@@ -413,8 +413,8 @@ return '\ufeff' + content;]]></programlisting>
                      precedes it.</para>
                </listitem>
             </orderedlist>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Indent continuation lines at least +6 spaces</title>
             <para>When line-wrapping, each line after the first (each <emphasis role="italic"
                   >continuation line</emphasis>) is indented at least +4 from the original
@@ -424,11 +424,11 @@ return '\ufeff' + content;]]></programlisting>
                only if they begin with syntactically parallel elements.</para>
             <para><xref linkend="sec-horiz-align"/>S addresses the discouraged practice of using a
                variable number of spaces to align certain tokens with previous lines.</para>
-         </simplesect>
-      </sect3>
-      <sect3>
+         </section>
+      </section>
+      <section>
          <title>Whitespace</title>
-         <simplesect>
+         <section>
             <title>Vertical whitespace</title>
             <para>A single blank line appears:</para>
             <orderedlist>
@@ -461,8 +461,8 @@ return '\ufeff' + content;]]></programlisting>
             <para>
                <emphasis role="italic">Multiple</emphasis> consecutive blank lines are permitted,
                but never required (or encouraged).</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Horizontal whitespace</title>
             <para>Beyond where required by the language or other style rules, and apart from
                literals, comments and Javadoc, a single ASCII space also appears in the following
@@ -539,8 +539,8 @@ return '\ufeff' + content;]]></programlisting>
                <para>This rule never requires or forbids additional space at the start or end of a
                   line, only interior space.</para>
             </note>
-         </simplesect>
-         <simplesect xml:id="sec-horiz-align">
+         </section>
+         <section xml:id="sec-horiz-align">
             <title>Horizontal alignment: never required</title>
             <para><emphasis role="bold">Terminology Note:</emphasis>
                <emphasis role="italic">Horizontal alignment</emphasis> is the practice of adding a
@@ -565,18 +565,18 @@ private Color color; // may leave it unaligned]]></programlisting>
                   result in pointless busywork, but at best it still corrupts version history
                   information, slows down reviewers and exacerbates merge conflicts.</para>
             </tip>
-         </simplesect>
-      </sect3>
-      <sect3>
+         </section>
+      </section>
+      <section>
          <title>Grouping parentheses: recommended</title>
          <para>Optional grouping parentheses are omitted only when author and reviewer agree that
             there is no reasonable chance the code will be misinterpreted without them, nor would
             they have made the code easier to read. It is not reasonable to assume that every reader
             has the entire Java operator precedence table memorized.</para>
-      </sect3>
-      <sect3>
+      </section>
+      <section>
          <title>Specific constructs</title>
-         <simplesect xml:id="sec-enum-classes">
+         <section xml:id="sec-enum-classes">
             <title>Enum classes</title>
             <para>After each comma that follows an enum constant, a line-break is optional.</para>
             <para>An enum class with no methods and no documentation on its constants may optionally
@@ -585,8 +585,8 @@ private Color color; // may leave it unaligned]]></programlisting>
             <programlisting language="java" linenumbering="unnumbered">private enum Suit { CLUBS, HEARTS, SPADES, DIAMONDS }</programlisting>
             <para>Since enum classes <emphasis role="italic">are classes</emphasis>, all other rules
                for formatting classes apply.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Variable declarations</title>
             <itemizedlist>
                <listitem>
@@ -605,8 +605,8 @@ private Color color; // may leave it unaligned]]></programlisting>
                      initializers, or are initialized immediately after declaration.</para>
                </listitem>
             </itemizedlist>
-         </simplesect>
-         <simplesect xml:id="sec-array-init">
+         </section>
+         <section xml:id="sec-array-init">
             <title>Arrays</title>
             <itemizedlist>
                <listitem>
@@ -632,8 +632,8 @@ new int[] {            3,
                         args[]</code>.</para>
                </listitem>
             </itemizedlist>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Switch statements</title>
             <para><emphasis role="bold">Terminology Note</emphasis>: Inside the braces of a
                   <emphasis role="italic">switch block</emphasis> are one or more <emphasis
@@ -679,8 +679,8 @@ new int[] {            3,
                      statement group, even if it contains no code.</para>
                </listitem>
             </itemizedlist>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Annotations</title>
             <para>Annotations applying to a class, method or constructor appear immediately after
                the documentation block, and each annotation is listed on a line of its own (that is,
@@ -699,8 +699,8 @@ public String getNameIfPresent() { ... }]]></programlisting>
             <programlisting language="java" linenumbering="unnumbered"><![CDATA[@Partial @Mock DataLoader loader;]]></programlisting>
             <para>There are no specific rules for formatting parameter and local variable
                annotations.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Comments</title>
             <itemizedlist>
                <listitem>
@@ -722,8 +722,8 @@ public String getNameIfPresent() { ... }]]></programlisting>
                   </tip>
                </listitem>
             </itemizedlist>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Modifiers</title>
             <para>Class and member modifiers, when present, appear in the order recommended by the
                Java Language Specification:</para>
@@ -731,8 +731,8 @@ public String getNameIfPresent() { ... }]]></programlisting>
                <programlisting language="java" linenumbering="unnumbered">public protected private abstract static final transient
 volatile synchronized native strictfp</programlisting>
             </para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Numeric literals</title>
             <para><code language="java">long</code>-valued integer literals use an uppercase <code
                   language="java">L</code> suffix, never lowercase (to avoid confusion with the
@@ -741,12 +741,12 @@ volatile synchronized native strictfp</programlisting>
             <para>It is advised to use the numeric literal underscore separator (<code
                   language="java">_</code>) as it comes with Java 7. This is even better for
                readability: <code language="java">3_000_000_000L</code>.</para>
-         </simplesect>
-      </sect3>
-   </sect2>
-   <sect2>
+         </section>
+      </section>
+   </section>
+   <section>
       <title>Naming</title>
-      <sect3>
+      <section>
          <title>Rules common to all identifiers</title>
          <para>Identifiers use only ASCII letters and digits, and in two cases noted below,
             underscores. Thus each valid identifier name is matched by the regular expression <code
@@ -755,18 +755,18 @@ volatile synchronized native strictfp</programlisting>
                language="java">name_</code>, <code language="java">mName</code>, <code
                language="java">s_name</code> and <code language="java">kName</code>, are <emphasis
                role="bold">not</emphasis> used.</para>
-      </sect3>
-      <sect3>
+      </section>
+      <section>
          <title>Rules by identifier type</title>
-         <simplesect>
+         <section>
             <title>Package names</title>
             <para>Package names are all lowercase, singular, with consecutive words simply concatenated
                together (no underscores). For example, <code language="java"
                   >com.example.deepspace</code>, not <code language="java"
                   >com.example.deepSpace</code> or <code language="java"
                   >com.example.deep_space</code>.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Class names</title>
             <para>Class names are written in UpperCamelCase (<xref linkend="sec-camel-case"
                />).</para>
@@ -781,8 +781,8 @@ volatile synchronized native strictfp</programlisting>
                of the class they are testing, and ending with <code language="java">Test</code>. For
                example, <code language="java">HashTest</code> or <code language="java"
                   >HashIntegrationTest</code>.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Method names</title>
             <para>Method names are written in lowerCamelCase (<xref linkend="sec-camel-case"
                />).</para>
@@ -793,8 +793,8 @@ volatile synchronized native strictfp</programlisting>
                   >test&lt;MethodUnderTest>_&lt;state></code>, for example <code language="java"
                   >testPop_emptyStack</code>. There is no <emphasis role="bold">one correct
                   way</emphasis> to name test methods.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Constant names</title>
             <para>Constant names use <code language="java">CONSTANT_CASE</code>: all uppercase
                letters, with words separated by underscores. But what <emphasis role="italic"
@@ -824,22 +824,22 @@ static final ImmutableSet<SomeMutableType> mutableElements =
 static final Logger logger = Logger.getLogger(MyClass.getName());
 static final String[] nonEmptyArray = {"these", "can", "change"};]]></programlisting>These names are
                typically nouns or noun phrases.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Non-constant field names</title>
             <para>Non-constant field names (static or otherwise) are written in lowerCamelCase
                   (<xref linkend="sec-camel-case"/>).</para>
             <para>These names are typically nouns or noun phrases. For example, <code
                   language="java">computedValues</code> or <code language="java"
                >index</code>.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Parameter names</title>
             <para>Parameter names are written in lowerCamelCase (<xref linkend="sec-camel-case"
                />).</para>
             <para>One-character parameter names should be avoided.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Local variable names</title>
             <para>Local variable names are written in lowerCamelCase (<xref linkend="sec-camel-case"
                />), and can be abbreviated more liberally than other types of names.</para>
@@ -847,8 +847,8 @@ static final String[] nonEmptyArray = {"these", "can", "change"};]]></programlis
                variables.</para>
             <para>Even when final and immutable, local variables are not considered to be constants,
                and should not be styled as constants.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Type variable names</title>
             <para>Each type variable is named in one of two styles:</para>
             <itemizedlist>
@@ -863,9 +863,9 @@ static final String[] nonEmptyArray = {"these", "can", "change"};]]></programlis
                         >RequestT</code>, <code language="java">FooBarT</code>).</para>
                </listitem>
             </itemizedlist>
-         </simplesect>
-      </sect3>
-      <sect3 xml:id="sec-camel-case">
+         </section>
+      </section>
+      <section xml:id="sec-camel-case">
          <title>Camel case: defined</title>
          <para>Sometimes there is more than one reasonable way to convert an English phrase into
             camel case, such as when acronyms or unusual constructs like "IPv6" or "iOS" are
@@ -955,11 +955,11 @@ static final String[] nonEmptyArray = {"these", "can", "change"};]]></programlis
                   language="java">checkNonempty</code> and <code language="java"
                   >checkNonEmpty</code> are likewise both correct.</para>
          </note>
-      </sect3>
-   </sect2>
-   <sect2>
+      </section>
+   </section>
+   <section>
       <title>Programming Practices</title>
-      <sect3>
+      <section>
          <title>@Override: always used</title>
          <para>A method is marked with the <code language="java">@Override</code> annotation
             whenever it is legal. This includes a class method overriding a superclass method, a
@@ -968,8 +968,8 @@ static final String[] nonEmptyArray = {"these", "can", "change"};]]></programlis
          <para><emphasis role="bold">Exception:</emphasis>
             <code language="java">@Override</code> may be omitted when the parent method is <code
                language="java">@Deprecated</code>.</para>
-      </sect3>
-      <sect3>
+      </section>
+      <section>
          <title>Caught exceptions: not ignored</title>
          <para>Except as noted below, it is very rarely correct to do nothing in response to a
             caught exception. Typical responses are to log it, or if it is considered "impossible",
@@ -996,8 +996,8 @@ return handleTextResponse(response);]]></programlisting>
 } catch (NoSuchElementException expected) {
 }]]></programlisting>
          </para>
-      </sect3>
-      <sect3>
+      </section>
+      <section>
          <title>Static members: qualified using class</title>
          <para>When a reference to a static class member must be qualified, it is qualified with
             that class's name, not with a reference or expression of that class's type.</para>
@@ -1007,8 +1007,8 @@ Foo.aStaticMethod(); // good
 aFoo.aStaticMethod(); // bad
 somethingThatYieldsAFoo().aStaticMethod(); // very bad]]></programlisting>
          </para>
-      </sect3>
-      <sect3>
+      </section>
+      <section>
          <title>Finalizers: not used</title>
          <para>It is <emphasis role="bold">extremely rare</emphasis> to override <code
                language="java">Object.finalize</code>.</para>
@@ -1017,13 +1017,13 @@ somethingThatYieldsAFoo().aStaticMethod(); // very bad]]></programlisting>
                   xlink:href="http://books.google.com/books?isbn=8131726592">Effective Java</link>
                Item 7, "Avoid Finalizers," very carefully, and then don't do it.</para>
          </tip>
-      </sect3>
-   </sect2>
-   <sect2>
+      </section>
+   </section>
+   <section>
       <title>JavaDoc</title>
-      <sect3>
+      <section>
          <title>Formatting</title>
-         <simplesect>
+         <section>
             <title>General form</title>
             <para>The <emphasis role="italic">basic</emphasis> formatting of Javadoc blocks is as
                seen in this example:</para>
@@ -1041,15 +1041,15 @@ public int method(String p1) { ... }]]></programlisting>
             <para>The basic form is always acceptable. The single-line form may be substituted when
                there are no at-clauses present, and the entirety of the Javadoc block (including
                comment markers) can fit on a single line.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Paragraphs</title>
             <para>One blank line -- that is, a line containing only the aligned leading asterisk (*)
                -- appears between paragraphs, and before the group of "at-clauses" if present. Each
                paragraph but the first has <code language="java"><![CDATA[<p>]]></code> immediately
                before the first word, with no space after.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>At-clauses</title>
             <para>Any of the standard "at-clauses" that are used appear in the order <code
                   language="java">@param</code>, <code language="java">@return</code>, <code
@@ -1058,8 +1058,8 @@ public int method(String p1) { ... }]]></programlisting>
                fit on a single line, continuation lines are indented <emphasis role="bold"
                   >six</emphasis> (or more) spaces from the position of the <code language="java"
                   >@</code>.</para>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Language</title>
             <para>Use the third person in describing class purpose, method actions, parameters,
                return types, exceptions and all others. Usually, present tense should be used. All
@@ -1087,9 +1087,9 @@ protected Object getAccumulatedResult(final String key) {
    ...
 }]]></programlisting>
             </para>
-         </simplesect>
-      </sect3>
-      <sect3>
+         </section>
+      </section>
+      <section>
          <title>The summary fragment</title>
          <para>The Javadoc for each class and member begins with a brief <emphasis role="bold"
                >summary fragment</emphasis>. This fragment is very important: it is the only part of
@@ -1112,8 +1112,8 @@ protected Object getAccumulatedResult(final String key) {
          </tip>
          <para> All of the sentences should be properly ended by a period including the sentences
             following "at-clauses".</para>
-      </sect3>
-      <sect3>
+      </section>
+      <section>
          <title>Where JavaDoc is used</title>
          <para>At the <emphasis role="italic">minimum</emphasis>, Javadoc is present for every <code
                language="java">public</code> class, and every <code language="java">public</code> or
@@ -1123,7 +1123,7 @@ protected Object getAccumulatedResult(final String key) {
                >needed</emphasis>. Whenever an implementation comment would be used to define the
             overall purpose or behavior of a class, method or field, that comment is written as
             Javadoc instead (it's more uniform, and more tool-friendly.)</para>
-         <simplesect>
+         <section>
             <title>Exception: self-explanatory methods</title>
             <para>Javadoc is optional for "simple, obvious" methods like <code language="java"
                   >getFoo</code>, in cases where there <emphasis role="italic">really and
@@ -1136,12 +1136,12 @@ protected Object getAccumulatedResult(final String key) {
                      canonical name. */</code>) if a typical reader may have no idea what the term
                   "canonical name" means!</para>
             </important>
-         </simplesect>
-         <simplesect>
+         </section>
+         <section>
             <title>Exception: overrides</title>
             <para>Javadoc is not always present on a method that overrides a supertype method.
             </para>
-         </simplesect>
-      </sect3>
-   </sect2>
-</sect1>
+         </section>
+      </section>
+   </section>
+</section>

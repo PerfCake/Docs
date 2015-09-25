@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="maven-goals" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="maven-goals" version="5.0">
    <title>Maven Project</title>
    <para>The following Maven plugins and their goals can be used with PerfCake project.</para>
-   <sect2>
+   <section>
       <title>Project Structure</title>
       <para>There is a parent project composed of two child Maven modules. This is because PerfCake
          Agent installs into the application under inspection and needs to be compiled with an older
@@ -20,8 +20,8 @@
                   compiled with an older Java version (1.5).</para>
             </listitem>
          </itemizedlist></para>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>Maven Profiles</title>
       <para>Use the following Maven profiles to achieve desired results.<itemizedlist>
             <listitem>
@@ -37,8 +37,8 @@
          </itemizedlist></para>
       <para>Profiles for controlling test groups can be found in section <xref
             linkend="ch-dev-developing.test-development"/>.</para>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>Standard Maven Goals</title>
       <para>We try to minimalize the necessity for running standard Maven goals in a different
          manner or in a way they are not originally intended to. So far we use the following
@@ -79,8 +79,8 @@
                calling this goal. </para>
          </listitem>
       </itemizedlist>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>Documentation</title>
       <para>It is possible to generate JavaDco for individual Maven modules as well as a single
          aggregated package for all of them.<itemizedlist>
@@ -93,8 +93,8 @@
                   package when executed in the parent project.</para>
             </listitem>
          </itemizedlist></para>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>License</title>
       <para>PerfCake is licensed under Apache License 2.0 and the license text can be found in
          LICENSE.txt file. license-maven-plugin is used to check that each file has the appropriate
@@ -118,8 +118,8 @@
             </para>
          </listitem>
       </itemizedlist>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>JaCoCo Code Coverage</title>
       <para>JaCoCo is configured to use a Java Agent so no class instrumentation is neede. The agent
          is automatically switched on for running tests. The only goal needed is report generation
@@ -130,8 +130,8 @@
          <varname>target/site/jacoco</varname>
          directory.
       </para>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>FindBugs Report</title>
       <para>
          We use FindBugs to warn us about bad code practices. To obtain the report execute the
@@ -147,8 +147,8 @@
          tool. Please
          note that it only shows the data from the previous analysis run.
       </para>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>Digital Signatures</title>
       <para>
          To sign the artifacts created by the
@@ -160,8 +160,8 @@
          <varname>target</varname>
          directory.
       </para>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>Distribution</title>
       <para>
          To create the archived distributions we offer for download at our website, simply run
@@ -171,8 +171,8 @@
          <varname>target</varname>
          directory as usually.
       </para>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>Transformation of Scenarios</title>
       <para>
          It is possible to automatically transform scenarios from previous versions of PerfCake
@@ -213,5 +213,5 @@
             </tbody>
          </tgroup>
       </table>
-   </sect2>
-</sect1>
+   </section>
+</section>

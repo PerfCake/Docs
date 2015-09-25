@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="sec-dev-generator"
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="sec-dev-generator"
    status="draft" version="5.0">
    <title>Generators</title>
    <para>
       In this section we will reveal as much details about message generators as possible. First we describe the architecture and then we
       discuss an approach to develop a new generator.
    </para>
-   <sect2>
+   <section>
       <title>Generators Architecture</title>
       <figure id="generator-architecture">
          <title>Generators Architecture</title>
@@ -15,9 +15,9 @@
 
       <para>TODO: Describe the architecture.</para>
       <xi:include href="../sections/run-info.xml"/>
-   </sect2>
-   <sect2>
+   </section>
+   <section>
       <title>Writing a New Generator</title>
       <para>TODO: Introduce AbstractMessageGenerator in detail, how to inherit, what methods to override, RunInfo reference, SenderTask.</para>
-   </sect2>
-</sect1>
+   </section>
+</section>

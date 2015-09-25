@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.minimal-requirements" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.minimal-requirements" version="5.0">
    <title>Minimal requirements</title>
    <para>As was mentioned in
       <xref linkend="ug.introduction.getting-perfcake.downloading"/>
@@ -12,4 +12,4 @@
       is based on Google Charts and they do not work offline. We are considering to provide a
       different solution and make PerfCake work completely offline in the future.
    </para>
-</sect2>
+</section>

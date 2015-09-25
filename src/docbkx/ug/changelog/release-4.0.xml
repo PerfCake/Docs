@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.changelog.release-4.0" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.changelog.release-4.0" version="5.0">
    <title>Release 4.0</title>
-   <simplesect>
+   <section>
       <title>Features</title>
       <para>
          <itemizedlist>
@@ -189,8 +189,8 @@
             </listitem>
          </itemizedlist>
       </para>
-   </simplesect>
-   <simplesect>
+   </section>
+   <section>
       <title>Bug fixes</title>
       <para>
          <itemizedlist>
@@ -249,5 +249,5 @@
             </listitem>
          </itemizedlist>
       </para>
-   </simplesect>
-</sect1>
+   </section>
+</section>

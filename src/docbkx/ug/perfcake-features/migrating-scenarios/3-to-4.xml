@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.migrating-scenarios.3-to-4" version="5.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.migrating-scenarios.3-to-4" version="5.0">
    <title>From v3.x to v4.x</title>
    <para>
       The following list shows the steps that are needed to migrate from PerfCake version 3.x to 4.x:
@@ -10,9 +10,9 @@
       </itemizedlist>
       The following sections describe each step in detail.
    </para>
-   <simplesect xml:id="ug.perfcake-features.migrating-scenarios.mirating.3-to-4.steps">
+   <section xml:id="ug.perfcake-features.migrating-scenarios.mirating.3-to-4.steps">
       <title>Migration steps</title>
-      <simplesect xml:id="ug.perfcake-features.migrating-scenarios.3-to-4.steps.xml-namespace">
+      <section xml:id="ug.perfcake-features.migrating-scenarios.3-to-4.steps.xml-namespace">
          <title>Rename XML schema namespace</title>
          <para>
             The namespace of the XML schema for scenarios has been renamed from
@@ -21,6 +21,6 @@
             <code>urn:perfcake:scenario:4.0</code>
             so it must be updated in the scenario XML files.
          </para>
-      </simplesect>
-   </simplesect>
-</sect2>
+      </section>
+   </section>
+</section>
