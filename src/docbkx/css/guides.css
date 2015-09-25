@@ -108,7 +108,7 @@ h4 {
 	display: none;
 }
 
-.book,.chapter,.sect1,.sect2,.preface {
+.book,.chapter,.sect1,.sect2,.section,.preface {
 	width: 1000px;
 	margin-top: 70px;
 	margin-right: auto;
