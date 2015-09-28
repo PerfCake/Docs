@@ -2,7 +2,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.downloading" version="5.0">
    <title>Downloading distribution</title>
    <para>The best way to obtain a complete distribution of PerfCake is at
-      <link xlink:href="www.perfcake.org/download/"/>. There you can find the latest stable binary release in multiple
+      <link xlink:href="https://www.perfcake.org/download/"/>. There you can find the latest stable binary release in multiple
       formats.
    </para>
    <para>We assume that you already have Java installed. For the best performance of PerfCake, we
