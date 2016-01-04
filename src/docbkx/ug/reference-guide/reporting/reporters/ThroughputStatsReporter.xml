@@ -45,6 +45,18 @@
                <entry>No</entry>
                <entry>Integer.MAX_VALUE</entry>
             </row>
+            <row>
+               <entry>histogram</entry>
+               <entry>A comma separated list of values where the histogram is split to individual ranges.</entry>
+               <entry>No</entry>
+               <entry>""</entry>
+            </row>
+            <row>
+               <entry>histogramPrefix</entry>
+               <entry>String prefix used in the result map for histogram entries. This prefix is followed by the mathematical representation of the particular range.</entry>
+               <entry>No</entry>
+               <entry>"in"</entry>
+            </row>
          </tbody>
       </tgroup>
    </table>
@@ -76,6 +88,16 @@
             <row>
                <entry>Average</entry>
                <entry>The average throughput in iterations/s measured so far (in a given time window).</entry>
+            </row>
+            <row>
+               <entry><code>${histogramPrefix}</code>&lt;<code>from</code>:<code>to</code>)
+               </entry>
+               <entry>If
+                  <code>histogram</code>
+                  is used, there is a result with the value of histogram for each range. Example:
+                  <code>in&lt;100.0:200.0)</code>
+                  for a value range between 100.0 and 200.0 and the <code>histogramPrefix</code> set to "<code>in</code>".
+               </entry>
             </row>
          </tbody>
       </tgroup>
