@@ -121,7 +121,7 @@
          <emphasis role="bold">Terminology Note:</emphasis>
          When code that might otherwise
          legally occupy a single line is divided into multiple lines, typically to avoid
-         overflowing the column limit, this activity is called<emphasis role="italic"
+         overflowing the column limit, this activity is called <emphasis role="italic"
             >line-wrapping</emphasis>.
       </para>
       <para>There is no comprehensive, deterministic formula showing
@@ -138,7 +138,7 @@
       </tip>
       <section>
          <title>Where to break</title>
-         <para>The prime directive of line-wrapping is: prefer to break at a<emphasis
+         <para>The prime directive of line-wrapping is: prefer to break at a <emphasis
                role="bold">higher syntactic level</emphasis>. Also:
          </para>
          <orderedlist>
@@ -196,10 +196,10 @@
          <title>Indent continuation lines at least +6 spaces</title>
          <para>When line-wrapping, each line after the first (each
             <emphasis role="italic">continuation line</emphasis>
-            ) is indented at least +4 from the original
+            ) is indented at least +6 from the original
             line.
          </para>
-         <para>When there are multiple continuation lines, indentation may be varied beyond +4 as
+         <para>When there are multiple continuation lines, indentation may be varied beyond +6 as
             desired. In general, two continuation lines use the same indentation level if and
             only if they begin with syntactically parallel elements.
          </para>
