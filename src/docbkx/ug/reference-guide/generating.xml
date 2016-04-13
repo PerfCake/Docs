@@ -1,78 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating" version="5.0">
    <title>How - Generating load</title>
-   <section>
-      <para>
-         Generator is an object which uses Sender objects to send and
-         receive messages. Each generator represents a method or technique how
-         the load (sending the messages) is handled.
-         It is capable of generating the load for a specified duration which can be an amount of time or a number of iterations using a specified
-         number of concurrent threads. To define the duration and its length you have to
-         configure a
-         <code>run</code>
-         of the specified type in the scenario.
-      </para>
-      <para>
-         Following table shows the
-         <code>run</code>
-         options:
-         <table frame="all">
-            <title>
-               <code>run</code>
-               options
-            </title>
-            <tgroup cols="2" align="left" colsep="1" rowsep="1">
-               <colspec colname="run type" colwidth="1*"/>
-               <colspec colname="description" colwidth="1*"/>
-               <thead>
-                  <row>
-                     <entry>
-                        <code>run</code>
-                        type
-                     </entry>
-                     <entry>Value description</entry>
-                  </row>
-               </thead>
-               <tbody>
-                  <row>
-                     <entry>time</entry>
-                     <entry>Time duration in milliseconds</entry>
-                  </row>
-                  <row>
-                     <entry>iteration</entry>
-                     <entry>Number of iterations</entry>
-                  </row>
-               </tbody>
-            </tgroup>
-         </table>
-      </para>
-      <para>
-         The generating is performed in so called iterations. In a single iteration generator takes a sender from the sender pool, uses it to send
-         all the messages specified in the scenario (See
-         <xref linkend="ug.reference-guide.messages"/>
-         ) and after that it returns the sender back to the
-         sender pool. The reporting module (See
-         <xref linkend="ug.reference-guide.reporting"/>
-         ) treats this as a single iteration.
-      </para>
-      <section>
+   <para>
+      Generator is an object which uses Sender objects to send and
+      receive messages. Each generator represents a method or technique how
+      the load (sending the messages) is handled.
+      It is capable of generating the load for a specified duration which can be an amount of time or a number of iterations using a specified
+      number of concurrent threads. To define the duration and its length you have to
+      configure a
+      <code>run</code>
+      of the specified type in the scenario.
+   </para>
+   <para>
+      Following table shows the
+      <code>run</code>
+      options:
+      <table frame="all">
          <title>
-            An example of the
-            <code>run</code>
-            configuration in a scenario:
+            Run options
          </title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="time" value="10000"/>
- <generator class="..." threads="...">
-    ...
-    (properties)
-    ...
- </generator>]]></programlisting>
-         <para>In the example above a scenario is defined to run for 10 seconds.</para>
-      </section>
-      <para>The following sections describes the generators that can be
-         used in PerfCake to generate the load.
-      </para>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="run type" colwidth="1*"/>
+            <colspec colname="description" colwidth="1*"/>
+            <thead>
+               <row>
+                  <entry>
+                     Run type
+                  </entry>
+                  <entry>Value description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>time</entry>
+                  <entry>Time duration in milliseconds</entry>
+               </row>
+               <row>
+                  <entry>iteration</entry>
+                  <entry>Number of iterations</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <para>
+      The generating is performed in so called iterations. In a single iteration generator takes a sender from the sender pool, uses it to send
+      all the messages specified in the scenario (See
+      <xref linkend="ug.reference-guide.messages"/>
+      ) and after that it returns the sender back to the
+      sender pool. The reporting module (See
+      <xref linkend="ug.reference-guide.reporting"/>
+      ) treats this as a single iteration.
+   </para>
+   <section>
+      <title>
+         An example of the
+         <code>run</code>
+         configuration in a scenario:
+      </title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="time" value="10000"/>
+<generator class="..." threads="...">
+ ...
+ (properties)
+ ...
+</generator>]]></programlisting>
+      <para>In the example above a scenario is defined to run for 10 seconds.</para>
    </section>
+   <para>The following sections describes the generators that can be
+      used in PerfCake to generate the load.
+   </para>
    <xi:include href="./generating/DefaultMessageGenerator.xml"/>
    <xi:include href="./generating/ConstantSpeedMessageGenerator.xml"/>
    <xi:include href="./generating/RampUpDownGenerator.xml"/>

@@ -1,90 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting" version="5.0">
    <title>Reporting</title>
+   <para>This chapter is about PerfCake's reporting abilities.
+      It is configured using &lt;reporting&gt; element in the scenario
+      definition.
+   </para>
+   <para>The configuration consists of the following steps:</para>
+   <itemizedlist>
+      <listitem>
+         <para>Configure a reporter</para>
+      </listitem>
+      <listitem>
+         <para>Configure the reporter's destinations</para>
+      </listitem>
+   </itemizedlist>
+   <para>A reporter represents a different type of the
+      reports such as average throughput or memory usage. By configuring the
+      destinations you tell where output should be directed by the reporter
+      (e.g. console, CSV file, etc.).
+   </para>
+   <para>A reporter can publish multiple results (e.g. current value, average value, etc.) each with a particular name.
+      The actual names of the results are described with the particular reporter.
+   </para>
    <section>
-      <para>This chapter is about PerfCake's reporting abilities.
-         It is configured using &lt;reporting&gt; element in the scenario
-         definition.
-      </para>
-      <para>The configuration consists of the following steps:</para>
-      <itemizedlist>
-         <listitem>
-            <para>Configure a reporter</para>
-         </listitem>
-         <listitem>
-            <para>Configure the reporter's destinations</para>
-         </listitem>
-      </itemizedlist>
-      <para>A reporter represents a different type of the
-         reports such as average throughput or memory usage. By configuring the
-         destinations you tell where output should be directed by the reporter
-         (e.g. console, CSV file, etc.).
-      </para>
-      <para>A reporter can publish multiple results (e.g. current value, average value, etc.) each with a particular name.
-         The actual names of the results are described with the particular reporter.
-      </para>
-      <section>
-         <title>An example reporting configuration:</title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
-   <reporter class="ThroughputStatsReporter">
-      <property name="minimumEnabled" value="false"/>
-      <property name="maximumEnabled" value="false"/>
-      <destination class="ConsoleDestination">
-         <period type="time" value="1000"/>
-      </destination>
-      <destination class="CsvDestination">
-         <period type="time" value="2000"/>
-         <property name="path" value="test-average-throughput.csv"/>
-      </destination>
-   </reporter>
+      <title>An example reporting configuration:</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
+<reporter class="ThroughputStatsReporter">
+   <property name="minimumEnabled" value="false"/>
+   <property name="maximumEnabled" value="false"/>
+   <destination class="ConsoleDestination">
+      <period type="time" value="1000"/>
+   </destination>
+   <destination class="CsvDestination">
+      <period type="time" value="2000"/>
+      <property name="path" value="test-average-throughput.csv"/>
+   </destination>
+</reporter>
 
-   <reporter class="MemoryUsageReporter">
-      <property name="agentHostname" value="localhost"/>
-      <property name="agentPort" value="8850"/>
-      <destination class="CsvDestination">
-         <period type="time" value="2000"/>
-         <property name="path" value="test-memory-usage.csv"/>
-      </destination>
-   </reporter>
- </reporting>]]></programlisting>
-      </section>
+<reporter class="MemoryUsageReporter">
+   <property name="agentHostname" value="localhost"/>
+   <property name="agentPort" value="8850"/>
+   <destination class="CsvDestination">
+      <period type="time" value="2000"/>
+      <property name="path" value="test-memory-usage.csv"/>
+   </destination>
+</reporter>
+</reporting>]]></programlisting>
+   </section>
+   <para>
+      With this configuration the 2 reporters are specified -
+      <code>ThroughputStatsReporter</code>
+      and
+      <code>MemoryUsageReporter</code>
+      . First one will report to console each 1 second and to CSV file each 2
+      seconds, while the second one will report memory usage of the
+      tested system into CSV file each 2 seconds.
+   </para>
+   <para>
+      Each reporter can be enabled/disabled by the optional boolean attribute called
+      <code>enabled</code>
+      . The disabled reporter is just ignored by PerfCake just like it wouldn't be there at all.
+      If not specified the reporter is enabled by default.
+   </para>
+   <section>
+      <title>An example of a disabled reporter:</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
+<reporter class="ThroughputStatsReporter">
+   ...
+</reporter>
+
+<reporter class="MemoryUsageReporter" enabled="false">
+   ...
+</reporter>
+</reporting>]]></programlisting>
       <para>
-         With this configuration the 2 reporters are specified -
+         In the example above there are two reporters configured,
          <code>ThroughputStatsReporter</code>
+         which is enabled
          and
          <code>MemoryUsageReporter</code>
-         . First one will report to console each 1 second and to CSV file each 2
-         seconds, while the second one will report memory usage of the
-         tested system into CSV file each 2 seconds.
+         which is disabled.
       </para>
-      <para>
-         Each reporter can be enabled/disabled by the optional boolean attribute called
-         <code>enabled</code>
-         . The disabled reporter is just ignored by PerfCake just like it wouldn't be there at all.
-         If not specified the reporter is enabled by default.
-      </para>
-      <section>
-         <title>An example of a disabled reporter:</title>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
-   <reporter class="ThroughputStatsReporter">
-      ...
-   </reporter>
-
-   <reporter class="MemoryUsageReporter" enabled="false">
-      ...
-   </reporter>
- </reporting>]]></programlisting>
-         <para>
-            In the example above there are two reporters configured,
-            <code>ThroughputStatsReporter</code>
-            which is enabled
-            and
-            <code>MemoryUsageReporter</code>
-            which is disabled.
-         </para>
-      </section>
-      <para>The following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
    </section>
+   <para>The following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
    <xi:include href="./reporting/reporters.xml"/>
    <xi:include href="./reporting/destinations.xml"/>
 </section>
