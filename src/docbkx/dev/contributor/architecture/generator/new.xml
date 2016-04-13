@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.generator.new"
-         version="6.0">
+         version="7.0">
    <title>Writing a New Generator</title>
    <para>TODO: Introduce AbstractMessageGenerator in detail, how to inherit, what methods to override, RunInfo reference, SenderTask.</para>
 </section>
