@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
          xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
-         xml:id="dev.contributor.developing.code-standards.src-basics" version="5.0">
+         xml:id="dev.contributor.developing.code-standards.src-basics" version="6.0">
    <title>Source file basics</title>
    <section>
       <title>File name</title>
