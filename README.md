@@ -11,8 +11,8 @@ $ mvn package -P pdf
 
 To generate the documents in HTML format use following:
 ```
-$ mvn package ug-html
-$ mvn package dev-html
+$ mvn package -P ug-html
+$ mvn package -P dev-html
 ```
 
 You can use any other goal of docbkx-maven-plugin to generate the documents in other formats.
