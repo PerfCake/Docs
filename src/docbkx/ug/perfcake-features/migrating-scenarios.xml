@@ -9,4 +9,5 @@
    <xi:include href="./migrating-scenarios/3-to-4.xml"/>
    <xi:include href="./migrating-scenarios/4-to-5.xml"/>
    <xi:include href="./migrating-scenarios/5-to-6.xml"/>
+   <xi:include href="./migrating-scenarios/6-to-7.xml"/>
 </section>
