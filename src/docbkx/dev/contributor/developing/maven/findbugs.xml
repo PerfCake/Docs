@@ -3,18 +3,9 @@
          xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
          xml:id="dev.contributor.developing.maven.findbugs" version="7.0">
    <title>FindBugs Report</title>
-   <para>
-      We use FindBugs to warn us about bad code practices. To obtain the report execute the
-      <emphasis>findbugs:findbugs</emphasis>
-      goal. FindBugs works with the compiled classes,
-      so for a fresh report, the
-      <varname>compile</varname>
-      target must be invoked.
-   </para>
-   <para>
-      To inspect the code on the fly, run the
-      <emphasis>findbugs:gui</emphasis>
-      tool. Please
-      note that it only shows the data from the previous analysis run.
-   </para>
+   <para>We use FindBugs to warn us about bad code practices. To obtain the report execute the
+         <emphasis>findbugs:findbugs</emphasis> goal. FindBugs works with the compiled classes, so
+      for a fresh report, the <varname>compile</varname> target must be invoked. </para>
+   <para>To inspect the code on the fly, run the <emphasis>findbugs:gui</emphasis> tool. Please note
+      that it only shows the data from the previous analysis run. </para>
 </section>

@@ -4,9 +4,8 @@
          xml:id="dev.contributor.developing.maven.license" version="7.0">
    <title>License</title>
    <para>PerfCake is licensed under Apache License 2.0 and the license text can be found in
-      LICENSE.txt file. license-maven-plugin is used to check that each file has the appropriate
-      header.
-   </para>
+         <varname>LICENSE.txt</varname> file. license-maven-plugin is used to check that each file
+      has the appropriate header. </para>
    <itemizedlist>
       <listitem>
          <para>

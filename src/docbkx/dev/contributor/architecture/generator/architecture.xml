@@ -6,5 +6,27 @@
       <title>Generators Architecture</title>
       <graphic format="PNG" fileref="./images/generator-architecture.png"/>
    </figure>
-   <para>TODO: Describe the architecture.</para>
+   <para>A message generator controls how many threads are being used to generate the messages, it
+      is responsible for creating and submitting <varname>SenderTasks</varname> and controls the
+      other components involved in the performance test execution. </para>
+   <para>A message generator is the most crucial and complicated component of PerfCake and it is
+      highly recommended to reuse one of existing implementations as they already offer mostly
+      wanted features. </para>
+   <para>The main task of a message generator is to take care of the sending threads, create
+         <varname>SenderTasks</varname> as needed and monitor the test progress. It is important to
+      properly shutdown the message generation for both time and iteration based test length
+      control. In the case of an iteration based control, a generator must wait for all the messages
+      to be processed (in case of a normal/unexceptional termination). In the case of a time based
+      control, the test stops immediately after the time has elapsed.</para>
+   <para>Each <varname>SenderTask</varname> takes a <varname>CanalStreet</varname> instance as a
+      communication pipe that is used to notify the parent generator of task completion and or any
+      errors that might have occurred. The <varname>CanalStreet</varname> relies on an internal
+         <varname>Semaphore</varname> instance that can control the number of
+         <varname>SenderTasks</varname> prepared in a queue for execution.</para>
+   <para>A message generator carries links to all other system components and thus has an ultimate
+      control over the running performance test. It is the only class that indirectly manipulates
+         <varname>RunInfo</varname> through starting and stopping the
+         <varname>ReportManager</varname>.</para>
+   <para>A message generator usually maintains a queue of prepared SenderTasks and schedules their
+      execution. It also controls the number of parallel threads running.</para>
 </section>

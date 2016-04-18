@@ -7,20 +7,19 @@
       overall design and then we delve deeper into the individual parts.
    </para>
    <para>There is an easy concept that is good to bear in mind while working with PerfCake -- a
-      single communication unit called a Message
-      <indexterm>
+      single communication unit called a Message <indexterm>
          <primary>Message</primary>
-      </indexterm>
-      .
-      PerfCake usually sends the message to the target system and measures the
+      </indexterm>. PerfCake usually sends the message to the target system and measures the
       response time needed by the system being measured to provide a valid response. It is also the
-      basic unit of load that can be generated for the target system.
-   </para>
+      basic unit of the load that can be generated for the target system.</para>
+   <para>It is cruicial to understand the inner architecture when developing custom components. The
+      lack of this knowledge can lead to wrong measurements and invalid performance results.</para>
    <para>Let's investigate the architecture in more details.</para>
    <xi:include href="../../common/architecture.xml"/>
    <xi:include href="./architecture/run-info.xml"/>
    <xi:include href="./architecture/generator.xml"/>
    <xi:include href="./architecture/sender.xml"/>
+   <xi:include href="./architecture/sequences.xml"/>
    <xi:include href="./architecture/reporting.xml"/>
    <xi:include href="./architecture/validation.xml"/>
 </chapter>

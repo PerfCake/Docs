@@ -2,5 +2,14 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.run-info"
          version="7.0">
    <title>Run Info</title>
-   <para>TODO: What is RunInfo, how does it control the run.</para>
+   <para><varname>RunInfo</varname> is a central object that controls the run of the performance
+            test. It is not intended to be inherited nor extended. It is just a central piece that
+            tells us when the test started, for how long it runs, when it should finish and how many
+            iteration have already passed since the test start.</para>
+      <para><varname>RunInfo</varname> typically originates in the scenario definition. The scenario
+            can specify the length of the performance test in either a time unit (milliseconds) or
+            number of iterations (how many messages should be sent).</para>
+      <para><varname>RunInfo</varname> is passed to many other objects in PerfCake but it is not
+            supposed to be modified. It is a good practice to use it just for obtaining information
+            about the running test by using its getters.</para>
 </section>

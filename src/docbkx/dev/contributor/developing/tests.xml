@@ -47,10 +47,6 @@
          </para>
       </listitem>
    </itemizedlist>
-   <para>
-      To find out what is the current code coverage of tests, refer to the
-
-      <xref linkend="dev.contributor.developing.maven.jacoco"/>
-      .
-   </para>
+   <para>To find out what is the current code coverage of tests, refer to the <xref
+         linkend="dev.contributor.developing.maven.jacoco"/> . </para>
 </section>

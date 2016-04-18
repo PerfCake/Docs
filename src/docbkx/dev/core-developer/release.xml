@@ -58,20 +58,14 @@ $ git merge --no-ff release/v{VERSION}~1]]>
 $ git push --all && git push --tags]]>
       </programlisting>
    </figure>
-   <para>Only users the approved account in the Sonatype
-      JIRA
-      <footnote>
+   <para>Only users with an approved account in the Sonatype JIRA <footnote>
          <para>
             <link xlink:href="https://issues.sonatype.org/browse/OSSRH-7134"/>
          </para>
-      </footnote>
-      can upload the artifacts. Then follow the rules specified in the Sonatype OSS Maven Repository Usage
-      Guide
-      <footnote>
+      </footnote> can upload the artifacts. Then follow the rules specified in the Sonatype OSS
+      Maven Repository Usage Guide <footnote>
          <para>
             <link xlink:href="http://goo.gl/xBSm4"/>
          </para>
-      </footnote>
-      .
-   </para>
+      </footnote> . </para>
 </chapter>

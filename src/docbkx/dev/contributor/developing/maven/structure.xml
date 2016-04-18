@@ -3,33 +3,28 @@
          xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
          xml:id="dev.contributor.developing.maven.structure" version="7.0">
    <title>Project Structure</title>
-   <para>There is a parent project composed of two child Maven modules. This is because PerfCake
-      Agent installs into the application under inspection and needs to be compiled with an older
-      Java version because of compatibility reasons.
-   </para>
-   <para>Because of the split into multiple child modules, there is a need to run
-      <emphasis>mvn
-         install -DskipTests
-      </emphasis>
-      to install the parent module into your local repository
-      when working on the
-      <emphasis>devel</emphasis>
-      Git branch.
-      <itemizedlist>
+   <para>There is a parent project composed of three child Maven modules. There is a Bill Of
+      Materials that defines all dependencies used with PerfCake, the PerfCake Agent which installs
+      into the application under inspection and needs to be compiled with an older Java version
+      because of compatibility reasons, and the main core of PerfCake. </para>
+   <para>Because of the split into multiple child modules, there is a need to run <emphasis>mvn
+         install -DskipTests </emphasis> to install the parent module into your local repository
+      when working on the <emphasis>devel</emphasis> Git branch.</para>
+   <para>The modules are as follows. <itemizedlist>
          <listitem>
-            <para>
-               <emphasis>parfcake</emphasis>
-               Core PerfCake module, contains all the code
-               needed to build the product.
-            </para>
+            <para><emphasis>perfcake-bom</emphasis> Bill Of Materials with dependencies
+               definitions.</para>
          </listitem>
          <listitem>
             <para>
-               <emphasis>perfcake-agent</emphasis>
-               JVM Agent to be used when running target
+               <emphasis>parfcake</emphasis> Core PerfCake module, contains all the code needed to
+               build the product. </para>
+         </listitem>
+         <listitem>
+            <para>
+               <emphasis>perfcake-agent</emphasis> JVM Agent to be used when running target
                application (application under inspection) with memory monitoring. This module is
-               compiled with an older Java version (1.5).
-            </para>
+               compiled with an older Java version (1.5). </para>
          </listitem>
       </itemizedlist>
    </para>

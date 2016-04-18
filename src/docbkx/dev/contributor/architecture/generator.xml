@@ -2,10 +2,13 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.generator"
          version="7.0">
    <title>Generators</title>
-   <para>
-      In this section we will reveal as much details about message generators as possible. First we describe the architecture and then we
-      discuss an approach to develop a new generator.
-   </para>
+   <para>In this section we will reveal as much details about message generators as possible. First
+      we describe the architecture and then we discuss an approach to develop a new generator. </para>
+   <para>Generator is the most sensitive and fragile component in the whole PerfCake architecture.
+      It has the reponsibility of generating all the messages and load. It is recommended to study
+      the <varname>MessageGenerator</varname> interface, <varname>AbstractMessageGenerator</varname>
+      as its basic implementation and then the default implementation called
+         <varname>DefaultMessageGenerator</varname> before developing your own generator.</para>
    <xi:include href="./generator/architecture.xml"/>
    <xi:include href="./generator/new.xml"/>
 </section>

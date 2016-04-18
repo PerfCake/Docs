@@ -3,22 +3,17 @@
          xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
          xml:id="dev.contributor.developing.maven.documentation" version="7.0">
    <title>Documentation</title>
-   <para>It is possible to generate JavaDco for individual Maven modules as well as a single
-      aggregated package for all of them.
-      <itemizedlist>
+   <para>It is possible to generate JavaDoc for individual Maven modules as well as a single
+      aggregated package for all of them. <itemizedlist>
          <listitem>
             <para>
-               <emphasis>javadoc:javadoc</emphasis>
-               Generates documentation for the current
-               Maven module.
-            </para>
+               <emphasis>javadoc:javadoc</emphasis> Generates documentation for the current Maven
+               module. </para>
          </listitem>
          <listitem>
             <para>
-               <emphasis>javadoc:aggregate</emphasis>
-               Generates aggregated documentation
-               package when executed in the parent project.
-            </para>
+               <emphasis>javadoc:aggregate</emphasis> Generates aggregated documentation package
+               when executed in the parent project. </para>
          </listitem>
       </itemizedlist>
    </para>

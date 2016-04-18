@@ -3,8 +3,21 @@
          xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
          xml:id="dev.contributor.developing.writing-guides" version="7.0">
    <title>Writing Guides</title>
-   <para>
-      This section describes guidelines to writing PerfCake guides. It contains information on styles used, language, and good practices.
-   </para>
-   <para>TODO: This chapter will be completed based on the experiences with completing this guide.</para>
+   <para>This section describes guidelines to writing PerfCake guides. It contains information on
+      styles used, language, and good practices. </para>
+   <para>The documentation is written using Doctype which with all its limitations has been proven
+      as the most suitable for generating both PDF and HTML documentation. We receive support from
+      oXygen in the form of free licenses for oXygen XML editor which facilitates authoring.</para>
+   <para>The documentation is separated into two books. First, the Users' Guide is intended for
+      general PerfCake users, while the second, the Developers' Guide is for more advanced users
+      willing to extend PerfCake, work with its source code or to make direct contributions.</para>
+   <para>There is not much to say about it, as the current document structure and XML elements used
+      are a leading example of how to write the documentation. We would like to kindly ask any
+      contributors to stick to the current format.</para>
+   <para>The documentation is stored in a separate repository on GitHub (<link
+         xlink:href="https://github.com/PerfCake/Doc"/>). The main authoring happens in the
+         <emphasis>master</emphasis> branch and a new branch is created for each major release. We
+      do not use tags as we want to keep the option to fix any issues even after the release.
+      However, given the limited resources, this happens only rarely. The documentation is valid for
+      just the latest minor release in the given branch.</para>
 </section>

@@ -3,14 +3,7 @@
          xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
          xml:id="dev.contributor.developing.maven.signatures" version="7.0">
    <title>Digital Signatures</title>
-   <para>
-      To sign the artifacts created by the
-      <emphasis>package</emphasis>
-      goal, one need to run
-      the
-      <emphasis>gpg:sign</emphasis>
-      goal. The resulting signatures accompany the files in the
-      <varname>target</varname>
-      directory.
-   </para>
+   <para>To sign the artifacts created by the <emphasis>package</emphasis> goal, one need to run the
+         <emphasis>gpg:sign</emphasis> goal. The resulting signatures accompany the files in the
+         <varname>target</varname> directory. </para>
 </section>

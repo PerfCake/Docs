@@ -3,10 +3,11 @@
          xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
          xml:id="dev.contributor.developing.maven.maven-goals" version="7.0">
    <title>Standard Maven Goals</title>
-   <para>We try to minimalize the necessity for running standard Maven goals in a different
-      manner or in a way they are not originally intended to. So far we use the following
-      goals.
-   </para>
+   <para>We try to minimalize the necessity for running standard Maven goals in a different manner
+      or in a way they are not originally intended to. We also try to make sure all of these goals
+      work with the parent project but this is not always possible. In case you realize the goal
+      does not work in the parent directory, try switching to the <emphasis>perfcake</emphasis>
+      module. So far we use the following goals. </para>
    <itemizedlist>
       <listitem>
          <para>
@@ -45,9 +46,7 @@
       </listitem>
       <listitem>
          <para>
-            <emphasis>package</emphasis>
-            Packages the distribution
-         </para>
+            <emphasis>package</emphasis> Packages the distribution jar files. </para>
       </listitem>
       <listitem>
          <para>

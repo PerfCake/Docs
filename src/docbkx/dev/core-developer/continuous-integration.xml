@@ -3,9 +3,17 @@
          xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
          xml:id="dev.core-developer.continuous-integration" version="7.0">
    <title>Continuous Integration</title>
-   <para>
-      This chapter describes details about the continuos integration we use at the PerfCake project. The target audience are core developers with appropriate access rights.
-      The content will be filled in base on the experiences with the release 1.0.
-   </para>
-   <para>TODO: How to configure jobs, what artifacts they generate, how to verify pull requests...</para>
+   <para>This chapter describes details about the continuos integration we use at the PerfCake
+      project. The target audience are core developers with appropriate access rights.</para>
+   <para>As the Continuous Integration system we use Jenkins hosted for free by CloudBees (<link
+         xlink:href="https://perfcake.ci.cloudbees.com/"/>). The free conditions require us to log
+      in to their system at least once every two weeks which we sometimes forget and it gets
+      hibernated. This can explain why you might not find it running. </para>
+   <para>We have several important jobs that are typically triggered nightly when there is an update
+      to the Git repositories. PerfCake-master and PerfCake-devel jobs build, test, and create
+      artifacts for the master and devel branches in the source code. PerfCake-Documentation and
+      PerfCake-Documentation-Devel jobs build documentation for the released and for master branch
+      in Git.</para>
+   <para>Currently, the tests consume more than 64MB of memory and are required to run on large
+      slave instances.</para>
 </chapter>

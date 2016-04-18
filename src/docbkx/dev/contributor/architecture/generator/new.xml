@@ -2,5 +2,31 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.generator.new"
          version="7.0">
    <title>Writing a New Generator</title>
-   <para>TODO: Introduce AbstractMessageGenerator in detail, how to inherit, what methods to override, RunInfo reference, SenderTask.</para>
+   <para>The best way to implement a new generator is by modifying
+                  <varname>DefaultMessageGenerator</varname>. The main method is
+                  <varname>generate()</varname> that creates a new thread pool and generates
+                  <varname>SenderTasks</varname> until the test is finished.
+                  <varname>SenderTasks</varname> are submitted as tasks to the newly created thread
+            pool. In the end the thread pool is shut down according to <varname>RunInfo</varname>
+            configuration as described in the previous section.</para>
+      <para>It is worth noticing the custom thread factory
+                  <varname>DefaultMessageGenerator.DaemonThreadFactory</varname>. This makes sure we
+            can quit the process even if some threads got stuck. It also sets higher priority to
+            these threads.</para>
+      <para><varname>DefaultMessageGenerator</varname> keeps an eye on the number of prepared
+                  <varname>SenderTasks</varname> by using a semaphore so that we do not consume to
+            much memory at once.</para>
+      <para>Now investigate the <varname>AbstractMessageGenerator.newSenderTask()</varname> method
+            to see how <varname>SenderTasks</varname> are created. You can notice that there is a
+            new instance of <varname>CanalStreet</varname> being created. This is a callback pipe
+            that is used to signal the <varname>Semaphore</varname> upon a completion of the
+                  <varname>SenderTask</varname> and to report any errors during sending back to the
+            generator.</para>
+      <para>In the end just have a look to the <varname>SenderTask</varname> class. This class
+            implements <varname>Runnable</varname> and does the following steps. First, it acquires
+            a <varname>MessageSender</varname> from the senders pool, uses this
+                  <varname>MessageSender</varname> to send one or more messages while measuring the
+            time it took, and releases the <varname>MessageSender</varname>. Successful completion
+            is acknowledged through the <varname>CanalStreet</varname> instance as well as any
+            possible errors.</para>
 </section>
