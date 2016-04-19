@@ -2,13 +2,12 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architectire.reporting"
          version="7.0">
    <title>Reporting</title>
-   <para>
-      In this section we will reveal as much details about reporting facilities as possible. First we describe the architecture and then we
-      discuss an approach to develop new reporters, destinations
-      and accumulators.
-   </para>
+   <para>In this section we will reveal as much details about reporting facilities as possible.
+      First we describe the architecture and then we discuss an approach to develop new reporters,
+      destinations and accumulators. </para>
+   <para>Bear in mind that the reporting itself can have a significant influence on the system being
+      measured. Be careful when extending this part of PerfCake.</para>
    <xi:include href="./reporting/architecture.xml"/>
-   <!-- TODO:Where are reporters registered, AbstractReporter, how to inherit from it, what methods to override, how are destinations managed, when are called, developing accumulators. -->
    <xi:include href="./reporting/reporters.xml"/>
    <xi:include href="./reporting/destinations.xml"/>
    <xi:include href="./reporting/accumulators.xml"/>

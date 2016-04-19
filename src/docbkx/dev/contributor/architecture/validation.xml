@@ -2,10 +2,11 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.validation"
          version="7.0">
    <title>Validators</title>
-   <para>
-      In this section we will reveal as much details about validators as possible. First we describe the architecture and then we
-      discuss an approach to develop new validators.
-   </para>
+   <para>In this section we will reveal as much details about validators as possible. First we
+      describe the architecture and then we discuss an approach to develop new validators. </para>
+   <para>Please note that the process of validation can have a significant impact on the performance
+      measurement. It is advised to use them only during the development of a performance test or to
+      validate suspicious results.</para>
    <xi:include href="./validation/architecture.xml"/>
    <xi:include href="./validation/new.xml"/>
 </section>

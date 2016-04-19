@@ -2,5 +2,14 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.validation.new"
          version="7.0">
    <title>Writing a New Validator</title>
-   <para>TODO: ValidationManager, how are called in parallel thread not to influence measurement, how to write a new validator.</para>
+   <para>The <varname>MessageValidator</varname> interface is the easiest to implement in PerfCake.
+            It only has s ingle method, it does not need to be thread-safe because it is always
+            called from a single thread in parallel to the running test. It should not perform any
+            resource demanding tasks.</para>
+      <para>By default, before the scenario execution has finished, there is only a single call to
+            the <varname>MessageValidator</varname> every 500ms (unless configured otherwise). After
+            that, the validation runs without no pauses.</para>
+      <para>The single method is <varname>isValid()</varname> and returns <varname>true</varname> on
+            successful message validation. There is no common abstract ancestor and you are supposed
+            to implement the interface directly.</para>
 </section>

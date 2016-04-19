@@ -7,5 +7,12 @@
       <graphic format="PNG" fileref="./images/validation-architecture.png"/>
    </figure>
 
-   <para>TODO: Describe the architecture.</para>
+   <para>Similarly to reporting, validation is started from the <varname>SenderTask</varname>. A
+      received response message is passed to the <varname>ValidationManager</varname> which stores
+      them to a pipeline (i.e. <varname>FileQueue</varname>). Individual
+         <varname>MessageValidators</varname> then consume the messages from this pipeline and count
+      the correct and failed response messages.</para>
+   <para>The <varname>MessageValidator</varname> always receives the original message as well so it
+      can see the particular request after any string templates were replaced with concrete
+      values.</para>
 </section>

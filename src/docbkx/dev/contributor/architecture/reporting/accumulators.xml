@@ -2,5 +2,16 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.reporting.accumulators"
          version="7.0">
    <title>Accumulators</title>
-   <para>TODO: Developing a new accumulator.</para>
+      <para>An <varname>Accumulator</varname> is a tool for reporters to accumulate multiple values
+            from <varname>MeasurementUnits</varname> into a single <varname>Mesurement</varname>. </para>
+      <para>The <varname>Accumulator</varname> must be thread-safe as it is called from multiple
+            threads at the same time.</para>
+      <para>It has three simple methods to reset the <varname>Accumulator</varname> to the
+            default/empty state (<varname>reset()</varname>), to accumulate a new value
+                  (<varname>add()</varname>), and to obtain the current result
+                  (<varname>getResult()</varname>).</para>
+      <para>The <varname>Accumulator</varname> is not obliged to remember all the added values as
+            long as it is capable of providing the correct results. E.g. while counting an average,
+            it is sufficient to store the sum and the count of added values. In some cases, it might
+            be necessary to store them all (e.g. harmonic mean).</para>
 </section>

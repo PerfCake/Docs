@@ -7,5 +7,27 @@
       <graphic format="PNG" fileref="./images/reporting-architecture.png"/>
    </figure>
 
-   <para>TODO: Describe the architecture.</para>
+   <para>The <varname>SenderTask</varname> instance measures the time needed to send a message by
+      using a <varname>MessageSender</varname>. It creates a <varname>MeasurementUnit</varname>
+      which is the basic unit carrying a single measurement. The information stored in the
+         <varname>MeasurementUnit</varname> are mainly time values of the events in the process of
+      sending a request.</para>
+   <para>All the <varname>MeasurementUnits</varname> are immediately reported to the
+         <varname>ReportManager</varname> which in turn reports this unit to all its
+         <varname>Reporters</varname>. A <varname>Reporter</varname> is supposed to process the
+      value as it needs. The <varname>Reporter</varname> typically accumulates (by utilizing
+         <varname>Accumulators</varname>) the values for later because not all
+         <varname>MesurementUnits</varname> are reported to the output (from practical reasons like
+      the number of records and performance impacts).</para>
+   <para>When it is the right time for the <varname>Reporter</varname> to report the
+         <varname>Measurement</varname> to the output (as specified in the scenario configuration by
+      using the reporting <varname>Period</varname>), it must publish the results. It is up to the
+         <varname>Reporter</varname> to make sure the results are reported at the right
+      moments.</para>
+   <para>The <varname>Reporter</varname> is supposed to create a <varname>Measurement</varname>
+      object carrying the accumulated results and pass it to all its
+      <varname>Destinations</varname>.</para>
+   <para>The <varname>Destination</varname> is a representation of the place where the results
+      should be reported. It can be a terminal console, a comma-separeted values (CSV) file, a chart
+      or any custom result repository.</para>
 </section>

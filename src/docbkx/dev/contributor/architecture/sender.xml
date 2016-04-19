@@ -1,8 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.sender" version="7.0">
    <title>Developing Senders</title>
+   <para>A <varname>MessageSender</varname> is the typical interface that most of the developers are
+      likely to implement. It encapsulates the specific protocol communication. It does just one
+      thing and it should do it properly. Implementing a simple sender can be really fast but there
+      are some low hanging fruits that can make their development and usage easier. Let's start with
+      their contract.</para>
+   <para>The ultimate goal of the MessageSender is to send a message (or any other unit of
+      communication work), and possibly receive a response. Any implementation should not do
+      anything but the communication. It should be a pure wrapper of the message exchange
+      layer.</para>
+   <para>The <varname>init()</varname> and <varname>close()</varname> methods should be used to
+      establish and close a permanent connection. It is a design consideration of any implementation
+      whether to handle the connection establishment separately (and not measure it), or to open and
+      close a connection with every single request (and make it part of the performance
+      measurement). Most provided implementations (if not all) handle the connection separately as
+      we are really interested only in measuring the message exchange.</para>
+   <para>The <varname>preSend()</varname> and <varname>postSend()</varname> methods are still not
+      part of the performance measurement and can prepare the message for actual sending or handle
+      any cleanup.</para>
+   <para>The <varname>send()</varname> methods must handle just the message exchange. No logging or
+      complex error handling code should be placed here. Therefore we allow any generic exception to
+      be thrown.</para>
+   <para>The messages must always be sent somewhere. This is specified through the
+         <varname>target</varname> property.</para>
+   <para>In general, any of the configuration properties (including target) of the
+         <varname>MessageSender</varname> can contain templates that get replaced. If you want your
+      sender to support templates in any of the properties, always store them as a
+         <varname>StringTemplate</varname> as in the <varname>AbstractSender.setTarget()</varname>
+      method. Do not forget to render the resulting string each time it is used (if there are no
+      other intentions) typically by using message attributes that are passed to many methods in the
+         <varname>MessageSender</varname>.</para>
    <para>TODO: How to develop a new sender, how to use inheritance from existing senders, how are senders used in a thread pool, are they thread safe?</para>
    <para>To allow fluent API usage with senders, we strongly encourage you to make sure all your
-      senders' setters return<code language="java">this</code>.
-   </para>
+      senders' setters return<code language="java">this</code>.</para>
+   <para>It might be more convenient to extend <varname>AbstractSender</varname>. This class does
+      some work for you already. First, it can cache a connection to the <varname>target</varname>
+      so that it is not established separately for each message (see configurtion property
+         <varname>keepConnection</varname>). Second, it stores <varname>target</varname> as a
+         <varname>StringTemplate</varname>. It also combines these two features together so that the
+         <varname>target</varname> property can contain templates. However, replacing templates with
+      message attributes only works when <varname>keepConnection</varname> is
+         <varname>false</varname> because in the case of the cached connection, we do not reuse the
+         <varname>target</varname> property.</para>
+   <para>When building your own <varname>MessageSender</varname> on top of the
+         <varname>AbstractSender</varname> you just take care of the following methods.</para>
+   <para>In the <varname>doInit()</varname> method, you should establish the connection to the
+      target system. It is advised to use
+         <varname>AbstractSender.safeGetTarget(messageAttributes)</varname> call to obtain the
+      target address with properly replaced templates.</para>
+   <para>The counterpart method is <varname>doClose()</varname>. You should close the previously
+      created connection.</para>
+   <para>You can still use <varname>preSend()</varname> and <varname>postSend()</varname> methods to
+      do any preparations and cleanup like creating the protocol specific version of the message. In
+      this case, do not forget to call the methods in the ancestor as well
+         (<varname>super.preSend()</varname> and <varname>super.postSend()</varname>).</para>
+   <para>Finally, the core part is the <varname>doSend()</varname> method where you just send the
+      message, optionally returning a response if there was any expected. </para>
+   <para>Good examples of the described features are <varname>JmsSender</varname> and
+         <varname>JdbcSender</varname> for instance, however these do not allow any other properties
+      to carry templates.</para>
+   <para>The <varname>HttpSender</varname> on the other hand can use templates in the HTTP method
+      name. But the connection is handled in a different way here as
+         <varname>HttpUrlConnection</varname> is not reusable (Java handles its own cache
+      internally).</para>
+   <para>If in doubt, you can use the <varname>DummySender</varname> in the debug mode and see what
+      happens and what methods methods are being called depending on the configuration.</para>
 </section>

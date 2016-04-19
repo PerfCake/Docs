@@ -2,5 +2,17 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.reporting.destinations"
          version="7.0">
    <title>Destinations</title>
-   <para>TODO: Developing new destinations.</para>
+      <para>A <varname>Destination</varname> is a channel to which performance measurement results
+            can be reported. The <varname>Destination</varname> is registered with a
+                  <varname>Reporter</varname> and is completely controlled by the
+                  <varname>Reporter</varname>. The only responsibility of the
+                  <varname>Destination</varname> is to open a reporting channel, report
+                  <varname>Measurements</varname>, and close the reporting channel. </para>
+      <para>It is the role of the <varname>Measurement</varname> object to provide all the
+            information to be reported (including value types, names, units and custom
+            labels).</para>
+      <para>The core method of the <varname>Destination</varname> is <varname>report()</varname> and
+            it needs to be thread-safe as it is used by multiple threads at the same time.</para>
+      <para>One of the simplest <varname>Destinations</varname> is
+                  <varname>ConsoleDestination</varname>. </para>
 </section>

@@ -2,5 +2,32 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.reporting.reporters"
          version="7.0">
    <title>Reporters</title>
-   <para>TODO: Developing new reporters.</para>
+      <para>A <varname>Reporter</varname> takes multiple <varname>MeasurementUnits</varname> and
+            combines them into a single <varname>Measurement</varname>. The core method is
+                  <varname>report()</varname> that is called each time a new
+                  <varname>MeasurementUnit</varname> is ready. </para>
+      <para>The <varname>Reporter</varname> should not report anything unless it has been started
+            with the <varname>start()</varname> method. If it is properly started, it should
+            regularly report to all registered <varname>Destinations</varname> depending on the
+            configured reporting <varname>Periods</varname>. </para>
+      <para>The <varname>Reporter</varname> can assume that <varname>RunInfo</varname> has been set
+            before its <varname>start()</varname> method was called for the first time. </para>
+      <para>It is the pure responsibility of the <varname>Reporter</varname> to publish
+                  <varname>Measurement</varname> results to the <varname>Destinations</varname> in
+            the configured <varname>Periods</varname>. All <varname>PeriodTypes</varname> must be
+            supported.</para>
+      <para>For easier development, it is advised to inherit from the
+                  <varname>AbstractReporter</varname> class which provides some common functionality
+            including proper results publishing. One should directly implement this interface only
+            when there is a serious reason. The <varname>Reporter</varname> must be thread safe as
+            it is heavily used from multiple threads at the same time.</para>
+      <para>All the values reported in the <varname>Measurement</varname> should be accompanied by a
+            unit. This is accomplished by providing the <varname>Quantity</varname> type.</para>
+      <para>A nice example of a very simple Reporter is IterationsPerSecondReporter.</para>
+      <para>The <varname>AbstractReporter</varname> can also automatically accumulate individual
+                  <varname>MeasurementUnits</varname>. It is just important that its
+                  <varname>getAccumulator()</varname> method returns the correct
+                  <varname>Accumulator</varname> for the given <varname>MeasurementUnit</varname>
+            results map key. More on accumulator can be found in <xref
+                  linkend="dev.contributor.architecture.reporting.accumulators"/>.</para>
 </section>

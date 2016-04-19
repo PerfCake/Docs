@@ -2,5 +2,16 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.sequences"
          version="7.0">
    <title>Sequences</title>
-   <para>TODO: write about sequences</para>
+   <para>Sequences can be used in any template string loaded from the scenario configuration. They
+            are typically used to customize messages in a way that each message sent is unique. </para>
+      <para>A <varname>Sequence</varname> only implements two methods. First,
+                  <varname>reset()</varname> to reset the <varname>Sequence</varname> to its initial
+            state, and second <varname>getNext()</varname> to obtain the next value in the row. The
+            Sequences are used heavily by many threads. Therefore they must be thread-safe and
+            handle the load smart. </para>
+      <para>A wrong example is the <varname>NumberSequence</varname> which has the
+                  <varname>getNext()</varname> method synchronized. This makes a significant
+            overhead to the PerfCake performance.</para>
+      <para>Much better example is the <varname>PrimitiveNumberSequence</varname> which uses
+                  <varname>AtomicLong</varname> internally.</para>
 </section>
