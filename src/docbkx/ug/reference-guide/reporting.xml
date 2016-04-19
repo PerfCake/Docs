@@ -81,8 +81,8 @@
          <code>MemoryUsageReporter</code>
          which is disabled.
       </para>
+      <para>The following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
    </section>
-   <para>The following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
    <xi:include href="./reporting/reporters.xml"/>
    <xi:include href="./reporting/destinations.xml"/>
 </section>

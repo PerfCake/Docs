@@ -63,6 +63,18 @@
       </para>
    </section>
    <section>
+      <title>Sequences</title>
+      <para>Inside of the messages and scenario configuration properties, you can use sequences of values. The sequences can be configured separately in
+         the scenario and just provide a next value in the sequence each time they are queried. This allows you to have unique messages or even send the
+         message to various targets.
+      </para>
+      <para>
+         The
+         <xref linkend="ug.reference-guide.sequences"/>
+         describes the sequences in more details.
+      </para>
+   </section>
+   <section>
       <title>Validation</title>
       <para>Validation module allows to validate the response messages.</para>
       <para>

@@ -10,6 +10,7 @@
    </para>
    <xi:include href="./scenario-definition/xml.xml"/>
    <xi:include href="./scenario-definition/dsl.xml"/>
+   <xi:include href="./scenario-definition/api.xml"/>
    <xi:include href="./scenario-definition/ide-plugins.xml"/>
    <xi:include href="scenario-definition/filtering-properties.xml"/>
 </section>

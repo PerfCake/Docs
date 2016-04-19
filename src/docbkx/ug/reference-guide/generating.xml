@@ -65,10 +65,10 @@
  ...
 </generator>]]></programlisting>
       <para>In the example above a scenario is defined to run for 10 seconds.</para>
+      <para>The following sections describes the generators that can be
+         used in PerfCake to generate the load.
+      </para>
    </section>
-   <para>The following sections describes the generators that can be
-      used in PerfCake to generate the load.
-   </para>
    <xi:include href="./generating/DefaultMessageGenerator.xml"/>
    <xi:include href="./generating/ConstantSpeedMessageGenerator.xml"/>
    <xi:include href="./generating/RampUpDownGenerator.xml"/>

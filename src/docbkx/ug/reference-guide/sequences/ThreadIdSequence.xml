@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sequences.ThreadIdSequence" version="7.0">
+   <title>ThreadIdSequence</title>
+   <para>
+      TODO: Complete
+   </para>
+   <para>
+      Following table shows the properties of the ThreadIdSequence:
+      <table frame="all">
+         <title>ThreadIdSequence properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>searchBase</entry>
+                  <entry>DN (distinguished name) to use as the search base</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <section>
+      <title>An example of ThreadIdSequence configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sequence name="mySequence" class="ThreadIdSequence">
+ </sequence>]]></programlisting>
+   </section>
+</section>

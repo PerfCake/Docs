@@ -88,8 +88,8 @@
          message that has both validators attached. So the response to the second message will be validated
          by both of the validators.
       </para>
-      <para>The validation is enabled and the</para>
+      <para>The validation is enabled and the fast validation mode will be activated once the performance test finishes.</para>
+      <para>The rest of the chapter will present all the available validators that can be used in PerfCake.</para>
    </section>
-   <para>The rest of the chapter will present all the available validators that can be used in PerfCake.</para>
    <xi:include href="./validation/validators.xml"/>
 </section>

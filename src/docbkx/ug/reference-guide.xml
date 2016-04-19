@@ -4,6 +4,7 @@
    <xi:include href="./reference-guide/generating.xml"/>
    <xi:include href="./reference-guide/sending.xml"/>
    <xi:include href="./reference-guide/messages.xml"/>
+   <xi:include href="./reference-guide/sequences.xml"/>
    <xi:include href="./reference-guide/reporting.xml"/>
    <xi:include href="./reference-guide/validation.xml"/>
 </chapter>
