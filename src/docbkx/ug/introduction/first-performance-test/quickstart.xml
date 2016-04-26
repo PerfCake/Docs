@@ -12,7 +12,7 @@
 │ ├── perfcake.bat
 │ └── perfcake.sh
 ├── docs/
-│ └── perfcake-5.0-javadoc.jar
+│ └── perfcake-6.x-javadoc.jar
 ├── lib/
 │ ├──ext/
 │ ├──plugins/
@@ -141,7 +141,7 @@
       <para>
          <code>http-echo.xml</code>:
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:5.0">
+<scenario xmlns="urn:perfcake:scenario:6.0">
    <run type="time" value="10000"/>
    <generator class="DefaultMessageGenerator" 
               threads="${thread.count}"/>
@@ -197,7 +197,7 @@
       </para>
       <para><code>http-reporting.xml</code>:
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:5.0">
+<scenario xmlns="urn:perfcake:scenario:6.0">
    <run type="time" value="10000"/>
    <generator class="DefaultMessageGenerator" 
               threads="${thread.count:10}"/>
@@ -230,7 +230,7 @@
       <para>
          Try to run the scenario again by the following command:
          <programlisting><![CDATA[
-2015-09-23 13:30:11,310 INFO {org.perfcake.ScenarioExecution} === Welcome to PerfCake 5.0 ===
+2015-09-23 13:30:11,310 INFO {org.perfcake.ScenarioExecution} === Welcome to PerfCake 6.0 ===
 2015-09-23 13:30:11,311 INFO {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2015-09-23 13:30:11,312 INFO {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 605ns.
 A single thread is now able to measure maximum of 1652892 iterations/second.
