@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.minimal-requirements" version="7.0">
    <title>Minimal requirements</title>
-   <para>As was mentioned in
-      <xref linkend="ug.introduction.getting-perfcake.downloading"/>
-      , the main requirement is having
-      Java Development Kit version 8 installed in your environment. Other requirements on the
-      hardware depend on what you expect from PerfCake. The memory and CPU power demands depand
-      mainly on your performance scenario.
-   </para>
+   <para>As was mentioned in <xref linkend="ug.introduction.getting-perfcake.downloading"/> , the
+      main requirement is having Java Development Kit version 8 installed in your environment. In
+      case you have troubles installing Java, please search some tutorials on installing JDK on your
+      operating system on YouTube. There are plenty of useful videos on this topic.</para>
+   <para>Other requirements on the hardware depend on what you expect from PerfCake. The memory and
+      CPU power demands depand mainly on your performance scenario. </para>
    <para>Up to our knowledge all components of PerfCake work offline without an Internet connection.
       This is our intent, please report a bug should you have different findings. </para>
 </section>
