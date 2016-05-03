@@ -72,6 +72,12 @@
                   <entry>No</entry>
                   <entry>"perfcake-chart"</entry>
                </row>
+               <row>
+                  <entry>height</entry>
+                  <entry>Height in pixels of each individual chart graphics in the HTML report.</entry>
+                  <entry>No</entry>
+                  <entry>400</entry>
+               </row>
             </tbody>
          </tgroup>
       </table>
@@ -93,7 +99,7 @@
          In the example above there is a
          <code>MemoryUsageReporter</code>
          configured to publish memory usage report into
-         a chart. The memory usage data is gathered each 5 seconds and the chart is supposed to be showing used and total memory
+         a chart. The memory usage data is gathered every single second and the chart is supposed to be showing used and total memory
          (results taken from
          <code>Used</code>
          and
@@ -105,7 +111,7 @@
       </para>
       <figure id="ug.reference-guide.reporting.destinations.ChartDestination.example-chart">
          <title>ChartDestination example chart</title>
-         <graphic format="SVG" fileref="./images/ChartDestination-example.svg" scalefit="1" width="100%" align="center"/>
+         <graphic format="PNG" fileref="./images/c3chart.png" scalefit="1" width="100%" align="center"/>
       </figure>
    </section>
 </section>
