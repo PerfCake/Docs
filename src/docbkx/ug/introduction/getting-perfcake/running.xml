@@ -5,13 +5,27 @@
       unpacked the binary distribution, you can find a shell script and a Windows bat script in the
       $PERFCAKE_HOME/bin directory. These are executables that can find your JDK and run PerfCake
       properly. The scripts were tested on Linux, Windows and MacOS (in this case, some command line
-      tweaking might be necessary).
-   </para>
-   <para>In case of building from source code, please refer to the Developers' Guide for more
+      tweaking might be necessary).</para>
+   <note>
+      <para>Windows users should be running perfcake.bat from the old Command shell and avoid using
+         PowerShell. Another way is to run PerfCake with the following command in PowerShell:</para>
+      <para>
+         <code>cmd /c perfcake.bat</code></para>
+      <para>It might be also necessary to place some parameters in double quotes. Like the
+         following:</para>
+      <para><code>"-Dperfcake.run.time=1000"</code></para>
+   </note>
+   <note>
+      <para>Some MacOS installations of Java might have a preconfigured directory with Java
+         libraries that are pre-loaded with each Java application. These libraries can interfere
+         with PerfCake libraries resulting in failure to start PerfCake.</para>
+      <para>Move the libraries to some other temporary directory to be able to run PerfCake.</para>
+   </note>
+   <para> </para>
+   <para>In case of building from the source code, please refer to the Developers' Guide for more
       instructions. Basically, the easiest way is to create the binary distribution from source code
       and follow the usual steps. It is also possible to run PerfCake directly by invoking the java
-      command but this needs to take care of the classpath configuration.
-   </para>
+      command but this needs to take care of the classpath configuration. </para>
    <para>It is also possible to run PerfCake using a Maven plugin or its API. These ways are
       described either in the Developers' Guide or will be presented in
       <xref linkend="ug.general-usage"/>

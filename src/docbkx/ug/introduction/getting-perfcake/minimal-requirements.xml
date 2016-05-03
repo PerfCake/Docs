@@ -8,8 +8,6 @@
       hardware depend on what you expect from PerfCake. The memory and CPU power demands depand
       mainly on your performance scenario.
    </para>
-   <para>Some components also work only with an active Internet connection. For example chart output
-      is based on Google Charts and they do not work offline. We are considering to provide a
-      different solution and make PerfCake work completely offline in the future.
-   </para>
+   <para>Up to our knowledge all components of PerfCake work offline without an Internet connection.
+      This is our intent, please report a bug should you have different findings. </para>
 </section>
