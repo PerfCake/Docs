@@ -18,7 +18,8 @@
    <note>
       <para>Some MacOS installations of Java might have a preconfigured directory with Java
          libraries that are pre-loaded with each Java application. These libraries can interfere
-         with PerfCake libraries resulting in failure to start PerfCake.</para>
+         with PerfCake libraries resulting in failure to start PerfCake and are placed under
+            <code>/Library/Java/Extensions/</code> directory.</para>
       <para>Move the libraries to some other temporary directory to be able to run PerfCake.</para>
    </note>
    <para> </para>
