@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.validation.validators.PrintingValidator" version="7.0">
+   <title>PrintingValidator</title>
+   <para>Just prints out the original message and its response for the validation by human eyes.
+      Please note that the validation output is normally stored in a separate log file and not
+      printed to all other logging output. All messages controlled by this validator are stated
+      valid.</para>
+   <para>There are no configuration properties available to this validator.</para>
+   <section>
+      <title>An example of ScriptValidator configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <validator id="print" class="PrintingValidator" />]]></programlisting>
+   </section>
+</section>
