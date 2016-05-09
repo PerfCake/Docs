@@ -28,41 +28,30 @@
       <title>Migration steps</title>
       <section xml:id="ug.perfcake-features.migrating-scenarios.4-to-5.steps.xml-namespace">
          <title>Rename XML schema namespace</title>
-         <para>
-            The namespace of the XML schema for scenarios has been renamed from
-            <code>urn:perfcake:scenario:4.0</code>
-            to
-            <code>urn:perfcake:scenario:5.0</code>
-            so it must be updated in the scenario XML files.
-         </para>
+         <para>The namespace of the XML schema for scenarios has been renamed from
+               <code>urn:perfcake:scenario:4.0</code> to <code>urn:perfcake:scenario:5.0</code> so
+            it must be updated in the scenario XML files. </para>
       </section>
       <section xml:id="ug.perfcake-features.migrating-scenarios.4-to-5.steps.move-run">
          <title>Move
             <code>run</code>
             element out of generator
          </title>
-         <para>
-            The
-            <code>run</code>
-            element of
-            <code>generator</code>
-            has been moved out of
-            <code>generator</code>
-            to a dedicatd element.
-         </para>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <generator class="...">
-   <run type="..." value="..."/>
-   ...
-   (properties)
-   ...
- </reporter>]]></programlisting>
+         <para>The <code>run</code> element of <code>generator</code> has been moved out of
+               <code>generator</code> to a dedicatd element. </para>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <generator class="...">
+      <run type="..." value="..."/>
+      ...
+      (properties)
+      ...
+   </reporter>]]></programlisting>
          <para>is replaced by</para>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="..." value="..."/>
- <generator class="...">
-   ...
-   (properties)
-   ...
- </reporter>]]></programlisting>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <run type="..." value="..."/>
+      <generator class="...">
+      ...
+      (properties)
+      ...
+   </reporter>]]></programlisting>
       </section>
       <section xml:id="ug.perfcake-features.migrating-scenarios.4-to-5.steps.sender-target">
          <title>Change
@@ -76,19 +65,19 @@
             <code>target</code>
             property of senders was ascended from ordinary property to a dedicated element.
          </para>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="...">
-   <property name="target" value="..."/>
-   ...
-   (properties)
-   ...
- </sender>]]></programlisting>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="...">
+      <property name="target" value="..."/>
+      ...
+      (properties)
+      ...
+   </sender>]]></programlisting>
          <para>is replaced by</para>
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="...">
-   <target>...</target>
-   ...
-   (properties)
-   ...
- </sender>]]></programlisting>
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="...">
+      <target>...</target>
+      ...
+      (properties)
+      ...
+   </sender>]]></programlisting>
       </section>
    </section>
 </section>

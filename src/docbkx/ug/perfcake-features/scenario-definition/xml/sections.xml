@@ -13,31 +13,22 @@
    <section>
       <title>Run</title>
       <para>Run section specifies the duration for what the scenario will run. It is mandatory since PerfCake needs to know how long to generate load.</para>
-      <para>
-         The scenario run configuration is described in more details in
-         <xref linkend="ug.reference-guide.generating"/>
-         .
-      </para>
+      <para>The scenario run configuration is described in more details in <xref
+            linkend="ug.reference-guide.generating"/> . </para>
    </section>
    <section>
       <title>Generator</title>
       <para>Generator section specifies the way how the load is generated. It is mandatory since PerfCake needs to know how to generate load.</para>
-      <para>
-         The generators are described in more details in
-         <xref linkend="ug.reference-guide.generating"/>
-         .
-      </para>
+      <para>The generators are described in more details in <xref
+            linkend="ug.reference-guide.generating"/> . </para>
    </section>
    <section>
       <title>Sender</title>
       <para>Sender section is about the transport (e.g. HTTP, MQTT, JMS, ...) and the target where the load is directed.
          It is required to be specified in the scenario.
       </para>
-      <para>
-         More information about the senders can be found in
-         <xref linkend="ug.reference-guide.sending"/>
-         .
-      </para>
+      <para>More information about the senders can be found in <xref
+            linkend="ug.reference-guide.sending"/> . </para>
    </section>
    <section>
       <title>Reporting</title>
@@ -45,11 +36,8 @@
          It is not required to configure the reporting in the scenario but without it the PerfCake has no way of measuring and reporting
          results.
       </para>
-      <para>
-         The reporting abilities are described in
-         <xref linkend="ug.reference-guide.reporting"/>
-         .
-      </para>
+      <para>The reporting abilities are described in <xref linkend="ug.reference-guide.reporting"/>
+         . </para>
    </section>
    <section>
       <title>Messages</title>
@@ -77,10 +65,7 @@
    <section>
       <title>Validation</title>
       <para>Validation module allows to validate the response messages.</para>
-      <para>
-         The validation capabilities are described in
-         <xref linkend="ug.reference-guide.validation"/>
-         .
-      </para>
+      <para>The validation capabilities are described in <xref
+            linkend="ug.reference-guide.validation"/> . </para>
    </section>
 </section>

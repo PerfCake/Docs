@@ -14,13 +14,9 @@
       <title>Migration steps</title>
       <section xml:id="ug.perfcake-features.migrating-scenarios.3-to-4.steps.xml-namespace">
          <title>Rename XML schema namespace</title>
-         <para>
-            The namespace of the XML schema for scenarios has been renamed from
-            <code>urn:perfcake:scenario:3.0</code>
-            to
-            <code>urn:perfcake:scenario:4.0</code>
-            so it must be updated in the scenario XML files.
-         </para>
+         <para>The namespace of the XML schema for scenarios has been renamed from
+               <code>urn:perfcake:scenario:3.0</code> to <code>urn:perfcake:scenario:4.0</code> so
+            it must be updated in the scenario XML files. </para>
       </section>
    </section>
 </section>

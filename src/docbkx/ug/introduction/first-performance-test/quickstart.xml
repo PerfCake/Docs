@@ -3,11 +3,8 @@
    <title>Your own quickstart</title>
    <section>
       <title>Preparing PerfCake</title>
-      <para>
-         After getting (see
-         <xref linkend="ug.introduction.getting-perfcake.downloading"/>
-         ) and unpacking PerfCake you will have your directory with the following structure:
-         <programlisting><![CDATA[$PERFCAKE_HOME
+      <para> After getting (see <xref linkend="ug.introduction.getting-perfcake.downloading"/> ) and
+         unpacking PerfCake you will have your directory with the following structure: <programlisting><![CDATA[$PERFCAKE_HOME
 ├── bin/
 │ ├── perfcake.bat
 │ └── perfcake.sh
@@ -24,11 +21,8 @@
 │ ├── schemas/
 │ └── xslt/
 ├── LICENSE.txt
-└── log4j2.xml]]></programlisting>
-      </para>
-      <para>
-         You may try to run PerfCake, you should receive output like this:
-         <programlisting><![CDATA[$PERFCAKE_HOME/bin/perfcake.sh
+└── log4j2.xml]]> </programlisting></para>
+      <para> You may try to run PerfCake, you should receive output like this: <programlisting><![CDATA[$PERFCAKE_HOME/bin/perfcake.sh
  usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md <MESSAGES_DIR>] [-D<property=value>]*
  -D <property=value> system properties
  -log,--log-level <LOG_LEVEL> logging level
@@ -37,61 +31,41 @@
  -pf,--properties-file <PROPERTIES_FILE> custom system properties file
  -s,--scenario <SCENARIO> scenario to be executed
  -sd,--scenarios-dir <SCENARIOS_DIR> directory for scenarios
- -skip,--skip-timer-benchmark skip system timer benchmark]]>
-         </programlisting>
-      </para>
-      <para>
-         The script assumes you have JDK installed and available on the system path, minimal version 1.8 is required.
-         Please note that the system being tested is not required to run on Java 8. It might not run on Java at all!
-      </para>
-      <para>
-         In the
-         <code>bin</code>
-         directory you can find executable scripts for running PerfCake on Linux, Windows and Mac.
-      </para>
-      <para>
-         The
-         <code>lib</code>
-         directory contains application libraries. You do not have to take any care of these.
-      </para>
-      <para>
-         What is more interesting is the
-         <code>resources</code>
-         directory. In its subdirectories you can find sample scenarios, messages and all versions of XSD schemas for scenario files. The
-         <code>keystores</code>
-         directory is used for specific message sender, but we will not deal with it in this quickstart.
-      </para>
-      <para>
-         If you feel like going wild, you can download
-         <footnote id="ug.introduction.first-performance-test.quickstart.footnote-download">
+ -skip,--skip-timer-benchmark skip system timer benchmark]]>          </programlisting></para>
+      <para>The script assumes you have JDK installed and available on the system path, minimal
+         version 1.8 is required. Please note that the system being tested is not required to run on
+         Java 8. It might not run on Java at all! </para>
+      <para>In the <code>bin</code> directory you can find executable scripts for running PerfCake
+         on Linux, Windows and Mac. </para>
+      <para>The <code>lib</code> directory contains application libraries. You do not have to take
+         any care of these. </para>
+      <para>What is more interesting is the <code>resources</code> directory. In its subdirectories
+         you can find sample scenarios, messages and all versions of XSD schemas for scenario files.
+         The <code>keystores</code> directory is used for specific message sender, but we will not
+         deal with it in this quickstart. </para>
+      <para>If you feel like going wild, you can download <footnote
+            id="ug.introduction.first-performance-test.quickstart.footnote-download">
             <para>
                <link xlink:href="https://www.perfcake.org/download"/>
             </para>
-         </footnote>
-         the source distribution and compile it by
-         <programlisting>mvn clean package assembly:assembly</programlisting>
-      </para>
-      <para>
-         Then you can find the binary distributions in the
-         <code>target</code>
-         directory and continue with this quickstart guide. You will also see the output of tests so you can be sure the project works fine on your system.
-      </para>
+         </footnote> the source distribution and compile it by
+         <programlisting>mvn clean package assembly:assembly </programlisting></para>
+      <para>Then you can find the binary distributions in the <code>target</code> directory and
+         continue with this quickstart guide. You will also see the output of tests so you can be
+         sure the project works fine on your system. </para>
    </section>
    <section>
       <title>Configure and run</title>
-      <para>
-         In these days, your only possibility to prepare your first scenario is an XML file.
-         You can use your favourite editor to create this file. The structure is defined by an XSD schema that can be found under
-         <code>resources/schemas</code>
-         directory. Some of the editors are able to use the schema file to suggest you valid tags. Our future plans include providing GUI editor for Eclipse and InteliJ Idea that would allow you to create and edit scenarios, stay tuned! If you wanted to contribute, we are happy to
-         community
-         <footnote>
+      <para>In these days, your only possibility to prepare your first scenario is an XML file. You
+         can use your favourite editor to create this file. The structure is defined by an XSD
+         schema that can be found under <code>resources/schemas</code> directory. Some of the
+         editors are able to use the schema file to suggest you valid tags. Our future plans include
+         providing GUI editor for Eclipse and InteliJ Idea that would allow you to create and edit
+         scenarios, stay tuned! If you wanted to contribute, we are happy to community <footnote>
             <para>
                <link xlink:href="https://www.perfcake.org/community"/>
             </para>
-         </footnote>
-         to welcome you in our commmunity.
-      </para>
+         </footnote> to welcome you in our commmunity. </para>
       <para>
          At minimum, simple scenario has to contain definitions for:
          <itemizedlist>
@@ -109,38 +83,24 @@
             </listitem>
          </itemizedlist>
       </para>
+      <para>Let’s assume you need to stress your web application that has some function exposed on
+         the following URL: <code>http://your-app.com/cool-app</code> , and you need to test how
+         fast the function is. You want to generate maximum load for 10 seconds (10000 miliseconds)
+         with 10 simultaneous clients (working threads). </para>
+      <para>If you do not have any such application at hand, you can consider using <link
+            xlink:href="http://httpbin.org/get"/> but be polite and do not overload their server. It
+         is provided for free. </para>
+      <para>Now the important part comes. Create a file called <code>http-echo.dsl</code> (
+            <code>http-echo.xml</code> resp.) in the <code>$PERFCAKE_HOME/resources/scenarios</code>
+         directory. Now insert the following DSL (XML resp.) snippet in it: </para>
       <para>
-         Let’s assume you need to stress your web application that has some function exposed on the following URL:
-         <code>http://your-app.com/cool-app</code>
-         , and you need to test how fast the function is. You want to generate maximum load for 10 seconds (10000 miliseconds)
-         with 10 simultaneous clients (working threads).
-      </para>
+         <code>http-echo.dsl</code>: <programlisting language="java" linenumbering="numbered" startinglinenumber="1"><![CDATA[scenario "http-echo"
+   run 10.s with ${thread.count:10}.threads
+   generator "DefaultMessageGenerator"
+   sender "HttpSender" target "http://your-app.com/cool-app" method "GET"
+end]]> </programlisting></para>
       <para>
-         If you do not have any such application at hand, you can consider using
-         <link xlink:href="http://httpbin.org/get"/>
-         but be polite and do not overload their server. It is provided for free.
-      </para>
-      <para>
-         Now the important part comes. Create a file called
-         <code>http-echo.dsl</code>
-         (
-         <code>http-echo.xml</code>
-         resp.) in the
-         <code>$PERFCAKE_HOME/resources/scenarios</code>
-         directory.
-         Now insert the following DSL (XML resp.) snippet in it:
-      </para>
-      <para>
-         <code>http-echo.dsl</code>:
-         <programlisting language="java" linenumbering="numbered" startinglinenumber="1"><![CDATA[ scenario "http-echo"
-    run 10.s with ${thread.count:10}.threads
-    generator "DefaultMessageGenerator"
-    sender "HttpSender" target "http://your-app.com/cool-app" method "GET"
- end]]></programlisting>
-      </para>
-      <para>
-         <code>http-echo.xml</code>:
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+         <code>http-echo.xml</code>: <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <scenario xmlns="urn:perfcake:scenario:6.0">
    <run type="time" value="10000"/>
    <generator class="DefaultMessageGenerator" 
@@ -148,28 +108,20 @@
    <sender class="HttpSender">
       <target>http://your-app.com/cool-app</target>
    </sender>
-</scenario>]]></programlisting>
-      </para>
-      <para>
-         You can see
-         <code>"${thread.count:10}"</code>
-         in the generator’s definition. That is a system property
-         <code>"thread.count"</code>
-         that you may set and the actual value of the property will be used. If the property is not set, the default value (10) will be used.
-      </para>
-      <para>
-         Now, all you need to do is to execute your new test scenario by running the following command:
-         <programlisting><![CDATA[$PERFCAKE_HOME/bin/perfcake.sh -s http-echo]]></programlisting>
-      </para>
-      <para>
-         Please note you do not need to specify the DSL (XML) extension. Only if you used both DSL and XML variants.
-      </para>
-      <para>
-         Now you are running your fisrt stress test. Even if you cannot see what is going on,
-         PerfCake sends requests to your application in many threads. The test should run approximately for 10 seconds.
-         If you want to see some numbers (e.g. how fast your system is),
-         you have to add one more element to your scenario to evaluate the results - the reporting.
-      </para>
+</scenario>]]> </programlisting></para>
+      <para>You can see <code>"${thread.count:10}"</code> in the generator’s definition. That is a
+         system property <code>"thread.count"</code> that you may set and the actual value of the
+         property will be used. If the property is not set, the default value (10) will be used. </para>
+      <para>Now, all you need to do is to execute your new test scenario by running the following
+         command:
+         <programlisting><![CDATA[$PERFCAKE_HOME/bin/perfcake.sh -s http-echo]]> </programlisting></para>
+      <para>Please note you do not need to specify the DSL (XML) extension. Only if you used both
+         DSL and XML variants. </para>
+      <para>Now you are running your fisrt stress test. Even if you cannot see what is going on,
+         PerfCake sends requests to your application in many threads. The test should run
+         approximately for 10 seconds. If you want to see some numbers (e.g. how fast your system
+         is), you have to add one more element to your scenario to evaluate the results - the
+         reporting. </para>
    </section>
    <section>
       <title>Evaluate Results</title>
@@ -185,16 +137,14 @@
          <code>http-reporting.xml</code>
          resp.) and have it look like the listing below.
       </para>
-      <para><code>http-reporting.dsl</code>:
-         <programlisting language="java" linenumbering="numbered" startinglinenumber="1"><![CDATA[scenario "http-reporting"
-  run 10.s with ${thread.count:10}.threads
-  generator "DefaultMessageGenerator"
-  sender "HttpSender" target "http://your-app.com/cool-app" method "GET"
-  reporter "ResponseTimeStatsReporter" minimumEnabled "false" maximumEnabled "false"
-    destination "ChartDestination" every 1.s name "Response Time" group "rt" yAxis "Response Time [ms]" attributes "Result,Average"
-    destination "ConsoleDestination" every 1.s
-  end]]></programlisting>
-      </para>
+      <para><code>http-reporting.dsl</code>: <programlisting language="java" linenumbering="numbered" startinglinenumber="1"><![CDATA[scenario "http-reporting"
+   run 10.s with ${thread.count:10}.threads
+   generator "DefaultMessageGenerator"
+   sender "HttpSender" target "http://your-app.com/cool-app" method "GET"
+   reporter "ResponseTimeStatsReporter" minimumEnabled "false" maximumEnabled "false"
+      destination "ChartDestination" every 1.s name "Response Time" group "rt" yAxis "Response Time [ms]" attributes "Result,Average"
+      destination "ConsoleDestination" every 1.s
+end]]> </programlisting></para>
       <para><code>http-reporting.xml</code>:
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <scenario xmlns="urn:perfcake:scenario:6.0">
@@ -227,9 +177,7 @@
          section you let your scenario to log results to some destination - in our case to the PerfCake’s console.
          Output will be provided every 2 seconds (2000 miliseconds).
       </para>
-      <para>
-         Try to run the scenario again by the following command:
-         <programlisting><![CDATA[
+      <para> Try to run the scenario again by the following command: <programlisting><![CDATA[
 2015-09-23 13:30:11,310 INFO {org.perfcake.ScenarioExecution} === Welcome to PerfCake 6.0 ===
 2015-09-23 13:30:11,311 INFO {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2015-09-23 13:30:11,312 INFO {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 605ns.
@@ -247,20 +195,13 @@ A single thread is now able to measure maximum of 1652892 iterations/second.
 [0:00:10][39293 iterations][100%] [1.888512 ms] [Threads => 10] [Average => 2.067882293274619 ms] [warmUp => false]
 2015-09-23 13:30:21,332 INFO {org.perfcake.reporting.ReportManager} Reporting final results:
 2015-09-23 13:30:21,677 INFO {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
-2015-09-23 13:30:21,678 INFO {org.perfcake.ScenarioExecution} === Goodbye! ===]]>
-         </programlisting>
-      </para>
-      <para>
-         The
-         <code>warmUp</code>
-         attribute you can see in the results determines the mode of the test. In our example we do not wait
-         for the server to warm up so the attribute is set to false all the time.
-      </para>
-      <para>
-         ChartDestination specified in the scenario produces a chart report with the chart similar to the following that can be found under
-         <code>$PERFCAKE_HOME/perfcake-charts</code>
-         directory.
-      </para>
+2015-09-23 13:30:21,678 INFO {org.perfcake.ScenarioExecution} === Goodbye! ===]]>   </programlisting></para>
+      <para>The <code>warmUp</code> attribute you can see in the results determines the mode of the
+         test. In our example we do not wait for the server to warm up so the attribute is set to
+         false all the time. </para>
+      <para>ChartDestination specified in the scenario produces a chart report with the chart
+         similar to the following that can be found under
+            <code>$PERFCAKE_HOME/perfcake-charts</code> directory. </para>
       <figure id="ug.introduction.first-performance-test.quickstart.chart">
          <title>RampUpDownGenerator time chart</title>
          <graphic format="PNG" fileref="./images/quickstart-chart.png" scalefit="1" width="100%" align="center"/>

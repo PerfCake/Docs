@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.migrating-scenarios.2-to-3" version="7.0">
    <title>From v2.x to v3.x</title>
-   <para>
-      There are several steps that are needed to migrate scenarios from PerfCake version 2.x to 3.x. The following list shows them:
-      <itemizedlist>
+   <para>There are several steps that are needed to migrate scenarios from PerfCake version 2.x to
+      3.x. The following list shows them: <itemizedlist>
          <listitem>
             <simpara>Rename scenario XML schema namespace</simpara>
          </listitem>
@@ -16,21 +15,15 @@
          <listitem>
             <simpara>Update RequestResponseJmsSender</simpara>
          </listitem>
-      </itemizedlist>
-      The following sections take a look at each step in detail.
-   </para>
+      </itemizedlist>The following sections take a look at each step in detail. </para>
    
    <section xml:id="ug.perfcake-features.migrating-scenarios.mirating.2-to-3.steps">
       <title>Migration steps</title>
       <section xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.xml-namespace">
          <title>Rename XML schema namespace</title>
-         <para>
-            The namespace of the XML schema for scenarios has been renamed from
-            <code>urn:perfcake:scenario:2.0</code>
-            to
-            <code>urn:perfcake:scenario:3.0</code>
-            so it must be updated in the scenario XML files.
-         </para>
+         <para>The namespace of the XML schema for scenarios has been renamed from
+               <code>urn:perfcake:scenario:2.0</code> to <code>urn:perfcake:scenario:3.0</code> so
+            it must be updated in the scenario XML files. </para>
       </section>
       <section xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.class-names">
          <title>Rename class names</title>
@@ -93,140 +86,120 @@
       </section>
       <section xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.reporters">
          <title>Replace reporters</title>
-         <para>
-            There are several reporters that has been removed from PerfCake and has been replaced by others.
-            The following sections illustrate that change and how to perform the migration at the same time.
-         </para>
+         <para>There are several reporters that has been removed from PerfCake and has been replaced
+            by others. The following sections illustrate that change and how to perform the
+            migration at the same time. </para>
          <section>
             <title>AverageThroughputReporter -> ThroughputStatsReporter</title>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="AverageThroughputReporter">
-   ...
-   (destinations)
-   ...
- </reporter>]]></programlisting>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="AverageThroughputReporter">
+      ...
+      (destinations)
+      ...
+   </reporter>]]></programlisting>
             <para>is replaced by</para>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ThroughputStatsReporter">
-   <property name="minimumEnabled" value="false"/>
-   <property name="maximumEnabled" value="false"/>
-   ...
-   (destinations)
-   ...
- </reporter>]]></programlisting>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ThroughputStatsReporter">
+      <property name="minimumEnabled" value="false"/>
+      <property name="maximumEnabled" value="false"/>
+         ...
+         (destinations)
+         ...
+   </reporter>]]></programlisting>
          </section>
          <section>
             <title>ResponseTimeReporter -> ResponseTimeStatsReporter</title>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeReporter">
-   ...
-   (destinations)
-   ...
- </reporter>]]></programlisting>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ResponseTimeReporter">
+      ...
+      (destinations)
+      ...
+   </reporter>]]></programlisting>
             <para>is replaced by</para>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeStatsReporter">
-   <property name="minimumEnabled" value="false"/>
-   <property name="maximumEnabled" value="false"/>
-   ...
-   (destinations)
-   ...
- </reporter>]]></programlisting>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ResponseTimeStatsReporter">
+      <property name="minimumEnabled" value="false"/>
+      <property name="maximumEnabled" value="false"/>
+         ... 
+         (destinations)
+         ...
+   </reporter>]]></programlisting>
          </section>
          <section>
             <title>WindowResponseTimeReporter -> ResponseTimeStatsReporter</title>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="WindowResponseTimeReporter">
-   <property name="windowSize" value="10"/>
-   ...
-   (destinations)
-   ...
- </reporter>]]></programlisting>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="WindowResponseTimeReporter">
+      <property name="windowSize" value="10"/>
+         ...
+         (destinations)
+         ...
+   </reporter>]]></programlisting>
             <para>is replaced by</para>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeStatsReporter">
-   <property name="windowSize" value="10"/>
-   <property name="minimumEnabled" value="false"/>
-   <property name="maximumEnabled" value="false"/>
-   ...
-   (destinations)
-   ...
- </reporter>]]></programlisting>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ResponseTimeStatsReporter">
+      <property name="windowSize" value="10"/>
+      <property name="minimumEnabled" value="false"/>
+      <property name="maximumEnabled" value="false"/>
+         ...
+         (destinations)
+         ...
+   </reporter>]]></programlisting>
          </section>
       </section>
       <section xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.steps.RequestResponseJmsSender">
          <title>Update RequestResponseJmsSender</title>
-         <para>
-            The
-            <code>RequestResponseJmsSender</code>
-            newly introduces the possibility to specify different
-            connection properties for request and response. But it changes the default behavior.
-            To ensure the original behavior is kept, the security properties for the response has to be added to keep request and
-            response credentials the same.
-         </para>
+         <para>The <code>RequestResponseJmsSender</code> newly introduces the possibility to specify
+            different connection properties for request and response. But it changes the default
+            behavior. To ensure the original behavior is kept, the security properties for the
+            response has to be added to keep request and response credentials the same. </para>
          <section>
             <title>RequestResponseJMSSender -> RequestResponseJmsSender</title>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="RequestResponseJMSSender">
-   ...
-   <property name="connectionFactory"
-             value="${jms.connection.factory}"/>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="RequestResponseJMSSender">
+      ...
+      <property name="connectionFactory"
+                value="${jms.connection.factory}"/>
    
-   <property name="username" value="${username}"/>
-   <property name="password" value="${password}"/>
-   <!-- JNDI -->
-   <property name="jndiContextFactory"
-             value="${jndi.ctx.factory}"/>
-   
-   <property name="jndiUrl" value="${jndi.url}"/>
-   
-   <property name="jndiSecurityPrincipal"
-             value="${jndi.username}"/>
-   
-   <property name="jndiSecurityCredentials"
-             value="${jndi.password}"/>
-   ...
- </sender>]]></programlisting>
+      <property name="username" value="${username}"/>
+      <property name="password" value="${password}"/>
+      <!-- JNDI -->
+      <property name="jndiContextFactory"
+                value="${jndi.ctx.factory}"/>
+      <property name="jndiUrl" value="${jndi.url}"/>
+      <property name="jndiSecurityPrincipal"
+                value="${jndi.username}"/>
+      <property name="jndiSecurityCredentials"
+                value="${jndi.password}"/>
+      ...
+   </sender>]]></programlisting>
             <para>is replaced by</para>
-            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="RequestResponseJmsSender">
-   ...
-   <property name="connectionFactory"
-             value="${jms.connection.factory}"/>
-   
-   <property name="username" value="${username}"/>
-   <property name="password" value="${password}"/>
-   <property name="responseUsername" value="${username}"/>
-   <property name="responsePassword" value="${password}"/>
-   <!-- JNDI -->
-   <property name="jndiContextFactory"
-             value="${jndi.ctx.factory}"/>
-   
-   <property name="jndiUrl" value="${jndi.url}"/>
-   
-   <property name="jndiSecurityPrincipal"
-             value="${jndi.username}"/>
-   
-   <property name="jndiSecurityCredentials"
-             value="${jndi.password}"/>
-   
-   <property name="responseJndiSecurityPrincipal"
-             value="${jndi.username}"/>
-   
-   <property name="responseJndiSecurityCredentials"
-             value="${jndi.password}"/>
-   ...
- </sender>]]></programlisting>
+            <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="RequestResponseJmsSender">
+      ...
+      <property name="connectionFactory"
+                value="${jms.connection.factory}"/>
+      <property name="username" value="${username}"/>
+      <property name="password" value="${password}"/>
+      <property name="responseUsername" value="${username}"/>
+      <property name="responsePassword" value="${password}"/>
+      <!-- JNDI -->
+      <property name="jndiContextFactory"
+                value="${jndi.ctx.factory}"/>
+      <property name="jndiUrl" value="${jndi.url}"/>
+      <property name="jndiSecurityPrincipal"
+                value="${jndi.username}"/>
+      <property name="jndiSecurityCredentials"
+                value="${jndi.password}"/>
+      <property name="responseJndiSecurityPrincipal"
+                value="${jndi.username}"/>
+      <property name="responseJndiSecurityCredentials"
+                value="${jndi.password}"/>
+      ...
+   </sender>]]></programlisting>
          </section>
       </section>
    </section>
    <section xml:id="ug.perfcake-features.migrating-scenarios.2-to-3.xslt">
       <title>Scenario conversion using XSLT</title>
-      <para>
-         After understanding the all the steps needed to migrate PerfCake scenarios
-         from version 2.x to version 3.x we can take a look at an option to make the migration automatically
-         using XSL transformation
-         <footnote>
+      <para>After understanding the all the steps needed to migrate PerfCake scenarios from version
+         2.x to version 3.x we can take a look at an option to make the migration automatically
+         using XSL transformation <footnote>
             <simpara>
                <link xlink:href="http://www.w3.org/TR/xslt"/>
             </simpara>
-         </footnote>
-         .
-         The particular XSLT is available as a part of the PerfCake distribution and it can be found at
-         <code>$PERFCAKE_HOME/resources/xslt/scenario-2.0-to-3.0.xsl</code>
-         .
-      </para>
+         </footnote> . The particular XSLT is available as a part of the PerfCake distribution and
+         it can be found at <code>$PERFCAKE_HOME/resources/xslt/scenario-2.0-to-3.0.xsl</code> . </para>
    </section>
 </section>

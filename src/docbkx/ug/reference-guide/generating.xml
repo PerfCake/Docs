@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating" version="7.0">
    <title>How - Generating load</title>
-   <para>
-      Generator is an object which uses Sender objects to send and
-      receive messages. Each generator represents a method or technique how
-      the load (sending the messages) is handled.
-      It is capable of generating the load for a specified duration which can be an amount of time or a number of iterations using a specified
-      number of concurrent threads. To define the duration and its length you have to
-      configure a
-      <code>run</code>
-      of the specified type in the scenario.
-   </para>
+   <para>Generator is an object which uses Sender objects to send and receive messages. Each
+      generator represents a method or technique how the load (sending the messages) is handled. It
+      is capable of generating the load for a specified duration which can be an amount of time or a
+      number of iterations using a specified number of concurrent threads. To define the duration
+      and its length you have to configure a <code>run</code> of the specified type in the scenario. </para>
    <para>
       Following table shows the
       <code>run</code>

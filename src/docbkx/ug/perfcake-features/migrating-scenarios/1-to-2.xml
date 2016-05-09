@@ -17,22 +17,15 @@
       <title>Migration steps</title>
       <section xml:id="ug.perfcake-features.migrating-scenarios.1-to-2.steps.xml-namespace">
          <title>Rename XML schema namespace</title>
-         <para>
-            The namespace of the XML schema for scenarios has been renamed from
-            <code>urn:perfcake:scenario:1.0</code>
-            to
-            <code>urn:perfcake:scenario:2.0</code>
-            so it must be updated in the scenario XML files.
-         </para>
+         <para>The namespace of the XML schema for scenarios has been renamed from
+               <code>urn:perfcake:scenario:1.0</code> to <code>urn:perfcake:scenario:2.0</code> so
+            it must be updated in the scenario XML files. </para>
       </section>
       <section xml:id="ug.perfcake-features.migrating-scenarios.1-to-2.steps.message-number">
          <title>Rename Message Number Constant Name</title>
-         <para>
-            If your sender depends on message ordinal number you need to change the name of the particular
-            constant from
-            <code>PerfCakeConst.MESSAGE_NUMBER_PROPERTY</code>
-            to
-            <code>PerfCakeConst.MESSAGE_NUMBER_HEADER</code>
+         <para>If your sender depends on message ordinal number you need to change the name of the
+            particular constant from <code>PerfCakeConst.MESSAGE_NUMBER_PROPERTY</code> to
+               <code>PerfCakeConst.MESSAGE_NUMBER_HEADER</code>
          </para>
       </section>
    </section>
