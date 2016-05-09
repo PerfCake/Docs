@@ -82,7 +82,7 @@
          </tgroup>
       </table>
    </para>
-   <section>
+   <example>
       <title>An example of ChartDestination configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="MemoryUsageReporter">
    ...
@@ -109,9 +109,9 @@
          <xref linkend="ug.reference-guide.reporting.destinations.ChartDestination.example-chart"/>
          .
       </para>
-      <figure id="ug.reference-guide.reporting.destinations.ChartDestination.example-chart">
-         <title>ChartDestination example chart</title>
-         <graphic format="PNG" fileref="./images/c3chart.png" scalefit="1" width="100%" align="center"/>
-      </figure>
-   </section>
+   </example>
+   <figure xml:id="ug.reference-guide.reporting.destinations.ChartDestination.example-chart">
+      <title>ChartDestination example chart</title>
+      <graphic format="PNG" fileref="./images/c3chart.png" scalefit="1" width="100%" align="center"/>
+   </figure>
 </section>

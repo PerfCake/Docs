@@ -22,7 +22,7 @@
    <para>A reporter can publish multiple results (e.g. current value, average value, etc.) each with a particular name.
       The actual names of the results are described with the particular reporter.
    </para>
-   <section>
+   <example>
       <title>An example reporting configuration:</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
 <reporter class="ThroughputStatsReporter">
@@ -46,7 +46,7 @@
    </destination>
 </reporter>
 </reporting>]]></programlisting>
-   </section>
+   </example>
    <para>
       With this configuration the 2 reporters are specified -
       <code>ThroughputStatsReporter</code>
@@ -62,7 +62,7 @@
       . The disabled reporter is just ignored by PerfCake just like it wouldn't be there at all.
       If not specified the reporter is enabled by default.
    </para>
-   <section>
+   <example>
       <title>An example of a disabled reporter:</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
 <reporter class="ThroughputStatsReporter">
@@ -82,7 +82,7 @@
          which is disabled.
       </para>
       <para>The following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
-   </section>
+   </example>
    <xi:include href="./reporting/reporters.xml"/>
    <xi:include href="./reporting/destinations.xml"/>
 </section>
