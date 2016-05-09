@@ -72,12 +72,12 @@
          </tgroup>
       </table>
    </para>
-   <section>
+   <example>
       <title>An example of WebSocketSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="WebSocketSender">
-   <target>ws://domain.com/ws-ctx/ws-ep</target>
-   <property name="remoteEndpointType" value="basic"/>
-   <property name="payloadType" value="text"/>
- </sender>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="WebSocketSender">
+      <target>ws://domain.com/ws-ctx/ws-ep</target>
+      <property name="remoteEndpointType" value="basic"/>
+      <property name="payloadType" value="text"/>
+   </sender>]]></programlisting>
+   </example>
 </section>

@@ -3,10 +3,10 @@
    <title>PlainSocketSender</title>
    <para>The sender uses a socket to send the message to and receive a response from.</para>
    <para>The target of the sender is a socket in a form of "&lt;host&gt;:&lt;port&gt;"</para>
-   <section>
+   <example>
       <title>An example of PlainSocketSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="PlainSocketSender">
-   <target>127.0.0.1:12345</target>
- </sender>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="PlainSocketSender">
+      <target>127.0.0.1:12345</target>
+   </sender>]]></programlisting>
+   </example>
 </section>

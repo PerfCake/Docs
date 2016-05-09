@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.CommandSender" version="7.0">
    <title>CommandSender</title>
-   <para>
-      The sender is able to invoke an external command (specified by the
-      <code>target</code>
-      property)
-      in a separate process to send a message payload. The payload can be passed to the standard input of
-      the process (default behavior) or as the command argument. That is configurable via
-      <code>messageFrom</code>
-      proerty.
-   </para>
+   <para>The sender is able to invoke an external command (specified by the <code>target</code>
+      property) in a separate process to send a message payload. The payload can be passed to the
+      standard input of the process (default behavior) or as the command argument. That is
+      configurable via <code>messageFrom</code> proerty. </para>
    <para>The target of the sender is a path to the file containing the commands that are to be executed.</para>
    <para>Message properties and headers are passed to the process as the environmental variables.</para>
    <table frame="all">
@@ -30,11 +25,8 @@
          <tbody>
             <row>
                <entry>messageFrom</entry>
-               <entry>
-                  Specifies where the message is taken from by the sender. The supported values are
-                  <code>stdin</code>
-                  or
-                  <code>arguments</code>
+               <entry>Specifies where the message is taken from by the sender. The supported values
+                  are <code>stdin</code> or <code>arguments</code>
                </entry>
                <entry>No</entry>
                <entry>"stdin"</entry>
@@ -42,28 +34,19 @@
          </tbody>
       </tgroup>
    </table>
-   <section>
+   <example>
       <title>An example of CommandSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="CommandSender">
-   <target>/tmp/script.sh</target>
- </sender>
- ...
- <messages>
-   <message>
-      <property name="GREETINGS" value="Be well!"/>
-   </message>
- </messages>]]></programlisting>
-      <para>
-         In the example above there is a
-         <code>CommandSender</code>
-         configured to execute a script located in
-         <code>/tmp/script.sh</code>
-         file.
-         The environmental variable
-         <code>GREETINGS</code>
-         is set to the value of "
-         <code>Be well!</code>
-         ".
-      </para>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="CommandSender">
+      <target>/tmp/script.sh</target>
+   </sender>
+   ...
+   <messages>
+      <message>
+         <property name="GREETINGS" value="Be well!"/>
+      </message>
+   </messages>]]></programlisting>
+      <para>In the example above there is a <code>CommandSender</code> configured to execute a
+         script located in <code>/tmp/script.sh</code> file. The environmental variable
+            <code>GREETINGS</code> is set to the value of " <code>Be well!</code> ". </para>
+   </example>
 </section>

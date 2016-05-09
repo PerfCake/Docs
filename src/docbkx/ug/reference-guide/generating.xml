@@ -6,22 +6,14 @@
       is capable of generating the load for a specified duration which can be an amount of time or a
       number of iterations using a specified number of concurrent threads. To define the duration
       and its length you have to configure a <code>run</code> of the specified type in the scenario. </para>
-   <para>
-      Following table shows the
-      <code>run</code>
-      options:
-      <table frame="all">
-         <title>
-            Run options
-         </title>
+   <para>Following table shows the <code>run</code> options: <table frame="all">
+         <title> Run options </title>
          <tgroup cols="2" align="left" colsep="1" rowsep="1">
             <colspec colname="run type" colwidth="1*"/>
             <colspec colname="description" colwidth="1*"/>
             <thead>
                <row>
-                  <entry>
-                     Run type
-                  </entry>
+                  <entry> Run type </entry>
                   <entry>Value description</entry>
                </row>
             </thead>
@@ -38,32 +30,28 @@
          </tgroup>
       </table>
    </para>
-   <para>
-      The generating is performed in so called iterations. In a single iteration generator takes a sender from the sender pool, uses it to send
-      all the messages specified in the scenario (See
-      <xref linkend="ug.reference-guide.messages"/>
-      ) and after that it returns the sender back to the
-      sender pool. The reporting module (See
-      <xref linkend="ug.reference-guide.reporting"/>
-      ) treats this as a single iteration.
-   </para>
-   <section>
+   <para>The generating is performed in so called iterations. In a single iteration generator takes
+      a sender from the sender pool, uses it to send all the messages specified in the scenario (See
+         <xref linkend="ug.reference-guide.messages"/> ) and after that it returns the sender back
+      to the sender pool. The reporting module (See <xref linkend="ug.reference-guide.reporting"/> )
+      treats this as a single iteration. </para>
+   <example>
       <title>
          An example of the
          <code>run</code>
          configuration in a scenario:
       </title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="time" value="10000"/>
-<generator class="..." threads="...">
- ...
- (properties)
- ...
-</generator>]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <run type="time" value="10000"/>
+   <generator class="..." threads="...">
+      ...
+      (properties)
+      ...
+   </generator>]]></programlisting>
       <para>In the example above a scenario is defined to run for 10 seconds.</para>
       <para>The following sections describes the generators that can be
          used in PerfCake to generate the load.
       </para>
-   </section>
+   </example>
    <xi:include href="./generating/DefaultMessageGenerator.xml"/>
    <xi:include href="./generating/ConstantSpeedMessageGenerator.xml"/>
    <xi:include href="./generating/RampUpDownGenerator.xml"/>

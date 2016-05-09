@@ -1,38 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating.generators.DefaultMessageGenerator" version="7.0">
    <title>DefaultMessageGenerator</title>
-   <para>
-      The generator is able to generate a load using multiple threads for a long period of time (matter of days, weeks,...).
-      The generator uses a thread pool of a fixed size that stores threads executing performance iterations.
-      The thread pool uses an internal queue where tasks implementing the iterations are buffered and scheduled for execution.
-      The size of the thread queue can be specified by the
-      <code>senderTaskQueueSize</code>
-      property. The generator regularly fills the queue with new tasks each period specified by the
-      <code>monitoringPeriod</code>
-      property.
-   </para>
-   <para>
-      This approach guarantees that the maximum number of thread instances (that is equal to the value of the
-      <code>senderTaskQueueSize</code>
-      property) exists in the memory during all the time the generator
-      is working.
-   </para>
-   <para>
-      To configure the generator we need to specify a number of concurrent threads (using the
-      <code>threads</code>
-      attribute) and a duration (using the
-      <code>run</code>
-      discussed above).
-   </para>
-   <para>
-      During a shutdown, the thread queue is regularly checked every period specified by the
-      <code>shutdownPeriod</code>
-      for the threads finishing their work.
-      If the same amount of threads keeps running for this period, they are forcefully stopped.
-   </para>
-   <para>
-      The following table shows the properties of the DefaultMessageGenerator:
-      <table frame="all">
+   <para>The generator is able to generate a load using multiple threads for a long period of time
+      (matter of days, weeks,...). The generator uses a thread pool of a fixed size that stores
+      threads executing performance iterations. The thread pool uses an internal queue where tasks
+      implementing the iterations are buffered and scheduled for execution. The size of the thread
+      queue can be specified by the <code>senderTaskQueueSize</code> property. The generator
+      regularly fills the queue with new tasks each period specified by the
+         <code>monitoringPeriod</code> property. </para>
+   <para>This approach guarantees that the maximum number of thread instances (that is equal to the
+      value of the <code>senderTaskQueueSize</code> property) exists in the memory during all the
+      time the generator is working. </para>
+   <para>To configure the generator we need to specify a number of concurrent threads (using the
+         <code>threads</code> attribute) and a duration (using the <code>run</code> discussed
+      above). </para>
+   <para>During a shutdown, the thread queue is regularly checked every period specified by the
+         <code>shutdownPeriod</code> for the threads finishing their work. If the same amount of
+      threads keeps running for this period, they are forcefully stopped. </para>
+   <para>The following table shows the properties of the DefaultMessageGenerator: <table frame="all">
          <title>DefaultMessageGenerator properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="2*"/>
@@ -50,13 +35,15 @@
             <tbody>
                <row>
                   <entry>monitoringPeriod</entry>
-                  <entry>A period in milliseconds by which the thread queue is filled with new tasks.</entry>
+                  <entry>A period in milliseconds by which the thread queue is filled with new
+                     tasks.</entry>
                   <entry>No</entry>
                   <entry>1000</entry>
                </row>
                <row>
                   <entry>shutdownPeriod</entry>
-                  <entry>A period in milliseconds by which the thread queue is checked for the threads finishing their work during a shutdown.</entry>
+                  <entry>A period in milliseconds by which the thread queue is checked for the
+                     threads finishing their work during a shutdown.</entry>
                   <entry>No</entry>
                   <entry>1000</entry>
                </row>
@@ -70,12 +57,12 @@
          </tgroup>
       </table>
    </para>
-   <section>
+   <example>
       <title>An example of DefaultMessageGenerator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="time" value="60000"/>
- <generator class="DefaultMessageGenerator" threads="100">
-    <property name="senderTaskQueueSize" value="5000"/>
- </generator>]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <run type="time" value="60000"/>
+   <generator class="DefaultMessageGenerator" threads="100">
+      <property name="senderTaskQueueSize" value="5000"/>
+   </generator>]]></programlisting>
       <para>In the example above a
          <code>DefaultMessageGenerator</code>
          is defined to run for 60
@@ -83,5 +70,5 @@
          main goal of limiting the queue of sender tasks is to limit memory usage and improve
          performance of PerfCake.
       </para>
-   </section>
+   </example>
 </section>

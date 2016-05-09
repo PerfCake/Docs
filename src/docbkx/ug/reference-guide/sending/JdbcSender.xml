@@ -40,13 +40,13 @@
          </tbody>
       </tgroup>
    </table>
-   <section>
+   <example>
       <title>An example of JdbcSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="JdbcSender">
-   <target>jdbc:postgresql://localhost:5432/db</target>
-   <property name="username" value="me-the-first"/>
-   <property name="password" value="guess_me"/>
-   <property name="driverClass" value="org.postgresql.Driver"/>
- </sender>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="JdbcSender">
+      <target>jdbc:postgresql://localhost:5432/db</target>
+      <property name="username" value="me-the-first"/>
+      <property name="password" value="guess_me"/>
+      <property name="driverClass" value="org.postgresql.Driver"/>
+   </sender>]]></programlisting>
+   </example>
 </section>

@@ -60,12 +60,12 @@
          </tgroup>
       </table>
    </para>
-   <section>
+   <example>
       <title>An example of LdapSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="LdapSender">
-   <target>ldap://localhost:389</target>
-   <property name="searchBase" value="dc=example,dc=org"/>
-   <property name="filter" value="(objectclass=*)"/>
- </sender>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="LdapSender">
+      <target>ldap://localhost:389</target>
+      <property name="searchBase" value="dc=example,dc=org"/>
+      <property name="filter" value="(objectclass=*)"/>
+   </sender>]]></programlisting>
+   </example>
 </section>

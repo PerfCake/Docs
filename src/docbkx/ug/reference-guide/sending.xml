@@ -8,18 +8,18 @@
       <code>&lt;target&gt;</code>
       element mandatory for all senders.
    </para>
-   <section>
+   <example>
       <title>An example of a Sender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="...">
-   <target>...</target>
-   ...
-   sender properties
-   ...
- </sender>]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="...">
+      <target>...</target>
+      ...
+      sender properties
+      ...
+   </sender>]]></programlisting>
       <para>In the following sections you can find a complete description of all
          senders, that can be used by PerfCake including all of their properties.
       </para>
-   </section>
+   </example>
    <xi:include href="./sending/CommandSender.xml"/>
    <xi:include href="./sending/DummySender.xml"/>
    <xi:include href="./sending/GroovySender.xml"/>

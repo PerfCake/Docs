@@ -35,11 +35,11 @@
          </tbody>
       </tgroup>
    </table>
-   <section>
+   <example>
       <title>An example of DummySender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="DummySender">
-   <target>out there!</target>
-   <property name="delay" value="500"/>
- </sender>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="DummySender">
+      <target>out there!</target>
+      <property name="delay" value="500"/>
+   </sender>]]></programlisting>
+   </example>
 </section>

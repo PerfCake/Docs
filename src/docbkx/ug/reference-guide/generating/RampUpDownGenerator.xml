@@ -1,110 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ch-ug-generating.generators.RampUpDownGenerator" version="7.0">
    <title>RampUpDownGenerator</title>
-   <para>
-      The generator is based on the
-      <code>DefaultMessageGenerator</code>
-      (See<xref linkend="ug.reference-guide.generating.generators.DefaultMessageGenerator"/>)
-      but is able to change the number of threads during the execution.
-      The number of threads evolution during execution is illustrated in
-      <xref linkend="ug.reference-guide.generating.generators.RampUpDownGenerator.time-chart"/>
-      .
-   </para>
+   <para>The generator is based on the <code>DefaultMessageGenerator</code> (See<xref
+         linkend="ug.reference-guide.generating.generators.DefaultMessageGenerator"/>) but is able
+      to change the number of threads during the execution. The number of threads evolution during
+      execution is illustrated in <xref
+         linkend="ug.reference-guide.generating.generators.RampUpDownGenerator.time-chart"/> . </para>
    <figure id="ug.reference-guide.generating.generators.RampUpDownGenerator.time-chart">
       <title>RampUpDownGenerator time chart</title>
       <graphic format="SVG" fileref="./images/RampUpDownGenerator-chart.svg" scalefit="1" width="100%" align="center"/>
    </figure>
-   <para>
-      The scenario starts
-      <emphasis role="strong">(A)</emphasis>
-      with the number of threads set to the value of the
-      <code>preThreadCount</code>
-      property
-      <emphasis role="strong">(1)</emphasis>
-      . It continues to execute for the duration set by the
-      <code>preDuration</code>
-      property
-      <emphasis role="strong">(A)</emphasis>
-      ->
-      <emphasis role="strong">(B)</emphasis>
-      , which is called the
-      <emphasis>PRE</emphasis>
-      phase. When
-      <emphasis>PRE</emphasis>
-      phase ends
-      <emphasis role="strong">(B)</emphasis>
-      , the
-      <emphasis>RAMP UP</emphasis>
-      phase starts.
-   </para>
-   <para>
-      In the
-      <emphasis>RAMP UP</emphasis>
-      phase the number of the threads is changed by the value of the
-      <code>rampUpStep</code>
-      property each
-      period set by the
-      <code>rampUpStepPeriod</code>
-      until it reaches the number of threads set by the value of the
-      <code>mainThreadCount</code>
-      property
-      <emphasis role="strong">(2)</emphasis>
-      .
-   </para>
-   <para>
-      In that moment
-      <emphasis role="strong">(C)</emphasis>
-      <emphasis>MAIN</emphasis>
-      phase starts and the execution continues for the duration set by the
-      <code>mainDuration</code>
-      property
-      <emphasis role="strong">(C)</emphasis>
-      ->
-      <emphasis role="strong">(D)</emphasis>
-      , when the
-      <emphasis>RAMP DOWN</emphasis>
-      phase starts.
-   </para>
-   <para>
-      In the
-      <emphasis>RAMP DOWN</emphasis>
-      phase
-      <emphasis role="strong">(D)</emphasis>
-      ->
-      <emphasis role="strong">(E)</emphasis>
-      the number of threads is again changed but this time in the opposite direction than in the
-      <emphasis>RAMP UP</emphasis>
-      phase.
-      It changes by the value of the
-      <code>rampDownStep</code>
-      property each period specified by the
-      <code>rampDownStepPeriod</code>
-      property until the final number of threads
-      <emphasis role="strong">(3)</emphasis>
-      is reached. By that moment
-      <emphasis role="strong">(E)</emphasis>
-      the final phase called
-      <emphasis>POST</emphasis>
-      starts.
-   </para>
-   <para>
-      The
-      <emphasis>POST</emphasis>
-      phase ends by the end of the scenario
-      <emphasis role="strong">(F)</emphasis>
-      .
-   </para>
-   <para>
-      The outer borders of the number of threads and the duration is set by the maximum number of threads specified by the
-      <code>threads</code>
-      attribute of the generator and by the maximum duration
-      set by the
-      <code>run</code>
-      element.
-   </para>
-   <para>
-      The following table describes all the properties of the RampUpDownGenerator:
-      <table frame="all">
+   <para>The scenario starts <emphasis role="strong">(A)</emphasis> with the number of threads set
+      to the value of the <code>preThreadCount</code> property <emphasis role="strong"
+         >(1)</emphasis> . It continues to execute for the duration set by the
+         <code>preDuration</code> property <emphasis role="strong">(A)</emphasis> -> <emphasis
+         role="strong">(B)</emphasis> , which is called the <emphasis>PRE</emphasis> phase. When
+         <emphasis>PRE</emphasis> phase ends <emphasis role="strong">(B)</emphasis> , the
+         <emphasis>RAMP UP</emphasis> phase starts. </para>
+   <para>In the <emphasis>RAMP UP</emphasis> phase the number of the threads is changed by the value
+      of the <code>rampUpStep</code> property each period set by the <code>rampUpStepPeriod</code>
+      until it reaches the number of threads set by the value of the <code>mainThreadCount</code>
+      property <emphasis role="strong">(2)</emphasis> . </para>
+   <para>In that moment <emphasis role="strong">(C)</emphasis>
+      <emphasis>MAIN</emphasis> phase starts and the execution continues for the duration set by the
+         <code>mainDuration</code> property <emphasis role="strong">(C)</emphasis> -> <emphasis
+         role="strong">(D)</emphasis> , when the <emphasis>RAMP DOWN</emphasis> phase starts. </para>
+   <para>In the <emphasis>RAMP DOWN</emphasis> phase <emphasis role="strong">(D)</emphasis> ->
+         <emphasis role="strong">(E)</emphasis> the number of threads is again changed but this time
+      in the opposite direction than in the <emphasis>RAMP UP</emphasis> phase. It changes by the
+      value of the <code>rampDownStep</code> property each period specified by the
+         <code>rampDownStepPeriod</code> property until the final number of threads <emphasis
+         role="strong">(3)</emphasis> is reached. By that moment <emphasis role="strong"
+         >(E)</emphasis> the final phase called <emphasis>POST</emphasis> starts. </para>
+   <para>The <emphasis>POST</emphasis> phase ends by the end of the scenario <emphasis role="strong"
+         >(F)</emphasis> . </para>
+   <para>The outer borders of the number of threads and the duration is set by the maximum number of
+      threads specified by the <code>threads</code> attribute of the generator and by the maximum
+      duration set by the <code>run</code> element. </para>
+   <para>The following table describes all the properties of the RampUpDownGenerator: <table
+         frame="all">
          <title>RampUpDownGenerator properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="2*"/>
@@ -130,37 +64,25 @@
                   <entry>preThreadCount</entry>
                   <entry>Initial number of threads.</entry>
                   <entry>No</entry>
-                  <entry>
-                     Generator's
-                     <code>threads</code>
-                     value.
-                  </entry>
+                  <entry> Generator's <code>threads</code> value. </entry>
                </row>
                <row>
                   <entry>preDuration</entry>
-                  <entry>
-                     A duration period in the units of
-                     <code>run</code>
-                     type of "PRE" phase.
-                  </entry>
+                  <entry> A duration period in the units of <code>run</code> type of "PRE" phase. </entry>
                   <entry>No</entry>
                   <entry>Long.MAX_VALUE</entry>
                </row>
                <row>
                   <entry>rampUpStep</entry>
-                  <entry>A number by which the number of threads is changed in the "RAMP UP" phase.</entry>
+                  <entry>A number by which the number of threads is changed in the "RAMP UP"
+                     phase.</entry>
                   <entry>No</entry>
                   <entry>"0"</entry>
                </row>
                <row>
                   <entry>rampUpStepPeriod</entry>
-                  <entry>
-                     A period in the units of
-                     <code>run</code>
-                     type after which the number of threads is changed by
-                     <code>rampUpStep</code>
-                     value.
-                  </entry>
+                  <entry> A period in the units of <code>run</code> type after which the number of
+                     threads is changed by <code>rampUpStep</code> value. </entry>
                   <entry>No</entry>
                   <entry>Long.MAX_VALUE</entry>
                </row>
@@ -168,37 +90,26 @@
                   <entry>mainThreadCount</entry>
                   <entry>A number of threads in the main phase.</entry>
                   <entry>No</entry>
-                  <entry>
-                     Generator's
-                     <code>threads</code>
-                     value.
-                  </entry>
+                  <entry> Generator's <code>threads</code> value. </entry>
                </row>
                <row>
                   <entry>mainDuration</entry>
-                  <entry>
-                     A duration in the units of
-                     <code>run</code>
-                     type for which the main phase lasts.
-                  </entry>
+                  <entry> A duration in the units of <code>run</code> type for which the main phase
+                     lasts. </entry>
                   <entry>No</entry>
                   <entry>"0"</entry>
                </row>
                <row>
                   <entry>rampDownStep</entry>
-                  <entry>A number by which the number of threads is changed in the "RAMP DOWN" phase.</entry>
+                  <entry>A number by which the number of threads is changed in the "RAMP DOWN"
+                     phase.</entry>
                   <entry>No</entry>
                   <entry>"0"</entry>
                </row>
                <row>
                   <entry>rampDownStepPeriod</entry>
-                  <entry>
-                     A period in the units of
-                     <code>run</code>
-                     type after which the number of threads is changed by
-                     <code>rampDownStep</code>
-                     value.
-                  </entry>
+                  <entry> A period in the units of <code>run</code> type after which the number of
+                     threads is changed by <code>rampDownStep</code> value. </entry>
                   <entry>No</entry>
                   <entry>Long.MAX_VALUE</entry>
                </row>
@@ -206,54 +117,33 @@
                   <entry>postThreadCount</entry>
                   <entry>Final number of threads.</entry>
                   <entry>No</entry>
-                  <entry>
-                     Generator's
-                     <code>threads</code>
-                     value.
-                  </entry>
+                  <entry> Generator's <code>threads</code> value. </entry>
                </row>
             </tbody>
          </tgroup>
       </table>
    </para>
-   <section>
+   <example>
       <title>An example of RampUpDownGenerator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <run type="time" value="60000"/>
- <generator class="RampUpDownGenerator" threads="20">
-   <property name="preThreadCount" value="10"/>
-   <property name="preDuration" value="10000"/>
-   <property name="rampUpStep" value="2"/>
-   <property name="rampUpStepPeriod" value="1000"/>
-   <property name="mainThreadCount" value="20"/>
-   <property name="mainDuration" value="20000"/>
-   <property name="rampDownStep" value="1"/>
-   <property name="rampDownStepPeriod" value="1000"/>
-   <property name="postThreadCount" value="15"/>
- </generator>]]></programlisting>
-      <para>
-         In the example above the scenario starts with 10 threads (
-         <code>preThreadCount</code>
-         ). After 10s (
-         <code>preDuration</code>
-         ) the number of threads starts to increase by number of 2 (
-         <code>rampUpStep</code>
-         ) each second (
-         <code>rampUpStepPeriod</code>
-         ) until
-         the number of threads reaches 20 (
-         <code>mainThreadCount</code>
-         ). Than after another 20 (
-         <code>mainDuration</code>
-         ) seconds the number of threads starts to decrease by 1 (
-         <code>rampDownStep</code>
-         ) each second (
-         <code>rampDownStepPeriod</code>
-         ) until the number reaches
-         15 (
-         <code>postThreadCount</code>
-         ) which remains until the end of the scenario. The whole scenario ends after 60s (
-         <code>run</code>
-         ).
-      </para>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <run type="time" value="60000"/>
+   <generator class="RampUpDownGenerator" threads="20">
+      <property name="preThreadCount" value="10"/>
+      <property name="preDuration" value="10000"/>
+      <property name="rampUpStep" value="2"/>
+      <property name="rampUpStepPeriod" value="1000"/>
+      <property name="mainThreadCount" value="20"/>
+      <property name="mainDuration" value="20000"/>
+      <property name="rampDownStep" value="1"/>
+      <property name="rampDownStepPeriod" value="1000"/>
+      <property name="postThreadCount" value="15"/>
+   </generator>]]></programlisting>
+      <para>In the example above the scenario starts with 10 threads ( <code>preThreadCount</code>
+         ). After 10s ( <code>preDuration</code> ) the number of threads starts to increase by
+         number of 2 ( <code>rampUpStep</code> ) each second ( <code>rampUpStepPeriod</code> ) until
+         the number of threads reaches 20 ( <code>mainThreadCount</code> ). Than after another 20 (
+            <code>mainDuration</code> ) seconds the number of threads starts to decrease by 1 (
+            <code>rampDownStep</code> ) each second ( <code>rampDownStepPeriod</code> ) until the
+         number reaches 15 ( <code>postThreadCount</code> ) which remains until the end of the
+         scenario. The whole scenario ends after 60s ( <code>run</code> ). </para>
+   </example>
 </section>

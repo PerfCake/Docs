@@ -1,60 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.messages" version="7.0">
    <title>What - Messages</title>
-   <para>
-      A message is an actual payload, that is sent by a sender. To specify what will be sent, you can use the
-      <code>uri</code>
-      attribute of the particular message element in the scenario configuration. The
-      <code>uri</code>
-      can be an absolute file path
-      in a form of
-      <code>file://...</code>
-      , URL or just a file name, in which case PerfCake will look for the file
-      in the messages directory (See
-      <link xlink:href="https://www.perfcake.org/quickstart/"/>
-      ).
-   </para>
+   <para>A message is an actual payload, that is sent by a sender. To specify what will be sent, you
+      can use the <code>uri</code> attribute of the particular message element in the scenario
+      configuration. The <code>uri</code> can be an absolute file path in a form of
+         <code>file://...</code> , URL or just a file name, in which case PerfCake will look for the
+      file in the messages directory (See <link xlink:href="https://www.perfcake.org/quickstart/"/>
+      ). </para>
    <para>The simple payload of the message can be specified directly in the scenario by using
       <code>content</code>
       attribute instead of the<code>uri</code>. The value of the
       <code>content</code>
       attribute will be the actual message payload.
    </para>
-   <para>
-      The scenario can be configured to
-      send more that one message or to send a message more than once in a single iteration. To specify multiple
-      different messages you just need to add more
-      <code>message</code>
-      elements in the
-      <code>messages</code>
-      configuration. To send a particular message more than once use the
-      <code>multiplicity</code>
-      attribute of the respective
-      <code>message</code>
-      element.
-   </para>
-   <section>
+   <para>The scenario can be configured to send more that one message or to send a message more than
+      once in a single iteration. To specify multiple different messages you just need to add more
+         <code>message</code> elements in the <code>messages</code> configuration. To send a
+      particular message more than once use the <code>multiplicity</code> attribute of the
+      respective <code>message</code> element. </para>
+   <example>
       <title>An example of a simple message configuration:</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <messages>
-   ...
-   <message content="Greetings stranger!"/>
-   ...
- </messages>]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <messages>
+      ...
+      <message content="Greetings stranger!"/>
+      ...
+   </messages>]]></programlisting>
       <para>In the example above there is a single message defined. The payload of the message is the value of the
          <code>content</code>
          attribute .
       </para>
-   </section>
-   <section>
+   </example>
+   <example>
       <title>An example of multiple messages configuration:</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <messages>
-   <message uri="message1.txt">
-      <header name="header.name" value="header.value"/>
-      <header name="header2" value="you-know"/>
-      <property name="Empire.State.Building" value="A lot of $"/>
-   </message>
-   <message uri="message2.xml" multiplicity="2"/>
- </messages>]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <messages>
+      <message uri="message1.txt">
+         <header name="header.name" value="header.value"/>
+         <header name="header2" value="you-know"/>
+         <property name="Empire.State.Building" value="A lot of $"/>
+      </message>
+      <message uri="message2.xml" multiplicity="2"/>
+   </messages>]]></programlisting>
       <para>
          In the example above there are 2 messages defined. In the case of the first message the payload is taken from the file
          <code>message1.txt</code>
@@ -64,6 +49,6 @@
          and will be sent two times in
          each iteration.
       </para>
-   </section>
+   </example>
    <xi:include href="./messages/filtering.xml/"/>
 </section>

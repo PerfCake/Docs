@@ -6,10 +6,10 @@
       <xref linkend="ug.reference-guide.sending.PlainSocketSender"/>
       ) and so it shares the same properties. The difference is that the SslSocketSender uses a SSL socket.
    </para>
-   <section>
+   <example>
       <title>An example of SslSocketSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="SslSocketSender">
-   <target>127.0.0.1:12345</target>
- </sender>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="SslSocketSender">
+      <target>127.0.0.1:12345</target>
+   </sender>]]></programlisting>
+   </example>
 </section>

@@ -77,12 +77,12 @@
          </tgroup>
       </table>
    </para>
-   <section>
+   <example>
       <title>An example of MqttSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="MqttSender">
-   <target>tcp://localhost:1883/request.topic</target>
-   <property name="responseTarget" value="response.topic"/>
- </sender>]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="MqttSender">
+      <target>tcp://localhost:1883/request.topic</target>
+      <property name="responseTarget" value="response.topic"/>
+   </sender>]]></programlisting>
       <para>I the example above there is a
          <code>MqttSender</code>
          configured to send messages to topic with the name of
@@ -92,5 +92,5 @@
          <code>response.topic</code>
          of the same broker. The quality of service level for both sending and receiving is default<code>EXACTLY_ONCE</code>.
       </para>
-   </section>
+   </example>
 </section>

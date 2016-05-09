@@ -72,12 +72,12 @@
          </tgroup>
       </table>
    </para>
-   <section>
+   <example>
       <title>An example of HttpSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="HttpSender">
-   <target>http://domain.com/cool-url</target>
-   <property name="method" value="GET"/>
-   <property name="expectedResponseCodes" value="200,202"/>
- </sender>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="HttpSender">
+      <target>http://domain.com/cool-url</target>
+      <property name="method" value="GET"/>
+      <property name="expectedResponseCodes" value="200,202"/>
+   </sender>]]></programlisting>
+   </example>
 </section>

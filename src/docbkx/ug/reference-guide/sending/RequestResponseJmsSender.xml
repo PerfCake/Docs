@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.RequestResponseJmsSender" version="7.0">
    <title>RequestResponseJmsSender</title>
-   <para>
-      The RequestResponseJmsSender is supposed to be used in request-response scenarios. First it sends a JMS message to the target destination (specified by the
-      <code>target</code>
-      property) and then waits to receive the response message from the response destination (specified by the
-      <code>responseTarget</code>
-      property).
-   </para>
-   <para>
-      It is based on JmsSender (see
-      <xref linkend="ug.reference-guide.sending.JmsSender"/>
-      ) so it inherits its properties. The following table contains additional properties of the
-      <code>RequestResponseJmsSender</code>:
-   </para>
+   <para>The RequestResponseJmsSender is supposed to be used in request-response scenarios. First it
+      sends a JMS message to the target destination (specified by the <code>target</code> property)
+      and then waits to receive the response message from the response destination (specified by the
+         <code>responseTarget</code> property). </para>
+   <para>It is based on JmsSender (see <xref linkend="ug.reference-guide.sending.JmsSender"/> ) so
+      it inherits its properties. The following table contains additional properties of the
+         <code>RequestResponseJmsSender</code>: </para>
    <table frame="all">
       <title>RequestResponseJmsSender properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -108,26 +102,26 @@
          </tbody>
       </tgroup>
    </table>
-   <section>
+   <example>
       <title>An example of RequestResponseJmsSender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="RequestResponseJmsSender">
-   <target>jms/queue/RequestQueue</target>
-   <property name="responseTarget" value="jms/queue/ResponseQueue"/>
-   <property name="receivingTimeout" value="30000"/>
-   <property name="receiveAttempts" value="1"/>
-   <property name="connectionFactory" value="jms/ConnFactory"/>
-   <property name="username" value="KingRoland"/>
-   <property name="password" value="12345"/>
-   <property name="responseUsername" value="KingRoland"/>
-   <property name="responsePassword" value="12345"/>
-   <!-- JNDI properties-->
-   <property name="jndiContextFactory" value="pkg.InitCtxFactory"/>
-   <property name="jndiUrl" value="remote://${server.host}:4447"/>
-   <property name="jndiSecurityPrincipal" value="KingRoland"/>
-   <property name="jndiSecurityCredentials" value="12345"/>
-   <property name="responseJndiSecurityPrincipal" value="KingRoland"/>
-   <property name="responseJndiSecurityCredentials" value="12345"/>
- </sender>]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="RequestResponseJmsSender">
+      <target>jms/queue/RequestQueue</target>
+      <property name="responseTarget" value="jms/queue/ResponseQueue"/>
+      <property name="receivingTimeout" value="30000"/>
+      <property name="receiveAttempts" value="1"/>
+      <property name="connectionFactory" value="jms/ConnFactory"/>
+      <property name="username" value="KingRoland"/>
+      <property name="password" value="12345"/>
+      <property name="responseUsername" value="KingRoland"/>
+      <property name="responsePassword" value="12345"/>
+      <!-- JNDI properties-->
+      <property name="jndiContextFactory" value="pkg.InitCtxFactory"/>
+      <property name="jndiUrl" value="remote://${server.host}:4447"/>
+      <property name="jndiSecurityPrincipal" value="KingRoland"/>
+      <property name="jndiSecurityCredentials" value="12345"/>
+      <property name="responseJndiSecurityPrincipal" value="KingRoland"/>
+      <property name="responseJndiSecurityCredentials" value="12345"/>
+   </sender>]]></programlisting>
       <para>
          In the example above there is a
          <code>RequestResponseJmsSender</code>
@@ -141,5 +135,5 @@
          for at most 30s. It uses the same JMS provider for both request and response, so the request and response credentials
          (both JMS and JNDI) are the same. Connection factory, JNDI context factory and JNDI URL for the response are inherited from the respective request properties.
       </para>
-   </section>
+   </example>
 </section>

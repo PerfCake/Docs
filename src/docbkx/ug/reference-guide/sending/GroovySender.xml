@@ -58,11 +58,11 @@
          </tbody>
       </tgroup>
    </table>
-   <section>
+   <example>
       <title>An example of GroovySender configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sender class="GroovySender">
-   <target>/tmp/script.groovy"</target>
-   <property name="classpath" value="~/common-classes"/>
- </sender>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="GroovySender">
+      <target>/tmp/script.groovy"</target>
+      <property name="classpath" value="~/common-classes"/>
+   </sender>]]></programlisting>
+   </example>
 </section>

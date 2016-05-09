@@ -32,9 +32,9 @@
          </tgroup>
       </table>
    </para>
-   <section>
+   <example>
       <title>An example of PrimitiveNumberSequence configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sequence name="mySequence" class="PrimitiveNumberSequence">
- </sequence>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="PrimitiveNumberSequence">
+   </sequence>]]></programlisting>
+   </example>
 </section>

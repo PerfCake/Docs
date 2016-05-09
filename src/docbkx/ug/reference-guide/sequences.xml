@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sequences" version="7.0">
    <title>Sequences</title>
-   <para>TODO: Sequences usage and description.
-   </para>
-   <section>
+   <para>Sequences are used to create a sequence of values that change for each sent message set (a
+    set of messages are all the messages specified in a single scenario). Whenever a message set is
+    to be sent, a current snapshot of all sequences is created. Then the values are replaced in the
+    message template and are also passed to <code>MessageSender.preSend()</code> method in
+      <code>messageAttributes</code>. The property names/keys correspond to the configured sequence
+    name. We suggest to configure your sequence names with a unique prefix (like
+      <emphasis>seq.</emphasis>) to avoid possible conflicts with another properties.</para>
+   <example>
       <title>An example of a Sequence configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <sequences>
-   <sequence name="..." class="...">
-     ...
-     sequence properties
-     ...
-   </sequence>
- </sequences>]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequences>
+      <sequence name="..." class="...">
+         ...
+         sequence properties
+         ...
+      </sequence>
+   </sequences>]]></programlisting>
      <para>In the following sections you can find a complete description of all
        sequences, that can be used by PerfCake including all of their properties.
      </para>
-   </section>
+   </example>
    <xi:include href="./sequences/PrimitiveNumberSequence.xml"/>
    <xi:include href="./sequences/NumberSequence.xml"/>
    <xi:include href="./sequences/ThreadIdSequence.xml"/>
