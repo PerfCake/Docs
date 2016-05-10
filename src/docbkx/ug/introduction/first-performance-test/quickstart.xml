@@ -9,7 +9,7 @@
 │ ├── perfcake.bat
 │ └── perfcake.sh
 ├── docs/
-│ └── perfcake-6.x-javadoc.jar
+│ └── perfcake-7.x-javadoc.jar
 ├── lib/
 │ ├──ext/
 │ ├──plugins/

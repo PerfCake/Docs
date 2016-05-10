@@ -110,9 +110,9 @@ h4 {
 
 .book,.chapter,.sect1,.sect2,.section,.preface {
 	width: 1000px;
-	margin-top: 70px;
+	margin-top: 1em;
 	margin-right: auto;
-	margin-bottom: 70px;
+	margin-bottom: 1em;
 	margin-left: auto;
 	padding: 0;
 	text-decoration: none;
@@ -130,12 +130,12 @@ h4 {
 	text-decoration: none;
 }
 
-.list-of-figures a, .list-of-tables a {
+.list-of-figures a, .list-of-tables a, .list-of-examples a {
 	color: #dd4814;
 	text-decoration: none;
 }
 
-.toc a:hover, .toc a:focus, .list-of-figures a:hover, .list-of-figures a:focus, .list-of-tables a:hover, .list-of-tables a:focus {
+.toc a:hover, .toc a:focus, .list-of-figures a:hover, .list-of-figures a:focus, .list-of-tables a:hover, .list-of-tables a:focus, .list-of-examples a:hover, .list-of-examples a:focus {
 	color:#97310e;
 	text-decoration: underline;
 }
@@ -163,6 +163,11 @@ h4 {
 	border-color: #c64012;
 	padding: 0;
 	margin: 0;
+}
+
+.navfooter table {
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 .navfooter td {
