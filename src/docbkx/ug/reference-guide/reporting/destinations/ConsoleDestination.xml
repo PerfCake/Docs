@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations.ConsoleDestination" version="7.0">
    <title>ConsoleDestination</title>
-   <para>
-      A simple destination that appends the measurements to the PerfCake's console output.
-   </para>
+   <para>A simple destination that appends the measurements to the PerfCake's console output. </para>
    <para>The destination has no properties to be configured.</para>
-   <section>
+   <example>
       <title>An example of ConsoleDestination configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <destination class="ConsoleDestination">
-   <period type="time" value="1000"/>
- </destination>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <destination class="ConsoleDestination">
+      <period type="time" value="1000"/>
+   </destination>]]></programlisting>
+   </example>
 </section>

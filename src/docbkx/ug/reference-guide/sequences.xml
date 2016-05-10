@@ -11,11 +11,18 @@
       <emphasis>seq.</emphasis>) to avoid possible conflicts with another properties.</para>
   <para>Possible usages of sequences are:<itemizedlist>
       <listitem>
-        <para>message templates to make each message unique or to make it route through a different
-          path</para>
+        <para>in the message templates to make each message unique or to make it route through a
+          different path,</para>
       </listitem>
       <listitem>
-        <para>to influence akldj</para>
+        <para>to influence the behaviour of a message sender which can decide based on the
+          sequence's current value (values can for example cycle over a few different
+          values),</para>
+      </listitem>
+      <listitem>
+        <para>to send the messages to different targets, supposing the message sender does not cache
+          connections and uses <code>AbstractSender.getSafeTarget()</code> when openning a new
+          connection.</para>
       </listitem>
     </itemizedlist> message templates to make each message unique or to make it route through a
     different path, </para>

@@ -24,63 +24,50 @@
    </para>
    <example>
       <title>An example reporting configuration:</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
-<reporter class="ThroughputStatsReporter">
-   <property name="minimumEnabled" value="false"/>
-   <property name="maximumEnabled" value="false"/>
-   <destination class="ConsoleDestination">
-      <period type="time" value="1000"/>
-   </destination>
-   <destination class="CsvDestination">
-      <period type="time" value="2000"/>
-      <property name="path" value="test-average-throughput.csv"/>
-   </destination>
-</reporter>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporting>
+      <reporter class="ThroughputStatsReporter">
+         <property name="minimumEnabled" value="false"/>
+         <property name="maximumEnabled" value="false"/>
+         <destination class="ConsoleDestination">
+            <period type="time" value="1000"/>
+         </destination>
+         <destination class="CsvDestination">
+            <period type="time" value="2000"/>
+            <property name="path" value="test-average-throughput.csv"/>
+         </destination>
+      </reporter>
 
-<reporter class="MemoryUsageReporter">
-   <property name="agentHostname" value="localhost"/>
-   <property name="agentPort" value="8850"/>
-   <destination class="CsvDestination">
-      <period type="time" value="2000"/>
-      <property name="path" value="test-memory-usage.csv"/>
-   </destination>
-</reporter>
-</reporting>]]></programlisting>
+      <reporter class="MemoryUsageReporter">
+         <property name="agentHostname" value="localhost"/>
+         <property name="agentPort" value="8850"/>
+         <destination class="CsvDestination">
+            <period type="time" value="2000"/>
+            <property name="path" value="test-memory-usage.csv"/>
+         </destination>
+      </reporter>
+   </reporting>]]></programlisting>
    </example>
-   <para>
-      With this configuration the 2 reporters are specified -
-      <code>ThroughputStatsReporter</code>
-      and
-      <code>MemoryUsageReporter</code>
-      . First one will report to console each 1 second and to CSV file each 2
-      seconds, while the second one will report memory usage of the
-      tested system into CSV file each 2 seconds.
-   </para>
-   <para>
-      Each reporter can be enabled/disabled by the optional boolean attribute called
-      <code>enabled</code>
-      . The disabled reporter is just ignored by PerfCake just like it wouldn't be there at all.
-      If not specified the reporter is enabled by default.
-   </para>
+   <para>With this configuration the 2 reporters are specified -
+         <code>ThroughputStatsReporter</code> and <code>MemoryUsageReporter</code> . First one will
+      report to console each 1 second and to CSV file each 2 seconds, while the second one will
+      report memory usage of the tested system into CSV file each 2 seconds. </para>
+   <para>Each reporter can be enabled/disabled by the optional boolean attribute called
+         <code>enabled</code> . The disabled reporter is just ignored by PerfCake just like it
+      wouldn't be there at all. If not specified the reporter is enabled by default. </para>
    <example>
       <title>An example of a disabled reporter:</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporting>
-<reporter class="ThroughputStatsReporter">
-   ...
-</reporter>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporting>
+      <reporter class="ThroughputStatsReporter">
+         ...
+      </reporter>
 
-<reporter class="MemoryUsageReporter" enabled="false">
-   ...
-</reporter>
-</reporting>]]></programlisting>
-      <para>
-         In the example above there are two reporters configured,
-         <code>ThroughputStatsReporter</code>
-         which is enabled
-         and
-         <code>MemoryUsageReporter</code>
-         which is disabled.
-      </para>
+      <reporter class="MemoryUsageReporter" enabled="false">
+         ...
+      </reporter>
+   </reporting>]]></programlisting>
+      <para>In the example above there are two reporters configured,
+            <code>ThroughputStatsReporter</code> which is enabled and
+            <code>MemoryUsageReporter</code> which is disabled. </para>
       <para>The following sections contain a description of reporters and destinations that can be used in PerfCake.</para>
    </example>
    <xi:include href="./reporting/reporters.xml"/>

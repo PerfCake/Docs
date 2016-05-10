@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.WarmUpReporter" version="7.0">
    <title>WarmUpReporter</title>
-   <para>
-      The reporter is able to determine when the tested system is warmed up.
-      The warming is enabled/disabled by the presence of enabled WarmUpReporter in the scenario.
-      It does not publish any results to destinations.
-      The minimal iterations count and the warm-up period duration can be tweaked by the respective properties
-      <code>minimalWarmUpCount</code>
-      with the default value of 10,000 and
-      <code>minimalWarmUpDuration</code>
-      with the default value of
-      15,000 ms).
-   </para>
+   <para>The reporter is able to determine when the tested system is warmed up. The warming is
+      enabled/disabled by the presence of enabled WarmUpReporter in the scenario. It does not
+      publish any results to destinations. The minimal iterations count and the warm-up period
+      duration can be tweaked by the respective properties <code>minimalWarmUpCount</code> with the
+      default value of 10,000 and <code>minimalWarmUpDuration</code> with the default value of
+      15,000 ms). </para>
    <para>The reporter internally keeps track of current throughput - each second checks the number of processed
       iterations and computes the current throughput as the difference in number of iterations per checking period (second).
       It also remembers the current throughput from the previous checking period to calculate a difference in throughput.
@@ -69,16 +64,16 @@
          </tbody>
       </tgroup>
    </table>
-   <section>
+   <example>
       <title>An example of WarmUpReporter configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="WarmUpReporter" enabled="true">
-   <property name="minimalWarmUpCount" value="1000"/>
-   <property name="minimalWarmUpDuration" value="10000"/>
-   <property name="relativeThreshold" value="0.005"/> <!-- 0.5% -->
-   <property name="absoluteThreshold" value="0.5"/>
- </reporter>]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="WarmUpReporter" enabled="true">
+      <property name="minimalWarmUpCount" value="1000"/>
+      <property name="minimalWarmUpDuration" value="10000"/>
+      <property name="relativeThreshold" value="0.005"/> <!-- 0.5% -->
+      <property name="absoluteThreshold" value="0.5"/>
+   </reporter>]]></programlisting>
       <para>In the example above the system would be considered warmed up when at least 1000 iterations is processed AND the scenario is executed for at least
          10 seconds AND, the relative change in the throughput is less then 0.5% or the absolute change in throughput is less than 0.5 iterations per second.
       </para>
-   </section>
+   </example>
 </section>

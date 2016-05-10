@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.ResponseTimeStatsReporter" version="7.0">
    <title>ResponseTimeStatsReporter</title>
-   <para>
-      The reporter is able to report the statistics - current, minimal, maximal and average value of a response time (in miliseconds) from the beginning of the measuring to the moment when the results are published (default) or in a specified window.
-      The default result of this reporter is the current response time.
-   </para>
+   <para>The reporter is able to report the statistics - current, minimal, maximal and average value
+      of a response time (in miliseconds) from the beginning of the measuring to the moment when the
+      results are published (default) or in a specified window. The default result of this reporter
+      is the current response time. </para>
    <table frame="all">
       <title>ResponseTimeStatsReporter properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -102,7 +102,7 @@
          </tbody>
       </tgroup>
    </table>
-   <section>
+   <example>
       <title>An example of ResponseTimeStatsReporter configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeStatsReporter">
    <property name="minimumEnabled" value="false"/>
@@ -111,29 +111,26 @@
    (destinations)
    ...
  </reporter>]]></programlisting>
-   </section>
-   <section>
+   </example>
+   <example>
       <title>An example of ResponseTimeStatsReporter configuration with histogram</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="ResponseTimeStatsReporter">
-   <property name="histogram" value="100,200"/>
-   <property name="histogramPrefix" value="in"/>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ResponseTimeStatsReporter">
+      <property name="histogram" value="100,200"/>
+      <property name="histogramPrefix" value="in"/>
 
-   <destination class="ConsoleDestination">
-      <period type="time" value="5000" />
-   </destination>
-   ...
-   (destinations)
-   ...
- </reporter>]]></programlisting>
+      <destination class="ConsoleDestination">
+         <period type="time" value="5000" />
+      </destination>
+      ...
+      (destinations)
+      ...
+   </reporter>]]></programlisting>
 
-      <para>
-         In the example above a
-         <code>ResponseTimeStatsReporter</code>
-         is configured to report all statistics including a histogram
-         of response time values in value ranges of (-infinity:100 ms), &lt;100 ms:200 ms) and &lt;200 ms: +infinity) with the following output:
-      </para>
-      <programlisting><![CDATA[
-2016-01-04 08:29:56,929 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 6.0 ===
+      <para>In the example above a <code>ResponseTimeStatsReporter</code> is configured to report
+         all statistics including a histogram of response time values in value ranges of
+         (-infinity:100 ms), &lt;100 ms:200 ms) and &lt;200 ms: +infinity) with the following
+         output: </para>
+      <programlisting><![CDATA[2016-01-04 08:29:56,929 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 6.0 ===
 2016-01-04 08:29:56,929 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2016-01-04 08:29:56,930 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 298ns. A single thread is now able to measure maximum of 3355704 iterations/second.
 2016-01-04 08:29:56,993 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
@@ -146,7 +143,6 @@
 2016-01-04 08:30:26,999 INFO  {org.perfcake.reporting.ReportManager} Checking whether there are more results to be reported...
 [0:00:30][17533 iterations][100%] [180.395991 ms] [warmUp => false] [Threads => 100] [Minimum => 116.011933 ms] [Maximum => 926.555949 ms] [Average => 170.52201248824593 ms] [in<-Infinity:100.0) => 0.0] [in<100.0:200.0) => 84.95378295104416] [in<200.0:Infinity) => 15.046217048955837]
 2016-01-04 08:30:27,000 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
-2016-01-04 08:30:27,416 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===
-]]></programlisting>
-   </section>
+2016-01-04 08:30:27,416 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===]]></programlisting>
+   </example>
 </section>

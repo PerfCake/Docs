@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.MemoryUsageReporter" version="7.0">
    <title>MemoryUsageReporter</title>
-   <para>
-      The reporter is able to report the current memory usage of the tested system at the moment when the results are published.
-      It requires PerfCake agent to be installed in the tested system's JVM.
-   </para>
-   <para>
-      To be able to use MemoryUsageReporter you need to attach PerfCake agent to the tested system's JVM. The PerfCake agent is a part of binary distribution (PerfCake Agent's JAR archive).
-      The agent is configurable by following properties:
-   </para>
+   <para>The reporter is able to report the current memory usage of the tested system at the moment
+      when the results are published. It requires PerfCake agent to be installed in the tested
+      system's JVM. </para>
+   <para>To be able to use MemoryUsageReporter you need to attach PerfCake agent to the tested
+      system's JVM. The PerfCake agent is a part of binary distribution (PerfCake Agent's JAR
+      archive). The agent is configurable by following properties: </para>
    <table frame="all">
       <title>PerfCake agent properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -64,29 +62,23 @@ PerfCakeAgent > Listening at localhost on port 8850
    </para>
    <para>Once you have the PerfCake agent attached and the tested system is up and running you can use the MemoryUsageReporter to measure the memory usage of the tested system.
    </para>
-   <para>
-      MemoryUsageReporter is capable of possible memory leak detection. It is disabled by default. Once enabled,
-      the reporter periodically gathers memory usage from the tested system using via an ordinary way (using the PerfCakeAgent) and remembers
-      a window of N last measured values. Once the window is filled, the reporter uses a linear regression analysis over the
-      data from the time window to compute an used memory trend. The possible memory leak is considered detected when the slope of the memory trend exceeds
-      the specified slope threshold. All the period, the window size and the slope threshold are configurable via particular reporter's properties.
-   </para>
-   <para>
-      The reporter is also able to dump memory when a possible memory leak is detected. The feature can be enabled by the
-      <code>memoryDumpOnLeak</code>
-      property and the memory dump is then saved in a file which can be specified by the
-      <code>memoryDumpFile</code>
-      property. If not specified the dump name will be generated as
-      <code>"dump-" + System.currentTimeMillis() + ".bin"</code>
-      in case of the Java agent that is part of PerfCake.
-   </para>
-   <para>
-      The reporter can ask the agent to perform a garbage collection each time the memory usage of the
-      tested system is measured and published.
-      Since the garbage collection is CPU intensive operation be careful to enable it and to how often
-      the memory usage is measured because it will have a significant impact on the measured system and naturally the
-      measured results too.
-   </para>
+   <para>MemoryUsageReporter is capable of possible memory leak detection. It is disabled by
+      default. Once enabled, the reporter periodically gathers memory usage from the tested system
+      using via an ordinary way (using the PerfCakeAgent) and remembers a window of N last measured
+      values. Once the window is filled, the reporter uses a linear regression analysis over the
+      data from the time window to compute an used memory trend. The possible memory leak is
+      considered detected when the slope of the memory trend exceeds the specified slope threshold.
+      All the period, the window size and the slope threshold are configurable via particular
+      reporter's properties. </para>
+   <para>The reporter is also able to dump memory when a possible memory leak is detected. The
+      feature can be enabled by the <code>memoryDumpOnLeak</code> property and the memory dump is
+      then saved in a file which can be specified by the <code>memoryDumpFile</code> property. If
+      not specified the dump name will be generated as <code>"dump-" + System.currentTimeMillis() +
+         ".bin"</code> in case of the Java agent that is part of PerfCake. </para>
+   <para>The reporter can ask the agent to perform a garbage collection each time the memory usage
+      of the tested system is measured and published. Since the garbage collection is CPU intensive
+      operation be careful to enable it and to how often the memory usage is measured because it
+      will have a significant impact on the measured system and naturally the measured results too. </para>
    <para>The reporter has the following properties:</para>
    <table frame="all">
       <title>MemoryUsageReporter properties</title>
@@ -204,14 +196,14 @@ PerfCakeAgent > Listening at localhost on port 8850
          </tbody>
       </tgroup>
    </table>
-   <section>
+   <example>
       <title>An example of MemoryUsageReporter configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <reporter class="MemoryUsageReporter">
-   <property name="agentHostname" value="localhost"/>
-   <property name="agentPort" value="8850"/>
-   ...
-   (destinations)
-   ...
- </reporter>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="MemoryUsageReporter">
+      <property name="agentHostname" value="localhost"/>
+      <property name="agentPort" value="8850"/>
+      ...
+      (destinations)
+      ...
+   </reporter>]]></programlisting>
+   </example>
 </section>
