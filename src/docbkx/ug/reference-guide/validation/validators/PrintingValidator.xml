@@ -6,8 +6,8 @@
       printed to all other logging output. All messages controlled by this validator are stated
       valid.</para>
    <para>There are no configuration properties available to this validator.</para>
-   <section>
+   <example>
       <title>An example of ScriptValidator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <validator id="print" class="PrintingValidator" />]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <validator id="print" class="PrintingValidator" />]]></programlisting>
+   </example>
 </section>

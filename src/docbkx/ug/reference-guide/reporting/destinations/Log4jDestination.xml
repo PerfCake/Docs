@@ -26,7 +26,7 @@
                   <entry>level</entry>
                   <entry>The logging level for the destination.</entry>
                   <entry>No</entry>
-                  <entry>"INFO"</entry>
+                  <entry>INFO</entry>
                </row>
             </tbody>
          </tgroup>

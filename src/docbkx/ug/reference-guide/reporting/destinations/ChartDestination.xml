@@ -35,7 +35,7 @@
                   <entry>name</entry>
                   <entry>Name of the chart for this measurement.</entry>
                   <entry>No</entry>
-                  <entry>"PerfCake Results"</entry>
+                  <entry>PerfCake Results</entry>
                </row>
                <row>
                   <entry>group</entry>
@@ -44,25 +44,25 @@
                      underscores and it is not allowed to begin with a number digit. If the group
                      name does not follow the naming conventions, it would be converted to do so. </entry>
                   <entry>No</entry>
-                  <entry>"default"</entry>
+                  <entry>default</entry>
                </row>
                <row>
                   <entry>xAxis</entry>
                   <entry>X axis legend.</entry>
                   <entry>No</entry>
-                  <entry>"Time"</entry>
+                  <entry>Time</entry>
                </row>
                <row>
                   <entry>yAxis</entry>
                   <entry>Y axis legend.</entry>
                   <entry>No</entry>
-                  <entry>"Iterations"</entry>
+                  <entry>Iterations</entry>
                </row>
                <row>
                   <entry>outputDir</entry>
                   <entry>A name of the directory where the charts are stored.</entry>
                   <entry>No</entry>
-                  <entry>"perfcake-chart"</entry>
+                  <entry>perfcake-chart</entry>
                </row>
                <row>
                   <entry>height</entry>

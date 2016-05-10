@@ -35,7 +35,7 @@
                   <entry>delimiter</entry>
                   <entry>A CSV record delimiter.</entry>
                   <entry>No</entry>
-                  <entry>";"</entry>
+                  <entry>;</entry>
                </row>
                <row>
                   <entry>appendStrategy</entry>
@@ -45,7 +45,7 @@
                      a number-based suffix and <code>forceAppend</code> is for appending new results
                      to the original file. </entry>
                   <entry>No</entry>
-                  <entry>"rename"</entry>
+                  <entry>rename</entry>
                </row>
             </tbody>
          </tgroup>

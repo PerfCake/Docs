@@ -14,17 +14,17 @@
       </footnote>
       in a form of human readable sentences. The rules are listed in a following listing:
    </para>
-   <section>
+   <example>
       <title>RulesValidator rules</title>
       <programlisting linenumbering="numbered" startinglinenumber="1"><![CDATA[Message body contains "{string}".
 Message body equals "{string}".]]></programlisting>
-   </section>
-   <section>
+   </example>
+   <example>
       <title>An example of RulesValidator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <validator id="fareWellValidator" class="RulesValidator">
-   <property name="pattern">
-      <text><![CDATA[Message body contains "Farewell World!".]]]]><![CDATA[></text>
-   </property>
- </validator>]]></programlisting>
-   </section>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <validator id="fareWellValidator" class="RulesValidator">
+      <property name="pattern">
+         <text><![CDATA[Message body contains "Farewell World!".]]]]><![CDATA[></text>
+      </property>
+   </validator>]]></programlisting>
+   </example>
 </section>

@@ -10,21 +10,21 @@
       validator pool where all validators available in the scenario are placed. The validator pool
       is configured in the <code>validation</code> section of the scenario. Each validator has a
       unique ID by which it can be referenced. Once at least one of the validators is configured, it
-      can be referenced by a <code>message</code> 's sub-element <code>validatorRef</code> , which
-      is the second place the validation is configured. By adding a validator refecence to the
-      messages we tell PerfCake that the response to that particular messages should be validated by
-      that particular validator. Any message can have multiple validator references and each
-      validator must be passed in order to set the response valid. Any validator can be referenced
-      from more than one message. </para>
+      can be referenced by a <code>message</code> 's sub-element <code>validatorRef</code>, which is
+      the second place the validation is configured. By adding a validator refecence to the messages
+      we tell PerfCake that the response to that particular messages should be validated by that
+      particular validator. Any message can have multiple validator references and each validator
+      must be passed in order to set the response valid. Any validator can be referenced from more
+      than one message. </para>
    <para>The validation as a whole can be enabled or disabled by setting the optional boolean
       attribute called <code>enabled</code> on the <code>validation</code> element to the value of
-         <code>true</code> . By default the validation is disabled. </para>
+         <code>true</code>. By default the validation is disabled. </para>
    <para>The validation thread has some sleep for to wait between validations not to influence the
       measured results. At the end, when there is nothing else to do, it goes through the remaining
       responses faster. This behavior can be controlled via the optional <code>fastForward</code>
       attribute on the <code>validation</code> element. If the value is <code>true</code> the sleep
       periods are ignored and the validation goes as fast as possible. However, that influences the
-      measured results. For that reason the default value is <code>false</code> . </para>
+      measured results. For that reason the default value is <code>false</code>. </para>
    <example>
       <title>An example of validation configuration:</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <messages>
@@ -49,10 +49,10 @@
          ...
       </validator>
    </validation>]]></programlisting>
-      <para>In the example above there are two validators ( <code>validator1</code> and
-            <code>validator2</code> ) and two messages configured. The first message has just the
+      <para>In the example above there are two validators (<code>validator1</code> and
+            <code>validator2</code>) and two messages configured. The first message has just the
             <code>validator1</code> attached so the response message received to the first message
-         will be validated just by the <code>validator1</code> . </para>
+         will be validated just by the <code>validator1</code>.</para>
       <para>On the other hand there is a second
          message that has both validators attached. So the response to the second message will be validated
          by both of the validators.

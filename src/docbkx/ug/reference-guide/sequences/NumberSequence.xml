@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sequences.NumberSequence" version="7.0">
    <title>NumberSequence</title>
-   <para>
-      TODO: Complete
-   </para>
-   <para>
-      Following table shows the properties of the NumberSequence:
-      <table frame="all">
+   <para>Long number sequence with the ability to specify boundaries, direction (increasing or
+      decreasing) of the counter and the step size.</para>
+   <para>Following table shows the properties of the NumberSequence: <table frame="all">
          <title>NumberSequence properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="2*"/>
@@ -23,18 +20,42 @@
             </thead>
             <tbody>
                <row>
-                  <entry>searchBase</entry>
-                  <entry>DN (distinguished name) to use as the search base</entry>
-                  <entry>Yes</entry>
-                  <entry>-</entry>
+                  <entry>start</entry>
+                  <entry>Beginning of the sequence counter.</entry>
+                  <entry>No</entry>
+                  <entry>0</entry>
+               </row>
+               <row>
+                  <entry>end</entry>
+                  <entry>End of the sequence counter (when reached, the counter can start from
+                        <code>start</code> depending on the <code>cycle</code> property). With
+                     positive (negative) step, <code>Long.MIN_VALUE</code>
+                        (<code>Long.MAX_VALUE</code>) disables checking for reaching the end value. </entry>
+                  <entry>No</entry>
+                  <entry><code>Long.MIN_VALUE</code></entry>
+               </row>
+               <row>
+                  <entry>step</entry>
+                  <entry>The step of the counter, can be either positive or negative.</entry>
+                  <entry>No</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry>cycle</entry>
+                  <entry>The counter starts from beginning when reaching end again. Otherwise the
+                     counter stays at the <code>end</code> value for the rest of the test.</entry>
+                  <entry>No</entry>
+                  <entry><code>true</code></entry>
                </row>
             </tbody>
          </tgroup>
-      </table>
-   </para>
+      </table></para>
    <example>
       <title>An example of NumberSequence configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="NumberSequence">
+      <property name="start" value="10" />
+      <property name="end" value="0" />
+      <property name="step" value="-2" />
    </sequence>]]></programlisting>
    </example>
 </section>
