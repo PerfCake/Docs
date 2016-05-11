@@ -15,25 +15,25 @@
       possibilities (see <xref linkend="ug.reference-guide"/> for hints on this).</para>
    <para>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:6.0">
-   <run type="${perfcake.run.type:time}"
-        value="${perfcake.run.duration:30000}"/>
-   <generator class="DefaultMessageGenerator"
-        threads="${perfcake.thread.count:100}"/>
-   <sender class="HttpSender">
-      <target>http://${server.host}/post</target>
-      <property name="method" value="POST"/>
-   </sender>
-   <reporting>
-      <reporter class="IterationsPerSecondReporter">
-         <destination class="ConsoleDestination">
-            <period type="time" value="1000" />
-         </destination>
-      </reporter>
-   </reporting>
-   <messages>
-      <message uri="plain.txt"/>
-   </messages>
+<scenario xmlns="urn:perfcake:scenario:7.0">
+  <run type="${perfcake.run.type:time}"
+       value="${perfcake.run.duration:30000}"/>
+  <generator class="DefaultMessageGenerator"
+       threads="${perfcake.thread.count:100}"/>
+  <sender class="HttpSender">
+     <target>http://${server.host}/post</target>
+     <property name="method" value="POST"/>
+  </sender>
+  <reporting>
+     <reporter class="IterationsPerSecondReporter">
+        <destination class="ConsoleDestination">
+           <period type="time" value="1000" />
+        </destination>
+     </reporter>
+  </reporting>
+  <messages>
+     <message uri="plain.txt"/>
+  </messages>
 </scenario>]]></programlisting>
    </para>
    <para>As you can see, the simplest scenario runs for 30000ms = 3 seconds. It generates

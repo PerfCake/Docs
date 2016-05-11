@@ -83,25 +83,39 @@
             </listitem>
          </itemizedlist>
       </para>
-      <para>Let’s assume you need to stress your web application that has some function exposed on
-         the following URL: <code>http://your-app.com/cool-app</code> , and you need to test how
-         fast the function is. You want to generate maximum load for 10 seconds (10000 miliseconds)
-         with 10 simultaneous clients (working threads). </para>
-      <para>If you do not have any such application at hand, you can consider using <link
-            xlink:href="http://httpbin.org/get"/> but be polite and do not overload their server. It
-         is provided for free. </para>
-      <para>Now the important part comes. Create a file called <code>http-echo.dsl</code> (
-            <code>http-echo.xml</code> resp.) in the <code>$PERFCAKE_HOME/resources/scenarios</code>
-         directory. Now insert the following DSL (XML resp.) snippet in it: </para>
       <para>
-         <code>http-echo.dsl</code>: <programlisting language="java" linenumbering="numbered" startinglinenumber="1"><![CDATA[scenario "http-echo"
-   run 10.s with ${thread.count:10}.threads
-   generator "DefaultMessageGenerator"
-   sender "HttpSender" target "http://your-app.com/cool-app" method "GET"
-end]]> </programlisting></para>
+         Let’s assume you need to stress your web application that has some function exposed on the following URL:
+         <code>http://your-app.com/cool-app</code>
+         , and you need to test how fast the function is. You want to generate maximum load for 10 seconds (10000 miliseconds)
+         with 10 simultaneous clients (working threads).
+      </para>
       <para>
-         <code>http-echo.xml</code>: <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:6.0">
+         If you do not have any such application at hand, you can consider using
+         <link xlink:href="http://httpbin.org/get"/>
+         but be polite and do not overload their server. It is provided for free.
+      </para>
+      <para>
+         Now the important part comes. Create a file called
+         <code>http-echo.dsl</code>
+         (
+         <code>http-echo.xml</code>
+         resp.) in the
+         <code>$PERFCAKE_HOME/resources/scenarios</code>
+         directory.
+         Now insert the following DSL (XML resp.) snippet in it:
+      </para>
+      <para>
+         <code>http-echo.dsl</code>:
+         <programlisting language="java" linenumbering="numbered" startinglinenumber="1"><![CDATA[ scenario "http-echo"
+    run 10.s with ${thread.count:10}.threads
+    generator "DefaultMessageGenerator"
+    sender "HttpSender" target "http://your-app.com/cool-app" method "GET"
+ end]]></programlisting>
+      </para>
+      <para>
+         <code>http-echo.xml</code>:
+         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<scenario xmlns="urn:perfcake:scenario:7.0">
    <run type="time" value="10000"/>
    <generator class="DefaultMessageGenerator" 
               threads="${thread.count}"/>
@@ -147,7 +161,7 @@ end]]> </programlisting></para>
 end]]> </programlisting></para>
       <para><code>http-reporting.xml</code>:
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:6.0">
+<scenario xmlns="urn:perfcake:scenario:7.0">
    <run type="time" value="10000"/>
    <generator class="DefaultMessageGenerator" 
               threads="${thread.count:10}"/>
@@ -157,6 +171,8 @@ end]]> </programlisting></para>
    </sender>
    <reporting>
       <reporter class="ResponseTimeStatsReporter">
+         <property name="minumumEnabled" value="false"/>
+         <property name="maximumEnabled" value="false"/>
          <destination class="ChartDestination">
             <period type="time" value="1000"/>
             <property name="name" value="Response Time"/>
@@ -178,32 +194,39 @@ end]]> </programlisting></para>
          Output will be provided every 2 seconds (2000 miliseconds).
       </para>
       <para> Try to run the scenario again by the following command: <programlisting><![CDATA[
-2015-09-23 13:30:11,310 INFO {org.perfcake.ScenarioExecution} === Welcome to PerfCake 6.0 ===
-2015-09-23 13:30:11,311 INFO {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
-2015-09-23 13:30:11,312 INFO {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 605ns.
-A single thread is now able to measure maximum of 1652892 iterations/second.
-2015-09-23 13:30:11,331 INFO {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
-2015-09-23 13:30:11,390 INFO {httl} Using slf4j logger for httl., httl: 1.0.11, jvm: 1.8.0_31, os: Linux 3.14.27-100.fc19.x86_64 amd64
-[0:00:02][1823 iterations][29%] [3.152025 ms] [Threads => 10] [Average => 6.367008149088894 ms] [warmUp => false]
-[0:00:03][5060 iterations][39%] [2.698051 ms] [Threads => 10] [Average => 4.245464461477511 ms] [warmUp => false]
-[0:00:04][9423 iterations][49%] [1.940839 ms] [Threads => 10] [Average => 3.323919806458463 ms] [warmUp => false]
-[0:00:05][14684 iterations][59%] [1.555495 ms] [Threads => 10] [Average => 2.805643889532502 ms] [warmUp => false]
-[0:00:07][23586 iterations][74%] [1.401873 ms] [Threads => 10] [Average => 2.373560429316712 ms] [warmUp => false]
-[0:00:08][32674 iterations][89%] [3.777534 ms] [Threads => 10] [Average => 2.1659369298922284 ms] [warmUp => false]
-[0:00:09][38948 iterations][99%] [1.776092 ms] [Threads => 10] [Average => 2.0701102116441534 ms] [warmUp => false]
-2015-09-23 13:30:21,332 INFO {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end.
-[0:00:10][39293 iterations][100%] [1.888512 ms] [Threads => 10] [Average => 2.067882293274619 ms] [warmUp => false]
-2015-09-23 13:30:21,332 INFO {org.perfcake.reporting.ReportManager} Reporting final results:
-2015-09-23 13:30:21,677 INFO {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
-2015-09-23 13:30:21,678 INFO {org.perfcake.ScenarioExecution} === Goodbye! ===]]>   </programlisting></para>
-      <para>The <code>warmUp</code> attribute you can see in the results determines the mode of the
-         test. In our example we do not wait for the server to warm up so the attribute is set to
-         false all the time. </para>
-      <para>ChartDestination specified in the scenario produces a chart report with the chart
-         similar to the following that can be found under
-            <code>$PERFCAKE_HOME/perfcake-charts</code> directory. </para>
-      <figure id="ug.introduction.first-performance-test.quickstart.chart">
-         <title>RampUpDownGenerator time chart</title>
+2016-05-11 15:08:43,166 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/pmacik/work/perfcake-7.0-SNAPSHOT/resources/scenarios/http-reporting.xml
+2016-05-11 15:08:43,364 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
+2016-05-11 15:08:43,365 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
+2016-05-11 15:08:43,365 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 253ns. A single thread is now able to measure maximum of 3952569 iterations/second.
+2016-05-11 15:08:43,550 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
+[0:00:01][100 iterations][18%] [123.970597 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 141.66183724999993 ms]
+[0:00:02][180 iterations][28%] [129.702537 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 133.85898331111105 ms]
+[0:00:03][264 iterations][38%] [121.80858 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 130.7269809734848 ms]
+[0:00:05][385 iterations][53%] [123.172814 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 128.5775626857142 ms]
+[0:00:06][503 iterations][68%] [129.238332 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 127.93369352882702 ms]
+[0:00:07][581 iterations][78%] [140.818277 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 127.76558587607585 ms]
+[0:00:08][659 iterations][88%] [133.277523 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 127.59124825493183 ms]
+2016-05-11 15:08:53,556 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end.
+2016-05-11 15:08:53,557 INFO  {org.perfcake.reporting.ReportManager} Checking whether there are more results to be reported...
+[0:00:10][761 iterations][100%] [121.907371 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 127.3642412483575 ms]
+2016-05-11 15:08:53,661 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
+2016-05-11 15:08:53,663 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===
+]]>
+         </programlisting>
+      </para>
+      <para>
+         The
+         <code>warmUp</code>
+         attribute you can see in the results determines the mode of the test. In our example we do not wait
+         for the server to warm up so the attribute is set to false all the time.
+      </para>
+      <para>
+         ChartDestination specified in the scenario produces a chart report with the chart similar to the following that can be found under
+         <code>$PERFCAKE_HOME/perfcake-charts</code>
+         directory.
+      </para>
+      <figure xml:id="ug.introduction.first-performance-test.quickstart.chart">
+         <title>Your first performance test chart report</title>
          <graphic format="PNG" fileref="./images/quickstart-chart.png" scalefit="1" width="100%" align="center"/>
       </figure>
    </section>
