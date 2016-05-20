@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.changelog.scenario-format" version="7.0">
-   <title>Changes in scenario format</title>
-   <para>
-      All the changes in scenario format are described in details and can be found in
-      <xref linkend="ug.perfcake-features.migrating-scenarios"/>
-      .
-   </para>
-</section>
