@@ -233,3 +233,10 @@ h4 {
 .hl-doctype {
 	font-weight: bold;
 }
+
+.code {
+	background-color: #eeeeee;
+	border: 1px solid #dddddd;
+	padding: 0.2em;
+	line-height: 1.6em;
+}

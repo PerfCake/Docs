@@ -16,15 +16,13 @@
       property.
       Default expected response code is 200.
    </para>
-   <para>
-      To set headers of the HTTP request use the
-      <code>header</code>
-      element of the particular
-      <code>message</code>
-      element in the
-      <code>messages</code>
-      section of the scenario definition.
-   </para>
+   <para> To set headers of the HTTP request use the <code>header</code> element of the particular
+         <code>message</code> element in the <code>messages</code> section of the scenario
+      definition.</para>
+   <para>The <code>Content-Type</code> header is set automatically by the sender for all messages to
+      the value of <code>text/plain; charset=utf-8</code> by default. Also
+         <code>Content-Length</code> header is generated and set automatically to the value of
+      message payload size if the payload is not empty.</para>
    <para>The target of the sender is an URL, where the message is send.</para>
    <para>
       Following table shows the properties of the HttpSender:
