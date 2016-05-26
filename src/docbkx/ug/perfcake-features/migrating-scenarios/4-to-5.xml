@@ -80,4 +80,11 @@
    </sender>]]></programlisting>
       </section>
    </section>
+   <section xml:id="ug.perfcake-features.migrating-scenarios.mirating.4-to-5.xslt">
+      <title>Scenario conversion using XSLT</title>
+      <para>It is possible to automatically migrate scenarios from version 4 to version 5. For
+         instructions on running the migration using PerfCake sources, please refer to
+            <emphasis>"Transformation of Scenarios"</emphasis> section in the Developers'
+         Guide.</para>
+   </section>
 </section>

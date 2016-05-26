@@ -1,40 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.scenario-definition.filtering-properties" version="7.0">
    <title>Filtering properties</title>
-   <para>It is possible to use property placeholders in scenarios (and in messages too, see later).
-      The placeholders are replaced by the actual value of the particular property or by the default value if specified in a process
-      called property filtering.
-   </para>
-   <para>The properties are loaded from system properties and environment properties (in this
-      order). To limit just to one of these sources, one can specify a namespace prefix <emphasis
-         role="italic">env.</emphasis> for environment properties and <emphasis role="italic"
-         >props.</emphasis> for system properties. </para>
-   <para>A placeholder has the following format:</para>
-   <programlisting><![CDATA['${' + <property name> + (':' + <default value>) + '}']]></programlisting>
-      <para><emphasis role="bold">An example of a scenario with a property placeholder without the
-         default value</emphasis></para>
+   <para>It is possible to use property placeholders in scenarios (and in other components of the
+      scenario, see later). The placeholders are replaced by the actual value of the particular
+      property or by the default value if specified in a process called property filtering.</para>
+   <para>This proces is quite complex and allows many useful manipulations with the values provided
+      in the scenario.</para>
+   <para>At first, when the scenario is loaded from a file (no matter which format is used), all the
+      placeholders of the following format are loaded and replaced by appropriate values if they are
+      found.</para>
+   <programlisting><![CDATA[${<property name>:<default value>}]]></programlisting>
+   <para>The colon and the default value are optional. Also, any properties specified in the scenario
+      are loaded and put into system properties.</para>
+   <para>During this phase, PerfCake checks for properties in the system properties and then in
+      environment properties. We can also limit it to check just one of the sources by providing a
+      prefix to the property name. The prefix can be <emphasis role="italic">env.</emphasis> for
+      environment properties and <emphasis role="italic">props.</emphasis> for system
+      properties.</para>
+   <para>The properties found in the scenario can be used throughout the scenario as well and can be
+      also used as in other properties. However, circular definitions do not work.</para>
+   <example>
+      <title>An example of a scenario with properties</title>      
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:${perfcake.scenario.version}">
+<scenario xmlns="urn:perfcake:scenario:7.0">
+   <properties>
+      <property name="composedProperty" value="${defaultProperty}-2"/>
+      <property name="defaultProperty" value="${test.missing.property:default-property-value}"/>
+   </properties>
    ...
+   <messages>
+      <message uri="unfiltered-message.txt">
+         <header name="testHeader" value="${defaultProperty}"/>
+      </message>
+   </messages>
 </scenario>]]></programlisting>
-      <para><emphasis role="bold">An example of a scenario with a property placeholder with the
-         default value of "7.0"</emphasis></para>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:${perfcake.version:7.0}">
-   ...
-</scenario>]]></programlisting>
+   </example>
    <para>The property filtering process is performed in a moment, when a scenario file is loaded by
-      PerfCake, before it is parsed. There are no advanced features, just a simmple string
-      replacement for scenario files. </para>
+      PerfCake, before it is parsed. There are no advanced features, just a simple string
+      replacement for scenario files. The placeholders can be at any place in the scenario file
+      because PerfCake approaches the scenario as a simple string without any syntax meaning. </para>
    <para>The filtering tries to find the property by name. If the property is found, the whole
       placeholder is replaced by property's actual value. If the specified property does not exist,
       it looks for the default value if it is specified. If so the whole placeholder is replaced by
-      the default value. Otherwise it leaves the placeholder in place intact. </para>
+      the default value. Otherwise it leaves the placeholder in place intact.</para>
+   <para>More complex filtering is available for some components of the system. The advanced
+      filtering works for: <emphasis>Sender</emphasis>'s <emphasis>target</emphasis> attribute, any
+      part of <emphasis>Message</emphasis> including content loaded from an external file, and for
+      patterns in <emphasis>RegExpValidator</emphasis>.</para>
+   <para>The following types of placeholders are supported:</para>
+   <para>
+      <programlisting><![CDATA[${<property name>:<default value>}
+@{<property name>:<default value>}]]></programlisting>
+   </para>
+   <para>Any character can be escaped by a backslash. Especially <code>$</code>, <code>@</code>,
+         <code>{</code>, and <code>}</code>. These characters should not appear unescaped if they
+      are not supposed to act as control characters. However, the default value of a property can
+      contain anything except for <code>}</code>. Also, backshlash needs to be escaped. Colon is not
+      allowed in the property name and no cahracters can be escaped in it.</para>
+   <para>The following table lists a few examples of strings and how they are rendered in the end.
+      Suppose we have the following system properties set: <code>ab = 1</code>, <code>cd =
+      2</code>.</para>
+   <table frame="all" xml:id="ug.perfcake-features.scenario-definition.filtering-properties.template-examples-table">
+      <title>Examples of templates and how they are rendered</title>
+      <tgroup cols="2" align="left" colsep="1" rowsep="1">
+         <colspec colname="Template" colwidth="1*"/>
+         <colspec colname="Result" colwidth="1*"/>
+         <thead>
+            <row>
+               <entry>Template</entry>
+               <entry>Result</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry><code>${ab:cd}</code></entry>
+               <entry><code>1</code></entry>
+            </row>
+            <row>
+               <entry><code>\\${cd}</code></entry>
+               <entry><code>\2</code></entry>
+            </row>
+            <row>
+               <entry><code>\${ab}</code></entry>
+               <entry><code>${ab}</code></entry>
+            </row>
+            <row>
+               <entry><code>${non.existing:\}$@\\}</code></entry>
+               <entry><code>}$@\</code></entry>
+            </row>
+            <row>
+               <entry><code>\\\@{cd}</code></entry>
+               <entry><code>\@{cd}</code></entry>
+            </row>
+            <row>
+               <entry><code>${env.JAVA_HOME}</code></entry>
+               <entry>System dependant, for example: <code>/opt/jdk</code></entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <para>Properties with the <emphasis>dollar</emphasis> sign are replaced just once, while the
+      properties with the <emphasis>at</emphasis> sign (so called dynamic properties) are alsways
+      rendered again with every single use and thus containing a fresh value. This is mainly useful
+      for <xref linkend="ug.reference-guide.sequences">Sequences</xref>. Please note that rendering
+      values of the placeholders with the <emphasis>at</emphasis> sign can introduce a slight
+      performance impact. PerfCake tries to switch of the placeholder rendering whenever possible
+      (when there are no dynamic properties present in the particular string).</para>
+   <para>In the case of advanced property filtering, the environment and system properties need to
+      be strictly separated and referenced with the corresponding prefix. The environment properties
+      are accessed by <code>${env.&lt;property name>}</code>. The system properties can be accessed
+      by <code>${props.&lt;property value>}</code>, <code>${props[&lt;property value>]}</code>, and
+         <code>${props['&lt;property value>']}</code>.</para>
+   <para>Also, these placeholders are considered ultimate and no possible replacing is possible. So
+      in case when there is no property available and there is no default value, they are replaced
+      by the <code>null</code> string.</para>
+   <para>Both of the replacement strategies can be combined to achieve interesting results. For
+      example, to define a property in a scenario the value of which is derived from another
+      property defined there, and to use it in the meesage content, we need to use the following
+      approach.</para>
+   <example>
+      <title>An example of a scenario with combined property replacement strategies</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<scenario xmlns="urn:perfcake:scenario:7.0">
+   <properties>
+      <property name="composedProperty" value="${props.defaultProperty}-2"/>
+      <property name="defaultProperty" value="${test.missing.property:default-property-value}"/>
+   </properties>
+   ...
+   <messages>
+      <message content="${props.composedProperty}"/>
+   </messages>
+</scenario>]]></programlisting>
+   </example>
+   <para>As you can see, we had to use the advanced approach to refer to the
+         <code>composedProperty</code> and to the <code>defaultProperty</code>. This is because
+      PerfCake first reads the scenario, defines the values of both <code>composedProperty</code>
+      and <code>defaultProperty</code>. But at that time, we did not know the value of the
+         <code>defaultProperty</code> and it could not be used to replace the value in the
+         <code>composedProperty</code>. So the <code>composedProperty</code> remains exactly as seen
+      the example. Now PerfCake parses the scenarion by a syntax parser. The value of the
+         <code>defaultProperty</code> is now known but in this stage, only the advanced templating
+      is supported. So the <code>props.</code> prefix worked and we got the correct value
+         <code>default-property-value-2</code> in the message content.</para>
    <para>To provide PerfCake the actual value of the property you can just pass it using an ordinary
-      way: <programlisting><![CDATA[-D<property.name>=<property.value>]]></programlisting></para>
-   <para>Another way is to configure an environment property in the operating system. In case the
-      same property exists both as a system property and as an environment property, the system
-      property takes precedence. </para>
+      way: <programlisting><![CDATA[-D<property name>=<property value>]]></programlisting></para>
+   <note>
+      <para>In Windows command shell, the parameter specifying the property name and value might
+         need to be placed in double quotes: <code>"-D&lt;property name>=&lt;property
+         value>"</code></para>
+   </note>
    <para>There are several properties that exist in PerfCake and that might be usefull in the scenarios
       or messages (e.g. a timestamp of the scenario execution start). The following table describes all available
       internal properties.
@@ -69,7 +183,12 @@
             </row>
             <row>
                <entry>perfcake.run.timestamp</entry>
-               <entry>A timestamp of a moment when the scenario execution started</entry>
+               <entry>A Unix timestamp of the moment of the scenario execution start</entry>
+            </row>
+            <row>
+               <entry>perfcake.run.nice.timestamp</entry>
+               <entry>A timestamp of the moment of the scenario execution start in a human readable
+                  format (<code>yyyyMMddHHmmss</code>).</entry>
             </row>
             <row>
                <entry>perfcake.scenario</entry>
@@ -78,6 +197,10 @@
             <row>
                <entry>perfcake.scenarios.dir</entry>
                <entry>Scenarios directory</entry>
+            </row>
+            <row>
+               <entry>perfcake.logging.level</entry>
+               <entry>Logging level of the PerfCake core</entry>
             </row>
          </tbody>
       </tgroup>

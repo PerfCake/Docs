@@ -5,7 +5,16 @@
       The following list shows the steps that are needed to migrate from PerfCake version 6.x to 7.x:
       <itemizedlist>
          <listitem>
-            <simpara>Rename scenario XML schema namespace</simpara>
+            <simpara>Rename scenario XML schema namespace.</simpara>
+         </listitem>
+         <listitem>
+            <para>RegExp validator now needs to have the backslashed in the patter specification
+               escaped as well.</para>
+         </listitem>
+         <listitem>
+            <para>Due to an update in the templating engine, we now longer support arithmetic
+               expressions in templates and the default values in property placeholders are replaced
+               by colon (instead of the <emphasis>pipe</emphasis> "|" character).</para>
          </listitem>
       </itemizedlist>
       The following sections describe each step in detail.
@@ -17,6 +26,25 @@
          <para>The namespace of the XML schema for scenarios has been renamed from
                <code>urn:perfcake:scenario:6.0</code> to <code>urn:perfcake:scenario:7.0</code> so
             it must be updated in the scenario XML files. </para>
+      </section>
+      <section xml:id="ug.perfcake-features.migrating-scenarios.6-to-7.steps.regexp">
+         <title>Update RegExp Validator patterns</title>
+         <para>In every patter specified in the scenario, add one more backslash to places where a
+            backslash was previously used to escape RegExp character. For example, change
+               <code>.*"I'm a [Ff]ish"!\.*</code> to <code>.*"I'm a [Ff]ish"!\\.*</code> because the
+            second dot is meant to match a dot character and not any character as it does in a
+            RegExp.</para>
+         <para>Please refer to <xref
+               linkend="ug.reference-guide.validation.validators.RegExpValidator"/> for more
+            details.</para>
+      </section>
+      <section xml:id="ug.perfcake-features.migrating-scenarios.6-to-7.steps.templates">
+         <title>Update template placeholders</title>
+         <para>Replace <code>${property||default}</code> with <code>${property:default}</code>.
+            Replace arithmetic expressions like <code>@{property + 1}</code> with custom <xref
+               linkend="ug.reference-guide.sequences">Sequences</xref>.</para>
+         <para>For more details on the advanced features of proeprties filtering read <xref
+               linkend="ug.perfcake-features.scenario-definition.filtering-properties"/>.</para>
       </section>
    </section>
 </section>

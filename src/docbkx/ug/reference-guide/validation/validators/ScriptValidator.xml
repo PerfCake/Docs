@@ -3,9 +3,11 @@
    <title>ScriptValidator</title>
    <para>Validates messages using Java Script Engine and the provided script. The script engine must
       be installed in the extensions directory. The original message is passed to the script in the
-         <code>originalMessage</code> property and the response is inserted as <code>message</code>,
-      both using script bindings. The script return value is evaluated for validation success
-         (<code>true</code> for passed, <code>false</code> for failed). </para>
+         <code>originalMessage</code> property, the response is inserted as <code>message</code>,
+      the attributes used for the particular message instance are passed as <code>attributes</code>,
+      and logger is passed as <code>log</code>, all using script bindings. The script return value
+      is evaluated for validation success (<code>true</code> for passed, <code>false</code> for
+      failed). </para>
    <para>Following table shows the properties of the ScriptValidator: <table frame="all">
       <title>ScriptValidator properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -24,23 +26,22 @@
          <tbody>
             <row>
                <entry>engine</entry>
-               <entry>The name of the Java Script Engine.</entry>
+               <entry>The name of the Java Scripting Engine (please do not confuse with
+                     JavaScript).</entry>
                <entry>Yes</entry>
                <entry>-</entry>
             </row>
             <row>
                <entry>script</entry>
                <entry>The code of the validation script. Takes priority over
-                        <code>scriptEngine</code>.</entry>
-               <entry>Either <code>script</code> or <code>scriptEngine</code> must be
-                     present</entry>
+                     <code>scriptFile</code>.</entry>
+               <entry>Either <code>script</code> or <code>scriptFile</code> must be present</entry>
                <entry>-</entry>
             </row>
             <row>
-               <entry>scriptEngine</entry>
+               <entry>scriptFile</entry>
                <entry>The location of the validation script file.</entry>
-               <entry>Either <code>script</code> or <code>scriptEngine</code> must be
-                     present</entry>
+               <entry>Either <code>script</code> or <code>scriptFile</code> must be present</entry>
                <entry>-</entry>
             </row>
          </tbody>
@@ -50,9 +51,13 @@
    
    <example>
       <title>An example of ScriptValidator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <validator id="rimmerValidator" class="ScriptValidator">
-      <property name="pattern">
-         <text><![CDATA[.*"I'm a [Ff]ish"!\.*]]]]><![CDATA[></text>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <validator id="groovyValidator" class="ScriptValidator">
+      <property name="engine" value="groovy" />
+      <property name="script">
+         <![CDATA[
+            log.info("Be groovy")
+            return message.payload.toString().contains('Pepa')
+         ]]]]><![CDATA[>
       </property>
    </validator>]]></programlisting>
    </example>

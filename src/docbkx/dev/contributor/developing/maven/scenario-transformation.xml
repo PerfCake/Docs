@@ -5,10 +5,15 @@
    <title>Transformation of Scenarios</title>
    <para>It is possible to automatically transform scenarios from previous versions of PerfCake into
       the newest one. There are XSTL stylesheets included and they can be used by invoking the
-         <emphasis>xml:transform</emphasis> goal. </para>
+         <emphasis>xml:transform</emphasis> goal and specific profile (see below). </para>
    <para>There are properties that can be used to control the transformation. They are described in the following table.</para>
-   <para>More details on using the transformation can be found in the <emphasis>Users'
-         Guide</emphasis>.</para>
+   <para>It is currently possible to automatically migrate from version 2 to 3, and from version 4 to
+      5. The Maven profiles are correspondingly named <code>2-to-3</code>, and <code>4-to-5</code>.
+      The migration is started by invoking:</para>
+   <programlisting><![CDATA[$ mvn xml:transform -P 2-to-3 -Dtransform.scenarios.dir=<source scenarios dir> \
+      -Dtransform.scenarios.outputDir=<target scenarios dir>]]></programlisting>
+   <para>Both directories must exist before starting the migration. All XML scenarios found in the
+      directories are transformed.</para>
    <table frame="all">
       <title>XML plugin properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
