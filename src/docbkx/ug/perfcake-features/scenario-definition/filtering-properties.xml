@@ -104,15 +104,15 @@
       rendered again with every single use and thus containing a fresh value. This is mainly useful
       for <xref linkend="ug.reference-guide.sequences">Sequences</xref>. Please note that rendering
       values of the placeholders with the <emphasis>at</emphasis> sign can introduce a slight
-      performance impact. PerfCake tries to switch of the placeholder rendering whenever possible
+      performance impact. PerfCake tries to switch off the placeholder rendering whenever possible
       (when there are no dynamic properties present in the particular string).</para>
    <para>In the case of advanced property filtering, the environment and system properties need to
       be strictly separated and referenced with the corresponding prefix. The environment properties
       are accessed by <code>${env.&lt;property name>}</code>. The system properties can be accessed
       by <code>${props.&lt;property value>}</code>, <code>${props[&lt;property value>]}</code>, and
          <code>${props['&lt;property value>']}</code>.</para>
-   <para>Also, these placeholders are considered ultimate and no possible replacing is possible. So
-      in case when there is no property available and there is no default value, they are replaced
+   <para>Also, these placeholders are considered ultimate and no more replacing is possible. So in
+      the case when there is no property available and there is no default value, they are replaced
       by the <code>null</code> string.</para>
    <para>Both of the replacement strategies can be combined to achieve interesting results. For
       example, to define a property in a scenario the value of which is derived from another

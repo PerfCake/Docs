@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.handling-issues" version="7.0">
-   <title>Handling issues during excution</title>
-   <para>PerfCake tries to overcome as many issues as it can. For a 100% validity of your performance test results,
-      always make sure there are no warning or errors in the log. Such issues can be a problem with message template
-      (the template isused without being parsed), a reporter with smaller reporting period than 500ms (the reporter is skipped) etc.
-      More critical issues are reported with a non-zero exit code. See section Exit codes.
-   </para>
+   <title>What to take care of during execution</title>
+   <para>By default PerfCake performs and initial benchmark to figure out the local system timer
+      resolution. This is important to know because some systems (especially virtual machines) might
+      have a very low resolution. If the system being measured by PerfCake is faster than the
+      shortest period between system timer updates, PerfCake is not capable of reporting correct
+      results. The information about the resolution can be found in the log and in the
+      output.</para>
+   <programlisting><![CDATA[2016-05-27 12:53:32,888 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
+2016-05-27 12:53:32,889 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 279ns. A single thread is now able to measure maximum of 3584229 iterations/second.]]></programlisting>
+   <para>PerfCake tries to overcome as many issues as it can. For a 100% validity of your
+      performance test results, always make sure there are no warning or errors in the log. Such
+      issues can be a problem with message template (the template was used without being parsed), a
+      reporter with smaller reporting period than 500ms (the reporter is skipped) etc. More critical
+      issues are reported with a non-zero exit code. See section Exit codes. It is also possible to
+      configure PerfCake to fail immediately when a Message Sender experiences an error (see
+      perfcake.fail.fast property in <xref linkend="ug.perfcake-features.configuration"/>).</para>
+   <para>Also pay attention to PerfCake output at the end of the execution. DefaultMessageGenerator
+      waits for termination of all threads that were used to send the messages. This is configured
+      by the shutdownPeriod property in the scenario. The default value is to wait for 1000ms. If
+      the threads do not manage to terminate their work, you can see warnings in the log like in the
+      example below.</para>
+   <programlisting><![CDATA[2016-05-27 12:54:06,027 WARN  {org.perfcake.message.generator.DefaultMessageGenerator} Cannot terminate all sender tasks. Set higher shutdownPeriod for the generator in your scenario. Remaining tasks/threads active: 8/8
+2016-05-27 12:54:06,027 WARN  {org.perfcake.ScenarioExecution} There are some blocked threads that were not possible to terminate. The test results might be flawed. This is usually caused by deadlocks or race conditions in the application under test.]]></programlisting>
 </section>
