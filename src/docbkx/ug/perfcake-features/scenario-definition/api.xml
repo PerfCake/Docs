@@ -1,5 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.scenario-definition.api" version="7.0">
    <title>Scenario specified through API</title>
-   <para>TODO: complete</para>
+   <para>It is also possible to run PerfCake by utilizing its API. The simplest way is to load a
+      scenario specified in an external file (or even URL location) and execute it.</para>
+   <example>
+      <title>Loading of a scenario definition and its execution from API </title>
+      <programlisting language="java"><![CDATA[import org.perfcake.scenario.Scenario;
+import org.perfcake.scenario.ScenarioLoader;
+...
+      final Scenario scenario = ScenarioLoader.load("/full/path/http.xml");
+
+      scenario.init();
+      scenario.run();
+      scenario.close();]]></programlisting>
+   </example>
+   <para>A call to the <code>run()</code> method is blocking and does not return until all messages
+      are sent or a fatal error occurs. It is however possible to stop the scenario execution from
+      another thread by a call to the <code>stop()</code> method of the <code>Scenario</code> class.
+      The termination is not immediate, rather a graceful shutdown is performed.</para>
+   <para>It is also possible to build the complete scenario from scratch using PerfCake API. Most
+      objects are designed with fluent API so you can easily join multiple setter methods.</para>
+   <example>
+      <title>Complete scenario definition and execution using its API</title>
+      <programlisting language="java"><![CDATA[import org.perfcake.PerfCakeException;
+import org.perfcake.RunInfo;
+import org.perfcake.common.Period;
+import org.perfcake.common.PeriodType;
+import org.perfcake.message.Message;
+import org.perfcake.message.MessageTemplate;
+import org.perfcake.message.generator.DefaultMessageGenerator;
+import org.perfcake.message.generator.MessageGenerator;
+import org.perfcake.message.sender.HttpSender;
+import org.perfcake.message.sender.MessageSender;
+import org.perfcake.message.sequence.PrimitiveNumberSequence;
+import org.perfcake.message.sequence.Sequence;
+import org.perfcake.reporting.destinations.ConsoleDestination;
+import org.perfcake.reporting.destinations.Destination;
+import org.perfcake.reporting.reporters.IterationsPerSecondReporter;
+import org.perfcake.reporting.reporters.Reporter;
+import org.perfcake.scenario.Scenario;
+import org.perfcake.validation.MessageValidator;
+import org.perfcake.validation.RegExpValidator;
+...
+      final Period period = new Period(PeriodType.TIME, 30_000);
+      final RunInfo runInfo = new RunInfo(period);
+
+      final MessageGenerator generator = new DefaultMessageGenerator();
+      generator.setThreads(10);
+
+      final MessageValidator validator = new RegExpValidator().setCaseInsensitive(true).setPattern(".*");
+
+      final Message message = new Message();
+      message.setPayload("Hello world no. @{intSeq}!");
+
+      final MessageTemplate messageTemplate = new MessageTemplate(message, 1, Collections.singletonList("regExp"));
+
+      final MessageSender sender = new HttpSender().setMethod(HttpSender.Method.POST).setTarget("http://httpbin.org/post");
+
+      final Sequence sequence = new PrimitiveNumberSequence();
+
+      final Destination destination = new ConsoleDestination();
+
+      final Reporter reporter = new IterationsPerSecondReporter();
+      reporter.registerDestination(destination, new Period(PeriodType.TIME, 1000));
+
+      final ScenarioBuilder builder = new ScenarioBuilder(runInfo, generator, sender);
+      builder.putMessageValidator("regExp", validator).addMessage(messageTemplate).
+            putSequence("intSeq", sequence).addReporter(reporter).addMessage(messageTemplate);
+
+      final Scenario scenario = builder.build();
+
+      scenario.init();
+      scenario.run();
+      scenario.close();]]></programlisting>
+   </example>
+   <para>The API is slightly counter-intuitive because the scenario needs to be composed from the
+      bottom to top. For example, we first need to define a <emphasis>Message Validator</emphasis>
+      to validate a message and then use it to create a <emphasis>Message Template</emphasis>. Next,
+      we set the <emphasis>Message Validator</emphasis> reference ID later when passing it to the
+         <code>ScenarioBuilder</code>.</para>
+   <para>Similar concept works for <emphasis>Sequences</emphasis> and <emphasis>Message
+         Reporters</emphasis> and others.</para>
 </section>

@@ -13,14 +13,16 @@
       performance test results, always make sure there are no warning or errors in the log. Such
       issues can be a problem with message template (the template was used without being parsed), a
       reporter with smaller reporting period than 500ms (the reporter is skipped) etc. More critical
-      issues are reported with a non-zero exit code. See section Exit codes. It is also possible to
+      issues are reported with a non-zero exit code. See section <xref
+         linkend="ug.perfcake-features.exit-codes">Exit codes</xref>. It is also possible to
       configure PerfCake to fail immediately when a Message Sender experiences an error (see
-      perfcake.fail.fast property in <xref linkend="ug.perfcake-features.configuration"/>).</para>
-   <para>Also pay attention to PerfCake output at the end of the execution. DefaultMessageGenerator
-      waits for termination of all threads that were used to send the messages. This is configured
-      by the shutdownPeriod property in the scenario. The default value is to wait for 1000ms. If
-      the threads do not manage to terminate their work, you can see warnings in the log like in the
-      example below.</para>
+         <code>perfcake.fail.fast</code> property in <xref
+         linkend="ug.perfcake-features.configuration"/>).</para>
+   <para>Also pay attention to PerfCake output at the end of the execution.
+         <code>DefaultMessageGenerator</code> waits for termination of all threads that were used to
+      send the messages. This is configured by the <code>shutdownPeriod</code> property in the
+      scenario. The default setting is to wait for 1000ms. If the threads do not manage to terminate
+      their work, you can see warnings in the log like in the example below.</para>
    <programlisting><![CDATA[2016-05-27 12:54:06,027 WARN  {org.perfcake.message.generator.DefaultMessageGenerator} Cannot terminate all sender tasks. Set higher shutdownPeriod for the generator in your scenario. Remaining tasks/threads active: 8/8
 2016-05-27 12:54:06,027 WARN  {org.perfcake.ScenarioExecution} There are some blocked threads that were not possible to terminate. The test results might be flawed. This is usually caused by deadlocks or race conditions in the application under test.]]></programlisting>
 </section>
