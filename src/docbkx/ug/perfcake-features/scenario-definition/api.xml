@@ -66,7 +66,7 @@ import org.perfcake.validation.RegExpValidator;
 
       final ScenarioBuilder builder = new ScenarioBuilder(runInfo, generator, sender);
       builder.putMessageValidator("regExp", validator).addMessage(messageTemplate).
-            putSequence("intSeq", sequence).addReporter(reporter).addMessage(messageTemplate);
+            putSequence("intSeq", sequence).addReporter(reporter);
 
       final Scenario scenario = builder.build();
 
