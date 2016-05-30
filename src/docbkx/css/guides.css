@@ -108,6 +108,11 @@ h4 {
 	display: none;
 }
 
+body > .book, body > .chapter, body > .sect1, body > .sect2, body > .section, body > .preface {
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
 .book,.chapter,.sect1,.sect2,.section,.preface {
 	width: 1000px;
 	margin-top: 1em;

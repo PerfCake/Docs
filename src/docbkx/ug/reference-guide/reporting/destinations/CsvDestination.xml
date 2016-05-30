@@ -3,7 +3,7 @@
    <title>CsvDestination</title>
    <para>This destination can be used to publish the measurements into a CSV file. Each result in
       the measurement is treated as a column in the file and the name of the result is used to name
-      the column. </para>
+      the column.</para>
    <para>The following table describes the CsvDestination's properties <table frame="all">
          <title>CsvDestination properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -42,8 +42,8 @@
                   <entry> A strategy that is used in case, that the output file exists.
                         <code>overwrite</code> means that the file is overwritten,
                         <code>rename</code> means that the current output file is renamed by adding
-                     a number-based suffix and <code>forceAppend</code> is for appending new results
-                     to the original file. </entry>
+                     a number-based suffix and <code>append</code> is for appending new results to
+                     the original file. </entry>
                   <entry>No</entry>
                   <entry>rename</entry>
                </row>
