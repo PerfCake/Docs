@@ -16,7 +16,9 @@
       above). </para>
    <para>During a shutdown, the thread queue is regularly checked every period specified by the
          <code>shutdownPeriod</code> for the threads finishing their work. If the same amount of
-      threads keeps running for this period, they are forcefully stopped. </para>
+      threads keeps running for this period, they are forcefully stopped. If the
+         <code>shutdownPeriod</code> is set to the value of <code>-1</code> it's value is auto-tuned
+      at the end of the scenario execution to the value of 5 times the average response time.</para>
    <para>The following table shows the properties of the DefaultMessageGenerator: <table frame="all">
          <title>DefaultMessageGenerator properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
