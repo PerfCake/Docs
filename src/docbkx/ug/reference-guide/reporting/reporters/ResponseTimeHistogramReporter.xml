@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.ResponseTimeHistogramReporter" version="7.0">
+   <title>ResponseTimeHistogramReporter</title>
+   <para>TBD</para>
+   <table frame="all">
+      <title>ResponseTimeHistogramReporter properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>minimumEnabled</entry>
+               <entry>Enables minimal value measuring.</entry>
+               <entry>No</entry>
+               <entry>true</entry>
+            </row>
+            <row>
+               <entry>maximumEnabled</entry>
+               <entry>Enables maximal value measuring.</entry>
+               <entry>No</entry>
+               <entry>true</entry>
+            </row>
+            <row>
+               <entry>averageEnabled</entry>
+               <entry>Enables average value measuring.</entry>
+               <entry>No</entry>
+               <entry>true</entry>
+            </row>
+            <row>
+               <entry>windowSize</entry>
+               <entry>A window where the data for the statistics are taken from.</entry>
+               <entry>No</entry>
+               <entry>Integer.MAX_VALUE</entry>
+            </row>
+            <row>
+               <entry>histogram</entry>
+               <entry>A comma separated list of values where the histogram is split to individual ranges.</entry>
+               <entry>No</entry>
+               <entry>""</entry>
+            </row>
+            <row>
+               <entry>histogramPrefix</entry>
+               <entry>String prefix used in the result map for histogram entries. This prefix is followed by the mathematical representation of the particular range.</entry>
+               <entry>No</entry>
+               <entry>"in"</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <example>
+      <title>An example of ResponseTimeHistogramReporter configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ResponseTimeHistogramReporter">
+      ...
+      (destinations)
+      ...
+   </reporter>]]></programlisting>
+      <para>In the example above there is an instance of <code>ResponseTimeHistogramReporter</code> configured to
+         report the current and the average value of the throughput. </para>
+   </example>
+</section>

@@ -3,6 +3,7 @@
    <title>Reporters</title>
    <xi:include href="./reporters/IterationsPerSecondReporter.xml"/>
    <xi:include href="./reporters/MemoryUsageReporter.xml"/>
+   <xi:include href="./reporters/ResponseTimeHistogramReporter.xml"/>
    <xi:include href="./reporters/ResponseTimeStatsReporter.xml"/>
    <xi:include href="./reporters/ThroughputStatsReporter.xml"/>
    <xi:include href="./reporters/WarmUpReporter.xml"/>

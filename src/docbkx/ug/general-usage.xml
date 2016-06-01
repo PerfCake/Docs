@@ -6,6 +6,7 @@
    <xi:include href="./general-usage/warmup.xml"/>
    <xi:include href="./general-usage/monitoring-memory.xml"/>
    <xi:include href="./general-usage/charts.xml"/>
+   <xi:include href="./general-usage/hdr-histogram.xml"/>
    <xi:include href="./general-usage/response-validation.xml"/>
    <xi:include href="./general-usage/templates-sequences.xml"/>
    <xi:include href="./general-usage/measurement-basics.xml"/>

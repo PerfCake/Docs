@@ -99,8 +99,8 @@
          </tbody>
       </tgroup>
    </table>
-   <para>Properties with the <emphasis>dollar</emphasis> sign are replaced just once, while the
-      properties with the <emphasis>at</emphasis> sign (so called dynamic properties) are alsways
+   <para>Properties with the <emphasis>dollar</emphasis> sign ($) are replaced just once, while the
+      properties with the <emphasis>at</emphasis> sign (@, so called dynamic properties) are alsways
       rendered again with every single use and thus containing a fresh value. This is mainly useful
       for <xref linkend="ug.reference-guide.sequences">Sequences</xref>. Please note that rendering
       values of the placeholders with the <emphasis>at</emphasis> sign can introduce a slight
