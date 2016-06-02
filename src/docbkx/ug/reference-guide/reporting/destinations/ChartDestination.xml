@@ -1,13 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations.ChartDestination" version="7.0">
    <title>ChartDestination</title>
-   <para>Creates nice charts from the results. The charts are generated under directory specified by
-      the <code>outputDir</code> property. The charts in the same <code>group</code> can be later
-      combined together based on the names of the columns (reporter's result names). All previously
-      generated charts in the <code>outputDir</code> directory are placed in the final report. </para>
-   <para>Use with caution as the big number of results can take too long to load in the browser.
-      Each chart has a quick view file where the results can be seen while the test is still
-      running. </para>
+   <para>Creates nice charts from the results using the <link
+         xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://c3js.org/">C3.js</link>
+      library. The charts are quite powerful and we recommend reading this section thoroughly to
+      fully discover their capabilities. </para>
+   <para>A user typically needs to specify the location where the chart(s) will be stored. This is
+      set by the <code>outputDir</code> property. Next, a list of attributes that should be put in
+      the chart is specified in the <code>attributes</code> property. This is a comma separated list
+      of attributes that contains numbers. The charts cannot work with enumerations and text
+      attributes. The names of the attributes can be seen in the console using
+         <emphasis>ConsoleDestination</emphasis>. For example, in the listing below you can see the
+      following attributes listed (not all of them need to be used in
+         <emphasis>ChartDestination</emphasis>, you can select any subset suitable):
+         <emphasis>Threads</emphasis>, <emphasis>Minimum</emphasis>, <emphasis>Maximum</emphasis>,
+         <emphasis>failures</emphasis>, <emphasis>Average</emphasis>.</para>
+   <programlisting><![CDATA[[0:00:08][97112 iterations][97%] [2.068165 ms] [warmUp => false] [Threads => 25] [Minimum => 2.004637 ms] [Maximum => 13.024963 ms] [failures => 0] [Average => 2.1204630348576172 ms]]]></programlisting>
+   <para>Each chart also has some basic configuration properties specifying its name, the
+      description of X and Y axeses, and the height of the chart image in pixels. The output is
+      written as HTML files. The data files created are:</para>
+   <itemizedlist>
+      <listitem>
+         <para><code>${outputDir}/data/${name}-${timeStamp}.*</code> - containing chart meta data in
+            JSON format, chart data in a JavaScript file and a preview HTML file for each
+            chart,</para>
+      </listitem>
+      <listitem>
+         <para><code>${outputDir}/index.html</code> - the final report generated at the end of a
+            performance test,</para>
+      </listitem>
+      <listitem>
+         <para><code>${outputDir}/src/*</code> - HTML resources needed to render the charts even in
+            the offline mode.</para>
+      </listitem>
+   </itemizedlist>
+   <para>The destination can work in two modes. First is that all data are immediately written to
+      the file system and you can find  a preview file (see the list above) of the current state
+      during the performance testing. Once you open the preview HTML file in the browser, it is
+      automatically reloaded every 5 seconds. This mode can be only used when we specify precise
+      names of the attributes to be recorded.</para>
+   <para>There is also an option to use prefix wildcard in the list of attributes. This is very
+      useful when used with <emphasis>ResponseTimeHistogramReporter</emphasis> which reports
+      attributes in the format <code>&lt;some prefix>&lt;percentile value></code> (e.g.
+         <code>perc0.0100000</code>, <code>perc0.2500000</code>...). For this particular use case,
+      we need to specify the attribute as <code>perc*</code>. We can also use just <code>*</code> to
+      record all the available attributes. However, because we do not know all the attributes in
+      advance, the preview is not available and no data are written to the file system until the
+      performance test is completed.</para>
+   <para>One attribute cannot be replaced with a wildcard and this is <code>warmUp</code>.
+         <emphasis>ChartDestination</emphasis> can be configured to completely ignore the warm-up
+      period of the test when the <code>warmUp</code> attribute is not specified in the list of
+      attributes. Or it records all attributes specified in the list during both warm-up and normal
+      test phase. During the warm-up phase, the values are recorded into separate data series with
+      the <code>_warmUp</code> suffix. </para>
+   <para>For example, for the attribute list <code>Result, Average, warmUp</code>, the following
+      data series will be created (supposing the test has <emphasis>WarmUpReporter</emphasis>
+      configured): <emphasis>Result_warmUp</emphasis>, <emphasis>Average_warmUp</emphasis>,
+         <emphasis>Result</emphasis>, <emphasis>Average</emphasis>. If we set the attribute list to
+         <code>*</code>, the following data series would be created: <emphasis>Result</emphasis>,
+         <emphasis>Average</emphasis>, <emphasis>Threads</emphasis> (supposing there are no other
+      attributes reported). If we wanted to create data series even for the warm-up phase, we would
+      need to specify the attributes list as <code>*, warmUp</code>.</para>
+   <para>It is possible to keep recording new charts to the same directory location as was used for
+      previous performance test runs. In this case, ChartDestination can automatically create
+      combined charts comparing the same data series (according to their name) from all the charts
+      recorded so far and having the same <code>group</code> property value. This behavior can be
+      switched off by setting the <code>autoCombine</code> property to <code>false</code>.</para>
+   <para>Please use the charts with caution as the big number of results or charts recorded in the
+      same report can take too long to load in the browser.</para>
    <para>The following table describes the ChartDestination properties: <table frame="all">
          <title>ChartDestination properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -27,7 +87,10 @@
                <row>
                   <entry>attributes</entry>
                   <entry>Attributes that will be stored in the chart. Each attribute is a result
-                     name of the reporter from which the results are published.</entry>
+                     name of the reporter from which the results are published. Prefix wildcards
+                     (e.g. <code>perc*</code>) can be used. Using wildcards turns off chart
+                     previews. To record during the warm-up phase, the <code>warmUp</code> attribute
+                     needs to be specified explicitely. </entry>
                   <entry>Yes</entry>
                   <entry>-</entry>
                </row>
@@ -65,11 +128,18 @@
                   <entry>perfcake-chart</entry>
                </row>
                <row>
-                  <entry>height</entry>
-                  <entry>Height in pixels of each individual chart graphics in the HTML
-                     report.</entry>
+                  <entry>chartHeight</entry>
+                  <entry>Height in pixels of each individual chart graphics in the HTML report. This
+                     is useful when the legend is too long.</entry>
                   <entry>No</entry>
                   <entry>400</entry>
+               </row>
+               <row>
+                  <entry>autoCombine</entry>
+                  <entry>Specifies whether the newly created chart should be automatically combined
+                     with the previously recorded data.</entry>
+                  <entry>No</entry>
+                  <entry>true</entry>
                </row>
             </tbody>
          </tgroup>
@@ -80,7 +150,7 @@
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="MemoryUsageReporter">
       ...
       <destination class="ChartDestination">
-         <period type="time" value="5000"/>
+         <period type="time" value="1000"/>
          <property name="name" value="Memory Usage"/>
          <property name="group" value="${perfcake.scenario}_memory"/>
          <property name="yAxis" value="Memory Usage [MiB]"/>
@@ -88,20 +158,12 @@
          <property name="attributes" value="Used,Total"/>
       </destination>
    <reporter>]]></programlisting>
-      <para>
-         In the example above there is a
-         <code>MemoryUsageReporter</code>
-         configured to publish memory usage report into
-         a chart. The memory usage data is gathered every single second and the chart is supposed to be showing used and total memory
-         (results taken from
-         <code>Used</code>
-         and
-         <code>Total</code>
-         attributes of the<code>MemoryUsageReporter</code>.
-         The resulting chart is shown in
-         <xref linkend="ug.reference-guide.reporting.destinations.ChartDestination.example-chart"/>
-         .
-      </para>
+      <para>In the example above there is a <code>MemoryUsageReporter</code> configured to publish
+         memory usage report into a chart. The memory usage data is gathered every single second and
+         the chart is supposed to be showing used and total memory (results taken from
+            <code>Used</code> and <code>Total</code> attributes of
+            the<code>MemoryUsageReporter</code>. The resulting chart is shown in <xref
+            linkend="ug.reference-guide.reporting.destinations.ChartDestination.example-chart"/> . </para>
    </example>
    <figure xml:id="ug.reference-guide.reporting.destinations.ChartDestination.example-chart">
       <title>ChartDestination example chart</title>
