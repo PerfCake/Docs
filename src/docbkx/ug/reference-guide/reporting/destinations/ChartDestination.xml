@@ -96,7 +96,8 @@
                </row>
                <row>
                   <entry>name</entry>
-                  <entry>Name of the chart for this measurement.</entry>
+                  <entry>Name of the chart for this measurement. There must not be two charts with
+                     the same name.</entry>
                   <entry>No</entry>
                   <entry>PerfCake Results</entry>
                </row>
