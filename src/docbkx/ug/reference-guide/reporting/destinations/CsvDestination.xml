@@ -4,7 +4,30 @@
    <para>This destination can be used to publish the measurements into a CSV file. Each result in
       the measurement is treated as a column in the file and the name of the result is used to name
       the column.</para>
-   <para>The following table describes the CsvDestination's properties <table frame="all">
+   <para><emphasis>CsvDestination</emphasis> in its minimal configuration simply streams out all the
+      measured data during the test execution and the CSV result file is immediately available. It
+      always writes out <emphasis>Time</emphasis>, <emphasis>Iteration</emphasis> and
+         <emphasis>Result</emphasis> attributes.</para>
+   <para>By default, <emphasis>CsvDestination</emphasis> writes out all the attributes observed in
+      the first measurement it receives. Changing the CSV result file to add a data column while the
+      performance test is in progress would cause too much overhead. The file header once written
+      remains unchanged. Attributes added later to the measurement are ignored. This is especially
+      the case when it takes very long for the first result to arrive and the
+         <emphasis>CsvDestination</emphasis> already reports to the CSV file. This would practically
+      block any results from being reported.</para>
+   <para>To handle the situation, it is possible to specify wildcards in the form of
+         <code>&lt;prefix>*</code>. This is very useful when used with histogram reporters and we do
+      not know the names of the attributes in advance. It is also possible to use just
+         <code>*</code> as a wildcard. It is not possible to use the asterisk wildcard in the middle
+      of an attribute name. The wildcard does not replace the <code>warmUp</code> attribute.
+      However, such a configuration leads to storing all the results in the memory and writing the
+      final CSV result file after the test is successfully finished. In case of a failure, no
+      results are written. </para>
+   <para>If there are any attributes missing from the records, <emphasis>CsvDestination</emphasis>
+      can either skip such a record, or it can fill in the missing values with <code>null</code>.How
+      to handle the </para>
+   <para>The following table describes the configuration properties of CsvDestination.<table
+         frame="all">
          <title>CsvDestination properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="2*"/>
@@ -24,12 +47,12 @@
                   <entry>path</entry>
                   <entry>A path to the output CSV file.</entry>
                   <entry>No</entry>
-                  <entry> perfcake-results- ${perfcake.run.timestamp} <footnote>
+                  <entry> perfcake-results- ${perfcake.run.timestamp}.csv <footnote>
                         <para> See <xref
                               linkend="ug.perfcake-features.scenario-definition.filtering-properties.available-properties-table"
                            />
                         </para>
-                     </footnote>.csv </entry>
+                     </footnote></entry>
                </row>
                <row>
                   <entry>delimiter</entry>
@@ -39,13 +62,63 @@
                </row>
                <row>
                   <entry>appendStrategy</entry>
-                  <entry> A strategy that is used in case, that the output file exists.
+                  <entry>A strategy that is used in case, that the output file exists.
                         <code>overwrite</code> means that the file is overwritten,
                         <code>rename</code> means that the current output file is renamed by adding
                      a number-based suffix and <code>append</code> is for appending new results to
                      the original file. </entry>
                   <entry>No</entry>
                   <entry>rename</entry>
+               </row>
+               <row>
+                  <entry>expectedAtrributes</entry>
+                  <entry>A comma separated list of attributes to be recorded in the CSV result file.
+                     This is useful when the attributes are not present in every measurement or it
+                     takes too long for the first measurement to arrive.</entry>
+                  <entry>No</entry>
+                  <entry>Empty string. The attributes reported by default are
+                        <emphasis>Time</emphasis>, <emphasis>Iteration</emphasis>,
+                        <emphasis>Result</emphasis> and all others observed in the first measurement
+                     (supposing it arrives sooner than the <emphasis>CsvDestination</emphasis>
+                     reports for the first time).</entry>
+               </row>
+               <row>
+                  <entry>missingStrategy</entry>
+                  <entry>Specifies what to do in case of a missing attribute value. It can either
+                     replace it with <code>null</code> when the strategy is set to
+                     <code>null</code>, or it can completely skip such a record when set to
+                        <code>skip</code>.</entry>
+                  <entry>No</entry>
+                  <entry>null</entry>
+               </row>
+               <row>
+                  <entry>linePrefix</entry>
+                  <entry>The prefix prepended to all lines in the CSV result file. This can
+                     facilitate creating JSON like records for example.</entry>
+                  <entry>No</entry>
+                  <entry>(empty string)</entry>
+               </row>
+               <row>
+                  <entry>lineSuffix</entry>
+                  <entry>The suffix appended to all lines in the CSV result file. This can
+                     facilitate creating JSON like records for example.</entry>
+                  <entry>No</entry>
+                  <entry>(empty string)</entry>
+               </row>
+               <row>
+                  <entry>lineBreak</entry>
+                  <entry>Line separator used to add new entry to the CSV result file.</entry>
+                  <entry>No</entry>
+                  <entry>\n (new line character)</entry>
+                  <entry/>
+               </row>
+               <row>
+                  <entry>skipHeader</entry>
+                  <entry>Skips writing the header in the CSV result file if set to
+                     <code>true</code>.</entry>
+                  <entry>No</entry>
+                  <entry>false</entry>
+                  <entry/>
                </row>
             </tbody>
          </tgroup>
