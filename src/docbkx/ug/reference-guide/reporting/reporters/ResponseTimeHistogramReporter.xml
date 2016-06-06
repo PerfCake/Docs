@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.ResponseTimeHistogramReporter" version="7.0">
    <title>ResponseTimeHistogramReporter</title>
-   <para>TBD</para>
+   <para>Reports response time in milliseconds using <link
+         xlink:href="https://github.com/HdrHistogram/HdrHistogram">HDR Histogram</link> that can
+      computationally correct the Coordinated omission problem.</para>
+   <para>The following paragraphs are based on <link
+         xlink:href="https://github.com/HdrHistogram/HdrHistogram/blob/master/README.md">the HDR
+         Histogram documentation</link>.</para>
+   <para>This reporter depends on the features introduced by HDR Histogram to correct the
+      coordinated omission. This problem occurs when all sending threads are blocked waiting for a
+      response from a system under test that suddenly stopped responding for a relatively long time
+      (longer than it did in the past). Under these conditions, no additional bad results with high
+      response time are recorded while the system is still blocked. To have the balanced result, we
+      should have approximately the same number of measurements for each time interval during the
+      test execution.</para>
+   <para>To compensate for the loss of sampled values when a recorded value is larger than the
+      expected, interval between value samples, HDR Histogram will auto-generate an additional
+      series of decreasingly-smaller value records. The values go down to the
+         <code>expectedValue</code> in case of the <code>Correction.USER</code> correction mode, or
+      down to the average response time in case of the <code>Correction.AUTO</code> correction
+      mode.</para>
+   <para>The reporter tries to divide the time range between shortest and longest response time into
+      intervals of similar length and calculate the percentiles for the intervals.</para>
+   <para>For example, the reporter can be configured to track the counts of observed response times
+      in milliseconds between 0 and 3,600,000 (<code>maxExpectedValue</code>) while maintaining a
+      value precision of 3 (<code>precision</code>) significant digits across that range. Value
+      quantization within the range will thus be no larger than 1/1,000th (or 0.1%) of any value.
+      This example reporter could be used to track and analyze the counts of observed response times
+      ranging between 1 millisecond and 1 hour in magnitude, while maintaining a value resolution of
+      1 millisecond (or better) up to one second, and a resolution of 1 second (or better) up to
+      1,000 seconds. At its maximum tracked value (1 hour), it would still maintain a resolution of
+      3.6 seconds (or better).</para>
    <table frame="all">
       <title>ResponseTimeHistogramReporter properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -19,40 +48,71 @@
          </thead>
          <tbody>
             <row>
-               <entry>minimumEnabled</entry>
-               <entry>Enables minimal value measuring.</entry>
+               <entry>precision</entry>
+               <entry>
+                  <para>Precision of the resulting histogram (number of significant digits) in range
+                     0 - 5. This determines the memory used by the reporter. Also, for low
+                     precision, numbers are recorded in less precise ranges.</para>
+               </entry>
                <entry>No</entry>
-               <entry>true</entry>
+               <entry>2</entry>
             </row>
             <row>
-               <entry>maximumEnabled</entry>
-               <entry>Enables maximal value measuring.</entry>
+               <entry>detail</entry>
+               <entry>
+                  <para>Detail level of the result (the number of iteration steps per half-distance
+                     to 100%).</para>
+                  <para>Must be greater than 0.</para>
+               </entry>
                <entry>No</entry>
-               <entry>true</entry>
+               <entry>2</entry>
             </row>
             <row>
-               <entry>averageEnabled</entry>
-               <entry>Enables average value measuring.</entry>
+               <entry>maxExpectedValue</entry>
+               <entry>
+                  <para>The maximum expected value to better organize the data in the histogram. The
+                     response time reported must never exceed this value, otherwise the result will
+                     be skipped, an error reported and the output will be invalid. </para>
+                  <para>-1 turns the optimization off. It is valuable to set some reasonable number
+                     like 3,600,000 which equals to the resolution from 1 millisecond to 1
+                     hour.</para>
+               </entry>
                <entry>No</entry>
-               <entry>true</entry>
+               <entry>-1 (unspecified)</entry>
             </row>
             <row>
-               <entry>windowSize</entry>
-               <entry>A window where the data for the statistics are taken from.</entry>
+               <entry>correctionMode</entry>
+               <entry>
+                  <para>The correction of coordinated omission in the resulting histogram.</para>
+                  <para><code>auto</code> is the default value and this means that the histogram is
+                     corrected according to the average measured value.</para>
+                  <para>In the <code>user</code> correction mode, the values are corrected according
+                     to the expectedValue specified by user. This is useful when you know thhe
+                     expected response time in advance.</para>
+                  <para>The correction for coordinated omission is turned off by setting
+                        <code>none</code> to this property.</para>
+               </entry>
                <entry>No</entry>
-               <entry>Integer.MAX_VALUE</entry>
+               <entry>auto</entry>
             </row>
             <row>
-               <entry>histogram</entry>
-               <entry>A comma separated list of values where the histogram is split to individual ranges.</entry>
-               <entry>No</entry>
-               <entry>""</entry>
+               <entry>expectedValue</entry>
+               <entry>
+                  <para>The value of normal/typical/expected response time in ms to correct the
+                     histogram while the <code>user</code> correction mode is turned on.</para>
+               </entry>
+               <entry>Only when <code>correctionMode</code> is set to <code>user</code>, however the
+                  default value can still be used.</entry>
+               <entry>1</entry>
             </row>
             <row>
-               <entry>histogramPrefix</entry>
-               <entry>String prefix used in the result map for histogram entries. This prefix is followed by the mathematical representation of the particular range.</entry>
+               <entry>prefix</entry>
+               <entry>String prefix used in the result map for histogram entries. This prefix is
+                  followed by the percentile for the corresponding range cumulatively. E.g.
+                     <code>perc0.98834000=14</code> means that in 98.834% of measurements, the
+                  response time was 14 or better.</entry>
                <entry>No</entry>
-               <entry>"in"</entry>
+               <entry>perc</entry>
             </row>
          </tbody>
       </tgroup>
@@ -60,11 +120,18 @@
    <example>
       <title>An example of ResponseTimeHistogramReporter configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ResponseTimeHistogramReporter">
+      <property name="detail" value="1" />
+      <property name="precision" value="1" />
+      <property name="maxExpectedValue" value="100" />
+      <property name="correctionMode" value="user" />
+      <property name="expectedValue" value="2" />
       ...
       (destinations)
       ...
    </reporter>]]></programlisting>
-      <para>In the example above there is an instance of <code>ResponseTimeHistogramReporter</code> configured to
-         report the current and the average value of the throughput. </para>
+      <para>In the example above there is an instance of <code>ResponseTimeHistogramReporter</code>
+         configured to report at slightly lower precision and detail level than default with
+         correction for coordinated omission expecting the system under test to response within 2ms
+         and no response time larger than 100ms is expected. </para>
    </example>
 </section>
