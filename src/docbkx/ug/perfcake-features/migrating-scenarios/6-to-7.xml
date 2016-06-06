@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.migrating-scenarios.6-to-7" version="7.0">
    <title>From v6.x to v7.x</title>
-   <para>
-      The following list shows the steps that are needed to migrate from PerfCake version 6.x to 7.x:
-      <itemizedlist>
+   <para> The following list shows the steps that are needed to migrate from PerfCake version 6.x to
+      7.x: <itemizedlist>
          <listitem>
             <simpara>Rename scenario XML schema namespace.</simpara>
          </listitem>
@@ -16,9 +15,21 @@
                expressions in templates and the default values in property placeholders are replaced
                by colon (instead of the <emphasis>pipe</emphasis> "|" character).</para>
          </listitem>
-      </itemizedlist>
-      The following sections describe each step in detail.
-   </para>
+         <listitem>
+            <para>There is no sequence defined by default (although the default sequences were not
+               documented).</para>
+         </listitem>
+         <listitem>
+            <para>The implicit message header storing the <emphasis>Message Number</emphasis> was
+               removed, instead the same value is now available in message attributes passed to
+               every sender and available for usage in both message headers and payload. It is now
+               correctly stored under the key <code>perfcake.iteration.number</code> (which is
+               defined in the constant <code>PerfCakeConst.ITERATION_NUMBER_PROPERTY</code>). If
+               there are more messages or any of the messages has multiplicity higher than one in
+               the scenario definition, all of the messages will have the same iteration number for
+               each iteration.</para>
+         </listitem>
+      </itemizedlist> The following sections describe some steps in more detail. </para>
    <section xml:id="ug.perfcake-features.migrating-scenarios.mirating.6-to-7.steps">
       <title>Migration steps</title>
       <section xml:id="ug.perfcake-features.migrating-scenarios.6-to-7.steps.xml-namespace">

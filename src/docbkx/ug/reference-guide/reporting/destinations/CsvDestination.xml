@@ -110,7 +110,6 @@
                   <entry>Line separator used to add new entry to the CSV result file.</entry>
                   <entry>No</entry>
                   <entry>\n (new line character)</entry>
-                  <entry/>
                </row>
                <row>
                   <entry>skipHeader</entry>
@@ -118,7 +117,6 @@
                      <code>true</code>.</entry>
                   <entry>No</entry>
                   <entry>false</entry>
-                  <entry/>
                </row>
             </tbody>
          </tgroup>

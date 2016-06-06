@@ -24,8 +24,7 @@
           connections and uses <code>AbstractSender.getSafeTarget()</code> when openning a new
           connection.</para>
       </listitem>
-    </itemizedlist> message templates to make each message unique or to make it route through a
-    different path, </para>
+    </itemizedlist></para>
    <example>
       <title>An example of a Sequence configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequences>

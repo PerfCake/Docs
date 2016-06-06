@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters" version="7.0">
    <title>Reporters</title>
+   <xi:include href="./reporters/ClassifyingReporter.xml"/>
    <xi:include href="./reporters/IterationsPerSecondReporter.xml"/>
    <xi:include href="./reporters/MemoryUsageReporter.xml"/>
    <xi:include href="./reporters/ResponseTimeHistogramReporter.xml"/>

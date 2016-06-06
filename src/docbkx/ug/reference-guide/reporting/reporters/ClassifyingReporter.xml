@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.ClassifyingReporter" version="7.0">
+   <title>ClassifyingReporter</title>
+   <para>The reporter can monitor a selected message attribute (i.e. a sequence), classify and count
+      the number of appearance of individual values. The values are then reported by the class name
+      with an optional prefix. </para>
+   <table frame="all">
+      <title>ClassifyingReporter properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>attribute</entry>
+               <entry>
+                  <para>The name of the message attribute to classify.</para>
+               </entry>
+               <entry>Yes</entry>
+               <entry/>
+            </row>
+            <row>
+               <entry>prefix</entry>
+               <entry>A prefix used in the result map for individual class names.</entry>
+               <entry>No</entry>
+               <entry>class_</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <example>
+      <title>An example of ClassifyingReporter configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequences>
+      <sequence class="ThreadIdSequence" name="threadId" />
+   </sequences>
+   ...
+   <reporting>
+      <reporter class="ClassifyingReporter">
+         <property name="attribute" value="threadId" />
+         <property name="prefix" value="thread_" />
+         <destination class="ConsoleDestination">
+            <period type="iteration" value="1000"/>
+         </destination>
+      </reporter>
+   </reporting>
+   ...]]></programlisting>
+   </example>
+   <para>In the example above there is a <code>ClassifyingReporter</code> configured to report
+      the utilization of individual threads used to to send messages. The number of classes is
+      equal to the number of threads configured. The sum of the values is the number of
+      iterations passed in total.</para>
+   <para>An example output for the above example can be as follows.</para>
+   <example>
+      <title>An example of the output when ClassifyingReporter is used</title>
+      <programlisting><![CDATA[[0:00:00][60000 iterations][60%] [warmUp => false] [Threads => 10] [failures => 0] [thread_22 => 4381]↵
+[thread_23 => 3734] [thread_24 => 7607] [thread_14 => 8016] [thread_15 => 3338] [thread_16 => 3204]↵
+[thread_17 => 7790] [thread_18 => 7215] [thread_19 => 8493] [thread_21 => 6222]]]></programlisting>
+   </example>
+</section>
