@@ -17,9 +17,8 @@
    <para>To compensate for the loss of sampled values when a recorded value is larger than the
       expected, interval between value samples, HDR Histogram will auto-generate an additional
       series of decreasingly-smaller value records. The values go down to the
-         <code>expectedValue</code> in case of the <code>Correction.USER</code> correction mode, or
-      down to the average response time in case of the <code>Correction.AUTO</code> correction
-      mode.</para>
+         <code>expectedValue</code> in case of the <code>user</code> correction mode, or down to the
+      average response time in case of the <code>auto</code> correction mode.</para>
    <para>The reporter tries to divide the time range between shortest and longest response time into
       intervals of similar length and calculate the percentiles for the intervals.</para>
    <para>For example, the reporter can be configured to track the counts of observed response times
@@ -117,6 +116,9 @@
          </tbody>
       </tgroup>
    </table>
+   <para><emphasis>ResponseTimeHistogramReporter</emphasis> can be best used with
+         <emphasis>CsvDestination</emphasis> and <emphasis>ChartDestination</emphasis> as you can
+      see in the following example.</para>
    <example>
       <title>An example of ResponseTimeHistogramReporter configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ResponseTimeHistogramReporter">
@@ -126,12 +128,27 @@
       <property name="correctionMode" value="user" />
       <property name="expectedValue" value="2" />
       ...
-      (destinations)
+      <destination class="ChartDestination">
+         <period type="time" value="500"/>
+         <property name="yAxis" value="HDR Response time [ms]"/>
+         <property name="group" value="${perfcake.scenario}_hdr_resp"/>
+         <property name="name" value="HDR Response Time (${threads:25} threads)"/>
+         <property name="attributes" value="*, warmUp"/>
+         <property name="autoCombine" value="false" />
+         <property name="chartHeight" value="1000" />
+         <property name="outputDir" value="target/${perfcake.scenario}-charts"/>
+      </destination>
+      <destination class="CsvDestination">
+         <period type="time" value="500"/>
+         <property name="expectedAttributes" value="*" />
+         ...
+      </destination>
       ...
    </reporter>]]></programlisting>
       <para>In the example above there is an instance of <code>ResponseTimeHistogramReporter</code>
          configured to report at slightly lower precision and detail level than default with
          correction for coordinated omission expecting the system under test to response within 2ms
-         and no response time larger than 100ms is expected. </para>
+         and no response time larger than 100ms is expected. The results will be writen as a chart
+         and into a CSV file.</para>
    </example>
 </section>
