@@ -7,7 +7,11 @@
    <para><emphasis>CsvDestination</emphasis> in its minimal configuration simply streams out all the
       measured data during the test execution and the CSV result file is immediately available. It
       always writes out <emphasis>Time</emphasis>, <emphasis>Iteration</emphasis> and
-         <emphasis>Result</emphasis> attributes.</para>
+         <emphasis>Result</emphasis> attributes. These attributes cannot be requested in the
+      scenario configuration and cannot be removed.</para>
+   <para>To get better idea on what attributes can be requested in your scenario configuration, use
+         <emphasis>ConsoleDestination</emphasis> which always outputs all of them. You can then pick
+      those that suite your needs.</para>
    <para>By default, <emphasis>CsvDestination</emphasis> writes out all the attributes observed in
       the first measurement it receives. Changing the CSV result file to add a data column while the
       performance test is in progress would cause too much overhead. The file header once written
@@ -129,5 +133,13 @@
       <property name="path" value="${perfcake.scenario}-output.csv"/>
       <property name="appendStrategy" value="overwrite"/>
    </destination>]]></programlisting>
+   </example>
+   <example>
+      <title>Sample output of CsvDestination</title>
+      <programlisting><![CDATA[Time;Iterations;Result;warmUp;Threads;ResponseSize;Minimum;Maximum;failures;RequestSize;Average
+0:00:00;1;1.306239;false;10;0;1.306239;1.306239;0;0;1.306239
+0:00:00;1000;1.069117;false;10;0;1.014015;10.468919;0;0;1.1494209689999997
+0:00:00;2000;1.059257;false;10;0;1.012308;10.468919;0;0;1.1295661935000005
+0:00:00;3000;1.069961;false;10;0;1.012308;10.468919;0;0;1.1466806060000005]]></programlisting>
    </example>
 </section>
