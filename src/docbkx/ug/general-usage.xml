@@ -22,4 +22,6 @@
    <xi:include href="./general-usage/keep-connection.xml"/>
    <xi:include href="./general-usage/ssl-http.xml"/>
    <xi:include href="./general-usage/dummy-sender.xml"/>
+   <xi:include href="./general-usage/classification.xml"/>
+   <xi:include href="./general-usage/raw-recording.xml"/>
 </chapter>

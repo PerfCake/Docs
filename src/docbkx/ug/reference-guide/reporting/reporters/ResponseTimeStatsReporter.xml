@@ -40,6 +40,18 @@
                <entry>true</entry>
             </row>
             <row>
+               <entry>requestSizeEnabled</entry>
+               <entry>Enables measuring of total size of requests sent.</entry>
+               <entry>No</entry>
+               <entry>true</entry>
+            </row>
+            <row>
+               <entry>responseSizeEnabled</entry>
+               <entry>Enables measuring of total size of responses received.</entry>
+               <entry>No</entry>
+               <entry>true</entry>
+            </row>
+            <row>
                <entry>windowSize</entry>
                <entry>A window where the data for the statistics are taken from.</entry>
                <entry>No</entry>
@@ -79,15 +91,26 @@
             </row>
             <row>
                <entry>Minimum</entry>
-               <entry>The minimal response time in ms measured so far (in a given time window).</entry>
+               <entry>The minimal response time in ms measured so far (in a given sliding
+                  window).</entry>
             </row>
             <row>
                <entry>Maximum</entry>
-               <entry>The minimal response time in ms measured so far (in a given time window).</entry>
+               <entry>The minimal response time in ms measured so far (in a given sliding
+                  window).</entry>
             </row>
             <row>
                <entry>Average</entry>
-               <entry>The average response time in ms measured so far (in a given time window).</entry>
+               <entry>The average response time in ms measured so far (in a given sliding
+                  window).</entry>
+            </row>
+            <row>
+               <entry>RequestSize</entry>
+               <entry>The size of all requests sent so far (in a given sliding window).</entry>
+            </row>
+            <row>
+               <entry>ResponseSize</entry>
+               <entry>The size of all responses received so far (in a given sliding window).</entry>
             </row>
             <row>
                <entry><code>${histogramPrefix}</code>&lt;<code>from</code>:<code>to</code>)
@@ -127,22 +150,25 @@
    </reporter>]]></programlisting>
 
       <para>In the example above a <code>ResponseTimeStatsReporter</code> is configured to report
-         all statistics including a histogram of response time values in value ranges of
-         (-infinity:100 ms), &lt;100 ms:200 ms) and &lt;200 ms: +infinity) with the following
-         output: </para>
-      <programlisting><![CDATA[2016-01-04 08:29:56,929 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 6.0 ===
-2016-01-04 08:29:56,929 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
-2016-01-04 08:29:56,930 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 298ns. A single thread is now able to measure maximum of 3355704 iterations/second.
-2016-01-04 08:29:56,993 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
-[0:00:05][2779 iterations][17%] [177.692582 ms] [warmUp => false] [Threads => 100] [Minimum => 116.011933 ms] [Maximum => 747.613035 ms] [Average => 177.29360404128917 ms] [in<-Infinity:100.0) => 0.0] [in<100.0:200.0) => 86.16443317638537] [in<200.0:Infinity) => 13.83556682361463]
-[0:00:10][5309 iterations][33%] [186.415253 ms] [warmUp => false] [Threads => 100] [Minimum => 116.011933 ms] [Maximum => 747.613035 ms] [Average => 186.80996315243672 ms] [in<-Infinity:100.0) => 0.0] [in<100.0:200.0) => 77.27616169248206] [in<200.0:Infinity) => 22.723838307517948]
-[0:00:15][8610 iterations][50%] [139.919484 ms] [warmUp => false] [Threads => 100] [Minimum => 116.011933 ms] [Maximum => 833.91631 ms] [Average => 173.14773112743953 ms] [in<-Infinity:100.0) => 0.0] [in<100.0:200.0) => 85.68773234200744] [in<200.0:Infinity) => 14.312267657992564]
-[0:00:20][11474 iterations][67%] [264.992354 ms] [warmUp => false] [Threads => 100] [Minimum => 116.011933 ms] [Maximum => 833.91631 ms] [Average => 173.6120836123002 ms] [in<-Infinity:100.0) => 0.0] [in<100.0:200.0) => 83.33187734777671] [in<200.0:Infinity) => 16.668122652223293]
-[0:00:25][14332 iterations][83%] [202.32752 ms] [warmUp => false] [Threads => 100] [Minimum => 116.011933 ms] [Maximum => 926.555949 ms] [Average => 173.6215303888613 ms] [in<-Infinity:100.0) => 0.0] [in<100.0:200.0) => 82.49703398701934] [in<200.0:Infinity) => 17.50296601298067]
-2016-01-04 08:30:26,999 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end.
-2016-01-04 08:30:26,999 INFO  {org.perfcake.reporting.ReportManager} Checking whether there are more results to be reported...
-[0:00:30][17533 iterations][100%] [180.395991 ms] [warmUp => false] [Threads => 100] [Minimum => 116.011933 ms] [Maximum => 926.555949 ms] [Average => 170.52201248824593 ms] [in<-Infinity:100.0) => 0.0] [in<100.0:200.0) => 84.95378295104416] [in<200.0:Infinity) => 15.046217048955837]
-2016-01-04 08:30:27,000 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
-2016-01-04 08:30:27,416 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===]]></programlisting>
+         all statistics with the following output: </para>
+      <programlisting><![CDATA[2016-06-13 23:20:22,158 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
+2016-06-13 23:20:22,159 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
+2016-06-13 23:20:22,160 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 356ns. A single thread is now able to measure maximum of 2808988 iterations/second.
+2016-06-13 23:20:22,177 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
+[0:00:00][1 iterations][0%] [1.084454 ms] [warmUp => false] [Threads => 10] [ResponseSize => 256.00 B] [Minimum => 1.084454 ms] [Maximum => 1.084454 ms] [failures => 0] [RequestSize => 256.00 B] [Average => 1.084454 ms]
+2016-06-13 23:20:22,201 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end. All messages were prepared to be sent.
+2016-06-13 23:20:22,201 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Waiting for all messages to be sent...
+[0:00:00][100 iterations][10%] [1.059404 ms] [warmUp => false] [Threads => 10] [ResponseSize => 25.00 KiB] [Minimum => 1.009627 ms] [Maximum => 2.501367 ms] [failures => 0] [RequestSize => 25.00 KiB] [Average => 1.11484413 ms]
+[0:00:00][200 iterations][20%] [1.057651 ms] [warmUp => false] [Threads => 10] [ResponseSize => 50.00 KiB] [Minimum => 1.008045 ms] [Maximum => 3.143239 ms] [failures => 0] [RequestSize => 50.00 KiB] [Average => 1.1479294649999998 ms]
+[0:00:00][300 iterations][30%] [1.06057 ms] [warmUp => false] [Threads => 10] [ResponseSize => 75.00 KiB] [Minimum => 1.008045 ms] [Maximum => 3.143239 ms] [failures => 0] [RequestSize => 75.00 KiB] [Average => 1.12146921 ms]
+[0:00:00][400 iterations][40%] [1.063183 ms] [warmUp => false] [Threads => 10] [ResponseSize => 100.00 KiB] [Minimum => 1.008045 ms] [Maximum => 3.143239 ms] [failures => 0] [RequestSize => 100.00 KiB] [Average => 1.1061472125 ms]
+[0:00:00][500 iterations][50%] [1.114687 ms] [warmUp => false] [Threads => 10] [ResponseSize => 125.00 KiB] [Minimum => 1.008045 ms] [Maximum => 3.143239 ms] [failures => 0] [RequestSize => 125.00 KiB] [Average => 1.1018137200000009 ms]
+[0:00:00][600 iterations][60%] [1.031199 ms] [warmUp => false] [Threads => 10] [ResponseSize => 150.00 KiB] [Minimum => 1.008045 ms] [Maximum => 3.988934 ms] [failures => 0] [RequestSize => 150.00 KiB] [Average => 1.1051423050000004 ms]
+[0:00:00][700 iterations][70%] [1.272101 ms] [warmUp => false] [Threads => 10] [ResponseSize => 175.00 KiB] [Minimum => 1.008045 ms] [Maximum => 3.988934 ms] [failures => 0] [RequestSize => 175.00 KiB] [Average => 1.1001457528571437 ms]
+[0:00:00][800 iterations][80%] [1.059498 ms] [warmUp => false] [Threads => 10] [ResponseSize => 200.00 KiB] [Minimum => 1.007744 ms] [Maximum => 3.988934 ms] [failures => 0] [RequestSize => 200.00 KiB] [Average => 1.0959077025000006 ms]
+[0:00:00][900 iterations][90%] [1.079325 ms] [warmUp => false] [Threads => 10] [ResponseSize => 225.00 KiB] [Minimum => 1.007744 ms] [Maximum => 6.986077 ms] [failures => 0] [RequestSize => 225.00 KiB] [Average => 1.1047625722222227 ms]
+[0:00:00][1000 iterations][100%] [1.05882 ms] [warmUp => false] [Threads => 10] [ResponseSize => 250.00 KiB] [Minimum => 1.007744 ms] [Maximum => 6.986077 ms] [failures => 0] [RequestSize => 250.00 KiB] [Average => 1.104236193000001 ms]
+2016-06-13 23:20:23,310 INFO  {org.perfcake.reporting.ReportManager} Checking whether there are more results to be reported...
+2016-06-13 23:20:23,313 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===]]></programlisting>
    </example>
 </section>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.RawReporter" version="7.0">
+   <title>RawReporter</title>
+   <para>This is a very specific reporter for advanced users. <code>RawReporter</code> simply stores
+      the complete test execution reporting data in a given file. The file can be later replayed
+      with any provided scenario. The replay just reuses the reporting configuration in a scenario
+      and emulates the test execution with the data recorded previously. <code>RawReporter</code>
+      does not support any destinations to be added to it.</para>
+   <para>The results file is a compressed (gzip) serialization of <code>RunInfo</code> as a heaader
+      and all <code>MesurementUnits</code> received by the reporter.</para>
+   <para>The following table describes configuration parameters of <code>RawReporter</code>:</para>
+   <table frame="all">
+      <title>RawReporter properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>outputFile</entry>
+               <entry>The file where the results will be recorded.</entry>
+               <entry>No</entry>
+               <entry>perfcake-measurement-${timestamp}.raw</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <example>
+      <title>An example of RawReporter configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="RawReporter">
+      <property name="outputFile" value="results.raw" />
+   </reporter>]]></programlisting>
+      <para>In the example above there is a <code>RawReporter</code> configured to report the
+         results to results.raw file. There are no other configuration possibilities and no
+         destinations can be specified.</para>
+   </example>
+</section>

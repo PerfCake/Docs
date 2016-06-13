@@ -6,7 +6,8 @@
       published. The result is computed from the current number of processed iterations at the
       moment of publishing result and the time duration from the beginning (or warmup). </para>
    <para>The reporter does not have any specific properties.</para>
-   <para>The following table describes result names of IterationsPerSecondReporter:</para>
+   <para>The following table describes result names of
+      <code>IterationsPerSecondReporter</code>:</para>
    <table frame="all">
       <title>IterationsPerSecondReporter result names</title>
       <tgroup cols="2" align="left" colsep="1" rowsep="1">

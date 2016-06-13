@@ -8,4 +8,5 @@
    <xi:include href="./reporters/ResponseTimeStatsReporter.xml"/>
    <xi:include href="./reporters/ThroughputStatsReporter.xml"/>
    <xi:include href="./reporters/WarmUpReporter.xml"/>
+   <xi:include href="./reporters/RawReporter.xml"/>
 </section>
