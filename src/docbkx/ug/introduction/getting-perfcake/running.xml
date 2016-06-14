@@ -41,8 +41,8 @@
    </para>
    <para>Typical output of this command is:</para>
    <para>
-      <programlisting><![CDATA[2015-09-22 18:35:51,709 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:~/perfcake-6.0/resources/scenarios/http.xml
-2015-09-22 18:35:52,174 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 6.0 ===
+      <programlisting><![CDATA[2015-09-22 18:35:51,709 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-7.0/resources/scenarios/http.xml
+2015-09-22 18:35:52,174 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
 2015-09-22 18:35:52,175 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2015-09-22 18:35:52,176 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 296ns. A single thread is now able to measure maximum of 3378378 iterations/second.
 2015-09-22 18:35:52,254 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
@@ -70,7 +70,7 @@
 [0:00:27][15363 iterations][92%] [561.705065775129 iterations/s] [Threads => 100] [warmUp => false]
 [0:00:29][16243 iterations][97%] [562.9609208077745 iterations/s] [Threads => 100] [warmUp => false]
 [0:00:30][16812 iterations][100%] [562.8103856281039 iterations/s] [Threads => 100] [warmUp => false]
-2015-09-22 18:36:22,256 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end.
+2015-09-22 18:36:22,256 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end. All messages were prepared to be sent.
 2015-09-22 18:36:22,257 INFO  {org.perfcake.reporting.ReportManager} Reporting final results:
 2015-09-22 18:36:22,258 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
 2015-09-22 18:36:22,421 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===]]></programlisting>

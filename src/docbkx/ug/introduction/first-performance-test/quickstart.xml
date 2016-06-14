@@ -23,15 +23,17 @@
 ├── LICENSE.txt
 └── log4j2.xml]]> </programlisting></para>
       <para> You may try to run PerfCake, you should receive output like this: <programlisting><![CDATA[$PERFCAKE_HOME/bin/perfcake.sh
- usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md <MESSAGES_DIR>] [-D<property=value>]*
- -D <property=value> system properties
- -log,--log-level <LOG_LEVEL> logging level
- -md,--messages-dir <MESSAGES_DIR> directory for messages
- -pd,--plugins-dir <PLUGINS_DIR> directory for plugins
- -pf,--properties-file <PROPERTIES_FILE> custom system properties file
- -s,--scenario <SCENARIO> scenario to be executed
- -sd,--scenarios-dir <SCENARIOS_DIR> directory for scenarios
- -skip,--skip-timer-benchmark skip system timer benchmark]]>          </programlisting></para>
+usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md 
+                         <MESSAGES_DIR>] [-D<property=value>]*
+ -D <property=value>                       system properties
+ -log,--log-level <LOG_LEVEL>              logging level
+ -md,--messages-dir <MESSAGES_DIR>         directory for messages
+ -pd,--plugins-dir <PLUGINS_DIR>           directory for plugins
+ -pf,--properties-file <PROPERTIES_FILE>   custom system properties file
+ -r,--replay <RAW_FILE>                    raw file to be replayed
+ -s,--scenario <SCENARIO>                  scenario to be executed
+ -sd,--scenarios-dir <SCENARIOS_DIR>       directory for scenarios
+ -skip,--skip-timer-benchmark              skip system timer benchmark]]>          </programlisting></para>
       <para>The script assumes you have JDK installed and available on the system path, minimal
          version 1.8 is required. Please note that the system being tested is not required to run on
          Java 8. It might not run on Java at all! </para>
@@ -159,8 +161,7 @@
       destination "ChartDestination" every 1.s name "Response Time" group "rt" yAxis "Response Time [ms]" attributes "Result,Average"
       destination "ConsoleDestination" every 1.s
 end]]> </programlisting></para>
-      <para><code>http-reporting.xml</code>:
-         <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+      <para><code>http-reporting.xml</code>: <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <scenario xmlns="urn:perfcake:scenario:7.0">
    <run type="time" value="10000"/>
    <generator class="DefaultMessageGenerator" 
@@ -171,7 +172,7 @@ end]]> </programlisting></para>
    </sender>
    <reporting>
       <reporter class="ResponseTimeStatsReporter">
-         <property name="minumumEnabled" value="false"/>
+         <property name="minimumEnabled" value="false"/>
          <property name="maximumEnabled" value="false"/>
          <destination class="ChartDestination">
             <period type="time" value="1000"/>
@@ -185,46 +186,34 @@ end]]> </programlisting></para>
          </destination>
       </reporter>
    </reporting>
-</scenario>]]></programlisting>
-      </para>
-      <para>
-         Adding the
-         <code>reporting</code>
-         section you let your scenario to log results to some destination - in our case to the PerfCake’s console.
-         Output will be provided every 2 seconds (2000 miliseconds).
-      </para>
-      <para> Try to run the scenario again by the following command: <programlisting><![CDATA[
-2016-05-11 15:08:43,166 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/pmacik/work/perfcake-7.0-SNAPSHOT/resources/scenarios/http-reporting.xml
-2016-05-11 15:08:43,364 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
-2016-05-11 15:08:43,365 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
-2016-05-11 15:08:43,365 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 253ns. A single thread is now able to measure maximum of 3952569 iterations/second.
-2016-05-11 15:08:43,550 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
-[0:00:01][100 iterations][18%] [123.970597 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 141.66183724999993 ms]
-[0:00:02][180 iterations][28%] [129.702537 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 133.85898331111105 ms]
-[0:00:03][264 iterations][38%] [121.80858 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 130.7269809734848 ms]
-[0:00:05][385 iterations][53%] [123.172814 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 128.5775626857142 ms]
-[0:00:06][503 iterations][68%] [129.238332 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 127.93369352882702 ms]
-[0:00:07][581 iterations][78%] [140.818277 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 127.76558587607585 ms]
-[0:00:08][659 iterations][88%] [133.277523 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 127.59124825493183 ms]
-2016-05-11 15:08:53,556 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end.
-2016-05-11 15:08:53,557 INFO  {org.perfcake.reporting.ReportManager} Checking whether there are more results to be reported...
-[0:00:10][761 iterations][100%] [121.907371 ms] [warmUp => false] [Threads => 10] [failures => 0] [Average => 127.3642412483575 ms]
-2016-05-11 15:08:53,661 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
-2016-05-11 15:08:53,663 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===
-]]>
-         </programlisting>
-      </para>
-      <para>
-         The
-         <code>warmUp</code>
-         attribute you can see in the results determines the mode of the test. In our example we do not wait
-         for the server to warm up so the attribute is set to false all the time.
-      </para>
-      <para>
-         ChartDestination specified in the scenario produces a chart report with the chart similar to the following that can be found under
-         <code>$PERFCAKE_HOME/perfcake-charts</code>
-         directory.
-      </para>
+</scenario>]]></programlisting>Adding the <code>reporting</code> section you let your scenario to
+         log results to some destination - in our case to the PerfCake’s console. Output will be
+         provided every 2 seconds (2000 miliseconds). </para>
+      <para>Try to run the scenario again by the following command: <programlisting><![CDATA[2016-06-14 22:01:56,186 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-7.0/resources/scenarios/http-reporting.xml
+2016-06-14 22:01:56,455 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
+2016-06-14 22:01:56,455 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
+2016-06-14 22:01:56,456 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 334ns. A single thread is now able to measure maximum of 2994011 iterations/second.
+2016-06-14 22:01:56,468 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
+[0:00:01][84 iterations][17%] [141.868302 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [Minimum => 136.702416 ms] [failures => 0] [RequestSize => 0.00 B] [Average => 170.70281994047613 ms]
+[0:00:02][155 iterations][27%] [140.435482 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [Minimum => 135.436574 ms] [failures => 0] [RequestSize => 0.00 B] [Average => 157.30522732903225 ms]
+[0:00:03][225 iterations][37%] [136.248079 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [Minimum => 134.629032 ms] [failures => 0] [RequestSize => 0.00 B] [Average => 151.3000900355556 ms]
+[0:00:04][292 iterations][47%] [146.018769 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [Minimum => 134.629032 ms] [failures => 0] [RequestSize => 0.00 B] [Average => 151.79159557191784 ms]
+[0:00:05][360 iterations][57%] [140.239096 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [Minimum => 134.629032 ms] [failures => 0] [RequestSize => 0.00 B] [Average => 150.78039243888892 ms]
+[0:00:06][430 iterations][67%] [140.608011 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [Minimum => 134.077543 ms] [failures => 0] [RequestSize => 0.00 B] [Average => 149.0632376767442 ms]
+[0:00:07][500 iterations][77%] [150.971978 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [Minimum => 134.077543 ms] [failures => 0] [RequestSize => 0.00 B] [Average => 148.20699049399997 ms]
+[0:00:08][571 iterations][87%] [136.759408 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [Minimum => 134.077543 ms] [failures => 0] [RequestSize => 0.00 B] [Average => 147.44373894921188 ms]
+[0:00:09][641 iterations][97%] [137.870229 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [Minimum => 134.077543 ms] [failures => 0] [RequestSize => 0.00 B] [Average => 146.7737520499219 ms]
+2016-06-14 22:02:06,508 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Reached test end. All messages were prepared to be sent.
+2016-06-14 22:02:06,509 INFO  {org.perfcake.reporting.ReportManager} Checking whether there are more results to be reported...
+[0:00:10][662 iterations][100%] [142.601692 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [Minimum => 134.077543 ms] [failures => 0] [RequestSize => 0.00 B] [Average => 146.55668455286997 ms]
+2016-06-14 22:02:06,620 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Shutting down execution...
+2016-06-14 22:02:06,620 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===]]>         </programlisting>The
+            <code>warmUp</code> attribute you can see in the results determines the mode of the
+         test. In our example we do not wait for the server to warm up so the attribute is set to
+         false all the time. </para>
+      <para>ChartDestination specified in the scenario produces a chart report with the chart
+         similar to the following that can be found under
+            <code>$PERFCAKE_HOME/perfcake-charts</code> directory. </para>
       <figure xml:id="ug.introduction.first-performance-test.quickstart.chart">
          <title>Your first performance test chart report</title>
          <graphic format="PNG" fileref="./images/quickstart-chart.png" scalefit="1" width="100%" align="center"/>

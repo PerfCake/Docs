@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.configuration.replay" version="7.0">
+   <title>Results replay</title>
+   <para>It is possible to record raw results data from a performance test run and later replay
+      them. This can be useful when we use a remote machine to run the test and we need to process
+      the data on a different location or when we want to fine-tune the reporting facilities and we
+      cannot or don't want to rerun the real test many times.</para>
+   <para>To record the test data, you can use <xref
+         linkend="ug.reference-guide.reporting.reporters.RawReporter"/>. This will create a single
+      output file with the recorded data. The file can be of a significant size depending on the
+      number of test iterations. From our experience, a test with 100,000 iterations results in
+      afile of size approx 4-8MB (depending on test meta-data available, sequences used
+      etc.).</para>
+   <para>The file can be later replayed by providing the corresponding scenario with a different
+      configuration of reporting section and passing the recorded data file to PerfCake in the
+         <code>--replay</code> parameter. </para>
+   <example>
+      <title>Sample usage of the results replay mode</title>
+      <programlisting><![CDATA[> $PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -r perfcake-measurement-1465935794498.raw 
+2016-06-14 22:37:20,399 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/mvecera/work/PerfCake/tmp/perfcake-7.0-SNAPSHOT/resources/scenarios/http-reporting.xml
+2016-06-14 22:37:20,659 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
+2016-06-14 22:37:20,660 INFO  {org.perfcake.ScenarioExecution} Replaying raw results recorded in perfcake-measurement-1465935794498.raw.
+[0:00:00][1 iterations][3%] [319.848264 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 319.848264 ms]
+[0:00:01][59 iterations][14%] [179.383135 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 207.6054971694915 ms]
+[0:00:02][128 iterations][24%] [148.827863 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 179.01238675000008 ms]
+[0:00:03][198 iterations][34%] [138.458243 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 167.52745448989901 ms]
+[0:00:04][265 iterations][44%] [172.478225 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 161.4592350792453 ms]
+[0:00:05][315 iterations][54%] [232.630756 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 167.65647934285724 ms]
+[0:00:06][369 iterations][64%] [170.956762 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 170.2701377127373 ms]
+[0:00:07][421 iterations][74%] [205.153517 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 173.20733971496443 ms]
+[0:00:08][470 iterations][85%] [201.284832 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 176.6280006106384 ms]
+[0:00:09][520 iterations][95%] [232.02807 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 179.5895076057694 ms]
+[0:00:10][536 iterations][100%] [196.740767 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 181.79292323694048 ms]
+2016-06-14 22:37:21,058 INFO  {org.perfcake.ScenarioExecution} === Goodbye! ===]]></programlisting>
+      <para>Please not the time difference between the start and the end of the replay (22:37:20,660
+         - 22:37:21,058). This means that all the results from a test that originally took 10
+         seconds was replayed in less than a second.</para>
+   </example>
+</section>

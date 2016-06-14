@@ -10,13 +10,14 @@
       used to control the scenario execution.
    </para>
    <programlisting><![CDATA[[PERFCAKE_HOME]$ ./bin/perfcake.sh
-usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>]
-                        [-md <MESSAGES_DIR>] [-D<property=value>]*
+usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md 
+                         <MESSAGES_DIR>] [-D<property=value>]*
  -D <property=value>                       system properties
  -log,--log-level <LOG_LEVEL>              logging level
  -md,--messages-dir <MESSAGES_DIR>         directory for messages
  -pd,--plugins-dir <PLUGINS_DIR>           directory for plugins
  -pf,--properties-file <PROPERTIES_FILE>   custom system properties file
+ -r,--replay <RAW_FILE>                    raw file to be replayed
  -s,--scenario <SCENARIO>                  scenario to be executed
  -sd,--scenarios-dir <SCENARIOS_DIR>       directory for scenarios
  -skip,--skip-timer-benchmark              skip system timer benchmark]]></programlisting>
@@ -57,10 +58,19 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>]
                   <entry>-</entry>
                </row>
                <row>
-                  <entry>-log, --log-level</entry>
-                  <entry>Default PerfCake logging level.</entry>
+                  <entry>-log, --log-level &lt;LOG_LEVEL></entry>
+                  <entry>Default PerfCake logging level. Can be <code>trace</code>,
+                        <code>debug</code>, <code>info</code>, <code>warn</code>,
+                     <code>error</code>.</entry>
                   <entry>No</entry>
-                  <entry>info</entry>
+                  <entry><code>info</code></entry>
+               </row>
+               <row>
+                  <entry>-D&lt;property&gt;=&lt;value&gt;</entry>
+                  <entry>Sets a single system property with a given name and value. Multiple
+                     property arguments are allowed.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
                </row>
                <row>
                   <entry>-sd, --scenarios-dir</entry>
@@ -76,15 +86,16 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>]
                </row>
                <row>
                   <entry>-pd, --plugins-dir</entry>
-                  <entry> Path to the directory where plugins are located (see <xref
+                  <entry>Path to the directory where plugins are located (see <xref
                         linkend="ug.extending.plugins"/> ). </entry>
                   <entry>No</entry>
                   <entry>$PERFCAKE_HOME/resources/plugins</entry>
                </row>
                <row>
-                  <entry>-D&lt;property&gt;=&lt;value&gt;</entry>
-                  <entry>Sets a single system property with a given name and value. Multiple
-                     property arguments are allowed.</entry>
+                  <entry>-r, --replay &lt;RAW_FILE></entry>
+                  <entry>Replay the previously raw data with the given scenario. No test is
+                     executed, just the reporters are used to create reports from the
+                        <code>&lt;RAW_FILE></code> data file.</entry>
                   <entry>No</entry>
                   <entry>-</entry>
                </row>
@@ -103,9 +114,7 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>]
                </row>
             </tbody>
          </tgroup>
-      </table>
-   </para>
-   <para>Some interesting properties can be configured using the <code>-Dproperty=value
+      </table>Some useful properties can be configured using the <code>-Dproperty=value
          parameter</code>. These are not so common so there is no dedicated short parameter variant.
       The following table lists the other properties recognized by PerfCake. None of them is
       required.</para>

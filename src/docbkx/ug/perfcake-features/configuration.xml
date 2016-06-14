@@ -3,4 +3,5 @@
    <title>Configuration and execution</title>
    <xi:include href="./configuration/cli.xml"/>
    <xi:include href="./configuration/logging.xml"/>
+   <xi:include href="./configuration/replay.xml"/>
 </section>
