@@ -75,7 +75,7 @@
                   <entry>True when the mapping should be configured prior to writing any data. This
                      needs to be done only once for each index and type.</entry>
                   <entry>No</entry>
-                  <entry>true</entry>
+                  <entry><code>true</code></entry>
                </row>
             </tbody>
          </tgroup>

@@ -120,7 +120,7 @@
                   <entry>Skips writing the header in the CSV result file if set to
                      <code>true</code>.</entry>
                   <entry>No</entry>
-                  <entry>false</entry>
+                  <entry><code>false</code></entry>
                </row>
             </tbody>
          </tgroup>

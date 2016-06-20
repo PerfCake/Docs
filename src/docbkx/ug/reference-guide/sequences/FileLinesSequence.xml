@@ -3,9 +3,7 @@
    <title>FileLinesSequence</title>
    <para>Every single line in a given input file specifies a value of this sequence. Once the end of the file is hit, the sequence starts from beginning.
 The whole file is read in the memory in advance. Please make sure the file is of a reasonable size given your expectations and memory limits.</para>
-   <para>
-      Following table shows the properties of the FileLinesSequence:
-      <table frame="all">
+   <para> Following table shows the properties of <code>FileLinesSequence</code>: <table frame="all">
          <title>FileLinesSequence properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="2*"/>

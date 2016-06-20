@@ -3,7 +3,7 @@
    <title>NumberSequence</title>
    <para>Long number sequence with the ability to specify boundaries, direction (increasing or
       decreasing) of the counter and the step size.</para>
-   <para>Following table shows the properties of the NumberSequence: <table frame="all">
+   <para>Following table shows the properties of <code>NumberSequence</code>: <table frame="all">
          <title>NumberSequence properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="2*"/>

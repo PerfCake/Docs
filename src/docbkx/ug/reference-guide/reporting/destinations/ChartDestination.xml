@@ -140,7 +140,7 @@
                   <entry>Specifies whether the newly created chart should be automatically combined
                      with the previously recorded data.</entry>
                   <entry>No</entry>
-                  <entry>true</entry>
+                  <entry><code>true</code></entry>
                </row>
             </tbody>
          </tgroup>

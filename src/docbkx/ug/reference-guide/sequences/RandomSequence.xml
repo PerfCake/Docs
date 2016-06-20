@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sequences.RandomSequence" version="7.0">
+   <title>RandomSequence</title>
+   <para>This sequence generates random numbers in the given range <code>&lt;min, max)</code>. i.e.
+      including the <code>min</code> value but not the <code>max</code> value.</para>
+   <para>Following table shows the properties of <code>RandomSequence</code>: <table frame="all">
+         <title>RandomSequence properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>min</entry>
+                  <entry>Lower boundary of the interval of random number (inclusive).</entry>
+                  <entry>No</entry>
+                  <entry>0</entry>
+               </row>
+               <row>
+                  <entry>max</entry>
+                  <entry>Upper boundary of the interval of random numbers (exclusive). </entry>
+                  <entry>No</entry>
+                  <entry>100</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table></para>
+   <example>
+      <title>An example of RandomSequence configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="RandomSequence">
+      <property name="min" value="10" />
+      <property name="max" value="256" />
+   </sequence>]]></programlisting>
+   </example>
+</section>
