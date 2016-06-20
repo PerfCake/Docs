@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.GeolocationReporter" version="7.0">
+   <title>GeolocationReporter</title>
+   <para>The reporter figures out geo-location information from a 3rd party service
+      (http://ipinfo.io) and stores the returned values in the results. The values are obtained just
+      once for the whole test execution so it does not make much sense to make this reporter report
+      more than once. This can be achieved by setting the reporting period to a very large number -
+      the first iteration is always reported and no others will be.</para>
+   <para>The reporter has just a single configuration property. It allows you to switch to a
+      different geo-location service provider. However its configuration is questionable because it
+      expects very specific output from the 3rd service. The best possibility if to provide your own
+      service with the exact same JSON result format.</para>
+   <para>PerfCake needs internet access for this reporter to work. As a bonus, the reporter count
+      average iterations per second in the same way as <code>IterationsPerSecondReporter</code>
+      does.</para>
+   <table frame="all">
+      <title>GeolocationReporter properties</title>
+      <tgroup cols="4" align="left" colsep="1" rowsep="1">
+         <colspec colname="property-name" colwidth="2*"/>
+         <colspec colname="description" colwidth="2*"/>
+         <colspec colname="required" colwidth="1*"/>
+         <colspec colname="default-value" colwidth="2*"/>
+         <thead>
+            <row>
+               <entry>Property name</entry>
+               <entry>Description</entry>
+               <entry>Required</entry>
+               <entry>Default value</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>serviceUrl</entry>
+               <entry>
+                  <para>The location of the 3rd party geo-location service.</para>
+               </entry>
+               <entry>No</entry>
+               <entry>http://ipinfo.io/json</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <para>The following table describes result names of
+      <code>GeolocationReporter</code>:</para>
+   <table frame="all">
+      <title>GeolocationReporter result names</title>
+      <tgroup cols="2" align="left" colsep="1" rowsep="1">
+         <colspec colname="result-name" colwidth="1*"/>
+         <colspec colname="description" colwidth="3*"/>
+         <thead>
+            <row>
+               <entry>Result name</entry>
+               <entry>Description</entry>
+            </row>
+         </thead>
+         <tbody>
+            <row>
+               <entry>Result</entry>
+               <entry>The current throughput in iterations/s</entry>
+            </row>
+            <row>
+               <entry>ip</entry>
+               <entry>Public address of the IP address where PerfCake runs (or your provider's IP
+                  address)</entry>
+            </row>
+            <row>
+               <entry>hostname</entry>
+               <entry>Your or your provider's hostname.</entry>
+            </row>
+            <row>
+               <entry>city</entry>
+               <entry>Estimated city where PerfCake runs.</entry>
+            </row>
+            <row>
+               <entry>region</entry>
+               <entry>Estimated region where PerfCake runs.</entry>
+            </row>
+            <row>
+               <entry>country</entry>
+               <entry>Estimated country where PerfCake runs.</entry>
+            </row>
+            <row>
+               <entry>lat</entry>
+               <entry>Estimated latitude (+ means north, - means south).</entry>
+            </row>
+            <row>
+               <entry>lon</entry>
+               <entry>Estimated longitude (+ means east, - means west).</entry>
+            </row>
+         </tbody>
+      </tgroup>
+   </table>
+   <example>
+      <title>An example of GeolocationReporter configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="GeolocationReporter">
+      ...
+      (destinations)
+      ...
+   </reporter>]]></programlisting>
+   </example>
+</section>
