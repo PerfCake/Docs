@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations.ElasticsearchDestination" version="7.0">
+   <title>ElasticsearchDestination</title>
+   <para>This destination stores results in the Elasticsearch database. The reported data have
+      information about the test progress (time in milliseconds since start, percentage and
+      iteration), real time of each result, and the complete results map. Quantities are stored
+      without their unit for them to be parseable as numbers. To properly search through the data,
+      we need to set the mapping (to be able to interpret time as time). However, this needs to be
+      done just once for each index and type. Another attempts to set the mapping lead to an error
+      from the server (this does not break the test execution) because Elasticsearch cannot change
+      existing mapping. <table frame="all">
+         <title>ElasticsearchDestination properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>serverUri</entry>
+                  <entry>Comma separated list of Elastisearch servers including protocol and port
+                     number.</entry>
+                  <entry>Yes</entry>
+                  <entry/>
+               </row>
+               <row>
+                  <entry>index</entry>
+                  <entry>Elasticsearch index name.</entry>
+                  <entry>No</entry>
+                  <entry>perfcake</entry>
+               </row>
+               <row>
+                  <entry>type</entry>
+                  <entry>Elasticsearch type name.</entry>
+                  <entry>No</entry>
+                  <entry>results</entry>
+               </row>
+               <row>
+                  <entry>tags</entry>
+                  <entry>Comma separated list of tags to be added to results. This is useful to
+                     differentiate results from multiple test runs for example.</entry>
+                  <entry>No</entry>
+                  <entry/>
+               </row>
+               <row>
+                  <entry>userName</entry>
+                  <entry>Elasticsearch user name. Authentication is only used when the
+                        <code>userName</code> property is specified.</entry>
+                  <entry>No</entry>
+                  <entry/>
+               </row>
+               <row>
+                  <entry>password</entry>
+                  <entry>Elasticsearch password.</entry>
+                  <entry>No</entry>
+                  <entry/>
+               </row>
+               <row>
+                  <entry>timeout</entry>
+                  <entry>Elasticsearch client timeout in milliseconds. When getting too many missed
+                     records in the log, try increasing this value.</entry>
+                  <entry>No</entry>
+                  <entry>3000</entry>
+               </row>
+               <row>
+                  <entry>configureMapping</entry>
+                  <entry>True when the mapping should be configured prior to writing any data. This
+                     needs to be done only once for each index and type.</entry>
+                  <entry>No</entry>
+                  <entry>true</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table></para>
+   <example>
+      <title>An example of ElasticsearchDestination configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <destination class="ElasticsearchDestination">
+      <period type="iteration" value="500"/>
+      <property name="serverUri" value="http://localhost:9292" />
+      <property name="index" value="perfcake" />
+      <property name="tags" value="tag1,tag2" />
+      <property name="timeout" value="5000" />
+   </destination>]]></programlisting>
+   </example>
+</section>

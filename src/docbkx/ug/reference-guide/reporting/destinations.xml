@@ -50,5 +50,6 @@
    <xi:include href="./destinations/ChartDestination.xml"/>
    <xi:include href="./destinations/ConsoleDestination.xml"/>
    <xi:include href="./destinations/CsvDestination.xml"/>
+   <xi:include href="./destinations/ElasticsearchDestination.xml"/>
    <xi:include href="./destinations/Log4jDestination.xml"/>
 </section>
