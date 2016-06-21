@@ -40,6 +40,18 @@
                <entry>true</entry>
             </row>
             <row>
+               <entry>requestSizeEnabled</entry>
+               <entry>Enables measuring of total size of requests sent.</entry>
+               <entry>No</entry>
+               <entry>true</entry>
+            </row>
+            <row>
+               <entry>responseSizeEnabled</entry>
+               <entry>Enables measuring of total size of responses received.</entry>
+               <entry>No</entry>
+               <entry>true</entry>
+            </row>
+            <row>
                <entry>windowSize</entry>
                <entry>A window where the data for the statistics are taken from.</entry>
                <entry>No</entry>
@@ -49,13 +61,13 @@
                <entry>histogram</entry>
                <entry>A comma separated list of values where the histogram is split to individual ranges.</entry>
                <entry>No</entry>
-               <entry>""</entry>
+               <entry/>
             </row>
             <row>
                <entry>histogramPrefix</entry>
                <entry>String prefix used in the result map for histogram entries. This prefix is followed by the mathematical representation of the particular range.</entry>
                <entry>No</entry>
-               <entry>"in"</entry>
+               <entry>in</entry>
             </row>
          </tbody>
       </tgroup>
@@ -90,6 +102,14 @@
                <entry>The average throughput in iterations/s measured so far (in a given time window).</entry>
             </row>
             <row>
+               <entry>RequestSize</entry>
+               <entry>The size of all requests sent so far (in a given sliding window).</entry>
+            </row>
+            <row>
+               <entry>ResponseSize</entry>
+               <entry>The size of all responses received so far (in a given sliding window).</entry>
+            </row>
+            <row>
                <entry><code>${histogramPrefix}</code>&lt;<code>from</code>:<code>to</code>)
                </entry>
                <entry>If
@@ -103,15 +123,30 @@
       </tgroup>
    </table>
    <example>
-      <title>An example of ThroughputStatsReporter configuration</title>
+      <title>An example of ThroughputStatsReporter configuration with a sliding window over last 30
+         iterations</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ThroughputStatsReporter">
       <property name="minimumEnabled" value="false"/>
       <property name="maximumEnabled" value="false"/>
+      <property name="slidingWindow" value="30"/>
       ...
       (destinations)
       ...
    </reporter>]]></programlisting>
-      <para>In the example above there is a <code>ThroughputStatsReporter</code> configured to
-         report the current and the average value of the throughput. </para>
+   </example>
+   <para>In the example above there is a <code>ThroughputStatsReporter</code> configured to report
+      the current and the average value of the throughput. </para>
+   <example>
+      <title>An example of output with the above configuration</title>
+      <programlisting><![CDATA[[0:00:01][50 iterations][10%] [68.56845152517322 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 56.58369666441687 iterations/s]
+[0:00:02][125 iterations][20%] [72.44633269853925 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 71.35868254120271 iterations/s]
+[0:00:03][188 iterations][30%] [73.01081433991678 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 68.11154264877203 iterations/s]
+[0:00:04][253 iterations][40%] [72.21612698050471 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 71.15376567483213 iterations/s]
+[0:00:05][309 iterations][50%] [72.30052923842801 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 72.50585514834 iterations/s]
+[0:00:06][351 iterations][60%] [74.03760369891869 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 73.84493230828234 iterations/s]
+[0:00:07][390 iterations][70%] [73.47836429196032 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 73.86340270431613 iterations/s]
+[0:00:08][426 iterations][80%] [73.44844565461368 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 74.35713799467462 iterations/s]
+[0:00:09][464 iterations][90%] [75.16546154258003 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 73.90578951833827 iterations/s]
+[0:00:10][499 iterations][100%] [75.45269086855991 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 73.98895045521625 iterations/s]]]></programlisting>
    </example>
 </section>

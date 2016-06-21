@@ -61,13 +61,13 @@
                <entry>histogram</entry>
                <entry>A comma separated list of values where the histogram is split to individual ranges.</entry>
                <entry>No</entry>
-               <entry>""</entry>
+               <entry/>
             </row>
             <row>
                <entry>histogramPrefix</entry>
                <entry>String prefix used in the result map for histogram entries. This prefix is followed by the mathematical representation of the particular range.</entry>
                <entry>No</entry>
-               <entry>"in"</entry>
+               <entry>in</entry>
             </row>
          </tbody>
       </tgroup>
