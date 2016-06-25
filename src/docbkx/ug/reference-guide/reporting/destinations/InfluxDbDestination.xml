@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations.ElasticsearchDestination" version="7.0">
-   <title>ElasticsearchDestination</title>
-   <para>This destination stores results in the Elasticsearch database. The reported data have
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations.InfluxDbDestination" version="7.0">
+   <title>InfluxDbDestination</title>
+   <para>This destination stores results in the InfluxDb database. The reported data have
       information about the test progress (time in milliseconds since start, percentage and
       iteration), real time of each result, and the complete results map. Quantities are stored
-      without their unit for them to be parseable as numbers.</para>
-   <para>To properly search through the data, we need to set the mapping (to be able to interpret
-      time as time). However, this needs to be done just once for each index and type. Another
-      attempts to set the mapping lead to an error from the server (this does not break the test
-      execution) because Elasticsearch cannot change existing mapping. <table frame="all">
-         <title>ElasticsearchDestination properties</title>
+      without their unit for them to be parseable as numbers. It supports SSL connection and the
+      database is by default created on connection.<table frame="all">
+         <title>InfluxDbDestination properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="2*"/>
             <colspec colname="description" colwidth="2*"/>
@@ -26,20 +23,20 @@
             <tbody>
                <row>
                   <entry>serverUri</entry>
-                  <entry>Comma separated list of Elasticsearch servers including protocol and port
-                     number. Port is typically 9292.</entry>
+                  <entry>InfluxDb server including protocol and port number. Supports SSL. Port is
+                     typically <code>8086</code>.</entry>
                   <entry>Yes</entry>
                   <entry/>
                </row>
                <row>
-                  <entry>index</entry>
-                  <entry>Elasticsearch index name.</entry>
+                  <entry>database</entry>
+                  <entry>InfluxDb database.</entry>
                   <entry>No</entry>
                   <entry>perfcake</entry>
                </row>
                <row>
-                  <entry>type</entry>
-                  <entry>Elasticsearch type name.</entry>
+                  <entry>measurement</entry>
+                  <entry>InfluxDb measurement (serves as a database table).</entry>
                   <entry>No</entry>
                   <entry>results</entry>
                </row>
@@ -52,28 +49,24 @@
                </row>
                <row>
                   <entry>userName</entry>
-                  <entry>Elasticsearch user name. Authentication is only used when the
-                        <code>userName</code> property is specified.</entry>
-                  <entry>No</entry>
-                  <entry/>
+                  <entry>InfluxDb user name. There always need to be some user. InfluxDb does not
+                     support empty field, however, you can configure your server to let anybody
+                     in.</entry>
+                  <entry>Yes</entry>
+                  <entry>admin</entry>
                </row>
                <row>
                   <entry>password</entry>
-                  <entry>Elasticsearch password.</entry>
-                  <entry>No</entry>
-                  <entry/>
+                  <entry>InfluxDb password. There always need to be some password. InfluxDb does not
+                     support empty field, however, you can configure your server to let anybody
+                     in.</entry>
+                  <entry>Yes</entry>
+                  <entry>admin</entry>
                </row>
                <row>
-                  <entry>timeout</entry>
-                  <entry>Elasticsearch client timeout in milliseconds. When getting too many missed
-                     records in the log, try increasing this value.</entry>
-                  <entry>No</entry>
-                  <entry>3000</entry>
-               </row>
-               <row>
-                  <entry>configureMapping</entry>
-                  <entry>True when the mapping should be configured prior to writing any data. This
-                     needs to be done only once for each index and type.</entry>
+                  <entry>createDatabase</entry>
+                  <entry>True when the database should be created on connection. If the database
+                     already exists, nothing happens (all data and tables remain there).</entry>
                   <entry>No</entry>
                   <entry><code>true</code></entry>
                </row>
@@ -109,13 +102,14 @@
          </tgroup>
       </table></para>
    <example>
-      <title>An example of a ElasticsearchDestination configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <destination class="ElasticsearchDestination">
+      <title>An example of a InfluxDbDestination configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <destination class="InfluxDbDestination">
       <period type="iteration" value="500"/>
-      <property name="serverUri" value="http://localhost:9292" />
-      <property name="index" value="perfcake" />
+      <property name="serverUri" value="http://localhost:8086" />
+      <property name="database" value="perfcake" />
       <property name="tags" value="tag1,tag2" />
-      <property name="timeout" value="5000" />
+      <property name="userName" value="admin" />
+      <property name="password" value="abc123" />
    </destination>]]></programlisting>
    </example>
 </section>
