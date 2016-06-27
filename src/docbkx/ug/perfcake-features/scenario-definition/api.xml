@@ -18,6 +18,19 @@ import org.perfcake.scenario.ScenarioLoader;
       are sent or a fatal error occurs. It is however possible to stop the scenario execution from
       another thread by a call to the <code>stop()</code> method of the <code>Scenario</code> class.
       The termination is not immediate, rather a graceful shutdown is performed.</para>
+   <para>In a case when you do not require access to the scenario control object
+      (org.perfcake.scenario.Scenario) and you just want to run a test (for example in TestNG or
+      jUnit), there is a simplified method of the above.</para>
+   <example>
+      <title>Executing a scenario with a single method call using PerfCake API</title>
+      <programlisting><![CDATA[import org.perfcake.scenario.ScenarioExecution;
+...
+      ScenarioExecution.execute("scenario-name", new Properties());]]></programlisting>
+   </example>
+   <para>As a scenario name, the same value is passed as in the -s parameter on the command line.
+      The properties can configure anything that would normally go into -D parameter. Most other
+      command line parameters can be configured via these properties (see <link
+         xlink:href="ug.perfcake-features.scenario-definition.filtering-properties"/>).</para>
    <para>It is also possible to build the complete scenario from scratch using PerfCake API. Most
       objects are designed with fluent API so you can easily join multiple setter methods.</para>
    <example>
