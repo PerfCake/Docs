@@ -150,6 +150,11 @@ static final String[] nonEmptyArray = {"these", "can", "change"};]]></programlis
          <para>One-character parameter names should be avoided.</para>
       </section>
       <section>
+         <title>Exception parameter names</title>
+         <para>Parameters in <code>catch</code> clauses of exceptions can use one-character
+            names.</para>
+      </section>
+      <section>
          <title>Local variable names</title>
          <para>Local variable names are written in lowerCamelCase (
             <xref linkend="sec-camel-case"
