@@ -15,8 +15,9 @@
 ...]]></programlisting>
    </example>
    <para>You can see the output with each build and also by calling <code>mvn
-         checkstyle:check</code>. A report is created when the site goal is executed. To get just
-      this report call <code>mvn checkstyle:checkstyle</code>.</para>
+         checkstyle:check</code>. Checkstyle is configured to just display warnings and not fail the
+      build. A report is created when the site goal is executed. To get just this report call
+         <code>mvn checkstyle:checkstyle</code>.</para>
    <para>The resulting report can be found in the <varname>target/site/checkstyle.html</varname>
       directory. </para>
 </section>
