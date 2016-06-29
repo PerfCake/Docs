@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+         xml:id="dev.contributor.developing.maven.checkstyle" version="7.0">
+   <title>Code Style with Checkstyle</title>
+   <para>With checkstyle there is a (limited) possibility to check your code formatting that it
+      aligns according to this guide. There are some issues in checkstyle that report false
+      positives. In this case you can use the following format of a comment to ignore a warning for
+      th the given line.</para>
+   <example>
+      <title>Ignoring a chackstyle warning</title>
+      <programlisting language="java" linenumbering="numbered"><![CDATA[...
+      // follow the exact format of the comment: "// @checkstyle.ignore(<warn1>|<warn2>) - <comment>
+      final long results[] = new long[CYCLES]; // @checkstyle.ignore(ArrayTypeStyle) - A bug in checkstyle.
+...]]></programlisting>
+   </example>
+   <para>You can see the output with each build and also by calling <code>mvn
+         checkstyle:check</code>. A report is created when the site goal is executed. To get just
+      this report call <code>mvn checkstyle:checkstyle</code>.</para>
+   <para>The resulting report can be found in the <varname>target/site/checkstyle.html</varname>
+      directory. </para>
+</section>
