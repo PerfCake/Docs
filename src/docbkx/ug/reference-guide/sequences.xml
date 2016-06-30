@@ -41,6 +41,7 @@
    <xi:include href="./sequences/PrimitiveNumberSequence.xml"/>
    <xi:include href="./sequences/NumberSequence.xml"/>
    <xi:include href="./sequences/RandomSequence.xml"/>
+   <xi:include href="./sequences/RandomUuidSequence.xml"/>
    <xi:include href="./sequences/ThreadIdSequence.xml"/>
    <xi:include href="./sequences/TimeStampSequence.xml"/>
    <xi:include href="./sequences/FileLinesSequence.xml"/>

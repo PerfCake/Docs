@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sequences.RandomUuidSequence" version="7.0">
+   <title>RandomUuidSequence</title>
+   <para>This sequence generates random UUID identifiers. It has no configuration parameters. All
+      UUIDs have the same format. Sample UUID is
+      <code>259f1e8a-816e-4fa0-a5eb-15e2aefe57a6</code>.</para>
+   <example>
+      <title>An example of RandomUuidSequence configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="RandomUuidSequence"/>]]></programlisting>
+   </example>
+</section>
