@@ -4,9 +4,11 @@
    <para>The RequestResponseJmsSender is supposed to be used in request-response scenarios. First it
       sends a JMS message to the target destination (specified by the <code>target</code> property)
       and then waits to receive the response message from the response destination (specified by the
-         <code>responseTarget</code> property). </para>
+         <code>responseTarget</code> property).</para>
    <para>It is based on JmsSender (see <xref linkend="ug.reference-guide.sending.JmsSender"/> ) so
-      it inherits its properties. The following table contains additional properties of the
+      it inherits its properties. Some properties, when not specified, use the same value as those
+      present in <code>JmsSender</code>. However, security credentials always need to be set
+      separately. The following table contains additional properties of the
          <code>RequestResponseJmsSender</code>: </para>
    <table frame="all">
       <title>RequestResponseJmsSender properties</title>
@@ -122,18 +124,12 @@
       <property name="responseJndiSecurityPrincipal" value="KingRoland"/>
       <property name="responseJndiSecurityCredentials" value="12345"/>
    </sender>]]></programlisting>
-      <para>
-         In the example above there is a
-         <code>RequestResponseJmsSender</code>
-         configured to send messages to the queue
-         <code>jms/queue/RequestQueue</code>
-         using a connection factory found at
-         <code>jms/ConnFactory</code>
-         in JNDI. After sending a JMS message the sender waits for the response from
-         the response queue
-         <code>jms/queue/ResponseQueue</code>
-         for at most 30s. It uses the same JMS provider for both request and response, so the request and response credentials
-         (both JMS and JNDI) are the same. Connection factory, JNDI context factory and JNDI URL for the response are inherited from the respective request properties.
-      </para>
+      <para>In the example above there is a <code>RequestResponseJmsSender</code> configured to send
+         messages to the queue <code>jms/queue/RequestQueue</code> using a connection factory found
+         at <code>jms/ConnFactory</code> in JNDI. After sending a JMS message the sender waits for
+         the response from the response queue <code>jms/queue/ResponseQueue</code> for at most 30s.
+         It uses the same JMS provider for both request and response, so the request and response
+         credentials (both JMS and JNDI) are the same. Connection factory, JNDI context factory and
+         JNDI URL for the response are inherited from the respective request properties. </para>
    </example>
 </section>
