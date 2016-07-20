@@ -18,15 +18,12 @@
       control. In the case of an iteration based control, a generator must wait for all the messages
       to be processed (in case of a normal/unexceptional termination). In the case of a time based
       control, the test stops immediately after the time has elapsed.</para>
-   <para>Each <varname>SenderTask</varname> takes a <varname>CanalStreet</varname> instance as a
-      communication pipe that is used to notify the parent generator of task completion and or any
-      errors that might have occurred. The <varname>CanalStreet</varname> relies on an internal
-         <varname>Semaphore</varname> instance that can control the number of
-         <varname>SenderTasks</varname> prepared in a queue for execution.</para>
+   <para>Each <varname>SenderTask</varname> takes a reference to its parent generator to notify this
+      generator of any errors that might have occurred.</para>
    <para>A message generator carries links to all other system components and thus has an ultimate
       control over the running performance test. It is the only class that indirectly manipulates
          <varname>RunInfo</varname> through starting and stopping the
          <varname>ReportManager</varname>.</para>
-   <para>A message generator usually maintains a queue of prepared SenderTasks and schedules their
-      execution. It also controls the number of parallel threads running.</para>
+   <para>A message generator usually maintains a queue of prepared <code>SenderTasks</code> and
+      schedules their execution. It also controls the number of parallel threads running.</para>
 </section>

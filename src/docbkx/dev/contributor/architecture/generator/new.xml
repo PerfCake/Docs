@@ -14,19 +14,22 @@
             can quit the process even if some threads got stuck. It also sets higher priority to
             these threads.</para>
       <para><varname>DefaultMessageGenerator</varname> keeps an eye on the number of prepared
-                  <varname>SenderTasks</varname> by using a semaphore so that we do not consume to
-            much memory at once.</para>
+                  <varname>SenderTasks</varname> by using a BlockingQueue that is passed to the
+            underlying thread pool executor. This limits the size of memory used at once.</para>
       <para>Now investigate the <varname>AbstractMessageGenerator.newSenderTask()</varname> method
-            to see how <varname>SenderTasks</varname> are created. You can notice that there is a
-            new instance of <varname>CanalStreet</varname> being created. This is a callback pipe
-            that is used to signal the <varname>Semaphore</varname> upon a completion of the
-                  <varname>SenderTask</varname> and to report any errors during sending back to the
-            generator.</para>
+            to see how <varname>SenderTasks</varname> are created. You can notice that SenderTasks
+            constructors takes the generator to be able to report failures back. Other test
+            execution related classes are set on the <code>SenderTask</code> as well for it to be
+            able to complete its goal. A <code>SenderTask</code> instance implements
+                  <code>Runnable</code> and except for default Java API, there is no notification of
+            its completion.</para>
       <para>In the end just have a look to the <varname>SenderTask</varname> class. This class
             implements <varname>Runnable</varname> and does the following steps. First, it acquires
             a <varname>MessageSender</varname> from the senders pool, uses this
                   <varname>MessageSender</varname> to send one or more messages while measuring the
-            time it took, and releases the <varname>MessageSender</varname>. Successful completion
-            is acknowledged through the <varname>CanalStreet</varname> instance as well as any
-            possible errors.</para>
+            time it took. When a <code>Receiver</code> is used, it awaits for a message response on
+            a separate message channel. Upon the response's arrival, the total time is measured. In
+            the end, the <varname>MessageSender</varname> is released. It is not released sooner
+            even though we might be using a <code>Receiver</code> because we do not want another
+            thread to use it before we complete the task.</para>
 </section>
