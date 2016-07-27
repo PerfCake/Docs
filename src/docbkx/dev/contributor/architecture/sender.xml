@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.sender" version="7.0">
-   <title>Developing Senders</title>
+   <title>Message Senders</title>
    <para>A <varname>MessageSender</varname> is the typical interface that most of the developers are
       likely to implement. It encapsulates the specific protocol communication. It does just one
       thing and it should do it properly. Implementing a simple sender can be really fast but there
@@ -65,5 +65,5 @@
          <varname>HttpUrlConnection</varname> is not reusable (Java handles its own cache
       internally).</para>
    <para>If in doubt, you can use the <varname>DummySender</varname> in the debug mode and see what
-      happens and what methods methods are being called depending on the configuration.</para>
+      happens and what methods are being called depending on the configuration.</para>
 </section>

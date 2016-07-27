@@ -19,6 +19,7 @@
    <xi:include href="./architecture/run-info.xml"/>
    <xi:include href="./architecture/generator.xml"/>
    <xi:include href="./architecture/sender.xml"/>
+   <xi:include href="./architecture/receiver.xml"/>  
    <xi:include href="./architecture/sequences.xml"/>
    <xi:include href="./architecture/reporting.xml"/>
    <xi:include href="./architecture/validation.xml"/>

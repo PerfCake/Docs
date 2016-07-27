@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.receiving.HttpReceiver" version="7.0">
+   <title>HttpReceiver</title>
+   <para>
+      The HttpReceiver can be used to TODO complete
+   </para>
+   <para>
+      Following table shows the properties of the HttpReceiver:
+      <table frame="all">
+         <title>HttpReceiver properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>expectedResponseCodes</entry>
+                  <entry>A comma separated list of HTTP response code(s) that is
+                     expected to be returned.
+                  </entry>
+                  <entry>No</entry>
+                  <entry>"200"</entry>
+               </row>
+               <row>
+                  <entry>method</entry>
+                  <entry>
+                     An HTTP method to be used.
+                     <footnote>
+                        <para>
+                           See
+                           <link xlink:href="http://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html#setRequestMethod(java.lang.String)"/>
+                           for a complete list of
+                           available methods.
+                        </para>
+                     </footnote>
+                  </entry>
+                  <entry>No</entry>
+                  <entry>"POST"</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <example>
+      <title>An example of HttpReceiver configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <receiver class="HttpReceiver">
+      <source>http://domain.com/cool-url</source>
+      <property name="method" value="GET"/>
+      <property name="expectedResponseCodes" value="200,202"/>
+   </receiver>]]></programlisting>
+   </example>
+</section>

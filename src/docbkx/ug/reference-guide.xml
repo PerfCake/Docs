@@ -3,6 +3,8 @@
    <title>Reference Guide</title>
    <xi:include href="./reference-guide/generating.xml"/>
    <xi:include href="./reference-guide/sending.xml"/>
+   <xi:include href="./reference-guide/receiving.xml"/>
+   <xi:include href="./reference-guide/correlating.xml"/>
    <xi:include href="./reference-guide/messages.xml"/>
    <xi:include href="./reference-guide/sequences.xml"/>
    <xi:include href="./reference-guide/reporting.xml"/>

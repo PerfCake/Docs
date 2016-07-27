@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.correlating" version="7.0">
+   <title>Correlating messages</title>
+   <para>TODO complete
+   </para>
+   <example>
+      <title>An example of a correlator configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <receiver class="...">
+      <target>...</target>
+      ...
+      receiver properties
+      ...
+   </receiver>]]></programlisting>
+      <para>In the following sections you can find a complete description of all
+         correlators that can be used by PerfCake including all of their properties.
+      </para>
+   </example>
+   <xi:include href="./correlating/GenerateHeaderCorrelator.xml"/>
+</section>
