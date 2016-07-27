@@ -170,6 +170,20 @@
                         <embedFile>${basedir}/src/fonts/FreeSerifBoldItalic.ttf</embedFile>
                         <metricsFile>${basedir}/src/fonts/FreeSerifBoldItalic-metrics.xml</metricsFile>
                      </font>
+                     <font>
+                        <name>Ubuntu</name>
+                        <style>normal</style>
+                        <weight>normal</weight>
+                        <embedFile>${basedir}/src/fonts/Ubuntu-R.ttf</embedFile>
+                        <metricsFile>${basedir}/src/fonts/Ubuntu-R-metrics.xml</metricsFile>
+                     </font>
+                     <font>
+                        <name>Ubuntu</name>
+                        <style>normal</style>
+                        <weight>bold</weight>
+                        <embedFile>${basedir}/src/fonts/Ubuntu-B.ttf</embedFile>
+                        <metricsFile>${basedir}/src/fonts/Ubuntu-B-metrics.xml</metricsFile>
+                     </font>
                   </fonts>
                </configuration>
             </plugin>

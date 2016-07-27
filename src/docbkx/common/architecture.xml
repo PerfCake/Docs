@@ -4,7 +4,7 @@
    <para>Let's start with a Figure that is worth a thousand words.</para>
    <figure id="overall-architecture">
       <title>Architecture Overview</title>
-      <graphic format="PNG" fileref="./images/overall-architecture.png"/>
+      <graphic format="SVG" fileref="./images/overall-architecture.svg" width="100%"/>
    </figure>
    <para>In the <xref linkend="overall-architecture"/> , we can see the high level overview of
       PerfCake's architecture. There is always a single Generator<indexterm>Generator</indexterm>.

@@ -4,7 +4,7 @@
    <title>Validators Architecture</title>
    <figure id="validator-architecture">
       <title>Validators Architecture</title>
-      <graphic format="PNG" fileref="./images/validation-architecture.png"/>
+      <graphic format="SVG" fileref="./images/validation-architecture.svg" width="100%"/>
    </figure>
 
    <para>Similarly to reporting, validation is started from the <varname>SenderTask</varname>. A

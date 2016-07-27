@@ -4,7 +4,7 @@
    <title>Reporting Architecture</title>
    <figure id="reporting-architecture">
       <title>Reporting Architecture</title>
-      <graphic format="PNG" fileref="./images/reporting-architecture.png"/>
+      <graphic format="SVG" fileref="./images/reporting-architecture.svg" width="100%"/>
    </figure>
 
    <para>The <varname>SenderTask</varname> instance measures the time needed to send a message by

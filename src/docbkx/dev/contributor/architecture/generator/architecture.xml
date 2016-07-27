@@ -4,7 +4,7 @@
    <title>Generators Architecture</title>
    <figure id="generator-architecture">
       <title>Generators Architecture</title>
-      <graphic format="PNG" fileref="./images/generator-architecture.png"/>
+      <graphic format="SVG" fileref="./images/generator-architecture.svg" width="100%"/>
    </figure>
    <para>A message generator controls how many threads are being used to generate the messages, it
       is responsible for creating and submitting <varname>SenderTasks</varname> and controls the
