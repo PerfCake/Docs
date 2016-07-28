@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="ug.reference-guide.sending.JmsSender" version="7.0">
+   <title>CoapSender</title>
+   <para>The sender can be used to send a single message using CoAP protocol
+      <footnote>
+         <para>
+            Costrained Application Protocol
+            <link xlink:href="http://coap.technology/"/>
+         </para>
+      </footnote>
+      .
+   </para>
+   <para>The target of the sender is a CoAP endpoint in a form of CoAP URI
+      <footnote>
+         <para>
+            See
+            <link xlink:href="https://tools.ietf.org/html/rfc7252#section-6"/>
+            for more detail on CoAP endpoint URI
+         </para>
+      </footnote>
+      .
+      <table frame="all">
+         <title>CoapSender properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>method</entry>
+                  <entry>A name of CoAP method. One of <code>GET</code>, <code>POST</code>,
+                     <code>PUT</code>
+                     or <code>DELETE</code> is supported
+                     <footnote>
+                        <para>
+                           See
+                           <link xlink:href="https://tools.ietf.org/html/rfc7252#section-5.8"/>
+                           for more detail on request methods of the CoAP protocol.
+                        </para>
+                     </footnote>
+                     .
+                  </entry>
+                  <entry>No</entry>
+                  <entry>POST</entry>
+               </row>
+               <row>
+                  <entry>requestType</entry>
+                  <entry>CoAP request type that the sender will use. Either
+                     <code>confirmable</code>
+                     or <code>nonConfirmable</code> is supported
+                     <footnote>
+                        <para>See <link xlink:href="https://tools.ietf.org/html/rfc7252#section-2.1"
+                           /> for more detail on (non)confirmable requests of the CoAP protocol. </para>
+                     </footnote>
+                     .
+                  </entry>
+                  <entry>No</entry>
+                  <entry>nonConfirmable</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <example>
+      <title>An example of CoapSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="CoapSender">
+      <target>coap://${server.host}:5683/resource</target>
+      <property name="method" value="GET"/>
+      <property name="requestType" value="confirmable"/>
+   </sender>]]></programlisting>
+   </example>
+</section>
