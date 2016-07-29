@@ -39,21 +39,21 @@
                <entry>Determines whether we should wait for the response from the channel.
                </entry>
                <entry>No</entry>
-               <entry>"false"</entry>
+               <entry><code>false</code></entry>
             </row>
             <row>
                <entry>maxResponseSize</entry>
                <entry>Expected maximum response size. Defaults to -1 which means to instantiate the buffer of the same size as the request messages.
                </entry>
                <entry>No</entry>
-               <entry>"-1"</entry>
+               <entry>-1</entry>
             </row>
             <row>
                <entry>maxResponseSize</entry>
                <entry>Expected maximum response size. Defaults to -1 which means to instantiate the buffer of the same size as the request messages.
                </entry>
                <entry>No</entry>
-               <entry>"-1"</entry>
+               <entry>-1</entry>
             </row>
          </tbody>
       </tgroup>

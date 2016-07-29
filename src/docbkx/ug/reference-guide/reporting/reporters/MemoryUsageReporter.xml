@@ -27,13 +27,13 @@
                <entry>hostname</entry>
                <entry>IP address of hostname where PerfCake agent is listening.</entry>
                <entry>No</entry>
-               <entry>"localhost"</entry>
+               <entry>localhost</entry>
             </row>
             <row>
                <entry>port</entry>
                <entry>A port number where PerfCake agent is listening.</entry>
                <entry>No</entry>
-               <entry>"8850"</entry>
+               <entry>8850</entry>
             </row>
          </tbody>
       </tgroup>
@@ -100,13 +100,13 @@ PerfCakeAgent > Listening at localhost on port 8850
                <entry>agentHostname</entry>
                <entry>An IP address of hostname where the PerfCake agent is listening.</entry>
                <entry>No</entry>
-               <entry>"localhost"</entry>
+               <entry>localhost</entry>
             </row>
             <row>
                <entry>agentPort</entry>
                <entry>A port number where the PerfCake agent is listening.</entry>
                <entry>No</entry>
-               <entry>"8850"</entry>
+               <entry>8850</entry>
             </row>
             <row>
                <entry>memoryDumpOnLeak</entry>
@@ -114,7 +114,7 @@ PerfCakeAgent > Listening at localhost on port 8850
                   The MemoryUsageReporter will send a command to PerfCake agent that will create a heap dump.
                </entry>
                <entry>No</entry>
-               <entry>"false"</entry>
+               <entry>false</entry>
             </row>
             <row>
                <entry>memoryDumpFile</entry>
@@ -127,19 +127,19 @@ PerfCakeAgent > Listening at localhost on port 8850
                <entry>memoryLeakDetectionEnabled</entry>
                <entry>Enables or disables the memory leak detection.</entry>
                <entry>No</entry>
-               <entry>"false"</entry>
+               <entry>false</entry>
             </row>
             <row>
                <entry>memoryLeakDetectionMonitoringPeriod</entry>
                <entry>A time period in ms in which the memory leak detection mechanism gathers memory usage data.</entry>
                <entry>No</entry>
-               <entry>"500"</entry>
+               <entry>500</entry>
             </row>
             <row>
                <entry>memoryLeakSlopeThreshold</entry>
                <entry>The used memory trend slope threshold. The slope's unit is a byte per second.</entry>
                <entry>No</entry>
-               <entry>"1024"</entry>
+               <entry>1024</entry>
             </row>
             <row>
                <entry>performGcOnMemoryUsage</entry>
@@ -149,13 +149,13 @@ PerfCakeAgent > Listening at localhost on port 8850
                   measured results too.
                </entry>
                <entry>No</entry>
-               <entry>"false"</entry>
+               <entry>false</entry>
             </row>
             <row>
                <entry>usedMemoryTimeWindowSize</entry>
                <entry>The used memory time window size. (Number of records in the memory data set used for the statistical analysis).</entry>
                <entry>No</entry>
-               <entry>"100"</entry>
+               <entry>100</entry>
             </row>
          </tbody>
       </tgroup>

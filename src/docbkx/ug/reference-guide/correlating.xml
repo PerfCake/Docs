@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.correlating" version="7.0">
    <title>Correlating messages</title>
-   <para>TODO complete
-   </para>
+   <para>All messages/responses received via a <code>Receiver</code> are passed to a
+         <code>Correlator</code> which notifies the correct <code>SenderTask</code>. The
+         <code>Correlator</code> component can extract a <emphasis>correlation ID</emphasis> from
+      both the requesnt and the response. It can also have an active role and actually create a
+         <emphasis>correlation ID</emphasis> and store it in the request message. </para>
+   <para><code>Correlator</code> is always bound to a <code>Receiver</code> and does not make any
+      sense without it.</para>
    <example>
       <title>An example of a correlator configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <receiver class="...">
-      <target>...</target>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <receiver class="..." threads="...">
+      <correlator class="...">
+         ...
+         correlator properties
+         ...
+      </correlator>
+      <source>...</source>
       ...
       receiver properties
       ...
    </receiver>]]></programlisting>
+      <para>When specifying the correlator class, unless you enter a fully classified class name,
+         the default package <code>org.perfcake.message.correlator</code> is assumed.</para>
       <para>In the following sections you can find a complete description of all
          correlators that can be used by PerfCake including all of their properties.
       </para>

@@ -64,60 +64,60 @@
                   <entry>preThreadCount</entry>
                   <entry>Initial number of threads.</entry>
                   <entry>No</entry>
-                  <entry> Generator's <code>threads</code> value. </entry>
+                  <entry>Generator's <code>threads</code> value. </entry>
                </row>
                <row>
                   <entry>preDuration</entry>
                   <entry> A duration period in the units of <code>run</code> type of "PRE" phase. </entry>
                   <entry>No</entry>
-                  <entry>Long.MAX_VALUE</entry>
+                  <entry><code>Long.MAX_VALUE</code></entry>
                </row>
                <row>
                   <entry>rampUpStep</entry>
                   <entry>A number by which the number of threads is changed in the "RAMP UP"
                      phase.</entry>
                   <entry>No</entry>
-                  <entry>"0"</entry>
+                  <entry>0</entry>
                </row>
                <row>
                   <entry>rampUpStepPeriod</entry>
                   <entry> A period in the units of <code>run</code> type after which the number of
                      threads is changed by <code>rampUpStep</code> value. </entry>
                   <entry>No</entry>
-                  <entry>Long.MAX_VALUE</entry>
+                  <entry><code>Long.MAX_VALUE</code></entry>
                </row>
                <row>
                   <entry>mainThreadCount</entry>
                   <entry>A number of threads in the main phase.</entry>
                   <entry>No</entry>
-                  <entry> Generator's <code>threads</code> value. </entry>
+                  <entry>Generator's <code>threads</code> value. </entry>
                </row>
                <row>
                   <entry>mainDuration</entry>
                   <entry> A duration in the units of <code>run</code> type for which the main phase
                      lasts. </entry>
                   <entry>No</entry>
-                  <entry>"0"</entry>
+                  <entry>0</entry>
                </row>
                <row>
                   <entry>rampDownStep</entry>
                   <entry>A number by which the number of threads is changed in the "RAMP DOWN"
                      phase.</entry>
                   <entry>No</entry>
-                  <entry>"0"</entry>
+                  <entry>0</entry>
                </row>
                <row>
                   <entry>rampDownStepPeriod</entry>
                   <entry> A period in the units of <code>run</code> type after which the number of
                      threads is changed by <code>rampDownStep</code> value. </entry>
                   <entry>No</entry>
-                  <entry>Long.MAX_VALUE</entry>
+                  <entry><code>Long.MAX_VALUE</code></entry>
                </row>
                <row>
                   <entry>postThreadCount</entry>
                   <entry>Final number of threads.</entry>
                   <entry>No</entry>
-                  <entry> Generator's <code>threads</code> value. </entry>
+                  <entry>Generator's <code>threads</code> value. </entry>
                </row>
             </tbody>
          </tgroup>

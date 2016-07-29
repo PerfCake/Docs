@@ -93,13 +93,13 @@
                <entry>receivingTimeout</entry>
                <entry>A time duration in ms of specifying how long the sender will wait to receive the response message.</entry>
                <entry>No</entry>
-               <entry>"1000"</entry>
+               <entry>1000</entry>
             </row>
             <row>
                <entry>receiveAttempts</entry>
                <entry>A Number of attempts to receive the message.</entry>
                <entry>No</entry>
-               <entry>"5"</entry>
+               <entry>5</entry>
             </row>
          </tbody>
       </tgroup>

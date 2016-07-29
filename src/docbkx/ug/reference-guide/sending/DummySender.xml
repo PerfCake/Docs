@@ -30,7 +30,7 @@
                <entry>delay</entry>
                <entry>Time duration in milliseconds that the sender will simulate waiting for a response. If set to 0 (default) it will not wait at all.</entry>
                <entry>No</entry>
-               <entry>"0"</entry>
+               <entry>0</entry>
             </row>
          </tbody>
       </tgroup>

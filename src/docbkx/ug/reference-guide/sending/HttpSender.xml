@@ -48,7 +48,7 @@
                      expected to be returned.
                   </entry>
                   <entry>No</entry>
-                  <entry>"200"</entry>
+                  <entry>200</entry>
                </row>
                <row>
                   <entry>method</entry>
@@ -64,7 +64,7 @@
                      </footnote>
                   </entry>
                   <entry>No</entry>
-                  <entry>"POST"</entry>
+                  <entry>POST</entry>
                </row>
             </tbody>
          </tgroup>

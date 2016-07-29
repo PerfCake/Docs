@@ -58,6 +58,8 @@
          by both of the validators.
       </para>
       <para>The validation is enabled and the fast validation mode will be activated once the performance test finishes.</para>
+      <para>When specifying the validator class, unless you enter a fully classified class name, the
+         default package <code>org.perfcake.validation</code> is assumed.</para>
       <para>The rest of the chapter will present all the available validators that can be used in PerfCake.</para>
    </example>
    <xi:include href="./validation/validators.xml"/>

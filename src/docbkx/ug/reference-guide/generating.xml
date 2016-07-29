@@ -28,13 +28,11 @@
                </row>
             </tbody>
          </tgroup>
-      </table>
-   </para>
-   <para>The generating is performed in so called iterations. In a single iteration generator takes
-      a sender from the sender pool, uses it to send all the messages specified in the scenario (See
-         <xref linkend="ug.reference-guide.messages"/> ) and after that it returns the sender back
-      to the sender pool. The reporting module (See <xref linkend="ug.reference-guide.reporting"/> )
-      treats this as a single iteration. </para>
+      </table>The generating is performed in so called iterations. In a single iteration generator
+      takes a sender from the sender pool, uses it to send all the messages specified in the
+      scenario (See <xref linkend="ug.reference-guide.messages"/> ) and after that it returns the
+      sender back to the sender pool. The reporting module (See <xref
+         linkend="ug.reference-guide.reporting"/> ) treats this as a single iteration. </para>
    <example>
       <title>
          An example of the
@@ -48,6 +46,8 @@
       ...
    </generator>]]></programlisting>
       <para>In the example above a scenario is defined to run for 10 seconds.</para>
+      <para>When specifying the generator class, unless you enter a fully classified class name, the
+         default package <code>org.perfcake.message.generator</code> is assumed.</para>
       <para>The following sections describes the generators that can be
          used in PerfCake to generate the load.
       </para>

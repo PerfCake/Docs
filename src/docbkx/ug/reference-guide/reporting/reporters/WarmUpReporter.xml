@@ -41,25 +41,25 @@
                <entry>minimalWarmUpDuration</entry>
                <entry>A minimal amount of time (in milliseconds) of the warm-up period.</entry>
                <entry>No</entry>
-               <entry>"15000"</entry>
+               <entry>15000</entry>
             </row>
             <row>
                <entry>minimalWarmUpCount</entry>
                <entry>A minimal number of iteration in the warm-up period.</entry>
                <entry>No</entry>
-               <entry>"10000"</entry>
+               <entry>10000</entry>
             </row>
             <row>
                <entry>relativeThreshold</entry>
                <entry>A relative difference threshold to determine whether the throughput is not changing much.</entry>
                <entry>No</entry>
-               <entry>"0.002"</entry>
+               <entry>0.002</entry>
             </row>
             <row>
                <entry>absoluteThreshold</entry>
                <entry>An absolute difference threshold to determine whether the throughput is not changing much.</entry>
                <entry>No</entry>
-               <entry>"0.2"</entry>
+               <entry>0.2</entry>
             </row>
          </tbody>
       </tgroup>

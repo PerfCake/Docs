@@ -16,6 +16,8 @@
       sender properties
       ...
    </sender>]]></programlisting>
+      <para>When specifying the sender class, unless you enter a fully classified class name, the
+         default package <code>org.perfcake.message.sender</code> is assumed.</para>
       <para>In the following sections you can find a complete description of all
          senders, that can be used by PerfCake including all of their properties.
       </para>

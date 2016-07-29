@@ -19,9 +19,12 @@
       destinations you tell where output should be directed by the reporter
       (e.g. console, CSV file, etc.).
    </para>
-   <para>A reporter can publish multiple results (e.g. current value, average value, etc.) each with a particular name.
-      The actual names of the results are described with the particular reporter.
-   </para>
+   <para>A reporter can publish multiple results (e.g. current value, average value, etc.) each with
+      a particular name. The actual names of the results are described with the particular
+      reporter.</para>
+   <para>When specifying the reporter class, unless you enter a fully classified class name, the
+      default package <code>org.perfcake.reporting.reporter</code> is assumed. For the destination
+      class, the default package is <code>org.perfcake.reporting.destination</code>.</para>
    <example>
       <title>An example reporting configuration:</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporting>

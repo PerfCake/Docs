@@ -34,6 +34,8 @@
          ...
       </sequence>
    </sequences>]]></programlisting>
+    <para>When specifying the sequence class, unless you enter a fully classified class name, the
+      default package <code>org.perfcake.message.sequence</code> is assumed.</para>
      <para>In the following sections you can find a complete description of all
        sequences, that can be used by PerfCake including all of their properties.
      </para>
