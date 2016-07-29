@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.receiving.HttpReceiver" version="7.0">
    <title>HttpReceiver</title>
-   <para>
-      The HttpReceiver can be used to TODO complete
-   </para>
-   <para>
-      Following table shows the properties of the HttpReceiver:
-      <table frame="all">
+   <para>The HttpReceiver can be used to receive responses from an HTTP channel. It opens an HTTP
+      port and listens for responses. After receiving a single response it immediatelly cresponds
+      with the given response, status code and status message.</para>
+   <para>Following table shows the properties of the HttpReceiver: <table frame="all">
          <title>HttpReceiver properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="2*"/>
@@ -23,28 +21,33 @@
             </thead>
             <tbody>
                <row>
-                  <entry>expectedResponseCodes</entry>
-                  <entry>A comma separated list of HTTP response code(s) that is
-                     expected to be returned.
-                  </entry>
-                  <entry>No</entry>
-                  <entry>"200"</entry>
+                  <entry>source</entry>
+                  <entry>&lt;address>[:&lt;port>] where to bind the HTTP server and listen for the
+                     messages. The default port, if not specified, is 8088. Please note that for
+                     lower port numbers you might need to run PerfCake as a superuser (root,
+                     administrator).</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
                </row>
                <row>
-                  <entry>method</entry>
-                  <entry>
-                     An HTTP method to be used.
-                     <footnote>
-                        <para>
-                           See
-                           <link xlink:href="http://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html#setRequestMethod(java.lang.String)"/>
-                           for a complete list of
-                           available methods.
-                        </para>
-                     </footnote>
-                  </entry>
+                  <entry>httpStatusCode</entry>
+                  <entry>The HTTP status code to return to the client sending the message.</entry>
                   <entry>No</entry>
-                  <entry>"POST"</entry>
+                  <entry>200</entry>
+               </row>
+               <row>
+                  <entry>httpStatusMessage</entry>
+                  <entry>A status message to return to the client sending the message. By default,
+                     no status message is set.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>httpResponse</entry>
+                  <entry>A response to return to the client sending the message. By default, no
+                     response is sent.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
                </row>
             </tbody>
          </tgroup>
@@ -53,9 +56,9 @@
    <example>
       <title>An example of HttpReceiver configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <receiver class="HttpReceiver">
-      <source>http://domain.com/cool-url</source>
-      <property name="method" value="GET"/>
-      <property name="expectedResponseCodes" value="200,202"/>
+      <correlator class="GenerateHeaderCorrelator" />
+      <source>localhost:3000</source>
+      <property name="httpResponse" value="Hello this is PerfCake!"/>
    </receiver>]]></programlisting>
    </example>
 </section>

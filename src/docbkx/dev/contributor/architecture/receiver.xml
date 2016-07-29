@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.receiver" version="7.0">
    <title>Receivers and Correlators</title>
-   <para>TODO complete</para>
+   <para><emphasis>Receivers</emphasis> and <emphasis>Correlators</emphasis> are two optional
+      components of a performance test scenario that enables us to receive response from a separate
+      message channel. We can for instance send a request through a REST API and await for the
+      response in the file system or in a database.</para>
+   <para>A <code>Receiver</code> has three mandatory properties. These are the number of concurrent
+         <code>threads</code> that should be created to receive responses, the
+         <code>correlator</code> to be used to match responses to requests, and the
+         <code>source</code> from where to receive the responses. An instance of
+         <code>Correlator</code> is also passed to the <code>Receiver</code> for it to be able to
+      register the response.</para>
+   <para>It is a crucial responsibility of the <code>Receiver</code> to spawn the threads and
+      establish communication channels. A <code>Receiver</code> must start the defined number
+      threads to receive messages. These threads are later stopped with
+         <code>Thread.interrupt()</code>. It is up to the receiver threads to react accordingly. The
+      receiver threads must be executed as daemon threads and can be terminated at the end of the
+      test execution if they do not react to the interruption.</para>
+   <para>During a performance test execution there is just a single instance of a
+         <code>Receiver</code> created. For the developers convenience there is
+         <code>AbstractReceiver</code>. For the most common situations where the
+         <code>Receiver</code> simply creates a thread pool, there is
+         <code>AbstractAutoSpawnReceiver</code>. A developer just needs to extends the
+         <code>run()</code> method then. On the other hand, <code>HttpReceiver</code> is an example
+      of a <code>Receiver</code> where the underlying framework did not allow us to spawn the
+      threads ourself and manages the pool itself, thus is extends
+      <code>AbstractReceiver</code>.</para>
+   <para>All received messages are passed to a <code>Correlator</code> which notifies the correct
+         <code>SenderTask</code>. The <code>Correlator</code> interface defines two methods, first
+      for the outbound requests (<code>registerRequest()</code>), and second for the inbound
+      responses (<code>registerResponse()</code>). The Correlator then correlates requests with
+      their responses and notifies <code>SenderTask</code> of receiving the appropriate response to
+      the original request. This is done based on a <emphasis>correlation ID</emphasis> that is
+      extracted from both request and response. Upon a successful match,
+         <code>SenderTask.registerResponse(Serializable)</code> is called.</para>
+   <para>For performance reasons, all interface methods should be implemented thread safe without
+      locking and or synchronization. All implementations should make sure that they do not keep
+      eating up the memory and clean their data structures regularly.</para>
+   <para>For the developers convenience, there is <code>AbstractCorrelator</code> that takes care
+      about matching the messages together. All one needs to implement are methods to extract the
+         <emphasis>correlation ID</emphasis> from both the request
+         (<code>getRequestCorrelationId()</code>) and the response
+         (<code>getResponseCorrelationIds()</code>).</para>
+   <para>Please note the difference that a response can actually contain multiple
+         <emphasis>IDs</emphasis>. The method for processing responses also takes a
+         <code>MultiMap</code> instance with the message headers. This is because some protocols
+      allow the same message header to be present multiple times (e.g. HTTP). </para>
+   <para>The <code>Correlator</code> does not necessarily need to have just a passive role. It can
+      even add the <emphasis>correlation ID</emphasis> in the request if there is none yet. See
+         <code>GenerateHeaderCorrelator</code> that can be used for many protocols.</para>
+   <para>It is possible that multiple requests will be aggregated in a single response. It is a task
+      of a <code>Correlator</code> implementation to report all the aggregated responses. It is also
+      possible that a single request will trigger multiple responses. Again, a specialized
+         <code>Correlator</code> implementation can handle this situation and wait for all the parts
+      to be received.</para>
 </section>

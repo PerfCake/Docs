@@ -6,17 +6,19 @@
       <title>Generators Architecture</title>
       <graphic format="SVG" fileref="./images/generator-architecture.svg" width="100%"/>
    </figure>
-   <para>A message generator controls how many threads are being used to generate the messages, it
-      is responsible for creating and submitting <varname>SenderTasks</varname> and controls the
-      other components involved in the performance test execution. </para>
+   <para>The main responsibility of the generator is creation of <code>SenderTask</code> instances
+      whil controlling the number of threads used and the speed of creation of these tasks. A
+      generator also keeps a thread pool that executes the tasks. The tasks are then processed as
+      fast as possible. There is nothing a generator could or should do about the speed of the
+      SenderTask execution. </para>
    <para>A message generator is the most crucial and complicated component of PerfCake and it is
       highly recommended to reuse one of existing implementations as they already offer mostly
       wanted features. </para>
-   <para>The main task of a message generator is to take care of the sending threads, create
+   <para>The message generator needs to take care of the sending threads, create
          <varname>SenderTasks</varname> as needed and monitor the test progress. It is important to
       properly shutdown the message generation for both time and iteration based test length
-      control. In the case of an iteration based control, a generator must wait for all the messages
-      to be processed (in case of a normal/unexceptional termination). In the case of a time based
+      control. In the case of an iteration based control, a generator must wait for all the tasks to
+      be processed (in case of a normal/unexceptional termination). In the case of a time based
       control, the test stops immediately after the time has elapsed.</para>
    <para>Each <varname>SenderTask</varname> takes a reference to its parent generator to notify this
       generator of any errors that might have occurred.</para>

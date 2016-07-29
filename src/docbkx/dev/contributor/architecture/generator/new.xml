@@ -29,7 +29,9 @@
                   <varname>MessageSender</varname> to send one or more messages while measuring the
             time it took. When a <code>Receiver</code> is used, it awaits for a message response on
             a separate message channel. Upon the response's arrival, the total time is measured. In
-            the end, the <varname>MessageSender</varname> is released. It is not released sooner
-            even though we might be using a <code>Receiver</code> because we do not want another
-            thread to use it before we complete the task.</para>
+            the end, the <varname>MessageSender</varname> is released. When a <code>Receiver</code>
+            is in place, the <code>MessageSender</code> is not returned to the pool until we get a
+            response corresponding to the original request. This prevents another thread from using
+            the same <code>MessageSender</code> and thus increasing the number of concurrent
+            clients.</para>
 </section>

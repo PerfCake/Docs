@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.receiving" version="7.0">
    <title>Receiving messages</title>
-   <para>TODO complete
-   </para>
+   <para>A <code>Receiver</code> is a component used to receive responses from a separate message
+      channel. It is though possible to send requests to some protocol and use a completely
+      different protocol to receive responses.</para>
+   <para linkend="ug.reference-guide.correlating">The <code>Receiver</code> always needs to know how
+      many threads it should use to receive responses and from where it should read them. So there
+      is a mandatory attribute <code>threads</code>, and two mandatory tags <code>source</code> and
+      <code>correlator</code>. For <emphasis>Correlators</emphasis> see <xref linkend="ug.reference-guide.correlating"/>.</para>
    <example>
       <title>An example of a Receiver configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <receiver class="...">
-      <target>...</target>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <receiver class="..." threads="...">
+      <correlator class="..." />
+      <source>...</source>
       ...
       receiver properties
       ...
    </receiver>]]></programlisting>
       <para>In the following sections you can find a complete description of all
-         receivers that can be used by PerfCake including all of their properties.
-      </para>
+            <emphasis>Receivers</emphasis> that can be used by PerfCake including all of their
+         properties. </para>
    </example>
    <xi:include href="./receiving/HttpReceiver.xml"/>
 </section>

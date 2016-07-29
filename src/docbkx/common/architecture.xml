@@ -7,30 +7,50 @@
       <graphic format="SVG" fileref="./images/overall-architecture.svg" width="100%"/>
    </figure>
    <para>In the <xref linkend="overall-architecture"/> , we can see the high level overview of
-      PerfCake's architecture. There is always a single Generator<indexterm>Generator</indexterm>.
-      The main purpose of the Generator is to specify how the messages are generated. The easiest
-      case would be to send a message to the target system, wait for the response and measure the
-      response time. However, this would not tell us anything about performance of the target
-      system. What is more interesting is a load generated in many parallel threads as fast as
-      possible. </para>
-   <para>The default generator implementation (DefaultMessageGenerator) has a queue of messages
-      ready to be send by a Sender <indexterm>Sender</indexterm> to the target system. More details
-      about Generator architecture cen be found in the next section. For now, just remember that
-      Generator specifies HOW the messages are sent. </para>
-   <para>A Sender <indexterm>Sender</indexterm> specifies the protocol that is used to send the
-      message. This can be HTTP, REST, JMS, JDBC, SOAP, socket, file etc. The Sender is configured
-      with a specific address for the given protocol. So the Sender tells WHERE TO send the
-      messages. </para>
-   <para>A Message <indexterm>Message</indexterm> is the content of the smallest unit of load that
-      is sent to the target system. So basically it says WHAT is sent. </para>
-   <para>For the ability to have different Message each time it is sent or to fill in some dynamic
-      values, a sophisticated templating engine is used. To provide the dynamic values, we can use a
-      Sequence <indexterm>Sequence</indexterm>. This is a simple interface that returns another
-      value in the row each time it is called.</para>
+      PerfCake's architecture. There is always a single
+         <code>Generator</code><indexterm>Generator</indexterm>that works like an
+         <emphasis>engine</emphasis> in the performance test. The main purpose of the
+         <code>Generator</code> is to specify how the messages are generated. The easiest case would
+      be to send a message to the target system, wait for the response and measure the response
+      time. However, this would not tell us anything about performance of the target system. What is
+      more interesting is a load generated in many parallel threads as fast as possible. </para>
+   <para>The default generator implementation (<code>DefaultMessageGenerator</code>) has a queue of
+      messages ready to be send by a <code>Sender</code>
+      <indexterm>Sender</indexterm> to the target system. More details about <code>Generator</code>
+      architecture cen be found in the next section. For now, just remember that
+         <code>Generator</code> specifies <emphasis>HOW</emphasis> the messages are sent. </para>
+   <para>A <code>Sender</code>
+      <indexterm>Sender</indexterm> represents a protocol specific <emphasis>"pump"</emphasis> of
+      message to a target service or system under test. The protocols can be HTTP, REST, JMS, JDBC,
+      SOAP, socket, file etc. The <code>Sender</code> is configured with a specific address for the
+      given protocol. So the Sender tells <emphasis>WHERE TO</emphasis> send the messages. </para>
+   <para>A <code>Message</code>
+      <indexterm>Message</indexterm> is the content of the smallest unit of load that is sent to the
+      target system. So basically it says <emphasis>WHAT</emphasis> is sent. </para>
+   <para>For the ability to have different <code>Message</code> each time it is sent or to fill in
+      some dynamic values, a sophisticated templating engine is used. Each message can be enriched
+         (<emphasis>"oiled"</emphasis>) with dynamic values. To provide the dynamic values, we can
+      use a <code>Sequence</code>
+      <indexterm>Sequence</indexterm>. This is a simple interface that returns another value in the
+      row each time it is called.</para>
+   <para>Optionally, a response to the original request can be received through a separate message
+      channel. This is where <code>Receivers</code> come at hand. A <code>Receiver</code> manages an
+         <code>"inflow"</code> of responses to the original requests and passes them to a
+         <code>Correlator</code>. The <code>Correlator</code> then matches the responses to the
+      original requests based on some specific information (i.e. <emphasis>correlation
+      ID</emphasis>) in both of the messages. A complete request-response cycle is then being
+      measured.</para>
    <para>The procedure of sending the messages is carefully monitored by the reporting facility of
-      PerfCake. This allows us to write results to various outputs. </para>
+      PerfCake. The metrices are implemented using <code>Reporters</code>. A
+         <code>Reporter</code><indexterm>Reporter</indexterm> accumulates single measurements of
+      individual requests into meaningful values (e.g. throughput, memory usage, response time,
+      service time, response time histogram, etc.) and waits for them to be
+         <emphasis>"discharged"</emphasis> at specified intervals into a <code>Destination</code>.
+      The <code>Destination</code><indexterm>Destination</indexterm> specifies where the measured
+      results are stored (e.g. chart, CSV file, log file, database, etc.).</para>
    <para>Finally, there are validators that prove the responses to be valid. Some system can start
       responding very fast under a heavy load, but just with a blunt overload warning. To prevent
-      any such failure, a Validator <indexterm>Validator</indexterm> can valide its content.</para>
+      any such failure, a <code>Validator</code>
+      <indexterm>Validator</indexterm> can valide its content.</para>
    <para>More details about individual parts of the application can be found in the later sections. </para>
 </section>
