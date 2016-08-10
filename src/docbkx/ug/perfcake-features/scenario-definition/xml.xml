@@ -11,7 +11,7 @@
             <link xlink:href="http://schema.perfcake.org/perfcake-scenario-7.0.xsd"/>
          </para>
       </footnote>. The scenario is divided into several sections: Properties, Run, Generator,
-      Sender, Reporting, Messages and Validation. </para>
+      Sequences, Sender, Receiver, Reporting, Messages and Validation. </para>
    <section>
       <title>Scenario structure</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -32,10 +32,20 @@
       ...
    </generator>
 
+   <!-- Sequences section (optional) -->
+   <sequences>
+      ...
+   </sequences>
+
    <!-- Sender section (required) -->
    <sender ... >
       ...
    </sender>
+
+   <!-- Receiver section (optional) -->
+   <receiver>
+      ...
+   </receiver>
 
    <!-- Reporting section (optional) -->
    <reporting>
@@ -46,11 +56,6 @@
    <messages>
       ...
    </messages>
-
-   <!-- Sequences section (optional) -->
-   <sequences>
-      ...
-   </sequences>
 
    <!-- Validation section (optional) -->
    <validation>
