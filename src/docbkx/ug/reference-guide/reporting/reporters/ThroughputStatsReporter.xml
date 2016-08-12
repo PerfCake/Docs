@@ -4,7 +4,8 @@
    <para>The reporter is able to report the statistics - current, minimal, maximal and average value
       of a throughput (in the means of the number of iterations per second) from the beginning of
       the measuring to the moment when the results are published (default) or in a specified window.
-      The default result of this reporter is the current throughput. </para>
+      The default result of this reporter is the current throughput.
+   </para>
    <table frame="all">
       <title>ThroughputStatsReporter properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -53,7 +54,21 @@
             </row>
             <row>
                <entry>windowSize</entry>
-               <entry>A window where the data for the statistics are taken from.</entry>
+               <entry>A window where the data for the statistics are taken from. The value unit depends on the window type specified by the
+                  <code>windowType</code>
+                  property.
+               </entry>
+               <entry>No</entry>
+               <entry>Integer.MAX_VALUE</entry>
+            </row>
+            <row>
+               <entry>windowType</entry>
+               <entry>A type of the window. It is either number of last iterations of an amount of time in milliseconds. The values of
+                  <code>iteration</code>
+                  or
+                  <code>time</code>
+                  is supported.
+               </entry>
                <entry>No</entry>
                <entry>Integer.MAX_VALUE</entry>
             </row>
@@ -116,7 +131,9 @@
                   <code>histogram</code>
                   is used, there is a result with the value of histogram for each range. Example:
                   <code>in&lt;100.0:200.0)</code>
-                  for a value range between 100.0 and 200.0 and the <code>histogramPrefix</code> set to "<code>in</code>".
+                  for a value range between 100.0 and 200.0 and the
+                  <code>histogramPrefix</code>
+                  set to "<code>in</code>".
                </entry>
             </row>
          </tbody>
@@ -124,7 +141,8 @@
    </table>
    <example>
       <title>An example of ThroughputStatsReporter configuration with a sliding window over last 30
-         iterations</title>
+         iterations
+      </title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ThroughputStatsReporter">
       <property name="minimumEnabled" value="false"/>
       <property name="maximumEnabled" value="false"/>
@@ -134,8 +152,11 @@
       ...
    </reporter>]]></programlisting>
    </example>
-   <para>In the example above there is a <code>ThroughputStatsReporter</code> configured to report
-      the current and the average value of the throughput. </para>
+   <para>In the example above there is a
+      <code>ThroughputStatsReporter</code>
+      configured to report
+      the current and the average value of the throughput.
+   </para>
    <example>
       <title>An example of output with the above configuration</title>
       <programlisting><![CDATA[[0:00:01][50 iterations][10%] [68.56845152517322 iterations/s] [warmUp => false] [Threads => 10] [ResponseSize => 19.24 KiB] [failures => 0] [RequestSize => 650.00 B] [Average => 56.58369666441687 iterations/s]

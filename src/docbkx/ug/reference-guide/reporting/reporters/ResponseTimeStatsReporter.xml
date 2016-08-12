@@ -4,7 +4,8 @@
    <para>The reporter is able to report the statistics - current, minimal, maximal and average value
       of a response time (in miliseconds) from the beginning of the measuring to the moment when the
       results are published (default) or in a specified window. The default result of this reporter
-      is the current response time. </para>
+      is the current response time.
+   </para>
    <table frame="all">
       <title>ResponseTimeStatsReporter properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
@@ -53,7 +54,21 @@
             </row>
             <row>
                <entry>windowSize</entry>
-               <entry>A window where the data for the statistics are taken from.</entry>
+               <entry>A window where the data for the statistics are taken from. The value unit depends on the window type specified by the
+                  <code>windowType</code>
+                  property.
+               </entry>
+               <entry>No</entry>
+               <entry>Integer.MAX_VALUE</entry>
+            </row>
+            <row>
+               <entry>windowType</entry>
+               <entry>A type of the window. It is either number of last iterations of an amount of time in milliseconds. The values of
+                  <code>iteration</code>
+                  or
+                  <code>time</code>
+                  is supported.
+               </entry>
                <entry>No</entry>
                <entry>Integer.MAX_VALUE</entry>
             </row>
@@ -92,17 +107,20 @@
             <row>
                <entry>Minimum</entry>
                <entry>The minimal response time in ms measured so far (in a given sliding
-                  window).</entry>
+                  window).
+               </entry>
             </row>
             <row>
                <entry>Maximum</entry>
                <entry>The minimal response time in ms measured so far (in a given sliding
-                  window).</entry>
+                  window).
+               </entry>
             </row>
             <row>
                <entry>Average</entry>
                <entry>The average response time in ms measured so far (in a given sliding
-                  window).</entry>
+                  window).
+               </entry>
             </row>
             <row>
                <entry>RequestSize</entry>
@@ -119,7 +137,9 @@
                   <code>histogram</code>
                   is used, there is a result with the value of histogram for each range. Example:
                   <code>in&lt;100.0:200.0)</code>
-                  for a value range between 100.0 and 200.0 and the <code>histogramPrefix</code> set to "<code>in</code>".
+                  for a value range between 100.0 and 200.0 and the
+                  <code>histogramPrefix</code>
+                  set to "<code>in</code>".
                </entry>
             </row>
          </tbody>
@@ -149,8 +169,11 @@
       ...
    </reporter>]]></programlisting>
 
-      <para>In the example above a <code>ResponseTimeStatsReporter</code> is configured to report
-         all statistics with the following output: </para>
+      <para>In the example above a
+         <code>ResponseTimeStatsReporter</code>
+         is configured to report
+         all statistics with the following output:
+      </para>
       <programlisting><![CDATA[2016-06-13 23:20:22,158 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
 2016-06-13 23:20:22,159 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2016-06-13 23:20:22,160 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 356ns. A single thread is now able to measure maximum of 2808988 iterations/second.
