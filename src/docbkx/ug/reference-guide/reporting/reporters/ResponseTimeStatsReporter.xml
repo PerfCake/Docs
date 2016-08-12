@@ -70,7 +70,7 @@
                   is supported.
                </entry>
                <entry>No</entry>
-               <entry>Integer.MAX_VALUE</entry>
+               <entry>iteration</entry>
             </row>
             <row>
                <entry>histogram</entry>
