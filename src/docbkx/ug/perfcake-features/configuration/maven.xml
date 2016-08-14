@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.configuration.maven" version="7.0">
+   <title>Running Scenarios from Maven</title>
+   <para>PerfCake is provided with a Maven plugin which allows to run PerfCake scenario within Maven
+      build. This makes perfomance test automation more easy and encourages you to run performance
+      tests on a regular basis (e.g. within your favourite CI server). Running performance test on a
+      regular basis allows you to spot performance drops very soon and thus makes it much easier to
+      identify which commit has caused performance regression.</para>
+   <para>Currently, the plugin has only one goal <code>scenario-run</code>, which runs specified
+      PerfCake scenario. By default, this goal is executed in <emphasis>integration-test</emphasis>
+      phase (i.e. assumes, that you deploy/start your application in
+         <emphasis>pre-integration-test</emphasis> phase and shut it down in
+         <emphasis>post-integration-test</emphasis> phase). </para>
+   <para>The only mandatory parameter is <code>&lt;scenario></code>, which specifies the name of the
+      scenario to be run. Optionally, you can also specify <code>&lt;scenarios-dir></code>,
+         <code>&lt;messages-dir></code> and <code>&lt;plugins-dir></code>, which specify paths to
+      directories containing scenarios, messages and plugins, respectively. If you don't setup these
+      parameters, plugin assumes, that appropriate directories (<code>scenarios</code>,
+         <code>messages</code>, <code>plugins</code>) are in
+         <code>src/test/resources/perfcake</code>. This can be switched to
+         <code>src/main/resources/perfcake</code> by configuring
+         <code>&lt;use-test-resources></code> to <code>false</code>. If any of these directories
+      does not exists, plugin will use <code>src/test/resources</code> (or
+         <code>src/main/resources</code>) as a fallback value for missing parameter.</para>
+   <para>The PerfCake Maven plugin requires log4j2 configuration file for PerfCake to report
+      properly. By default it assumes the file to be located in project root and named
+         <code>log4j2.xml</code>. This can be changed by the <code>&lt;log4j2-config></code> tag.
+      The PerfCake logging level can be configured with <code>&lt;log-level></code> tag and a file
+      with additional configuration properties can be specified by
+      <code>&lt;properties-file></code>.</para>
+   <para>The PerfCake version used with the plugin is always the same as plugin version. Both jar
+      files are released together.</para>
+   <example>
+      <title>PerfCake Maven plugin sample configuration</title>
+      <programlisting language="xml"><![CDATA[   <properties>
+      <perfcake.version>7.0</perfcake.version>
+      ...
+   </properties>
+   ...
+   <dependencies>
+      <dependency>
+         <groupId>org.perfcake</groupId>
+         <artifactId>perfcake</artifactId>
+         <version>${perfcake.version}</version>
+         <scope>test</scope>
+      </dependency>
+      ...
+   </dependencies>
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.perfcake.maven</groupId>
+            <artifactId>perfcake-maven-plugin</artifactId>
+            <version>${perfcake.version}</version>
+            <configuration>
+               <scenario>my_perfcake_scenario</scenario>
+               <log4j2-config>src/test/resources/log4j2.xml</log4j2-config>
+            </configuration>
+            <executions>
+               <execution>
+                  <id>perfcake-scenario-run</id>
+                  <goals>
+                     <goal>scenario-run</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      ...
+      </plugins>
+   </build>]]></programlisting>
+   </example>
+</section>

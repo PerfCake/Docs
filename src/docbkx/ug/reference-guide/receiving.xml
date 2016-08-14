@@ -4,7 +4,7 @@
    <para>A <code>Receiver</code> is a component used to receive responses from a separate message
       channel. It is though possible to send requests to some protocol and use a completely
       different protocol to receive responses.</para>
-   <para linkend="ug.reference-guide.correlating">The <code>Receiver</code> always needs to know how
+   <para>The <code>Receiver</code> always needs to know how
       many threads it should use to receive responses and from where it should read them. So there
       is a mandatory attribute <code>threads</code>, and two mandatory tags <code>source</code> and
       <code>correlator</code>. For <emphasis>Correlators</emphasis> see <xref linkend="ug.reference-guide.correlating"/>.</para>
