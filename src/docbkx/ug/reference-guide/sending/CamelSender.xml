@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.CamelSender" version="7.0">
+   <title>CamelSender</title>
+   <para>The CamelSender can be used to send messages to any <link
+         xlink:href="http://camel.apache.org">Apache Camel</link> endpoint. The endpoint is defined
+      in the target attribute in the configuration. Any Camel endpoints are allowed. Just make sure
+      the corresponding Camel component JAR file and its dependencies are on the classpath. In the
+      binary distribution, this means putting the JAR files in the lib/ext directory.</para>
+   <para>Endpoints can be usually configured by using message headers. To set the headers use the
+         <code>header</code> element of the particular <code>message</code> element in the
+         <code>messages</code> section of the scenario definition.</para>
+   <para>Following table shows the properties of the <code>CamelSender</code>: <table frame="all">
+         <title>CamelSender properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>keepConnection</entry>
+                  <entry>Instructs the sender to stay initialized for the whole run of the
+                     performance test. When set to <code>false</code>, the sender get initialized
+                     for each message. This influences the performance results and needs to be
+                     considered whether this is a required behavior.</entry>
+                  <entry>No</entry>
+                  <entry><code>true</code></entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <example>
+      <title>An example of CamelSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="CamelSender">
+      <target>http:127.0.0.1:8283/perfcake?param1=value1</target>
+   </sender>
+   ...
+   <messages>
+      <message content="Hello from Camel">
+         <header name="CamelHttpMethod" value="POST" />
+      </message>
+   </messages>]]></programlisting>
+      <para>In this example, the <code>CamelSender</code> is configured to use the HTTP Camel
+         component to send messages to an HTTP endpoint. The messages will be sent using the POST
+         method as configured in the message header.</para>
+   </example>
+</section>

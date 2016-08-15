@@ -22,6 +22,7 @@
          senders, that can be used by PerfCake including all of their properties.
       </para>
    </example>
+   <xi:include href="./sending/CamelSender.xml"/>
    <xi:include href="./sending/CoapSender.xml"/>
    <xi:include href="./sending/CommandSender.xml"/>
    <xi:include href="./sending/DummySender.xml"/>

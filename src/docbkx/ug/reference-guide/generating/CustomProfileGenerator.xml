@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating.generators.CustomProfileGenerator" version="7.0">
+   <title>CustomProfileGenerator</title>
+   <para>This generator allows the users to specify custom profiles to configure message generating.
+      A custom profile is simply a function that for the given time period of the performance test
+      returns the required number of threads and speed (number of generated messages per second). By
+      such a function, the process of generating messages can be freely configured as needed.</para>
+   <para>Each generator configuration has to specify the threads attribute. In the case of
+         <code>CustomProfileGenerator</code>, this specifies the maximum number of threads used
+      during the whole performance test. The profile function must not request more threads than
+      that. Otherwise some tasks for sending message won't have threads available and some requests
+      will be skipped while producing an error message. Please be careful about this.</para>
+   <para>When the profile function returns higher number of threads or higher speed then for the
+      previous time period, the change is applied immediatelly. However, when it returns lower
+      number of threads, the existing threads first need to finish their tasks before they are
+      removed from the pool. When a slower speed is requested, the generator first finishes the
+      tasks that are already in the task queue. The length of this queue is set by the
+         <code>senderTaskQueueSize</code> property. When the queue is too short, it runs out of
+      tasks frequently and this has a negative impact on the performance results. When it is too
+      long, it takes longer time for the change in speed to be reflected.</para>
+   <para>For example, when sending messages to a system that is capable to response in 10
+      milliseconds with 20 threads, PerfCake can process <code>1000 / 10 * 20</code> tasks per
+      second. If the queue length is set to 2000 (<code>1000 / 10 * 20 = 2000</code>), it would take
+      1 second for the speed to change.</para>
+   <para>The profile function can have its limits and simply do not provide any more values after a
+      certain boundary. For this purpose, the generator has an <code>autoReplay</code> property
+      which instructs it to replay the profile function from the beginning.</para>
+   <para>The profile function must implement the <code>Profile</code> interface and its class name
+      is passed to the generator. By default, the package
+         <code>org.perfcake.message.generator.profile</code> is assumed. The most important method
+      is <code>getProfile()</code> that returns the profile (number of threads and speed) for the
+      given time period. It must always return the correct value, despite the order of requests to
+      the method. The period passed to the method specifies the type of time information (either an
+      iteration number or milliseconds since test start) and time. The profile function must also
+      properly handle the <code>autoReplay</code> property.</para>
+   <para>For an easier development, there is an <code>AbstractProfile</code> class where the only
+      responsibility of a developer is to read all the time points where there is a change in either
+      thread count or speed in the profile function. All these points are registered with the
+         <code>addRequestEntry()</code> method. The class then handles all the correct
+      behaviour.</para>
+   <para>It is important to note that the last value in the profile function either remains until
+      the end of the performance test (when <code>autoReplay</code> is set to false), or it is
+      immediatelly overriden by the first value. This means that the values for the last entry
+      should be the same as for the first one when <code>autoReplay</code> is turned on.</para>
+   <para>The first entry in the profile function should always start with 0 to set the conditions at
+      the very beginning of the performance test. When there is no such entry starting with 0, the
+      first entry is taken for the starting conditions. The order of registered entries does not
+      matter and they are automatically sorted by their time property.</para>
+   <para>The following table shows the properties of the <code>CustomProfileGenerator</code>: <table
+         frame="all">
+         <title>CustomProfileGenerator properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>autoReplay</entry>
+                  <entry>Instructs the generator to replay the profile function from the beginning
+                     when we hit its end.</entry>
+                  <entry>No</entry>
+                  <entry>true</entry>
+               </row>
+               <row>
+                  <entry>profileClass</entry>
+                  <entry>The class name of the custom profile to use.</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>profileSource</entry>
+                  <entry>The source where the profile is specified. This is passed directly to the
+                     profile. Some profiles might not use this property.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>senderTaskQueueSize</entry>
+                  <entry>Determines the length of the queue for sender tasks. Influences how quickly
+                     the generator can react to slow downs in speed.</entry>
+                  <entry>No</entry>
+                  <entry>1000</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <example>
+      <title>An example of CustomProfileGenerator configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <generator class="CustomProfileGenerator" threads="100">
+      <property name="profileClass" value="CsvProfile"/>
+      <property name="profileSource" value="test-profile.csv"/>
+   </generator>]]></programlisting>
+   </example>
+   <para>The following sections describe the provided profile functions.</para>
+   <section>
+      <title>CsvProfile</title>
+      <para>This profile reads the points of profile function from a CSV file. The format of a
+         single line in the file is <code>&lt;time>;&lt;threads>;&lt;speed></code>.</para>
+      <para>The following example shows a ramp-up function that keeps the maximum values between the
+         last steps and then starts over (supposing <code>autoReplay</code> is set to
+            <code>true</code>).</para>
+      <example>
+         <title>Sample profile specified in a CSV file</title>
+         <programlisting><![CDATA[0;10;100
+250;20;100
+500;30;100
+750;30;200
+1000;30;300
+9999;10;100]]></programlisting>
+      </example>
+   </section>
+</section>

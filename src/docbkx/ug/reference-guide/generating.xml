@@ -54,5 +54,6 @@
    </example>
    <xi:include href="./generating/DefaultMessageGenerator.xml"/>
    <xi:include href="./generating/ConstantSpeedMessageGenerator.xml"/>
+   <xi:include href="./generating/CustomProfileGenerator.xml"/>
    <xi:include href="./generating/RampUpDownGenerator.xml"/>
 </section>
