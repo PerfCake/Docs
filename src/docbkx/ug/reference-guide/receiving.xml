@@ -8,6 +8,13 @@
       many threads it should use to receive responses and from where it should read them. So there
       is a mandatory attribute <code>threads</code>, and two mandatory tags <code>source</code> and
       <code>correlator</code>. For <emphasis>Correlators</emphasis> see <xref linkend="ug.reference-guide.correlating"/>.</para>
+   <para>Some <emphasis>Senders</emphasis> allow generating requests without specifying a message in
+      the scenario. However, this does not work with <emphasis>Receivers</emphasis> and
+         <emphasis>Correlators</emphasis>. There always needs to be a message specified (be it a
+      message with an empty body) for the <emphasis>Correlator</emphasis> to be able to compute (and
+      possibly store) the correlation ID. PerfCake insists on user specifying the message for them
+      to realize the configuration is different (in other words, PerfCake does not perform any magic
+      hidden operations on your configuration).</para>
    <example>
       <title>An example of a Receiver configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <receiver class="..." threads="...">
