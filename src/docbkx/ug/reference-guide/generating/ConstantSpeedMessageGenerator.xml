@@ -2,11 +2,11 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.generating.generators.ConstantSpeedMessageGenerator" version="7.0">
    <title>ConstantSpeedMessageGenerator</title>
    <para>This generator is based on <code>DefaultMessageGenerator</code> (See<xref
-         linkend="ug.reference-guide.generating.generators.DefaultMessageGenerator"/>). It tries to
-      achieve given speed of messages per second. Uses the underlying buffer of sender tasks
-         of<code>DefaultMessageGenerator</code>. This buffer smoothens the changes in the speed. If
-      you need the generator to change its speed more aggressively, configure
-         <code>senderTaskQueueSize</code> property. </para>
+         linkend="ug.reference-guide.generating.generators.DefaultMessageGenerator"/>) and inherits
+      all its configuration properties. It tries to achieve given speed of messages per second. Uses
+      the underlying buffer of sender tasks of<code>DefaultMessageGenerator</code>. This buffer
+      smoothens the changes in the speed. If you need the generator to change its speed more
+      aggressively, configure <code>senderTaskQueueSize</code> property. </para>
    <para>
       The following table shows the properties of the ConstantSpeedMessageGenerator:
       <table frame="all">
@@ -27,7 +27,9 @@
             <tbody>
                <row>
                   <entry>speed</entry>
-                  <entry>Desired constant speed in messages per second.</entry>
+                  <entry>Desired constant speed in messages per second. Setting the speed to -1
+                     makes the generator run at maximum possible speed like
+                        <code>DefaultMessageGenerator</code>.</entry>
                   <entry>No</entry>
                   <entry>5000</entry>
                </row>

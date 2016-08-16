@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.HttpSender" version="7.0">
    <title>HttpSender</title>
-   <para>The HttpSender can be used to send messages via HTTP protocol using POST method as default
-      to the URL specified by the 'target' property. The HTTP method can be changed using the
-         <code>method</code> property. </para>
-   <para>
-      Various scenarios can lead to different HTTP response codes that are expected. The scenario can be set to expect
-      one or more response codes. It can be set via the
-      <code>expectedResponseCodes</code>
-      property.
-      Default expected response code is 200.
-   </para>
-   <para> To set headers of the HTTP request use the <code>header</code> element of the particular
+   <para>The <code>HttpSender</code> can be used to send messages via HTTP protocol using POST
+      method as default to the URL specified by the 'target' property. The HTTP method can be
+      changed using the <code>method</code> property. </para>
+   <para>Various scenarios can lead to different HTTP response codes that are expected. The scenario
+      can be set to expect one or more response codes. It can be set via the
+         <code>expectedResponseCodes</code> property. Default expected response code is 200. </para>
+   <para>To set headers of the HTTP request use the <code>header</code> element of the particular
          <code>message</code> element in the <code>messages</code> section of the scenario
       definition.</para>
    <para>The <code>Content-Type</code> header is set automatically by the sender for all messages to

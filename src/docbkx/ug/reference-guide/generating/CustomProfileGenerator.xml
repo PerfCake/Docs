@@ -5,8 +5,11 @@
       A custom profile is simply a function that for the given time period of the performance test
       returns the required number of threads and speed (number of generated messages per second). By
       such a function, the process of generating messages can be freely configured as needed.</para>
-   <para>Each generator configuration has to specify the threads attribute. In the case of
-         <code>CustomProfileGenerator</code>, this specifies the maximum number of threads used
+   <para>The generator is based on <code>DefaultMessageGenerator</code> (see<xref
+         linkend="ug.reference-guide.generating.generators.DefaultMessageGenerator"/>) and inherits
+      all its properties.</para>
+   <para>Each generator configuration has to specify the <code>threads</code> attribute. In the case
+      of <code>CustomProfileGenerator</code>, this specifies the maximum number of threads used
       during the whole performance test. The profile function must not request more threads than
       that. Otherwise some tasks for sending message won't have threads available and some requests
       will be skipped while producing an error message. Please be careful about this.</para>
@@ -46,6 +49,8 @@
       the very beginning of the performance test. When there is no such entry starting with 0, the
       first entry is taken for the starting conditions. The order of registered entries does not
       matter and they are automatically sorted by their time property.</para>
+   <para>Whenever the speed is set to -1, the generator runs at maximal possible speed as
+         <code>DefaultMessageGenerator</code>.</para>
    <para>The following table shows the properties of the <code>CustomProfileGenerator</code>: <table
          frame="all">
          <title>CustomProfileGenerator properties</title>
