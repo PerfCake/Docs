@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.RequestResponseJmsSender" version="7.0">
    <title>RequestResponseJmsSender</title>
-   <para>The RequestResponseJmsSender is supposed to be used in request-response scenarios. First it
-      sends a JMS message to the target destination (specified by the <code>target</code> property)
-      and then waits to receive the response message from the response destination (specified by the
-         <code>responseTarget</code> property).</para>
-   <para>It is based on JmsSender (see <xref linkend="ug.reference-guide.sending.JmsSender"/> ) so
-      it inherits its properties. Some properties, when not specified, use the same value as those
-      present in <code>JmsSender</code>. However, security credentials always need to be set
-      separately. The following table contains additional properties of the
+   <para>The <code>RequestResponseJmsSender</code> is supposed to be used in request-response
+      scenarios. First it sends a JMS message to the target destination (specified by the
+         <code>target</code> property) and then waits to receive the response message from the
+      response destination (specified by the <code>responseTarget</code> property).</para>
+   <para>It is based on JmsSender (see <xref linkend="ug.reference-guide.sending.JmsSender"/> ) and
+      inherits all its configuration properties. Some properties, when not specified, use the same
+      value as those present in <code>JmsSender</code>. However, security credentials always need to
+      be set separately. The following table contains additional properties of the
          <code>RequestResponseJmsSender</code>: </para>
    <table frame="all">
       <title>RequestResponseJmsSender properties</title>

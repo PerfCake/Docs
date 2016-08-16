@@ -6,6 +6,54 @@
       <xref linkend="ug.reference-guide.sending.PlainSocketSender"/>
       ) and so it shares the same properties. The difference is that the SslSocketSender uses a SSL socket.
    </para>
+   <para>
+      <table frame="all">
+         <title>SslSocketSender additional properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>keyStore</entry>
+                  <entry>Path to the key store.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>keyStorePassword</entry>
+                  <entry>Key store password.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>trustStore</entry>
+                  <entry>Path to the trust store.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>trustStorePassword</entry>
+                  <entry>Trust store password.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <para>If neither <code>keyStore</code> or <code>trustStore</code> are set, the default Java
+         <code>SSLSocketFactory</code> is used. Its configuration depends on system
+      properties.</para>
    <example>
       <title>An example of SslSocketSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="SslSocketSender">

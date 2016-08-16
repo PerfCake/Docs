@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.HttpsSender" version="7.0">
    <title>HttpsSender</title>
-   <para>
-      HttpsSender is similar to the HttpSender (see
-      <xref linkend="ug.reference-guide.sending.HttpSender"/>
-      ), thus it shares the same properties. The difference is that the HttpsSender uses HTTPS instead of plain HTTP protocol to send messages.
-   </para>
+   <para> HttpsSender is similar to the HttpSender (see <xref
+         linkend="ug.reference-guide.sending.HttpSender"/> ), thus it inherits the same properties.
+      The difference is that the HttpsSender uses HTTPS instead of plain HTTP protocol to send
+      messages. </para>
    <para> The HttpsSender's properties are described in the following table: <table frame="all">
-         <title>HttpsSender properties</title>
+         <title>HttpsSender additional properties</title>
          <tgroup cols="4" align="left" colsep="1" rowsep="1">
             <colspec colname="property-name" colwidth="2*"/>
             <colspec colname="description" colwidth="2*"/>

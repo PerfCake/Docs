@@ -51,8 +51,7 @@
                </row>
             </tbody>
          </tgroup>
-      </table>
-   </para>
+      </table></para>
    <example>
       <title>An example of HttpSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="HttpSender">

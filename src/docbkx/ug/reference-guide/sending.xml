@@ -4,10 +4,16 @@
    <para>As it was mentioned before, a sender is an object responsible for sending a message to the tested system and receiving the response
       in a specific way via a specific transport.
    </para>
-   <para>To tell the sender where to send the messages, there is a
-      <code>&lt;target&gt;</code>
-      element mandatory for all senders.
-   </para>
+   <para>To tell the sender where to send the messages, there is a <code>&lt;target&gt;</code>
+      element mandatory for all senders.</para>
+   <para>All message senders provided in PerfCake distribution are based on the
+         <code>AbstractSender</code> class which cannot be used standalone but provides an important
+      property available in all other senders. The property is <code>keepConnection</code> and
+      instructs the sender to stay initialized for the whole run of the performance test. When set
+      to <code>false</code>, the sender get initialized for each message. This influences the
+      performance results and needs to be considered whether this is a required behavior. The
+      default value of this property is <code>true</code> and it is not required in the scenario
+      definition.</para>
    <example>
       <title>An example of a Sender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="...">

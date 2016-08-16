@@ -9,35 +9,7 @@
    <para>Endpoints can be usually configured by using message headers. To set the headers use the
          <code>header</code> element of the particular <code>message</code> element in the
          <code>messages</code> section of the scenario definition.</para>
-   <para>Following table shows the properties of the <code>CamelSender</code>: <table frame="all">
-         <title>CamelSender properties</title>
-         <tgroup cols="4" align="left" colsep="1" rowsep="1">
-            <colspec colname="property-name" colwidth="2*"/>
-            <colspec colname="description" colwidth="2*"/>
-            <colspec colname="required" colwidth="1*"/>
-            <colspec colname="default-value" colwidth="2*"/>
-            <thead>
-               <row>
-                  <entry>Property name</entry>
-                  <entry>Description</entry>
-                  <entry>Required</entry>
-                  <entry>Default value</entry>
-               </row>
-            </thead>
-            <tbody>
-               <row>
-                  <entry>keepConnection</entry>
-                  <entry>Instructs the sender to stay initialized for the whole run of the
-                     performance test. When set to <code>false</code>, the sender get initialized
-                     for each message. This influences the performance results and needs to be
-                     considered whether this is a required behavior.</entry>
-                  <entry>No</entry>
-                  <entry><code>true</code></entry>
-               </row>
-            </tbody>
-         </tgroup>
-      </table>
-   </para>
+   <para>There are no extra configuration properties for <code>CamelSender</code>.</para>
    <example>
       <title>An example of CamelSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="CamelSender">
