@@ -140,7 +140,7 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
          reporting. </para>
    </section>
    <section>
-      <title>Evaluate Results</title>
+      <title>Evaluate results</title>
       <para>For reporting some results of your measurement, you have to configure a Reporter - an object that is capable of computing results in some way and outputing them wherever you can imagine.
       </para>
       <para>Copy your
