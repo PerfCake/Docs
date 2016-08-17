@@ -36,7 +36,7 @@
       </table></para>
    <example>
       <title>An example of RandomSequence configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="RandomSequence">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence id="mySequence" class="RandomSequence">
       <property name="min" value="10" />
       <property name="max" value="256" />
    </sequence>]]></programlisting>

@@ -29,6 +29,11 @@
                the scenario definition, all of the messages will have the same iteration number for
                each iteration.</para>
          </listitem>
+         <listitem>
+            <para>We changed the configuration of sequences to be aligned with validators. This
+               means that the sequence <code>name</code> attribute has been changed to sequence
+                  <code>id</code>.</para>
+         </listitem>
       </itemizedlist> The following sections describe some steps in more detail. </para>
    <section xml:id="ug.perfcake-features.migrating-scenarios.mirating.6-to-7.steps">
       <title>Migration steps</title>
@@ -56,6 +61,20 @@
                linkend="ug.reference-guide.sequences">Sequences</xref>.</para>
          <para>For more details on the advanced features of proeprties filtering read <xref
                linkend="ug.perfcake-features.scenario-definition.filtering-properties"/>.</para>
+      </section>
+      <section>
+         <title>Rename the name attribute in sequences</title>
+         <para>In all scenario definitions change the sequence name attribute to sequence id. For
+            example, in XML scenarios change the following:</para>
+         <example>
+            <title>Old sequence configuration in XML</title>
+            <programlisting><![CDATA[<sequence name="..." class="...">]]></programlisting>
+         </example>
+         <para>To read like this:</para>
+         <example>
+            <title>New sequence configuration in XML</title>
+            <programlisting><![CDATA[<sequence id="..." class="...">]]></programlisting>
+         </example>
       </section>
    </section>
 </section>

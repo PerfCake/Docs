@@ -6,6 +6,6 @@
       <code>259f1e8a-816e-4fa0-a5eb-15e2aefe57a6</code>.</para>
    <example>
       <title>An example of RandomUuidSequence configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="RandomUuidSequence"/>]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence id="mySequence" class="RandomUuidSequence"/>]]></programlisting>
    </example>
 </section>

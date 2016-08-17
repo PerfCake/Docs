@@ -5,6 +5,6 @@
       properties are available.</para>
    <example>
       <title>An example of ThreadIdSequence configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="ThreadIdSequence" />]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence id="mySequence" class="ThreadIdSequence" />]]></programlisting>
    </example>
 </section>

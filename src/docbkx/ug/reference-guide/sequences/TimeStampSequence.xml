@@ -4,6 +4,6 @@
    <para> Returns the value of System.currentTimeMillis(). No configuration properties are available. </para>
    <example>
       <title>An example of TimeStampSequence configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="TimeStampSequence" />]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence id="mySequence" class="TimeStampSequence" />]]></programlisting>
    </example>
 </section>

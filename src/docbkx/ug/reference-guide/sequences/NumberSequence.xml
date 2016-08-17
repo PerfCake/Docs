@@ -52,7 +52,7 @@
       </table></para>
    <example>
       <title>An example of NumberSequence configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="NumberSequence">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence id="mySequence" class="NumberSequence">
       <property name="start" value="10" />
       <property name="end" value="0" />
       <property name="step" value="-2" />

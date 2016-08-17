@@ -31,7 +31,7 @@ The whole file is read in the memory in advance. Please make sure the file is of
    </para>
    <example>
       <title>An example of FileLinesSequence configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="FileLinesSequence">
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence id="mySequence" class="FileLinesSequence">
       <property name="fileUrl" value="sequence-lines.txt" />
    </sequence>]]></programlisting>
    </example>

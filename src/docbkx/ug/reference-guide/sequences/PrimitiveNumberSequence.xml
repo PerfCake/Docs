@@ -5,6 +5,6 @@
       but provides high performance. </para>
    <example>
       <title>An example of PrimitiveNumberSequence configuration</title>
-      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence name="mySequence" class="PrimitiveNumberSequence" />]]></programlisting>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence id="mySequence" class="PrimitiveNumberSequence" />]]></programlisting>
    </example>
 </section>

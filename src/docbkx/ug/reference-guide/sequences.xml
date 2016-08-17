@@ -6,8 +6,8 @@
     to be sent, a current snapshot of all sequences is created. Then the values are replaced in the
     message template and are also passed to <code>MessageSender.preSend()</code> method in
       <code>messageAttributes</code>. The property names/keys correspond to the configured sequence
-    name. </para>
-  <para>We suggest to configure your sequence names with a unique prefix (like
+      <code>id</code>. </para>
+  <para>We suggest to configure your sequence ids with a unique prefix (like
       <emphasis>seq.</emphasis>) to avoid possible conflicts with another properties.</para>
   <para>Possible usages of sequences are:<itemizedlist>
       <listitem>
@@ -28,7 +28,7 @@
    <example>
       <title>An example of a Sequence configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequences>
-      <sequence name="..." class="...">
+      <sequence id="..." class="...">
          ...
          sequence properties
          ...
