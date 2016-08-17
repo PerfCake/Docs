@@ -37,12 +37,17 @@ import org.perfcake.scenario.ScenarioLoader;
       <title>Complete scenario definition and execution using its API</title>
       <programlisting language="java"><![CDATA[import org.perfcake.PerfCakeException;
 import org.perfcake.RunInfo;
+import org.perfcake.common.BoundPeriod;
 import org.perfcake.common.Period;
 import org.perfcake.common.PeriodType;
 import org.perfcake.message.Message;
 import org.perfcake.message.MessageTemplate;
+import org.perfcake.message.correlator.Correlator;
+import org.perfcake.message.correlator.GenerateHeaderCorrelator;
 import org.perfcake.message.generator.DefaultMessageGenerator;
 import org.perfcake.message.generator.MessageGenerator;
+import org.perfcake.message.receiver.HttpReceiver;
+import org.perfcake.message.receiver.Receiver;
 import org.perfcake.message.sender.HttpSender;
 import org.perfcake.message.sender.MessageSender;
 import org.perfcake.message.sequence.PrimitiveNumberSequence;
@@ -51,7 +56,6 @@ import org.perfcake.reporting.destinations.ConsoleDestination;
 import org.perfcake.reporting.destinations.Destination;
 import org.perfcake.reporting.reporters.IterationsPerSecondReporter;
 import org.perfcake.reporting.reporters.Reporter;
-import org.perfcake.scenario.Scenario;
 import org.perfcake.validation.MessageValidator;
 import org.perfcake.validation.RegExpValidator;
 ...
@@ -70,6 +74,10 @@ import org.perfcake.validation.RegExpValidator;
 
       final MessageSender sender = new HttpSender().setMethod(HttpSender.Method.POST).setTarget("http://httpbin.org/post");
 
+      final Correlator correlator = new GenerateHeaderCorrelator();
+
+      final Receiver receiver = new HttpReceiver().setSource("localhost:8282").setThreads(10);
+
       final Sequence sequence = new PrimitiveNumberSequence();
 
       final Destination destination = new ConsoleDestination();
@@ -78,6 +86,7 @@ import org.perfcake.validation.RegExpValidator;
       reporter.registerDestination(destination, new Period(PeriodType.TIME, 1000));
 
       final ScenarioBuilder builder = new ScenarioBuilder(runInfo, generator, sender);
+      builder.setReceiver(receiver).setCorrelator(correlator);
       builder.putMessageValidator("regExp", validator).addMessage(messageTemplate).
             putSequence("intSeq", sequence).addReporter(reporter);
 
