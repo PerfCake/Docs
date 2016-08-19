@@ -44,6 +44,7 @@
    <xi:include href="./sending/MqttSender.xml"/>
    <xi:include href="./sending/PlainSocketSender.xml"/>
    <xi:include href="./sending/RequestResponseJmsSender.xml"/>
+   <xi:include href="./sending/ScriptSender.xml"/>
    <xi:include href="./sending/SslSocketSender.xml"/>
    <xi:include href="./sending/WebSocketSender.xml"/>
 </section>

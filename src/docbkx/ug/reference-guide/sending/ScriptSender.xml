@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="ug.reference-guide.sending.CoapSender" version="7.0">
+   <title>ScriptSender</title>
+   <para>The sender can be used to send a single message using a JSR 223
+      <footnote>
+         <para>
+            See
+            <link xlink:href="https://www.jcp.org/en/jsr/detail?id=223"/>
+            for more details on JSR 223 specification.
+         </para>
+      </footnote>
+      compliant script.
+   </para>
+   <para>The target of the sender is a path to the file where the script is implemented. To specify the scripting language engine there is a <code>engine</code> property. The message and it's headers are passed to the script via script binding and should be available as variables or objects instances, according to the scripting language.
+   </para>
+   <para>
+      The following table shows the senders properties.
+      <table frame="all">
+         <title>ScriptSender properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>engine</entry>
+                  <entry>A scripting language engine name. <code>groovy</code> is available out-of-the-box.
+                  </entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <example>
+      <title>An example of ScriptSender configuration</title>
+      <para>Scenario:</para>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="ScriptSender">
+      <target>/tmp/script.groovy</target>
+      <property name="engine" value="groovy"/>
+   </sender>
+   ...
+   <messages>
+      <message content="Soylent green">
+         <header name="what" value="people"/>
+      </message>
+   </messages>]]></programlisting>
+      <para>script.groovy file:</para>
+      <programlisting language="java" linenumbering="numbered" startinglinenumber="1"><![CDATA[println message.payload + " is made out of " + message.headers['what']; ]]></programlisting>
+   </example>
+</section>
