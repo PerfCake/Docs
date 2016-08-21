@@ -17,8 +17,8 @@
    <example>
       <title>Sample usage of the results replay mode</title>
       <programlisting><![CDATA[> $PERFCAKE_HOME/bin/perfcake.sh -s http-reporting -r perfcake-measurement-1465935794498.raw 
-2016-06-14 22:37:20,399 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/mvecera/work/PerfCake/tmp/perfcake-7.0-SNAPSHOT/resources/scenarios/http-reporting.xml
-2016-06-14 22:37:20,659 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
+2016-06-14 22:37:20,359 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
+2016-06-14 22:37:20,699 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/mvecera/work/PerfCake/tmp/perfcake-7.0-SNAPSHOT/resources/scenarios/http-reporting.xml
 2016-06-14 22:37:20,660 INFO  {org.perfcake.ScenarioExecution} Replaying raw results recorded in perfcake-measurement-1465935794498.raw.
 [0:00:00][1 iterations][3%] [319.848264 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 319.848264 ms]
 [0:00:01][59 iterations][14%] [179.383135 ms] [warmUp => false] [Threads => 10] [ResponseSize => 0.00 B] [failures => 0] [RequestSize => 0.00 B] [Average => 207.6054971694915 ms]

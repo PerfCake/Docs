@@ -10,9 +10,14 @@
       used to control the scenario execution.
    </para>
    <programlisting><![CDATA[[PERFCAKE_HOME]$ ./bin/perfcake.sh
-usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md 
-                         <MESSAGES_DIR>] [-D<property=value>]*
+=== Welcome to PerfCake 7.0 ===
+usage: ScenarioExecution -s <SCENARIO> [options] [-D<property=value>]*
+ -d,--debug                                start debug JMX agent for
+                                           external monitoring
  -D <property=value>                       system properties
+ -dn,--debug-name <AGENT_NAME>             debug agent name in the JMX
+                                           tree
+ -h,--help                                 prints help/usage
  -log,--log-level <LOG_LEVEL>              logging level
  -md,--messages-dir <MESSAGES_DIR>         directory for messages
  -pd,--plugins-dir <PLUGINS_DIR>           directory for plugins
@@ -76,20 +81,20 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
                   <entry>-sd, --scenarios-dir</entry>
                   <entry>Path to the directory where scenarios are located.</entry>
                   <entry>No</entry>
-                  <entry>$PERFCAKE_HOME/resources/scenarios</entry>
+                  <entry><code>$PERFCAKE_HOME/resources/scenarios</code></entry>
                </row>
                <row>
                   <entry>-md, --messages-dir</entry>
                   <entry>Path to the directory where message files are located.</entry>
                   <entry>No</entry>
-                  <entry>$PERFCAKE_HOME/resources/messages</entry>
+                  <entry><code>$PERFCAKE_HOME/resources/messages</code></entry>
                </row>
                <row>
                   <entry>-pd, --plugins-dir</entry>
                   <entry>Path to the directory where plugins are located (see <xref
                         linkend="ug.extending.plugins"/> ). </entry>
                   <entry>No</entry>
-                  <entry>$PERFCAKE_HOME/resources/plugins</entry>
+                  <entry><code>$PERFCAKE_HOME/resources/plugins</code></entry>
                </row>
                <row>
                   <entry>-r, --replay &lt;RAW_FILE></entry>
@@ -110,7 +115,29 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
                   <entry>Skip system timer benchmark during PerfCake startup. This can speedup the
                      startup a little bit.</entry>
                   <entry>No</entry>
-                  <entry>false</entry>
+                  <entry><code>false</code></entry>
+               </row>
+               <row>
+                  <entry>-d, --debug</entry>
+                  <entry>Starts an internal debug agent that publishes status of PerfCake components
+                     via JMX. This is an experimental feature suited for performance scenario
+                     development. It has a significant performance drawback and must not be used for
+                     real testing.</entry>
+                  <entry>No</entry>
+                  <entry><code>false</code></entry>
+               </row>
+               <row>
+                  <entry>-dn, --debug-name</entry>
+                  <entry>Name of the debug agent for the case when there were multiple PerfCake
+                     instances in the same JVM sharing the JMX data.</entry>
+                  <entry>No</entry>
+                  <entry>perfcake-1</entry>
+               </row>
+               <row>
+                  <entry>-h, --help</entry>
+                  <entry>Prints PerfCake help/usage information.</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
                </row>
             </tbody>
          </tgroup>
@@ -146,17 +173,17 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
             <row>
                <entry>perfcake.scenarios.dir</entry>
                <entry>Equivalent of the <code>-sd</code> command line parameter.</entry>
-               <entry>$PERFCAKE_HOME/resources/scenarios</entry>
+               <entry><code>$PERFCAKE_HOME/resources/scenarios</code></entry>
             </row>
             <row>
                <entry>perfcake.messages.dir</entry>
                <entry>Equivalent of the <code>-md</code> command line parameter.</entry>
-               <entry>$PERFCAKE_HOME/resources/messages</entry>
+               <entry><code>$PERFCAKE_HOME/resources/messages</code></entry>
             </row>
             <row>
                <entry>perfcake.plugins.dir</entry>
                <entry>Equivalent of the <code>-pd</code> command line parameter.</entry>
-               <entry>$PERFCAKE_HOME/resources/plugins</entry>
+               <entry><code>$PERFCAKE_HOME/resources/plugins</code></entry>
             </row>
             <row>
                <entry>perfcake.properties.file</entry>
@@ -174,7 +201,7 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
                   during sending a message. PerfCake needs to wait for all the threads to finish, so
                   you might see an error to be shown multiple times actually. In case this is set to
                   true, no more requests for sending a messages will be created.</entry>
-               <entry>false</entry>
+               <entry><code>false</code></entry>
             </row>
             <row>
                <entry>perfcake.templates.disabled</entry>
@@ -183,7 +210,27 @@ usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md
                   Having the engine on and not using it does not bring any performance overhead. By
                   setting this to true, PerfCake can also run in JRE (the templating is the only
                   part of PerfCake depending on JDK).</entry>
-               <entry>false</entry>
+               <entry><code>false</code></entry>
+            </row>
+            <row>
+               <entry>perfcake.skip.timer.benchmark</entry>
+               <entry>Equivalent of the <code>-skip</code> command line parameter.</entry>
+               <entry><code>false</code></entry>
+            </row>
+            <row>
+               <entry>perfcake.replay</entry>
+               <entry>Equivalent of the <code>-r</code> command line parameter.</entry>
+               <entry>-</entry>
+            </row>
+            <row>
+               <entry>perfcake.debug</entry>
+               <entry>Equivalent of the <code>-d</code> command line parameter.</entry>
+               <entry><code>false</code></entry>
+            </row>
+            <row>
+               <entry>perfcake.debug.name</entry>
+               <entry>Equivalent of the <code>-dn</code> command line parameter.</entry>
+               <entry>perfcake-1</entry>
             </row>
          </tbody>
       </tgroup>

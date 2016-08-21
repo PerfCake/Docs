@@ -46,6 +46,15 @@
                   to terminate cleanly. This can be caused by hanging connections or deadlocks in
                   the application under test.</entry>
             </row>
+            <row>
+               <entry>7</entry>
+               <entry>There was an error while replaying a provided test record.</entry>
+            </row>
+            <row>
+               <entry>8</entry>
+               <entry>The user requested help/usage information with a command line option and it
+                  was printed.</entry>
+            </row>
          </tbody>
       </tgroup>
    </table>

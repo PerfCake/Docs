@@ -23,9 +23,14 @@
 ├── LICENSE.txt
 └── log4j2.xml]]> </programlisting></para>
       <para> You may try to run PerfCake, you should receive output like this: <programlisting><![CDATA[$PERFCAKE_HOME/bin/perfcake.sh
-usage: ScenarioExecution -s <SCENARIO> [-sd <SCENARIOS_DIR>] [-md 
-                         <MESSAGES_DIR>] [-D<property=value>]*
+=== Welcome to PerfCake 7.0 ===
+usage: ScenarioExecution -s <SCENARIO> [options] [-D<property=value>]*
+ -d,--debug                                start debug JMX agent for
+                                           external monitoring
  -D <property=value>                       system properties
+ -dn,--debug-name <AGENT_NAME>             debug agent name in the JMX
+                                           tree
+ -h,--help                                 prints help/usage
  -log,--log-level <LOG_LEVEL>              logging level
  -md,--messages-dir <MESSAGES_DIR>         directory for messages
  -pd,--plugins-dir <PLUGINS_DIR>           directory for plugins
@@ -189,8 +194,8 @@ end]]> </programlisting></para>
 </scenario>]]></programlisting>Adding the <code>reporting</code> section you let your scenario to
          log results to some destination - in our case to the PerfCake’s console. Output will be
          provided every 2 seconds (2000 miliseconds). </para>
-      <para>Try to run the scenario again by the following command: <programlisting><![CDATA[2016-06-14 22:01:56,186 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-7.0/resources/scenarios/http-reporting.xml
-2016-06-14 22:01:56,455 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
+      <para>Try to run the scenario again by the following command: <programlisting><![CDATA[2016-06-14 22:01:56,155 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
+2016-06-14 22:01:56,386 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-7.0/resources/scenarios/http-reporting.xml
 2016-06-14 22:01:56,455 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2016-06-14 22:01:56,456 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 334ns. A single thread is now able to measure maximum of 2994011 iterations/second.
 2016-06-14 22:01:56,468 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...

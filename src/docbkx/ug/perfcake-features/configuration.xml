@@ -5,4 +5,5 @@
    <xi:include href="./configuration/maven.xml"/>
    <xi:include href="./configuration/logging.xml"/>
    <xi:include href="./configuration/replay.xml"/>
+   <xi:include href="./configuration/debug.xml"/>
 </section>

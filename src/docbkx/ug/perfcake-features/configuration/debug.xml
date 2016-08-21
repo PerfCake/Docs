@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.configuration.debug" version="7.0">
+   <title>Debug Agent</title>
+   <para>The Debug Agent is an experimental feature suited for performance scenario development. It
+      has a significant performance drawback and must not be used for real testing.</para>
+   <para>This agent publishes status of PerfCake components via JMX and can be read by utilities
+      like <code>jvisualvm</code> (with MBean plugin).</para>
+   <para>The agent can be started by configuring the system property <code>perfcake.debug</code> to
+         <code>true</code> or by passing the <code>-d</code> or <code>--debug</code> command line
+      options. For the agent to work properly, the JDK's <code>tools.jar</code> must be on the
+      classpath. This necessity will be removed in Java 9. The PerfCake startup scripts try to
+      configure the classpath accordingly but they still might fail. As a workaround, you might copy
+      the <code>tools.jar</code> file to <code>${PERFCAKE_HOME}/lib/ext</code>.</para>
+   <para>When there are multiple PerfCake instances running in the same JVM, they can be
+      differentiated by setting <code>perfcake.debug.name</code> property (or <code>-dn</code>,
+         <code>--debug-name</code> command line options). The default agent name is
+         <code>perfcake-1</code>.</para>
+   <para>The main purpose of the Debug Agent is for IDE plugin integration and debugging performance
+      scenarios. The feature state will be claimed stable once there is enough testing with the IDE
+      plugins and probably when we can remove the <code>tools.jar</code> dependency.</para>
+   <figure xml:id="ug.perfcake-features.configuration.debug.jmx">
+      <title>JMX tree with PerfCake debug information in <code>jvisualvm</code></title>
+      <mediaobject>
+         <imageobject>
+            <imagedata fileref="./images/jmx.png" format="PNG" scalefit="1" align="center"/>
+         </imageobject>
+      </mediaobject>
+   </figure>
+</section>
