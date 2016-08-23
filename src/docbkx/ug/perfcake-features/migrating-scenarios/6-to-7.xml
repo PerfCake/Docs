@@ -41,6 +41,10 @@
                   <code>org.perfcake.reporting.reporter</code> and
                   <code>org.perfcake.reporting.destination</code>.</para>
          </listitem>
+         <listitem>
+            <para>Sequences interface has updated the method to obtain the next value of the
+               sequence.</para>
+         </listitem>
       </itemizedlist> The following sections describe some steps in more detail. </para>
    <section xml:id="ug.perfcake-features.migrating-scenarios.mirating.6-to-7.steps">
       <title>Migration steps</title>
@@ -92,6 +96,28 @@
                <code>org.perfcake.reporting.destinations</code>. All the plural package names should
             be now converted to singular (i.e. <code>org.perfcake.reporting.reporter</code> and
                <code>org.perfcake.reporting.destination</code>).</para>
+      </section>
+      <section>
+         <title>Update Sequence implementations</title>
+         <para>In your <code>Sequence</code> implementations change the following:</para>
+         <example>
+            <title>Old Sequence implementation</title>
+            <programlisting><![CDATA[public String getNext() {
+   ...
+   return nextValue;
+}]]></programlisting>
+         </example>
+         <para>To the new implementation:</para>
+         <example>
+            <title>New Sequence implementation</title>
+            <programlisting><![CDATA[public void publishNext(final String sequenceId, final Properties values) {
+   ...
+   values.setProperty(sequenceId, nextValue);
+}]]></programlisting>
+         </example>
+         <para>This update allow a single section to publish more values. All the value keys should
+            start with the sequence specific prefix from the <code>sequenceId</code>
+            parameter.</para>
       </section>
    </section>
 </section>

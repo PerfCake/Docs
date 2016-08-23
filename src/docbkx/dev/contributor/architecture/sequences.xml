@@ -6,12 +6,15 @@
             are typically used to customize messages in a way that each message sent is unique. </para>
       <para>A <varname>Sequence</varname> only implements two methods. First,
                   <varname>reset()</varname> to reset the <varname>Sequence</varname> to its initial
-            state, and second <varname>getNext()</varname> to obtain the next value in the row. The
-            Sequences are used heavily by many threads. Therefore they must be thread-safe and
-            handle the load smart. </para>
+            state, and second <varname>publishNext()</varname> to publish the next value(s) in the
+            row to the provided properties. The Sequences are used heavily by many threads.
+            Therefore they must be thread-safe and handle the load smart. </para>
       <para>A wrong example is the <varname>NumberSequence</varname> which has the
-                  <varname>getNext()</varname> method synchronized. This makes a significant
+                  <varname>publishNext()</varname> method synchronized. This makes a significant
             overhead to the PerfCake performance.</para>
       <para>Much better example is the <varname>PrimitiveNumberSequence</varname> which uses
                   <varname>AtomicLong</varname> internally.</para>
+      <para>Each sequence can publish more values at once, each having its own unique key prefixed
+            with the value from the <code>sequenceId</code> parameter of the
+                  <code>publishNext()</code> method.</para>
 </section>
