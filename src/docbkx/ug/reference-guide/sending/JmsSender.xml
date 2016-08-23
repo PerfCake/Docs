@@ -40,13 +40,13 @@
                <row>
                   <entry>jndiSecurityPrincipal</entry>
                   <entry>A JNDI username</entry>
-                  <entry>Yes</entry>
+                  <entry>No</entry>
                   <entry/>
                </row>
                <row>
                   <entry>jndiSecurityCredentials</entry>
                   <entry>A JNDI password</entry>
-                  <entry>Yes</entry>
+                  <entry>No</entry>
                   <entry/>
                </row>
                <row>

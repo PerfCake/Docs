@@ -25,7 +25,7 @@
             </thead>
             <tbody>
                <row>
-                  <entry>serverUri</entry>
+                  <entry>serverUrl</entry>
                   <entry>Comma separated list of Elasticsearch servers including protocol and port
                      number. Port is typically 9292.</entry>
                   <entry>Yes</entry>

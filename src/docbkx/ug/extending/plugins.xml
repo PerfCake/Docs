@@ -5,7 +5,7 @@
       components such as senders, generators, reporters, destinations or validators. <footnote>
          <para>To get the details about creating custom components (plugins), see the PerfCake
             Developers' Guide.</para>
-      </footnote> . </para>
+      </footnote></para>
    <para>To add a new component to PerfCake, all you need to do is to take the jar file with the
       packaged component (along with all its dependencies) and place them in the
          <code>$PERFCAKE_HOME/lib/plugins</code> directory. </para>
