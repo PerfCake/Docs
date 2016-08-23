@@ -13,7 +13,7 @@
       syntax issues with both XML and DSL, appropriate exceptions are thrown. In case of a wrong
       property name configured for any of the components, a warning similar to the following one is
       displayed during the initialization.</para>
-   <programlisting><![CDATA[2016-06-01 22:02:10,776 WARN  [main] {org.perfcake.util.ObjectFactory} It was not possible to reliably configure property fooBar on class org.perfcake.reporting.reporters.ResponseTimeHistogramReporter. You may have a mistake in the scenario, or the class does not allow reading of the property.]]></programlisting>
+   <programlisting><![CDATA[2016-06-01 22:02:10,776 WARN  [main] {org.perfcake.util.ObjectFactory} It was not possible to reliably configure property fooBar on class org.perfcake.reporting.reporter.ResponseTimeHistogramReporter. You may have a mistake in the scenario, or the class does not allow reading of the property.]]></programlisting>
    <para>PerfCake tries to overcome as many issues as it can. For a 100% validity of your
       performance test results, always make sure there are no warning or errors in the log. Such
       issues can be a problem with message template (the template was used without being parsed), a

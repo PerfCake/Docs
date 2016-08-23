@@ -34,6 +34,13 @@
                means that the sequence <code>name</code> attribute has been changed to sequence
                   <code>id</code>.</para>
          </listitem>
+         <listitem>
+            <para>We unified and corrected component package names. This required changing
+                  <code>org.perfcake.reporting.reporters</code> and
+                  <code>org.perfcake.reporting.destinations</code> to singular
+                  <code>org.perfcake.reporting.reporter</code> and
+                  <code>org.perfcake.reporting.destination</code>.</para>
+         </listitem>
       </itemizedlist> The following sections describe some steps in more detail. </para>
    <section xml:id="ug.perfcake-features.migrating-scenarios.mirating.6-to-7.steps">
       <title>Migration steps</title>
@@ -75,6 +82,16 @@
             <title>New sequence configuration in XML</title>
             <programlisting><![CDATA[<sequence id="..." class="...">]]></programlisting>
          </example>
+      </section>
+      <section>
+         <title>Rename of packages under org.perfcake.reporting</title>
+         <para>This would affect you only when you used the canonical package name in scenario
+            configurations, or when you developed custom components and put them in the same
+            packages as PerfCake components are. Namely under
+               <code>org.perfcake.reporting.reporters</code> and
+               <code>org.perfcake.reporting.destinations</code>. All the plural package names should
+            be now converted to singular (i.e. <code>org.perfcake.reporting.reporter</code> and
+               <code>org.perfcake.reporting.destination</code>).</para>
       </section>
    </section>
 </section>
