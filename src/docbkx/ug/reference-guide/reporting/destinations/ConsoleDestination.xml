@@ -2,6 +2,12 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.destinations.ConsoleDestination" version="7.0">
    <title>ConsoleDestination</title>
    <para>A simple destination that appends the measurements to the PerfCake's console output. </para>
+   <warning>
+      <para>Console output is not written into PerfCake log file and is lost once you close your
+         terminal. If you want to keep the output, use <xref
+            linkend="ug.reference-guide.reporting.destinations.Log4jDestination"/> or redirect
+         PerfCake output to a file.</para>
+   </warning>
    <para>It is possible to setup a prefix to each line on the output to differentiate between
       several instances of this destination in a single performance test scenario. The
          <code>ConsoleDestination</code> can also send ANSI codes to change output color, however,
@@ -48,12 +54,8 @@
             </tbody>
          </tgroup>
       </informaltable></para>
-   <warning>
-      <para>Console output is not written into PerfCake log file and is lost once you close your
-         terminal. If you want to keep the output, use <xref
-            linkend="ug.reference-guide.reporting.destinations.Log4jDestination"/> or redirect
-         PerfCake output to a file.</para>
-   </warning>
+   <para>The following table lists the available properties of
+      <code>ConsoleDestination</code>.</para>
    <table frame="all">
       <title>ConsoleDestination properties</title>
       <tgroup cols="4" align="left" colsep="1" rowsep="1">
