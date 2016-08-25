@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.MqttSender" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="ug.reference-guide.sending.MqttSender" version="7.0">
    <title>MqttSender</title>
    <para>
       The sender is capable to send MQTT
@@ -54,6 +54,18 @@
                   </entry>
                </row>
                <row>
+                  <entry>userName</entry>
+                  <entry>MQTT broker user name</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>password</entry>
+                  <entry>MQTT broker password</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
                   <entry>responseTarget</entry>
                   <entry>An URL of the remote broker and a topic name, from which the response is received. If ordinary string is presented (not in a form of an URL),
                      the string as a whole is considered to be a response topic name in the same broker where the original message was sent.
@@ -73,6 +85,18 @@
                      property.
                   </entry>
                </row>
+               <row>
+                  <entry>responseUserName</entry>
+                  <entry>MQTT broker user name for response</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>responsePassword</entry>
+                  <entry>MQTT broker password for response</entry>
+                  <entry>No</entry>
+                  <entry>-</entry>
+               </row>
             </tbody>
          </tgroup>
       </table>
@@ -90,7 +114,8 @@
          in a broker listening on
          <code>tcp://localhost:1883</code>. The response is expected and received from the topic with the name of
          <code>response.topic</code>
-         of the same broker. The quality of service level for both sending and receiving is default<code>EXACTLY_ONCE</code>.
+         of the same broker. The quality of service level for both sending and receiving is default
+         <code>EXACTLY_ONCE</code>.
       </para>
    </example>
 </section>
