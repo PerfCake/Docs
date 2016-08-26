@@ -7,16 +7,19 @@
       duration can be tweaked by the respective properties <code>minimalWarmUpCount</code> with the
       default value of 10,000 and <code>minimalWarmUpDuration</code> with the default value of
       15,000 ms). </para>
-   <para>The reporter internally keeps track of current throughput - each second checks the number of processed
-      iterations and computes the current throughput as the difference in number of iterations per checking period (second).
-      It also remembers the current throughput from the previous checking period to calculate a difference in throughput.
-      The throughput is considered NOT changing in time "much" when the relative difference in current throughput
-      between the current checking period and the previous one is less than
-      <code>relativeThreshold</code>
-      value or the absolute difference in current throughput between the current checking period and the previous one is less than
-      <code>absoluteThreshold</code>
-      value.
-   </para>
+   <para>The reporter internally keeps track of current throughput - each second checks the number
+      of processed iterations and computes the current throughput as the difference in number of
+      iterations per checking period (second). It also remembers the current throughput from the
+      previous checking period to calculate a difference in throughput. The throughput is considered
+      NOT changing in time "much" when the relative difference in current throughput between the
+      current checking period and the previous one is less than <code>relativeThreshold</code> value
+      or the absolute difference in current throughput between the current checking period and the
+      previous one is less than <code>absoluteThreshold</code> value.</para>
+   <para>Normally, the maximal length of the warm-up period is determined by the length of the
+      performance test itself. This can be further limited (by using
+         <code>maximalWarmUpDuration</code> and <code>maximalWarmUpType</code> properties) for the
+      test not to waste time when the system under test cannot get warmed-up within a reasonable
+      time frame. </para>
    <para>The system is considered warmed up when all of the following conditions are satisfied: The current throughput
       is not changing much over the time, the minimal iterations count has been executed and the
       minimal duration from the very start has exceeded.
@@ -45,7 +48,7 @@
             </row>
             <row>
                <entry>minimalWarmUpCount</entry>
-               <entry>A minimal number of iteration in the warm-up period.</entry>
+               <entry>A minimal number of iterations in the warm-up period.</entry>
                <entry>No</entry>
                <entry>10000</entry>
             </row>
@@ -60,6 +63,24 @@
                <entry>An absolute difference threshold to determine whether the throughput is not changing much.</entry>
                <entry>No</entry>
                <entry>0.2</entry>
+            </row>
+            <row>
+               <entry>maximalWarmUpDuration</entry>
+               <entry>
+                  <para>Maximal tolerance of waiting for the end of the warm-up period. If we run
+                     out of this time/percentage/iteration count (determined by maximalWarmUpType),
+                     we simply break the test and do not waste any more time. <code>-1</code> means
+                     that the check is disabled.</para>
+               </entry>
+               <entry>No</entry>
+               <entry>-1</entry>
+            </row>
+            <row>
+               <entry>maximalWarmUpType</entry>
+               <entry>The unit in which we measure the maximal warm-up count. Can be iteration,
+                  time, or percentage.</entry>
+               <entry>No</entry>
+               <entry><code>iteration</code></entry>
             </row>
          </tbody>
       </tgroup>

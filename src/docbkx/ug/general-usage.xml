@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.general-usage" version="7.0">
    <title>General Usage</title>
-   <xi:include href="./general-usage/sweet-spot.xml"/>
-   <xi:include href="./general-usage/sending-messages.xml"/>
-   <xi:include href="./general-usage/warmup.xml"/>
-   <xi:include href="./general-usage/monitoring-memory.xml"/>
-   <xi:include href="./general-usage/charts.xml"/>
-   <xi:include href="./general-usage/hdr-histogram.xml"/>
-   <xi:include href="./general-usage/response-validation.xml"/>
-   <xi:include href="./general-usage/templates-sequences.xml"/>
-   <xi:include href="./general-usage/measurement-basics.xml"/>
-   <xi:include href="./general-usage/reporting-results.xml"/>
-   <xi:include href="./general-usage/aggregating-results.xml"/>
-   <xi:include href="./general-usage/adding-clients.xml"/>
-   <xi:include href="./general-usage/jdbc-jms.xml"/>
-   <xi:include href="./general-usage/perfcake-api.xml"/>
-   <xi:include href="./general-usage/perfcake-plugins.xml"/>
-   <xi:include href="./general-usage/groovy.xml"/>
-   <xi:include href="./general-usage/csv-to-spreadsheet.xml"/>
-   <xi:include href="./general-usage/enabling-destinations.xml"/>
-   <xi:include href="./general-usage/keep-connection.xml"/>
-   <xi:include href="./general-usage/ssl-http.xml"/>
-   <xi:include href="./general-usage/dummy-sender.xml"/>
-   <xi:include href="./general-usage/classification.xml"/>
-   <xi:include href="./general-usage/raw-recording.xml"/>
+   <para> The general usage of PerfCake is covered in the following books and online resources. They
+      provide useful hints, describe complex performance test scenarios and give guidance in solving
+      real world problems.</para>
+   <section>
+      <title>PerfCake: Performance Testing Scenarios</title>
+      <para>This a cookbook with recipes for creating complex performance testing scenarios to
+         easily bootstrap your automated performance testing.</para>
+      <para>The book is currently in the phase of preparation and we do not have much content yet.
+         It is published on <xref xlink:href="https://leanpub.com/perfcake">LeanPub</xref> and we
+         will keep releasing updates regularly. The book is for free with the option to donate a
+         small amount of money to support our further work.</para>
+   </section>
+   <section>
+      <title>Performance Engineering</title>
+      <para>This is another book that is currently a work in progress. It will teach you everything
+         a succesful software engineer needs to know about performance testing from experts in the
+         field.</para>
+      <para>The book will be be published on <xref xlink:href="https://leanpub.com/perfengineering"
+            >LeanPub</xref> and we will keep this documentation up-to-date with its current state.
+         This time, the book won't be free but not very expensive either.</para>
+      <para>In this book we examine many possible aspects of performance testing and figure out the
+         best approaches to handle challenges along the way. We always analyze the problems, think
+         about possible solutions and figure out the best within the given constraints.</para>
+      <para>In the first part of the book, we go through the theory of performance testing and we
+         define useful terms. Next, we will discuss what is important in performance testing, what
+         to take care of, and how to best handle performance testing. Running real experiments is
+         covered in the third part. In the last part we will discuss a design of an ideal
+         performance testing tool and demonstrate it on a real implementation of an open-source
+         performance testing framework PerfCake.</para>
+   </section>
+   <section>
+      <title>YouTube Channels</title>
+      <para> We are getting ready to create two YouTube channels with videos on performance testing.
+         The first channel will cover performance testing in general, and the second channel will be
+         more about creating real scenarios with PerfCake.</para>
+   </section>
 </chapter>
