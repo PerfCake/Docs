@@ -45,6 +45,10 @@
             <para>Sequences interface has updated the method to obtain the next value of the
                sequence.</para>
          </listitem>
+         <listitem>
+            <para>Support for JMS API 2.0 in <code>JmsSender</code> and
+                  <code>RequestResponseJmsSender</code>.</para>
+         </listitem>
       </itemizedlist> The following sections describe some steps in more detail. </para>
    <section xml:id="ug.perfcake-features.migrating-scenarios.mirating.6-to-7.steps">
       <title>Migration steps</title>
@@ -118,6 +122,12 @@
          <para>This update allow a single section to publish more values. All the value keys should
             start with the sequence specific prefix from the <code>sequenceId</code>
             parameter.</para>
+      </section>
+      <section>
+         <title>Support for JMS API 2.0</title>
+         <para>By default, JmsSender and RequestResponseJmsSender now use JMS API 2.0. If you want
+            to continue using JMS API 1.1, change your scenarios to use <code>Jms11Sender</code>, or
+               <code>RequestResponseJms11Sender</code> respectively.</para>
       </section>
    </section>
 </section>
