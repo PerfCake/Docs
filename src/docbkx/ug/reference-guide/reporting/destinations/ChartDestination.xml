@@ -123,6 +123,15 @@
                   <entry>Iterations</entry>
                </row>
                <row>
+                  <entry>type</entry>
+                  <entry>The chart can have two visual types - a line chart or a bar chart. The bar
+                     chart is not recommended for reporting many values. It is more suitable for a
+                     few (or even a single) records (e.g. HDR histogram). Possible values are
+                        <code>line</code> and <code>bar</code>.</entry>
+                  <entry>No</entry>
+                  <entry>line</entry>
+               </row>
+               <row>
                   <entry>outputDir</entry>
                   <entry>A name of the directory where the charts are stored.</entry>
                   <entry>No</entry>
