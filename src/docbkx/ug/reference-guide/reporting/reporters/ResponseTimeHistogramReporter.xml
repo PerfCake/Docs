@@ -113,6 +113,16 @@
                <entry>No</entry>
                <entry>perc</entry>
             </row>
+            <row>
+               <entry>filter</entry>
+               <entry>When true, it tries to minimize the number of reported values while keeping
+                  the same level of information. For instance, instead of reporting <code>perc0.0=2,
+                     perc0.5=2, perc0.75=2, perc0.882=3</code>, just the values <code>perc0.75=2,
+                     perc0.882=2</code> are reported. It is then obvious that all percentiles under
+                  0.75 are equal to 2.</entry>
+               <entry>No</entry>
+               <entry>false</entry>
+            </row>
          </tbody>
       </tgroup>
    </table>
