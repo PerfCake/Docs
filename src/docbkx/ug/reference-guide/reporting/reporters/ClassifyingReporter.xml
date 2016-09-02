@@ -40,7 +40,7 @@
    <example>
       <title>An example of ClassifyingReporter configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequences>
-      <sequence class="ThreadIdSequence" name="threadId" />
+      <sequence class="ThreadIdSequence" id="threadId" />
    </sequences>
    ...
    <reporting>
