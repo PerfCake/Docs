@@ -52,11 +52,11 @@
       <programlisting><![CDATA[${<property name>:<default value>}
 @{<property name>:<default value>}]]></programlisting>
    </para>
-   <para>Any character can be escaped by a backslash. Especially <code>$</code>, <code>@</code>,
+   <para>The following characters can be escaped by a backslash: <code>\</code> (backslash itself), <code>$</code>, <code>@</code>,
          <code>{</code>, and <code>}</code>. These characters should not appear unescaped if they
       are not supposed to act as control characters. However, the default value of a property can
       contain anything except for <code>}</code>. Also, backshlash needs to be escaped. Colon is not
-      allowed in the property name and no cahracters can be escaped in it.</para>
+      allowed in the property name and no characters can be escaped in it.</para>
    <para>The following table lists a few examples of strings and how they are rendered in the end.
       Suppose we have the following system properties set: <code>ab = 1</code>, <code>cd =
       2</code>.</para>
@@ -108,9 +108,9 @@
       (when there are no dynamic properties present in the particular string).</para>
    <para>In the case of advanced property filtering, the environment and system properties need to
       be strictly separated and referenced with the corresponding prefix. The environment properties
-      are accessed by <code>${env.&lt;property name>}</code>. The system properties can be accessed
-      by <code>${props.&lt;property value>}</code>, <code>${props[&lt;property value>]}</code>, and
-         <code>${props['&lt;property value>']}</code>.</para>
+      are accessed by <code>${env.&lt;property name&gt;}</code>. The system properties can be accessed
+      by <code>${props.&lt;property value&gt;}</code>, <code>${props[&lt;property value&gt;]}</code>, and
+         <code>${props['&lt;property value&gt;']}</code>.</para>
    <para>Also, these placeholders are considered ultimate and no more replacing is possible. So in
       the case when there is no property available and there is no default value, they are replaced
       by the <code>null</code> string.</para>
@@ -146,8 +146,8 @@
       way: <programlisting><![CDATA[-D<property name>=<property value>]]></programlisting></para>
    <note>
       <para>In Windows command shell, the parameter specifying the property name and value might
-         need to be placed in double quotes: <code>"-D&lt;property name>=&lt;property
-         value>"</code></para>
+         need to be placed in double quotes: <code>"-D&lt;property name&gt;=&lt;property
+         value&gt;"</code></para>
    </note>
    <para>There are several properties that exist in PerfCake and that might be usefull in the scenarios
       or messages (e.g. a timestamp of the scenario execution start). The following table describes all available

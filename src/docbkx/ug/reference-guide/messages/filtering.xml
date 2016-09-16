@@ -2,20 +2,15 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.messages.filtering" version="7.0">
    <title>Filtering and templates</title>
    <para>Messages stored in separate files can take an advantage of more complex filtering than
-      those with body specified directly in the scenario file. This is optimized for performance and
-      uses HTTL Framework. <footnote>
-         <para>
-            <link xlink:href="http://httl.github.io/en/"/>
-         </para>
-      </footnote>More complex replacements are possible including math operators, string
-      concatenation etc. However, take into account that this might have a negative impact on the
+      those with body specified directly in the scenario file. This is optimized for performance. 
+      However, take into account that this might have a negative impact on the
       maximal message generation speed. It is recommended to create a comparative test without any
       templates to be sure there is no significant drop in troughput. </para>
    <para>All system properties are must be prefixed with the <emphasis role="italic"
          >props.</emphasis> namespace declaration. All environment properties must be prefixed with
       the <emphasis role="italic">env.</emphasis> namespace declaration. Internal PerfCake
-      properties (i.e. message number) do not need any prefix. Sequences are accessible through the
-      seq. namespace prefix. </para>
+      properties (i.e. message number) do not need any prefix. Sequences are accessible without any prefix,
+      unless you defined with one. </para>
    <para>While loading the message body from a file, all placeholders with the dollar sign are
       replaced first (for example<code language="xml">${env.JAVA_HOME}</code>). This is done only
       once and no later changes to the property values take any effect. There is an option to be
@@ -28,5 +23,8 @@
    <para>Any occurrence of the placeholder can be escaped using the backslash sign. This means that
       the following placeholders will never get replaced: <code language="xml"
          ><![CDATA[\${non-replaceable} \@{ignored-placeholder}]]></code>
+   </para>
+   <para>
+      For more details see <xref linkend="ug.perfcake-features.scenario-definition.filtering-properties"/>.
    </para>
 </section>
