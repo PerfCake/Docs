@@ -105,6 +105,15 @@
                   <entry>No</entry>
                   <entry>""</entry>
                </row>
+               <row>
+                  <entry>safePropertyNames</entry>
+                  <entry>Use safe message property names because some messaging implementations
+                     (e.g. Apache Artemis) do not allow anything but valid Java identifiers. When
+                     set to true (which is the default), anything else than letters, numbers and
+                     underscores is changed to underscores.</entry>
+                  <entry>No</entry>
+                  <entry>true</entry>
+               </row>
             </tbody>
          </tgroup>
       </table>
@@ -113,8 +122,6 @@
       <title>An example of JmsSender configuration</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="JmsSender">
       <target>jms/queue/YourQueue</target>
-      <property name="receivingTimeout" value="30000"/>
-      <property name="receiveAttempts" value="1"/>
       <property name="connectionFactory" value="jms/ConnFactory"/>
       <property name="username" value="KingRoland"/>
       <property name="password" value="12345"/>
