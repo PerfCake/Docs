@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.scenario-definition.xml" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.scenario-definition.xml" version="8.0">
    <title>XML scenario</title>
    <para>
       As you can see from the following listing the XML scenario is defined by
-      <code>urn:perfcake:scenario:7.0</code>
+      <code>urn:perfcake:scenario:8.0</code>
       namespace
       <footnote>
          <para>
             Schema can be found at
-            <link xlink:href="http://schema.perfcake.org/perfcake-scenario-7.0.xsd"/>
+            <link xlink:href="http://schema.perfcake.org/perfcake-scenario-8.0.xsd"/>
          </para>
       </footnote>. The scenario is divided into several sections: Properties, Run, Generator,
       Sequences, Sender, Receiver, Reporting, Messages and Validation. </para>
    <section>
       <title>Scenario structure</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:7.0">
+<scenario xmlns="urn:perfcake:scenario:8.0">
    <!-- Scenario properties (optional) -->
    <properties>
       <property name="..." value="..."/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance-test.quickstart" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance-test.quickstart" version="8.0">
    <title>Your own quickstart</title>
    <section>
       <title>Preparing PerfCake</title>
@@ -9,7 +9,7 @@
 │ ├── perfcake.bat
 │ └── perfcake.sh
 ├── docs/
-│ └── perfcake-7.x-javadoc.jar
+│ └── perfcake-8.x-javadoc.jar
 ├── lib/
 │ ├──ext/
 │ ├──plugins/
@@ -23,7 +23,7 @@
 ├── LICENSE.txt
 └── log4j2.xml]]> </programlisting></para>
       <para> You may try to run PerfCake, you should receive output like this: <programlisting><![CDATA[$PERFCAKE_HOME/bin/perfcake.sh
-=== Welcome to PerfCake 7.0 ===
+=== Welcome to PerfCake 8.0 ===
 usage: ScenarioExecution -s <SCENARIO> [options] [-D<property=value>]*
  -d,--debug                                start debug JMX agent for
                                            external monitoring
@@ -122,7 +122,7 @@ usage: ScenarioExecution -s <SCENARIO> [options] [-D<property=value>]*
       <para>
          <code>http-echo.xml</code>:
          <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:7.0">
+<scenario xmlns="urn:perfcake:scenario:8.0">
    <run type="time" value="10000"/>
    <generator class="DefaultMessageGenerator" 
               threads="${thread.count}"/>
@@ -167,7 +167,7 @@ usage: ScenarioExecution -s <SCENARIO> [options] [-D<property=value>]*
       destination "ConsoleDestination" every 1.s
 end]]> </programlisting></para>
       <para><code>http-reporting.xml</code>: <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:7.0">
+<scenario xmlns="urn:perfcake:scenario:8.0">
    <run type="time" value="10000"/>
    <generator class="DefaultMessageGenerator" 
               threads="${thread.count:10}"/>
@@ -194,8 +194,8 @@ end]]> </programlisting></para>
 </scenario>]]></programlisting>Adding the <code>reporting</code> section you let your scenario to
          log results to some destination - in our case to the PerfCake’s console. Output will be
          provided every 2 seconds (2000 miliseconds). </para>
-      <para>Try to run the scenario again by the following command: <programlisting><![CDATA[2016-06-14 22:01:56,155 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
-2016-06-14 22:01:56,386 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-7.0/resources/scenarios/http-reporting.xml
+      <para>Try to run the scenario again by the following command: <programlisting><![CDATA[2016-06-14 22:01:56,155 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 8.0 ===
+2016-06-14 22:01:56,386 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-8.0/resources/scenarios/http-reporting.xml
 2016-06-14 22:01:56,455 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2016-06-14 22:01:56,456 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 334ns. A single thread is now able to measure maximum of 2994011 iterations/second.
 2016-06-14 22:01:56,468 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...

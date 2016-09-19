@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.configuration.cli" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.configuration.cli" version="8.0">
    <title>Command line parameters</title>
    <para>PerfCake is a command line tool so it provides a CLI (command line interface) for executing
       a PerfCake scenario (see <xref linkend="ug.perfcake-features.scenario-definition"/> ). The
@@ -10,7 +10,7 @@
       used to control the scenario execution.
    </para>
    <programlisting><![CDATA[[PERFCAKE_HOME]$ ./bin/perfcake.sh
-=== Welcome to PerfCake 7.0 ===
+=== Welcome to PerfCake 8.0 ===
 usage: ScenarioExecution -s <SCENARIO> [options] [-D<property=value>]*
  -d,--debug                                start debug JMX agent for
                                            external monitoring

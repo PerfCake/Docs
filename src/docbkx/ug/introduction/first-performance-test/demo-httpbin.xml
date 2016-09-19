@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance-test.demo-httpbin" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance-test.demo-httpbin" version="8.0">
    <title>First out-of-the box demo with httpbin.org</title>
    <para>Performance test execution in PerfCake is driven by a so called scenario. Scenarios are by
       default placed in $PERFCAKE_HOME/resources/scenarios. You can place them in any location you
@@ -15,7 +15,7 @@
       possibilities (see <xref linkend="ug.reference-guide"/> for hints on this).</para>
    <para>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:7.0">
+<scenario xmlns="urn:perfcake:scenario:8.0">
   <run type="${perfcake.run.type:time}"
        value="${perfcake.run.duration:30000}"/>
   <generator class="DefaultMessageGenerator"

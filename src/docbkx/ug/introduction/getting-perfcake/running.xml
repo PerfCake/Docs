@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.running" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.getting-perfcake.running" version="8.0">
    <title>Running PerfCake</title>
    <para>There are multiple ways of running PerfCake. In the case you have just donwloaded and
       unpacked the binary distribution, you can find a shell script and a Windows bat script in the
@@ -41,8 +41,8 @@
    </para>
    <para>Typical output of this command is:</para>
    <para>
-      <programlisting><![CDATA[2015-09-22 18:35:51,774 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
-2015-09-22 18:35:52,109 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-7.0/resources/scenarios/http.xml
+      <programlisting><![CDATA[2015-09-22 18:35:51,774 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 8.0 ===
+2015-09-22 18:35:52,109 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-8.0/resources/scenarios/http.xml
 2015-09-22 18:35:52,175 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2015-09-22 18:35:52,176 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 296ns. A single thread is now able to measure maximum of 3378378 iterations/second.
 2015-09-22 18:35:52,254 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...

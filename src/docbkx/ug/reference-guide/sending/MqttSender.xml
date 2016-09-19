@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="ug.reference-guide.sending.MqttSender" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="ug.reference-guide.sending.MqttSender" version="8.0">
    <title>MqttSender</title>
    <para>
       The sender is capable to send MQTT

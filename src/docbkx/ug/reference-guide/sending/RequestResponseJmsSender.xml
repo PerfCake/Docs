@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.RequestResponseJmsSender" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.RequestResponseJmsSender" version="8.0">
    <title>RequestResponseJms[11]Sender</title>
    <para>Similarily to JmsSender, there are two variants of this sender for both JMS API 1.1
          (<code>RequestResponseJms11Sender</code>, new in PerfCake 7.0, formerly known as
