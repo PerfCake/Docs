@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sequences.FilesContentSequence" version="7.0">
+   <title>FilesContentSequence</title>
+   <para>Every single line in a given input index file specifies another file with sequence value.
+      Once the end of the index file is hit, the sequence starts from beginning. The content of
+      individual files is cached by default. Please make sure the files are of a reasonable size
+      given your expectations and memory limits.</para>
+   <para> Following table shows the properties of <code>FilesContentSequence</code>: <table frame="all">
+         <title>FilesContentSequence properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>fileUrl</entry>
+                  <entry>Location of the index file with references to files with sequence
+                     values.</entry>
+                  <entry>Yes</entry>
+                  <entry>-</entry>
+               </row>
+               <row>
+                  <entry>cacheContent</entry>
+                  <entry>When true (the default value) the content of individual files is cached in
+                     memory.</entry>
+                  <entry>No</entry>
+                  <entry>true</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <example>
+      <title>An example of FilesContentSequence configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sequence id="mySequence" class="FilesContentSequence">
+      <property name="fileUrl" value="sequence-index.txt" />
+   </sequence>]]></programlisting>
+   </example>
+</section>

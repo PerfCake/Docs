@@ -47,4 +47,5 @@
    <xi:include href="./sequences/ThreadIdSequence.xml"/>
    <xi:include href="./sequences/TimeStampSequence.xml"/>
    <xi:include href="./sequences/FileLinesSequence.xml"/>
+   <xi:include href="./sequences/FilesContentSequence.xml"/>
 </section>
