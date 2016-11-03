@@ -49,6 +49,14 @@
                   <entry>No</entry>
                   <entry>POST</entry>
                </row>
+               <row>
+                  <entry>storeCookies</entry>
+                  <entry>
+                    Should the individual threads store cookies between requests? When true, the cookies are stored.
+                  </entry>
+                  <entry>No</entry>
+                  <entry>false</entry>
+               </row>
             </tbody>
          </tgroup>
       </table></para>
