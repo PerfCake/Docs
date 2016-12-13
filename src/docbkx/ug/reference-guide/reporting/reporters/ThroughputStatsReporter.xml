@@ -146,7 +146,7 @@
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <reporter class="ThroughputStatsReporter">
       <property name="minimumEnabled" value="false"/>
       <property name="maximumEnabled" value="false"/>
-      <property name="slidingWindow" value="30"/>
+      <property name="windowSize" value="30"/>
       ...
       (destinations)
       ...
@@ -155,7 +155,7 @@
    <para>In the example above there is a
       <code>ThroughputStatsReporter</code>
       configured to report
-      the current and the average value of the throughput.
+      the current and the average value of the throughput in a sliding window of 30 iterations.
    </para>
    <example>
       <title>An example of output with the above configuration</title>

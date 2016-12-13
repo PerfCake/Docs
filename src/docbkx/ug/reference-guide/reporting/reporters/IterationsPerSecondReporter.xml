@@ -34,7 +34,7 @@
       (destinations)
       ...
    </reporter>]]></programlisting>
-      <para>In the example above there is a <code>IterationsPerSecondReporter</code> configured to
+      <para>In the example above there is an <code>IterationsPerSecondReporter</code> configured to
          report the current and the average value of the throughput. </para>
    </example>
 </section>
