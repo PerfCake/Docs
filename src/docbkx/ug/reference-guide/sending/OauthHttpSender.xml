@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.OauthHttpSender" version="7.0">
    <title>OauthHttpSender</title>
-   <para xml:id="ug.reference-guide.sending.HttpSender">OauthHttpSender is similar to the HttpSender
+   <para>OauthHttpSender is similar to the HttpSender
       (see <xref linkend="ug.reference-guide.sending.HttpSender"/> ), thus it inherits the same
       properties. The difference is that the OauthHttpSender allows token authentication to an HTTP
       based service using OAuth2<footnote>
