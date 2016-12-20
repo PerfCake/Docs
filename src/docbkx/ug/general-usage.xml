@@ -4,7 +4,7 @@
    <para> The general usage of PerfCake is covered in the following books and online resources. They
       provide useful hints, describe complex performance test scenarios and give guidance in solving
       real world problems.</para>
-   <section>
+   <section >
       <title>PerfCake: Performance Testing Scenarios</title>
       <para>This a cookbook with recipes for creating complex performance testing scenarios to
          easily bootstrap your automated performance testing.</para>
@@ -13,7 +13,7 @@
          will keep releasing updates regularly. The book is for free with the option to donate a
          small amount of money to support our further work.</para>
    </section>
-   <section>
+   <section xml:id="ug.general-usage.performance-engineering">
       <title>Performance Engineering</title>
       <para>This is another book that is currently a work in progress. It will teach you everything
          a succesful software engineer needs to know about performance testing from experts in the
@@ -31,7 +31,7 @@
          performance testing tool and demonstrate it on a real implementation of an open-source
          performance testing framework PerfCake.</para>
    </section>
-   <section>
+   <section xml:id="ug.general-usage.youtube-channels">
       <title>YouTube Channels</title>
       <para> We are getting ready to create two YouTube channels with videos on performance testing.
          The first channel will cover performance testing in general, and the second channel will be
