@@ -68,11 +68,12 @@ usage: ScenarioExecution -s <SCENARIO> [options] [-D<property=value>]*
          schema that can be found under <code>resources/schemas</code> directory. Some of the
          editors are able to use the schema file to suggest you valid tags. Our future plans include
          providing GUI editor for Eclipse and InteliJ Idea that would allow you to create and edit
-         scenarios, stay tuned! If you wanted to contribute, we are happy to community <footnote>
+         scenarios, stay tuned! If you wanted to contribute, we are happy to welcome you in our
+         community <footnote>
             <para>
                <link xlink:href="https://www.perfcake.org/community"/>
             </para>
-         </footnote> to welcome you in our commmunity. </para>
+         </footnote>. </para>
       <para>
          At minimum, simple scenario has to contain definitions for:
          <itemizedlist>

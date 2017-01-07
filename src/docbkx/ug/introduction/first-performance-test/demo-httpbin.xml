@@ -36,7 +36,7 @@
   </messages>
 </scenario>]]></programlisting>
    </para>
-   <para>As you can see, the simplest scenario runs for 30000ms = 3 seconds. It generates
+   <para>As you can see, the simplest scenario runs for 30000ms = 30 seconds. It generates
       messages/requests using 100 threads and sends them via HTTP to the server specified in a
       property (see below for explanation) using the POST method. Performance test results are
       reported to the console every 1000ms or 1 second. The content of the messages that are being
