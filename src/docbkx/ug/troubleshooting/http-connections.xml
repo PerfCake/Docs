@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.troubleshooting.http-connections" version="8.0">
+   <title>Too many open HTTP connections</title>
+   <para>When using <emphasis>HttpSender</emphasis>, there are plenty of short-lived connections. When your test
+     uses a lot of threads, you migth quickly run into the limits of the underlying system.
+     You can either increase the number of connections, or on Linux system, you can make sure
+     that the connections are reused like follows:
+   </para>
+   <programlisting><![CDATA[   $ echo "1" >/proc/sys/net/ipv4/tcp_tw_reuse
+   $ echo "1" >/proc/sys/net/ipv4/tcp_tw_recycle]]>
+   </programlisting>
+</section>

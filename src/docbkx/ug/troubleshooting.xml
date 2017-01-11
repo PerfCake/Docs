@@ -4,4 +4,5 @@
       <para>In this chapter we will try to address common pitfalls users can hit with
          PerfCake.</para>
    <xi:include href="./troubleshooting/running-in-virtual-environment.xml"/>
+   <xi:include href="./troubleshooting/http-connections.xml"/>
 </chapter>
