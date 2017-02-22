@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.JmsSender" version="8.0">
-   <title>Jms[11]Sender</title>
+   <title>JmsSender</title>
    <para>There are two versions of JMS (Java Message Service) sender. An older one supporting JMS
-      API 1.1 - <code>Jms11Sender</code> (introduced in PerfCake 7.0, previously known as
+      API 1.1 - <code>JmsSender</code> (introduced in PerfCake 7.0, previously known as
          <code>JmsSender</code>). And a new one supporting JMS API 2.0 - <code>JmsSender</code> (new
       in PerfCake 7.0). Except for the API version they use, there is no difference in their
       functionality and properties. They should also have the same performance, depending on the
       client driver used.</para>
-   <para>The Jms[11]Sender can be used to send a single JMS message.</para>
+   <para>The JmsSender can be used to send a single JMS message.</para>
    <para>The target of the sender is a JNDI name of the JMS destination where the JMS message is
       send. Both JNDI and messaging can be secured independently.</para>
    <para>For the sender to work properly, you need to have a JMS client adaptor on the class path.
