@@ -2,9 +2,14 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.ThroughputStatsReporter" version="8.0">
    <title>ThroughputStatsReporter</title>
    <para>The reporter is able to report the statistics - current, minimal, maximal and average value
-      of a throughput (in the means of the number of iterations per second) from the beginning of
+      of a pure throughput (in the means of the number of iterations per second) from the beginning of
       the measuring to the moment when the results are published (default) or in a specified window.
-      The default result of this reporter is the current throughput.
+      The default result of this reporter is the current pure throughput.
+   </para>
+   <para>
+      The pure throughput is how much iterations per second would the tested system be able to process
+      under the current load if the overhead was zero. It is computed from a response time simply
+      by inverting the value of the response time and multiplying by the number of threads.
    </para>
    <table frame="all">
       <title>ThroughputStatsReporter properties</title>
