@@ -42,13 +42,13 @@
       </correlator>
       <source>localhost:8080</source>
    </receiver>]]></programlisting>
+      <para>In the example, when a message <code>prefix-01:What is the meaning of life?</code> is sent through a sender,
+         the correlator extract the prefix <code>prefix-01</code> according to the prefix boundary
+         <code>:</code>
+         and uses it as a correlation ID. The receiver then listens on HTTP address
+         <code>http://localhost:8080</code>
+         and waits for a response message with the same prefix
+         (e.g. <code>prefix-01:I don't know, the computers are down.</code>).
+      </para>
    </example>
-   <para>In the example, when a message <code>prefix-01:What is the meaning of life?</code> is sent through a sender,
-      the correlator extract the prefix <code>prefix-01</code> according to the prefix boundary
-      <code>:</code>
-      and uses it as a correlation ID. The receiver then listens on HTTP address
-      <code>http://localhost:8080</code>
-      and waits for a response message with the same prefix
-      (e.g. <code>prefix-01:I don't know, the computers are down.</code>).
-   </para>
 </section>

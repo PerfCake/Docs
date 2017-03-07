@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.troubleshooting" version="8.0">
    <title>Troubleshooting PerfCake</title>
-      <para>In this chapter we will try to address common pitfalls users can hit with
-         PerfCake.</para>
+   <para>In this chapter we will try to address common pitfalls users can hit with
+      PerfCake.
+   </para>
    <xi:include href="./troubleshooting/running-in-virtual-environment.xml"/>
    <xi:include href="./troubleshooting/http-connections.xml"/>
+   <xi:include href="./troubleshooting/max-user-port-windows.xml"/>
 </chapter>
