@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.correlating.PrefixCorrelator" version="8.0">
+   <title>PrefixCorrelator</title>
+   <para>
+      <code>PrefixCorrelator</code>
+      uses a message prefix - a string from the beginning of the message to a prefix boundary (<code>:</code> by default) - as a correlation ID.
+      The prefix boundary can be configured via <code>prefixBoundary</code> property of the correlator.
+   </para>
+   <para>Following table shows the properties of the PrefixCorrelator:
+      <table frame="all">
+         <title>PrefixCorrelator properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>prefixBoundary</entry>
+                  <entry>A character or a string specifying the prefix boundary.
+                  </entry>
+                  <entry>No</entry>
+                  <entry>:</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <example>
+      <title>An example of PrefixCorrelator usage</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <receiver class="HttpReceiver" threads="10">
+      <correlator class="PrefixCorrelator">
+         <property name="prefixBoundary" value=":"/>
+      </correlator>
+      <source>localhost:8080</source>
+   </receiver>]]></programlisting>
+   </example>
+   <para>In the example, when a message <code>prefix-01:What is the meaning of life?</code> is sent through a sender,
+      the correlator extract the prefix <code>prefix-01</code> according to the prefix boundary
+      <code>:</code>
+      and uses it as a correlation ID. The receiver then listens on HTTP address
+      <code>http://localhost:8080</code>
+      and waits for a response message with the same prefix
+      (e.g. <code>prefix-01:I don't know, the computers are down.</code>).
+   </para>
+</section>

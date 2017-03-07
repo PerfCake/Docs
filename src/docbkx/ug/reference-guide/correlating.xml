@@ -28,4 +28,5 @@
       </para>
    </example>
    <xi:include href="./correlating/GenerateHeaderCorrelator.xml"/>
+   <xi:include href="./correlating/PrefixCorrelator.xml"/>
 </section>
