@@ -15,7 +15,7 @@
             <colspec colname="property-name" colwidth="2*"/>
             <colspec colname="description" colwidth="2*"/>
             <colspec colname="required" colwidth="1*"/>
-            <colspec colname="default-value" colwidth="2*"/>
+            <colspec colname="default-value" colwidth="5*"/>
             <thead>
                <row>
                   <entry>Property name</entry>
@@ -31,7 +31,7 @@
                   </entry>
                   <entry>No</entry>
                   <entry>
-                     <code>http://127.0.0.1:8180/auth/realms/demo/protocol/openid-connect/token</code>
+                     http://127.0.0.1:8180/auth/realms/demo/protocol/openid-connect/token
                   </entry>
                </row>
                <row>
@@ -39,7 +39,7 @@
                   <entry>Data to send to the server to request a token. Default value works with Keycloak.</entry>
                   <entry>No</entry>
                   <entry>
-                     <code>grant_type=password&amp;client_id=jboss-javaee-webapp&amp;username=marvec&amp;password=abc123</code>
+                     grant_type=password&amp;client_id=jboss-javaee-webapp&amp;username=marvec&amp;password=abc123
                   </entry>
                </row>
                <row>
@@ -47,7 +47,7 @@
                   <entry>RegEx to create a capture group around the token value in the server's response.</entry>
                   <entry>No</entry>
                   <entry>
-                     <code>.*\"access_token\":\"([^\"]*)\".*</code>
+                     .*&quot;access_token&quot;:&quot;([^&quot;]*)&quot;.*
                   </entry>
                </row>
                <row>
@@ -55,7 +55,7 @@
                   <entry>Header where the token is passed to the target service. The default value works with Keycloak.</entry>
                   <entry>No</entry>
                   <entry>
-                     <code>Authorization</code>
+                     Authorization
                   </entry>
                </row>
                <row>
@@ -65,7 +65,7 @@
                   </entry>
                   <entry>No</entry>
                   <entry>
-                     <code>Bearer %s</code>
+                     Bearer %s
                   </entry>
                </row>
                <row>
