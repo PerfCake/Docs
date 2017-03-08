@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.OauthHttpSender" version="8.0">
+   <title>OauthHttpSender</title>
+   <para>OauthHttpSender is similar to the HttpSender (see
+      <xref linkend="ug.reference-guide.sending.HttpSender"/>
+      ), thus it inherits all of it's properties.
+   </para>
+   <para>
+      The difference is that the OauthHttpSender allows token authentication to an HTTP based service.
+   </para>
+   <para>The OauthHttpSender's properties are described in the following table:
+      <table frame="all">
+         <title>OauthHttpSender additional properties</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="property-name" colwidth="2*"/>
+            <colspec colname="description" colwidth="2*"/>
+            <colspec colname="required" colwidth="1*"/>
+            <colspec colname="default-value" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Property name</entry>
+                  <entry>Description</entry>
+                  <entry>Required</entry>
+                  <entry>Default value</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>tokenServerUrl</entry>
+                  <entry>URL of the server granting us a token. Default value works with Keycloak, supposing your realm name is <code>demo</code>.
+                  </entry>
+                  <entry>No</entry>
+                  <entry>
+                     <code>http://127.0.0.1:8180/auth/realms/demo/protocol/openid-connect/token</code>
+                  </entry>
+               </row>
+               <row>
+                  <entry>tokenServerData</entry>
+                  <entry>Data to send to the server to request a token. Default value works with Keycloak.</entry>
+                  <entry>No</entry>
+                  <entry>
+                     <code>grant_type=password&amp;client_id=jboss-javaee-webapp&amp;username=marvec&amp;password=abc123</code>
+                  </entry>
+               </row>
+               <row>
+                  <entry>responseParser</entry>
+                  <entry>RegEx to create a capture group around the token value in the server's response.</entry>
+                  <entry>No</entry>
+                  <entry>
+                     <code>.*\"access_token\":\"([^\"]*)\".*</code>
+                  </entry>
+               </row>
+               <row>
+                  <entry>oauthHeader</entry>
+                  <entry>Header where the token is passed to the target service. The default value works with Keycloak.</entry>
+                  <entry>No</entry>
+                  <entry>
+                     <code>Authorization</code>
+                  </entry>
+               </row>
+               <row>
+                  <entry>oauthHeaderFormat</entry>
+                  <entry>String formatting the value of authorization header. The token is placed instead of <code>%s</code>.
+                     The default value works with Keycloak.
+                  </entry>
+                  <entry>No</entry>
+                  <entry>
+                     <code>Bearer %s</code>
+                  </entry>
+               </row>
+               <row>
+                  <entry>tokenTimeout</entry>
+                  <entry>How long in milliseconds is a token valid before a new one is needed. Defaults to 60s.</entry>
+                  <entry>No</entry>
+                  <entry>60000L</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </para>
+   <example>
+      <title>An example of OauthHttpSender configuration</title>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[   <sender class="OauthHttpSender">
+      <target>http://domain.com/secured_url</target>
+      <property name="method" value="POST"/>
+      <property name="tokenServerUrl" value="http://127.0.0.1:8180/auth/realms/demo/protocol/openid-connect/token"/>
+      <property name="tokenServerData" value="grant_type=password&amp;client_id=jboss-javaee-webapp&amp;username=marvec&amp;password=abc123"/>
+      <property name="responseParser" value=".*&quot;access_token&quot;:&quot;([^&quot;]*)&quot;.*"/>
+      <property name="oauthHeader" value="Authorization"/>
+      <property name="oauthHeaderFormat" value="Bearer %s"/>
+      <property name="tokenTimeout" value="60000"/>
+   </sender>]]></programlisting>
+   </example>
+</section>

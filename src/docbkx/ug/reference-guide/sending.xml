@@ -42,6 +42,7 @@
    <xi:include href="./sending/JmsSender.xml"/>
    <xi:include href="./sending/LdapSender.xml"/>
    <xi:include href="./sending/MqttSender.xml"/>
+   <xi:include href="./sending/OauthHttpSender.xml"/>
    <xi:include href="./sending/PlainSocketSender.xml"/>
    <xi:include href="./sending/RequestResponseJmsSender.xml"/>
    <xi:include href="./sending/ScriptSender.xml"/>
