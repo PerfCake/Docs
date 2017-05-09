@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.troubleshooting.max-user-port-windows" version="8.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.troubleshooting.max-user-port-windows" version="7.5">
    <title>"java.net.BindException: Address already in use: connect” issue on Windows</title>
    <para>Windows will only make outbound TCP/IP connections using ports 1024-5000 by default, and takes up to 4 minutes to recycle them. So in the case of runnung a load type performance tests the port range is filled pretty fast.
    </para>

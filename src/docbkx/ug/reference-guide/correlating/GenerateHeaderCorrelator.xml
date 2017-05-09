@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.correlating.GenerateHeaderCorrelator" version="8.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.correlating.GenerateHeaderCorrelator" version="7.5">
    <title>GenerateHeaderCorrelator</title>
    <para><code>GenerateHeaderCorrelator</code> creates a new UUID style <emphasis>correlation
          ID</emphasis> and stores it in a request message header and in message attributes. It then
