@@ -6,11 +6,11 @@
       want to PerfCake's API. </para>
    <para>For inclusion into your project, you can search for PerfCake artifacts at <link
          xlink:href="http://search.maven.org"/>. In the results click at the version number and you
-      will see snippets for various build systems. For Mave and version 8.0 you just include the
+      will see snippets for various build systems. For Maven and version 7.5 you just include the
       following XML piece into your project dependencies. </para>
    <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[ <dependency>
     <groupId>org.perfcake</groupId>
     <artifactId>perfcake</artifactId>
-    <version>8.0</version>
+    <version>7.5</version>
  </dependency>]]></programlisting>
 </section>

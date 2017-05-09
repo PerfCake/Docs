@@ -3,7 +3,7 @@
    <title>XML scenario</title>
    <para>
       As you can see from the following listing the XML scenario is defined by
-      <code>urn:perfcake:scenario:8.0</code>
+      <code>urn:perfcake:scenario:7.0</code>
       namespace
       <footnote>
          <para>
@@ -15,7 +15,7 @@
    <section>
       <title>Scenario structure</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:8.0">
+<scenario xmlns="urn:perfcake:scenario:7.0">
    <!-- Scenario properties (optional) -->
    <properties>
       <property name="..." value="..."/>

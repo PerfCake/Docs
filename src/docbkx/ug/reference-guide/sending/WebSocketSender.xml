@@ -60,9 +60,7 @@
                      <code>ping</code>
                      .
                      <footnote>
-                        <para>
-                           Only text messages are supported in PerfCake 5.x.
-                        </para>
+                        <para> Only text messages are supported in PerfCake 7.x. </para>
                      </footnote>
                   </entry>
                   <entry>No</entry>

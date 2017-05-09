@@ -22,7 +22,7 @@
    <example>
       <title>An example of a scenario with properties</title>      
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:8.0">
+<scenario xmlns="urn:perfcake:scenario:7.0">
    <properties>
       <property name="composedProperty" value="${defaultProperty}-2"/>
       <property name="defaultProperty" value="${test.missing.property:default-property-value}"/>
@@ -121,7 +121,7 @@
    <example>
       <title>An example of a scenario with combined property replacement strategies</title>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:8.0">
+<scenario xmlns="urn:perfcake:scenario:7.0">
    <properties>
       <property name="composedProperty" value="${props.defaultProperty}-2"/>
       <property name="defaultProperty" value="${test.missing.property:default-property-value}"/>

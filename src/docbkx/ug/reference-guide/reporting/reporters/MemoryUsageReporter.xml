@@ -48,11 +48,11 @@
    </example>
    <example>
       <title>PerfCake JVM argument example</title>
-      <programlisting><![CDATA[JAVA_OPTS="... -javaagent:$PERFCAKE_HOME/lib/perfcake-agent-8.0.jar=port=8850"]]></programlisting>
+      <programlisting><![CDATA[JAVA_OPTS="... -javaagent:$PERFCAKE_HOME/lib/perfcake-agent-7.x.jar=port=8850"]]></programlisting>
    </example>
    <example>
       <title>Attaching to running JVM</title>
-      <programlisting><![CDATA[java -cp $JAVA_HOME/lib/tools.jar:perfcake-agent-8.0.jar \
+      <programlisting><![CDATA[java -cp $JAVA_HOME/lib/tools.jar:perfcake-agent-7.x.jar \
   org.perfcake.agent.PerfCakeAgent <PID> hostname=<hostname>,port=<8850>]]></programlisting>
    </example>
    <para>Once you have started the tested system up, you should see the following line in the

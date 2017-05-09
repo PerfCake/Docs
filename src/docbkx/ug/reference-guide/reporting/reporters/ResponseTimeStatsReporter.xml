@@ -174,7 +174,7 @@
          is configured to report
          all statistics with the following output:
       </para>
-      <programlisting><![CDATA[2016-06-13 23:20:22,158 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 8.0 ===
+      <programlisting><![CDATA[2016-06-13 23:20:22,158 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.5 ===
 2016-06-13 23:20:22,159 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2016-06-13 23:20:22,160 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 356ns. A single thread is now able to measure maximum of 2808988 iterations/second.
 2016-06-13 23:20:22,177 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...

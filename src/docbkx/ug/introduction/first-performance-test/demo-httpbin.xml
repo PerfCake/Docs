@@ -15,7 +15,7 @@
       possibilities (see <xref linkend="ug.reference-guide"/> for hints on this).</para>
    <para>
       <programlisting language="xml" linenumbering="numbered" startinglinenumber="1"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<scenario xmlns="urn:perfcake:scenario:8.0">
+<scenario xmlns="urn:perfcake:scenario:7.0">
   <run type="${perfcake.run.type:time}"
        value="${perfcake.run.duration:30000}"/>
   <generator class="DefaultMessageGenerator"

@@ -33,7 +33,7 @@
    <example>
       <title>PerfCake Maven plugin sample configuration</title>
       <programlisting language="xml"><![CDATA[   <properties>
-      <perfcake.version>8.0</perfcake.version>
+      <perfcake.version>7.5</perfcake.version>
       ...
    </properties>
    ...
