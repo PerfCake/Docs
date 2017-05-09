@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.troubleshooting.max-user-port-windows" version="7.5">
+   <title>"java.net.BindException: Address already in use: connect” issue on Windows</title>
+   <para>Windows will only make outbound TCP/IP connections using ports 1024-5000 by default, and takes up to 4 minutes to recycle them. So in the case of runnung a load type performance tests the port range is filled pretty fast.
+   </para>
+   <para>
+      <orderedlist>
+         <title>To allow higher values for ports on Windows add this parameter to the system registers:</title>
+         <listitem>
+            <simpara>Start Registry Editor</simpara>
+         </listitem>
+         <listitem>
+            <simpara>Find the <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters</code> subkey in the registry.
+            </simpara>
+         </listitem>
+         <listitem>
+            <simpara>Right-clicking on the <emphasis>Parameters</emphasis> create a new <emphasis>DWORD</emphasis> value with the name of <code>MaxUserPort</code>.
+            </simpara>
+         </listitem>
+         <listitem>
+            <simpara>Right-clicking on the <emphasis>MaxUserPort</emphasis> edit the value to
+               <code>65534</code>
+               as <emphasis>decimal</emphasis>.
+            </simpara>
+         </listitem>
+         <listitem>
+            <simpara>Reboot the Windows.</simpara>
+         </listitem>
+      </orderedlist>
+   </para>
+</section>

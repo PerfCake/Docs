@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="dev.contributor.architecture.sequences"
-         version="7.0">
+         version="7.5">
    <title>Sequences</title>
    <para>Sequences can be used in any template string loaded from the scenario configuration. They
             are typically used to customize messages in a way that each message sent is unique. </para>

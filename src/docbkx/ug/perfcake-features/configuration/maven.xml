@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.configuration.maven" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.perfcake-features.configuration.maven" version="7.5">
    <title>Running scenarios from Maven</title>
    <para>PerfCake is provided with a Maven plugin which allows to run PerfCake scenario within Maven
       build. This makes perfomance test automation more easy and encourages you to run performance
@@ -33,19 +33,10 @@
    <example>
       <title>PerfCake Maven plugin sample configuration</title>
       <programlisting language="xml"><![CDATA[   <properties>
-      <perfcake.version>7.0</perfcake.version>
+      <perfcake.version>7.5</perfcake.version>
       ...
    </properties>
    ...
-   <dependencies>
-      <dependency>
-         <groupId>org.perfcake</groupId>
-         <artifactId>perfcake</artifactId>
-         <version>${perfcake.version}</version>
-         <scope>test</scope>
-      </dependency>
-      ...
-   </dependencies>
    <build>
       <plugins>
          <plugin>
@@ -64,6 +55,14 @@
                   </goals>
                </execution>
             </executions>
+            <dependencies>
+               <dependency>
+                  <groupId>org.perfcake</groupId>
+                  <artifactId>perfcake</artifactId>
+                  <version>${perfcake.version}</version>
+                  <scope>test</scope>
+               </dependency>
+            </dependencies>
          </plugin>
       ...
       </plugins>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sequences.FileLinesSequence" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sequences.FileLinesSequence" version="7.5">
    <title>FileLinesSequence</title>
    <para>Every single line in a given input file specifies a value of this sequence. Once the end of the file is hit, the sequence starts from beginning.
 The whole file is read in the memory in advance. Please make sure the file is of a reasonable size given your expectations and memory limits.</para>

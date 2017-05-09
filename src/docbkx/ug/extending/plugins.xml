@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xml:id="ug.extending.plugins" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xml:id="ug.extending.plugins" version="7.5">
    <title>Custom components - Plugins</title>
    <para>PerfCake has the ability to extend its functionality by adding plugins - new custom
       components such as senders, generators, reporters, destinations or validators. <footnote>

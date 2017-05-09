@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.ResponseTimeStatsReporter" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.reporting.reporters.ResponseTimeStatsReporter" version="7.5">
    <title>ResponseTimeStatsReporter</title>
    <para>The reporter is able to report the statistics - current, minimal, maximal and average value
       of a response time (in miliseconds) from the beginning of the measuring to the moment when the
@@ -174,7 +174,7 @@
          is configured to report
          all statistics with the following output:
       </para>
-      <programlisting><![CDATA[2016-06-13 23:20:22,158 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
+      <programlisting><![CDATA[2016-06-13 23:20:22,158 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.5 ===
 2016-06-13 23:20:22,159 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2016-06-13 23:20:22,160 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 356ns. A single thread is now able to measure maximum of 2808988 iterations/second.
 2016-06-13 23:20:22,177 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...

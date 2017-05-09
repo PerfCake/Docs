@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.correlating" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.correlating" version="7.5">
    <title>Correlating messages</title>
    <para>All messages/responses received via a <code>Receiver</code> are passed to a
          <code>Correlator</code> which notifies the correct <code>SenderTask</code>. The
@@ -28,4 +28,5 @@
       </para>
    </example>
    <xi:include href="./correlating/GenerateHeaderCorrelator.xml"/>
+   <xi:include href="./correlating/PrefixCorrelator.xml"/>
 </section>

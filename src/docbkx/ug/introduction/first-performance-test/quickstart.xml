@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance-test.quickstart" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.introduction.first-performance-test.quickstart" version="7.5">
    <title>Your own quickstart</title>
    <section>
       <title>Preparing PerfCake</title>
@@ -23,7 +23,7 @@
 ├── LICENSE.txt
 └── log4j2.xml]]> </programlisting></para>
       <para> You may try to run PerfCake, you should receive output like this: <programlisting><![CDATA[$PERFCAKE_HOME/bin/perfcake.sh
-=== Welcome to PerfCake 7.0 ===
+=== Welcome to PerfCake 7.5 ===
 usage: ScenarioExecution -s <SCENARIO> [options] [-D<property=value>]*
  -d,--debug                                start debug JMX agent for
                                            external monitoring
@@ -68,11 +68,12 @@ usage: ScenarioExecution -s <SCENARIO> [options] [-D<property=value>]*
          schema that can be found under <code>resources/schemas</code> directory. Some of the
          editors are able to use the schema file to suggest you valid tags. Our future plans include
          providing GUI editor for Eclipse and InteliJ Idea that would allow you to create and edit
-         scenarios, stay tuned! If you wanted to contribute, we are happy to community <footnote>
+         scenarios, stay tuned! If you wanted to contribute, we are happy to welcome you in our
+         community <footnote>
             <para>
                <link xlink:href="https://www.perfcake.org/community"/>
             </para>
-         </footnote> to welcome you in our commmunity. </para>
+         </footnote>. </para>
       <para>
          At minimum, simple scenario has to contain definitions for:
          <itemizedlist>
@@ -194,8 +195,8 @@ end]]> </programlisting></para>
 </scenario>]]></programlisting>Adding the <code>reporting</code> section you let your scenario to
          log results to some destination - in our case to the PerfCake’s console. Output will be
          provided every 2 seconds (2000 miliseconds). </para>
-      <para>Try to run the scenario again by the following command: <programlisting><![CDATA[2016-06-14 22:01:56,155 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.0 ===
-2016-06-14 22:01:56,386 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-7.0/resources/scenarios/http-reporting.xml
+      <para>Try to run the scenario again by the following command: <programlisting><![CDATA[2016-06-14 22:01:56,155 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.5 ===
+2016-06-14 22:01:56,386 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-8.0/resources/scenarios/http-reporting.xml
 2016-06-14 22:01:56,455 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2016-06-14 22:01:56,456 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 334ns. A single thread is now able to measure maximum of 2994011 iterations/second.
 2016-06-14 22:01:56,468 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...

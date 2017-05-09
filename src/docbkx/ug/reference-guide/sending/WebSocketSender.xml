@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.WebSocketSender" version="7.0">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook" xml:id="ug.reference-guide.sending.WebSocketSender" version="7.5">
    <title>WebSocketSender</title>
    <para>
       The WebSocketSender can be used to send a simple messages via websocket protocol to a remote websocket
@@ -60,9 +60,7 @@
                      <code>ping</code>
                      .
                      <footnote>
-                        <para>
-                           Only text messages are supported in PerfCake 5.x.
-                        </para>
+                        <para> Only text messages are supported in PerfCake 7.x. </para>
                      </footnote>
                   </entry>
                   <entry>No</entry>
