@@ -8,7 +8,7 @@
       <footnote>
          <para>
             Schema can be found at
-            <link xlink:href="http://schema.perfcake.org/perfcake-scenario-8.0.xsd"/>
+            <link xlink:href="http://schema.perfcake.org/perfcake-scenario-7.0.xsd"/>
          </para>
       </footnote>. The scenario is divided into several sections: Properties, Run, Generator,
       Sequences, Sender, Receiver, Reporting, Messages and Validation. </para>

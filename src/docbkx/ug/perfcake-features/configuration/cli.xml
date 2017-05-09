@@ -10,7 +10,7 @@
       used to control the scenario execution.
    </para>
    <programlisting><![CDATA[[PERFCAKE_HOME]$ ./bin/perfcake.sh
-=== Welcome to PerfCake 8.0 ===
+=== Welcome to PerfCake 7.5 ===
 usage: ScenarioExecution -s <SCENARIO> [options] [-D<property=value>]*
  -d,--debug                                start debug JMX agent for
                                            external monitoring

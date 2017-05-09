@@ -196,7 +196,7 @@ end]]> </programlisting></para>
          log results to some destination - in our case to the PerfCake’s console. Output will be
          provided every 2 seconds (2000 miliseconds). </para>
       <para>Try to run the scenario again by the following command: <programlisting><![CDATA[2016-06-14 22:01:56,155 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.5 ===
-2016-06-14 22:01:56,386 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-8.0/resources/scenarios/http-reporting.xml
+2016-06-14 22:01:56,386 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-7.5/resources/scenarios/http-reporting.xml
 2016-06-14 22:01:56,455 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2016-06-14 22:01:56,456 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 334ns. A single thread is now able to measure maximum of 2994011 iterations/second.
 2016-06-14 22:01:56,468 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...

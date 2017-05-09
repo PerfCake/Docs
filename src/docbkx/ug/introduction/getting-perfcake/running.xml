@@ -42,7 +42,7 @@
    <para>Typical output of this command is:</para>
    <para>
       <programlisting><![CDATA[2015-09-22 18:35:51,774 INFO  {org.perfcake.ScenarioExecution} === Welcome to PerfCake 7.5 ===
-2015-09-22 18:35:52,109 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-8.0/resources/scenarios/http.xml
+2015-09-22 18:35:52,109 INFO  {org.perfcake.scenario.ScenarioBuilder} Scenario configuration: file:/home/perfcake/perfcake-7.5/resources/scenarios/http.xml
 2015-09-22 18:35:52,175 INFO  {org.perfcake.util.TimerBenchmark} Benchmarking system timer resolution...
 2015-09-22 18:35:52,176 INFO  {org.perfcake.util.TimerBenchmark} This system is able to differentiate up to 296ns. A single thread is now able to measure maximum of 3378378 iterations/second.
 2015-09-22 18:35:52,254 INFO  {org.perfcake.message.generator.DefaultMessageGenerator} Starting to generate...
