@@ -1,4 +1,4 @@
-PerfCake Documentation
+PerfCake Documentation [![Build Status](https://travis-ci.org/PerfCake/Docs.svg?branch=release-7)](https://travis-ci.org/PerfCake/Docs)
 ======================
 
 We use DocBook v5 (http://www.docbook.org/) as a format to write the documentation. 

@@ -1,0 +1,17 @@
+language: java
+script: "./travis.sh"
+jdk:
+- oraclejdk8
+deploy:
+  provider: releases
+  api_key:
+    secure: Mi8EbT59cqNm2RohxM9q/SZ4nqIITwcYZsWqGx3XbvQLLBbWTLCHhcSSsw4ce0Mz/zWNgKsUE6DEJtDwbbQFEmvuHBavJRZnyDX4XRbAjL5dtlPqsnEftXoks8v3a2k0epeoGclyTp0pH6OD5q3LKEVlpUN3k1GHreZLSgfj9FI=
+  file:
+    - target/docbkx/pdf/perfcake-user-guide.pdf
+    - target/docbkx/pdf/perfcake-developers-guide.pdf
+    - target/docbkx/perfcake-docs-html.zip
+  overwrite: true
+  skip_cleanup: true
+  on:
+    repo: PerfCake/Docs
+    tags: true
